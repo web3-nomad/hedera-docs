@@ -20,3 +20,6 @@ How to Approve Fungible Token and NFT Allowances on Hedera – Part 1: Using the
 How to Approve Fungible Token and NFT Allowances on Hedera - Part 2: Using Solidity Libraries
 {% endembed %}
 
+{% embed url="https://hedera.com/blog/how-to-approve-allowances-on-hedera-part-3-erc-standard-calls" %}
+How to Approve Fungible Token and NFT Allowances on Hedera - Part 3: ERC Standard Calls
+{% endembed %}

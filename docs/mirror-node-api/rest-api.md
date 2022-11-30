@@ -10,15 +10,18 @@ To make a request, use the network endpoint and the Rest API of choice. For exam
 
 {% embed url="https://mainnet-public.mirrornode.hedera.com/api/v1/transactions" %}
 
-<details open>
-<summary>Hedera Mirror Node Swagger UI environments
-</summary>
-<br>
-Mainnet {% embed url="https://mainnet-public.mirrornode.hedera.com/api/v1/docs#/" %}
-Testnet {% embed url="https://testnet.mirrornode.hedera.com/api/v1/docs#/" %}
-Previewnet {% embed url="https://previewnet.mirrornode.hedera.com/api/v1/docs#/" %}
-</details>
+<details>
 
+<summary>Hedera Mirror Node Swagger UI environments</summary>
+
+\
+[Mainnet](https://mainnet-public.mirrornode.hedera.com/api/v1/docs#/)
+
+[Testnet](https://testnet.mirrornode.hedera.com/api/v1/docs/#/)
+
+[Previewnet](https://previewnet.mirrornode.hedera.com/api/v1/docs/#/)
+
+</details>
 
 {% hint style="info" %}
 **MAINNET BASEURL**\
@@ -1366,7 +1369,7 @@ The timestamp to query the results with
 {% endswagger %}
 
 {% swagger src="https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml" path="/api/v1/contracts/results" method="get" %}
-[ https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml](https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml)
+[https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml](https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml)
 {% endswagger %}
 
 {% swagger method="get" path="/api/v1/contracts/{contractId}/results" baseUrl="" summary="contract results" %}
@@ -1597,15 +1600,15 @@ _Default value_ : 0
 {% endswagger %}
 
 {% swagger src="https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml" path="/api/v1/contracts/results/logs" method="get" %}
-[ https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml](https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml)
+[https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml](https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml)
 {% endswagger %}
 
 {% swagger src="https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml" path="/api/v1/contracts/results/{transactionIdOrHash}/actions" method="get" %}
-[ https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml](https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml)
+[https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml](https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml)
 {% endswagger %}
 
 {% swagger src="https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml" path="/api/v1/contracts/{contractIdOrAddress}/state" method="get" %}
-[ https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml](https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml)
+[https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml](https://raw.githubusercontent.com/hashgraph/hedera-mirror-node/main/hedera-mirror-rest/api/v1/openapi.yml)
 {% endswagger %}
 
 ## Blocks

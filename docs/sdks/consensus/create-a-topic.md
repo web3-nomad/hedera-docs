@@ -142,7 +142,7 @@ Key getKey = transaction.getAdminKey();
 {% tab title="JavaScript" %}
 ```javascript
 //Create the transaction
-const transaction = await TopicCreateTransaction()
+const transaction = new TopicCreateTransaction()
     .setAdminKey(adminKey);
     
 //Get the admin key from the transaction    

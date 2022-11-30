@@ -10,19 +10,25 @@ To make a request, use the network endpoint and the Rest API of choice. For exam
 
 {% embed url="https://mainnet-public.mirrornode.hedera.com/api/v1/transactions" %}
 
-You can also view the Hedera Mirror Node Swagger UI documentation where you can submit requests and view responses for previewnet, testnet, and mainnet.
+<details open>
+<summary>Hedera Mirror Node Swagger UI environments
+</summary>
+<br>
+Mainnet {% embed url="https://mainnet-public.mirrornode.hedera.com/api/v1/docs#/" %}
+Testnet {% embed url="https://testnet.mirrornode.hedera.com/api/v1/docs#/" %}
+Previewnet {% embed url="https://previewnet.mirrornode.hedera.com/api/v1/docs#/" %}
+</details>
 
-{% embed url="https://testnet.mirrornode.hedera.com/api/v1/docs#/" %}
 
 {% hint style="info" %}
-**MAINNET**\
-[https://mainnet-public.mirrornode.hedera.com](https://mainnet-public.mirrornode.hedera.com/)
+**MAINNET BASEURL**\
+`https://mainnet-public.mirrornode.hedera.com/`
 
-**TESTNET**\
-[https://testnet.mirrornode.hedera.com](https://testnet.mirrornode.hedera.com/)
+**TESTNET BASEURL**\
+`https://testnet.mirrornode.hedera.com/`
 
-**PREVIEWNET**\
-[https://previewnet.mirrornode.hedera.com](https://previewnet.mirrornode.hedera.com/api/v1/transactions)
+**PREVIEWNET BASEURL**\
+`https://previewnet.mirrornode.hedera.com/`
 
 You may also check out [DragonGlass](https://app.dragonglass.me/hedera/home), [Kabuto](https://kabuto.sh/), or [Ledger Works](https://lworks.io) as alternatives.‌
 {% endhint %}

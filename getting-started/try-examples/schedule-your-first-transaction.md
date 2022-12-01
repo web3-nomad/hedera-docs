@@ -6,7 +6,7 @@
 
 In this tutorial, you'll learn how to create and sign a scheduled transaction. Scheduled Transactions enable multiple parties to easily, inexpensively, and natively schedule and execute any type of Hedera transaction together. Once a transaction is scheduled, additional signatures can be submitted via a ScheduleSign transaction. After the last signature is received within the allotted timeframe, the scheduled transaction will execute
 
-We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.&#x20;
+We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
 {% content-ref url="../environment-set-up.md" %}
 [environment-set-up.md](../environment-set-up.md)
@@ -14,7 +14,7 @@ We recommend you complete the following introduction to get a basic understandin
 
 ## 1. Create a transaction to schedule
 
-First, you will need to build the transaction to schedule. In the example below, you will create a transfer transaction. The sender account has a [threshold key](../../docs/sdks/keys/create-a-threshold-key.md) structure that requires 2 out of the 3 keys to sign the transaction to authorize the transfer amount.&#x20;
+First, you will need to build the transaction to schedule. In the example below, you will create a transfer transaction. The sender account has a [threshold key](../../docs/sdks/keys/create-a-threshold-key.md) structure that requires 2 out of the 3 keys to sign the transaction to authorize the transfer amount.
 
 {% tabs %}
 {% tab title="Java" %}
@@ -48,13 +48,13 @@ transaction := hedera.NewTransferTransaction().
 
 ## 2. Schedule the transfer transaction
 
-Next, you will schedule the transfer transaction by submitting a ScheduleCreate transaction to the network. Once the transfer transaction is scheduled, you can obtain the schedule ID from the receipt of the ScheduleCreate transaction. The schedule ID identifies the schedule that scheduled the transfer transaction.The schedule ID can be shared with the three signatories. The schedule is immutable unless the admin key is specified during creation.&#x20;
+Next, you will schedule the transfer transaction by submitting a ScheduleCreate transaction to the network. Once the transfer transaction is scheduled, you can obtain the schedule ID from the receipt of the ScheduleCreate transaction. The schedule ID identifies the schedule that scheduled the transfer transaction.The schedule ID can be shared with the three signatories. The schedule is immutable unless the admin key is specified during creation.
 
 The scheduled transaction ID of the transfer transaction can also be returned from the receipt of the ScheduleCreate transaction. You will notice that the transaction ID for a scheduled transaction includes a `?scheduled` flag e.g. `0.0.9401@1620177544.531971543?scheduled.` All transactions that have been scheduled will include this flag.
 
 You can optionally add signatures you may have during the creation of the ScheduleCreate transaction by calling `.freezeWith(client)` and `.sign()` methods. This might make sense if you are one of the required signatures for the scheduled transaction.
 
-Visit the page below to view additional properties that can be set when building a ScheduleCreate transaction.&#x20;
+Visit the page below to view additional properties that can be set when building a ScheduleCreate transaction.
 
 {% content-ref url="../../docs/sdks/schedule-transaction/create-a-schedule-transaction.md" %}
 [create-a-schedule-transaction.md](../../docs/sdks/schedule-transaction/create-a-schedule-transaction.md)
@@ -236,7 +236,6 @@ TransactionResponse signature2 = new ScheduleSignTransaction()
 //Verify the transaction was successful
 TransactionReceipt receipt2 = signature2.getReceipt(client);
 System.out.println("The transaction status" +receipt2.status);
-
 ```
 {% endcode %}
 {% endtab %}
@@ -351,8 +350,7 @@ fmt.Printf("The scheduled transaction record is %v\n", scheduledTxRecord)
 ```
 {% endtab %}
 {% endtabs %}
-{% hint style="info" %}
-Have a question?
-[Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)&#x20;
-{% endhint %}
 
+{% hint style="info" %}
+Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
+{% endhint %}

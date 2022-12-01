@@ -9,6 +9,8 @@
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Hedera Mirror Node Repository](https://github.com/hashgraph/hedera-mirror-node)
   * You will be prompted to download the repo in the following steps
+* [PostgreSQL](https://www.postgresql.org/download/)
+  * Download PostgreSQL to be able to access the database.
 
 ## 1. Create an IAM user
 
@@ -136,6 +138,6 @@ psql "dbname=mirror_node host=localhost user=mirror_node password=mirror_node_pa
 \dt
 ```
 
-![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 You have successfully deployed a Hedera mirror node :partying\_face: !

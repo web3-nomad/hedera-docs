@@ -4,9 +4,9 @@
 
 ## Summary
 
-Fungible tokens share a single set of properties and have interchangeable value with one another. Use cases for fungible tokens include applications like stablecoins, in-game rewards systems, crypto tokens, loyalty program points, and much more.&#x20;
+Fungible tokens share a single set of properties and have interchangeable value with one another. Use cases for fungible tokens include applications like stablecoins, in-game rewards systems, crypto tokens, loyalty program points, and much more.
 
-We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.&#x20;
+We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
 {% content-ref url="../environment-set-up.md" %}
 [environment-set-up.md](../environment-set-up.md)
@@ -14,7 +14,7 @@ We recommend you complete the following introduction to get a basic understandin
 
 ## 1. Create a Fungible Token
 
-&#x20;Use _<mark style="color:purple;">**`TokenCreateTransaction()`**</mark>_ to create a fungible token and configure its properties. At a minimum, this constructor requires setting a name, symbol, and treasury account ID. All other fields are optional, so if they’re not specified then default values are used. For instance, not specifying an _admin key_, makes a token immutable (can’t change or add properties); not specifying a _supply key_, makes a token supply fixed (can’t mint new or burn existing tokens); not specifying a _token type_, makes a token fungible.
+Use _<mark style="color:purple;">**`TokenCreateTransaction()`**</mark>_ to create a fungible token and configure its properties. At a minimum, this constructor requires setting a name, symbol, and treasury account ID. All other fields are optional, so if they’re not specified then default values are used. For instance, not specifying an _admin key_, makes a token immutable (can’t change or add properties); not specifying a _supply key_, makes a token supply fixed (can’t mint new or burn existing tokens); not specifying a _token type_, makes a token fungible.
 
 After submitting the transaction to the Hedera network, you can obtain the new token ID by requesting the receipt.
 
@@ -137,7 +137,6 @@ TransactionReceipt associateAliceRx = associateAliceTxSubmit.getReceipt(client);
         
 //LOG THE TRANSACTION STATUS
 System.out.println("Token association with Alice's account: " +associateAliceRx.status);
-
 ```
 {% endtab %}
 
@@ -158,7 +157,6 @@ let associateAliceRx = await associateAliceTxSubmit.getReceipt(client);
 
 //LOG THE TRANSACTION STATUS
 console.log(`- Token association with Alice's account: ${associateAliceRx.status} \n`);
-
 ```
 {% endtab %}
 
@@ -289,12 +287,9 @@ fmt.Println("Treasury balance:", balanceCheckTreasury2.Tokens, "units of token",
 //CHECK THE BALANCE AFTER THE TRANSFER FOR ALICE'S ACCOUNT
 balanceCheckAlice2, err := hedera.NewAccountBalanceQuery().SetAccountID(aliceAccountId).Execute(client)
 gofmt.Println("Alice's balance:", balanceCheckAlice2.Tokens, "units of token", tokenId)
-
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ## Code Check ✅
 
@@ -424,8 +419,6 @@ public class CreateFungibleTutorial {
 {% endtab %}
 
 {% tab title="JavaScript" %}
-
-
 ```javascript
 console.clear();
 require("dotenv").config();
@@ -505,7 +498,6 @@ async function main() {
 	console.log(`- Alice's balance: ${balanceCheckTx.tokens._map.get(tokenId.toString())} units of token ID ${tokenId}`);
 }
 main();
-
 ```
 {% endtab %}
 
@@ -662,11 +654,10 @@ func main() {
 	fmt.Println("Alice's balance:", balanceCheckAlice2.Tokens, "units of token", tokenId)
 
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+
 {% hint style="info" %}
-Have a question?
-[Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)&#x20;
+Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
 {% endhint %}

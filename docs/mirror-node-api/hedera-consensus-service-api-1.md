@@ -9,14 +9,13 @@ description: >-
 
 {% hint style="info" %}
 **HCS Mirror Node Endpoints:**\
-****\
 **PREVIEWNET:** hcs.previewnet.mirrornode.hedera.com:5600\
-**TESTNET**: hcs.testnet.mirrornode.hedera.com:5600 \
-**MAINNET**: mainnet-public.mirrornode.hedera.com:443&#x20;
+**TESTNET**: hcs.testnet.mirrornode.hedera.com:5600\
+**MAINNET**: mainnet-public.mirrornode.hedera.com:443
 {% endhint %}
 
 {% hint style="warning" %}
-Requests for the public mainnet mirror node are throttled at 100 requests per second (rps). This may change in the future depending upon performance or security considerations. At this time,  no authentication is required.
+Requests for the public mainnet mirror node are throttled at 100 requests per second (rps). This may change in the future depending upon performance or security considerations. At this time, no authentication is required.
 {% endhint %}
 
 Community supported mirror node information can be found here:
@@ -32,8 +31,7 @@ Community supported mirror node information can be found here:
 If you building your client with a predefined Hedera network (previewnet, testnet, mainnet), you do not need to define the mirror client as it is built in. If you would like to modify the mirror client, you can use [`Client.<network>.setMirrorNetwork(<network>)`](https://docs.hedera.com/guides/docs/sdks/client#1-configure-your-hedera-network).\
 \
 **Public Mainnet Mirror Node**\
-****\
-****The default mainnet mirror node points to the whitelisted node when using `Client.forMainnet()`. To establish a connection to the public mainnet mirror node you will need to upgrade to one of the following versions of the SDK that now supports TLS connections.
+The default mainnet mirror node points to the whitelisted node when using `Client.forMainnet()`. To establish a connection to the public mainnet mirror node you will need to upgrade to one of the following versions of the SDK that now supports TLS connections.
 
 * **Java:** v2.0.6+
 * **JavaScript:** v2.0.23+
@@ -64,8 +62,6 @@ client.SetMirrorNetwork([]string{"mainnet-public.mirrornode.hedera.com:443"})
 {% endtab %}
 
 {% tab title="V1" %}
-
-
 | Constructor                    | Description                         |
 | ------------------------------ | ----------------------------------- |
 | `new MirrorClient(<endpoint>)` | Initializes the MirrorClient object |
@@ -86,7 +82,7 @@ const mirrorClient = new MirrorClient(mirrorNodeAddress);
 
 {% hint style="warning" %}
 **Concurrent Subscription Limit**\
-****A single client can make a maximum of **5** concurrent subscription calls per connection.&#x20;
+A single client can make a maximum of **5** concurrent subscription calls per connection.
 {% endhint %}
 
 ### Subscribe to a topic
@@ -96,6 +92,3 @@ Please click the link below to see how you can subscribe to a topic.
 {% content-ref url="../sdks/consensus/get-topic-message.md" %}
 [get-topic-message.md](../sdks/consensus/get-topic-message.md)
 {% endcontent-ref %}
-
-
-

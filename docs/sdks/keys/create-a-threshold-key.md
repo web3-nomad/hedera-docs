@@ -58,7 +58,6 @@ keys=[
 const privateKeyList = [];
 const publicKeyList = [];
 for (let i = 0; i < 4; i += 1) {
-     // eslint-disable-next-line no-await-in-loop
      const privateKey = PrivateKey.generate();
      const publicKey = privateKey.publicKey;
      privateKeyList.push(privateKey);

@@ -12,7 +12,7 @@ Gas fees include the intrinsic gas cost and the cost of the EVM operation from t
 
 The Hedera Service transaction gas fee is calculated using the [USD](../../mainnet/fees/#transaction-and-query-fees) price of the native Hedera Service transaction multiplied by the gas/USD conversion rate with an additional 20% charge. For example, a native token burn transaction costs $0.001 USD. To convert that to gas you would use the gas/USD conversion rate 1 gas = $0.000\_000\_0569 USD. Then you would add an additional 20% of gas to get the total gas cost.
 
-To calculate the price of gas in USD you can take the gas amount and multiply it by the USD/gas conversion rate of $0.000\_000\_0569 USD/1 gas. For example, the price of 2 million gas in USD is $0.1138 (2,000,000 gas\*($0.000\_000\_0569 USD/1 gas). \
+To calculate the price of gas in USD you can take the gas amount and multiply it by the USD/gas conversion rate of $0.000\_000\_0569 USD/1 gas. For example, the price of 2 million gas in USD is $0.1138 (2,000,000 gas\*($0.000\_000\_0569 USD/1 gas).\
 \
 Contract call transaction USD/gas conversion rate is $0.000\_000\_0852. The HAPI fee is wrapped into the per gas unit cost for this transaction and is not additionally charged.
 
@@ -58,13 +58,16 @@ Reference [HIP-185](https://hips.hedera.com/hip/hip-185)
 
 ### Smart Contract Rent and Auto Renewal
 
+{% hint style="warning" %}
+Smart contract auto renewal payments, expiry, and storage rent will be disabled. These features will be enabled on mainnet February 9, 2022.
+{% endhint %}
+
 {% hint style="info" %}
-Smart contract entity auto renewal and expiry was introduced in the `0.30.4` Hedera Services release. All contract authors to are encouraged to set an auto-renew account for their contract. \
+Smart contract entity auto renewal and expiry was introduced in the `0.30.4` Hedera Services release. All contract authors to are encouraged to set an auto-renew account for their contract.\
 \
 All non-deleted contracts will have their expiry extended to at least 90 days after the `0.30.4` upgrade date\
 \
-About 90 days after the `0.30.4` upgrade, some contracts will begin to expire. The network will try to automatically charge the renewal fee to the expired contract's auto-renew account. If an auto-renew account has zero balance, the network will then try to charge the contract itself.\
-
+About 90 days after the `0.30.4` upgrade, some contracts will begin to expire. The network will try to automatically charge the renewal fee to the expired contract's auto-renew account. If an auto-renew account has zero balance, the network will then try to charge the contract itself.\\
 
 A contract unable to pay renewal fees will enter a week-long "grace period" during which it is unusable, unless its expiry is extended via `ContractUpdate` or it receives hbar. After this grace period, the contract will be purged from state.
 {% endhint %}
@@ -77,7 +80,7 @@ Once storage rent payments are enabled on Hedera:
 * Once a contract exceeds the first 100 free key-value pairs, it must pay rent. Note that valid renewal windows are between \~30 and \~92 days (see [HIP-372](https://hips.hedera.com/hip/hip-372))
 
 {% hint style="info" %}
-Storage rent will be part of the auto renew fee collected when a contract expired and is auto-renewed.&#x20;
+Storage rent will be part of the auto renew fee collected when a contract expired and is auto-renewed.
 {% endhint %}
 
 If a high enough utilization threshold is reached, **congestion pricing applies**

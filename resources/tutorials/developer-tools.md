@@ -1,5 +1,9 @@
 # Developer Tools
 
+{% embed url="https://hedera.com/blog/how-to-generate-a-random-number-on-hedera" %}
+How to Generate a Random Number on Hedera
+{% endembed %}
+
 {% embed url="https://hedera.com/blog/leveraging-ethereum-developer-tools-on-hedera" %}
 Leveraging Ethereum Developer Tools On Hedera
 {% endembed %}

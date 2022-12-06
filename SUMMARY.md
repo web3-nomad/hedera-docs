@@ -435,6 +435,7 @@
 
 ## Support & Community
 
+* [Contributing Guide](support-and-community/contributing-guide.md)
 * [Developer Chat](http://hedera.com/discord)
 * [Meetups](support-and-community/meetups.md)
 * [Hedera FAQ](https://help.hedera.com/hc/en-us)

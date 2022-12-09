@@ -12,13 +12,13 @@ The staking feature will be rolled out in four phases; the first two phases are 
 
 The staking functionality is now available and live on both the Hedera testnet and mainnet, as of July 21, 2022. In phase I, users will technically be able to stake their account to mainnet nodes but this will not contribute to a node’s consensus weight (voting power). This initial technical availability release does not reward participants for staking, but enables a level playing field whereby all market participants have the possibility to join the staking program, and avoids giving an unfair advantage to the first few who stake.
 
-**Phase II: Ecosystem Development  \[Complete]**
+**Phase II: Ecosystem Development \[Complete]**
 
 During this phase, supported exchanges and wallets will be able to integrate the staking functionality to provide account holders an easy way to stake their hbars, but will not distribute rewards. In addition, web applications for delegating stake will likely be built for utilization by the retail ecosystem. During this phase, there will be visibility of stake per node, and staking to a node will affect its consensus weight (voting power) with monthly updates.
 
 #### **Phase III: Staking Rewards Program Launch \[Complete]**
 
-The Hedera Governing Council will determine when the Hedera ecosystem has reached a minimum viable set of integrations to enable staking rewards. Once this is determined, the council (through CoinCom) will vote to update the reward rate, and subsequently, the mainnet will be updated with the agreed-upon reward rate. The staking reward rate voted on by CoinComm is 1 billion hbars/year. \
+The Hedera Governing Council will determine when the Hedera ecosystem has reached a minimum viable set of integrations to enable staking rewards. Once this is determined, the council (through CoinCom) will vote to update the reward rate, and subsequently, the mainnet will be updated with the agreed-upon reward rate. The staking reward rate voted on by CoinComm is 1 billion hbars/year.\
 \
 Once updated, the staking reward account (0.0.800) will be eligible to distribute rewards earned by stakers, once the rewards threshold of 250M total hbars has been met. Rewards will continue to be distributed even if, after this time, the balance of account 0.0.800 goes below 250M.
 
@@ -52,7 +52,7 @@ The staking reward account is the account that will distribute rewards to the el
 
 The staking reward account needs to meet a minimum balance before rewards can begin to distribute rewards earned to the eligible staked accounts. The minimum hbar balance threshold for the reward account is 250 million hbars voted on by the Hedera Governing Council. If this balance is not met staking rewards will not be distributed. You can view the balance of this account by visiting any of the Hedera network explorers.
 
-Once the minimum threshold is met, rewards will continue to be distributed to staked accounts as long as there is a balance in the rewards account even if it falls below the initial minimum threshold. The reward rate will initially be set to zero. The Hedera Governing Council will vote and update the reward rate when the Hedera Staking Reward Program goes live.&#x20;
+Once the minimum threshold is met, rewards will continue to be distributed to staked accounts as long as there is a balance in the rewards account even if it falls below the initial minimum threshold. The reward rate will initially be set to zero. The Hedera Governing Council will vote and update the reward rate when the Hedera Staking Reward Program goes live.
 
 ### **Staking Rewards**
 
@@ -99,9 +99,13 @@ Supported Wallets:
 * [HashPack](https://www.hashpack.app/post/staking-with-hashpack)
 * [Blade](https://www.bladewallet.io/)
 * [MyHbarWallet](https://myhbarwallet.com/)
-* [Wallawallet ](https://wallawallet.com/2022/07/21/how-to-stake-hbar/)
+* [Wallawallet](https://wallawallet.com/2022/07/21/how-to-stake-hbar/)
 * [Yamgo](https://yamgo.com/)
 
 Exchanges:
 
 * [OKX](https://www.okx.com/support/hc/en-us/articles/9824479181709-Win-up-to-72-APY-with-Hedera-HBAR-Staking)
+
+Custodians:
+
+* [Hex Trust](https://hextrust.com/)

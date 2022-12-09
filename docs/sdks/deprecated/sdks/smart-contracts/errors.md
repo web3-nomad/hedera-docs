@@ -20,6 +20,7 @@ Network response messages and their descriptions.
 | `INVALID_CONTRACT_ID`               | The contract id is invalid or does not exist                                                                                             |
 | `INVALID_PAYER_ACCOUNT_ID`          | The response code when a smart contract id is passed for a crypto API request                                                            |
 | `INVALID_SOLIDITY_ID`               | The solidity id is invalid or an entity with this solidity id does not exist                                                             |
+| `INVALID_FULL_PREFIX_SIGNATURE_FOR_PRECOMPILE`        | Transaction was signed with the wrong key                                                                        |
 | `OBTAINER_DOES_NOT_EXIST`           | TransferAccountId or transferContractId specified for contract delete does not exist                                                     |
 | `OBTAINER_REQUIRED`                 | When deleting smart contract that has crypto balance either transfer account or transfer smart contract is required                      |
 | `OBTAINER_SAME_CONTRACT_ID`         | When deleting smart contract that has crypto balance you can not use the same contract id as transferContractId as the one being deleted |

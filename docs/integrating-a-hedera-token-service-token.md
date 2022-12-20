@@ -1,16 +1,16 @@
-# Integrating a Hedera Token Service Token
+# Integrating a Hedera Token Service Token (HTS)
 
 ## Prerequisites
 
 **Hedera Mainnet Account**
 
-Hedera accounts are stored on the public ledger and hold hbars which are used to pay for the transaction and query fees. Hedera accounts are referenced by an account ID in following format x.y.z (0.0.10). You can create a Hedera mainnet account by visiting the [Hedera portal](https://portal.hedera.com/?network=testnet) website and creating a profile. Every account has an Ed25519 private key that is used to sign and authorize transactions.
+Hedera accounts are stored on the public ledger and hold HBARs which are used to pay for the transaction and query fees. Hedera accounts are referenced by an account ID in the following format x.y.z (0.0.10). You can create a Hedera Mainnet account by visiting the [Hedera portal](https://portal.hedera.com/?network=testnet) website and creating a profile. Every account has an _ED25519_ private key that is used to sign and authorize transactions.
 
-Users will require the creation of a Hedera accounts to interact receive tokens created by the Hedera Token Service. When a user purchases a token that was created using the Hedera Token Service, the Hedera account will need to be associated with the token first before the tokens can be transferred into the users Hedera account.
+Users will require the creation of Hedera accounts to interact and receive tokens created by the token service. When a user purchases a token that was created using the HTS, the Hedera account will need to be associated with the token first before the tokens can be transferred into the user's Hedera account.
 
-**Hbars**
+**HBARs**
 
-You can get hbars that are used to pay for creating accounts and transferring tokens by visiting an exchange.
+You can get HBARs that are used to pay for creating accounts and transferring tokens by visiting an exchange.
 
 **Hedera Mirror Node**
 
@@ -43,9 +43,9 @@ Documentation can be found below.
 [sdks](sdks/)
 {% endcontent-ref %}
 
-## **Hedera Token Service**
+## **Hedera Token Service (HTS)**
 
-The Hedera Token Service is a service that allows users to create new tokens on the Hedera network. A Hedera token can have the following properties:
+The HTS that allows users to create new tokens on the Hedera network. A Hedera token can have the following properties:
 
 **Token ID**
 
@@ -91,7 +91,7 @@ The key which can wipe the token balance of an account.
 
 Before Hedera accounts can accept a token transfer, a token associate transaction needs to be submitted in order to associate the token to a Hedera account (TokenAssociateTransaction). If you do not associate the token to a Hedera account, a token transfer transaction will not be successful. You will receive a “TOKEN\_NOT\_ASSOCIATED\_TO\_ACCOUNT” error from the networkYou have to issue this transaction for every unique token that you would like to transfer to a Hedera account.
 
-To transfer tokens from one account to another, you will use the CryptoTransfer HAPI API ([TransferTransaction](sdks/cryptocurrency/transfer-cryptocurrency.md) via SDK). This API transfers both hbars and tokens created by users on the network.
+To transfer tokens from one account to another, you will use the CryptoTransfer HAPI API ([TransferTransaction](sdks/cryptocurrency/transfer-cryptocurrency.md) via SDK). This API transfers both HBARs and tokens created by users on the network.
 
 **Token Transfer List**
 
@@ -109,7 +109,7 @@ Total supply – amount of token in the treasury account of the token = circulat
 
 **Frozen Hedera Accounts**
 
-A user’s account can be frozen from transferring token. Token transfers to a Hedera account that has been frozen will not execute and the network will return an “ACCOUNT\_FROZEN\_FOR\_TOKEN.” You can view which Hedera accounts are frozen for a given token by querying a mirror node.
+A user’s account can be frozen from transferring tokens. Token transfers to a Hedera account that has been frozen will not execute and the network will return an “ACCOUNT\_FROZEN\_FOR\_TOKEN.” You can view which Hedera accounts are frozen for a given token by querying a mirror node.
 
 **Wipe Tokens**
 
@@ -121,7 +121,7 @@ Hedera accounts can be optionally flagged for meeting KYC requirements or not. T
 
 ## Hedera Mirror Node
 
-The Hedera Mirror Node has the following REST APIs you can use to query token information from:
+The Hedera Mirror Node has the following REST APIs you can use to query token information:
 
 * The accounts API returns the tokens that are associated with an account
 * The transactions API returns the token transfers in a given transaction

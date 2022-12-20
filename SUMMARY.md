@@ -412,7 +412,7 @@
   * [Signer](docs/signature-provider/signer.md)
   * [Wallet](docs/signature-provider/wallet.md)
   * [Local Provider](docs/signature-provider/local-provider.md)
-* [Integrating a Hedera Token Service Token](docs/integrating-a-hedera-token-service-token.md)
+* [Integrating a Hedera Token Service Token (HTS)](docs/integrating-a-hedera-token-service-token.md)
 * [Record and Event Stream File Formats](docs/record-and-event-stream-file-formats.md)
 * [Changelog](docs/changelog.md)
 * [GitHub](https://github.com/hashgraph)

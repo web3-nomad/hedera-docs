@@ -6,7 +6,7 @@ In this section, you will create your new project directory, your _`.env`_ file 
 
 ## Pre-requisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><strong></strong><a href="introduction.md"><strong>Introduction</strong></a><strong></strong></td><td></td><td></td><td><a href="introduction.md">introduction.md</a></td><td><a href="../.gitbook/assets/black hedera.jpeg">black hedera.jpeg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="introduction.md"><mark style="color:purple;"><strong>Introduction</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td></td><td></td><td><a href="introduction.md">introduction.md</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 _**Note:** You can always check the "_[_Code Check ✅_](environment-set-up.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
@@ -137,7 +137,7 @@ touch index.js
 
 Your project structure should look something like this:
 
-![](<../.gitbook/assets/image105 (1).png>)
+![](<../.gitbook/assets/image105 (1) (1) (1).png>)
 
 Grab your Hedera Testnet _**account ID**_ and _**private key**_ from the _`.env`_ file.
 

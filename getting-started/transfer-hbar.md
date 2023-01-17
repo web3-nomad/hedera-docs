@@ -341,7 +341,7 @@ async function main() {
         .setAccountId(newAccountId)
         .execute(client);
 
-    console.log("The new account balance is: " +accountBalance.hbars.toTinybars() +" tinybar.");
+    console.log("The new account balance is: " +accountBalance.hbars.toTinybars() +" tinybars.");
 
     //Create the transfer transaction
     const sendHbar = await new TransferTransaction()
@@ -365,7 +365,7 @@ async function main() {
         .setAccountId(newAccountId)
         .execute(client);
 
-    console.log("The account balance after the transfer is: " +getNewBalance.hbars.toTinybars() +" tinybar.")
+    console.log("The account balance after the transfer is: " +getNewBalance.hbars.toTinybars() +" tinybars.")
 
 }
 main();

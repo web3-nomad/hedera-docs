@@ -1,16 +1,16 @@
 # Submit Your First Message
 
-![](<../../.gitbook/assets/Screen Shot 2021-12-01 at 2.26.12 PM (1).png>)
+![](<../../.gitbook/assets/Screen Shot 2021-12-01 at 2.26.12 PM.png>)
 
 ## Summary
 
-With the Hedera Consensus Service, you can develop applications like stock markets, audit logs, stable coins, or new network services that require high throughput and decentralized trust. This is made possible by having direct access to the native speed, security, and fair ordering guarantees of the hashgraph consensus algorithm, with the full trust of the Hedera ledger.
+With the Hedera Consensus Service, you can develop applications like stock markets, audit logs, stablecoins, or new network services that require high throughput and decentralized trust. This is made possible by having direct access to the stablecoinsnative speed, security, and fair ordering guarantees of the hashgraph consensus algorithm, with the full trust of the Hedera ledger.
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-{% content-ref url="../environment-set-up.md" %}
-[environment-set-up.md](../environment-set-up.md)
-{% endcontent-ref %}
+## Pre-requisites:
+
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="../introduction.md"><mark style="color:purple;"><strong>Introduction --></strong></mark></a><strong></strong></td><td></td><td></td><td><a href="../introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="../environment-set-up.md"><mark style="color:purple;"><strong>Environment Setup --></strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td></td><td></td><td><a href="../environment-set-up.md">environment-set-up.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="../create-an-account.md"><mark style="color:purple;"><strong>Create Account --></strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td></td><td></td><td><a href="../create-an-account.md">create-an-account.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="../transfer-hbar.md"><mark style="color:purple;"><strong>Transfer HBAR --></strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td></td><td></td><td><a href="../transfer-hbar.md">transfer-hbar.md</a></td></tr></tbody></table>
 
 ## 1. Create your first topic
 
@@ -46,16 +46,12 @@ Thread.sleep(5000);
 //Create a new topic
 let txResponse = await new TopicCreateTransaction().execute(client);
 
-//Get the receipt of the transaction
+//Grab the newly generated topic ID
 let receipt = await txResponse.getReceipt(client);
-
-//Grab the new topic ID from the receipt
 let topicId = receipt.topicId;
-
-//Log the topic ID
 console.log(`Your topic ID is: ${topicId}`);
 
-// Wait 5 seconds between consensus topic creation and subscription 
+// Wait 5 seconds between consensus topic creation and subscription creation
 await new Promise((resolve) => setTimeout(resolve, 5000));
 ```
 {% endtab %}
@@ -92,7 +88,7 @@ fmt.Printf("topicID: %v\n", topicID)
 
 After you create the topic, you will want to subscribe to the topic via a Hedera mirror node. Subscribing to a topic via a Hedera mirror node allows you to receive the stream of messages that are being submitted to it.
 
-The Hedera testnet client already establishes a connection to a Hedera mirror node. You can set a custom mirror node by calling _<mark style="color:purple;">**`client.SetMirrorNetwork()`**</mark>_. Please note that you can currently subscribe to Hedera Consensus Service (HCS) topics via [gRPC API](https://docs.hedera.com/guides/docs/mirror-node-api/hedera-consensus-service-api-1) only, so remember to set the mirror node's host and port accordingly.
+The _**Hedera Testnet**_ client already establishes a connection to a Hedera mirror node. You can set a custom mirror node by calling _<mark style="color:purple;">**`client.SetMirrorNetwork()`**</mark>_. Please note that you can currently subscribe to Hedera Consensus Service (HCS) topics via [gRPC API](https://docs.hedera.com/guides/docs/mirror-node-api/hedera-consensus-service-api-1) only, so remember to set the mirror node's host and port accordingly.
 
 To subscribe to a topic, you will use _<mark style="color:purple;">**`TopicMessageQuery()`**</mark>_. You will provide it the topic ID to subscribe to, the Hedera mirror node client information, and the topic message contents to return.
 
@@ -110,15 +106,16 @@ new TopicMessageQuery()
 {% endtab %}
 
 {% tab title="JavaScript" %}
-```javascript
-//Create the query to subscribe to a topic
-new TopicMessageQuery()
-    .setTopicId(topicId)
-    .subscribe(client, null, (message) => {
-        let messageAsString = Buffer.from(message.contents, "utf8").toString();
-        console.log(`${message.consensusTimestamp.toDate()} Received: ${messageAsString}`);
-    });
-```
+<pre class="language-javascript"><code class="lang-javascript"><strong>// Create the query
+</strong><strong>new TopicMessageQuery()
+</strong>  .setTopicId(topicId)
+  .subscribe(client, null, (message) => {
+    let messageAsString = Buffer.from(message.contents, "utf8").toString();
+    console.log(
+      `${message.consensusTimestamp.toDate()} Received: ${messageAsString}`
+    );
+  });
+</code></pre>
 {% endtab %}
 
 {% tab title="Go" %}
@@ -265,52 +262,56 @@ public class CreateTopicTutorial {
 console.clear();
 require("dotenv").config();
 const {
-    AccountId,
-    PrivateKey,
-    Client,
-    TopicCreateTransaction,
-    TopicMessageQuery,
-    TopicMessageSubmitTransaction,
+  AccountId,
+  PrivateKey,
+  Client,
+  TopicCreateTransaction,
+  TopicMessageQuery,
+  TopicMessageSubmitTransaction,
 } = require("@hashgraph/sdk");
 
 // Grab the OPERATOR_ID and OPERATOR_KEY from the .env file
-const operatorId = AccountId.fromString(process.env.OPERATOR_ID);
-const operatorKey = PrivateKey.fromString(process.env.OPERATOR_KEY);
+const myAccountId = process.env.MY_ACCOUNT_ID;
+const myPrivateKey = process.env.MY_PRIVATE_KEY;
 
 // Build Hedera testnet and mirror node client
 const client = Client.forTestnet();
 
 // Set the operator account ID and operator private key
-client.setOperator(operatorId, operatorKey);
+client.setOperator(myAccountId, myPrivateKey);
 
 async function main() {
-    //Create a new topic
-    let txResponse = await new TopicCreateTransaction().execute(client);
-    
-    //Grab the newly generated topic ID
-    let receipt = await txResponse.getReceipt(client);
-    let topicId = receipt.topicId;
-    console.log(`Your topic ID is: ${topicId}`);
-    
-    // Wait 5 seconds between consensus topic creation and subscription creation
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-    
-    //Create the query
-    new TopicMessageQuery().setTopicId(topicId).subscribe(client, null, (message) => {
-        let messageAsString = Buffer.from(message.contents, "utf8").toString();
-        console.log(`${message.consensusTimestamp.toDate()} Received: ${messageAsString}`);
+  //Create a new topic
+  let txResponse = await new TopicCreateTransaction().execute(client);
+
+  //Grab the newly generated topic ID
+  let receipt = await txResponse.getReceipt(client);
+  let topicId = receipt.topicId;
+  console.log(`Your topic ID is: ${topicId}`);
+
+  // Wait 5 seconds between consensus topic creation and subscription creation
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
+  //Create the query
+  new TopicMessageQuery()
+    .setTopicId(topicId)
+    .subscribe(client, null, (message) => {
+      let messageAsString = Buffer.from(message.contents, "utf8").toString();
+      console.log(
+        `${message.consensusTimestamp.toDate()} Received: ${messageAsString}`
+      );
     });
-    
-    // Send one message
-    let sendResponse = await new TopicMessageSubmitTransaction({
-        topicId: topicId,
-        message: "Hello, HCS!",
-    }).execute(client);
-    const getReceipt = await sendResponse.getReceipt(client);
-    
-    //Get the status of the transaction
-    const transactionStatus = getReceipt.status
-    console.log("The message transaction status: " + transactionStatus)
+
+  // Send one message
+  let sendResponse = await new TopicMessageSubmitTransaction({
+    topicId: topicId,
+    message: "Hello, HCS!",
+  }).execute(client);
+  const getReceipt = await sendResponse.getReceipt(client);
+
+  //Get the status of the transaction
+  const transactionStatus = getReceipt.status;
+  console.log("The message transaction status: " + transactionStatus);
 }
 main();
 ```
@@ -410,3 +411,4 @@ func main() {
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
 {% endhint %}
+

@@ -48,7 +48,7 @@ transaction := hedera.NewTransferTransaction().
 
 ## 2. Schedule the transfer transaction
 
-Next, you will schedule the transfer transaction by submitting a ScheduleCreate transaction to the network. Once the transfer transaction is scheduled, you can obtain the schedule ID from the receipt of the ScheduleCreate transaction. The schedule ID identifies the schedule that scheduled the transfer transaction.The schedule ID can be shared with the three signatories. The schedule is immutable unless the admin key is specified during creation.
+Next, you will schedule the transfer transaction by submitting a ScheduleCreate transaction to the network. Once the transfer transaction is scheduled, you can obtain the schedule ID from the receipt of the ScheduleCreate transaction. The schedule ID identifies the schedule that scheduled the transfer transaction. The schedule ID can be shared with the three signatories. The schedule is immutable unless the admin key is specified during creation.
 
 The scheduled transaction ID of the transfer transaction can also be returned from the receipt of the ScheduleCreate transaction. You will notice that the transaction ID for a scheduled transaction includes a `?scheduled` flag e.g. `0.0.9401@1620177544.531971543?scheduled.` All transactions that have been scheduled will include this flag.
 
@@ -82,10 +82,9 @@ System.out.println("The scheduled transaction ID is " +scheduledTxId);
 {% endtab %}
 
 {% tab title="JavaScript" %}
-```javascript
-//Schedule a transaction
-const scheduleTransaction = await new ScheduleCreateTransaction()
-     .setScheduledTransaction(transaction)
+<pre class="language-javascript"><code class="lang-javascript">//Schedule a transaction
+<strong>const scheduleTransaction = await new ScheduleCreateTransaction()
+</strong>     .setScheduledTransaction(transaction)
      .execute(client);
 
 //Get the receipt of the transaction
@@ -98,7 +97,7 @@ console.log("The schedule ID is " +scheduleId);
 //Get the scheduled transaction ID
 const scheduledTxId = receipt.scheduledTransactionId;
 console.log("The scheduled transaction ID is " +scheduledTxId);
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Go" %}

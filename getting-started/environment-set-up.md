@@ -315,7 +315,7 @@ client.SetOperator(myAccountId, myPrivateKey)
 {% hint style="success" %}
 _**Your project environment is now set up to successfully submit transactions and queries to the Hedera test network!**_
 
-Next, you will learn how to create an account. Click the link at the bottom to get started!
+Next, you will learn how to create an account.
 {% endhint %}
 
 ## Code Check **✅**

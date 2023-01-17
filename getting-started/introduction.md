@@ -15,5 +15,3 @@ Once you have completed the instructions, you will receive a _Hedera Testnet_ _*
 {% hint style="info" %}
 _**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR** upon creation that can only be utilized on the Hedera test network. Your balance will be topped up daily to 10,000 test **HBAR** when you use your funds._
 {% endhint %}
-
-Next, you will set up your coding environment.

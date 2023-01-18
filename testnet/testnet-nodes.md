@@ -48,7 +48,7 @@ Preview testnet nodes belong to the preview test network. The preview testnet no
 | 5       | **0.0.8**       | <p>5.previewnet.hedera.com</p><p>34.106.247.65</p><p>35.83.89.171</p><p>13.78.232.192</p>   | 50211 |
 | 6       | **0.0.9**       | <p>6.previewnet.hedera.com</p><p>34.125.23.49</p><p>50.18.17.93</p><p>20.150.136.89</p>     | 50211 |
 
-You will need to create complete your Hedera portal profile to receive a previewnet account ID.
+You will need to create and complete your Hedera portal profile to receive a previewnet account ID.
 
 {% content-ref url="testnet-access.md" %}
 [testnet-access.md](testnet-access.md)
@@ -70,7 +70,7 @@ Below you will find the previewnet node public keys. The public keys stored in t
 
 ## Test Network Mirror Nodes
 
-For test network mirror node information please visit the Hedera Mirror Node section below 👇 .
+For test network mirror node information, please visit the Hedera Mirror Node section below 👇 .
 
 {% content-ref url="../mirrornet/hedera-mirror-node.md" %}
 [hedera-mirror-node.md](../mirrornet/hedera-mirror-node.md)

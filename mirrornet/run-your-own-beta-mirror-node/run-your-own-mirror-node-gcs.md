@@ -1,6 +1,6 @@
 # Run your mirror node using GCS
 
-## Requirements
+## Prerequisites:
 
 * [Google Cloud Platform Account](https://cloud.google.com/)
   * Create a [project](https://cloud.google.com/resource-manager/docs/creating-managing-projects) and link your [billing account](https://cloud.google.com/billing/docs/how-to/manage-billing-account)
@@ -23,7 +23,7 @@
 
 You will need to grab the **secret key, access key**, and **project ID** from your Google Cloud Platform account
 
-* From the left navigation bar select **STORAGE > SETTINGS**
+* From the left navigation bar, select **STORAGE > SETTINGS**
 * Click on the **Interoperability** tab and scroll down to the **User account HMAC** section
 * Set your default project
 * Click **create keys** to generate access keys for your account
@@ -117,4 +117,6 @@ psql "dbname=mirror_node host=localhost user=mirror_node password=mirror_node_pa
 
 ![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
+{% hint style="success" %}
 You have successfully deployed a Hedera mirror node ​ 🥳 !
+{% endhint %}

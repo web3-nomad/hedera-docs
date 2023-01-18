@@ -42,7 +42,7 @@ Returns of the balance of the token in the specified account. The <mark style="c
 
 Transfer tokens from your account to a recipient account. The <mark style="color:purple;">`recipient`</mark> is the Hedera account ID <mark style="color:purple;">`0.0.x`</mark> in Solidity format or the evm address of a contract that has been created via `CREATE2` operation.
 
-**allowance**&#x20;
+**allowance**
 
 <mark style="color:purple;">`function allowance(address owner, address spender) external view returns (uint256)`</mark>
 
@@ -60,7 +60,7 @@ Fires an approval event with the following signature when executed:\
 event Approval(address indexed owner, address indexed spender, uint256 value);
 
 \
-**transferFrom**&#x20;
+**transferFrom**
 
 <mark style="color:purple;">`function transferFrom(address sender, address recipient, uint256 amount) external returns (bool)`</mark>
 
@@ -102,7 +102,7 @@ Fires an approval event with the following signature when executed:
 
 event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
 
-**setApprovalForAll**&#x20;
+**setApprovalForAll**
 
 <mark style="color:purple;">`function setApprovalForAll(address _operator, bool _approved) external`</mark>
 
@@ -110,7 +110,7 @@ Approve or remove an `operator` as an operator for the caller. Operators can cal
 
 This works by creating a synthetic `CryptoApproveAllowanceTransaction` with payer - the account that called the precompile (the message sender property of the message frame in the EVM).
 
-**getApproved**&#x20;
+**getApproved**
 
 <mark style="color:purple;">`function getApproved(uint256 _tokenId) external view returns (address)`</mark>
 
@@ -118,7 +118,7 @@ Returns the account approved for the specified `_tokenId`. The `_tokenId` is the
 
 This works by loading the `SPENDER` property of the token from the NFTs ledger.
 
-**isApprovedForAll**&#x20;
+**isApprovedForAll**
 
 <mark style="color:purple;">`function isApprovedForAll(address _owner, address _operator) external view returns (bool)`</mark>
 
@@ -126,7 +126,7 @@ Returns if the `operator` is allowed to manage all of the assets of `owner`.
 
 This works by loading the `APPROVE_FOR_ALL_NFTS_ALLOWANCES` property of the owner account and verifying if the list of approved for all accounts contains the account id of the `operator`.
 
-**transferFrom**&#x20;
+**transferFrom**
 
 <mark style="color:purple;">`function transferFrom(address _from, address _to, uint256 _tokenId) external payable`</mark>
 
@@ -181,12 +181,10 @@ The following ERC-721 operations are currently not supported.
 
 ## Examples
 
-* [ERC20Contract.sol](https://github.com/hashgraph/hedera-services/blob/master/test-clients/src/main/resource/contract/contracts/ERC20Contract/ERC20Contract.sol)
-* [ERC721Contract.sol](https://github.com/hashgraph/hedera-services/blob/master/test-clients/src/main/resource/contract/contracts/ERC721Contract/ERC721Contract.sol)
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="https://github.com/hashgraph/hedera-services/blob/develop/test-clients/src/main/resource/contract/contracts/ERC20Contract/ERC20Contract.sol">ERC20Contract.sol</a></td><td></td><td></td><td><a href="https://github.com/hashgraph/hedera-services/blob/develop/test-clients/src/main/resource/contract/contracts/ERC20Contract/ERC20Contract.sol">https://github.com/hashgraph/hedera-services/blob/develop/test-clients/src/main/resource/contract/contracts/ERC20Contract/ERC20Contract.sol</a></td></tr><tr><td align="center"><a href="https://github.com/hashgraph/hedera-services/blob/master/test-clients/src/main/resource/contract/contracts/ERC721Contract/ERC721Contract.sol">ERC721Contract.sol</a></td><td></td><td></td><td></td></tr></tbody></table>
 
 ## References
 
-* [HIP-218](https://hips.hedera.com/hip/hip-218)
-* [HIP-376](https://hips.hedera.com/hip/hip-376)
-* [EIP-20](https://eips.ethereum.org/EIPS/eip-20)
-* [EIP-721](https://eips.ethereum.org/EIPS/eip-721)
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td align="center"><a href="https://hips.hedera.com/hip/hip-218">HIP-218</a></td><td></td><td></td></tr><tr><td align="center"><a href="https://hips.hedera.com/hip/hip-376">HIP-376</a></td><td></td><td></td></tr><tr><td align="center"><a href="https://eips.ethereum.org/EIPS/eip-20">EIP-20</a></td><td></td><td></td></tr><tr><td align="center"><a href="https://eips.ethereum.org/EIPS/eip-721">EIP-721</a></td><td></td><td></td></tr></tbody></table>
+
+*

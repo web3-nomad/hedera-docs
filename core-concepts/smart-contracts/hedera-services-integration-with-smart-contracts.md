@@ -10,8 +10,6 @@ Stay tuned for future releases that will expand support for the remaining HTS tr
 [hedera-service-solidity-libraries.md](../../docs/sdks/smart-contracts/hedera-service-solidity-libraries.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../getting-started/try-examples/deploy-a-contract-using-the-hedera-token-service.md" %}
-[deploy-a-contract-using-the-hedera-token-service.md](../../getting-started/try-examples/deploy-a-contract-using-the-hedera-token-service.md)
-{% endcontent-ref %}
+### Reference
 
-Reference [HIP-206](https://hips.hedera.com/hip/hip-206)
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td align="center"><a href="https://hips.hedera.com/hip/hip-206">HIP-206</a></td><td></td><td></td></tr></tbody></table>

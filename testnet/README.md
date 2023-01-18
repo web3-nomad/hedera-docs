@@ -6,7 +6,7 @@ description: Join a Hedera Testnet
 
 ## Overview
 
-Hedera testnets provide developers with access to a free testing environment for Hedera network services. Testnets simulate the exact same development environment as you would expect for mainnet. This includes transaction fees, throttles, available services, etc. To create a Hedera testnet or previewnet account, you can visit the [Hedera Developer Portal](https://portal.hedera.com/login).
+Hedera Testnets provide developers access to a free testing environment for Hedera network services. Testnets simulate the exact same development environment as you would expect for mainnet. This includes transaction fees, throttles, available services, etc. To create a Hedera testnet or previewnet account, you can visit the [Hedera Developer Portal](https://portal.hedera.com/login).
 
 Once your application has been built and tested in this test environment you can expect to migrate your decentralized application to mainnet without any changes.
 
@@ -31,7 +31,7 @@ The mirror node and consensus node test network are scheduled to reset once a qu
 
 Developers will no longer have access to the state data from test network consensus nodes. For example, you will not be able to perform transactions or queries on an account that existed before the reset.
 
-The testnet mirror node will be available for developers for two weeks after the date of the reset to store any data before access is completely removed. You will be able to query old testnet information for the two week period is it available.
+The testnet mirror node will be available for developers for two weeks after the date of the reset to store any data before access is completely removed. You will be able to query old testnet information for the two-week period if is it available.
 
 What you should do:
 
@@ -41,7 +41,7 @@ What you should do:
   * The public and private key pair will remain the same after resets
 * Subscribe to the [Hedera status page](https://status.hedera.com/) to receive reset notifications
 
-If you have any questions or concerns, please connect with us via [Discord](https://discord.com/invite/EC2GY8ueRk).
+If you have any questions or concerns, please connect with us via [Discord](https://discord.com/invite/hedera).
 
 **Reset Dates:**
 

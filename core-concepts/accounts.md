@@ -98,5 +98,5 @@ The system will automatically pay account renewal fees if the account has a bala
 The maximum `autoRenewPeriod` for an account, file, or smart contract will be limited to 3 months (7890000 seconds).
 
 {% hint style="info" %}
-Currently not implemented on the network i.e. accounts **do not expire**.
+_**Note:** Currently not implemented on the network i.e. accounts **do not expire**._
 {% endhint %}

@@ -64,7 +64,7 @@ Hedera will provide a REST API to easily query a mirror node that is hosted by H
 {% endcontent-ref %}
 
 {% hint style="info" %}
-Hedera will provide this as a service to bootstrap early use, but anticipates a full ecosystem and marketplace to be established by third parties.
+_**Note:** Hedera will provide this as a service to bootstrap early use but anticipates a full ecosystem and marketplace to be established by third parties._
 {% endhint %}
 
 ### Run a Mirror Node

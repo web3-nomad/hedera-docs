@@ -6,11 +6,11 @@ description: Distributed consensus algorithm
 
 The hashgraph consensus algorithm enables distributed consensus in an innovative, efficient way. Hashgraph is a distributed consensus algorithm and data structure that is fast, fair, and secure. This indirectly creates a trusted community, even when members do not necessarily trust each other.
 
-The [hashrgaph consensus algorithm]([url](https://github.com/hashgraph/hedera-platform)) and platform code is open source under an Apache 2.0 license.
+The [hashrgaph consensus algorithm](./) and platform code are open source under an Apache 2.0 license.
 
 {% embed url="https://www.youtube.com/watch?v=cje1vuVKhwY&t=5s" %}
 
-****
+***
 
 ## Performance
 
@@ -26,11 +26,11 @@ The hashgraph is 100% efficient, as that term is used in the blockchain communit
 
 The hashgraph is fast. It is limited only by the bandwidth. If each member has enough bandwidth to download and upload a given number of transactions per second, the system as a whole can handle close to that many. Even a fast home internet connection could be fast enough to handle all of the transactions of the entire VISA card network, worldwide.
 
-### **State Efficiency**&#x20;
+### **State Efficiency**
 
 Once an event occurs, within seconds everyone in the community will know where it should be placed in history with 100% certainty. More importantly, everyone will know that everyone else knows this. At that point, they can just incorporate the effects of the transaction and, unless needed for future audit or compliance, then discard it. So in a minimal cryptocurrency system, each member would only need to store the current balance of each account that isn’t empty. They wouldn’t need to remember the full history of the transactions that resulted in those balances all the way back to ‘genesis’.
 
-## Security&#x20;
+## Security
 
 ### Asynchronous Byzantine Fault Tolerance
 

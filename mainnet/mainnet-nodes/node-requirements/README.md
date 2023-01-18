@@ -6,11 +6,11 @@ description: >-
 
 # Node Requirements
 
-The following is provided to help Hedera Governing Council members deploy their permissioned mainnet consensus node. Please note, this information is not intended to apply to Hedera's transition to a permissionless network.
+The following is provided to help [_Hedera Governing Council_](https://hedera.com/council) members deploy their permissioned mainnet consensus node. Please note, this information is not intended to apply to Hedera's transition to a permissionless network.
 
 ## Minimum Node Requirements
 
-Currently, the Hedera Mainnet will perform at a rate determined by the lowest-performing node. To ensure a common level of performance minimum hardware, connectivity and hosting requirements have been defined for the initial permissioned, Governing Council nodes.
+Currently, the Hedera Mainnet will perform at a rate determined by the lowest-performing node. To ensure a common level of performance minimum hardware, connectivity, and hosting requirements have been defined for the initial permissioned, Governing Council nodes.
 
 {% hint style="warning" %}
 To ensure accurate conformity with the minimum requirements, please provide node hardware, connectivity, and hosting details to Hedera prior to purchase (devops@hedera.com).
@@ -42,7 +42,7 @@ Storage performance specifications (within 10% of performance parameters below)
 * Sequential write: 3000 MB/s
 * Random write: 170K IOPS
 
-Considerations for future expansion (hardware based deployments):
+Considerations for future expansion (hardware-based deployments):
 
 * Chassis should be [Nvidia Tesla V100 PCIe certified](https://www.nvidia.com/en-us/data-center/tesla/tesla-qualified-servers-catalog/)
 * 1x Nvidia Tesla V100 PCIe 16GB/32GB GPU
@@ -102,7 +102,7 @@ Considerations for future expansion (hardware based deployments):
     * Unix GID: `2000`
 
 {% hint style="info" %}
-Reference Configurations available in Appendices B, C, D
+**Note:** Reference Configurations available in Appendices B, C, D
 {% endhint %}
 
 ### Proxy
@@ -146,14 +146,14 @@ Interface Bonding (optional)
 
 ### Hosting
 
-* Industry standard hosting requirements for security and availability
+* Industry-standard hosting requirements for security and availability
   * Tier 1 Data Center Hosting facility
   * SSAE 16 /18, SOC 2 Type 2 compliant
-* Hedera will seek to avoid duplicating of hosting providers across Council members
+* Hedera will seek to avoid duplicating hosting providers across Council members
 
 ### Software & Installation
 
-* Any 64 bit Long Term Support (LTS) Linux distribution
+* Any 64-bit Long Term Support (LTS) Linux distribution
   * Ubuntu
   * Red Hat Enterprise
   * Debian
@@ -189,7 +189,7 @@ The following steps outline the process for Council Members to add their consens
 8. Add connection configuration for a Hedera performance testnet
    1. Hedera executes functional, stability and performance tests for all network services
 9. Review of test results and determination of preparedness for mainnet connectivity
-   1. Review key management documentation as it relates to Council Member's accounts including: fee account, proxy staking account, et al.
+   1. Review key management documentation related to Council Member's accounts including: fee account, proxy staking account, et al.
    2. Update private keys using provided tools
 10. Schedule mainnet connection
 11. Mainnet live

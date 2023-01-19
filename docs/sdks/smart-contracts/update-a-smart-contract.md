@@ -41,7 +41,7 @@ new ContractUpdateTransaction()
 | `setContractId(<contractId>)`                     | [ContractId](../specialized-types.md#contractid) | Required    |
 | `setAdminKey(<keys>)`                             | Key                                              | Optional    |
 | `setContractMemo(<memo>)`                         | String                                           | Optional    |
-| `setContractExpirationTime(<expirationTime)`      | Instant                                          | Optional    |
+| `setExpirationTime(<expirationTime)`              | Instant                                          | Optional    |
 | `setMaxAutomaticTokenAssociations()`              | int                                              | Optional    |
 | `setContractMemo(<memo>)`                         | String                                           | Optional    |
 | `setStakedAccountId(<stakedAccountId>)`           | AccountId                                        | Optional    |
@@ -49,6 +49,10 @@ new ContractUpdateTransaction()
 | `setDeclineStakingReward(<declineStakingReward>)` | boolean                                          | Optional    |
 | `setAutoRenewPeriod(<autoRenewPeriod>)`           | Duration                                         | Optional    |
 | `setAutoRenewAccountId(<accountId>)`              | AccountId                                        | Optional    |
+
+{% hint style="info" %}
+_**Note:** The new expiration time must be an instance of type **`Timestamp`**, thus, the **`Timestamp`** object has to be imported from the SDK package. The new expiration time has to be initialized as a new instance of that type._
+{% endhint %}
 
 {% tabs %}
 {% tab title="Java" %}

@@ -32,8 +32,9 @@ The contract state size limit is 10 MB and the system gas throttle is 15 million
 
 **Transaction Signing Requirements**
 
-* The client operator account is required to sign the transaction
-* The admin key, if specified
+* The client operator account is required to sign the transaction.
+* The admin key, if specified.
+* The key of the autorenewal account, if specified.
 
 **Transaction Fees**
 

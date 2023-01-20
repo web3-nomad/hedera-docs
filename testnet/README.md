@@ -40,6 +40,7 @@ What you should do:
 * After the reset, you will need to visit the [Hedera Developer Portal](https://portal.hedera.com/register) to get your new testnet account ID
   * The public and private key pair will remain the same after resets
 * Subscribe to the [Hedera status page](https://status.hedera.com/) to receive reset notifications
+* Mirror Node operators can reference the instructions [here](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/database.md#reset) to set-up your mirror node
 
 If you have any questions or concerns, please connect with us via [Discord](https://discord.com/invite/hedera).
 

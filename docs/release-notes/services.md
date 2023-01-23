@@ -8,17 +8,17 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Upcoming Releases
 
-## v0.34
+## [v0.34](https://github.com/hashgraph/hedera-services/releases/tag/v0.34.0)
 
 {% hint style="info" %}
 **MAINNET UPDATE: FEBRUARY 9, 2023**
 {% endhint %}
 
 {% hint style="info" %}
-**TESTNET UPDATE: TBD**
+**TESTNET UPDATE: JANRUARY 24, 2023**
 {% endhint %}
 
-Coming soon...
+Services `v0.34.0` completes the implementation of [HIP-583](https://hips.hedera.com/hip/hip-583). Note this feature will not be enabled this in this release.
 
 ## [v0.33](https://github.com/hashgraph/hedera-services/releases/tag/v0.33.0)
 

@@ -5,8 +5,8 @@ The SignatureList field is deprecated and succeeded by SignatureMap.
 
 ## Transaction
 
-| Field                    | Type                                           | Description                                                                  |                   |
-| ------------------------ | ---------------------------------------------- | ---------------------------------------------------------------------------- | ----------------- |
-| `signedTransactionBytes` | bytes                                          | SignedTransaction serialized into bytes                                      |                   |
-| `bodyBytes`              | bytes                                          | TransactionBody serialized into bytes, which needs to be signed              | deprecated = true |
-| `sigMap`                 | [SignatureMap](../basic-types/signaturemap.md) | The signatures on the body with the new format, to authorize the transaction | deprecated = true |
+| Field                    | Type                                                                                                                 | Description                                                                  |                   |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------- |
+| `signedTransactionBytes` | bytes                                                                                                                | SignedTransaction serialized into bytes                                      |                   |
+| `bodyBytes`              | bytes                                                                                                                | TransactionBody serialized into bytes, which needs to be signed              | deprecated = true |
+| `sigMap`                 | [SignatureMap](https://github.com/hashgraph/hedera-protobuf/tree/hedera-protobuf-java-api-0.9.0-alpha5#SignatureMap) | The signatures on the body with the new format, to authorize the transaction | deprecated = true |

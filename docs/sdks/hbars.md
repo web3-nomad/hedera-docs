@@ -1,4 +1,4 @@
-# HBARs
+# HBAR
 
 | **Constructor**      | **Type** | **Description**             |
 | -------------------- | -------- | --------------------------- |
@@ -8,9 +8,9 @@
 new Hbar(<amount>)
 ```
 
-## Hbar from:
+## HBAR from:
 
-Construct hbars from different representations.
+Construct _**HBAR**_ from different representations.
 
 | **Method**                      | **Type**                     | **Description**                                                 |
 | ------------------------------- | ---------------------------- | --------------------------------------------------------------- |
@@ -23,16 +23,16 @@ Construct hbars from different representations.
 {% tabs %}
 {% tab title="Java" %}
 ```java
-//100 hbars
+//100 HBAR
 new Hbar(100);
 
-//100 hbars from hbar value
+//100 HBAR from hbar value
 Hbar.from(100);
 
-//100 tinybars from hbars convert to unit
+//100 tinybars from HBAR convert to unit
 Hbar.from(100, HbarUnit.TINYBAR);
 
-// 100 hbars converted from string value
+// 100 HBAR converted from string value
 Hbar.fromString("100");
 
 //100 tinybars from string value
@@ -44,16 +44,16 @@ Hbar.fromString("100", HbarUnit.TINYBAR);
 
 {% tab title="JavaScript" %}
 ```javascript
-// 100 hbars
+// 100 HBAR
 new Hbar(100);
 
-//100 hbars
+//100 HBAR
 Hbar.from(100);
 
 //100 tinybars
 Hbar.from(100, HbarUnit.TINYBAR);
 
-// 100 hbars converted from string value
+// 100 HBAR converted from string value
 Hbar.fromString("100");
 
 //100 tinybars from string value
@@ -63,7 +63,7 @@ Hbar.fromString("100", HbarUnit.TINYBAR);
 
 {% tab title="Go" %}
 ```go
-//100 hbars
+//100 HBAR
 hedera.NewHbar(100)
 
 //100 tinybars
@@ -74,9 +74,9 @@ hedera.HbarFrom(100, hedera.HbarUnits.Tinybar)
 {% endtab %}
 {% endtabs %}
 
-### Hbar to:
+### HBAR to:
 
-Convert hbars to a different unit/format.
+Convert _**HBAR**_ to a different unit/format.
 
 | **Method**         | **Type** | **Description**                                                     |
 | ------------------ | -------- | ------------------------------------------------------------------- |
@@ -87,13 +87,13 @@ Convert hbars to a different unit/format.
 {% tabs %}
 {% tab title="Java" %}
 ```java
-//100 hbars converted to tinybars
+//100 HBAR converted to tinybars
 new Hbar(100).to(HbarUnit.TINYBAR);
 
-//100 hbars converted to tinybars
+//100 HBAR converted to tinybars
 new Hbar(100).toString(HbarUnit.TINYBAR);
 
-//100 hbars converted to tinybars
+//100 HBAR converted to tinybars
 new Hbar(100).toTinybars();
 
 //v2.0.0
@@ -102,35 +102,35 @@ new Hbar(100).toTinybars();
 
 {% tab title="JavaScript" %}
 ```javascript
-//100 hbars converted to tinybars
+//100 HBAR converted to tinybars
 new Hbar(100).to(HbarUnit.TINYBAR);
 
-//100 hbars converted to tinybars
+//100 HBAR converted to tinybars
 new Hbar(100).toString(HbarUnit.TINYBAR);
 
-//100 hbars converted to tinybars
+//100 HBAR converted to tinybars
 new Hbar(100).toTinybars();
 ```
 {% endtab %}
 
 {% tab title="Go" %}
 ```go
-//100 hbars converted to tinybars
+//100 HBAR converted to tinybars
 hedera.NewHbar(100).As(hedera.HbarUnits.Tinybar)
 
-//100 hbars to string format
+//100 HBAR to string format
 hedera.NewHbar(100).String()
 
-//100 hbars converted to tinybars
+//100 HBAR converted to tinybars
 hedera.NewHbar(100).AsTinybar()
 //v2.0.0
 ```
 {% endtab %}
 {% endtabs %}
 
-## Hbar constants:
+## **HBAR** constants:
 
-Provided constant values of hbars.
+Provided constant values of _**HBAR**_.
 
 | **Method**  | **Type** | **Description**                                                            |
 | ----------- | -------- | -------------------------------------------------------------------------- |
@@ -183,9 +183,9 @@ hbarZero := hedera.ZeroHbar
 {% endtab %}
 {% endtabs %}
 
-## Hbar units
+## **HBAR** units
 
-Modify the hbar representation to one of the hbar denominations.
+Modify the _**HBAR**_ representation to one of the _**HBAR**_ denominations.
 
 | **Function**        | **Description**                                                         |
 | ------------------- | ----------------------------------------------------------------------- |

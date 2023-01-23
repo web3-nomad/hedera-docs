@@ -73,7 +73,7 @@
     * [Create a threshold key](docs/sdks/keys/create-a-threshold-key.md)
     * [Generate a mnemonic phrase](docs/sdks/keys/generate-a-mnemonic-phrase.md)
     * [Recover keys from a mnemonic phrase](docs/sdks/keys/recover-keys-from-a-mnemonic-phrase.md)
-  * [HBARs](docs/sdks/hbars.md)
+  * [HBAR](docs/sdks/hbars.md)
   * [Specialized Types](docs/sdks/specialized-types.md)
   * [Pseudorandom Number Generator](docs/sdks/pseudorandom-number-generator.md)
   * [Transactions](docs/sdks/transactions/README.md)

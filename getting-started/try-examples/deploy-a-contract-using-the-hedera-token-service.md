@@ -9,7 +9,7 @@ In this example, you will learn how to create a Solidity contract that interacts
 The example does not cover the environment set-up or creating certain variables that may be seen in the code blocks. The full coding example can be found at the end of the page.
 
 {% hint style="warning" %}
-Smart contract entity auto renewal and expiry will be enabled in a future release. Please check out [HIP-16](https://hips.hedera.com/hip/hip-16) for more information.
+_Smart contract entity auto renewal and expiry will be enabled in a future release. Please check out_ [_HIP-16_](https://hips.hedera.com/hip/hip-16) _for more information._
 {% endhint %}
 
 ## 1. Create Your "HTS" Smart Contract
@@ -208,7 +208,7 @@ contract HTS is HederaTokenService {
 Create a file using the <mark style="color:purple;">`FileCreateTransaction()`</mark> API to store the hex-encoded byte code of the "HTS" contract. Once the file is created you can obtain the file ID from the receipt of the transaction.
 
 {% hint style="warning" %}
-Note: The bytecode is required to be hex-encoded. It should not be the actual data the hex represents.
+_**Note:** The bytecode is required to be hex-encoded. It should not be the actual data the hex represents._
 {% endhint %}
 
 {% tabs %}
@@ -717,7 +717,7 @@ fmt.Printf("The account token balance %v\n", transferAccountBalance.Tokens)
 {% endtabs %}
 
 {% hint style="info" %}
-Check out our [smart contract mirror node rest APIs](../../docs/mirror-node-api/rest-api.md#smart-contracts) that return information about a contract like contract results and logs!
+_Check out our_ [_smart contract mirror node rest APIs_](../../docs/mirror-node-api/rest-api.md#smart-contracts) _that return information about a contract like contract results and logs!_
 {% endhint %}
 
 #### Congratulations :tada:! You have completed the following:
@@ -1378,5 +1378,3 @@ func main() {
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
 {% endhint %}
-
-\####

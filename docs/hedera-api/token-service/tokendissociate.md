@@ -16,7 +16,7 @@ If the provided account has a nonzero balance with any of the provided tokens, t
 
 ## TokenDissociateTransactionBody
 
-| Field     | Type                                                                                   | Description                                            |
-| --------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| `account` | [AccountID](https://docs.hedera.com/guides/docs/hedera-api/basic-types/accountid)      | The account to be dissociated with the provided tokens |
-| `tokens`  | repeated [TokenID](https://docs.hedera.com/guides/docs/hedera-api/basic-types/tokenid) | The tokens to be dissociated with the provided account |
+| Field     | Type                                          | Description                                            |
+| --------- | --------------------------------------------- | ------------------------------------------------------ |
+| `account` | [AccountID](../basic-types/accountid.md)      | The account to be dissociated with the provided tokens |
+| `tokens`  | repeated [TokenID](../basic-types/tokenid.md) | The tokens to be dissociated with the provided account |

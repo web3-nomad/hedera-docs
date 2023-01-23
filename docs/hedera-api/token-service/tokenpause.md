@@ -10,6 +10,6 @@ Pauses the Token from being involved in any kind of Transaction until it is unpa
 
 ## TokenPauseTransactionBody
 
-| Field   | Type                                                                                                                                       | Description            |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| `token` | [TokenID](https://github.com/theekrystallee/hedera-style-guide/blob/sdk-v1/deprecated/hedera-api/token-service/broken-reference/README.md) | The token to be paused |
+| Field   | Type                                 | Description            |
+| ------- | ------------------------------------ | ---------------------- |
+| `token` | [TokenID](../basic-types/tokenid.md) | The token to be paused |

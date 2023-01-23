@@ -8,6 +8,6 @@ Other notable response codes include INVALID\_SCHEDULE\_ID, SCHEDULE\_WAS\_DELET
 
 ## ScheduleSignTransactionBody
 
-| Field        | Type                                                                                                                                             | Description                    |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
-| `scheduleID` | [ScheduleID](https://github.com/theekrystallee/hedera-style-guide/blob/sdk-v1/deprecated/hedera-api/schedule-service/broken-reference/README.md) | The ID of the Scheduled Entity |
+| Field        | Type                                       | Description                    |
+| ------------ | ------------------------------------------ | ------------------------------ |
+| `scheduleID` | [ScheduleID](../basic-types/scheduleid.md) | The ID of the Scheduled Entity |

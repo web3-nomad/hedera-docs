@@ -18,7 +18,11 @@ For the latest versions supported on each network please visit the Hedera status
 **TESTNET UPDATE: JANRUARY 24, 2023**
 {% endhint %}
 
-Services `v0.34.0` completes the implementation of [HIP-583](https://hips.hedera.com/hip/hip-583). Note this feature will not be enabled this in this release.
+Services `v0.34.0` completes the implementation of [HIP-583](https://hips.hedera.com/hip/hip-583).
+
+To ensure full test coverage of this intricate feature, it will first be enabled **only on previewnet**.
+
+➡️ This release will, however, enable contract expiry on all production networks \[previewnet, testnet, and mainnet].
 
 ## [v0.33](https://github.com/hashgraph/hedera-services/releases/tag/v0.33.0)
 

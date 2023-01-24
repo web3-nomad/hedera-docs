@@ -41,6 +41,7 @@ What you should do:
   * The public and private key pair will remain the same after resets
 * Subscribe to the [Hedera status page](https://status.hedera.com/) to receive reset notifications
 * Mirror Node operators can reference the instructions [here](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/database.md#reset) to set-up your mirror node
+  * GCP GCS and AWS S3 buckets: `hedera-testnet-streams-2023-01`
 
 If you have any questions or concerns, please connect with us via [Discord](https://discord.com/invite/hedera).
 

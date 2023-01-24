@@ -15,7 +15,7 @@ For the latest versions supported on each network please visit the Hedera status
 {% endhint %}
 
 {% hint style="success" %}
-**TESTNET UPDATE: JANRUARY 24, 2023**
+**TESTNET UPDATE: JANUARY 24, 2023**
 {% endhint %}
 
 Services `v0.34.0` completes the implementation of [HIP-583](https://hips.hedera.com/hip/hip-583).

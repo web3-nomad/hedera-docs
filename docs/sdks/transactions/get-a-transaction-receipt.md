@@ -127,7 +127,7 @@ fmt.Printf("The transaction receipt %v\n", receipt)
 
 {% tabs %}
 {% tab title="Sample Output:" %}
-```
+```bash
 TransactionReceipt{
      status=SUCCESS,
      exchangeRate=ExchangeRate{

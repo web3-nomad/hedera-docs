@@ -88,5 +88,3 @@ println("The pseudorandom number is:", *transactionRecord.PrngNumber)
 ```
 {% endtab %}
 {% endtabs %}
-
-### \*\*\*\*

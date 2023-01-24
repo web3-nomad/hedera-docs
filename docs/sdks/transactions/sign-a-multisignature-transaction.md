@@ -3,7 +3,7 @@
 Hedera supports multisignature transactions. This means a Hedera transaction can require more than one key to sign a transaction in order for it to be processed on a Hedera network. These keys can be set up as a key list where all the keys in the specified list are required to sign the transaction or a threshold key where only a subset of the keys from a specified list are required to sign the transaction. The example below shows how you can use multiple keys to sign and submit a transaction.
 
 {% hint style="info" %}
-Note: This example uses version 2.0 of the SDKs
+_**Note:** This example uses version 2.0 of the SDKs._
 {% endhint %}
 
 ## 1. Create the transaction

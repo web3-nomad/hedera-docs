@@ -4,7 +4,7 @@ Sign a transaction using the private key(s) required to sign the transaction. Yo
 
 | **Method**                                 | **Type**                     | **Description**                                                                                             |
 | ------------------------------------------ | ---------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `sign(<privateKey>)`                       | PrivateKey                   | Sign the transaction with an Ed25519 private key                                                            |
+| `sign(<privateKey>)`                       | PrivateKey                   | Sign the transaction with an ED25519 private key                                                            |
 | `signWith(<publicKey, transactionSigner>)` | PublicKey, TransactionSigner | Sign the transaction with a callback that may block waiting for user confirmation.                          |
 | `signWithOperator(<client>)`               | Client                       | Sign the transaction with the client                                                                        |
 | `signWithSigner(<signer>)`                 |                              | Sign the transaction with a local wallet. Local wallet available in Hedera JavaScript SDK only. >=`v2.11.0` |

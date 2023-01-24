@@ -1,9 +1,9 @@
 # Modify transaction fields
 
-For every transaction submitted to a Hedera network you can modify the transaction ID, amount of time the transaction has to reach consensus, a memo field to attach a note, the account ID of the node the transaction will be submitted to, and the maximum fee the client is willing to pay for a given transaction. The SDKs do not require you to set these fields when submitting a transaction to a Hedera network as the SDK either creates the value at the time of submission or inputs default values. The methods listed below can be used to modify any of these values.
+When submitting a transaction to the Hedera network, various fields can be modified, such as the transaction ID, consensus time, memo field, account ID of the node, and the maximum fee. These values can be set using methods provided by the SDKs. However, they are not required as the SDK can automatically create or use default values.
 
 {% hint style="info" %}
-Note: The total size for a given transaction is limited to 6KiB
+_**Note:** The total size for a given transaction is limited to 6KiB._
 {% endhint %}
 
 | **Fields**              | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -14,15 +14,19 @@ Note: The total size for a given transaction is limited to 6KiB
 | **Node ID**             | Set the account ID of the node that this transaction will be submitted to.                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Max transaction fee** | <p>Set the max transaction fee for the operator (transaction fee payer account) is willing to pay</p><p>Default: 1 hbar</p>                                                                                                                                                                                                                                                                                                                                                       |
 
-| Method                                                  | Type             | Requirement |
-| ------------------------------------------------------- | ---------------- | ----------- |
-| `setTransactionID(<transactionId>)`                     | TransactionID    | Optional    |
-| `setTransactionValidDuration(<validDuration>)`          | Duration         | Optional    |
-| `setTransactionMemo(<memo>)`                            | String           | Optional    |
-| `setNodeAccountIds(<nodeAccountIds>)`                   | List\<AccountId> | Optional    |
-| `setMaxTransactionFee(<maxTransactionFee>)`             | Hbar             | Optional    |
-| `setGrpcDeadline(<grpcDeadline>)`                       | Duration         | Optional    |
-| `setRegenerateTransactionId(<regenerateTransactionId>)` | boolean          | Optional    |
+{% hint style="info" %}
+_**Note:** The SDKs do not require you to set these fields when submitting a transaction to a Hedera network. All methods below are optional and can be used to modify any fields._
+{% endhint %}
+
+| Method                                                  | Type             |
+| ------------------------------------------------------- | ---------------- |
+| `setTransactionID(<transactionId>)`                     | TransactionID    |
+| `setTransactionValidDuration(<validDuration>)`          | Duration         |
+| `setTransactionMemo(<memo>)`                            | String           |
+| `setNodeAccountIds(<nodeAccountIds>)`                   | List\<AccountId> |
+| `setMaxTransactionFee(<maxTransactionFee>)`             | Hbar             |
+| `setGrpcDeadline(<grpcDeadline>)`                       | Duration         |
+| `setRegenerateTransactionId(<regenerateTransactionId>)` | boolean          |
 
 {% tabs %}
 {% tab title="Java" %}
@@ -65,16 +69,16 @@ transaction := hedera.NewAccountCreateTransaction(). //Any transaction can be ap
 
 ## Get transaction properties
 
-| Method                          | Type                                        | Requirement |
-| ------------------------------- | ------------------------------------------- | ----------- |
-| `getTransactionID()`            | TransactionID                               | Optional    |
-| `getTransactionValidDuration()` | Duration                                    | Optional    |
-| `getTransactionMemo()`          | String                                      | Optional    |
-| `getNodeAccountId()`            | AccountID                                   | Optional    |
-| `getMaxTransactionFee()`        | Hbar                                        | Optional    |
-| `getTransactionHash()`          | byte\[ ]                                    | Optional    |
-| `getTransactionHashPerNode()`   | Map\<AccountId, byte \[ ]>                  | Optional    |
-| `getSignatures()`               | Map\<AccountId, Map\<PublicKey, byte \[ ]>> | Optional    |
+| Method                          | Type                                        |
+| ------------------------------- | ------------------------------------------- |
+| `getTransactionID()`            | TransactionID                               |
+| `getTransactionValidDuration()` | Duration                                    |
+| `getTransactionMemo()`          | String                                      |
+| `getNodeAccountId()`            | AccountID                                   |
+| `getMaxTransactionFee()`        | Hbar                                        |
+| `getTransactionHash()`          | byte\[ ]                                    |
+| `getTransactionHashPerNode()`   | Map\<AccountId, byte \[ ]>                  |
+| `getSignatures()`               | Map\<AccountId, Map\<PublicKey, byte \[ ]>> |
 
 {% tabs %}
 {% tab title="Java" %}

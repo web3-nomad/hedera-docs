@@ -1,7 +1,5 @@
 # Create and Transfer an NFT using a Solidity Contract
 
-![](<../../.gitbook/assets/image (4).png>)
-
 ## Summary
 
 Besides creating NFTs using Hedera SDK, you can use a Solidity Contract to create, mint, and transfer NFTs by calling contract functions directly. These are the contracts you will need to import into your working directory provided by Hedera that you can find in the **contracts** folder [here](https://github.com/hashgraph/hedera-smart-contracts):
@@ -13,7 +11,13 @@ Besides creating NFTs using Hedera SDK, you can use a Solidity Contract to creat
 * FeeHelper.sol
 * KeyHelper.sol
 
+## Prerequisites
+
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
+
+{% content-ref url="../introduction.md" %}
+[introduction.md](../introduction.md)
+{% endcontent-ref %}
 
 {% content-ref url="../environment-set-up.md" %}
 [environment-set-up.md](../environment-set-up.md)
@@ -43,12 +47,11 @@ The important thing to know is that the NFT created in this example will have th
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.5.0 <0.9.0;
 
-import './HederaResponseCodes.sol';
-import './IHederaTokenService.sol';
-import './HederaTokenService.sol';
-import './ExpiryHelper.sol';
-import './KeyHelper.sol'
-
+import 'HederaResponseCodes.sol';
+import 'IHederaTokenService.sol';
+import 'HederaTokenService.sol';
+import 'ExpiryHelper.sol';
+import 'KeyHelper.sol';
 
 contract NFTCreator is ExpiryHelper, KeyHelper, HederaTokenService {
 
@@ -57,7 +60,7 @@ contract NFTCreator is ExpiryHelper, KeyHelper, HederaTokenService {
             string memory symbol, 
             string memory memo, 
             int64 maxSupply,  
-            uint32 autoRenewPeriod
+            int64 autoRenewPeriod
         ) external payable returns (address){
 
         IHederaTokenService.TokenKey[] memory keys = new IHederaTokenService.TokenKey[](1);
@@ -294,7 +297,7 @@ After the token ID is created, you mint each NFT under that ID using the <mark s
 Both the NFT image and metadata live in the InterPlanetary File System (IPFS), which provides decentralized storage. The file metadata.json contains the metadata for the NFT. An IPFS URI pointing to the metadata file is used during minting of a new NFT. Notice that the metadata file contains a URI pointing to the NFT image.
 
 {% hint style="info" %}
-For the latest NFT Token Metadata JSON Schema see [HIP-412](https://hips.hedera.com/hip/hip-412).
+_**Note:** For the latest NFT Token Metadata JSON Schema see_ [_HIP-412_](https://hips.hedera.com/hip/hip-412)_._
 {% endhint %}
 
 {% tabs %}

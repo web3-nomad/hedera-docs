@@ -83,7 +83,7 @@ If you would like to run the sample using a virtual environment, please follow t
 ### Hedera Consensus Service
 
 * Testnet account ID and private key
-  * Please follow the instructions [here](../../../../testnet/testnet-access.md)
+  * Please follow the instructions [here](../../../../testnet/testnet-access/)
 
 ### pluggable-hcs Repository
 

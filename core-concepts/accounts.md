@@ -8,7 +8,7 @@ description: Hedera accounts
 
 Accounts are the central starting point for Hedera. Accounts are stored on the public ledger and hold hbars which are used to pay for the transaction and query fees.
 
-Accounts can be created, updated, or deleted. There are two ways you can create an account either by using an existing account or by using an alias. If you have an existing account, you can use that account to create a new account and to pay for the associated transaction fees in hbar. If you do not have access to an existing account, you can create a testnet account via the [Hedera Developer Portal](https://portal.hedera.com/register) or a mainnet account through one of the options listed [here](../mainnet/mainnet-access.md). To create an account using an alias, you have to transfer an hbar to that alias. When the transfer transaction is successful it deducts the cost of creating the account and transfers the remaining balance into that new account.
+Accounts can be created, updated, or deleted. There are two ways you can create an account either by using an existing account or by using an alias. If you have an existing account, you can use that account to create a new account and to pay for the associated transaction fees in hbar. If you do not have access to an existing account, you can create a testnet account via the [Hedera Developer Portal](https://portal.hedera.com/register) or a mainnet account through one of the options listed [here](../mainnet/mainnet-access/). To create an account using an alias, you have to transfer an hbar to that alias. When the transfer transaction is successful it deducts the cost of creating the account and transfers the remaining balance into that new account.
 
 Accounts are comprised of:
 
@@ -21,12 +21,12 @@ Accounts are comprised of:
 
 To create a mainnet or testnet account, please visit one of the following:
 
-{% content-ref url="../mainnet/mainnet-access.md" %}
-[mainnet-access.md](../mainnet/mainnet-access.md)
+{% content-ref url="../mainnet/mainnet-access/" %}
+[mainnet-access](../mainnet/mainnet-access/)
 {% endcontent-ref %}
 
-{% content-ref url="../testnet/testnet-access.md" %}
-[testnet-access.md](../testnet/testnet-access.md)
+{% content-ref url="../testnet/testnet-access/" %}
+[testnet-access](../testnet/testnet-access/)
 {% endcontent-ref %}
 
 ## Account ID

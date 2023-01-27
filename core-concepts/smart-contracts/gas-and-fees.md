@@ -152,6 +152,14 @@ See the diagram below and [HIP-16](https://hips.hedera.com/hip/hip-16) for more 
 
 <details>
 
+<summary>How long is the grace period for expired contracts?</summary>
+
+The grace period between entity expiration and deletion is 30 days.
+
+</details>
+
+<details>
+
 <summary>Who pays for the contract’s renewal and storage fees?</summary>
 
 Smart contracts on Hedera can pay for rent in two ways: external funds or contract funds.
@@ -175,6 +183,18 @@ Calling an `expired` contract will resolve to `CONTRACT_EXPIRED_AND_AWAITING_REM
 
 <details>
 
+<summary>When a contract is expired and deleted from the network, what happens to its account and assets?</summary>
+
+If an expired contract that holds native Hedera Token Service (HTS) tokens reaches the deletion stage, then the assets held by that contract are returned to their respective treasury accounts.
+
+If the deleted contract is being used as a specific key for an HTS token, then that key field will refer to a contract that no longer exists. That specific key can be changed, as long as an admin key was specified during token creation. If the token is immutable (no admin key), the specific key cannot be changed.
+
+Contracts that are the treasury for HTS tokens do not expire at this moment (subject to change in the future).
+
+</details>
+
+<details>
+
 <summary>For how long can I renew my contract?</summary>
 
 The minimum renewal period possible is 2,592,000 seconds (\~30 days) and the maximum is 8,000,001 seconds (\~92 days).
@@ -193,10 +213,9 @@ The cost of rent scales just about linearly with the length of the renewal perio
 
 <details>
 
-<summary>What are the key-value pair thresholds that I should be aware of that impact the size of the storage payment?</summary>
+<summary>Where can I seen when a contract will expire?</summary>
 
-* Storage payments for contracts will only start being charged once **100 million key-value pairs** are reached cumulatively across the network
-* After than, each contract has **100 free key-value pairs** of storage available. Once a contract exceeds the first 100 free key-value pairs, it must pay storage fees
+Mirror nodes provide the expiration time for contracts. You can obtain this information using the mirror node REST API (show it as `expiration_time`) and network explorers like HashScan (shows it as `Expires at`).
 
 </details>
 
@@ -204,8 +223,25 @@ The cost of rent scales just about linearly with the length of the renewal perio
 
 <summary>Where do the auto-renewal transactions appear? Can these be seen on network explorers like HashScan?</summary>
 
-According to [HIP-16: Entity Auto-Renewal](https://hips.hedera.com/hip/hip-16), records of auto-renew charges will appear as `actions` in the record stream, and will be available via mirror nodes. No receipts or records for auto-renewal actions will be available via HAPI queries.
+According to [HIP-16: Entity Auto-Renewal](https://hips.hedera.com/hip/hip-16), records of auto-renew charges will appear as `actions` in the record stream, and will be available via mirror nodes. In addition, the fee breakdown is provided in network explorers like HashScan for the contract update transaction. No receipts or records for auto-renewal actions will be available via HAPI queries.&#x20;
 
 [HIP-449](https://hips.hedera.com/hip/hip-449) provides technical details on how information for expiring contracts is included in the record stream.
+
+</details>
+
+<details>
+
+<summary>Can the <code>autoRenewAccount</code> for a contract be set to another contract ID?</summary>
+
+Yes, that is possible for contracts.
+
+</details>
+
+<details>
+
+<summary>What are the key-value pair thresholds that I should be aware of that impact the size of the storage payment?</summary>
+
+* Storage payments for contracts will only start being charged once **100 million key-value pairs** are reached cumulatively across the network
+* After than, each contract has **100 free key-value pairs** of storage available. Once a contract exceeds the first 100 free key-value pairs, it must pay storage fees
 
 </details>

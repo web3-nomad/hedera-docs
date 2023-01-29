@@ -8,7 +8,35 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## ****[**v0.73**](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.73.0)****
+
+This release is the first one with support for [HIP-584](https://hips.hedera.com/HIP/hip-584.html) EVM Archive Node. HIP-584 allows mirror nodes to act as a read only EVM for free execution of smart contracts. This new feature is considered alpha with much of the work still to be implemented like support for precompiled contracts, gas estimation, etc. This functionality requires the mirror node to be configured to ingest the optional traceability sidecar files and it requires a network where those files are generated. Currently only previewnet has contract traceability enabled.
+
+The testnet bucket name has been updated to the new bucket name after its recent quarterly [reset](https://docs.hedera.com/hedera/testnet#test-network-resets). Likewise the bootstrap testnet address book was updated to reflect the additional testnet nodes that have been added since the previous reset. Mirror node operators running a testnet node should either manually populate the new bucket name or update to this release.
+
+The remaining work targeted significant testing improvements and bug fixes. Our performance tests were expanded to all endpoints to catch issues earlier in the lifecycle. Additional acceptance test coverage was added along with a number of fixes. CI stability has greatly improved with a focus on fixing flaky tests. Code smells as reported by [Sonar](https://sonarcloud.io/project/overview?id=hedera-mirror-node) were reduced to only a handful and in the next release reduced all the way down to zero. Finally, we merged work that enables nightly performance testing in our integration and mainnet staging environments via [TestKube](https://testkube.io/).
+
+## ****[**v0.72**](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.72.0)****
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: JANUARY 25, 2022**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: JANUARY 18, 2022**
+{% endhint %}
+
+This release is a smaller release as most of the team took time off for the holidays. Still, we managed to implement [HIP-583](https://hips.hedera.com/HIP/hip-583.html) Expand alias support in CryptoCreate & CryptoTransfer Transactions. We now allow hollow accounts to be later finalized into a contract when it is fully created.
+
+We also worked on adding support for [Testkube](https://testkube.io/). Testkube allows us to automate our testing in Kubernetes environments by triggering tests based upon various conditions. Specifically, it will be used to run nightly performance regression tests against a mainnet staging environment to ensure our API performance doesn't regress. We'll continue to expand on this automated testing in future releases.
+
+There were also a number of bug fixes in this release, mainly focused on fixing our release process after the switch from Maven to Gradle in the last release.
+
 ## [v0.71](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.71.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: JANUARY 19, 2023**
+{% endhint %}
 
 As of this release, all account and token balances in the REST API will reflect their real time balance information. Historically, the mirror node has relied upon the balance file uploaded by consensus nodes every 15 minutes for its balance information. We've been working towards this milestone for many releases gradually rolling out real-time balance tracking to more entities and more APIs. This release completes this migration with the addition of real time token balances to both the accounts and the balances REST APIs.
 

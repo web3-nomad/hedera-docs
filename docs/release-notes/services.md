@@ -24,6 +24,8 @@ To ensure full test coverage of this intricate feature, it will first be enabled
 
 ➡️ This release will, however, enable contract expiry on all production networks \[previewnet, testnet, and mainnet].
 
+<figure><img src="../../.gitbook/assets/0.34.1.001.png" alt=""><figcaption></figcaption></figure>
+
 ## [v0.33](https://github.com/hashgraph/hedera-services/releases/tag/v0.33.0)
 
 {% hint style="success" %}

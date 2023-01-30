@@ -50,6 +50,7 @@ Note: It is required to set the initial supply for an NFT to 0.
 
 **Transaction Fees**
 
+* For fungible tokens, a [`CryptoTransfer`](https://docs.hedera.com/hedera/mainnet/fees#:~:text=%240.00022-,CryptoTransfer,-%240.0001) fee is added to transfer the newly created token to the treasury account
 * Please see the transaction and query [fees](../../../mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 

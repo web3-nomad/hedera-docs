@@ -151,7 +151,7 @@ $ git clone https://github.com/hyperledger-labs/pluggable-hcs fabric
 $ cd fabric
 ```
 
-* Confirm you are on the master branch
+* Confirm you are on the main branch
 
 ```
 $ git branch
@@ -169,6 +169,7 @@ $ cd fabric
 
 * Follow the commands below to build the required fabric binaries and docker images
   * Note: This process may take a few minutes to complete
+  * Note: Newer versions of Docker enable gRPC FUSE file sharing implementation by default which result in a failure. Switch to osxfs (Legacy) in Docker Settings
 
 ```
 $ make clean

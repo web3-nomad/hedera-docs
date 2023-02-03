@@ -20,6 +20,8 @@
     * [Create and Transfer an NFT using a Solidity Contract](tutorials/tokens/create-and-transfer-an-nft-using-a-solidity-contract.md)
   * [Scheduled Transaction](tutorials/scheduled-transaction/README.md)
     * [Schedule Your First Transaction](tutorials/scheduled-transaction/schedule-your-first-transaction.md)
+  * [Demo Applications](tutorials/demo-applications.md)
+  * [Starter Projects](tutorials/starter-projects.md)
 * [Networks](networks/README.md)
   * [Mainnet](networks/mainnet/README.md)
     * [Mainnet Accounts](networks/mainnet/mainnet-access.md)

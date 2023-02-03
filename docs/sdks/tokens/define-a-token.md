@@ -50,7 +50,7 @@ Note: It is required to set the initial supply for an NFT to 0.
 
 **Transaction Fees**
 
-* For fungible tokens, a [`CryptoTransfer`](https://docs.hedera.com/hedera/mainnet/fees#:~:text=%240.00022-,CryptoTransfer,-%240.0001) fee is added to transfer the newly created token to the treasury account
+* For fungible tokens, a [`CryptoTransfer`](https://docs.hedera.com/hedera/mainnet/fees) fee is added to transfer the newly created token to the treasury account
 * Please see the transaction and query [fees](../../../mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
@@ -64,29 +64,29 @@ new TokenCreateTransaction()
 
 ## Methods
 
-| Method                                | Type                                               | Requirement |
-| ------------------------------------- | -------------------------------------------------- | ----------- |
-| `setTokenName(<name>)`                | String                                             | Required    |
-| `setTokenType(<tokenType>)`           | [TokenType](token-types.md)                        | Optional    |
-| `setTokenSymbol(<symbol>)`            | String                                             | Required    |
-| `setDecimals(<decimal>)`              | int                                                | Optional    |
-| `setInitialSupply(<initialSupply>)`   | int                                                | Optional    |
-| `setTreasuryAccountId(<treasury>)`    | [AccountId](../specialized-types.md#accountid)     | Required    |
-| `setAdminKey(<key>)`                  | Key                                                | Optional    |
-| `setKycKey(<key>)`                    | Key                                                | Optional    |
-| `setFreezeKey(<key>)`                 | Key                                                | Optional    |
-| `setWipeKey(<key>)`                   | Key                                                | Optional    |
-| `setSupplyKey(<key>)`                 | Key                                                | Optional    |
-| `setPauseKey(<key>)`                  | Key                                                | Optional    |
-| `setFreezeDefault(<freeze>`)          | boolean                                            | Optional    |
-| `setExpirationTime(<expirationTime>)` | Instant                                            | Optional    |
-| `setFeeScheduleKey(<key>)`            | Key                                                | Optional    |
-| `setCustomFees(<customFees>)`         | List<[CustomFee](custom-token-fees.md#custom-fee)> | Optional    |
-| `setSupplyType(<supplyType>)`         | TokenSupplyType                                    | Optional    |
-| `setMaxSupply(<maxSupply>)`           | long                                               | Optional    |
-| `setTokenMemo(<memo>)`                | String                                             | Optional    |
-| `setAutoRenewAccountId(<account>)`    | [AccountId](../specialized-types.md#accountid)     | Disabled    |
-| `setAutoRenewPeriod(<period>)`        | Duration                                           | Disabled    |
+| Method                                | Type                                                           | Requirement |
+| ------------------------------------- | -------------------------------------------------------------- | ----------- |
+| `setTokenName(<name>)`                | String                                                         | Required    |
+| `setTokenType(<tokenType>)`           | [TokenType](token-types.md)                                    | Optional    |
+| `setTokenSymbol(<symbol>)`            | String                                                         | Required    |
+| `setDecimals(<decimal>)`              | int                                                            | Optional    |
+| `setInitialSupply(<initialSupply>)`   | int                                                            | Optional    |
+| `setTreasuryAccountId(<treasury>)`    | [AccountId](../deprecated/sdks/specialized-types.md#accountid) | Required    |
+| `setAdminKey(<key>)`                  | Key                                                            | Optional    |
+| `setKycKey(<key>)`                    | Key                                                            | Optional    |
+| `setFreezeKey(<key>)`                 | Key                                                            | Optional    |
+| `setWipeKey(<key>)`                   | Key                                                            | Optional    |
+| `setSupplyKey(<key>)`                 | Key                                                            | Optional    |
+| `setPauseKey(<key>)`                  | Key                                                            | Optional    |
+| `setFreezeDefault(<freeze>`)          | boolean                                                        | Optional    |
+| `setExpirationTime(<expirationTime>)` | Instant                                                        | Optional    |
+| `setFeeScheduleKey(<key>)`            | Key                                                            | Optional    |
+| `setCustomFees(<customFees>)`         | List<[CustomFee](custom-token-fees.md#custom-fee)>             | Optional    |
+| `setSupplyType(<supplyType>)`         | TokenSupplyType                                                | Optional    |
+| `setMaxSupply(<maxSupply>)`           | long                                                           | Optional    |
+| `setTokenMemo(<memo>)`                | String                                                         | Optional    |
+| `setAutoRenewAccountId(<account>)`    | [AccountId](../deprecated/sdks/specialized-types.md#accountid) | Disabled    |
+| `setAutoRenewPeriod(<period>)`        | Duration                                                       | Disabled    |
 
 {% tabs %}
 {% tab title="Java" %}

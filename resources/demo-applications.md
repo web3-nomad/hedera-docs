@@ -1,8 +1,7 @@
 ---
 description: Examples of different use cases and projects built on Hedera.
 cover: >-
-  ../.gitbook/assets/Hero-Desktop-EnterpriseApplications_2022-12-08-192047_ivzd
-  (1).webp
+  ../.gitbook/assets/Hero-Desktop-EnterpriseApplications_2022-12-08-192047_ivzd.webp
 coverY: -272.48201438848923
 ---
 

@@ -139,7 +139,7 @@ touch index.js
 
 Your project structure should look something like this:
 
-![](<../.gitbook/assets/image105 (1).png>)
+![](<../.gitbook/assets/image105 (1) (1) (1).png>)
 
 Grab your Hedera Testnet _**account ID**_ and _**private key**_ from the _`.env`_ file.
 
@@ -245,7 +245,7 @@ The _`.env`_ file stores your environment variables _**account ID**_ and _**priv
 _**Note:** Testnet **HBAR** is required for this next step. Please follow the instructions to create a Hedera account on the_ [_portal_](https://docs.hedera.com/guides/getting-started/introduction) _before you move on to the next step._
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/portal screenshot (1).png" alt="screenshot of the developer portal dashboard where the account ID and private keys can be found"><figcaption><p><em>This is a screenshot of the portal dashboard where your account ID and private keys are.</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/portal screenshot (2).png" alt="screenshot of the developer portal dashboard where the account ID and private keys can be found"><figcaption><p><em>This is a screenshot of the portal dashboard where your account ID and private keys are.</em></p></figcaption></figure>
 
 Grab the Hedera Testnet _**account ID**_ and _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the _`MY_ACCOUNT_ID`_ and _`MY_PRIVATE_KEY`_ environment variables in your _`.env`_ file:
 

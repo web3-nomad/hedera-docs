@@ -1,6 +1,6 @@
 ---
 description: Integrations with popular development environments to get you set up quickly.
-cover: ../.gitbook/assets/Hero-Desktop-Tooling_2022-12-07-021130_ayix (1).webp
+cover: ../.gitbook/assets/Hero-Desktop-Tooling_2022-12-07-021130_ayix.webp
 coverY: -399.64476021314385
 ---
 

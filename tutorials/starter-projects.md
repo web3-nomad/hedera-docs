@@ -19,7 +19,7 @@ coverY: -69
 {% endtab %}
 
 {% tab title="Go" %}
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Hyperledger Fabric</strong></td><td align="center">Maintainer: Hedera</td><td align="center"><strong></strong><a href="consensus-service/getting-started-with-the-hedera-consensus-service-fabric-plugin/"><strong>REFERENCE</strong></a><strong></strong></td><td><a href="consensus-service/getting-started-with-the-hedera-consensus-service-fabric-plugin/">getting-started-with-the-hedera-consensus-service-fabric-plugin</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Hyperledger Fabric</strong></td><td align="center">Maintainer: Hedera</td><td align="center"><strong></strong><a href="more-tutorials/getting-started-with-the-hedera-consensus-service-fabric-plugin/"><strong>REFERENCE</strong></a><strong></strong></td><td><a href="more-tutorials/getting-started-with-the-hedera-consensus-service-fabric-plugin/">getting-started-with-the-hedera-consensus-service-fabric-plugin</a></td></tr></tbody></table>
 
 **More coming soon!**
 {% endtab %}

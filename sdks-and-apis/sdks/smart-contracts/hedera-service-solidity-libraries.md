@@ -494,6 +494,6 @@ Update the keys set on a token. The key type is defined in the key parameter.
 
 ## Examples
 
-{% content-ref url="../../../tutorials/smart-contracts/deploy-a-contract-using-the-hedera-token-service.md" %}
-[deploy-a-contract-using-the-hedera-token-service.md](../../../tutorials/smart-contracts/deploy-a-contract-using-the-hedera-token-service.md)
+{% content-ref url="../../../tutorials/smart-contracts-service/deploy-a-contract-using-the-hedera-token-service.md" %}
+[deploy-a-contract-using-the-hedera-token-service.md](../../../tutorials/smart-contracts-service/deploy-a-contract-using-the-hedera-token-service.md)
 {% endcontent-ref %}

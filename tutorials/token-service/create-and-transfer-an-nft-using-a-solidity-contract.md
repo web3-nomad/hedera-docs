@@ -13,8 +13,6 @@ Besides creating NFTs using Hedera SDK, you can use a Solidity Contract to creat
 
 ## Prerequisites
 
-## Prerequisites
-
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
 {% content-ref url="../../getting-started/introduction.md" %}

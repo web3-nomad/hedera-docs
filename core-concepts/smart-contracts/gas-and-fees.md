@@ -61,7 +61,7 @@ Reference [HIP-185](https://hips.hedera.com/hip/hip-185)
 Rent is the recurring payment required for contracts to remain active on the network. Rent is comprised of **auto renewal** and **storage** payments.
 
 {% hint style="warning" %}
-Smart contract expiry and auto renewal, and storage payments are currently disabled. These features will be enabled on mainnet February 9, 2022.
+Smart contract expiry and auto renewal, and storage payments are currently disabled. These features will be enabled on mainnet March, 2022.
 {% endhint %}
 
 #### Contract Auto Renewal
@@ -108,7 +108,7 @@ Contract rent is an economically and technically viable approach to manage smart
 
 <summary>Do all entities on Hedera have to pay rent or just contracts?</summary>
 
-Contracts are the first entity paying rent on Hedera starting in February 2023.
+Contracts are the first entity paying rent on Hedera starting in March 2023.
 
 Eventually, all other network entities (e.g. Tokens, accounts, topics, and files) will pay rent as well. However, the timeline for the rent of other entities is not yet defined. Sufficient time and notice will be provided to the community before enabling rent for other entities.
 

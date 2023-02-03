@@ -2,9 +2,9 @@
 
 ## Summary
 
-In this section, you will create your new project directory, your _`.env`_ file to store your _Hedera Testne_t _**account ID**_ and _**private keys,**_ and set up your _Hedera Testnet_ client.&#x20;
+In this section, you will create your new project directory, your _**`.env`**_ file to store your, _Hedera Testne_t **account ID** and **private keys** and set up your _Hedera Testnet_ client.&#x20;
 
-## Pre-requisites: <a href="#pre-requisites" id="pre-requisites"></a>
+## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
 {% content-ref url="introduction.md" %}
 [introduction.md](introduction.md)
@@ -93,7 +93,7 @@ import com.hedera.hashgraph.sdk.PrivateKey;
 import io.github.cdimascio.dotenv.Dotenv;
 ```
 
-Within the _`main`_ method, grab your testnet _**account ID**_ and _**private key**_ from the _`.env`_ file.
+Within the _`main`_ method, grab your testnet **account ID** and __ **private key** __ from the `.env` file.
 
 ```java
 public class HederaExamples {
@@ -139,7 +139,7 @@ touch index.js
 
 Your project structure should look something like this:
 
-![](<../.gitbook/assets/image105 (1) (1) (1).png>)
+![](<../.gitbook/assets/image105 (1).png>)
 
 Grab your Hedera Testnet _**account ID**_ and _**private key**_ from the _`.env`_ file.
 
@@ -239,13 +239,13 @@ go run hedera_examples.go
 
 ## Step 3: **Create your .env File**
 
-The _`.env`_ file stores your environment variables _**account ID**_ and _**private key**_**.** Create the file in your project's root directory.&#x20;
+The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key**_**.** Create the file in your project's root directory.&#x20;
 
 {% hint style="info" %}
 _**Note:** Testnet **HBAR** is required for this next step. Please follow the instructions to create a Hedera account on the_ [_portal_](https://docs.hedera.com/guides/getting-started/introduction) _before you move on to the next step._
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/portal screenshot (2).png" alt="screenshot of the developer portal dashboard where the account ID and private keys can be found"><figcaption><p><em>This is a screenshot of the portal dashboard where your account ID and private keys are.</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/portal screenshot (1).png" alt="Hedera developer portal dashboard with your account ID and public/private keys."><figcaption><p><em>This is a screenshot of the portal dashboard where your account ID and private keys are.</em></p></figcaption></figure>
 
 Grab the Hedera Testnet _**account ID**_ and _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the _`MY_ACCOUNT_ID`_ and _`MY_PRIVATE_KEY`_ environment variables in your _`.env`_ file:
 
@@ -274,7 +274,7 @@ MY_PRIVATE_KEY=ENTER TESTNET PRIVATE KEY
 
 ## Step 4: Create your Hedera Testnet client
 
-Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in _**HBAR**_. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet _**account ID**_ and the operator private key is the corresponding testnet account _**private key**_.
+Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in **HBAR**. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet **account ID** and the operator private key is the corresponding testnet account **private key**.
 
 {% tabs %}
 {% tab title="Java" %}
@@ -315,7 +315,7 @@ client.SetOperator(myAccountId, myPrivateKey)
 {% endtabs %}
 
 {% hint style="success" %}
-_**Your project environment is now set up to successfully submit transactions and queries to the Hedera test network!**_
+**Your project environment is now set up to successfully submit transactions and queries to the Hedera test network!**
 
 Next, you will learn how to create an account.
 {% endhint %}

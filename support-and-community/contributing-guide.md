@@ -3,7 +3,7 @@ description: >-
   Welcome to Hedera documentation contributing and style guide! Ways you can
   contribute below⬇:
 cover: ../.gitbook/assets/28_ultraviolet.jpg
-coverY: 7.686030910954216
+coverY: 31
 ---
 
 # Contributing & Style Guide

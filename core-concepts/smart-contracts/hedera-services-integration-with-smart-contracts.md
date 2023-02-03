@@ -6,8 +6,8 @@ The Hedera Service integration currently supports the Hedera Token Service trans
 
 Stay tuned for future releases that will expand support for the remaining HTS transactions!
 
-{% content-ref url="../../docs/sdks/smart-contracts/hedera-service-solidity-libraries.md" %}
-[hedera-service-solidity-libraries.md](../../docs/sdks/smart-contracts/hedera-service-solidity-libraries.md)
+{% content-ref url="../../sdks-and-apis/sdks/smart-contracts/hedera-service-solidity-libraries.md" %}
+[hedera-service-solidity-libraries.md](../../sdks-and-apis/sdks/smart-contracts/hedera-service-solidity-libraries.md)
 {% endcontent-ref %}
 
 ### Reference

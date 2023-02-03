@@ -4,7 +4,7 @@
 
 In this section, you will learn how to transfer _**HBAR**_ from your account to another account on the Hedera test network.
 
-## Pre-requisites: <a href="#pre-requisites" id="pre-requisites"></a>
+## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
 {% content-ref url="introduction.md" %}
 [introduction.md](introduction.md)
@@ -213,11 +213,11 @@ fmt.Println("The hbar account balance for this account is", newAccountBalance.Hb
 * Created an account.
 * Transferred _**HBAR**_ to another account.
 
-Do you want to keep learning? Visit our "[Resources](../resources/starter-projects.md)" and "[Documentation](../docs/sdks/)" sections to take your learning experience to the next level. You can also find additional Java SDK examples [here](https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java).
+Do you want to keep learning? Visit our "[Resources](broken-reference)" and "[Documentation](../sdks-and-apis/sdks/)" sections to take your learning experience to the next level. You can also find additional Java SDK examples [here](https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java).
 {% endhint %}
 
-{% content-ref url="try-examples/" %}
-[try-examples](try-examples/)
+{% content-ref url="../tutorials/" %}
+[tutorials](../tutorials/)
 {% endcontent-ref %}
 
 ## Code Check ✅

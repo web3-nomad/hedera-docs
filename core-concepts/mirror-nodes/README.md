@@ -59,8 +59,8 @@ To get access to a Hedera beta mirror node, please follow the link below.
 
 Hedera will provide a REST API to easily query a mirror node that is hosted by Hedera, removing the complexity of having to run your own. After you are whitelisted to a Hedera mirror node on mainnet, you can check out the mirror node REST API docs below.
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="../../sdks-and-apis/rest-api.md" %}
+[rest-api.md](../../sdks-and-apis/rest-api.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}

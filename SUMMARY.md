@@ -33,7 +33,7 @@
       * [Transaction Records](networks/mainnet/fees/transaction-records.md)
   * [Testnets](networks/testnet/README.md)
     * [Testnet Accounts](networks/testnet/testnet-access.md)
-    * [Testnet Nodes](networks/testnet/testnet-nodes.md)
+    * [Testnet Consensus Nodes](networks/testnet/testnet-nodes.md)
   * [Network Explorers and Tools](networks/community-mirror-nodes.md)
   * [Release Notes](networks/release-notes/README.md)
     * [Hedera Services](networks/release-notes/services.md)

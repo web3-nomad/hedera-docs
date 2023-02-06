@@ -1,6 +1,4 @@
-# Testnet Nodes
-
-## Testnet Nodes
+# Testnet Consensus Nodes
 
 Testnet nodes belong to the test network and run the same code as the Hedera Mainnet nodes.
 

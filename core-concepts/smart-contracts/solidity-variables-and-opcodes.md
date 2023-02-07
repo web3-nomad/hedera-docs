@@ -21,3 +21,9 @@ The table below defines the mapping of Solidity variables and operation codes to
 | `<address>.codehash`                      | Precompile contract addresses will report the empty code hash.                                                                                                                                                                      |
 | `SELFBALANCE`                             | This opcode will operate as expected with no change from Ethereum Mainnet.                                                                                                                                                          |
 | `CREATE2`                                 | The `CREATE2` operation is supported as of the 0.23 Hedera services release. Please check out the [status page](https://status.hedera.com/) for network availabilty.                                                                |
+
+{% hint style="warning" %}
+### _HBAR decimal places_
+
+_The JSON RPC Relay **`msg.value`** uses 18 decimals when it returns HBAR._ This was to provide an equivalent decimal length for web3 tools used across multiple EVM chains. _As a result, the **`gasPrice`** also uses 18 decimal places since it is only utilized from the JSON RPC Relay. Refer to the_ [_HBAR page_](../../sdks-and-apis/sdks/hbars.md) _for a table of Hedera APIs and the decimal places they return._&#x20;
+{% endhint %}

@@ -2,7 +2,7 @@
 
 ## Summary
 
-In this section, you will learn how to make a simple Hedera account. Hedera accounts are the entry point by which you can interact with the [Hedera APIs](../sdks-and-apis/hedera-api/). Accounts hold a balance of _**HBAR**_ used to pay for API calls for the various transaction and query types.
+In this section, you will learn how to make a simple Hedera account. Hedera accounts are the entry point by which you can interact with the [Hedera APIs](../docs/hedera-api/). Accounts hold a balance of _**HBAR**_ used to pay for API calls for the various transaction and query types.
 
 ## Prerequisites:
 

@@ -4,11 +4,11 @@
 
 An exchange rate between hbar and cents (USD) and the time at which the exchange rate will expire, and be superseded by a new exchange rate.
 
-| Field            | Type                                              | Description                                                        |
-| ---------------- | ------------------------------------------------- | ------------------------------------------------------------------ |
-| `hbarEquiv`      |                                                   | Denominator in calculation of exchange rate between hbar and cents |
-| `centEquiv`      |                                                   | Numerator in calculation of exchange rate between hbar and cents   |
-| `expirationTime` | [TimestampSeconds](timestamp.md#timestampseconds) | Expiration time in seconds for this exchange rate                  |
+| Field            | Type                                                                         | Description                                                        |
+| ---------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `hbarEquiv`      |                                                                              | Denominator in calculation of exchange rate between hbar and cents |
+| `centEquiv`      |                                                                              | Numerator in calculation of exchange rate between hbar and cents   |
+| `expirationTime` | [TimestampSeconds](../cryptocurrency-accounts/timestamp.md#timestampseconds) | Expiration time in seconds for this exchange rate                  |
 
 ## ExchangeRateSet
 

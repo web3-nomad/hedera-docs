@@ -2,10 +2,10 @@
 
 Each query from the client to the node will contain the QueryHeader, which gives the requested response type, and includes a payment for the response. It will sometimes leave payment blank: it is blank for TransactionGetReceiptQuery. It can also be left blank when the responseType is costAnswer or costAnswerStateProof. But it needs to be filled in for all other cases. The idea is that an answer that is only a few bytes (or that was paid for earlier) can be given for free. But if the answer is something that requires many bytes or much computation (like a state proof), then it should be paid for.
 
-| Field          | Type                                        | Description                                                                      |
-| -------------- | ------------------------------------------- | -------------------------------------------------------------------------------- |
-| `payment`      | [Transaction](transaction.md)               | A signed CryptoTransferTransaction to pay the node a fee for handling this query |
-| `responseType` | [ResponseType](queryheader.md#responsetype) | The requested response, asking for cost, state proof, both, or neither           |
+| Field          | Type                                                     | Description                                                                      |
+| -------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `payment`      | [Transaction](../cryptocurrency-accounts/transaction.md) | A signed CryptoTransferTransaction to pay the node a fee for handling this query |
+| `responseType` | [ResponseType](queryheader.md#responsetype)              | The requested response, asking for cost, state proof, both, or neither           |
 
 ## ResponseType
 

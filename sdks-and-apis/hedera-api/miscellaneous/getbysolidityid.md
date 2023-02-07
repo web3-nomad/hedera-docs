@@ -13,9 +13,9 @@ Get the IDs in the format used by transactions, given the ID in the format used 
 
 Response when the client sends the node GetBySolidityIDQuery
 
-| Field        | Type                                                             | Description                                                                                                      |
-| ------------ | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `header`     | [ResponseHeader](../cryptocurrency-accounts/responseheader.md)   | Standard response from node to client, including the requested fields: cost, or state proof, or both, or neither |
-| `accountID`  | [AccountID](../../../docs/hedera-api/basic-types/accountid.md)   | The Account ID for the cryptocurrency account                                                                    |
-| `fileID`     | [FileID](../../../docs/hedera-api/basic-types/fileid.md)         | The file Id for the file                                                                                         |
-| `contractID` | [ContractID](../../../docs/hedera-api/basic-types/contractid.md) | A smart contract ID for the instance (if this is included, then the associated accountID will also be included)  |
+| Field        | Type                                       | Description                                                                                                      |
+| ------------ | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| `header`     | [ResponseHeader](responseheader.md)        | Standard response from node to client, including the requested fields: cost, or state proof, or both, or neither |
+| `accountID`  | [AccountID](../basic-types/accountid.md)   | The Account ID for the cryptocurrency account                                                                    |
+| `fileID`     | [FileID](../basic-types/fileid.md)         | The file Id for the file                                                                                         |
+| `contractID` | [ContractID](../basic-types/contractid.md) | A smart contract ID for the instance (if this is included, then the associated accountID will also be included)  |

@@ -70,6 +70,6 @@ Below you will find the previewnet node public keys. The public keys stored in t
 
 For test network mirror node information, please visit the Hedera Mirror Node section below 👇 .
 
-{% content-ref url="../../core-concepts/mirror-nodes/hedera-mirror-node/" %}
-[hedera-mirror-node](../../core-concepts/mirror-nodes/hedera-mirror-node/)
+{% content-ref url="../../core-concepts/mirror-nodes/hedera-mirror-node.md" %}
+[hedera-mirror-node.md](../../core-concepts/mirror-nodes/hedera-mirror-node.md)
 {% endcontent-ref %}

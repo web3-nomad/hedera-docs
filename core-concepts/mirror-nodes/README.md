@@ -51,16 +51,16 @@ Hedera consensus nodes push new record files and signature files to the cloud st
 
 To get access to a Hedera beta mirror node, please follow the link below.
 
-{% content-ref url="hedera-mirror-node/" %}
-[hedera-mirror-node](hedera-mirror-node/)
+{% content-ref url="hedera-mirror-node.md" %}
+[hedera-mirror-node.md](hedera-mirror-node.md)
 {% endcontent-ref %}
 
 ### REST API from Hedera
 
 Hedera will provide a REST API to easily query a mirror node that is hosted by Hedera, removing the complexity of having to run your own. After you are whitelisted to a Hedera mirror node on mainnet, you can check out the mirror node REST API docs below.
 
-{% content-ref url="../../sdks-and-apis/rest-api/" %}
-[rest-api](../../sdks-and-apis/rest-api/)
+{% content-ref url="../../sdks-and-apis/rest-api.md" %}
+[rest-api.md](../../sdks-and-apis/rest-api.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
@@ -75,6 +75,6 @@ Anyone can run a Hedera beta mirror node by downloading and configuring the soft
 [run-your-own-beta-mirror-node](run-your-own-beta-mirror-node/)
 {% endcontent-ref %}
 
-{% content-ref url="one-click-mirror-node-deployment/" %}
-[one-click-mirror-node-deployment](one-click-mirror-node-deployment/)
+{% content-ref url="one-click-mirror-node-deployment.md" %}
+[one-click-mirror-node-deployment.md](one-click-mirror-node-deployment.md)
 {% endcontent-ref %}

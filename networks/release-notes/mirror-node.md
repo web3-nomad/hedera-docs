@@ -8,7 +8,19 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
-## ****[**v0.73**](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.73.0)****
+## [v0.74](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.74.0)
+
+This release switches the testnet bucket to the new one created for the [testnet reset](https://docs.hedera.com/hedera/networks/testnet#test-network-resets) that occurred on January 26, 2023. It also updates the address book to reflect the additional nodes added to testnet since the last reset. If you're running a testnet mirror node, please see the [reset instructions](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/database.md#reset) for help getting your node updated.
+
+In [HIP-668](https://github.com/hashgraph/hedera-improvement-proposal/pull/668), we propose adding a new mirror node GraphQL API and would greatly appreciate your feedback. In this release, a new GraphQL module with a simple account lookup query was added to provide the basis for future work on this HIP. In the next release, we will add the automated deployment of this module to all environments. It is considered an alpha API subject to breaking changes at any time, so it's not recommended to depend upon for production use. This has been made explicit by using `/graphql/alpha` in its URL.
+
+Finally, a number of query optimizations were implemented for Citus while ensuring it doesn't cause regressions with the existing database. This will continue to be the focus of the next few releases.
+
+## [**v0.73**](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.73.0)
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: FEBRUARY 3, 2022**
+{% endhint %}
 
 This release is the first one with support for [HIP-584](https://hips.hedera.com/HIP/hip-584.html) EVM Archive Node. HIP-584 allows mirror nodes to act as a read only EVM for free execution of smart contracts. This new feature is considered alpha with much of the work still to be implemented like support for precompiled contracts, gas estimation, etc. This functionality requires the mirror node to be configured to ingest the optional traceability sidecar files and it requires a network where those files are generated. Currently only previewnet has contract traceability enabled.
 
@@ -16,7 +28,7 @@ The testnet bucket name has been updated to the new bucket name after its recent
 
 The remaining work targeted significant testing improvements and bug fixes. Our performance tests were expanded to all endpoints to catch issues earlier in the lifecycle. Additional acceptance test coverage was added along with a number of fixes. CI stability has greatly improved with a focus on fixing flaky tests. Code smells as reported by [Sonar](https://sonarcloud.io/project/overview?id=hedera-mirror-node) were reduced to only a handful and in the next release reduced all the way down to zero. Finally, we merged work that enables nightly performance testing in our integration and mainnet staging environments via [TestKube](https://testkube.io/).
 
-## ****[**v0.72**](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.72.0)****
+## [**v0.72**](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.72.0)
 
 {% hint style="success" %}
 **MAINNET UPDATE COMPLETED: JANUARY 25, 2022**
@@ -79,8 +91,7 @@ As part of [HIP-406](https://hips.hedera.com/HIP/hip-406.html), the mirror node 
 
 The REST API saw further improvements outside of staking. The accounts REST APIs now show a calculated expiration timestamp to mirror the HAPI `CryptoGetInfo` query. Previously expiration timestamp only shows up if explicitly sent via a transaction that supports it (mainly update transactions). Now if it's `null` we calculate it as `created_timestamp.seconds + auto_renew_period`. Every contract results endpoint was updated to include an address field for the EVM address of the created contract.
 
-This release makes progress on being able to execute contract calls on the mirror node as outlined in [HIP-584](https://hips.hedera.com/HIP/hip-584.html). A lot of the groundwork is being laid that will be further refined in upcoming releases.\
-
+This release makes progress on being able to execute contract calls on the mirror node as outlined in [HIP-584](https://hips.hedera.com/HIP/hip-584.html). A lot of the groundwork is being laid that will be further refined in upcoming releases.\\
 
 ## [v0.69](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.69.0)
 

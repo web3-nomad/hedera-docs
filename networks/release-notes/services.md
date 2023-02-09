@@ -6,7 +6,17 @@ description: Hedera Services release information
 
 For the latest versions supported on each network please visit the Hedera status [page](https://status.hedera.com/).
 
-## Upcoming Releases
+## [v0.35](https://github.com/hashgraph/hedera-services/releases)
+
+{% hint style="info" %}
+**MAINNET UPDATE: MARCH 9, 2023**
+{% endhint %}
+
+{% hint style="info" %}
+**TESTNET UPDATE: FEBRUARY 16, 2023**
+{% endhint %}
+
+Coming Soon...
 
 ## [v0.34](https://github.com/hashgraph/hedera-services/releases/tag/v0.34.0)
 
@@ -44,8 +54,6 @@ Services v0.33.0 adds the following features:
 * Developer documentation updates
 
 <figure><img src="../../.gitbook/assets/Performance Measurement Results_033.001 (1).png" alt=""><figcaption></figcaption></figure>
-
-## **Latest Releases**
 
 ## [v0.31](https://github.com/hashgraph/hedera-services/releases/tag/v0.31.0)
 

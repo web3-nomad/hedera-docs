@@ -8,6 +8,13 @@ Create a new fungible or non-fungible token (NFT) on the Hedera network. After y
 
 You can also create, access, or transfer HTS tokens using smart contracts - see [Hedera Service Solidity Libraries](https://docs.hedera.com/guides/docs/sdks/smart-contracts/hedera-service-solidity-libraries) and [Supported ERC Token Standards](https://docs.hedera.com/guides/core-concepts/smart-contracts/supported-erc-token-standards).
 
+{% hint style="warning" %}
+**Token Keys**&#x20;
+
+* If any of the token key types (KYC key, Wipe key, etc) are not set during the creation of the token, you will not be able to update the token and add them in the future
+* If any of the token key types (KYC key, Wipe key, etc) are set during the creation of the token, you will not be able to remove them in the future
+{% endhint %}
+
 **NFTs**
 
 For non-fungible tokens, the token ID represents a NFT class. Once the token is created, you will have to mint each NFT using the [token mint](mint-a-token.md) operation.

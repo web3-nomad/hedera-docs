@@ -18,6 +18,8 @@ For the latest versions supported on each network please visit the Hedera status
 
 Coming Soon...
 
+<figure><img src="../../.gitbook/assets/0.35_results.001.jpeg" alt=""><figcaption></figcaption></figure>
+
 ## [v0.34](https://github.com/hashgraph/hedera-services/releases/tag/v0.34.0)
 
 {% hint style="success" %}

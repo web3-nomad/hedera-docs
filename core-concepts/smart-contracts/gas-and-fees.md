@@ -245,3 +245,15 @@ Yes, that is possible for contracts.
 * After than, each contract has **100 free key-value pairs** of storage available. Once a contract exceeds the first 100 free key-value pairs, it must pay storage fees
 
 </details>
+
+<details>
+
+<summary>For smart contracts created via <code>CREATE2</code>, how can I specify rent-related properties like<code>autorenewAccount</code> and <code>autorenewPeriod</code>?</summary>
+
+Contracts created via `CREATE2` inside the EVM will inherit the `autorenewaccount` and `autorenewPeriod`of the `sender` address.&#x20;
+
+For example, if you call contract `0xab...cd` which has `autorenewAccount` `0.0.X` and `autorenewPeriod` of 45 days, and this contract deploys a new contract `0xcd...ef`, then the new contract will also have `autorenewAccount` `0.0.X`and `autorenewPeriod` of 45 days.
+
+Also, remember that rent can be covered by the HBAR balance of a contract. Thus, developers can send HBAR to the contract or configure the contract to charge users a specific HBAR amount when executing operations.
+
+</details>

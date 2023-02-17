@@ -78,7 +78,7 @@ hedera:
 {% endtab %}
 {% endtabs %}
 
-## 4. Start Your Beta Mirror Node
+## 4. Start Your Mirror Node
 
 * From the `hedera-mirror-node` directory, run the following command in your terminal:
 
@@ -86,7 +86,7 @@ hedera:
 docker-compose up
 ```
 
-## 5. Access Your Beta Mirror Node Data
+## 5. Access Your Mirror Node Data
 
 To access the mirror node data now available to you, access the `hedera-mirror-node_db_1` container.
 
@@ -118,5 +118,5 @@ psql "dbname=mirror_node host=localhost user=mirror_node password=mirror_node_pa
 ![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 {% hint style="success" %}
-You have successfully deployed a Hedera mirror node ​ 🥳 !
+You have successfully deployed a Hedera Mirror Node ​ 🥳 !
 {% endhint %}

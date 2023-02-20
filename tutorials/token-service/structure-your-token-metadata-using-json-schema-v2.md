@@ -1,4 +1,4 @@
-# Structure Your Token Metadata sing JSON Schema V2
+# Structure Your Token Metadata Using JSON Schema V2
 
 ## Summary
 
@@ -340,6 +340,10 @@ The package will return errors and warnings using the below interface. This snip
 ```
 
 ## Want to learn more about token metadata?
+
+Here's a video that talks about the importance of structuring your token metadata and how to do it according to Token Metadata JSON Schema V2.
+
+{% embed url="https://www.youtube.com/watch?v=o8lY5nQ7pYo" %}
 
 You can find **examples** in this [blog post](https://hedera.com/blog/hedera-nft-metadata-hip412) in the section "Token Metadata V2 NFT Examples". If you still have questions, reach out on [Discord](https://hedera.com/discord) or ask it on [StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph).&#x20;
 

@@ -16,7 +16,7 @@
     * [Create and Transfer Your First NFT](tutorials/token-service/create-and-transfer-your-first-nft.md)
     * [Create and Transfer Your First Fungible Token](tutorials/token-service/create-and-transfer-your-first-fungible-token.md)
     * [Create and Transfer an NFT using a Solidity Contract](tutorials/token-service/create-and-transfer-an-nft-using-a-solidity-contract.md)
-    * [Structure Your Token Metadata sing JSON Schema V2](tutorials/token-service/structure-your-token-metadata-sing-json-schema-v2.md)
+    * [Structure Your Token Metadata Using JSON Schema V2](tutorials/token-service/structure-your-token-metadata-using-json-schema-v2.md)
   * [More Tutorials](tutorials/more-tutorials/README.md)
     * [Schedule Your First Transaction](tutorials/more-tutorials/schedule-your-first-transaction.md)
     * [Get Started with the Hedera Consensus Service Fabric Plugin](tutorials/more-tutorials/getting-started-with-the-hedera-consensus-service-fabric-plugin/README.md)

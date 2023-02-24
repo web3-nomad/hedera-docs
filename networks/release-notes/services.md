@@ -16,7 +16,31 @@ For the latest versions supported on each network please visit the Hedera status
 **TESTNET UPDATE: FEBRUARY 23, 2023**
 {% endhint %}
 
-Coming Soon...
+### Features
+
+* [HIP-583](https://hips.hedera.com/hip/hip-583) to expand alias support in CryptoCreate & CryptoTransfer Transactions.
+
+This includes,
+
+* CryptoTransfer to non-existing EVM address alias causing hollow-account creation.
+* Finalizing a hollow account with the payer signature in an incoming transaction
+
+Use cases for HIP-583 that work in this release :
+
+1. As a user with an ECDSA based account from another chain I can have a new Hedera account created based on on my evm-address alias.
+2. As a developer, I can create a new account using a evm-address alias via the CryptoTransfer transaction.
+3. As a developer, I can transfer HBAR or tokens to a Hedera account using their evm-address alias.
+4. As a Hedera user with an Ethereum-native wallet, I can receive HBAR or tokens in my account by sharing only my evm-address alias.
+5. As a Hedera user with a Hedera-native wallet, I can transfer HBAR or tokens to another account using only the recipient's evm-address alias.
+
+### Configuration Changes
+
+```
+autoCreation.enabled=true
+lazyCreation.enabled=true
+cryptoCreateWithAliasAndEvmAddress.enabled=false
+contracts.evm.version=v0.34
+```
 
 <figure><img src="../../.gitbook/assets/0.35_results.001.jpeg" alt=""><figcaption></figcaption></figure>
 

@@ -2,21 +2,11 @@
 
 ## Summary
 
-In this section, you will learn how to transfer _**HBAR**_ from your account to another account on the Hedera test network.
+In this section, you will learn how to transfer _**HBAR**_ from your account to another on the Hedera test network.
 
 ## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
-{% content-ref url="introduction.md" %}
-[introduction.md](introduction.md)
-{% endcontent-ref %}
-
-{% content-ref url="environment-set-up.md" %}
-[environment-set-up.md](environment-set-up.md)
-{% endcontent-ref %}
-
-{% content-ref url="create-an-account.md" %}
-[create-an-account.md](create-an-account.md)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="create-an-account.md"><mark style="color:purple;"><strong>CREATE AN ACCOUNT</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="create-an-account.md">create-an-account.md</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 _**Note:** You can always check the "_[_Code Check ✅_](transfer-hbar.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
@@ -224,8 +214,10 @@ Do you want to keep learning? Visit our "[Resources](broken-reference)" and "[Do
 
 Your complete code file should look something like this:
 
-{% tabs %}
-{% tab title="Java" %}
+<details>
+
+<summary>Java</summary>
+
 {% code title="HederaExamples.java" %}
 ```java
 import com.hedera.hashgraph.sdk.AccountId;
@@ -304,9 +296,13 @@ public class HederaExamples {
 }
 ```
 {% endcode %}
-{% endtab %}
 
-{% tab title="JavaScript" %}
+</details>
+
+<details>
+
+<summary>JavaScript</summary>
+
 {% code title="index.js" %}
 ```javascript
 const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction} = require("@hashgraph/sdk");
@@ -381,9 +377,13 @@ async function main() {
 main();
 ```
 {% endcode %}
-{% endtab %}
 
-{% tab title="Go" %}
+</details>
+
+<details>
+
+<summary>Go</summary>
+
 ```java
 package main
 
@@ -512,17 +512,19 @@ func main() {
     fmt.Println("The hbar account balance for this account is", newAccountBalance.Hbars.AsTinybar())
 }
 ```
-{% endtab %}
-{% endtabs %}
 
-## Sample Output:
+</details>
 
+{% tabs %}
+{% tab title="sample output" %}
 ```
 The new account ID is: 0.0.215975 
 The new account balance is: 1000 tℏ 
 The transfer transaction was: SUCCESS The cost of this query is: 0 
 The new account balance is: 2000 tℏ
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

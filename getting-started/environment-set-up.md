@@ -6,6 +6,8 @@ In this section, you will create your new project directory, your _**`.env`**_ f
 
 ## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr></tbody></table>
+
 {% content-ref url="introduction.md" %}
 [introduction.md](introduction.md)
 {% endcontent-ref %}
@@ -324,8 +326,10 @@ Next, you will learn how to create an account.
 
 This is what your code should look like:
 
-{% tabs %}
-{% tab title="Java" %}
+<details>
+
+<summary>Java</summary>
+
 {% code title="HederaExamples.java" %}
 ```java
 import com.hedera.hashgraph.sdk.AccountId;
@@ -349,9 +353,13 @@ public class HederaExamples {
 }
 ```
 {% endcode %}
-{% endtab %}
 
-{% tab title="JavaScript" %}
+</details>
+
+<details>
+
+<summary>JavaScript</summary>
+
 {% code title="index.js" %}
 ```javascript
 const { Client } = require("@hashgraph/sdk");
@@ -377,9 +385,13 @@ async function main() {
 main().catch(err => console.error(err));
 ```
 {% endcode %}
-{% endtab %}
 
-{% tab title="Go" %}
+</details>
+
+<details>
+
+<summary>Go</summary>
+
 {% code title="hedera_examples.go" %}
 ```go
 package main
@@ -421,8 +433,8 @@ func main() {
 }
 ```
 {% endcode %}
-{% endtab %}
-{% endtabs %}
+
+</details>
 
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

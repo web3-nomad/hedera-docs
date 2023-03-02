@@ -6,13 +6,7 @@ In this section, you will learn how to make a simple Hedera account. Hedera acco
 
 ## Prerequisites:
 
-{% content-ref url="introduction.md" %}
-[introduction.md](introduction.md)
-{% endcontent-ref %}
-
-{% content-ref url="environment-set-up.md" %}
-[environment-set-up.md](environment-set-up.md)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## Step 1: Import modules
 
@@ -108,9 +102,9 @@ newAccountPublicKey := newAccountPrivateKey.PublicKey()
 
 ## Step 3: Create a new account
 
-Create a new account using <mark style="color:purple;">`AccountCreateTransaction()`</mark>. Use the public key created in the previous step to enter in the `setKey()` field. This will associate the key pair generated in the previous step with the new account. The public key of the account is visible to the public and can be viewed in a mirror node explorer. The private key is used to authorize account-related transactions like transferring _**HBAR**_ or tokens from that account to another account. The account will have an initial balance of 1,000 tinybars that is funded from your testnet account created by the Hedera portal.
+Create a new account using _`AccountCreateTransaction()`_. Use the public key created in the previous step to enter in the _`setKey()`_ field. This will associate the key pair generated in the previous step with the new account. The public key of the account is visible to the public and can be viewed in a mirror node explorer. The private key is used to authorize account-related transactions like transferring _**HBAR**_ or tokens from that account to another account. The account will have an initial balance of _1,000 tinybars_ funded from your testnet account created by the Hedera portal.
 
-You can view transactions that were successfully submitted to the network by getting the transaction ID and searching for it in a mirror node explorer. The transaction ID is composed of the account ID that paid for the transaction and the transaction's valid start time e.g. <mark style="color:blue;">`0.0.1234@1609348302`</mark><mark style="color:blue;">.</mark> The transaction's valid start time is the time the transaction begins to be valid on the network. The SDK automatically generates a transaction ID for each transaction behind the scenes.
+You can view transactions successfully submitted to the network by getting the transaction ID and searching for it in a mirror node explorer. The transaction ID is composed of the account ID that paid for the transaction and the transaction's valid start time e.g. _`0.0.1234@1609348302`_<mark style="color:blue;">.</mark> The transaction's valid start time is the time the transaction begins to be valid on the network. The SDK automatically generates a transaction ID for each transaction behind the scenes.
 
 {% tabs %}
 {% tab title="Java" %}
@@ -146,7 +140,7 @@ newAccount, err := hedera.NewAccountCreateTransaction().
 
 ## Step 4: Get the new account ID
 
-The _account ID_ for the new account is returned in the receipt of the transaction that created the account. The receipt provides information about the transaction like whether it was successful or not and any new entity IDs that were created. Entities include accounts, smart contracts, tokens, files, topics, and scheduled transactions. The _account ID_ is in x.y.z format where z is the account number. The preceding values (x and y) default to zero today and represent the shard and realm number respectively. Your new _account ID_ should result in something like <mark style="color:blue;">`0.0.1234`</mark>.
+The _account ID_ for the new account is returned in the receipt of the transaction that created the account. The receipt provides information about the transaction like whether it was successful or not and any new entity IDs that were created. Entities include accounts, smart contracts, tokens, files, topics, and scheduled transactions. The _account ID_ is in x.y.z format where z is the account number. The preceding values (x and y) default to zero today and represent the shard and realm number respectively. Your new _account ID_ should result in something like _`0.0.1234`_.
 
 {% tabs %}
 {% tab title="Java" %}

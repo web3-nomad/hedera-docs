@@ -18,7 +18,7 @@ For an immutable token (that is, a token created without an admin key), only the
 | **Supply Key**         | The new supply key of the token. If the token does not have currently a supply key, the transaction will resolve to `TOKEN_HAS_NO_SUPPLY_KEY`.                                                                                                                        |
 | **Expiration Time**    | The new expiry time of the token. Expiry can be updated even if the admin key is not set. If the provided expiry is earlier than the current token expiry, the transaction will resolve to `INVALID_EXPIRATION_TIME`.                                                 |
 | **Auto Renew Account** | The new account which will be automatically charged to renew the token's expiration, at autoRenewPeriod interval.                                                                                                                                                     |
-| **Auto Renew Period**  | The new interval at which the auto-renew account will be charged to extend the token's expiry. The default auto-renew period is 131,500 minutes.                                                                                                                      |
+| **Auto Renew Period**  | The new interval at which the auto-renew account will be charged to extend the token's expiry. The default auto-renew period is 7,890,000 seconds. Currently, rent is not enforced for tokens so auto-renew payments will not be made. <br><br><strong>NOTE:</strong> The minimum period of time is approximately 30 days (2592000 seconds) and the maximum period of time is approximately 92 days (8000001 seconds). Any other value outside of this range will return the following error: AUTORENEW_DURATION_NOT_IN_RANGE.|
 | **Memo**               | Short publicly visible memo about the token. No guarantee of uniqueness. (100 characters max)                                                                                                                                                                         |
 
 #### Transaction Signing Requirements
@@ -48,7 +48,7 @@ new TokenUpdateTransaction()
 | `setTokenId(<tokenId>)`               | [TokenId](token-id.md)                                            | Required    |
 | `setTokenName(<name>)`                | String                                                            | Optional    |
 | `setTokenSymbol(<symbol>)`            | String                                                            | Optional    |
-| `setTreasuryAccountId(<treasury>)`    | [AccountId](../../deprecated/sdks/specialized-types.md#accountid) | Optional    |
+| `setTreasuryAccountId(<treasury>)`    | [AccountId](../specialized-types.md#accountid)                    | Optional    |
 | `setAdminKey(<key>)`                  | Key                                                               | Optional    |
 | `setKycKey(<key>)`                    | Key                                                               | Optional    |
 | `setFreezeKey(<key>)`                 | Key                                                               | Optional    |
@@ -58,8 +58,8 @@ new TokenUpdateTransaction()
 | `setSupplyKey(<key>)`                 | Key                                                               | Optional    |
 | `setExpirationTime(<expirationTime>)` | Instant                                                           | Optional    |
 | `setTokenMemo(<memo>)`                | String                                                            | Optional    |
-| `setAutoRenewAccountId(<account>)`    | [AccountId](../../deprecated/sdks/specialized-types.md#accountid) | Disabled    |
-| `setAutoRenewPeriod(<period>)`        | Duration                                                          | Disabled    |
+| `setAutoRenewAccountId(<account>)`    | [AccountId](../specialized-types.md#accountid)                    | Optional    |
+| `setAutoRenewPeriod(<period>)`        | Duration                                                          | Optional    |
 
 {% tabs %}
 {% tab title="Java" %}

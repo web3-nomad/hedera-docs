@@ -186,5 +186,3 @@ The following ERC-721 operations are currently not supported.
 ## References
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td align="center"><a href="https://hips.hedera.com/hip/hip-218">HIP-218</a></td><td></td><td></td></tr><tr><td align="center"><a href="https://hips.hedera.com/hip/hip-376">HIP-376</a></td><td></td><td></td></tr><tr><td align="center"><a href="https://eips.ethereum.org/EIPS/eip-20">EIP-20</a></td><td></td><td></td></tr><tr><td align="center"><a href="https://eips.ethereum.org/EIPS/eip-721">EIP-721</a></td><td></td><td></td></tr></tbody></table>
-
-*

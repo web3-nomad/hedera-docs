@@ -6,13 +6,13 @@ When you create a new fungible or non-fungible token, you have the ability to ad
 
 Therefore, Hedera has developed the ["Token Metadata JSON Schema V2](https://github.com/hashgraph/hedera-improvement-proposal/blob/main/HIP/hip-412.md#reference-implementation)" for developers and creators who want to structure their metadata in an organized way. The biggest benefit of using this community-accepted standard is that most of the tooling on the Hedera network can scrape and interpret your metadata, like NFT explorers listing rarity attributes based on your metadata.
 
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong></strong><a href="structure-your-token-metadata-using-json-schema-v2.md#how-do-you-connect-metadata-to-a-token"><strong>CONNECT METADATA</strong></a><strong></strong></td><td><a href="structure-your-token-metadata-using-json-schema-v2.md#how-do-you-connect-metadata-to-a-token">#how-do-you-connect-metadata-to-a-token</a></td></tr><tr><td align="center"><strong></strong><a href="structure-your-token-metadata-using-json-schema-v2.md#what-does-the-token-metadata-json-schema-v2-look-like"><strong>METADATA SCHEMA</strong></a><strong></strong></td><td><a href="structure-your-token-metadata-using-json-schema-v2.md#what-does-the-token-metadata-json-schema-v2-look-like">#what-does-the-token-metadata-json-schema-v2-look-like</a></td></tr><tr><td align="center"><strong></strong><a href="structure-your-token-metadata-using-json-schema-v2.md#how-to-verify-your-token-metadata-is-correct"><strong>VERIFY METADATA</strong></a><strong></strong></td><td><a href="structure-your-token-metadata-using-json-schema-v2.md#how-to-verify-your-token-metadata-is-correct">#how-to-verify-your-token-metadata-is-correct</a></td></tr><tr><td align="center"><strong></strong><a href="structure-your-token-metadata-using-json-schema-v2.md#want-to-learn-more-about-token-metadata"><strong>VIDEO TUTORIAL</strong></a><strong></strong></td><td><a href="structure-your-token-metadata-using-json-schema-v2.md#want-to-learn-more-about-token-metadata">#want-to-learn-more-about-token-metadata</a></td></tr></tbody></table>
+
 ## Prerequisites
 
 We recommend you complete one of the two tutorials below that teach you how to create a fungible or non-fungible token on the Hedera network.
 
-[create-and-transfer-your-first-nft.md](create-and-transfer-your-first-nft.md "mention")
-
-[create-and-transfer-your-first-fungible-token.md](create-and-transfer-your-first-fungible-token.md "mention")
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center">➡ <a href="create-and-transfer-your-first-nft.md"><strong>Create and Transfer Your First NFT</strong></a><strong></strong></td><td><a href="create-and-transfer-your-first-nft.md">create-and-transfer-your-first-nft.md</a></td><td></td></tr><tr><td align="center">➡ <a href="create-and-transfer-your-first-fungible-token.md"><strong>Create and Transfer Your First Fingible Token</strong></a><strong></strong></td><td><a href="create-and-transfer-your-first-fungible-token.md">create-and-transfer-your-first-fungible-token.md</a></td><td></td></tr></tbody></table>
 
 ## How do you connect metadata to a token?
 
@@ -37,17 +37,15 @@ let mintTx = await new TokenMintTransaction()
 {% endtab %}
 
 {% tab title="Java" %}
-```java
-
-// IPFS content identifier (CID) that points to your metadata// IPFS content identifier (CID) that points to your metadata
-String CID = ("QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa") ;
+<pre class="language-java"><code class="lang-java"><strong>// IPFS content identifier (CID) that points to your metadata
+</strong>String CID = ("QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa") ;
 
 // Mint a new NFT
 TokenMintTransaction mintTx = new TokenMintTransaction()
         .setTokenId(tokenId)
         .addMetadata(CID.getBytes())
 	.freezeWith(client);
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Go" %}
@@ -73,8 +71,10 @@ First of all, you can find the full reference implementation of this JSON schema
 
 Let's take a look at the different fields you can specify.
 
-### Required fields: name, type, and image
+### Required fields:&#x20;
 
+{% tabs %}
+{% tab title="name, type, and image" %}
 The schema defines three required fields:
 
 * **name**: Full name of the NFT
@@ -94,9 +94,13 @@ Here's a small example of an implementation.
     "image": "https://myserver.com/preview-image-nft-001.png"
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-### Optional field: files
+### Optional fields:
 
+{% tabs %}
+{% tab title="files" %}
 The `files` field represents an array containing file objects. For collectible NFTs, the files array allows you to store the high-resolution image of your NFT. However, you can also use this field for multi-file NFTs. Each file object requires a **URI** and **type.**&#x20;
 
 It's recommended to use the **is\_default\_file** field to indicate which file is the main file for your NFT. Besides that, the files array allows you to upload or link file-specific metadata. This allows you to nest files indefinitely.&#x20;
@@ -116,9 +120,9 @@ It's recommended to use the **is\_default\_file** field to indicate which file i
     ]
 }
 ```
+{% endtab %}
 
-### Optional field: Properties
-
+{% tab title="properties" %}
 It's not allowed to define additional fields on the root level of the metadata object.&#x20;
 
 ```json
@@ -147,8 +151,10 @@ If you want to add custom fields, you can add them to the `properties` object. F
 }
 </code></pre>
 
-### Optional field: Attributes
 
+{% endtab %}
+
+{% tab title="attributes" %}
 The `attributes` field is specifically used to calculate rarity of NFTs. It's an industry-accepted way to define traits and their values for a collectible NFT collection in order to calculate the rarity score of the NFT.&#x20;
 
 The `attributes` fied consists of an array of `attribute` objects. This is the structure of such an object:
@@ -198,9 +204,9 @@ The `attributes` fied consists of an array of `attribute` objects. This is the s
 </code></pre>
 
 **Extra resources:** You can find all information about the `attributes` field in the detailed [schema specification](https://github.com/hashgraph/hedera-improvement-proposal/blob/main/HIP/hip-412.md#attributestrait\_type).
+{% endtab %}
 
-### Optional field: Localization
-
+{% tab title="localization" %}
 The standard also allows for localization. Each locale links to another metadata file containing localized metadata and files. This allows for a clean metadata structure. Don't define a new localization object for a localized metadata file to avoid infinite looping when parsing an NFT's metadata file.&#x20;
 
 Note that the `localization.uri` property contains `{locale}`. The `{locale}` part references a locale in the `locales` array. You should use two-letter language codes according to the [ISO 639-1 standard](https://en.wikipedia.org/wiki/List\_of\_ISO\_639-1\_codes) to define languages.
@@ -234,9 +240,9 @@ A localized file would have the same structure, but doesn't specify any localiza
     "image": "https://myserver.com/preview-image-nft-001.png"
 }
 </code></pre>
+{% endtab %}
 
-### Optional fields: description, creator, creatorDID, checksum, and format
-
+{% tab title="description, creator, creatorDID, checksum, and format" %}
 Here's a list of remaining optional fields you can define according to the Token Metadata JSON Schema V2 specification.
 
 * **description**: A text that describes your token or NFT collection.
@@ -244,9 +250,13 @@ Here's a list of remaining optional fields you can define according to the Token
 * **creatorDID**: Points to a decentralized identifier to identify the creator.
 * **checksum:** Cryptographic SHA-256 hash of the representation of the `image` resource or resources in the `files` array. It allows browsers or other tooling to verify the integrity of any file you list.
 * **format:** Indicates the implemented metadata schema specification. Currently, the default version (Token Metadata JSON Schema V2) is represented by `HIP412@2.0.0`. If you wonder why, each update to the JSON Schema requires a new Hedera Improvement Proposal (HIP). Therefore, the `format` field lists the HIP number and the associated version of the Token Metadata JSON Schema.
+{% endtab %}
+{% endtabs %}
 
-### Putting things together: Full schema implementation
+### Putting things together:
 
+{% tabs %}
+{% tab title="Full schema implementation" %}
 This is what a full Token Metadata JSON Schema V2 specification looks like.
 
 ```json
@@ -259,7 +269,7 @@ This is what a full Token Metadata JSON Schema V2 specification looks like.
 	"checksum": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
 	"type": "image/png",
 	"format": "HIP412@2.0.0",
-	"properties" : {
+	"properties": {
 		"external_url": "https://nft.com/mycollection/001"
 	},
 	"files": [
@@ -292,6 +302,8 @@ This is what a full Token Metadata JSON Schema V2 specification looks like.
 	}
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ## How to verify your token metadata is correct?
 
@@ -348,3 +360,5 @@ Here's a video that talks about the importance of structuring your token metadat
 You can find **examples** in this [blog post](https://hedera.com/blog/hedera-nft-metadata-hip412) in the section "Token Metadata V2 NFT Examples". If you still have questions, reach out on [Discord](https://hedera.com/discord) or ask it on [StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph).&#x20;
 
 Besides that, you can **read up on the full implementation** of token metadata in the Hedera Improvement Proposals [GitHub Repository under HIP-412](https://github.com/hashgraph/hedera-improvement-proposal/blob/main/HIP/hip-412.md).
+
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Author: <a href="https://www.linkedin.com/in/michielmulders/">Michiel</a>, Developer Advocate</td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>

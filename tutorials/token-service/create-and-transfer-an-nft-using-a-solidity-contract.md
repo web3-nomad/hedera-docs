@@ -19,10 +19,6 @@ We recommend you complete the following introduction to get a basic understandin
 [introduction.md](../../getting-started/introduction.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../getting-started/introduction.md" %}
-[introduction.md](../../getting-started/introduction.md)
-{% endcontent-ref %}
-
 {% content-ref url="../../getting-started/environment-set-up.md" %}
 [environment-set-up.md](../../getting-started/environment-set-up.md)
 {% endcontent-ref %}

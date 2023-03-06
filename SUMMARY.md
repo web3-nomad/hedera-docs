@@ -18,7 +18,7 @@
     * [Create and Transfer an NFT using a Solidity Contract](tutorials/token-service/create-and-transfer-an-nft-using-a-solidity-contract.md)
     * [Structure Your Token Metadata Using JSON Schema V2](tutorials/token-service/structure-your-token-metadata-using-json-schema-v2.md)
   * [More Tutorials](tutorials/more-tutorials/README.md)
-    * [Deploy a contract using Hardhat](tutorials/more-tutorials/deploy-a-contract-using-hardhat.md)
+    * [Deploy a Smart Contract Using Hardhat](tutorials/more-tutorials/deploy-a-smart-contract-using-hardhat.md)
     * [Virtual Environment Setup](tutorials/more-tutorials/virtual-environment-set-up.md)
     * [Schedule Your First Transaction](getting-started/try-examples/schedule-your-first-transaction.md)
   * [Demo Applications](tutorials/demo-applications.md)

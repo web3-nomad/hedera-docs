@@ -1,10 +1,10 @@
-# Deploy a contract using Hardhat
+# Deploy a Smart Contract Using Hardhat
 
 In this tutorial, you'll be guided through setting up a Hardhat project and deploying a Hedera smart contract to the **Hedera Testnet** using the **Hashio** JSON-RPC instance.&#x20;
 
 **Hardhat** is a development environment for Ethereum smart contracts. It consists of different components for editing, compiling, debugging, and deploying your smart contracts and dApps, all working together to create a complete development environment. By the end of this tutorial, you'll have learned how to deploy smart contracts using Hardhat on the Hedera Testnet**.**
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-a-contract-using-hardhat.md#prerequisites"><strong>PREREQUISITES</strong></a><strong></strong></td><td><a href="deploy-a-contract-using-hardhat.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-a-contract-using-hardhat.md#hardhat-project-setup"><strong>HARDHAT SETUP</strong></a><strong></strong></td><td><a href="deploy-a-contract-using-hardhat.md#hardhat-project-setup">#hardhat-project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-a-contract-using-hardhat.md#project-contents"><strong>PROJECT CONTENTS</strong></a><strong></strong></td><td><a href="deploy-a-contract-using-hardhat.md#project-contents">#project-contents</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-a-contract-using-hardhat.md#deploy-contract"><strong>DEPLOY CONTRACT</strong></a><strong></strong></td><td><a href="deploy-a-contract-using-hardhat.md#test-and-deploy-contract">#test-and-deploy-contract</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#prerequisites"><strong>PREREQUISITES</strong></a><strong></strong></td><td><a href="deploy-a-smart-contract-using-hardhat.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#hardhat-project-setup"><strong>HARDHAT SETUP</strong></a><strong></strong></td><td><a href="deploy-a-smart-contract-using-hardhat.md#hardhat-project-setup">#hardhat-project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#project-contents"><strong>PROJECT CONTENTS</strong></a><strong></strong></td><td><a href="deploy-a-smart-contract-using-hardhat.md#project-contents">#project-contents</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#deploy-contract"><strong>DEPLOY CONTRACT</strong></a><strong></strong></td><td><a href="deploy-a-smart-contract-using-hardhat.md#test-and-deploy-contract">#test-and-deploy-contract</a></td></tr></tbody></table>
 
 ## Prerequisites
 
@@ -137,7 +137,7 @@ _**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR*
 
 ## Project Contents
 
-In this step, you'll look at the descriptions of the Hardhat project contents. For more information regarding Hardhat projects, check out the [Hardhat docs](https://hardhat.org/hardhat-runner/docs/guides/project-setup). If you do not need to review the project contents you can skip to "[Test and Deploy](deploy-a-contract-using-hardhat.md#test-and-deploy)."
+In this step, you'll look at the descriptions of the Hardhat project contents. For more information regarding Hardhat projects, check out the [Hardhat docs](https://hardhat.org/hardhat-runner/docs/guides/project-setup). If you do not need to review the project contents you can skip to "[Test and Deploy](deploy-a-smart-contract-using-hardhat.md#test-and-deploy)."
 
 {% tabs %}
 {% tab title="contracts/" %}

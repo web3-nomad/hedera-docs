@@ -64,12 +64,12 @@ Congrats! You just made my entire year. Now you're ready to move on to Step 1 an
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-{% content-ref url="../introduction.md" %}
-[introduction.md](../introduction.md)
+{% content-ref url="../../getting-started/introduction.md" %}
+[introduction.md](../../getting-started/introduction.md)
 {% endcontent-ref %}
 
-{% content-ref url="../environment-set-up.md" %}
-[environment-set-up.md](../environment-set-up.md)
+{% content-ref url="../../getting-started/environment-set-up.md" %}
+[environment-set-up.md](../../getting-started/environment-set-up.md)
 {% endcontent-ref %}
 
 ## 1. Create your first topic

@@ -35,7 +35,9 @@ This helps protect sensitive information like your private keys and API secrets,
 
 ## Project Configuration
 
-In order to deploy the contract to the _Hedera Testnet_, you will need to get a testnet account and key. To get a testnet account, create an _ECDSA_ account using the **Hedera Developer** [**Portal**](https://portal.hedera.com/). Once you have your ECDSA account and HEX encoded private key, add them to the `TESTNET_OPERATOR_PRIVATE_KEY` variable in the `.env` file.&#x20;
+In this step, you will update and configure the Hardhat configuration file that defines tasks, stores Hedera account private key information, and Hashio Testnet RPC URL. First, rename the `.env.example` file to `.env`. and update the `.env` and `hardhat.config.js` files with the following code.
+
+But first, in order to deploy the contract to the _Hedera Testnet_, you will need to get a testnet account and key. To get a testnet account, create an _ECDSA_ account using the **Hedera Developer** [**Portal**](https://portal.hedera.com/). Once you have your ECDSA account and HEX encoded private key, add them to the `TESTNET_OPERATOR_PRIVATE_KEY` variable in the `.env` file.&#x20;
 
 <details>
 
@@ -54,8 +56,6 @@ Once you have completed the instructions, you will receive a _Hedera Testnet_ **
 _**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR** upon creation that can only be utilized on the Hedera test network. Your balance will be topped up daily to 10,000 test **HBAR** when you use your funds._
 
 </details>
-
-In this step, you will update and configure the Hardhat configuration file that defines tasks, stores Hedera account private key information, and Hashio Testnet RPC URL. First, rename the `.env.example` file to `.env`. and update the `.env` and `hardhat.config.js` files with the following code.
 
 #### Environment Variables
 
@@ -138,8 +138,8 @@ module.exports = {
 
 In this step, you'll look at the descriptions of the Hardhat project contents. For more information regarding Hardhat projects, check out the [Hardhat docs](https://hardhat.org/hardhat-runner/docs/guides/project-setup). If you do not need to review the project contents you can skip to "[Test and Deploy](deploy-a-smart-contract-using-hardhat.md#test-and-deploy)."
 
-{% tabs %}
-{% tab title="contracts/" %}
+#### contracts/
+
 The `contracts/` folder contains the source file for the Greeter smart contract.\
 ****\
 ****Let's review the `Greeter.sol` smart contract in the `hedera-example-hardhat-project/contracts` folder. At the top of the file, the `SPDX-License-Identifier` defines the license, in this case, the MIT license. The `pragma solidity ^0.8.9;` line specifies the Solidity compiler version to use. These two lines are crucial for proper licensing and compatibility.
@@ -174,12 +174,12 @@ contract Greeter {
 }
 ```
 
-_**Note:** The pragma solidity line must match the version of Solidity defined in the_ [_module exports_](https://github.com/hashgraph/hedera-hardhat-example-project/blob/main/hardhat.config.js#L34) _of your `hardhat.config.js` file._
-{% endtab %}
+> _NOTE: The pragma solidity line must match the version of Solidity defined in the_ [_module exports_](https://github.com/hashgraph/hedera-hardhat-example-project/blob/main/hardhat.config.js#L34) _of your `hardhat.config.js` file._
 
-{% tab title="scripts/" %}
-The `scripts/` folder contains the automation scripts for the test file. This project contains 4 scripts.\
-\
+#### scripts/
+
+The `scripts/` folder contains the automation scripts for the test file. This project contains 4 scripts.
+
 The `scripts/` folder contains test scripts for locally testing a smart contract before deploying it. Please read the comments to help you understand the code and its purpose:&#x20;
 
 {% tabs %}
@@ -287,9 +287,9 @@ module.exports = async () => {
 ```
 {% endtab %}
 {% endtabs %}
-{% endtab %}
 
-{% tab title="test/" %}
+#### test/
+
 The `test/` folder contains the test files for the project.\
 \
 The `rpc.js` file is located in the `test` folder of the `hedera-example-hardhat-project` project and references the Hardhat [tasks](https://github.com/hashgraph/hedera-hardhat-example-project/blob/main/hardhat.config.js#L7) that are defined in the hardhat.config file. When the command `npx hardhat test` is run, the program executes the `rpc.js` file.
@@ -329,16 +329,14 @@ describe("RPC", function () {
   });
 });
 ```
-{% endtab %}
 
-{% tab title=".env" %}
-A file that stores your environment variables like your accounts, private keys, and references to Hedera network (see previous step).
-{% endtab %}
+#### .env
 
-{% tab title="hardhat.config.js" %}
+A file that stores your environment variables like your accounts, private keys, and references to Hedera network ([see previous step](deploy-a-smart-contract-using-hardhat.md#environment-variables)).
+
+#### hardhat.config.js
+
 The Hardhat project configuration file. This file includes information about the Hedera network RPC URLs, accounts, and tasks defined (see previous step).
-{% endtab %}
-{% endtabs %}
 
 ## Test and Deploy
 

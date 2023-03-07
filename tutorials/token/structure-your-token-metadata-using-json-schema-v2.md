@@ -315,7 +315,7 @@ You can install the package using Yarn or NPM.
 npm i -s @hashgraph/nft-utilities
 ```
 
-Next, you need to import the `validator` function which accepts your metadata as a stringified JSON object and the schema version against which you want to verify the metadata (`2.0.0`). Here's the code.
+Next, you need to import the `validator` function which accepts your metadata as a JSON object and the schema version against which you want to verify the metadata (`2.0.0`). Here's the code.
 
 ```javascript
 const metadata = {
@@ -326,7 +326,7 @@ const metadata = {
 };
 const version = '2.0.0';
 
-const issues = validator(JSON.stringify(metadata), version);
+const issues = validator(metadata, version);
 console.log(issues);
 ```
 

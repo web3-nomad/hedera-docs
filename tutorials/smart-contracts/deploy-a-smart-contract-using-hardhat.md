@@ -180,7 +180,7 @@ _**Note:** The pragma solidity line must match the version of Solidity defined i
 {% tab title="scripts/" %}
 The `scripts/` folder contains the automation scripts for the test file. This project contains 4 scripts.\
 \
-The `hedera-example-hardhat-project/scripts` folder contains test scripts for locally testing a smart contract before deploying it. Please read the comments to help you understand the code and its purpose:&#x20;
+The `scripts/` folder contains test scripts for locally testing a smart contract before deploying it. Please read the comments to help you understand the code and its purpose:&#x20;
 
 {% tabs %}
 {% tab title="contractCall.js" %}

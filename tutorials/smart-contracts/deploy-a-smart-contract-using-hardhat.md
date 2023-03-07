@@ -9,6 +9,7 @@ In this tutorial, you'll be guided through setting up a Hardhat project and depl
 ## Prerequisites
 
 * Basic understanding of smart contracts.
+* Basic understanding of Node.js or Javascript.
 * Basic understanding of the [Hedera JSON RPC Relay](../../core-concepts/smart-contracts/json-rpc-relay.md).
 * Basic understanding of [Hardhat Ethereum Development Tool](https://hardhat.org/hardhat-runner/docs/guides/project-setup).
 
@@ -32,12 +33,32 @@ npm install dotenv
 
 This helps protect sensitive information like your private keys and API secrets, but it's still best practice to add `.env` to your `.gitignore` to prevent you from pushing your credentials to GitHub.
 
-## Hardhat Configuration
+## Project Configuration
 
-In this step, you will update and configure the Hardhat configuration file that defines tasks, stores Hedera account private key information, and Hashio Testnet RPC URL. First, rename the `.env.example` file to `.env`. and update the `.env` and `hardhat.config.js` files with the following code:
+In order to deploy the contract to the _Hedera Testnet_, you will need to get a testnet account and key. To get a testnet account, create an _ECDSA_ account using the **Hedera Developer** [**Portal**](https://portal.hedera.com/). Once you have your ECDSA account and HEX encoded private key, add them to the `TESTNET_OPERATOR_PRIVATE_KEY` variable in the `.env` file.&#x20;
 
-{% tabs %}
-{% tab title=".env" %}
+<details>
+
+<summary>Create your testnet account 🛠️</summary>
+
+### Create Hedera Portal Profile (Faucet)
+
+The _Hedera Testnet_ account allows you to interact with our [APIs](../../sdks-and-apis/) and pay for the transaction fees. Visit the [Hedera portal](https://portal.hedera.com/register) to create your _Hedera Testnet_ account and follow the instructions.
+
+<img src="../../.gitbook/assets/portal testnet account.png" alt="" data-size="original">
+
+Once you have completed the instructions, you will receive a _Hedera Testnet_ **account ID** (0.0.x) and your **private/public key pair** on your testnet page. You will need to copy over your ECDSA _**HEX Encoded private key**_ and paste it in the `TESTNET_OPERATOR_PRIVATE_KEY` .env file variable.
+
+![](<../../.gitbook/assets/new portal 2 (1).png>)
+
+_**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR** upon creation that can only be utilized on the Hedera test network. Your balance will be topped up daily to 10,000 test **HBAR** when you use your funds._
+
+</details>
+
+In this step, you will update and configure the Hardhat configuration file that defines tasks, stores Hedera account private key information, and Hashio Testnet RPC URL. First, rename the `.env.example` file to `.env`. and update the `.env` and `hardhat.config.js` files with the following code.
+
+#### Environment Variables
+
 This code defines environment variables used in the Hardhat configuration file. The `TESTNET_OPERATOR_PRIVATE_KEY` variable contains the _ECDSA_ _**Hex Encoded Private Key**_ for the Hedera Testnet account used in the `testnet` network Hardhat configuration.&#x20;
 
 The `TESTNET_ENDPOINT` variable contains the [HashIO](https://swirldslabs.com/hashio/) Testnet endpoint URL. This is the JSON-RPC instance that will submit the transactions to the Hedera test network to test, create and deploy your smart contract.
@@ -48,9 +69,9 @@ The `TESTNET_ENDPOINT` variable contains the [HashIO](https://swirldslabs.com/ha
 # testnet endpoint referenced in the hardhat.config url variable
 TESTNET_ENDPOINT='https://testnet.hashio.io/api'
 </code></pre>
-{% endtab %}
 
-{% tab title="hardhat.config.js" %}
+#### Hardhat Configuration
+
 This file defines tasks for Hardhat, including `show-balance`, `transfer-hbars`, `deploy-contract`, `contract-view-call`, and `contract-call`. It exports a configuration object that includes the Solidity version and settings, default network, and network settings for the `testnet` network.&#x20;
 
 The `url` property is set to the `TESTNET_ENDPOINT` environment variable, and `accounts` to an array containing the testnet private key imported from the `.env` file.
@@ -112,28 +133,6 @@ module.exports = {
   },
 };
 ```
-{% endtab %}
-{% endtabs %}
-
-In order to deploy the contract to the _Hedera Testnet_, you will need to get a testnet account and key. To get a testnet account, create an _ECDSA_ account using the **Hedera Developer** [**Portal**](https://portal.hedera.com/). Once you have your ECDSA account and HEX encoded private key, add them to the `TESTNET_OPERATOR_PRIVATE_KEY` variable in the `.env` file.&#x20;
-
-<details>
-
-<summary>Create your testnet account 🛠️</summary>
-
-### Create Hedera Portal Profile (Faucet)
-
-The _Hedera Testnet_ account allows you to interact with our [APIs](../../sdks-and-apis/) and pay for the transaction fees. Visit the [Hedera portal](https://portal.hedera.com/register) to create your _Hedera Testnet_ account and follow the instructions.
-
-<img src="../../.gitbook/assets/portal testnet account.png" alt="" data-size="original">
-
-Once you have completed the instructions, you will receive a _Hedera Testnet_ **account ID** (0.0.x) and your **private/public key pair** on your testnet page. You will need to copy over your ECDSA _**HEX Encoded private key**_ and paste it in the `TESTNET_OPERATOR_PRIVATE_KEY` .env file variable.
-
-![](<../../.gitbook/assets/new portal 2 (1).png>)
-
-_**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR** upon creation that can only be utilized on the Hedera test network. Your balance will be topped up daily to 10,000 test **HBAR** when you use your funds._
-
-</details>
 
 ## Project Contents
 

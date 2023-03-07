@@ -11,14 +11,6 @@ A transaction that deletes an existing account from the Hedera network. Before d
 
 * The account that is being deleted is required to sign the transaction
 
-| Constructor                      | Description                                     |
-| -------------------------------- | ----------------------------------------------- |
-| `new AccountDeleteTransaction()` | Initializes the AccountDeleteTransaction object |
-
-```java
-new AccountDeleteTransaction()
-```
-
 ### Methods
 
 | Method                                      | Type      | Description                                               | Requirement |

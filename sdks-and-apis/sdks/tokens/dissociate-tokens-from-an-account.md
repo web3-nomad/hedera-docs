@@ -23,14 +23,6 @@ The account is required to have a zero balance of the token you wish to disassoc
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                        | Description                                       |
-| ---------------------------------- | ------------------------------------------------- |
-| `new TokenDissociateTransaction()` | Initializes the TokenDissociateTransaction object |
-
-```java
-new TokenDissociateTransaction()
-```
-
 ## Methods
 
 | Method                      | Type      | Description                                            | Requirement |

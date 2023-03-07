@@ -26,14 +26,6 @@ Topic info returns the following values for a topic. Queries do not change the s
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee cost
 
-| Constructor            | Description                           |
-| ---------------------- | ------------------------------------- |
-| `new TopicInfoQuery()` | Initializes the TopicInfoQuery object |
-
-```java
-new TopicInfoQuery()
-```
-
 | Method                         | Type                                                              | Requirement |
 | ------------------------------ | ----------------------------------------------------------------- | ----------- |
 | `setTopicId(<topicId>)`        | TopicId                                                           | Required    |

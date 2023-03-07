@@ -60,7 +60,7 @@ touch index.js
 
 Your project structure should look something like this:
 
-<img src="../../.gitbook/assets/image105 (1).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image105 (1) (1) (1).png" alt="" data-size="original">
 
 Congrats! You just made my entire year. Now you're ready to move on to Step 1 and set up your Hardhat project.
 

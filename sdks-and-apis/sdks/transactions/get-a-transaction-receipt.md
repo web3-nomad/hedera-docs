@@ -30,12 +30,11 @@ The transaction receipt returns the following information about a transaction:
 * Include Duplicates: Whether or not to include the receipts for duplicate transactions
 * Include Children: Whether or not to include the receipt for children transactions triggered by a parent transaction
 
-|                                     |                                    |                 |
-| ----------------------------------- | ---------------------------------- | --------------- |
-| **Method**                          | **Type**                           | **Requirement** |
-| `setTransactionId(<transactionId>)` | [TransactionID](transaction-id.md) | Required        |
-| `setIncludeDuplicates(<value>)`     | boolean                            | Optional        |
-| `setIncludeChildren(<value>)`       | boolean                            | Optional        |
+| Method                              | Type                               | Requirement |
+| ----------------------------------- | ---------------------------------- | ----------- |
+| `setTransactionId(<transactionId>)` | [TransactionID](transaction-id.md) | Required    |
+| `setIncludeDuplicates(<value>)`     | boolean                            | Optional    |
+| `setIncludeChildren(<value>)`       | boolean                            | Optional    |
 
 {% tabs %}
 {% tab title="Java" %}

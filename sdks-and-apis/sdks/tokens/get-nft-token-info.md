@@ -26,14 +26,6 @@ The request returns the following information:
 | **Ledger ID**     | The ID of the network (mainnet, testnet, previewnet). Reference [HIP-198](https://hips.hedera.com/hip/hip-198). |
 | **Spender ID**    | The spender account ID for the NFT. This is only returned if the NFT ID was specifically approved.              |
 
-| Constructor               | Description                              |
-| ------------------------- | ---------------------------------------- |
-| `new TokenNftInfoQuery()` | Initializes the TokenNftInfoQuery object |
-
-```java
-new TokenNftInfoQuery()
-```
-
 ### Methods
 
 | Method              | Type               | Description                                                                                                                                        | Requirement |

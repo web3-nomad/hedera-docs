@@ -16,14 +16,6 @@ A transaction that submits a topic message to the Hedera network. To access the 
 HCS message size: 1024 bytes
 {% endhint %}
 
-| Constructor                           | Description                                        |
-| ------------------------------------- | -------------------------------------------------- |
-| `new TopicMessageSubmitTransaction()` | Initializes a TopicMessageSubmitTransaction object |
-
-```java
-new TopicMessageSubmitTransaction()
-```
-
 #### Methods
 
 | Method                  | Type       | Description                           | Requirement |

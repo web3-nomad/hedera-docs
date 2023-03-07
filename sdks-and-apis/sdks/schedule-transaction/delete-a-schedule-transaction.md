@@ -12,14 +12,6 @@ A transaction that deletes a scheduled transaction from the network. You can del
 | --------------- | ----------------------------------- |
 | **Schedule ID** | The ID of the scheduled transaction |
 
-| Constructor                       | Description                                      |
-| --------------------------------- | ------------------------------------------------ |
-| `new ScheduleDeleteTransaction()` | Initializes the ScheduleDeleteTransaction object |
-
-```java
-new ScheduleDeleteTransaction()
-```
-
 ## Methods
 
 | Method                        | Type       | Requirement |

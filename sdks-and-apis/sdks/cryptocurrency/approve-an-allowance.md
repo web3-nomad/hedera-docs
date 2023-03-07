@@ -27,10 +27,6 @@ Only when a spender is set on an explicit NFT ID of a token, do we return the sp
 
 **Reference:** [HIP-336](https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-336.md)
 
-| **Constructor**                            | **Description**                                           |
-| ------------------------------------------ | --------------------------------------------------------- |
-| `new AccountAllowanceApproveTransaction()` | Initializes the AccountAllowanceApproveTransaction object |
-
 ### Methods
 
 | **Method**                                                                           | **Type**                                                                                                                                                                                                                                                           | **Description**                                                                                                                                                                               |

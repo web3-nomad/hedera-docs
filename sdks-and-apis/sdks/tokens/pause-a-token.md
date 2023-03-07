@@ -26,14 +26,6 @@ Once a token is paused, token status will update to `paused`. To verify if the t
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                   | Description                                  |
-| ----------------------------- | -------------------------------------------- |
-| `new TokenPauseTransaction()` | Initializes the TokenPauseTransaction object |
-
-```java
-new TokenPauseTransaction()
-```
-
 ## Methods
 
 | Method                  | Type    | Description                  | Requirement |

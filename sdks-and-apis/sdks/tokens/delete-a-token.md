@@ -16,14 +16,6 @@ You cannot delete a specific NFT. You can delete the class of the NFT specified 
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                    | Description                                   |
-| ------------------------------ | --------------------------------------------- |
-| `new TokenDeleteTransaction()` | Initializes the TokenDeleteTransaction object |
-
-```java
-new TokenDeleteTransaction()
-```
-
 ### Methods
 
 | Method                  | Type                   | Description                   | Requirement |

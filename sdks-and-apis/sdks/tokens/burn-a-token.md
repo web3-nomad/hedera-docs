@@ -18,14 +18,6 @@ Burns fungible and non-fungible tokens owned by the Treasury Account. If no Supp
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                  | Description                                 |
-| ---------------------------- | ------------------------------------------- |
-| `new TokenBurnTransaction()` | Initializes the TokenBurnTransaction object |
-
-```java
-new TokenBurnTransaction()
-```
-
 ### Methods
 
 | Method                  | Type        | Description                                                                            | Requirement |

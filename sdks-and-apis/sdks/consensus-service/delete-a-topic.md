@@ -12,14 +12,6 @@ A transaction that deletes a topic from the Hedera network. Once a topic is dele
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                    | Description                                 |
-| ------------------------------ | ------------------------------------------- |
-| `new TopicDeleteTransaction()` | Initializes a TopicDeleteTransaction object |
-
-```java
-new TopicDeleteTransaction()
-```
-
 #### Methods
 
 | Method                  | Type    | Description                   | Requirement |

@@ -111,14 +111,6 @@ new CustomFixedFee()
 * Cannot exceed the fractional range of a 64-bit signed integer
 * If the assessment method field is set, the token's custom fee is charged to the sending account and the receiving account receives the full token transfer amount. If this field is set to false, the receiver pays for the token custom fees and gets the remaining token balance.
 
-| Constructor                 | Description                                |
-| --------------------------- | ------------------------------------------ |
-| `new CustomFractionalFee()` | Initializes the CustomFractionalFee object |
-
-```java
-new CustomFractionalFee()
-```
-
 #### Methods
 
 | Method                                                | Type                                                              | Requirement |

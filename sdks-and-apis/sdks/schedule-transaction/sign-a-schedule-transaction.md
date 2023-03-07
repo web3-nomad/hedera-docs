@@ -12,14 +12,6 @@ A transaction that appends signatures to a scheduled transaction. You will need 
 | --------------- | --------------------------------------------------------------- |
 | **Schedule ID** | The ID of the scheduled transaction to submit the signature for |
 
-| Constructor                     | Description                                    |
-| ------------------------------- | ---------------------------------------------- |
-| `new ScheduleSignTransaction()` | Initializes the ScheduleSignTransaction object |
-
-```java
-new ScheduleSignTransaction()
-```
-
 ## Methods
 
 | Method                          | Type       | Requirement |

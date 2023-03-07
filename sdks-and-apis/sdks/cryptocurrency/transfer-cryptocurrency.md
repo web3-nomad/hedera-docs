@@ -35,14 +35,6 @@ The debiting account is the owner's account when using this feature.
   * If an authorized spender account is spending on behalf of the account that owns the tokens then the spending account is required to sign
 * The transaction fee-paying account is required to sign the transaction
 
-| Constructor                 | Description                                |
-| --------------------------- | ------------------------------------------ |
-| `new TransferTransaction()` | Initializes the TransferTransaction object |
-
-```java
-new TransferTransaction()
-```
-
 ### Methods
 
 | Method                                                                              | Type                                                                                                                                                    | Description                                                                                                                                                                                            |

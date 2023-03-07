@@ -7,14 +7,6 @@ Subscribe to a topic ID's messages from a mirror node. You will receive all mess
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee cost
 
-| Constructor               | Description                              |
-| ------------------------- | ---------------------------------------- |
-| `new TopicMessageQuery()` | Initializes the TopicMessageQuery object |
-
-```java
-new TopicMessageQuery()
-```
-
 ### Methods
 
 | Method                       | Type               | Description                                         | Requirement |

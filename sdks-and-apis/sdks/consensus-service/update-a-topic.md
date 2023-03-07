@@ -4,14 +4,14 @@ A transaction that updates the properties of an existing topic. This includes th
 
 #### Topic Properties
 
-| Field                  | Description                                                                                         |
-| ---------------------- | --------------------------------------------------------------------------------------------------- |
-| **Topic ID**           | Update the topic ID                                                                                 |
-| **Admin Key**          | Set a new admin key that authorizes update topic and delete topic transactions.                     |
-| **Submit Key**         | Set a new submit key for a topic that authorizes sending messages to this topic.                    |
-| **Topic Memo**         | Set a new short publicly visible memo on the new topic and is stored with the topic. (100 bytes)    |
-| **Auto Renew Account** | Set a new auto-renew account ID for this topic. Currently, rent is not enforced for topics so auto-renew payments will not be made. |
-| **Auto Renew Period**  | Set a new auto-renew period for this topic. Currently, rent is not enforced for topics so auto-renew payments will not be made. <br><br><strong>NOTE:</strong> The minimum period of time is approximately 30 days (2592000 seconds) and the maximum period of time is approximately 92 days (8000001 seconds). Any other value outside of this range will return the following error: AUTORENEW_DURATION_NOT_IN_RANGE. |
+| Field                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Topic ID**           | Update the topic ID                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Admin Key**          | Set a new admin key that authorizes update topic and delete topic transactions.                                                                                                                                                                                                                                                                                                                                               |
+| **Submit Key**         | Set a new submit key for a topic that authorizes sending messages to this topic.                                                                                                                                                                                                                                                                                                                                              |
+| **Topic Memo**         | Set a new short publicly visible memo on the new topic and is stored with the topic. (100 bytes)                                                                                                                                                                                                                                                                                                                              |
+| **Auto Renew Account** | Set a new auto-renew account ID for this topic. Currently, rent is not enforced for topics so auto-renew payments will not be made.                                                                                                                                                                                                                                                                                           |
+| **Auto Renew Period**  | <p>Set a new auto-renew period for this topic. Currently, rent is not enforced for topics so auto-renew payments will not be made.<br><br><strong>NOTE:</strong> The minimum period of time is approximately 30 days (2592000 seconds) and the maximum period of time is approximately 92 days (8000001 seconds). Any other value outside of this range will return the following error: AUTORENEW_DURATION_NOT_IN_RANGE.</p> |
 
 **Transaction Signing Requirements**
 
@@ -24,29 +24,21 @@ A transaction that updates the properties of an existing topic. This includes th
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                    | Description                                   |
-| ------------------------------ | --------------------------------------------- |
-| `new TopicUpdateTransaction()` | Initializes the TopicUpdateTransaction object |
-
-```java
-new TopicUpdateTransaction()
-```
-
 #### Methods
 
-| Method                                     | Type      | Requirements |
-| ------------------------------------------ | --------- | ------------ |
-| `setTopicId(<topicId>)`                    | TopicId   | Required     |
-| `setAdminKey(<adminKey>)`                  | Key       | Optional     |
-| `setSubmitKey(<submitKey>)`                | Key       | Optional     |
-| `setExpirationTime(<expirationTime>)`      | Instant   | Optional     |
-| `setTopicMemo(<memo>)`                     | String    | Optional     |
-| `setAutoRenewAccountId(<accountId>)`       | AccountId | Optional     |
-| `setAutoRenewPeriod(<autoRenewPeriod>)`    | Duration  | Optional     |
-| `clearAdminKey()`                          |           | Optional     |
-| `clearSubmitKey()`                         |           | Optional     |
-| `clearTopicMemo()`                         |           | Optional     |
-| `clearAutoRenewAccountId()`                |           | Optional     |
+| Method                                  | Type      | Requirements |
+| --------------------------------------- | --------- | ------------ |
+| `setTopicId(<topicId>)`                 | TopicId   | Required     |
+| `setAdminKey(<adminKey>)`               | Key       | Optional     |
+| `setSubmitKey(<submitKey>)`             | Key       | Optional     |
+| `setExpirationTime(<expirationTime>)`   | Instant   | Optional     |
+| `setTopicMemo(<memo>)`                  | String    | Optional     |
+| `setAutoRenewAccountId(<accountId>)`    | AccountId | Optional     |
+| `setAutoRenewPeriod(<autoRenewPeriod>)` | Duration  | Optional     |
+| `clearAdminKey()`                       |           | Optional     |
+| `clearSubmitKey()`                      |           | Optional     |
+| `clearTopicMemo()`                      |           | Optional     |
+| `clearAutoRenewAccountId()`             |           | Optional     |
 
 {% tabs %}
 {% tab title="Java" %}

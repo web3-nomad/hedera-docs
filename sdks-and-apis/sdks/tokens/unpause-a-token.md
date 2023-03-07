@@ -12,14 +12,6 @@ A token unpause transaction is a transaction that unpauses the token that was pr
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                     | Description                                    |
-| ------------------------------- | ---------------------------------------------- |
-| `new TokenUnpauseTransaction()` | Initializes the TokenUnpauseTransaction object |
-
-```java
-new TokenUnpauseTransaction()
-```
-
 | Method                  | Type    | Description                  | Requirement |
 | ----------------------- | ------- | ---------------------------- | ----------- |
 | `setTokenId(<tokenId>)` | TokenId | The ID of the token to pause | Required    |

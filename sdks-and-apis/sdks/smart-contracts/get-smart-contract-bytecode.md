@@ -11,14 +11,6 @@ A query that returns the bytecode for a smart contract instance\*\*.\*\* Anyone 
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee cost
 
-| Constructor                   | Description                                |
-| ----------------------------- | ------------------------------------------ |
-| `new ContractByteCodeQuery()` | Initializes a ContractByteCodeQuery object |
-
-```java
-new ContractByteCodeQuery()
-```
-
 ### Methods
 
 | Method                        | Type       | Description                                       | Requirements |

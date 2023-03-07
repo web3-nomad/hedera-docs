@@ -12,14 +12,6 @@ A transaction that deletes a smart contract from a Hedera network. Once a smart 
 * Please see the transaction and query [NextCall a smart contract function](https://app.gitbook.com/s/3UlLhrwSBZKwLvX6vlUX/docs/sdks/smart-contracts/call-a-smart-contract-function) table for base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                       | Description                                    |
-| --------------------------------- | ---------------------------------------------- |
-| `new ContractDeleteTransaction()` | Initializes a ContractDeleteTransaction object |
-
-```java
-new ContractDeleteTransaction()
-```
-
 ### Methods
 
 | Method                                      | Type                                                                | Description                                                          | Requirement |

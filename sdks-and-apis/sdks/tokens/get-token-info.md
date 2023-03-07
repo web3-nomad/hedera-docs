@@ -35,14 +35,6 @@ Gets information about a fungible or non-fungible token instance. The token info
 | **Ledger ID**             | The ID of the network the response came from. See [HIP-198](https://hips.hedera.com/hip/hip-198).                                                                                                                                                                                                                                                                                                                                                       |
 | **Memo**                  | Short publicly visible memo about the token, if any                                                                                                                                                                                                                                                                                                                                                                                                     |
 
-| Constructor            | Description                           |
-| ---------------------- | ------------------------------------- |
-| `new TokenInfoQuery()` | Initializes the TokenInfoQuery object |
-
-```java
-new TokenInfoQuery()
-```
-
 ### Methods
 
 | Method                            | Type             | Requirement |

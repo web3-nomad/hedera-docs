@@ -24,14 +24,6 @@ There is no limit on the number of token IDs that can be associated to an accoun
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                       | Description                                    |
-| --------------------------------- | ---------------------------------------------- |
-| `new TokenAssociateTransaction()` | Initializes a TokenAssociateTransaction object |
-
-```java
-new TokenAssociateTransaction()
-```
-
 ## Methods
 
 | Method                      | Type            | Description                                           | Requirement |

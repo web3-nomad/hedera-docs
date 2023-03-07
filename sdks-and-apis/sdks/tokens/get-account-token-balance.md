@@ -7,14 +7,6 @@ To get the balance of tokens for an account, you can submit an account balance q
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee cost
 
-| Constructor                 | Description                                |
-| --------------------------- | ------------------------------------------ |
-| `new AccountBalanceQuery()` | Initializes the AccountBalanceQuery object |
-
-```java
-new AccountBalanceQuery()
-```
-
 | Method                      | Type      | Requirement |
 | --------------------------- | --------- | ----------- |
 | `setAccountId(<accountId>)` | AccountId | Required    |

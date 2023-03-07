@@ -21,14 +21,6 @@ A query that returns information about the current state of a schedule transacti
 
 * The client operator key is required to sign the query request
 
-| Constructor               | Description                              |
-| ------------------------- | ---------------------------------------- |
-| `new ScheduleInfoQuery()` | Initializes the ScheduleInfoQuery object |
-
-```java
-new ScheduleInfoQuery()
-```
-
 ### Methods
 
 | Method                                  | Type          | Requirement |

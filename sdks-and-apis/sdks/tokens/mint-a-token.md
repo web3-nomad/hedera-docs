@@ -21,14 +21,6 @@ Minting fungible token allows you to increase the total supply of the token. Min
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                  | Description                               |
-| ---------------------------- | ----------------------------------------- |
-| `new TokenMintTransaction()` | Initializes a TokenMintTransaction object |
-
-```java
-new TokenMintTransaction()
-```
-
 ### Methods
 
 | Method                     | Type           | Description                                                                                                                                                                                                                               | Requirement |

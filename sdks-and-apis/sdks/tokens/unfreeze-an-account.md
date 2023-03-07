@@ -20,14 +20,6 @@ Unfreezes transfers of the specified token for the account. The transaction must
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
-| Constructor                      | Description                                     |
-| -------------------------------- | ----------------------------------------------- |
-| `new TokenUnfreezeTransaction()` | Initializes the TokenUnfreezeTransaction object |
-
-```java
-new TokenUnfreezeTransaction()
-```
-
 ### Methods
 
 | Method                      | Type      | Description                            | Requirement |

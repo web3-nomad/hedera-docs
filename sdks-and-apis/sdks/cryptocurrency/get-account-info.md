@@ -1,43 +1,21 @@
 # Get account info
 
-A query that returns the current state of the account. This query **does not** include the list of records associated with the account. Anyone on the network can request account info for a given account. Queries do not change the state of the account or require network consensus. The information is returned from a single node processing the query.
+A query that returns the current state of the account. This query **does not** include the list of records associated with the account. Anyone on the network can request account info for a given account. Queries do not change the state of the account or require network consensus. The information is returned from a single node processing the query.\
+\
+**Account Properties**
+
+{% content-ref url="../../../core-concepts/accounts/account-properties.md" %}
+[account-properties.md](../../../core-concepts/accounts/account-properties.md)
+{% endcontent-ref %}
 
 **Query Fees**
 
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee cost
 
-**Account Info Response:**
-
-| **Field**                            | **Description**                                                                                                                                                                                                    |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Account ID**                       | The account ID of the account the information was requested for.                                                                                                                                                   |
-| **Contract Account ID**              | The Contract Account ID comprising of both the contract instance and the cryptocurrency account owned by the contract instance, in the format used by Solidity.                                                    |
-| **Key(s)**                           | The keys that are currently on the account.                                                                                                                                                                        |
-| **Balance**                          | The current balance of hbars on the account.                                                                                                                                                                       |
-| **Expiration Time**                  | The account's expiration time.                                                                                                                                                                                     |
-| **Auto Renew Period**                | The duration at which the account is charged to renew.                                                                                                                                                             |
-| **Deleted**                          | Whether or not the account is marked as deleted.                                                                                                                                                                   |
-| **Receiver Signature**               | Whether or not the signature of this account is required for other accounts to transfer to it.                                                                                                                     |
-| **Tokens**                           | All tokens related to this account. Deprecated. Please see [HIP-367](https://hips.hedera.com/hip/hip-367).                                                                                                         |
-| **Memo**                             | A note or description that is recorded with the account entity.                                                                                                                                                    |
-| **Owned NFTs**                       | The number of NFTs owned by the specified account.                                                                                                                                                                 |
-| **Max Automatic Token Associations** | The total number of auto token associations that are specified for this account.                                                                                                                                   |
-| **Ethereum Nonce**                   | The Ethereum transaction nonce associated with this account.                                                                                                                                                       |
-| **Ledger ID**                        | The ID of the network the response came from. Reference [HIP-198](https://hips.hedera.com/hip/hip-198).                                                                                                            |
-| **Staking Info**                     | Staking metadata for an account. This includes the staking period start, pending reward, accounts staked to this account, and the account ID or node ID. Reference [HIP-406](https://hips.hedera.com/hip/hip-406). |
-
 **Query Signing Requirements**
 
 * The client operator private key is required to sign the query request.
-
-| Constructor              | Description                             |
-| ------------------------ | --------------------------------------- |
-| `new AccountInfoQuery()` | Initializes the AccountInfoQuery object |
-
-```java
-new AccountInfoQuery()
-```
 
 ### Methods
 
@@ -50,14 +28,11 @@ new AccountInfoQuery()
 | `<AccountInfo>.key`                           | Key                               | Optional    |
 | `<AccountInfo>.balance`                       | HBAR                              | Optional    |
 | `<AccountInfo>.isReceiverSignatureRequired`   | boolean                           | Optional    |
-| `<AccountInfo>.liveHashes`                    | List\<LiveHash>                   | Optional    |
 | `<AccountInfo>.tokenRelationships`            | Map\<TokenId, TokenRelationships> | Optional    |
 | `<AccountInfo>.ownedNfts`                     | long                              | Optional    |
 | `<AccountInfo>.maxAutomaticTokenAssociations` | int                               | Optional    |
 | `<AccountInfo>.accountMemo`                   | String                            | Optional    |
 | `<AccountInfo>.expirationTime`                | Instant                           | Optional    |
-| `<AccountInfo>.proxyReceived`                 | HBAR                              | Optional    |
-| `<AccountInfo>.proxyAccountId`                | AccountId                         | Optional    |
 | `<AccountInfo>.autoRenewPeriod`               | Duration                          | Optional    |
 | `<AccountInfo>.ledgerId`                      | LedgerId                          | Optional    |
 | `<AccountInfo>.ethereumNonce`                 | long                              | Optional    |

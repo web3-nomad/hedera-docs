@@ -11,14 +11,6 @@ A query that returns the account balance for the specified account. Requesting a
 
 * The client operator private key is required to sign the query request.
 
-| Constructor                 | Description                                |
-| --------------------------- | ------------------------------------------ |
-| `new AccountBalanceQuery()` | Initializes the AccountBalanceQuery object |
-
-```java
-new AccountBalanceQuery
-```
-
 ### Methods
 
 | Method                        | Type       | Description                                        |

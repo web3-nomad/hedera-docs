@@ -6,20 +6,16 @@ The total number of NFT serial number deletions contained within the transaction
 
 **Transaction Fees**
 
-* Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for base transaction fee
+* Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
 **Transaction Signing Requirements**
 
 * The transaction must be signed by the owner's account
-* The transaction must be signed by the transaction fee paying account if different than the owner's account
-* If the owner's account and transaction fee paying account are the same only one signature is required
+* The transaction must be signed by the transaction fee-paying account if different than the owner's account
+* If the owner's account and transaction fee-paying account are the same only one signature is required
 
 **Reference:** [HIP-336](https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-336.md)
-
-| **Constructor**                           | **Description**                                          |
-| ----------------------------------------- | -------------------------------------------------------- |
-| `new AccountAllowanceDeleteTransaction()` | Initializes the AccountAllowanceDeleteTransaction object |
 
 ### Methods
 

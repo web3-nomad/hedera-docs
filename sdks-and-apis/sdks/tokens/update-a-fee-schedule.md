@@ -16,14 +16,6 @@ Update the custom fees for a given token. If the token does not have a fee sched
 | ---------------- | ---------------------------------- |
 | **Fee Schedule** | The new fee schedule for the token |
 
-| Constructor                               | Description                                            |
-| ----------------------------------------- | ------------------------------------------------------ |
-| `new TokenFeeScheduleUpdateTransaction()` | Initializes a TokenFeeScheduleUpdateTransaction object |
-
-```java
-new TokenFeeScheduleUpdateTransaction()
-```
-
 ## Methods
 
 | Method                        | Type                                               | Requirement |

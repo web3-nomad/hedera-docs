@@ -27,15 +27,7 @@ A query that returns the current state of a smart contract instance, including i
 **Query Fees**
 
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
-* Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee cost
-
-| Constructor               | Description                            |
-| ------------------------- | -------------------------------------- |
-| `new ContractInfoQuery()` | Initializes a ContractInfoQuery object |
-
-```java
-new ContractInfoQuery()
-```
+* Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee&#x20;
 
 ### Methods
 

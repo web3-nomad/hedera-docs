@@ -1,6 +1,6 @@
 # Auto Account Creation
 
-Auto account creation is a unique flow in which applications, like wallets and exchanges, can create free user "accounts" instantly, even without an internet connection. Applications can make these by generating an **account alias.** The alias account ID format used to specify the account alias in Hedera transactions comprises the shard ID, realm ID, and account alias <mark style="color:blue;">`<shardNum>.<realmNum>.<alias>`</mark>. This is an alternative account identifier compared to the standard account number format [<mark style="color:blue;">`<shardId>.<realmId>.<num>`</mark>](account-properties.md#account-number)<mark style="color:blue;">.</mark>
+Auto account creation is a unique flow in which applications, like wallets and exchanges, can create free user "accounts" instantly, even without an internet connection. Applications can make these by generating an **account alias.** The alias account ID format used to specify the account alias in Hedera transactions comprises the shard ID, realm ID, and account alias <mark style="color:purple;">`<shardNum>.<realmNum>.<alias>`</mark>. This is an alternative account identifier compared to the standard account number format <mark style="color:purple;">`<shardId>.<realmId>.<accountNum>`</mark><mark style="color:blue;">.</mark>
 
 The account alias can be either one of the supported types:
 
@@ -40,7 +40,7 @@ EVM Address Alias Account ID: `0.0.b794f5ea0ba39494ce839613fffba74279579268`\
 
 </details>
 
-The <mark style="color:blue;">`<shardNum>.<realmNum>.<alias>`</mark> format is only acceptable when specified in the `TransferTransaction`, `AccountInfoQuery`, and `AccountBalanceQuery` transaction types. If this format is used to specify an account in any other transaction type, the transaction will not succeed.&#x20;
+The <mark style="color:purple;">`<shardNum>.<realmNum>.<alias>`</mark> format is only acceptable when specified in the `TransferTransaction`, `AccountInfoQuery`, and `AccountBalanceQuery` transaction types. If this format is used to specify an account in any other transaction type, the transaction will not succeed.&#x20;
 
 Reference Hedera Improvement Proposal: [HIP-583](https://hips.hedera.com/hip/hip-583)
 

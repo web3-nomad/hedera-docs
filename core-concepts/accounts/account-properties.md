@@ -2,7 +2,7 @@
 
 ## Account ID
 
-The account ID is the ID of the account entity on the Hedera network. The account ID includes the **shard number**, **realm number**, and an **account** <mark style="color:blue;">`<shardNum>.<realmNum>.<account>`</mark>**.** The account ID is used to specify the account in all Hedera transactions and queries. There can be more than one account ID that can represent an account.\
+The account ID is the ID of the account entity on the Hedera network. The account ID includes the **shard number**, **realm number**, and an **account** <mark style="color:purple;">`<shardNum>.<realmNum>.<account>`</mark>**.** The account ID is used to specify the account in all Hedera transactions and queries. There can be more than one account ID that can represent an account.\
 
 
 <details>
@@ -44,7 +44,7 @@ The `account` can be one of the following:\
 
 ### **Account Number**
 
-Each Hedera account has a system-provided **account number** when the account is created.  An account number **** is a non-negative number of 8 bytes. You can use the account number to specify the account in all Hedera transactions and query requests. Account numbers are unique and immutable. The account number for a newly created account is returned in the transaction receipt or transaction record for the transaction ID that created the account. The account number ID has the following format  <mark style="color:blue;">`<shardNum>.<realmNum>.<accountNum>`</mark><mark style="color:blue;">.</mark>
+Each Hedera account has a system-provided **account number** when the account is created.  An account number **** is a non-negative number of 8 bytes. You can use the account number to specify the account in all Hedera transactions and query requests. Account numbers are unique and immutable. The account number for a newly created account is returned in the transaction receipt or transaction record for the transaction ID that created the account. The account number ID has the following format  <mark style="color:purple;">`<shardNum>.<realmNum>.<accountNum>`</mark><mark style="color:blue;">.</mark>
 
 | Account Number ID | Description                                        |
 | ----------------- | -------------------------------------------------- |
@@ -64,7 +64,7 @@ The mirror node will calculate the account number alias from the account number.
 
 ### Account Alias
 
-Some Hedera accounts will have an **account alias**. Account aliases are a pointer to the account object in addition to being identified by the account number. Account aliases are assigned to the account when the account is created via the [auto account creation](./#auto-account-creation) flow. The network does not generate the account alias; instead, the user specifies the account alias upon account creation. This property will be null if an account is created through the normal account creation flow. The account aliases are unique and immutable. The account alias ID has the following format  <mark style="color:blue;">`<shardNum>.<realmNum>.<alias>`</mark><mark style="color:blue;">.</mark>
+Some Hedera accounts will have an **account alias**. Account aliases are a pointer to the account object in addition to being identified by the account number. Account aliases are assigned to the account when the account is created via the [auto account creation](./#auto-account-creation) flow. The network does not generate the account alias; instead, the user specifies the account alias upon account creation. This property will be null if an account is created through the normal account creation flow. The account aliases are unique and immutable. The account alias ID has the following format  <mark style="color:purple;">`<shardNum>.<realmNum>.<alias>`</mark><mark style="color:blue;">.</mark>
 
 This format is only acceptable when specified in the `TransferTransaction`, `AccountInfoQuery` and `AccountBalanceQuery`. If this format is used to reference an account in any other transaction type the transaction will not succeed.&#x20;
 
@@ -87,7 +87,7 @@ The account alias public key is the public key of an ECDSA secp256k1 or ED25519 
 \
 **EVM Address Account Alias**
 
-An EVM address account alias is the rightmost 20 bytes of the 32-byte `Keccak-256` hash of the `ECDSA` public key of the account. This calculation is in the manner described by the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf). Note, that the recovery id is not formally part of the public key and not included in the hash. This is calculated on the consensus nodes using the `ECDSA` key provided in the [auto account creation](auto-account-creation.md) flow.  The EVM address is also commonly known as the public address. The EVM address account ID format is <mark style="color:blue;">`<shardNum>.<realmNum>.<alias>`</mark> where <mark style="color:blue;">`alias`</mark> is the EVM address.
+An EVM address account alias is the rightmost 20 bytes of the 32-byte `Keccak-256` hash of the `ECDSA` public key of the account. This calculation is in the manner described by the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf). Note, that the recovery id is not formally part of the public key and not included in the hash. This is calculated on the consensus nodes using the `ECDSA` key provided in the [auto account creation](auto-account-creation.md) flow.  The EVM address is also commonly known as the public address. The EVM address account ID format is <mark style="color:purple;">`<shardNum>.<realmNum>.<alias>`</mark> where <mark style="color:purple;">`alias`</mark> is the EVM address.
 
 Both the EVM address [account alias](account-properties.md#account-alias) and the [account number alias](account-properties.md#account-number-alias) are 20-byte values, they can be differentiated because the account number alias is always prefixed with 12 bytes. The EVM address account alias is commonly used in wallets and tools to represent account addresses.&#x20;
 

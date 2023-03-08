@@ -59,7 +59,7 @@ _**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR*
 
 #### Environment Variables
 
-This code defines environment variables used in the Hardhat configuration file. The `TESTNET_OPERATOR_PRIVATE_KEY` variable contains the _ECDSA_ _**Hex Encoded Private Key**_ for the Hedera Testnet account used in the `testnet` network Hardhat configuration.&#x20;
+The `.env` file defines environment variables used in the Hardhat configuration file. The `TESTNET_OPERATOR_PRIVATE_KEY` variable contains the _ECDSA_ _**Hex Encoded Private Key**_ for the Hedera Testnet account used in the `testnet` network Hardhat configuration.&#x20;
 
 The `TESTNET_ENDPOINT` variable contains the [HashIO](https://swirldslabs.com/hashio/) Testnet endpoint URL. This is the JSON-RPC instance that will submit the transactions to the Hedera test network to test, create and deploy your smart contract.
 
@@ -72,7 +72,7 @@ TESTNET_ENDPOINT='https://testnet.hashio.io/api'
 
 #### Hardhat Configuration
 
-This file defines tasks for Hardhat, including `show-balance`, `transfer-hbars`, `deploy-contract`, `contract-view-call`, and `contract-call`. It exports a configuration object that includes the Solidity version and settings, default network, and network settings for the `testnet` network.&#x20;
+The `hardhat.config.js` file defines tasks for Hardhat, including `show-balance`, `transfer-hbars`, `deploy-contract`, `contract-view-call`, and `contract-call`. It exports a configuration object that includes the Solidity version and settings, default network, and network settings for the `testnet` network.&#x20;
 
 The `url` property is set to the `TESTNET_ENDPOINT` environment variable, and `accounts` to an array containing the testnet private key imported from the `.env` file.
 

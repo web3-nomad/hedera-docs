@@ -32,7 +32,7 @@ If you building your client with a predefined Hedera network (previewnet, testne
 {% tab title="Java" %}
 {% code title="Java" %}
 ```java
-//You will need to upgrade to v2.0.6 or higher
+// You will need to upgrade to v2.0.6 or higher
 Client client = Client.forMainnet();
 client.setMirrorNetwork(Collections.singletonList("mainnet-public.mirrornode.hedera.com:443"))
 ```
@@ -41,9 +41,9 @@ client.setMirrorNetwork(Collections.singletonList("mainnet-public.mirrornode.hed
 
 {% tab title="JavaScript" %}
 ```javascript
-//You will need to upgrade to v2.0.23 or higher
+// You will need to upgrade to v2.0.23 or higher
 const client = Client.forMainnet()
-client.setMirrorNetwork("mainnet-public.mirrornode.hedera.com:443"
+client.setMirrorNetwork("mainnet-public.mirrornode.hedera.com:443")
 ```
 {% endtab %}
 

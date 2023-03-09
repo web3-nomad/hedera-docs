@@ -2,11 +2,11 @@
 
 ## Summary
 
-In this section, you will learn how to make a simple Hedera account. Hedera accounts are the entry point by which you can interact with the [Hedera APIs](../sdks-and-apis/hedera-api/). Accounts hold a balance of _**HBAR**_ used to pay for API calls for the various transaction and query types.
+In this section, you will learn how to make a simple Hedera account. Hedera accounts are the entry point by which you can interact with the [Hedera APIs](../sdks-and-apis/hedera-api/). Accounts hold a balance of **HBAR** used to pay for API calls for the various transaction and query types.
 
 ## Prerequisites:
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## Step 1: Import modules
 
@@ -229,17 +229,21 @@ fmt.Println("The account balance for the new account is ", accountBalance.Hbars.
 {% hint style="success" %}
 ****:star: **Congratulations! You have successfully completed the following:**
 
-* Created new a Hedera account with an initial balance of 1,000 _**tinybars**_.
+* Created a new Hedera account with an initial balance of 1,000 tinybars.
 * Obtained the new account ID by requesting the receipt of the transaction.
 * Verified the starting balance of the new account by submitting a query to the network.
 
-You are now ready to transfer some _**HBAR**_ to the new account :money\_mouth:!
+You are now ready to transfer some HBAR to the new account :money\_mouth:!
 {% endhint %}
 
-## Code Check:white\_check\_mark:
+## Code Check :white\_check\_mark:
 
-{% tabs %}
-{% tab title="Java" %}
+Your complete code file should look something like this:
+
+<details>
+
+<summary>Java</summary>
+
 ```java
 import com.hedera.hashgraph.sdk.AccountId;
 import com.hedera.hashgraph.sdk.HederaPreCheckStatusException;
@@ -293,9 +297,13 @@ public class HederaExamples {
     }
 }
 ```
-{% endtab %}
 
-{% tab title="JavaScript" %}
+</details>
+
+<details>
+
+<summary>JavaScript</summary>
+
 ```javascript
 const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar} = require("@hashgraph/sdk");
 require("dotenv").config();
@@ -344,9 +352,13 @@ async function main() {
 }
 main();
 ```
-{% endtab %}
 
-{% tab title="Go" %}
+</details>
+
+<details>
+
+<summary>Go</summary>
+
 ```go
 package main
 
@@ -425,8 +437,8 @@ func main() {
     fmt.Println("The account balance for the new account is ", accountBalance.Hbars.AsTinybar())
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+</details>
 
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

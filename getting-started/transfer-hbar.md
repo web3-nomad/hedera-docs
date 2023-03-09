@@ -2,7 +2,7 @@
 
 ## Summary
 
-In this section, you will learn how to transfer _**HBAR**_ from your account to another on the Hedera test network.
+In this section, you will learn how to transfer **HBAR** from your account to another on the Hedera test network.
 
 ## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
@@ -14,7 +14,7 @@ _**Note:** You can always check the "_[_Code Check ✅_](transfer-hbar.md#code-c
 
 ## Step 1. Create a transfer transaction
 
-Use your new account created in the "[Create an account](create-an-account.md)" section and transfer 1,000 _**tinybars**_ from your account to the new account. The account sending the _**HBAR**_ needs to sign the transaction using its private keys to authorize the transfer. Since you are transferring from the account associated with the client, you do not need to explicitly sign the transaction as the operator account(account transferring the _**HBAR**_) signs all transactions to authorize the payment of the transaction fee.
+Use your new account created in the "[Create an account](create-an-account.md)" section and transfer 1,000 **tinybars** from your account to the new account. The account sending the **HBAR** needs to sign the transaction using its private keys to authorize the transfer. Since you are transferring from the account associated with the client, you do not need to explicitly sign the transaction as the operator account(account transferring the **HBAR**) signs all transactions to authorize the payment of the transaction fee.
 
 {% tabs %}
 {% tab title="Java" %}
@@ -65,7 +65,7 @@ if err != nil {
 {% endtabs %}
 
 {% hint style="info" %}
-_**Note:** The net value of the transfer must equal zero (the total number of **HBAR** sent by the sender must equal the total number of **HBAR** received by the recipient)._
+_**Note:** The net value of the transfer must equal zero (the total number of_ **HBAR** _sent by the sender must equal the total number of_ **HBAR** _received by the recipient)._
 {% endhint %}
 
 ## Step 2. Verify the transfer transaction reached consensus
@@ -153,7 +153,7 @@ println("The account balance query cost is:", cost.String())
 
 ### **Get the account balance**
 
-You will verify the account balance was updated for the new account by requesting a get account balance query. The current account balance should be the sum of the initial balance (1,000 _**tinybars**_) plus the transfer amount (1,000 _**tinybars**_) and equal to 2,000 _**tinybars**_.
+You will verify the account balance was updated for the new account by requesting a get account balance query. The current account balance should be the sum of the initial balance (1,000 _**tinybars**_) plus the transfer amount (1,000 **tinybars**) and equal to 2,000 **tinybars**.
 
 {% tabs %}
 {% tab title="Java" %}
@@ -201,14 +201,10 @@ fmt.Println("The hbar account balance for this account is", newAccountBalance.Hb
 
 * Set up your Hedera environment to submit transactions and queries.
 * Created an account.
-* Transferred _**HBAR**_ to another account.
+* Transferred **HBAR** to another account.
 
-Do you want to keep learning? Visit our "[Resources](broken-reference)" and "[Documentation](../sdks-and-apis/sdks/)" sections to take your learning experience to the next level. You can also find additional Java SDK examples [here](https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java).
+Do you want to keep learning? Visit our the [SDKs & APIs](../sdks-and-apis/) section to take your learning experience to the next level. You can also find additional Java SDK examples [here](https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java).
 {% endhint %}
-
-{% content-ref url="../tutorials/" %}
-[tutorials](../tutorials/)
-{% endcontent-ref %}
 
 ## Code Check ✅
 

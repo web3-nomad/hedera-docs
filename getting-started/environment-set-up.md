@@ -78,10 +78,6 @@ mkdir hedera-go-examples && cd hedera-go-examples
 
 {% tabs %}
 {% tab title="Java" %}
-{% hint style="info" %}
-_**Note:** You may choose to install the latest version of the SDK_ [_here_](https://github.com/hashgraph/hedera-sdk-java)_._
-{% endhint %}
-
 Create a new Java class and name it something like _`HederaExamples`_. Import the following classes to use in your example:&#x20;
 
 ```java
@@ -89,6 +85,17 @@ import com.hedera.hashgraph.sdk.AccountId;
 import com.hedera.hashgraph.sdk.Client;
 import com.hedera.hashgraph.sdk.PrivateKey;
 import io.github.cdimascio.dotenv.Dotenv;
+import com.hedera.hashgraph.sdk.HederaPreCheckStatusException;
+import com.hedera.hashgraph.sdk.HederaReceiptStatusException;
+import com.hedera.hashgraph.sdk.TransactionResponse;
+import com.hedera.hashgraph.sdk.TransferTransaction;
+import com.hedera.hashgraph.sdk.PublicKey;
+import com.hedera.hashgraph.sdk.AccountCreateTransaction;
+import com.hedera.hashgraph.sdk.Hbar;
+import com.hedera.hashgraph.sdk.AccountBalanceQuery;
+import com.hedera.hashgraph.sdk.AccountBalance;
+
+import java.util.concurrent.TimeoutException;
 ```
 
 Within the _`main`_ method, grab your testnet **account ID** and __ **private key** __ from the `.env` file.
@@ -104,6 +111,8 @@ public class HederaExamples {
     }
 }
 ```
+
+_**Note:** You may choose to install the latest version of the SDK_ [_here_](https://github.com/hashgraph/hedera-sdk-java)_._
 {% endtab %}
 
 {% tab title="JavaScript" %}
@@ -143,8 +152,8 @@ Grab your Hedera Testnet _**account ID**_ and _**private key**_ from the _`.env`
 
 {% code title="index.js" %}
 ```javascript
-const { Client } = require("@hashgraph/sdk");
-require("dotenv").config();
+const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction }; 
+require("@hashgraph/sdk");
 
 async function main() {
 
@@ -237,15 +246,15 @@ go run hedera_examples.go
 
 ## Step 3: **Create your .env File**
 
-The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key**_**.** Create the file in your project's root directory.&#x20;
+The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key (DER encoded)**_**.** Create the file in your project's root directory.&#x20;
 
 {% hint style="info" %}
 _**Note:** Testnet **HBAR** is required for this next step. Please follow the instructions to create a Hedera account on the_ [_portal_](https://docs.hedera.com/guides/getting-started/introduction) _before you move on to the next step._
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/portal screenshot (2).png" alt="Hedera developer portal dashboard with your account ID and public/private keys."><figcaption><p><em>This is a screenshot of the portal dashboard where your account ID and private keys are.</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/environment portal (3).png" alt=""><figcaption></figcaption></figure>
 
-Grab the Hedera Testnet _**account ID**_ and _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the _`MY_ACCOUNT_ID`_ and _`MY_PRIVATE_KEY`_ environment variables in your _`.env`_ file:
+Grab the Hedera Testnet _**account ID**_ and _**DER encoded**_ _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the _`MY_ACCOUNT_ID`_ and _`MY_PRIVATE_KEY`_ environment variables in your _`.env`_ file:
 
 {% tabs %}
 {% tab title="Java" %}
@@ -313,12 +322,12 @@ client.SetOperator(myAccountId, myPrivateKey)
 {% endtabs %}
 
 {% hint style="success" %}
-**Your project environment is now set up to successfully submit transactions and queries to the Hedera test network!**
+_**Your project environment is now set up to submit transactions and queries to the Hedera test network successfully!**_
 
-Next, you will learn how to create an account.
+_Next, you will learn how to create an account._
 {% endhint %}
 
-## Code Check **✅**
+## Code Check :white\_check\_mark:
 
 This is what your code should look like:
 
@@ -332,6 +341,17 @@ import com.hedera.hashgraph.sdk.AccountId;
 import com.hedera.hashgraph.sdk.Client;
 import com.hedera.hashgraph.sdk.PrivateKey;
 import io.github.cdimascio.dotenv.Dotenv;
+import com.hedera.hashgraph.sdk.HederaPreCheckStatusException;
+import com.hedera.hashgraph.sdk.HederaReceiptStatusException;
+import com.hedera.hashgraph.sdk.TransactionResponse;
+import com.hedera.hashgraph.sdk.TransferTransaction;
+import com.hedera.hashgraph.sdk.PublicKey;
+import com.hedera.hashgraph.sdk.AccountCreateTransaction;
+import com.hedera.hashgraph.sdk.Hbar;
+import com.hedera.hashgraph.sdk.AccountBalanceQuery;
+import com.hedera.hashgraph.sdk.AccountBalance;
+
+import java.util.concurrent.TimeoutException;
 ​
 public class HederaExamples {
 ​
@@ -358,8 +378,8 @@ public class HederaExamples {
 
 {% code title="index.js" %}
 ```javascript
-const { Client } = require("@hashgraph/sdk");
-require("dotenv").config();
+const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction }; 
+require("@hashgraph/sdk");
 
 async function main() {
 

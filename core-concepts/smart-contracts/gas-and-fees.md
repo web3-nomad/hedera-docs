@@ -58,25 +58,25 @@ Reference [HIP-185](https://hips.hedera.com/hip/hip-185)
 
 ### Smart Contract Rent: Auto Renewal and Storage
 
-Rent is the recurring payment required for contracts to remain active on the network. Rent is comprised of **auto renewal** and **storage** payments.
-
-{% hint style="warning" %}
-Smart contract expiry and auto renewal, and storage payments are currently disabled. These features will be enabled on mainnet March, 2022.
+{% hint style="danger" %}
+Smart contract expiry and auto renewal are currently disabled. Smart contracts will not be charged auto renewal fees or expire.&#x20;
 {% endhint %}
+
+Rent is the recurring payment required for contracts to remain active on the network. Rent is comprised of **auto renewal** and **storage** payments.
 
 #### Contract Auto Renewal
 
-Smart contract expiry and auto renewal was introduced in the `0.30.4` Hedera Services release. All contract authors to are encouraged to set an auto-renew account for their contract.\
+Smart contract expiry and auto renewal were introduced in the `0.30.4` Hedera Services release. All contract authors to are encouraged to set up an auto-renew account for their contract.\
 \
-All non-deleted contracts will have their expiry extended to at least 90 days after the `0.30.4` upgrade date\
+All non-deleted contracts will have their expiry extended to at least 90 days after the `0.30.4` upgrade date.\
 \
-About 90 days after the `0.30.4` upgrade, some contracts will begin to expire. The network will try to automatically charge the **renewal payment** to the expired contract's auto-renew account. If an auto-renew account has zero balance, the network will then try to charge the contract itself.
+About 90 days after the `0.30.4` upgrade, some contracts will begin to expire. The network will try to automatically charge the **renewal payment** to the expired contract's auto-renew account. If an auto-renew account has zero balance, the network will try to charge the contract.
 
-A contract unable to pay renewal fees will enter a week-long "grace period" during which it is unusable, unless its expiry is extended via `ContractUpdate` or it receives hbar. After this grace period, the contract will be purged from state.
+A contract unable to pay renewal fees will enter a week-long "grace period" during which it is unusable unless its expiry is extended via `ContractUpdate` or it receives HBAR. After this grace period, the contract will be purged from the state.
 
 #### Storage Payment
 
-[Contract **storage payments** on Hedera](https://hedera.com/blog/smart-contract-rent-on-hedera-is-coming-what-you-need-to-know) will start once a total of **100 million key-value pairs** are stored cumulatively across the network. The expectation is that Hedera Coin Economics Committee will set a rate of **$0.02 per key-value pair per year**. This applies to all contracts on Hedera, regardless of the contract being created before or after the rent payments go live.
+[Contract **storage payments** on Hedera](https://hedera.com/blog/smart-contract-rent-on-hedera-is-coming-what-you-need-to-know) will start once **100 million key-value pairs** are stored cumulatively across the network. The expectation is that Hedera Coin Economics Committee will set a rate of **$0.02 per key-value pair per year**. This applies to all contracts on Hedera, regardless of the contract being created before or after the rent payments go live.
 
 Once storage payments are enabled on Hedera:
 

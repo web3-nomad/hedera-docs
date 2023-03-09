@@ -21,6 +21,21 @@ Use your new account created in the "[Create an account](create-an-account.md)" 
 ```java
 //System.out.println("The new account balance is: " +accountBalance.hbars);
 //-----------------------<enter code below>--------------------------------------
+import com.hedera.hashgraph.sdk.AccountId;
+import com.hedera.hashgraph.sdk.HederaPreCheckStatusException;
+import com.hedera.hashgraph.sdk.HederaReceiptStatusException;
+import com.hedera.hashgraph.sdk.PrivateKey;
+import com.hedera.hashgraph.sdk.Client;
+import com.hedera.hashgraph.sdk.TransactionResponse;
+import com.hedera.hashgraph.sdk.TransferTransaction;
+import com.hedera.hashgraph.sdk.PublicKey;
+import com.hedera.hashgraph.sdk.AccountCreateTransaction;
+import com.hedera.hashgraph.sdk.Hbar;
+import com.hedera.hashgraph.sdk.AccountBalanceQuery;
+import com.hedera.hashgraph.sdk.AccountBalance;
+import io.github.cdimascio.dotenv.Dotenv;
+​
+import java.util.concurrent.TimeoutException;
 
 //Transfer HBAR
 TransactionResponse sendHbar = new TransferTransaction()
@@ -34,6 +49,8 @@ TransactionResponse sendHbar = new TransferTransaction()
 ```javascript
 //console.log("The new account balance is: " +accountBalance.hbars.toTinybars() +" tinybar.");
 //-----------------------<enter code below>--------------------------------------
+const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction } = require("@hashgraph/sdk");
+require("dotenv").config();
 
 //Create the transfer transaction
 const sendHbar = await new TransferTransaction()
@@ -48,6 +65,13 @@ const sendHbar = await new TransferTransaction()
 //Print the balance of tinybars
 //fmt.Println("The account balance for the new account is ", accountBalance.Hbars.AsTinybar())
 //-----------------------<enter code below>--------------------------------------
+import (
+    "fmt"
+    "os"
+
+    "github.com/hashgraph/hedera-sdk-go/v2"
+    "github.com/joho/godotenv"
+)
 
 //Transfer hbar from your testnet account to the new account
 transaction := hedera.NewTransferTransaction().
@@ -515,16 +539,14 @@ func main() {
 
 </details>
 
-{% tabs %}
-{% tab title="sample output" %}
+#### Sample output:
+
 ```
 The new account ID is: 0.0.215975 
 The new account balance is: 1000 tℏ 
 The transfer transaction was: SUCCESS The cost of this query is: 0 
 The new account balance is: 2000 tℏ
 ```
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

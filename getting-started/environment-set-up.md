@@ -254,7 +254,7 @@ _**Note:** Testnet **HBAR** is required for this next step. Please follow the in
 
 <figure><img src="../.gitbook/assets/environment portal (3).png" alt=""><figcaption></figcaption></figure>
 
-Grab the Hedera Testnet _**account ID**_ and _**DER encoded**_ _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the _`MY_ACCOUNT_ID`_ and _`MY_PRIVATE_KEY`_ environment variables in your _`.env`_ file:
+Grab the Hedera Testnet _**account ID**_ and _**DER encoded**_ _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:
 
 {% tabs %}
 {% tab title="Java" %}

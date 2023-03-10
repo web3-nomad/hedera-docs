@@ -13,6 +13,7 @@
     * [Deploy a Smart Contract Using Hardhat](tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat.md)
   * [Consensus](tutorials/consensus/README.md)
     * [Submit Your First Message](tutorials/consensus/submit-your-first-message.md)
+    * [Submit Message to Private Topic](tutorials/consensus/submit-message-to-private-topic.md)
   * [Tokens](tutorials/token/README.md)
     * [Create and Transfer Your First NFT](tutorials/token/create-and-transfer-your-first-nft.md)
     * [Create and Transfer Your First Fungible Token](tutorials/token/create-and-transfer-your-first-fungible-token.md)

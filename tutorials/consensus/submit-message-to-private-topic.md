@@ -1,32 +1,29 @@
-# Submit Your First Message
+# Submit Message to Private Topic
 
 ## Summary
 
-With the Hedera Consensus Service (HCS), you can develop applications like stock markets, audit logs, stablecoins, or new network services that require high throughput and decentralized trust. This is made possible by having direct access to the native speed, security, and fair ordering guarantees of the Hashgraph consensus algorithm, with the full trust of the Hedera ledger.
+In the previous tutorial "Submit Your First Message", you have learned how to submit a message to a **public topic**. It means anyone can send a message to the topic you created because you didn't set a [Submit Key](https://docs.hedera.com/hedera/sdks-and-apis/sdks/consensus-service/create-a-topic#private-topic).&#x20;
 
-In short, HCS offers the validity of the order of events and transparency into the history of events without requiring a persistent history of transactions. To achieve this, [Mirror nodes](../../core-concepts/mirror-nodes/) store all transaction data so you can retrieve it to audit events.
+When setting a _Submit Key,_ your topic becomes a **private topic** because each message needs to be signed by the Submit Key. Therefore, you can control who can submit messages to your topic.
 
 ## Prerequisites
 
-We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
+We recommend you complete the "Submit Your First Message" tutorial to get a basic understanding of the Hedera Consensus Service. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong></strong><a href="submit-your-first-message.md"><strong>SUBMIT YOUR FIRST MESSAGE</strong></a><strong></strong></td><td><a href="submit-your-first-message.md">submit-your-first-message.md</a></td></tr></tbody></table>
 
-✅ _You can find a full_ [_code check_](submit-your-first-message.md#code-check) _for this tutorial at the bottom of this page._
+✅ _You can find a full_ [_code check_](submit-message-to-private-topic.md#code-check) _for this tutorial at the bottom of this page._
 
-## 1. Create your first topic
+## 1. Create a private topic
 
-To create your first topic, you will use the _<mark style="color:purple;">**`TopicCreateTransaction()`**</mark>_, set its properties, and submit it to the Hedera network. In this tutorial, you will create a **public topic** by not setting any properties on the topic. This means that anyone can send messages to your topic.
-
-If you would like to create a **private topic,** you can optionally set a topic key ([_`setSubmitKey()`_](https://docs.hedera.com/guides/docs/sdks/consensus/create-a-topic#methods)). This means that messages submitted to this topic require the topic key to sign. If the topic key does not sign a message, the message will not be submitted to the topic.
-
-After submitting the transaction to the Hedera network, you can obtain the new topic ID by requesting the receipt. Creating a topic only costs you **** [**$0.01**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service).
+To create a private topic, you will use [_<mark style="color:purple;">**`setSubmitKey()`**</mark>_](https://docs.hedera.com/hedera/sdks-and-apis/sdks/consensus-service/create-a-topic#methods) to set a Submit Key. This key needs to sign all messages someone sends to the topic. A message will be rejected if you don't sign the message or sign with an incorrect key. The cost of creating a private topic is the same as a public topic: **** [**$0.01**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service).
 
 {% tabs %}
 {% tab title="Java" %}
 ```java
 // Create a new topic
 TransactionResponse txResponse = new TopicCreateTransaction()
+   .setSubmitKey(myPrivateKey.getPublicKey())
    .execute(client);
 
 // Get the receipt
@@ -46,12 +43,13 @@ Thread.sleep(5000);
 {% tab title="JavaScript" %}
 ```javascript
 // Create a new topic
-let txResponse = await new TopicCreateTransaction().execute(client);
+let txResponse = await new TopicCreateTransaction()
+    .setSubmitKey(myPrivateKey.publicKey)
+    .execute(client);
 
 // Grab the newly generated topic ID
 let receipt = await txResponse.getReceipt(client);
-let topicId = receipt.topicId;
-console.log(`Your topic ID is: ${topicId}`);
+console.log(`Your topic ID is: ${receipt.topicId}`);
 
 // Wait 5 seconds between consensus topic creation and subscription creation
 await new Promise((resolve) => setTimeout(resolve, 5000));
@@ -62,6 +60,7 @@ await new Promise((resolve) => setTimeout(resolve, 5000));
 ```go
 // Create a new topic
 transactionResponse, err := hedera.NewTopicCreateTransaction().
+	SetSubmitKey(myPrivateKey.PublicKey()).
 	Execute(client)
 
 if err != nil {
@@ -88,13 +87,7 @@ fmt.Printf("topicID: %v\n", topicID)
 
 ## 2. Subscribe to a topic
 
-After you create the topic, you will want to subscribe to the topic via a Hedera mirror node. Subscribing to a topic via a Hedera mirror node allows you to receive the stream of messages that are being submitted to it.
-
-{% hint style="info" %}
-The _**Hedera Testnet**_ client already establishes a connection to a Hedera mirror node. You can set a custom mirror node by calling _<mark style="color:purple;">**`client.SetMirrorNetwork()`**</mark>_. Please note that you can subscribe to Hedera Consensus Service (HCS) topics via [gRPC API](https://docs.hedera.com/guides/docs/mirror-node-api/hedera-consensus-service-api-1) only. Remember to set the mirror node's host and port accordingly when dealing with another mirror node provider.
-{% endhint %}
-
-To subscribe to a topic, you will use [_<mark style="color:purple;">**`TopicMessageQuery()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/get-topic-message.md). You will provide it with the topic ID to subscribe to, the Hedera mirror node client information, and the topic message contents to return.
+The code used to subscribe to a public or private topic doesn't change. Anyone can listen to the messages you send to your private topic. You need to provide the [_<mark style="color:purple;">**`TopicMessageQuery()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/get-topic-message.md) with your topic ID to subscribe to it.&#x20;
 
 {% tabs %}
 {% tab title="Java" %}
@@ -110,16 +103,17 @@ new TopicMessageQuery()
 {% endtab %}
 
 {% tab title="JavaScript" %}
-<pre class="language-javascript"><code class="lang-javascript"><strong>// Subscribe to the topic
-</strong><strong>new TopicMessageQuery()
-</strong>  .setTopicId(topicId)
+```javascript
+// Subscribe to the topic
+new TopicMessageQuery()
+  .setTopicId(topicId)
   .subscribe(client, null, (message) => {
     let messageAsString = Buffer.from(message.contents, "utf8").toString();
     console.log(
       `${message.consensusTimestamp.toDate()} Received: ${messageAsString}`
     );
   });
-</code></pre>
+```
 {% endtab %}
 
 {% tab title="Go" %}
@@ -136,19 +130,21 @@ _, err = hedera.NewTopicMessageQuery().
 
 ## 3. Submit a message
 
-Now you are ready to submit your first message to the topic. To do this, you will use [_<mark style="color:purple;">**`TopicMessageSubmitTransaction()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/submit-a-message.md). For this transaction, you will provide the topic ID and the message to submit to it. Each message you send to a topic costs you [**$0.0001**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service). **** In other words, you can send 10,000 messages for $1 on the Hedera Network.
+Now you are ready to submit a message to your private topic. To do this, you will use [_<mark style="color:purple;">**`TopicMessageSubmitTransaction()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/submit-a-message.md). However, you need to sign this transaction with your Submit Key. The cost for sending a message to a private topic is the same as a public topic: [**$0.0001**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service). ****&#x20;
 
 {% tabs %}
 {% tab title="Java" %}
 ```java
-// Send message to the topic
+// Send message to private topic
 TransactionResponse submitMessage = new TopicMessageSubmitTransaction()
       .setTopicId(topicId)
-      .setMessage("Hello, HCS!")
-      .execute(client);
+      .setMessage("Submitkey set!")
+      .freezeWith(client)
+      .sign(myPrivateKey)
+      .execute(client)
 
 // Get the receipt of the transaction
- TransactionReceipt receipt2 = submitMessage.getReceipt(client);
+TransactionReceipt receipt2 = submitMessage.getReceipt(client);
 
 // Prevent the main thread from exiting so the topic message can be returned and printed to the console
 Thread.sleep(30000);
@@ -157,36 +153,50 @@ Thread.sleep(30000);
 
 {% tab title="JavaScript" %}
 ```javascript
-// Send message to the topic
-let sendResponse = await new TopicMessageSubmitTransaction({
-	topicId: topicId,
-	message: "Hello, HCS!",
-}).execute(client);
+// Send message to private topic
+let submitMsgTx = await new TopicMessageSubmitTransaction({
+  topicId: topicId,
+  message: "Submitkey set!",
+})
+.freezeWith(client)
+.sign(myPrivateKey);
+
+let submitMsgTxSubmit = await submitMsgTx.execute(client);
 
 // Get the receipt of the transaction
-const getReceipt = await sendResponse.getReceipt(client);
+let getReceipt = await submitMsgTxSubmit.getReceipt(client);
 
 // Get the status of the transaction
-const transactionStatus = getReceipt.status
-console.log("The message transaction status " + transactionStatus.toString())
+const transactionStatus = getReceipt.status;
+console.log("The message transaction status " + transactionStatus.toString());
 ```
 {% endtab %}
 
 {% tab title="Go" %}
 ```go
-// Send message to the topic
-submitMessage, err := hedera.NewTopicMessageSubmitTransaction().
-	SetMessage([]byte("Hello, HCS!")).
+// Prepare message to send to private topic
+submitMessageTx, err := hedera.NewTopicMessageSubmitTransaction().
+	SetMessage([]byte("Submitkey set!")).
 	SetTopicID(topicID).
-	Execute(client)
+	FreezeWith(client)
 
+if err != nil {
+	println(err.Error(), ": error freezing topic message submit transaction")
+	return
+}
+
+// Sign message with submit key
+submitMessageTx.Sign(myPrivateKey)
+
+// Submit message
+submitTxResponse, err := submitMessageTx.Execute(client)
 if err != nil {
 	println(err.Error(), ": error submitting to topic")
 	return
 }
 
 // Get the receipt of the transaction
-receipt, err := submitMessage.GetReceipt(client)
+receipt, err := submitTxResponse.GetReceipt(client)
 
 // Get the transaction status
 transactionStatus := receipt.Status
@@ -206,8 +216,7 @@ To conclude: The total cost to create a topic and send a message to it is **$0.0
 
 <summary>Java</summary>
 
-```java
-import com.hedera.hashgraph.sdk.*;
+<pre class="language-java"><code class="lang-java">import com.hedera.hashgraph.sdk.*;
 import io.github.cdimascio.dotenv.Dotenv;
 
 import java.nio.charset.StandardCharsets;
@@ -226,6 +235,7 @@ public class CreateTopicTutorial {
 
         // Create a new topic
         TransactionResponse txResponse = new TopicCreateTransaction()
+                .setSubmitKey(myPrivateKey.getPublicKey())
                 .execute(client);
 
         // Get the receipt
@@ -248,21 +258,22 @@ public class CreateTopicTutorial {
                     System.out.println(resp.consensusTimestamp + " received topic message: " + messageAsString);
                 });
 
-        // Send message to topic
-        TransactionResponse submitMessage = new TopicMessageSubmitTransaction()
-                .setTopicId(topicId)
-                .setMessage("Hello, HCS!")
-                .execute(client);
+        // Send message to private topic
+<strong>        TransactionResponse submitMessage = new TopicMessageSubmitTransaction()
+</strong>              .setTopicId(topicId)
+              .setMessage("Submitkey set!")
+              .freezeWith(client)
+              .sign(myPrivateKey)
+              .execute(client)
 
         // Get the receipt of the transaction
         TransactionReceipt receipt2 = submitMessage.getReceipt(client);
 
         // Wait before the main thread exits to return the topic message to the console
         Thread.sleep(30000);
-
     }
 }
-```
+</code></pre>
 
 </details>
 
@@ -270,15 +281,16 @@ public class CreateTopicTutorial {
 
 <summary>JavaScript</summary>
 
-<pre class="language-javascript"><code class="lang-javascript">console.clear();
+```javascript
+console.clear();
 require("dotenv").config();
 const {
   AccountId,
   PrivateKey,
   Client,
   TopicCreateTransaction,
-<strong>  TopicMessageQuery,
-</strong>  TopicMessageSubmitTransaction,
+  TopicMessageQuery,
+  TopicMessageSubmitTransaction,
 } = require("@hashgraph/sdk");
 
 // Grab the OPERATOR_ID and OPERATOR_KEY from the .env file
@@ -293,7 +305,9 @@ client.setOperator(myAccountId, myPrivateKey);
 
 async function main() {
   // Create a new topic
-  let txResponse = await new TopicCreateTransaction().execute(client);
+  let txResponse = await new TopicCreateTransaction()
+    .setSubmitKey(myPrivateKey.publicKey)
+    .execute(client);
 
   // Grab the newly generated topic ID
   let receipt = await txResponse.getReceipt(client);
@@ -313,12 +327,16 @@ async function main() {
       );
     });
 
-  // Send message to topic
-  let sendResponse = await new TopicMessageSubmitTransaction({
+  // Send message to private topic
+  let submitMsgTx = await new TopicMessageSubmitTransaction({
     topicId: topicId,
-    message: "Hello, HCS!",
-  }).execute(client);
-  const getReceipt = await sendResponse.getReceipt(client);
+    message: "Submitkey set!",
+  })
+  .freezeWith(client)
+  .sign(myPrivateKey);
+
+  let submitMsgTxSubmit = await submitMsgTx.execute(client);
+  let getReceipt = await submitMsgTxSubmit.getReceipt(client);
 
   // Get the status of the transaction
   const transactionStatus = getReceipt.status;
@@ -326,7 +344,7 @@ async function main() {
 }
 
 main();
-</code></pre>
+```
 
 </details>
 
@@ -371,6 +389,7 @@ func main() {
 
 	// Create a new topic
 	transactionResponse, err := hedera.NewTopicCreateTransaction().
+		SetSubmitKey(myPrivateKey.PublicKey()).
 		Execute(client)
 
 	if err != nil {
@@ -392,40 +411,46 @@ func main() {
 	// Log the topic ID to the console
 	fmt.Printf("topicID: %v\n", topicID)
 
-	// Create the query to subscribe to a topic
+	//Create the query to subscribe to a topic
 	_, err = hedera.NewTopicMessageQuery().
 		SetTopicID(topicID).
 		Subscribe(client, func(message hedera.TopicMessage) {
 			fmt.Println(message.ConsensusTimestamp.String(), "received topic message ", string(message.Contents), "\r")
 		})
         
-        // Submit message to topic
-	submitMessage, err := hedera.NewTopicMessageSubmitTransaction().
-		SetMessage([]byte("Hello, HCS!")).
+        // Prepare message to send to private topic
+	submitMessageTx, err := hedera.NewTopicMessageSubmitTransaction().
+		SetMessage([]byte("Submitkey set!")).
 		SetTopicID(topicID).
-		Execute(client)
-
+		FreezeWith(client)
+	
+	if err != nil {
+		println(err.Error(), ": error freezing topic message submit transaction")
+		return
+	}
+	
+	// Sign message with submit key
+	submitMessageTx.Sign(myPrivateKey)
+	
+	// Submit message
+	submitTxResponse, err := submitMessageTx.Execute(client)
 	if err != nil {
 		println(err.Error(), ": error submitting to topic")
 		return
 	}
-        
-        // Get the transaction receipt
-	receipt, err := submitMessage.GetReceipt(client)
-        
-        // Log the transaction status
+	
+	// Get the receipt of the transaction
+	receipt, err := submitTxResponse.GetReceipt(client)
+	
+	// Get the transaction status
 	transactionStatus := receipt.Status
-	fmt.Println("The transaction message status " + transactionStatus.String())
-    
-        // Prevent the program from exiting to display the message from the mirror to the console
-	time.Sleep(30 * time.Second)
+	fmt.Println("The message transaction status " + transactionStatus.String())
+	
+	// Prevent the program from exiting to display the message from the mirror node to the console
+	time.Sleep(30000)
     }
 ```
 
 </details>
 
-{% hint style="info" %}
-Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
-{% endhint %}
-
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: Hedera Team</td><td></td><td></td><td></td></tr><tr><td align="center">Editor: <a href="https://www.linkedin.com/in/michielmulders/">Michiel</a>, Developer Advocate</td><td></td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://www.linkedin.com/in/michielmulders/">Michiel</a>, Developer Advocate</td><td></td><td></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td></td><td></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>

@@ -481,4 +481,4 @@ func main() {
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
 {% endhint %}
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Author: Hedera Team</td><td></td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Author: Hedera Team</td><td></td><td></td><td></td></tr><tr><td>Editor: <a href="https://www.linkedin.com/in/michielmulders/">Michiel</a>, Developer Advocate</td><td></td><td></td><td></td></tr></tbody></table>

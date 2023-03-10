@@ -10,13 +10,13 @@ In short, HCS offers the validity of the order of events and transparency into t
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><mark style="color:purple;"><strong></strong></mark><a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ✅ _You can find a full_ [_code check_](submit-your-first-message.md#code-check) _for this tutorial at the bottom of this page._
 
 ## 1. Create your first topic
 
-To create your first topic, you will use the _<mark style="color:purple;">**`TopicCreateTransaction()`**</mark>_, set its properties, and submit it to the Hedera network. In this tutorial, you will create a **public topic** by not setting any properties on the topic. This means that anyone can send messages to your topic.
+To create your first topic, you will use the _<mark style="color:blue;">**`TopicCreateTransaction()`**</mark>_, set its properties, and submit it to the Hedera network. In this tutorial, you will create a **public topic** by not setting any properties on the topic. This means that anyone can send messages to your topic.
 
 If you would like to create a **private topic,** you can optionally set a topic key ([_`setSubmitKey()`_](https://docs.hedera.com/guides/docs/sdks/consensus/create-a-topic#methods)). This means that messages submitted to this topic require the topic key to sign. If the topic key does not sign a message, the message will not be submitted to the topic.
 
@@ -91,7 +91,7 @@ fmt.Printf("topicID: %v\n", topicID)
 After you create the topic, you will want to subscribe to the topic via a Hedera mirror node. Subscribing to a topic via a Hedera mirror node allows you to receive the stream of messages that are being submitted to it.
 
 {% hint style="info" %}
-The _**Hedera Testnet**_ client already establishes a connection to a Hedera mirror node. You can set a custom mirror node by calling _<mark style="color:purple;">**`client.SetMirrorNetwork()`**</mark>_. Please note that you can subscribe to Hedera Consensus Service (HCS) topics via [gRPC API](https://docs.hedera.com/guides/docs/mirror-node-api/hedera-consensus-service-api-1) only. Remember to set the mirror node's host and port accordingly when dealing with another mirror node provider.
+The _**Hedera Testnet**_ client already establishes a connection to a Hedera mirror node. You can set a custom mirror node by calling _<mark style="color:blue;">**`client.SetMirrorNetwork()`**</mark>_. Please note that you can subscribe to Hedera Consensus Service (HCS) topics via [gRPC API](https://docs.hedera.com/guides/docs/mirror-node-api/hedera-consensus-service-api-1) only. Remember to set the mirror node's host and port accordingly when dealing with another mirror node provider.
 {% endhint %}
 
 To subscribe to a topic, you will use [_<mark style="color:purple;">**`TopicMessageQuery()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/get-topic-message.md). You will provide it with the topic ID to subscribe to, the Hedera mirror node client information, and the topic message contents to return.

@@ -8,13 +8,7 @@ Fungible tokens share a single set of properties and have interchangeable value 
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-{% content-ref url="../../getting-started/introduction.md" %}
-[introduction.md](../../getting-started/introduction.md)
-{% endcontent-ref %}
-
-{% content-ref url="../../getting-started/environment-set-up.md" %}
-[environment-set-up.md](../../getting-started/environment-set-up.md)
-{% endcontent-ref %}
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## 1. Create a Fungible Token
 
@@ -297,8 +291,10 @@ gofmt.Println("Alice's balance:", balanceCheckAlice2.Tokens, "units of token", t
 
 ## Code Check ✅
 
-{% tabs %}
-{% tab title="Java" %}
+<details>
+
+<summary>Java</summary>
+
 ```java
 import com.hedera.hashgraph.sdk.*;
 import io.github.cdimascio.dotenv.Dotenv;
@@ -420,9 +416,13 @@ public class CreateFungibleTutorial {
     }
 }
 ```
-{% endtab %}
 
-{% tab title="JavaScript" %}
+</details>
+
+<details>
+
+<summary>JavaScript</summary>
+
 ```javascript
 console.clear();
 require("dotenv").config();
@@ -503,9 +503,13 @@ async function main() {
 }
 main();
 ```
-{% endtab %}
 
-{% tab title="Go" %}
+</details>
+
+<details>
+
+<summary>Go</summary>
+
 ```go
 package main
 
@@ -659,8 +663,8 @@ func main() {
 
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+</details>
 
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

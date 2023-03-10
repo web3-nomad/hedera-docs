@@ -2,69 +2,13 @@
 
 ## Summary
 
-In this tutorial, you'll learn how to create and sign a scheduled transaction. Scheduled Transactions enable multiple parties to easily, inexpensively, and natively schedule and execute any type of Hedera transaction together. Once a transaction is scheduled, additional signatures can be submitted via a ScheduleSign transaction. After the last signature is received within the allotted timeframe, the scheduled transaction will execute
+In this tutorial, you'll learn how to create and sign a scheduled transaction. Scheduled Transactions enable multiple parties to easily, inexpensively, and natively schedule and execute any type of Hedera transaction together. Once a transaction is scheduled, additional signatures can be submitted via a ScheduleSign transaction. After the last signature is received within the allotted timeframe, the scheduled transaction will execute.
 
 ## Prerequisites
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-{% content-ref url="../introduction.md" %}
-[introduction.md](../introduction.md)
-{% endcontent-ref %}
-
-<details>
-
-<summary>Developer Quickstart Guide</summary>
-
-### Create Hedera Developer Portal Profile (Faucet)
-
-You will need a Hedera Testnet account. The _**Hedera Testnet**_ account allows you to interact with our APIs and pay for the transaction fees. Visit the [Hedera portal](https://portal.hedera.com/register) to create your _Hedera Testnet_ account and follow the instructions.
-
-<img src="../../.gitbook/assets/portal testnet account.png" alt="" data-size="original">
-
-Once you have completed the instructions, you will receive a _Hedera Testnet_ _**account ID**_ (0.0.x) and your _**private/public key pair**_ on your testnet page. You will need to copy over your _account ID_ and _key pair_ information when you set up your coding environment in the following steps.
-
-<img src="../../.gitbook/assets/portal screenshot.avif" alt="" data-size="original">
-
-_**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR** upon creation that can only be utilized on the Hedera test network. Your balance will be topped up daily to 10,000 test **HBAR** when you use your funds._
-
-### Create Project Directory and Initialize Node.js
-
-Open up a terminal window in your IDE and navigate to the folder you want to create this project.&#x20;
-
-```bash
-mkdir hedera-first-message && cd hedera-first-message
-```
-
-Run the following command to initialize a _Node.js_ project:
-
-```bash
-npm init -y
-```
-
-Install the [JavaScript SDK](https://github.com/hashgraph/hedera-sdk-js) with _`npm`_ or _`yarn,`_ by running the following command:
-
-```bash
-// install Hedera's JS SDK with NPM
-npm install --save @hashgraph/sdk
-
-// Install with Yarn
-yarn add @hashgraph/sdk
-```
-
-Navigate to the project root directory and create a _`index.js`_ file by running the following command:&#x20;
-
-```bash
-touch index.js
-```
-
-Your project structure should look something like this:
-
-<img src="../../.gitbook/assets/image105 (1) (1) (1).png" alt="" data-size="original">
-
-Congrats! You just made my entire year. Now you're ready to move on to Step 1 and set up your Hardhat project.
-
-</details>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## 1. Create a transaction to schedule
 

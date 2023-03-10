@@ -15,18 +15,12 @@ Besides creating NFTs using Hedera SDK, you can use a Solidity Contract to creat
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-{% content-ref url="../../getting-started/introduction.md" %}
-[introduction.md](../../getting-started/introduction.md)
-{% endcontent-ref %}
-
-{% content-ref url="../../getting-started/environment-set-up.md" %}
-[environment-set-up.md](../../getting-started/environment-set-up.md)
-{% endcontent-ref %}
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 If you are interested in creating, minting, and transferring NFTs using Hedera SDKs you can find the example [here](https://docs.hedera.com/guides/getting-started/try-examples/create-and-transfer-your-first-nft).
 
 {% hint style="warning" %}
-In this example, you will set gas for smart contract transactions multiple times. If you don't have enough gas you will receive an<mark style="color:purple;">`INSUFFICIENT_GAS`</mark> response. If you set the value too high you will be refunded a maximum of 20% of the amount that was set for the transaction.
+In this example, you will set gas for smart contract transactions multiple times. If you don't have enough gas you will receive an<mark style="color:blue;">`INSUFFICIENT_GAS`</mark> response. If you set the value too high you will be refunded a maximum of 20% of the amount that was set for the transaction.
 {% endhint %}
 
 ## 1. Create an “NFT Creator” Smart Contract
@@ -35,9 +29,9 @@ You can find an NFTCreator Solidity contract sample below together with the cont
 
 The following contract is composed of three functions:
 
-* <mark style="color:purple;">`createNft`</mark>
-* <mark style="color:purple;">`mintNft`</mark>
-* <mark style="color:purple;">`transferNft`</mark>
+* <mark style="color:blue;">`createNft`</mark>
+* <mark style="color:blue;">`mintNft`</mark>
+* <mark style="color:blue;">`transferNft`</mark>
 
 The important thing to know is that the NFT created in this example will have the contract itself as **Treasury Account, Supply Key,** and **Auto-renew account**. There’s **NO** admin key for the NFT or the contract.
 
@@ -127,7 +121,7 @@ contract NFTCreator is ExpiryHelper, KeyHelper, HederaTokenService {
 {% endtab %}
 {% endtabs %}
 
-Store your contract on Hedera using <mark style="color:purple;">`ContractCreateFlow()`</mark>. This single call performs <mark style="color:purple;">`FileCreateTransaction()`</mark>,<mark style="color:purple;">`FileAppendTransaction()`</mark>, and <mark style="color:purple;">`ContractCreateTransaction()`</mark> for you. See the difference [here](https://docs.hedera.com/guides/docs/sdks/smart-contracts/create-a-smart-contract).
+Store your contract on Hedera using <mark style="color:blue;">`ContractCreateFlow()`</mark>. This single call performs <mark style="color:blue;">`FileCreateTransaction()`</mark>,<mark style="color:blue;">`FileAppendTransaction()`</mark>, and <mark style="color:blue;">`ContractCreateTransaction()`</mark> for you. See the difference [here](https://docs.hedera.com/guides/docs/sdks/smart-contracts/create-a-smart-contract).
 
 {% tabs %}
 {% tab title="Java" %}
@@ -292,7 +286,7 @@ fmt.Printf("Token created with ID: %v\n", tokenId)
 
 ## 4. Execute the Contract to Mint a New NFT
 
-After the token ID is created, you mint each NFT under that ID using the <mark style="color:purple;">`mintNft`</mark> function. For the minting, you must specify the token ID as a Solidity address and the NFT metadata.
+After the token ID is created, you mint each NFT under that ID using the <mark style="color:blue;">`mintNft`</mark> function. For the minting, you must specify the token ID as a Solidity address and the NFT metadata.
 
 Both the NFT image and metadata live in the InterPlanetary File System (IPFS), which provides decentralized storage. The file metadata.json contains the metadata for the NFT. An IPFS URI pointing to the metadata file is used during minting of a new NFT. Notice that the metadata file contains a URI pointing to the NFT image.
 
@@ -416,7 +410,7 @@ fmt.Printf("Minted NFT with serial: %v\n", serial)
 
 The NFT is minted to the contract address because the contract is the treasury for the token. Now transfer the NFT to another account or contract address. In this example, you will transfer the NFT to Alice. For the transfer, you must specify the token address and NFT serial number.
 
-The <mark style="color:purple;">`transferNft`</mark> function in the Solidity contract contains a call to an <mark style="color:purple;">`associateToken`</mark> function that will automatically associate Alice to the token ID. This association transaction must be signed using Alice's private key. After signing, Alice will receive the NFT.
+The <mark style="color:blue;">`transferNft`</mark> function in the Solidity contract contains a call to an <mark style="color:blue;">`associateToken`</mark> function that will automatically associate Alice to the token ID. This association transaction must be signed using Alice's private key. After signing, Alice will receive the NFT.
 
 {% tabs %}
 {% tab title="Java" %}
@@ -503,8 +497,10 @@ fmt.Printf("Transfer status: %v\n", transferRecord.Status)
 
 ## Code Check ✅
 
-{% tabs %}
-{% tab title="Java" %}
+<details>
+
+<summary>Java</summary>
+
 ```java
 package _nft_hscs_hts.hedera;
 
@@ -618,9 +614,13 @@ public class Deploy {
     }
 }
 ```
-{% endtab %}
 
-{% tab title="JavaScript" %}
+</details>
+
+<details>
+
+<summary>JavaScript</summary>
+
 ```javascript
 const fs = require('fs');
 const { AccountId,
@@ -727,9 +727,13 @@ const main = async () => {
  
 main();
 ```
-{% endtab %}
 
-{% tab title="Go" %}
+</details>
+
+<details>
+
+<summary>Go</summary>
+
 ```go
 package main
 
@@ -949,5 +953,5 @@ func main() {
 	fmt.Printf("Transfer status: %v\n", transferRecord.Status)
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+</details>

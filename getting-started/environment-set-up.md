@@ -378,27 +378,30 @@ public class HederaExamples {
 
 {% code title="index.js" %}
 ```javascript
-const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction }; 
-require("@hashgraph/sdk");
+const {
+ Client, 
+ PrivateKey, 
+ AccountCreateTransaction, 
+ AccountBalanceQuery, 
+ Hbar, 
+ TransferTransaction
+} = require("@hashgraph/sdk");
 
-async function main() {
+require("dotenv").config();
 
-    //Grab your Hedera testnet account ID and private key from your .env file
-    const myAccountId = process.env.MY_ACCOUNT_ID;
-    const myPrivateKey = process.env.MY_PRIVATE_KEY;
+//Grab your Hedera testnet account ID and private key from your .env file
+const myAccountId = process.env.MY_ACCOUNT_ID;
+const myPrivateKey = process.env.MY_PRIVATE_KEY;
 
-    // If we weren't able to grab it, we should throw a new error
-    if (!myAccountId || !myPrivateKey) {
-        throw new Error("Environment variables MY_ACCOUNT_ID and MY_PRIVATE_KEY must be present");
-    }
-
-    // Create our connection to the Hedera network
-    // The Hedera JS SDK makes this really easy!
-    const client = Client.forTestnet();
-    client.setOperator(myAccountId, myPrivateKey);
-
+// If we weren't able to grab it, we should throw a new error
+if (!myAccountId || !myPrivateKey) {
+    throw new Error("Environment variables MY_ACCOUNT_ID and MY_PRIVATE_KEY must be present");
 }
-main().catch(err => console.error(err));
+
+// Create our connection to the Hedera network
+// The Hedera JS SDK makes this really easy!
+const client = Client.forTestnet();
+client.setOperator(myAccountId, myPrivateKey);
 ```
 {% endcode %}
 

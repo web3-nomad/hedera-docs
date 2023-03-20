@@ -6,10 +6,14 @@ description: Hedera Services release information
 
 For the latest versions supported on each network please visit the Hedera status [page](https://status.hedera.com/).
 
+## v0.36
+
+Coming soon...
+
 ## [v0.35](https://github.com/hashgraph/hedera-services/releases)
 
 {% hint style="info" %}
-**MAINNET UPDATE: MARCH 15, 2023**
+**MAINNET UPDATE: TBD**
 {% endhint %}
 
 {% hint style="success" %}

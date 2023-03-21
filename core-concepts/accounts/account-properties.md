@@ -52,7 +52,7 @@ Each Hedera account has a system-provided **account number** when the account is
 
 #### Account Number Alias
 
-All accounts can have an **account number alias.** An account number alias is a hex-encoded form of the account number prefixed with 20 bytes of zeros. It is an EVM compatible address that references the Hedera account. The account number alias does not contain the shard ID and realm ID.&#x20;
+All accounts can have an **account number alias.** An account number alias is a hex-encoded form of the account number prefixed with 20 bytes of zeros. It is an EVM-compatible address that references the Hedera account. The account number alias does not contain the shard ID and realm ID.&#x20;
 
 This account property is not stored in consensus node state. You will not see this value returned when querying the consensus nodes for the account object and inspecting the account alias field.\
 \
@@ -70,7 +70,7 @@ This format is only acceptable when specified in the `TransferTransaction`, `Acc
 
 The  `alias` can be one of the following alias types:
 
-<table data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td>              <a href="account-properties.md#account-alias-public-key">Pubic Key</a></td></tr><tr><td><a href="account-properties.md#account-alias-evm-address">           EVM Address</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="account-properties.md#public-key-account-alias">               Public Key</a></td><td><a href="account-properties.md#public-key-account-alias">#public-key-account-alias</a></td></tr><tr><td><a href="account-properties.md#evm-address-account-alias-account-id-example">          EVM Address </a></td><td><a href="account-properties.md#evm-address-account-alias-account-id-example">#evm-address-account-alias-account-id-example</a></td></tr></tbody></table>
 
 #### Public Key Account Alias
 
@@ -87,9 +87,9 @@ The account alias public key is the public key of an ECDSA secp256k1 or ED25519 
 \
 **EVM Address Account Alias**
 
-An EVM address account alias is the rightmost 20 bytes of the 32-byte `Keccak-256` hash of the `ECDSA` public key of the account. This calculation is in the manner described by the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf). Note, that the recovery id is not formally part of the public key and not included in the hash. This is calculated on the consensus nodes using the `ECDSA` key provided in the [auto account creation](auto-account-creation.md) flow.  The EVM address is also commonly known as the public address. The EVM address account ID format is <mark style="color:purple;">`<shardNum>.<realmNum>.<alias>`</mark> where <mark style="color:purple;">`alias`</mark> is the EVM address.
+An EVM address account alias is the rightmost 20 bytes of the 32-byte `Keccak-256` hash of the `ECDSA` public key of the account. This calculation is in the manner described by the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf). Note that the recovery id is not formally part of the public key and is not included in the hash. This is calculated on the consensus nodes using the `ECDSA` key provided in the [auto account creation](auto-account-creation.md) flow.  The EVM address is also commonly known as the public address. The EVM address account ID format is <mark style="color:purple;">`<shardNum>.<realmNum>.<alias>`</mark> where <mark style="color:purple;">`alias`</mark> is the EVM address.
 
-Both the EVM address [account alias](account-properties.md#account-alias) and the [account number alias](account-properties.md#account-number-alias) are 20-byte values, they can be differentiated because the account number alias is always prefixed with 12 bytes. The EVM address account alias is commonly used in wallets and tools to represent account addresses.&#x20;
+The EVM address account and the [account number alias](account-properties.md#account-number-alias) are 20-byte values. They can be differentiated because the account number alias is always prefixed with 12 bytes. The EVM address account alias is commonly used in wallets and tools to represent account addresses.&#x20;
 
 <details>
 
@@ -105,9 +105,8 @@ The shard number and realm number are set to 0 followed by the EVM address.&#x20
 ``HEX Encoded EVM Address: `0xb794f5ea0ba39494ce839613fffba74279579268`\
 ``\
 ``EVM Address Account Alias Account ID: \
-``\
-```0.0.b794f5ea0ba39494ce839613fffba74279579268`\
-``
+\
+`0.0.b794f5ea0ba39494ce839613fffba74279579268`
 
 </details>
 

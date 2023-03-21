@@ -28,15 +28,15 @@ ED25519 Public Key Alias Account ID: \
 
 The EVM address alias is created by using the rightmost 20 bytes of the 32 byte `Keccak-256` hash of an `ECDSA secp256k1` public key. This calculation is in the manner described by the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf). The EVM address is not equivalent to the ECDSA public key. \
 \
-The acceptable format for Hedera transactions is the EVM Address Account ID. The acceptable format for Ethereum public addresses to denote an account address is the hex encoded public address. \
+The acceptable format for Hedera transactions is the EVM Address Alias Account ID. The acceptable format for Ethereum public addresses to denote an account address is the hex encoded public address. \
 \
 **Example**\
 ****\
-****EVM Address Alias: `b794f5ea0ba39494ce839613fffba74279579268`\
-\
-EVM Address Alias Account ID: `0.0.b794f5ea0ba39494ce839613fffba74279579268`\
+****EVM Address: `b794f5ea0ba39494ce839613fffba74279579268`\
 ``\
-``HEX Encoded Public Address: `0xb794f5ea0ba39494ce839613fffba74279579268`
+``HEX Encoded EVM Address: `0xb794f5ea0ba39494ce839613fffba74279579268`\
+\
+EVM Address Alias Account ID: `0.0.b794f5ea0ba39494ce839613fffba74279579268`
 
 </details>
 

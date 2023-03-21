@@ -70,7 +70,7 @@ This format is only acceptable when specified in the `TransferTransaction`, `Acc
 
 The  `alias` can be one of the following alias types:
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>               Public Key</td><td><a href="account-properties.md#public-key-account-alias">#public-key-account-alias</a></td></tr><tr><td>             EVM Address</td><td><a href="account-properties.md#evm-address-account-alias-account-id-example">#evm-address-account-alias-account-id-example</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>               Public Key</td><td><a href="account-properties.md#public-key-account-alias">#public-key-account-alias</a></td></tr><tr><td>             EVM Address</td><td><a href="account-properties.md#public-key-account-alias">#public-key-account-alias</a></td></tr></tbody></table>
 
 #### Public Key Account Alias
 

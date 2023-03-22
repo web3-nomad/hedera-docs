@@ -27,7 +27,6 @@ import com.hedera.hashgraph.sdk.Hbar;
 import com.hedera.hashgraph.sdk.AccountBalanceQuery;
 import com.hedera.hashgraph.sdk.AccountBalance;
 import io.github.cdimascio.dotenv.Dotenv;
-​
 import java.util.concurrent.TimeoutException;
 ```
 {% endtab %}

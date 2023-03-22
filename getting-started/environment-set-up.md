@@ -2,7 +2,7 @@
 
 ## Summary
 
-In this section, you will create your new project directory, your _**`.env`**_ file to store your, _Hedera Testne_t **account ID** and **private keys** and set up your _Hedera Testnet_ client.&#x20;
+In this section, you will create your new project directory, your _**`.env`**_ file to store your, \_Hedera Testne\_t **account ID** and **private keys** and set up your _Hedera Testnet_ client.
 
 ## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
@@ -18,7 +18,7 @@ Open your IDE of choice and follow the below steps to create your new project di
 
 {% tabs %}
 {% tab title="Java" %}
-Create a new Gradle project and name it `HederaExamples`. Add the following dependencies to your `build.gradle` file.&#x20;
+Create a new Gradle project and name it `HederaExamples`. Add the following dependencies to your `build.gradle` file.
 
 {% code title="build.gradle " %}
 ```java
@@ -78,7 +78,7 @@ mkdir hedera-go-examples && cd hedera-go-examples
 
 {% tabs %}
 {% tab title="Java" %}
-Create a new Java class and name it something like _`HederaExamples`_. Import the following classes to use in your example:&#x20;
+Create a new Java class and name it something like _`HederaExamples`_. Import the following classes to use in your example:
 
 ```java
 import com.hedera.hashgraph.sdk.AccountId;
@@ -98,7 +98,7 @@ import com.hedera.hashgraph.sdk.AccountBalance;
 import java.util.concurrent.TimeoutException;
 ```
 
-Within the _`main`_ method, grab your testnet **account ID** and __ **private key** __ from the `.env` file.
+Within the _`main`_ method, grab your testnet **account ID** and \_\_ **private key** \_\_ from the `.env` file.
 
 ```java
 public class HederaExamples {
@@ -138,7 +138,7 @@ npm install dotenv
 yarn add dotenv
 ```
 
-Navigate to the project root directory and create a _`index.js`_ file by running the following command:&#x20;
+Navigate to the project root directory and create a _`index.js`_ file by running the following command:
 
 ```bash
 touch index.js
@@ -146,7 +146,7 @@ touch index.js
 
 Your project structure should look something like this:
 
-![](<../.gitbook/assets/image105 (1) (1) (1).png>)
+![](<../.gitbook/assets/image105 (1) (1) (1) (1).png>)
 
 Grab your Hedera Testnet _**account ID**_ and _**private key**_ from the _`.env`_ file.
 
@@ -245,7 +245,7 @@ go run hedera_examples.go
 
 ## Step 3: **Create your .env File**
 
-The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key (DER encoded)**_**.** Create the file in your project's root directory.&#x20;
+The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key (DER encoded)**_**.** Create the file in your project's root directory.
 
 {% hint style="info" %}
 _**Note:** Testnet **HBAR** is required for this next step. Please follow the instructions to create a Hedera account on the_ [_portal_](https://docs.hedera.com/guides/getting-started/introduction) _before you move on to the next step._

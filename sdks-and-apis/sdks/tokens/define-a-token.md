@@ -63,29 +63,29 @@ Note: It is required to set the initial supply for an NFT to 0.
 
 ## Methods
 
-| Method                                | Type                                               | Requirement |
-| ------------------------------------- | -------------------------------------------------- | ----------- |
-| `setTokenName(<name>)`                | String                                             | Required    |
-| `setTokenType(<tokenType>)`           | [TokenType](token-types.md)                        | Optional    |
-| `setTokenSymbol(<symbol>)`            | String                                             | Required    |
-| `setDecimals(<decimal>)`              | int                                                | Optional    |
-| `setInitialSupply(<initialSupply>)`   | int                                                | Optional    |
-| `setTreasuryAccountId(<treasury>)`    | [AccountId](../specialized-types.md#accountid)     | Required    |
-| `setAdminKey(<key>)`                  | Key                                                | Optional    |
-| `setKycKey(<key>)`                    | Key                                                | Optional    |
-| `setFreezeKey(<key>)`                 | Key                                                | Optional    |
-| `setWipeKey(<key>)`                   | Key                                                | Optional    |
-| `setSupplyKey(<key>)`                 | Key                                                | Optional    |
-| `setPauseKey(<key>)`                  | Key                                                | Optional    |
-| `setFreezeDefault(<freeze>`)          | boolean                                            | Optional    |
-| `setExpirationTime(<expirationTime>)` | Instant                                            | Optional    |
-| `setFeeScheduleKey(<key>)`            | Key                                                | Optional    |
-| `setCustomFees(<customFees>)`         | List<[CustomFee](custom-token-fees.md#custom-fee)> | Optional    |
-| `setSupplyType(<supplyType>)`         | TokenSupplyType                                    | Optional    |
-| `setMaxSupply(<maxSupply>)`           | long                                               | Optional    |
-| `setTokenMemo(<memo>)`                | String                                             | Optional    |
-| `setAutoRenewAccountId(<account>)`    | [AccountId](../specialized-types.md#accountid)     | Optional    |
-| `setAutoRenewPeriod(<period>)`        | Duration                                           | Optional    |
+| Method                                | Type                                                              | Requirement |
+| ------------------------------------- | ----------------------------------------------------------------- | ----------- |
+| `setTokenName(<name>)`                | String                                                            | Required    |
+| `setTokenType(<tokenType>)`           | [TokenType](token-types.md)                                       | Optional    |
+| `setTokenSymbol(<symbol>)`            | String                                                            | Required    |
+| `setDecimals(<decimal>)`              | int                                                               | Optional    |
+| `setInitialSupply(<initialSupply>)`   | int                                                               | Optional    |
+| `setTreasuryAccountId(<treasury>)`    | [AccountId](../../deprecated/sdks/specialized-types.md#accountid) | Required    |
+| `setAdminKey(<key>)`                  | Key                                                               | Optional    |
+| `setKycKey(<key>)`                    | Key                                                               | Optional    |
+| `setFreezeKey(<key>)`                 | Key                                                               | Optional    |
+| `setWipeKey(<key>)`                   | Key                                                               | Optional    |
+| `setSupplyKey(<key>)`                 | Key                                                               | Optional    |
+| `setPauseKey(<key>)`                  | Key                                                               | Optional    |
+| `setFreezeDefault(<freeze>`)          | boolean                                                           | Optional    |
+| `setExpirationTime(<expirationTime>)` | Instant                                                           | Optional    |
+| `setFeeScheduleKey(<key>)`            | Key                                                               | Optional    |
+| `setCustomFees(<customFees>)`         | List<[CustomFee](custom-token-fees.md#custom-fee)>                | Optional    |
+| `setSupplyType(<supplyType>)`         | TokenSupplyType                                                   | Optional    |
+| `setMaxSupply(<maxSupply>)`           | long                                                              | Optional    |
+| `setTokenMemo(<memo>)`                | String                                                            | Optional    |
+| `setAutoRenewAccountId(<account>)`    | [AccountId](../../deprecated/sdks/specialized-types.md#accountid) | Optional    |
+| `setAutoRenewPeriod(<period>)`        | Duration                                                          | Optional    |
 
 {% tabs %}
 {% tab title="Java" %}

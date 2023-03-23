@@ -23,6 +23,18 @@ When creating a non-fungible token using the Hedera Token Service, you set the m
 An excerpt from the [NFT minting tutorial](https://docs.hedera.com/hedera/tutorials/token-service/create-and-transfer-your-first-nft#2.-mint-a-new-nft) shows this connection when minting a new NFT.
 
 {% tabs %}
+{% tab title="Java" %}
+<pre class="language-java"><code class="lang-java"><strong>// IPFS content identifier (CID) that points to your metadata
+</strong>String CID = ("QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa") ;
+
+// Mint a new NFT
+TokenMintTransaction mintTx = new TokenMintTransaction()
+        .setTokenId(tokenId)
+        .addMetadata(CID.getBytes())
+	.freezeWith(client);
+</code></pre>
+{% endtab %}
+
 {% tab title="JavaScript" %}
 ```javascript
 // IPFS content identifier (CID) that points to your metadata
@@ -34,18 +46,6 @@ let mintTx = await new TokenMintTransaction()
     .setMetadata([Buffer.from(CID)])
     .freezeWith(client);
 ```
-{% endtab %}
-
-{% tab title="Java" %}
-<pre class="language-java"><code class="lang-java"><strong>// IPFS content identifier (CID) that points to your metadata
-</strong>String CID = ("QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa") ;
-
-// Mint a new NFT
-TokenMintTransaction mintTx = new TokenMintTransaction()
-        .setTokenId(tokenId)
-        .addMetadata(CID.getBytes())
-	.freezeWith(client);
-</code></pre>
 {% endtab %}
 
 {% tab title="Go" %}

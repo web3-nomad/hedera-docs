@@ -18,9 +18,9 @@ You can also create a private topic where only authorized parties can submit mes
 
 **Transaction Signing Requirements:**
 
-* If an admin key is specified, the admin key must sign the transaction
-* If an admin key is not specified the topic is immutable
-* If an auto-renew account is specified, that account must also sign this transaction
+* If an admin key is specified, the admin key must sign the transaction.
+* If an admin key is not specified, the topic is immutable.
+* If an auto-renew account is specified, that account must also sign this transaction.
 
 **Transaction Fees**
 

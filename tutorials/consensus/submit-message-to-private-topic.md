@@ -2,9 +2,9 @@
 
 ## Summary
 
-In the previous tutorial "Submit Your First Message", you have learned how to submit a message to a **public topic**. It means anyone can send a message to the topic you created because you didn't set a [Submit Key](https://docs.hedera.com/hedera/sdks-and-apis/sdks/consensus-service/create-a-topic#private-topic).&#x20;
+In the previous tutorial, "Submit Your First Message," you have learned how to submit a message to a **public topic**. It means anyone can send a message to the topic you created because you didn't set a [Submit Key](https://docs.hedera.com/hedera/sdks-and-apis/sdks/consensus-service/create-a-topic#private-topic).&#x20;
 
-When setting a _Submit Key,_ your topic becomes a **private topic** because each message needs to be signed by the Submit Key. Therefore, you can control who can submit messages to your topic.
+When setting a _Submit Key,_ your topic becomes a **private topic** because each message needs to be signed by the Submit Key. Therefore, you can control who can submit messages to your topic. Of course, the data is still public, as is all data on a public ledger, but we say the topic is private because the topic is restricted by who can submit messages to it.
 
 ## Prerequisites
 

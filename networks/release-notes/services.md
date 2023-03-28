@@ -8,16 +8,24 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## v0.36
 
+{% hint style="info" %}
+**MAINNET UPDATE: APRIL 18, 2023**&#x20;
+{% endhint %}
+
+{% hint style="info" %}
+**MAINNET UPDATE: APRIL 4, 2023**&#x20;
+{% endhint %}
+
 Coming soon...
 
 ## [v0.35](https://github.com/hashgraph/hedera-services/releases)
 
 {% hint style="info" %}
-**MAINNET UPDATE: TBD**
+**MAINNET UPDATE: MARCH 31, 2023**&#x20;
 {% endhint %}
 
 {% hint style="success" %}
-**TESTNET UPDATE: FEBRUARY 23, 2023**
+**MAINNET UPDATE: MARCH 31, 2023**&#x20;
 {% endhint %}
 
 ### Features

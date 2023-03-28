@@ -8,7 +8,70 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.76](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.76.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: MARCH 23, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: MARCH 13, 2023**
+{% endhint %}
+
+The new `/api/v1/contracts/call` REST API as specified in [HIP-584](https://hips.hedera.com/HIP/hip-584.html) is finally ready for initial production use. This release adds support for rate limiting the API with an initial value of 100 requests per second per instance. Tags were added to the gas per second metric to indicate if the request was a call, an estimate, or resulted in an error for increased observability. Various bug fixes were also addressed.
+
+[HIP-668](https://github.com/hashgraph/hedera-improvement-proposal/pull/668) GraphQL API was added to our deployment with the addition of a new helm chart for this API. This will allow for initial use of the API in all environments with the understanding that it's still very much alpha and subject to change.
+
+We made a lot of headway on our Citus integration. Citus was upgraded to 11.2 which showed a nice 15-20% performance boost for a number of query patterns. We optimized the contract results APIs performance by distributing based upon contract ID instead of payer account. Search for a transaction by its hash on Citus was improved by adding the distribution column to the query and limiting the results to a timestamp range. The search for an account by its ID also saw improvements on Citus.
+
+### Breaking Changes
+
+The Helm charts contain some breaking changes to be aware of. The `hedera-mirror` wrapper chart enables the new `hedera-mirror-graphql` sub-chart by default. The GraphQL deployment requires a new `mirror_graphql` database user to exist for it to successfully start up. You can create the user by logging into the database as owner and executing the following SQL query:
+
+```
+create user mirror_graphql with login password 'password' in role readonly;
+```
+
+If you're using the embedded PostgreSQL sub-chart (which we don't recommend for production use), then you'll have to delete its StatefulSet before upgrading due to a major bump in its chart version.
+
+The `hedera-mirror-common` chart had all of its components upgraded to new major versions that include breaking changes. If you're using this chart, run the following commands before upgrading:
+
+```
+kubectl delete daemonset mirror-prometheus-node-exporter
+kubectl delete daemonset mirror-traefik
+kubectl delete statefulset mirror-loki
+kubectl delete ingressroute mirror-traefik-dashboard
+kubectl apply --server-side --force-conflicts=true -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.63.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
+kubectl apply --server-side --force-conflicts=true -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.63.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
+kubectl apply --server-side --force-conflicts=true -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.63.0/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+kubectl apply --server-side --force-conflicts=true -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.63.0/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml
+kubectl apply --server-side --force-conflicts=true -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.63.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
+kubectl apply --server-side --force-conflicts=true -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.63.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
+kubectl apply --server-side --force-conflicts=true -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.63.0/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
+kubectl apply --server-side --force-conflicts=true -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.63.0/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml
+```
+
+## [v0.75](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.75.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: MARCH 2, 2023**
+{% endhint %}
+
+Work continues on [HIP-584](https://hips.hedera.com/HIP/hip-584.html) to get it closer to production ready for simple contract calls. Caching logic was added to the repository layer to optimize its capability along with performance tests to verify those improvements. A metric was added to track the gas per second being used along with various other bug fixes.
+
+The monitor API and dashboard used internally for observing our production systems was containerized. Additionally, it was integrated into the Helm chart and invoked as part of the Helm tests to ensure the deployment is verified.
+
+Finally, there were a number of query optimizations as part of our Citus effort.
+
 ## [v0.74](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.74.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: FEBRUARY 18, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: FEBRUARY 14, 2023**
+{% endhint %}
 
 This release switches the testnet bucket to the new one created for the [testnet reset](https://docs.hedera.com/hedera/networks/testnet#test-network-resets) that occurred on January 26, 2023. It also updates the address book to reflect the additional nodes added to testnet since the last reset. If you're running a testnet mirror node, please see the [reset instructions](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/database.md#reset) for help getting your node updated.
 
@@ -17,6 +80,10 @@ In [HIP-668](https://github.com/hashgraph/hedera-improvement-proposal/pull/668),
 Finally, a number of query optimizations were implemented for Citus while ensuring it doesn't cause regressions with the existing database. This will continue to be the focus of the next few releases.
 
 ## [**v0.73**](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.73.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: FEBRUARY 10, 2023**
+{% endhint %}
 
 {% hint style="success" %}
 **TESTNET UPDATE COMPLETED: FEBRUARY 3, 2022**

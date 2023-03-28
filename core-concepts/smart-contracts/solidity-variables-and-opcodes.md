@@ -21,6 +21,7 @@ The table below defines the mapping of Solidity variables and operation codes to
 | `<address>.codehash`                      | Precompile contract addresses will report the empty code hash.                                                                                                                                                                      |
 | `SELFBALANCE`                             | This opcode will operate as expected with no change from Ethereum Mainnet.                                                                                                                                                          |
 | `CREATE2`                                 | The `CREATE2` operation is supported as of the 0.23 Hedera services release. Please check out the [status page](https://status.hedera.com/) for network availabilty.                                                                |
+| `delegateCall`                            | Contracts may no longer use `delegateCall()` to invoke system contracts. Contracts should instead use the `call()` method.                                                                                                          |
 
 {% hint style="warning" %}
 ### _HBAR decimal places_

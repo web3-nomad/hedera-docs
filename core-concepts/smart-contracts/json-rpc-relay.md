@@ -11,6 +11,7 @@ _The JSON RPC Relay **`msg.value`** uses 18 decimals when it returns HBAR. As a 
 Anyone in the community can set up their own JSON RPC relay that applications can use to deploy, query, and execute smart contracts. The endpoints for previewnet, testnet, and mainnet can be found in their associated docs or website. You will find the list of community-hosted Hedera JSON RPC Relays below. If you want to add your hosted JSON RPC relay to this list, please open an issue in the [Hedera docs GitHub repository](https://github.com/hashgraph/hedera-docs). Please be sure to visit the community-hosted websites to review any limitations specific to their instance.&#x20;
 
 * [HashIO](https://swirldslabs.com/hashio/)
+* [Arkhia](https://www.arkhia.io/features/#api-services)
 
 ## FAQs
 
@@ -19,6 +20,7 @@ Anyone in the community can set up their own JSON RPC relay that applications ca
 <summary>Are there Community hosted relays?</summary>
 
 * ****[**Hashio**](https://swirldslabs.com/hashio/) ****&#x20;
+* ****[**Arkhia**](https://www.arkhia.io/features/#api-services)****
 
 </details>
 

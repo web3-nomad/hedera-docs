@@ -9,7 +9,7 @@ A transaction that deletes a smart contract from a Hedera network. Once a smart 
 
 **Transaction Fees**
 
-* Please see the transaction and query [NextCall a smart contract function](https://app.gitbook.com/s/3UlLhrwSBZKwLvX6vlUX/docs/sdks/smart-contracts/call-a-smart-contract-function) table for base transaction fee
+* Please see the transaction and query [NextCall a smart contract function](http://localhost:5000/s/3UlLhrwSBZKwLvX6vlUX/docs/sdks/smart-contracts/call-a-smart-contract-function) table for base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
 ### Methods

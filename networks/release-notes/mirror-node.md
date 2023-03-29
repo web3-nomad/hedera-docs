@@ -8,6 +8,14 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.77](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.77.0)
+
+This release fixes the tracking of NFT balances. Historically, these came from the balance file sent by the consensus nodes every 15 minutes. When we started tracking the live fungible token balances and moved away from using this balance file we unfortunately broke the NFT balance calculation. We not only fixed the issue but went ahead and took the time to track the up-to-date NFT balance as well.
+
+The `/api/v1/contracts/{id}/state` REST API shows the current state of a contract's slot values. Users requested the ability to query for the key/value pairs for their contract at an arbitrary point in the past. To address, we now expose a `timestamp` query parameter that will get the historical contract state. This allows the JSON-RPC relay to offer a proper `eth_getStorageAt` with support for historical blocks.
+
+[HIP-584](https://hips.hedera.com/HIP/hip-584.html) continues to make progress. Quite a few bugs were squashed including handling reverts and populating the revert reason and raw data. Performance tests were added to k6 to load test contract calls with token precompiles.
+
 ## [v0.76](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.76.0)
 
 {% hint style="success" %}

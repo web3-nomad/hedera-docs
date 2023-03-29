@@ -6,17 +6,13 @@ The [Hedera JSON-RPC Relay](https://github.com/hashgraph/hedera-json-rpc-relay) 
 
 _The JSON RPC Relay **`msg.value`** uses 18 decimals when it returns HBAR. As a result, the **`gasPrice`** value returns 18 decimal places since it is only utilized from the JSON RPC Relay. Refer to the_ [_HBAR page_](../../sdks-and-apis/sdks/hbars.md) _for a list of Hedera APIs and the decimal places they return._&#x20;
 
+## Community Hosted JSON-RPC Relays
+
+Anyone in the community can set up their own JSON RPC relay that applications can use to deploy, query, and execute smart contracts. The endpoints for previewnet, testnet, and mainnet can be found in their associated docs or website. You will find the list of community-hosted Hedera JSON RPC Relays below. If you want to add your hosted JSON RPC relay to this list, please open an issue in the [Hedera docs GitHub repository](https://github.com/hashgraph/hedera-docs). Please be sure to visit the community-hosted websites to review any limitations specific to their instance.&#x20;
+
+* [HashIO](https://swirldslabs.com/hashio/)
+
 ## FAQs
-
-<details>
-
-<summary>How do I run an instance of the relay?</summary>
-
-* ****[**Run locally using `npm`**](https://github.com/hashgraph/hedera-json-rpc-relay#steps)**``**
-* ****[**Build and deploy via Docker**](https://github.com/hashgraph/hedera-json-rpc-relay#deployment)****
-* ****[**Using the Helm chart**](https://github.com/hashgraph/hedera-json-rpc-relay#helm-chart)****
-
-</details>
 
 <details>
 

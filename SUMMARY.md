@@ -11,6 +11,7 @@
     * [Deploy Your First Smart Contract](tutorials/smart-contracts/deploy-your-first-smart-contract.md)
     * [Deploy a Contract Using the Hedera Token Service](tutorials/smart-contracts/deploy-a-contract-using-the-hedera-token-service.md)
     * [Deploy a Smart Contract Using Hardhat](tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat.md)
+    * [Deploy a Subgraph Using The Graph and JSON-RPC](tutorials/smart-contracts/deploy-a-subgraph-using-the-graph-and-json-rpc.md)
   * [Consensus](tutorials/consensus/README.md)
     * [Submit Your First Message](tutorials/consensus/submit-your-first-message.md)
     * [Submit Message to Private Topic](tutorials/consensus/submit-message-to-private-topic.md)

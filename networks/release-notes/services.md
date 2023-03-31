@@ -20,12 +20,12 @@ Coming soon...
 
 ## [v0.35](https://github.com/hashgraph/hedera-services/releases)
 
-{% hint style="info" %}
+{% hint style="success" %}
 **MAINNET UPDATE: MARCH 31, 2023**&#x20;
 {% endhint %}
 
 {% hint style="success" %}
-**MAINNET UPDATE: MARCH 31, 2023**&#x20;
+**TESTNET UPDATE: MARCH 16, 2023**&#x20;
 {% endhint %}
 
 ### Features

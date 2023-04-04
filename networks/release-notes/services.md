@@ -4,9 +4,9 @@ description: Hedera Services release information
 
 # Hedera Services
 
-For the latest versions supported on each network please visit the Hedera status [page](https://status.hedera.com/).
+Please visit the Hedera status page for the latest versions supported on each network.
 
-## v0.36
+## [v0.36](https://github.com/hashgraph/hedera-services/releases/tag/v0.36.0)
 
 {% hint style="info" %}
 **MAINNET UPDATE: APRIL 18, 2023**&#x20;
@@ -16,7 +16,38 @@ For the latest versions supported on each network please visit the Hedera status
 **TESTNET UPDATE: APRIL 4, 2023**&#x20;
 {% endhint %}
 
-Coming soon...
+### Features
+
+Services v0.36.0 adds the following functionality:
+
+* Add tracking of property changes for hollow account completion ([#4647](https://github.com/hashgraph/hedera-services/pull/4647))
+* Adding support for Redirect Token Calls fro evm-module ([#4880](https://github.com/hashgraph/hedera-services/pull/4880))
+* Update FileSignTool ([#4988](https://github.com/hashgraph/hedera-services/pull/4988))
+* Adding block number tool ([#4997](https://github.com/hashgraph/hedera-services/pull/4997))
+* Add client.workflow.operations and test with workflows ([#5053](https://github.com/hashgraph/hedera-services/pull/5053))
+* update hedera-services to use FSTS CLI instead of system properties
+* 6166: Migrate VirtualMap data from JasperDB to MerkleDb data sources
+* Implementation of current network functionality in new, modularized application architecture: consensus operations, query workflow, and various preHandle implementations
+
+### Security Updates: Hedera Smart Contract Service Security Model Changes
+
+Changes from services v0.35.2 have also been ported to v0.36.0.
+
+* After the security incident on March 9th, the engineers conducted a thorough analysis of the Smart Contract Service and the Hedera Token Service system contracts.
+* As part of this exercise, we did not find any additional vulnerabilities that could result in an attack that that which we witnessed on March 9th.
+* The team also looked for any disparities between the expectations of a typical smart contract developer who is used to working with the Ethereum Virtual Machine (EVM) or ERC token APIs and the behaviors of the Hedera Token Service system contract APIs. Such differences in behavior could be used by a malicious smart contract developer in unexpected ways.
+* In order to eliminate the possibility of these behavioral differences being utilized as attack vectors in the future, the consensus node software will align the behaviors of the Hedera Smart Contract Service token system contracts with those of EVM and typical token APIs such as ERC 20 and ERC 721.
+* As a result, the following changes are made as of the mainnet 0.35.2 release on March 31st:
+  * An EOA (externally owned account) will have to provide explicit approval/allowance to a contract if they want the contract to transfer value from their account balance.
+  * The behavior of `transferFrom` system contract will be exactly the same as that of the ERC 20 and ERC 721 spec `transferFrom` function.
+  * For HTS specific token functionality (e.g. Pause, Freeze, or Grant KYC), a contract will be authorized to perform the associated token management function only if the ContractId is listed as a key on the token (i.e. Pause Key, Freeze Key, KYC Key respectively).
+  * The `transferToken` and `transferNFT` APIs will behave as `transfer` in ERC20/721 if the caller owns the value being transferred, otherwise it will rely on approve spender allowances from the token owner.
+  * The above model will dictate entity (EOA and contracts) permissions during contract executions when modifying state. Contracts will no longer rely on Hedera transaction signature presence, but will instead be in accordance with EVM, ERC and ContractId key models noted.
+* As part of this release, the network will include logic to grandfather in previous contracts.
+  * Any contracts created from this release onwards will utilize the stricter security model and as such will not have considerations for top-level signatures on transactions to provide permissions.
+  * Existing contracts deployed prior to this upgrade will be automatically grandfathered in and continue to use the old model that was in place prior to this release for a limited time to allow for DApp/UX modification to work with the new security model.
+  * The grandfather logic will be maintained for an approximate period of 3 months from this release. In a future release in July 2023, the network will remove the grandfather logic, and all contracts will follow the new security model.
+  * Developers are encouraged to test their DApps with new contracts and UX using the new security model to avoid unintended consequences. If any DApp developers fail to modify their applications or upgrade their contracts (as applicable) to adhere to the new security model, they may experience issues in their applications.
 
 ## [v0.35](https://github.com/hashgraph/hedera-services/releases)
 
@@ -109,7 +140,7 @@ Services v0.33.0 adds the following features:
 * 'accounts send' subcommand added to yahcli to support sending HTS token units
 * Developer documentation updates
 
-<figure><img src="../../.gitbook/assets/Performance Measurement Results_033.001.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Performance Measurement Results_033.001 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.31](https://github.com/hashgraph/hedera-services/releases/tag/v0.31.0)
 
@@ -435,7 +466,7 @@ Please also note the following deprecations in the Hedera API protobufs:
 * The [<mark style="color:purple;">`ContractUpdateTransactionBody.fileID`</mark> <mark style="color:purple;">field</mark>](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L82), which is redundant given the existence of the [<mark style="color:purple;">`ContractGetBytecode`</mark> <mark style="color:purple;">quer</mark>y](https://github.com/hashgraph/hedera-protobufs/blob/main/services/smart\_contract\_service.proto#L63).
 * The [<mark style="color:purple;">`ContractCallLocalQuery.maxResultSize`</mark> <mark style="color:purple;">field</mark>](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_call\_local.proto#L136), as this limit is now simply a side-effect of the given gas limit.
 
-![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).jpeg>)
+![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).jpeg>)
 
 ## [v0.19.4](https://github.com/hashgraph/hedera-services/releases/tag/v0.19.4)
 

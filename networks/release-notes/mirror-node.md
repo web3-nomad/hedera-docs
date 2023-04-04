@@ -10,6 +10,14 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## [v0.77](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.77.0)
 
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: APRIL 4, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: MARCH 29, 2023**
+{% endhint %}
+
 This release fixes the tracking of NFT balances. Historically, these came from the balance file sent by the consensus nodes every 15 minutes. When we started tracking the live fungible token balances and moved away from using this balance file we unfortunately broke the NFT balance calculation. We not only fixed the issue but went ahead and took the time to track the up-to-date NFT balance as well.
 
 The `/api/v1/contracts/{id}/state` REST API shows the current state of a contract's slot values. Users requested the ability to query for the key/value pairs for their contract at an arbitrary point in the past. To address, we now expose a `timestamp` query parameter that will get the historical contract state. This allows the JSON-RPC relay to offer a proper `eth_getStorageAt` with support for historical blocks.
@@ -25,6 +33,8 @@ The `/api/v1/contracts/{id}/state` REST API shows the current state of a contrac
 {% hint style="success" %}
 **TESTNET UPDATE COMPLETED: MARCH 13, 2023**
 {% endhint %}
+
+
 
 The new `/api/v1/contracts/call` REST API as specified in [HIP-584](https://hips.hedera.com/HIP/hip-584.html) is finally ready for initial production use. This release adds support for rate limiting the API with an initial value of 100 requests per second per instance. Tags were added to the gas per second metric to indicate if the request was a call, an estimate, or resulted in an error for increased observability. Various bug fixes were also addressed.
 

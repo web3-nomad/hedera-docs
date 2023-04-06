@@ -10,18 +10,20 @@ This tutorial shows you how to deploy smart contracts on Hedera using Truffle an
 
 You can find more examples using Truffle, Web3JS, and Hardhat in [this GitHub repository](https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools).
 
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-smart-contracts-on-hedera-using-truffle.md#try-it-yourself"><strong>PREREQUISITES</strong></a></td><td><a href="deploy-smart-contracts-on-hedera-using-truffle.md#try-it-yourself">#try-it-yourself</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-smart-contracts-on-hedera-using-truffle.md#create-an-account-that-has-ecdsa-keys"><strong>CREATE</strong></a></td><td><a href="deploy-smart-contracts-on-hedera-using-truffle.md#create-an-account-that-has-ecdsa-keys">#create-an-account-that-has-ecdsa-keys</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-smart-contracts-on-hedera-using-truffle.md#compile-a-smart-contract-using-truffle"><strong>COMPILE</strong></a></td><td><a href="deploy-smart-contracts-on-hedera-using-truffle.md#compile-a-smart-contract-using-truffle">#compile-a-smart-contract-using-truffle</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-smart-contracts-on-hedera-using-truffle.md#deploy-the-smart-contract-to-hedera-using-truffle"><strong>DEPLOY</strong></a></td><td><a href="deploy-smart-contracts-on-hedera-using-truffle.md#deploy-the-smart-contract-to-hedera-using-truffle">#deploy-the-smart-contract-to-hedera-using-truffle</a></td></tr></tbody></table>
+
 ## **Try It Yourself**
 
-* Get a[ ](https://portal.hedera.com/register)[Hedera testnet account](https://portal.hedera.com/register)
+* Get a[ ](https://portal.hedera.com/register)[Hedera testnet account](https://portal.hedera.com/register)&#x20;
 * This[ Codesandbox](https://codesandbox.io/s/hedera-example-json-rpc-truffle-q6kibt?file=/create-account.js) is already setup for you to try this example
   * Fork the sandbox
   * Remember to provide your testnet account credentials for the _**operator**_ in the _**.env**_ file
-  * Open a new terminal and run:&#x20;
+  * Open a new terminal and run:
     * _**npm install -g truffle**_ (this installation may take a few minutes)
     * _**node create-account.js**_
 * Get[ ](https://github.com/ed-marquez/hedera-example-staking)[the example code from GitHub](https://github.com/ed-marquez/hedera-example-json-rpc-truffle)
 
-## 1. Create an Account that Has ECDSA Keys
+## Create an Account that Has ECDSA Keys
 
 Hedera supports two popular types of signature algorithms, ED25519 and ECDSA. Both are used in many blockchain platforms, including Bitcoin and Ethereum. **Currently, the JSON RPC Relay only supports Hedera accounts with an alias set (i.e. public address) based on its ECDSA public key.** To deploy a smart contract using Truffle, we first have to create a new account that meets these criteria. The _**main()**_ function in _**create-account.js**_ helps us do just that.
 
@@ -107,7 +109,7 @@ async function mirrorQueryFcn(publicKey) {
 }
 ```
 
-## 2. Compile a Smart Contract Using Truffle
+## Compile a Smart Contract Using Truffle
 
 Now it’s time to compile _**SimpleStorage**_, which is a basic smart contract that allows anyone to set and get data.
 
@@ -138,7 +140,7 @@ _**Console Output:**_
 
 <figure><img src="https://images.hedera.com/2022-How-to-Deploy-Smart-Contracts-on-Hedera-Using-Truffle-Image-2.png?w=2028&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1676318297&#x26;s=18f4b0794b3b98c309126d644a8ce114" alt=""><figcaption></figcaption></figure>
 
-## 3. Deploy the Smart Contract to Hedera Using Truffle
+## Deploy the Smart Contract to Hedera Using Truffle
 
 Finally, deploy the contract on Hedera through the JSON RPC Relay. Be sure to configure the following parameters in your _**.env**_ file to be able to deploy to the Hedera testnet with Truffle.
 
@@ -156,7 +158,7 @@ Deploy the contract with the following command:
 truffle migrate
 ```
 
-_**Console Output:**_
+_**Console Output ✅**_
 
 <figure><img src="https://images.hedera.com/2022-How-to-Deploy-Smart-Contracts-on-Hedera-Using-Truffle-Image-3.png?w=1808&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1676318304&#x26;s=9a04280932809887b003a3c583e85dcb" alt=""><figcaption></figcaption></figure>
 

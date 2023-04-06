@@ -120,7 +120,7 @@ Services `v0.34.0` completes the implementation of [HIP-583](https://hips.hedera
 To ensure full test coverage of this intricate feature, it will first be enabled **only on previewnet**.
 
 ~~➡️ This release will, however, enable contract expiry on all production networks \[previewnet, testnet, and mainnet].~~\
-~~~~This release will not enable smart contract rent.
+This release will not enable smart contract rent.
 
 <figure><img src="../../.gitbook/assets/0.34.1.001.png" alt=""><figcaption></figcaption></figure>
 
@@ -140,7 +140,7 @@ Services v0.33.0 adds the following features:
 * 'accounts send' subcommand added to yahcli to support sending HTS token units
 * Developer documentation updates
 
-<figure><img src="../../.gitbook/assets/Performance Measurement Results_033.001 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Performance Measurement Results_033.001.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.31](https://github.com/hashgraph/hedera-services/releases/tag/v0.31.0)
 
@@ -466,7 +466,7 @@ Please also note the following deprecations in the Hedera API protobufs:
 * The [<mark style="color:purple;">`ContractUpdateTransactionBody.fileID`</mark> <mark style="color:purple;">field</mark>](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L82), which is redundant given the existence of the [<mark style="color:purple;">`ContractGetBytecode`</mark> <mark style="color:purple;">quer</mark>y](https://github.com/hashgraph/hedera-protobufs/blob/main/services/smart\_contract\_service.proto#L63).
 * The [<mark style="color:purple;">`ContractCallLocalQuery.maxResultSize`</mark> <mark style="color:purple;">field</mark>](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_call\_local.proto#L136), as this limit is now simply a side-effect of the given gas limit.
 
-![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).jpeg>)
+![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).jpeg>)
 
 ## [v0.19.4](https://github.com/hashgraph/hedera-services/releases/tag/v0.19.4)
 

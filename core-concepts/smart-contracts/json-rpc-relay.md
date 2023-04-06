@@ -19,8 +19,8 @@ Anyone in the community can set up their own JSON RPC relay that applications ca
 
 <summary>Are there Community hosted relays?</summary>
 
-* ****[**Hashio**](https://swirldslabs.com/hashio/) ****&#x20;
-* ****[**Arkhia**](https://www.arkhia.io/features/#api-services)****
+* [**Hashio**](https://swirldslabs.com/hashio/)&#x20;
+* [**Arkhia**](https://www.arkhia.io/features/#api-services)
 
 </details>
 

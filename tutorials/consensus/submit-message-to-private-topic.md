@@ -10,13 +10,13 @@ When setting a _Submit Key,_ your topic becomes a **private topic** because each
 
 We recommend you complete the "Submit Your First Message" tutorial to get a basic understanding of the Hedera Consensus Service. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="submit-your-first-message.md"><strong>SUBMIT YOUR FIRST MESSAGE</strong></a><strong></strong></td><td><a href="submit-your-first-message.md">submit-your-first-message.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="submit-your-first-message.md"><strong>SUBMIT YOUR FIRST MESSAGE</strong></a></td><td><a href="submit-your-first-message.md">submit-your-first-message.md</a></td></tr></tbody></table>
 
 ✅ _You can find a full_ [_code check_](submit-message-to-private-topic.md#code-check) _for this tutorial at the bottom of this page._
 
 ## 1. Create a private topic
 
-To create a private topic, you will use [_<mark style="color:purple;">**`setSubmitKey()`**</mark>_](https://docs.hedera.com/hedera/sdks-and-apis/sdks/consensus-service/create-a-topic#methods) to set a Submit Key. This key needs to sign all messages someone sends to the topic. A message will be rejected if you don't sign the message or sign with an incorrect key. The cost of creating a private topic is the same as a public topic: **** [**$0.01**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service).
+To create a private topic, you will use [_<mark style="color:purple;">**`setSubmitKey()`**</mark>_](https://docs.hedera.com/hedera/sdks-and-apis/sdks/consensus-service/create-a-topic#methods) to set a Submit Key. This key needs to sign all messages someone sends to the topic. A message will be rejected if you don't sign the message or sign with an incorrect key. The cost of creating a private topic is the same as a public topic: [**$0.01**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service).
 
 {% tabs %}
 {% tab title="Java" %}
@@ -130,7 +130,7 @@ _, err = hedera.NewTopicMessageQuery().
 
 ## 3. Submit a message
 
-Now you are ready to submit a message to your private topic. To do this, you will use [_<mark style="color:purple;">**`TopicMessageSubmitTransaction()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/submit-a-message.md). However, you need to sign this transaction with your Submit Key. The cost for sending a message to a private topic is the same as a public topic: [**$0.0001**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service). ****&#x20;
+Now you are ready to submit a message to your private topic. To do this, you will use [_<mark style="color:purple;">**`TopicMessageSubmitTransaction()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/submit-a-message.md). However, you need to sign this transaction with your Submit Key. The cost for sending a message to a private topic is the same as a public topic: [**$0.0001**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service).&#x20;
 
 {% tabs %}
 {% tab title="Java" %}

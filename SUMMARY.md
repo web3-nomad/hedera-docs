@@ -8,6 +8,7 @@
   * [Transfer HBAR](getting-started/transfer-hbar.md)
 * [Tutorials](tutorials/README.md)
   * [Smart Contracts](tutorials/smart-contracts/README.md)
+    * [Deploy By Leveraging Ethereum Developer Tools On Hedera](tutorials/smart-contracts/deploy-by-leveraging-ethereum-developer-tools-on-hedera.md)
     * [Deploy Your First Smart Contract](tutorials/smart-contracts/deploy-your-first-smart-contract.md)
     * [Deploy a Contract Using the Hedera Token Service](tutorials/smart-contracts/deploy-a-contract-using-the-hedera-token-service.md)
     * [Deploy a Smart Contract Using Hardhat](tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat.md)

@@ -2,7 +2,7 @@
 description: >-
   Welcome to Hedera documentation contributing and style guide! Ways you can
   contribute below⬇:
-cover: ../.gitbook/assets/28_ultraviolet (1) (1).jpg
+cover: ../.gitbook/assets/28_ultraviolet (1) (2).jpg
 coverY: 31
 ---
 
@@ -84,7 +84,7 @@ Abbreviations include acronyms, initialisms, shortened words, and contractions. 
   * _**KYC** for Know Your Customer_
   * _**IPFS** for InterPlanetary File System_
 * A shortened word is just part of a word or phrase, sometimes with a period in the end:
-  * &#x20;_**Dr.** for **** doctor_
+  * &#x20;_**Dr.** for_ _doctor_
   * _**etc.** for et cetera_
 
 > **Note:** Some abbreviations can be either acronyms or initialisms, depending on the speaker's preference—examples include _**FAQ**_ and _**SQL**_. In some cases, the pronunciation determines [whether to use _a_ or _an_](https://developers.google.com/style/articles).

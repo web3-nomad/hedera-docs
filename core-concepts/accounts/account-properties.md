@@ -44,7 +44,7 @@ The `account` can be one of the following:\
 
 ### **Account Number**
 
-Each Hedera account has a system-provided **account number** when the account is created.  An account number **** is a non-negative number of 8 bytes. You can use the account number to specify the account in all Hedera transactions and query requests. Account numbers are unique and immutable. The account number for a newly created account is returned in the transaction receipt or transaction record for the transaction ID that created the account. The account number ID has the following format  <mark style="color:purple;">`<shardNum>.<realmNum>.<accountNum>`</mark><mark style="color:blue;">.</mark>
+Each Hedera account has a system-provided **account number** when the account is created.  An account number is a non-negative number of 8 bytes. You can use the account number to specify the account in all Hedera transactions and query requests. Account numbers are unique and immutable. The account number for a newly created account is returned in the transaction receipt or transaction record for the transaction ID that created the account. The account number ID has the following format  <mark style="color:purple;">`<shardNum>.<realmNum>.<accountNum>`</mark><mark style="color:blue;">.</mark>
 
 | Account Number ID | Description                                        |
 | ----------------- | -------------------------------------------------- |
@@ -99,12 +99,12 @@ The shard number and realm number are set to 0 followed by the EVM address.&#x20
 
 \
 **Example**\
-****\
-****EVM Address: `b794f5ea0ba39494ce839613fffba74279579268`\
-``\
-``HEX Encoded EVM Address: `0xb794f5ea0ba39494ce839613fffba74279579268`\
-``\
-``EVM Address Account Alias Account ID: \
+\
+EVM Address: `b794f5ea0ba39494ce839613fffba74279579268`\
+\
+HEX Encoded EVM Address: `0xb794f5ea0ba39494ce839613fffba74279579268`\
+\
+EVM Address Account Alias Account ID: \
 \
 `0.0.b794f5ea0ba39494ce839613fffba74279579268`
 

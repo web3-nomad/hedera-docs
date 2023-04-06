@@ -4,7 +4,7 @@ In this tutorial, you'll be guided through setting up a Hardhat project and depl
 
 **Hardhat** is a development environment for Ethereum smart contracts. It consists of different components for editing, compiling, debugging, and deploying your smart contracts and dApps, all working together to create a complete development environment. By the end of this tutorial, you'll have learned how to deploy smart contracts using Hardhat on the Hedera Testnet**.**
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#prerequisites"><strong>PREREQUISITES</strong></a><strong></strong></td><td><a href="deploy-a-smart-contract-using-hardhat.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#hardhat-project-setup"><strong>HARDHAT SETUP</strong></a><strong></strong></td><td><a href="deploy-a-smart-contract-using-hardhat.md#hardhat-project-setup">#hardhat-project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#project-contents"><strong>PROJECT CONTENTS</strong></a><strong></strong></td><td><a href="deploy-a-smart-contract-using-hardhat.md#project-contents">#project-contents</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#deploy-contract"><strong>DEPLOY CONTRACT</strong></a><strong></strong></td><td><a href="deploy-a-smart-contract-using-hardhat.md#test-and-deploy-contract">#test-and-deploy-contract</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="deploy-a-smart-contract-using-hardhat.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#hardhat-project-setup"><strong>HARDHAT SETUP</strong></a></td><td><a href="deploy-a-smart-contract-using-hardhat.md#hardhat-project-setup">#hardhat-project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#project-contents"><strong>PROJECT CONTENTS</strong></a></td><td><a href="deploy-a-smart-contract-using-hardhat.md#project-contents">#project-contents</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#deploy-contract"><strong>DEPLOY CONTRACT</strong></a></td><td><a href="deploy-a-smart-contract-using-hardhat.md#test-and-deploy-contract">#test-and-deploy-contract</a></td></tr></tbody></table>
 
 ## Prerequisites
 
@@ -141,8 +141,8 @@ In this step, you'll look at the descriptions of the Hardhat project contents. F
 #### contracts/
 
 The `contracts/` folder contains the source file for the Greeter smart contract.\
-****\
-****Let's review the `Greeter.sol` smart contract in the `hedera-example-hardhat-project/contracts` folder. At the top of the file, the `SPDX-License-Identifier` defines the license, in this case, the MIT license. The `pragma solidity ^0.8.9;` line specifies the Solidity compiler version to use. These two lines are crucial for proper licensing and compatibility.
+\
+Let's review the `Greeter.sol` smart contract in the `hedera-example-hardhat-project/contracts` folder. At the top of the file, the `SPDX-License-Identifier` defines the license, in this case, the MIT license. The `pragma solidity ^0.8.9;` line specifies the Solidity compiler version to use. These two lines are crucial for proper licensing and compatibility.
 
 ```solidity
 //SPDX-License-Identifier: MIT
@@ -396,6 +396,6 @@ The Network Explorer will return the information about the contract created and 
 
 > _**Note:** At the top of the explorer page, remember to switch the network to **TESTNET** before you search for the contract._&#x20;
 
-<figure><img src="../../.gitbook/assets/new hashscan (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/new hashscan (1).png" alt=""><figcaption></figcaption></figure>
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/SimiHunjan">Simi</a>, Sr. Software Manager</td><td><a href="https://twitter.com/SimiHunjan">https://twitter.com/SimiHunjan</a></td></tr></tbody></table>

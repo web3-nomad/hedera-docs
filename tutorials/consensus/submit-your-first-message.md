@@ -10,7 +10,7 @@ In short, HCS offers the validity of the order of events and transparency into t
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ✅ _You can find a full_ [_code check_](submit-your-first-message.md#code-check) _for this tutorial at the bottom of this page._
 
@@ -20,7 +20,7 @@ To create your first topic, you will use the _<mark style="color:blue;">**`Topic
 
 If you would like to create a **private topic,** you can optionally set a topic key ([_`setSubmitKey()`_](https://docs.hedera.com/guides/docs/sdks/consensus/create-a-topic#methods)). This means that messages submitted to this topic require the topic key to sign. If the topic key does not sign a message, the message will not be submitted to the topic.
 
-After submitting the transaction to the Hedera network, you can obtain the new topic ID by requesting the receipt. Creating a topic only costs you **** [**$0.01**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service).
+After submitting the transaction to the Hedera network, you can obtain the new topic ID by requesting the receipt. Creating a topic only costs you [**$0.01**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service).
 
 {% tabs %}
 {% tab title="Java" %}
@@ -136,7 +136,7 @@ _, err = hedera.NewTopicMessageQuery().
 
 ## 3. Submit a message
 
-Now you are ready to submit your first message to the topic. To do this, you will use [_<mark style="color:purple;">**`TopicMessageSubmitTransaction()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/submit-a-message.md). For this transaction, you will provide the topic ID and the message to submit to it. Each message you send to a topic costs you [**$0.0001**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service). **** In other words, you can send 10,000 messages for $1 on the Hedera Network.
+Now you are ready to submit your first message to the topic. To do this, you will use [_<mark style="color:purple;">**`TopicMessageSubmitTransaction()`**</mark>_](../../sdks-and-apis/sdks/consensus-service/submit-a-message.md). For this transaction, you will provide the topic ID and the message to submit to it. Each message you send to a topic costs you [**$0.0001**](https://docs.hedera.com/hedera/networks/mainnet/fees#consensus-service). In other words, you can send 10,000 messages for $1 on the Hedera Network.
 
 {% tabs %}
 {% tab title="Java" %}

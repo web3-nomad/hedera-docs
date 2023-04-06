@@ -13,6 +13,7 @@
     * [Deploy a Smart Contract Using Hardhat](tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat.md)
     * [Deploy a Subgraph Using The Graph and JSON-RPC](tutorials/smart-contracts/deploy-a-subgraph-using-the-graph-and-json-rpc.md)
     * [Deploy Smart Contracts on Hedera Using Truffle](tutorials/smart-contracts/deploy-smart-contracts-on-hedera-using-truffle.md)
+    * [Send and Receive HBAR Using Solidity Smart Contracts](tutorials/smart-contracts/send-and-receive-hbar-using-solidity-smart-contracts.md)
   * [Consensus](tutorials/consensus/README.md)
     * [Submit Your First Message](tutorials/consensus/submit-your-first-message.md)
     * [Submit Message to Private Topic](tutorials/consensus/submit-message-to-private-topic.md)

@@ -25,19 +25,13 @@ cd hedera-hardhat-example-project
 npm install
 ```
 
-Install the `dotenv` package used to manage environment variables in a separate `.env` file, which is loaded at runtime:
-
-```bash
-npm install dotenv
-```
-
-This helps protect sensitive information like your private keys and API secrets, but it's still best practice to add `.env` to your `.gitignore` to prevent you from pushing your credentials to GitHub.
+The `dotenv` package is used to manage environment variables in a separate `.env` file, which is loaded at runtime. This helps protect sensitive information like your private keys and API secrets, but it's still best practice to add `.env` to your `.gitignore` to prevent you from pushing your credentials to GitHub.
 
 ## Project Configuration
 
 In this step, you will update and configure the Hardhat configuration file that defines tasks, stores Hedera account private key information, and Hashio Testnet RPC URL. First, rename the `.env.example` file to `.env`. and update the `.env` and `hardhat.config.js` files with the following code.
 
-But first, in order to deploy the contract to the _Hedera Testnet_, you will need to get a testnet account and key. To get a testnet account, create an _ECDSA_ account using the **Hedera Developer** [**Portal**](https://portal.hedera.com/). Once you have your ECDSA account and HEX encoded private key, add them to the `TESTNET_OPERATOR_PRIVATE_KEY` variable in the `.env` file.&#x20;
+But first, in order to deploy the contract to the _Hedera Testnet_, you will need to get a testnet account and key. To get a testnet account, create an _ECDSA_ account using the [**Hedera Developer Portal**](https://portal.hedera.com/). Once you have your ECDSA account and HEX encoded private key, add the private key to the `TESTNET_OPERATOR_PRIVATE_KEY` variable in the `.env` file.&#x20;
 
 <details>
 
@@ -280,7 +274,7 @@ module.exports = async () => {
   const wallet = (await ethers.getSigners())[0];
   //Wallet object (which is essentially signer object) has some built in functionality like getBalance, getAddress and more
   const balance = (await wallet.getBalance()).toString();
-  console.log(`The address ${wallet.address} has ${balance} tinybars`);
+  console.log(`The address ${wallet.address} has ${balance} weibars`);
 
   return balance;
 };
@@ -336,7 +330,7 @@ A file that stores your environment variables like your accounts, private keys, 
 
 #### hardhat.config.js
 
-The Hardhat project configuration file. This file includes information about the Hedera network RPC URLs, accounts, and tasks defined (see previous step).
+The Hardhat project configuration file. This file includes information about the Hedera network RPC URLs, accounts, and tasks defined ([see previous step](deploy-a-smart-contract-using-hardhat.md#hardhat-configuration)).
 
 ## Test and Deploy
 
@@ -356,7 +350,7 @@ Tests should pass with "<mark style="color:green;">**4 passing**</mark>" returne
 
 ```shell
   RPC
-The address 0xe261e26aECcE52b3788Fac9625896FFbc6bb4424 has 99999999999999991611392 tinybars
+The address 0xe261e26aECcE52b3788Fac9625896FFbc6bb4424 has 99999999999999991611392 weibars
     ✔ should be able to get the account balance (1127ms)
 Greeter deployed to: 0xEc3D74D360a53Fe7104Be6aB4e25e27a90bF6aE4
     ✔ should be able to deploy a contract (11810ms)
@@ -396,6 +390,6 @@ The Network Explorer will return the information about the contract created and 
 
 > _**Note:** At the top of the explorer page, remember to switch the network to **TESTNET** before you search for the contract._&#x20;
 
-<figure><img src="../../.gitbook/assets/new hashscan (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/new hashscan (2).png" alt=""><figcaption></figcaption></figure>
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/SimiHunjan">Simi</a>, Sr. Software Manager</td><td><a href="https://twitter.com/SimiHunjan">https://twitter.com/SimiHunjan</a></td></tr></tbody></table>

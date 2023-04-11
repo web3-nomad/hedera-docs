@@ -1,33 +1,29 @@
 # How to Set Up Foundry to Test Smart Contracts on Hedera
 
-Foundry provides tools to developers who are developing smart contracts. One of the 3 main components of Foundry is Forge: Foundry’s testing framework. Tests are written in Solidity and are easily run with the forge test command. This tutorial will dive into configuring Foundry with Hedera to use Forge in order to write and run tests for smart contracts.
+[Foundry](https://book.getfoundry.sh/) provides tools to developers who are developing smart contracts. One of the 3 main components of Foundry is [Forge](https://book.getfoundry.sh/forge/): Foundry’s testing framework. Tests are written in Solidity and are easily run with the forge test command. This tutorial will dive into configuring Foundry with Hedera to use Forge in order to write and run tests for smart contracts.
+
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#create-a-hedera-project-and-install-the-hashgraph-js-sdk"><strong>CREATE PROJECT</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#create-a-hedera-project-and-install-the-hashgraph-js-sdk">#create-a-hedera-project-and-install-the-hashgraph-js-sdk</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#configure-foundry-in-your-hedera-project"><strong>CONFIGURE FOUNDRY</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#configure-foundry-in-your-hedera-project">#configure-foundry-in-your-hedera-project</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#create-tests-written-in-solidity"><strong>TEST CONTRACT</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#create-tests-written-in-solidity">#create-tests-written-in-solidity</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#deploy-your-smart-contract"><strong>DEPLOY CONTRACT</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#deploy-your-smart-contract">#deploy-your-smart-contract</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="https://github.com/a-ridley/hedera-smart-contract-testing-with-foundry"><strong>PROJECT REPO</strong></a></td><td><a href="https://github.com/a-ridley/hedera-smart-contract-testing-with-foundry">https://github.com/a-ridley/hedera-smart-contract-testing-with-foundry</a></td></tr></tbody></table>
 
 > _**Note:**_ [_**Hashio**_](https://swirldslabs.com/hashio/)_**, the SwirldsLabs hosted version of the JSON-RPC Relay, is in beta. If issues are encountered while using Foundry and Hashio, please create an issue in the JSON-RPC Relay GitHub**_ [_**repository**_](https://github.com/hashgraph/hedera-json-rpc-relay)_**.**_
 
-### What we will do:
+## Prerequisites
 
-* Create a new Hedera project with the following directory structure
+* Basic understanding of JavaScript and [Solidity](https://docs.soliditylang.org/en/latest/).
+* Installed [Foundry](https://book.getfoundry.sh/getting-started/installation) and have a Hedera Testnet account.
 
-```
-.
-├── cache
-├── contracts
-├── index.ts
-├── test
-└── package.json
-```
+<details>
 
-* Create a sample smart contract
-* Create a sample Foundry project
-* Write Unit tests in solidity
-* Build and run the tests
-* Deploy the smart contract using the Hashgraph SDK
+<summary>Need a testnet account?</summary>
 
-The complete example can be found on GitHub [here](https://github.com/a-ridley/hedera-smart-contract-testing-with-foundry).
+Head over to [portal.hedera.com](https://portal.hedera.com/register) to create a testnet account and receive 10,000 test HBAR every 24 hours!
 
-### Step 1: Create a Hedera project and install the Hashgraph JS SDK
+_**Note: Never share your private key with anyone or post it anywhere. Add a .gitingore file with an entry for your .env file. This will ensure you don’t accidentally push your credentials to your repository.**_
 
-Open your terminal and create a directory called my-hedera-project.
+</details>
+
+## Create a Hedera project and Install the Hashgraph JS SDK
+
+Open your terminal and create a directory called `my-hedera-project` by running the following command:
 
 ```bash
 mkdir my-hedera-project && cd my-hedera-project
@@ -39,18 +35,12 @@ Initialize a node project and accept all defaults
 npm install --save @hashgraph/sdk
 ```
 
-Create your `.env` file and fill the contents with your account Id and private key. They will be used to create your Hedera client.
-
-#### Need a Testnet Account?
-
-Head over to [portal.hedera.com](https://portal.hedera.com/register) to create a testnet account and receive 10,000 test HBAR every 24 hours!
+In your project's root directory, create your `.env` file and fill the contents with your account Id and private key from the [developer portal](https://portal.hedera.com/) where you created your Hedera Testnet account. They will be used to create your Hedera client.
 
 ```
 OPERATOR_ACCOUNT_ID=<account id>
 OPERATOR_PRIVATE_KEY=<private key>
 ```
-
-**Note: Never share your private key with anyone or post it anywhere. Add a .gitingore file with an entry for your .env file. This will ensure you don’t accidentally push your credentials to your repository.**
 
 Create a file named index.ts and create your Hedera client
 
@@ -75,7 +65,7 @@ const client = Client.forTestnet().setOperator(operatorAccountId, operatorPrivat
 client.setDefaultMaxTransactionFee(new Hbar(100));
 ```
 
-In the root directory, create two new empty folders: cache and test. Inside the cache folder, create the subfolder forge-cache. Inside the test folder, create a subfolder called foundry. Your Hedera project directory structure should look similar to this:
+In the root directory, create two new empty folders: cache and test. Inside the cache folder, create the subfolder `forge-cache`. Inside the test folder, create a subfolder called `foundry`. Your Hedera project directory structure should look similar to this:
 
 ```
 .
@@ -92,9 +82,7 @@ In the root directory, create two new empty folders: cache and test. Inside the 
 └── tsconfig.json
 ```
 
-### Step 2: Install Foundry by visiting their installation [guide](https://book.getfoundry.sh/getting-started/installation).
-
-### Step 3. Create a sample Foundry Project
+#### Create a Sample Foundry Project
 
 Open a new terminal window and Create a sample Foundry project by running the following command in the new terminal:
 
@@ -112,7 +100,7 @@ Your foundry project will have the following directory structure
 └── test
 ```
 
-### Step 4: Copy the lib/forge-std folder from the sample foundry project into your Hedera Project
+#### Copy the lib/forge-std folder from the sample foundry project into your Hedera Project
 
 Foundry manages dependencies using git submodules by default. Hedera manages dependencies through npm modules. The default sample project comes with one dependency installed: Forge Standard Library. We need to get that over to our Hedera project. Copy the lib/forge folder from the sample Foundry project and put it in your Hedera project. Your Hedera project directory structure will look like this:
 
@@ -123,7 +111,7 @@ Foundry manages dependencies using git submodules by default. Hedera manages dep
 ├── contracts
 ├── lib
 ├── test
-├──foundry
+      ├──foundry
 ├── .env
 ├── .gitignore
 ├── index.ts
@@ -132,11 +120,11 @@ Foundry manages dependencies using git submodules by default. Hedera manages dep
 └── tsconfig.json
 ```
 
-### Step 5: Configure Foundry in your Hedera project
+## Configure Foundry in your Hedera project
 
-Foundry’s default directory for contracts is src/, but we will need it to map to contracts. Tests will map to our test/foundry path, and the cache\_path will map to our cache/forge-cache directory.
+Foundry’s default directory for contracts is `src/`, but we will need it to map to contracts. Tests will map to our `test/foundry` path, and the `cache_path` will map to our `cache/forge-cache` directory.
 
-Let’s create a foundry configuration file to update how Foundry behaves. Create a file in the root of your Hedera project and name it `foundry.toml` and add the following lines:
+Let’s create a Foundry configuration file to update how Foundry behaves. Create a file in the root of your Hedera project and name it `foundry.toml` and add the following lines:
 
 ```toml
 [profile.default]
@@ -147,9 +135,9 @@ test = 'test/foundry'
 cache_path = 'forge-cache'
 ```
 
-### Step 6: Remap dependencies
+#### Remap dependencies
 
-Foundry manages dependencies using git submodules and has the ability to remap them to make them easier to import. Let’s create a new file at the root directory called `remappings.txt` and write the following lines:
+Foundry manages dependencies using git submodules and has the ability to remap them to make them easier to import. Let’s create a new file at the project's root directory called `remappings.txt` and write the following lines:
 
 ```
 ds-test/=lib/forge-std/lib/ds-test/src/
@@ -158,12 +146,14 @@ forge-std/=lib/forge-std/src/
 
 And what these remappings translate to is:
 
-* To import from ds-test we write import “ds-test/TodoList.sol”;
-* To import from forge-std we write import “forge-std/Contract.sol”;
+* To import from `ds-test` we write import “ds-test/TodoList.sol”;
+* To import from `forge-std` we write import “forge-std/Contract.sol”;
 
-### Step 7. Create a smart contract
+## Create Tests
 
-Create a smart contract file named `TodoList.sol` under the _contracts_ directory
+#### Create a smart contract
+
+Create a smart contract file named `TodoList.sol` under the _contracts_ directory.
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -198,7 +188,7 @@ contract TodoList {
 }
 ```
 
-### Step 8. Create tests written in Solidity
+#### Create tests written in Solidity
 
 Create a file named `TodoList.t.sol` under test/foundry and write the following test:
 
@@ -254,9 +244,9 @@ contract TodoListTest is Test {
 }
 ```
 
-### Step 9. Build and run your tests
+## Build and run your tests
 
-In your terminal, ensure you are in your forge project directory and run the following command to build
+In your terminal, ensure you are in your forge project directory and run the following command to build:
 
 ```bash
 forge build
@@ -264,7 +254,7 @@ forge build
 
 <figure><img src="https://images.hedera.com/forge-build.png?w=611&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680223873&#x26;s=2ca7a10193d35a10013e8c5c397bdf18" alt=""><figcaption></figcaption></figure>
 
-To run your tests run the following command
+To run your tests run the following command:
 
 ```bash
 forge test
@@ -272,9 +262,9 @@ forge test
 
 <figure><img src="https://images.hedera.com/forge-test.png?w=531&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680223875&#x26;s=48aa3022e94b7c2d04206d2bea7e5822" alt=""><figcaption></figcaption></figure>
 
-### Deploy your Smart Contract
+## Deploy your Smart Contract
 
-Step 1: Compile your smart contract using solc
+#### Step 1: Compile your smart contract using solc
 
 ```bash
 solcjs --bin contracts/TodoList.sol -o binaries 
@@ -336,7 +326,7 @@ const hederaFoundryExample = async () => {
 hederaFoundryExample();
 ```
 
-### Forge Gas Reports
+## Forge Gas Reports
 
 Forge has functionality built in to give you [gas reports](https://book.getfoundry.sh/forge/gas-reports) of your contracts. First, configure your `foundry.toml` to specify which contracts should generate a gas report.
 
@@ -348,7 +338,7 @@ gas_reports = ["TodoList"]﻿
 
 <figure><img src="https://images.hedera.com/toml-file.png?w=787&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680230303&#x26;s=fdac820b47bbfe031ffdb390f807fc44" alt=""><figcaption></figcaption></figure>
 
-In order to generate a gas report run the following command in your vscode terminal.
+In order to generate a gas report run the following command in your VSCode terminal:
 
 ```javascript
 forge test –gas-report
@@ -358,10 +348,10 @@ forge test –gas-report
 
 Your output will show you an estimated gas average, median, and max for each contract function and total deployment cost and size.
 
-### Summary
+## Summary
 
-In this article, we have learned how to configure Foundry to work with a Hedera project to test our Smart Contracts using the forge framework. We also learned how to generate gas reports for our smart contracts.
+In this tutorial, we have learned how to configure Foundry to work with a Hedera project to test our smart contracts using the [forge](https://book.getfoundry.sh/forge/) framework. We also learned how to generate gas reports for our smart contracts.
 
-Happy Building!
+#### Happy Building!
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/ridley___">Abi Castro</a>, DevRel Engineer</td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>

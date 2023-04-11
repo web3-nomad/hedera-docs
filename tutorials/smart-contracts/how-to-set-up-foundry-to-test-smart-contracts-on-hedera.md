@@ -73,7 +73,7 @@ In the root directory, create two new empty folders: cache and test. Inside the 
       ├──forge-cache
 ├── contracts
 ├── test
-├──foundry
+      ├──foundry
 ├── .env
 ├── .gitignore
 ├── index.ts

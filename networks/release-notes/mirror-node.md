@@ -8,6 +8,16 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.78](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.78.0)
+
+[HIP-584](https://hips.hedera.com/HIP/hip-584.html) Mirror Evm Archive Node now has token precompile support. This was the last major piece of functionality needed for the `/api/v1/contracts/call` to be considered `eth_call` equivalent. The new API was added to the REST API's OpenAPI documentation so that it appears on our [Swagger UI](https://mainnet-public.mirrornode.hedera.com/api/v1/docs). A number of performance optimizations were worked on to make it scalable as well as various test improvements to verify its correctness. Various bugs were addressed including the proper handling of reverts. In the next few releases, we plan to fine tune contract call and implement contract gas estimation.
+
+A large focus was put on performance and resiliency this release. On the performance front, we've optimized the list schedules REST API to be scalable on Citus. Performance tests can now trigger automatically via TestKube once the helm tests complete. Those same k6 performance tests were enhanced to automatically pick appropriate configuration values specific to the environment. The transaction hash table was partitioned and the ingest process made to insert hashes in parallel. This change dramatically speeds up the time to insert the optional transaction hashes. Similarly, an option was added to control which transaction types should cause a hash insertion.
+
+On the resiliency front, the importer component was analyzed for any code paths that may cause record file processing to halt due to bad input from consensus nodes. Any such code was made to handle the error, log/notify, and move on to the next transaction. This change makes the mirror node ingestion more resilient and moves toward preferring availability over correctness. Partial mirror nodes that might become stuck due to having an incomplete address book can now continue to ingest with a new `consensusMode` property and logic. Partial mirror nodes will now also be able to have a corrected account and token balance even if the entity was missing a deleted flag. Finally, we were able to complete a longstanding refactoring effort to move all transaction specific logic to individual transaction handlers and fixed a number of bugs in the process.
+
+There were a few important bugs fixed in this release that are worth noting. A fix was put in place to correct inaccurate fungible token total supply. Additionally, NFTs for deleted tokens no longer appear as active in the REST API.
+
 ## [v0.77](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.77.0)
 
 {% hint style="success" %}

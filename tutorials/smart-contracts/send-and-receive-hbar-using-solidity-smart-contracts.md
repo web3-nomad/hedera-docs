@@ -12,18 +12,14 @@ Follow these main 3 steps:
 
 Throughout the tutorial, you also learn how to check the HBAR balance of the contract by calling a function of the contract itself and by using the SDK query. The last step is to review the transaction history for the contract and the operator account in a mirror node explorer, like [HashScan](https://hashscan.io/#/mainnet/dashboard).
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#prerequisites-try-it-yourself"><strong>PREREQUISITES</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#prerequisites-try-it-yourself">#prerequisites-try-it-yourself</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#1.-create-accounts-and-deploy-a-contract"><strong>CREATE ACCOUNTS</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#1.-create-accounts-and-deploy-a-contract">#1.-create-accounts-and-deploy-a-contract</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#2.-getting-hbar-to-the-contract"><strong>GETTING HBAR</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#2.-getting-hbar-to-the-contract">#2.-getting-hbar-to-the-contract</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#summary"><strong>SUMMARY</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#summary">#summary</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#prerequisites-try-it-yourself"><strong>PREREQUISITES</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#prerequisites-try-it-yourself">#prerequisites-try-it-yourself</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#1.-create-accounts-and-deploy-a-contract"><strong>CREATE ACCOUNTS</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#1.-create-accounts-and-deploy-a-contract">#1.-create-accounts-and-deploy-a-contract</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#2.-getting-hbar-to-the-contract"><strong>HBAR ➡ CONTRACT</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#2.-getting-hbar-to-the-contract">#2.-getting-hbar-to-the-contract</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#3.-getting-hbar-from-the-contract"><strong>HBAR ⬅ CONTRACT</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#3.-getting-hbar-from-the-contract">#3.-getting-hbar-from-the-contract</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="send-and-receive-hbar-using-solidity-smart-contracts.md#summary"><strong>SUMMARY</strong></a></td><td><a href="send-and-receive-hbar-using-solidity-smart-contracts.md#summary">#summary</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="https://github.com/ed-marquez/hedera-smart-contracts/tree/examples/examples/transfer-hbar2contracts-solidity"><strong>PROJECT REPO</strong></a></td><td><a href="https://github.com/ed-marquez/hedera-smart-contracts/tree/examples/examples/transfer-hbar2contracts-solidity">https://github.com/ed-marquez/hedera-smart-contracts/tree/examples/examples/transfer-hbar2contracts-solidity</a></td></tr></tbody></table>
 
-## **Prerequisites / Try It Yourself**&#x20;
+## **Prerequisites**&#x20;
 
 * Get a [Hedera testnet account](https://portal.hedera.com/register)
-* Use [this Codesandbox](https://codesandbox.io/s/hedera-example-transfer-hbar2contracts-solidity-swsfmn?file=/index.js) to try the example
-  * Fork the sandbox
-  * Remember to provide your testnet account credentials in the .env file
-  * Open a new terminal to execute index.js
 * Get the [example code from GitHub](https://github.com/ed-marquez/hedera-smart-contracts/tree/examples/examples/transfer-hbar2contracts-solidity)
 
-## **1. Create Accounts and Deploy a Contract**
+## **Create Accounts and Deploy a Contract**
 
 This example involves 3 Hedera accounts, 1 contract, and 1 Hedera Token Service (HTS) token. The Operator account ([your Testnet account credentials](https://portal.hedera.com/register)) is used to build the Hedera client to submit transactions to the Hedera network – that’s the first account. The Treasury and Alice are new accounts (created by the Operator) to represent additional parties in your test – those are the second and third accounts respectively.
 
@@ -168,9 +164,9 @@ async function contractDeployFcn(bytecode, gasLim) {
 
 </details>
 
-## **2. Getting HBAR to the Contract**
+## **Getting HBAR to the Contract**
 
-### **2.1 The **_**receive**_**/**_**fallback**_** Functions**
+### **The **_**receive**_**/**_**fallback**_** Functions**
 
 In this scenario, you (Operator) transfer 10 HBAR to the contract by triggering either the _**receive**_ or _**fallback**_ functions of the contract. As described in this [Solidity by Example](https://solidity-by-example.org/sending-ether/) page, the _**receive**_ function is called when _**msg.data**_ is empty, otherwise the _**fallback**_ function is called.
 
@@ -240,7 +236,7 @@ _====================================================_
 
 </details>
 
-### **2.2 Executing a Payable Function**
+### **Executing a Payable Function**
 
 Now, you (Operator) transfer 21 HBAR to the contract by calling a specific contract function (_**tokenAssociate**_) that is _**payable**_ using the [**ContractExecuteTransaction()**](https://docs.hedera.com/hedera/sdks-and-apis/sdks/smart-contracts/call-a-smart-contract-function) class and specifying a _**.setPayableAmount()**_. This is done with the helper function _**contractExecuteFcn**_.
 
@@ -305,7 +301,7 @@ async function contractExecuteFcn(cId, gasLim, fcnName, params, amountHbar) {
 
 </details>
 
-### **2.3 Using **_**TransferTransaction**_** in the SDK**
+### **Using **_**TransferTransaction**_** in the SDK**
 
 Lastly in this scenario, the Treasury transfers 30 HBAR to the contract using [**TransferTransaction()**](https://docs.hedera.com/hedera/sdks-and-apis/sdks/cryptocurrency/transfer-cryptocurrency)**.** This is done with the helper function _**hbar2ContractSdkFcn**_. This scenario is just a quick recap and reminder of [Part 1 of the series](https://hedera.com/blog/how-to-send-and-receive-hbar-using-smart-contracts-part-1-using-the-sdk), so be sure to give that a read for more details.
 
@@ -342,13 +338,13 @@ async function hbar2ContractSdkFcn(sender, receiver, amount, pKey) {
 
 </details>
 
-## **3. Getting HBAR from the Contract**
+## **Getting HBAR from the Contract**
 
 In this section the contract transfers HBAR to Alice using three different methods: _**transfer**_, _**send**_, _**call**_. Each transfer is of 20 HBAR, so by the end the contract should have 1 HBAR left in its balance.
 
 This tutorial focuses on implementation. For additional background and details of these Solidity methods, check out [Solidity by Example](https://solidity-by-example.org/sending-ether/) and [this external article](https://medium.com/daox/three-methods-to-transfer-funds-in-ethereum-by-means-of-solidity-5719944ed6e9) – just remember that on Hedera, the native cryptocurrency transacted is HBAR, not ETH. One thing worth noting from those resources is that _**call**_ is currently the recommended method to use.
 
-### **3.1 Contract Transfers HBAR to Alice**
+### **Contract Transfers HBAR to Alice**
 
 The helper function _**contractExecuteFcn**_ executes the _**transferHbar**_ function of the contract. The helper function _**contractParamsBuilderFcn**_ now builds the contract function parameters from the receiver ID (Alice’s) and the amount of HBAR to be sent. Also note from the previous section that the contract function is executed with a _**gasLimit**_ of only 50,000 gas.
 
@@ -393,7 +389,7 @@ _====================================================_
 
 </details>
 
-### **3.2 Contract Sends HBAR to Alice**
+### **Contract Sends HBAR to Alice**
 
 The same helper function from before now executes the _**sendHbar**_ function of the contract.
 
@@ -414,7 +410,7 @@ The same helper function from before now executes the _**sendHbar**_ function of
 
 </details>
 
-### **3.3. Contract Calls HBAR to Alice**
+### **Contract Calls HBAR to Alice**
 
 Just like above, the helper function _**contractExecuteFcn**_ executes the _**sendHbar**_ function of the contract.
 

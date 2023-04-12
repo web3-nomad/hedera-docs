@@ -12,20 +12,33 @@ The figure below highlights the transaction flow before HIP-542 and after.
 
 In this tutorial, a treasury account will be created to transfer HTS tokens to Bob's ECDSA public key alias, involving a transfer of 10 FT and 1 NFT. The tutorial will also cover creating fungible tokens and an NFT collection (1000 FT / 5 NFT), creating Bob's ECDSA public key alias, and returning Bob's new account ID while confirming their ownership of the transferred tokens and NFT.
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong>  <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#set-up-helper-functions"><strong>HELPER FUNCTIONS</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#set-up-helper-functions">#set-up-helper-functions</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-treasury-account"><strong>CREATE TREASURY</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-treasury-account">#create-treasury-account</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-fts-and-create-an-nft-collection"><strong>CREATE TOKENS</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-fts-and-create-an-nft-collection">#create-fts-and-create-an-nft-collection</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-bobs-ecdsa-public-key-alias"><strong>CREATE ECDSA</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-bobs-ecdsa-public-key-alias">#create-bobs-ecdsa-public-key-alias</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#return-new-account-id"><strong>RETURN ACCOUNT ID</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#return-new-account-id">#return-new-account-id</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong>  <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-treasury-account"><strong>CREATE TREASURY</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-treasury-account">#create-treasury-account</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-fts-and-create-an-nft-collection"><strong>CREATE TOKENS</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-fts-and-create-an-nft-collection">#create-fts-and-create-an-nft-collection</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-bobs-ecdsa-public-key-alias"><strong>CREATE ECDSA</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#create-bobs-ecdsa-public-key-alias">#create-bobs-ecdsa-public-key-alias</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#return-new-account-id"><strong>RETURN ACCOUNT ID</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#return-new-account-id">#return-new-account-id</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#get-the-example-code-on-github"><strong>PROJECT REPO</strong></a></td><td><a href="how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md#get-the-example-code-on-github">#get-the-example-code-on-github</a></td></tr></tbody></table>
 
 ## **Prerequisites**
 
-* Get a [Hedera Testnet](https://portal.hedera.com/register) account [here](https://portal.hedera.com/).&#x20;
-* Set up your environment and create a client.&#x20;
+* Get a [Hedera Testnet](https://portal.hedera.com/register) account [here](../../getting-started/introduction.md).&#x20;
+* Set up your environment and create a client [here](../../getting-started/environment-set-up.md).&#x20;
 
-If you need assistance creating a client, a testnet account, and setting up your environment:
+<details>
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><strong>INTRODUCTION</strong></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><strong>ENVIRONMENT SETUP</strong></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<summary>Get the example code on GitHub:</summary>
 
-## Set Up Helper Functions
+* [auto-create account by sending FT](https://github.com/a-ridley/hedera-auto-account-creation-with-ft)
+* [auto-create account by sending NFT](https://github.com/a-ridley/hedera-auto-create-account-with-nft)
 
-We will create the functions necessary to create a new account, create fungible tokens, and create a new NFT collection. Use the code tab switch on the upper left of the code block to see the helper functions.
+</details>
+
+## Create Treasury Account
+
+We create the treasury account which will be the holder of the fungible and non-fungible tokens. The treasury account will be created with an initial balance of 100 HBAR.
+
+```javascript
+const [treasuryAccId, treasuryAccPvKey] = await createAccount(client, 100);
+```
+
+#### Set Up Helper Functions
+
+We will create the functions necessary to create a new account, create fungible tokens, and create a new NFT collection. Use the tabs to see the helper functions.
 
 {% tabs %}
 {% tab title="Create Account With Initial Balance" %}
@@ -187,14 +200,6 @@ export const createNewNftCollection = async (
 ```
 {% endtab %}
 {% endtabs %}
-
-## Create Treasury Account
-
-We create the treasury account which will be the holder of the fungible and non-fungible tokens. The treasury account will be created with an initial balance of 100 HBAR.
-
-```javascript
-const [treasuryAccId, treasuryAccPvKey] = await createAccount(client, 100);
-```
 
 ## Create FTs and Create an NFT Collection
 
@@ -406,7 +411,7 @@ Then call _**getNftOwnerByNft**_ and do a simple check to ensure the account id 
 
 <figure><img src="https://images.hedera.com/nft-current-owner-account-matches-hip-542.png?w=557&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680227655&#x26;s=c47a55f519581fb79f07228b327f6649" alt=""><figcaption></figcaption></figure>
 
-#### Console check ✅
+#### Console Output ✅
 
 <figure><img src="https://images.hedera.com/account-create-with-hts-tokens-output.png?w=1104&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680222036&#x26;s=531aa614802acac1166d1849cb0158fe" alt=""><figcaption></figcaption></figure>
 

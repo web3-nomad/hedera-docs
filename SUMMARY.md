@@ -26,6 +26,7 @@
     * [Structure Your Token Metadata Using JSON Schema V2](tutorials/token/structure-your-token-metadata-using-json-schema-v2.md)
   * [More Tutorials](tutorials/more-tutorials/README.md)
     * [How to Auto-Create Hedera Accounts with HBAR and Token Transfers](tutorials/more-tutorials/how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md)
+    * [How to Generate a Random Number on Hedera](tutorials/more-tutorials/how-to-generate-a-random-number-on-hedera.md)
     * [Get Started with the Hedera Consensus Service Fabric Plugin](tutorials/more-tutorials/get-started-with-the-hedera-consensus-service-fabric-plugin/README.md)
       * [Virtual Environment Setup](tutorials/more-tutorials/get-started-with-the-hedera-consensus-service-fabric-plugin/virtual-environment-set-up.md)
     * [Schedule Your First Transaction](getting-started/try-examples/schedule-your-first-transaction.md)

@@ -36,11 +36,11 @@ A transaction that allows you to modify the smart contract entity state like adm
 | `setExpirationTime(<expirationTime)`              | Instant                                          | Optional    |
 | `setMaxAutomaticTokenAssociations()`              | int                                              | Optional    |
 | `setContractMemo(<memo>)`                         | String                                           | Optional    |
-| `setStakedAccountId(<stakedAccountId>)`           | AccountId                                        | Optional    |
+| `setStakedAccountId(<stakedAccountId>)`           | [AccountId](../specialized-types.md#accountid)   | Optional    |
 | `setStakedNodeId(<stakedNodeId>)`                 | long                                             | Optional    |
 | `setDeclineStakingReward(<declineStakingReward>)` | boolean                                          | Optional    |
 | `setAutoRenewPeriod(<autoRenewPeriod>)`           | Duration                                         | Optional    |
-| `setAutoRenewAccountId(<accountId>)`              | AccountId                                        | Optional    |
+| `setAutoRenewAccountId(<accountId>)`              | [AccountId](../specialized-types.md#accountid)   | Optional    |
 | `clearAutoRenewAccountId()`                       |                                                  | Optional    |
 
 {% hint style="info" %}
@@ -105,8 +105,8 @@ transaction := hedera.NewContractUpdateTransaction().
         SetBytecodeFileID(byteCodeFileID).
         SetAdminKey(adminKey)
 
-//Change the default max transaction fee to 2 hbars
-modifyMaxTransactionFee := transaction.SetMaxTransactionFee(hedera.HbarFrom(2, hedera.HbarUnits.Hbar))
+//Change the default max transaction fee to 20 HBAR
+modifyMaxTransactionFee := transaction.SetMaxTransactionFee(hedera.HbarFrom(20, hedera.HbarUnits.Hbar))
 
 //Freeze the transaction
 freezeTransaction, err := modifyMaxTransactionFee.FreezeWith(client)
@@ -145,10 +145,10 @@ fmt.Printf("The transaction consensus status %v\n", transactionStatus)
 | `getBytecodeFileId()`       | [FileId](../specialized-types.md#fileid)         | Optional    |
 | `getProxyAccountId()`       | [AccountId](../specialized-types.md#accountid)   | Optional    |
 | `getContractMemo()`         | String                                           | Optional    |
-| `getStakedAccountId()`      | AccountId                                        | Optional    |
+| `getStakedAccountId()`      | [AccountId](../specialized-types.md#accountid)   | Optional    |
 | `getStakedNodeId()`         | long                                             | Optional    |
 | `getDeclineStakingReward()` | boolean                                          | Optional    |
-| `getAutoRenewAccountId()`   | AccountId                                        | Required    |
+| `getAutoRenewAccountId()`   | [AccountId](../specialized-types.md#accountid)   | Required    |
 | `getAutoRenewPeriod()`      | Duration                                         | Required    |
 
 {% tabs %}

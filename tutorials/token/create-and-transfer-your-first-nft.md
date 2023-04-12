@@ -8,7 +8,7 @@ Using the Hedera Token Service, you can create non-fungible tokens (NFTs). NFTs 
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## 1. Create a Non-Fungible Token (NFT)
 
@@ -53,7 +53,7 @@ System.out.println("Created NFT with token ID " +tokenId);
 {% tab title="JavaScript" %}
 ```javascript
 //Create the NFT
-let nftCreate = await new TokenCreateTransaction()
+const nftCreate = await new TokenCreateTransaction()
 	.setTokenName("diploma")
 	.setTokenSymbol("GRAD")
 	.setTokenType(TokenType.NonFungibleUnique)
@@ -66,16 +66,16 @@ let nftCreate = await new TokenCreateTransaction()
 	.freezeWith(client);
 
 //Sign the transaction with the treasury key
-let nftCreateTxSign = await nftCreate.sign(treasuryKey);
+const nftCreateTxSign = await nftCreate.sign(treasuryKey);
 
 //Submit the transaction to a Hedera network
-let nftCreateSubmit = await nftCreateTxSign.execute(client);
+const nftCreateSubmit = await nftCreateTxSign.execute(client);
 
 //Get the transaction receipt
-let nftCreateRx = await nftCreateSubmit.getReceipt(client);
+const nftCreateRx = await nftCreateSubmit.getReceipt(client);
 
 //Get the token ID
-let tokenId = nftCreateRx.tokenId;
+const tokenId = nftCreateRx.tokenId;
 
 //Log the token ID
 console.log(`- Created NFT with Token ID: ${tokenId} \n`);
@@ -124,13 +124,14 @@ Both the NFT image and metadata live in the InterPlanetary File System (IPFS), w
 {% tabs %}
 {% tab title="Java" %}
 ```java
-// IPFS content identifiers for which we will create a NFT
+//IPFS content identifiers for which we will create a NFT
 String CID = ("QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa") ;
 
-// Mint a new NFT
+//Mint a new NFT
 TokenMintTransaction mintTx = new TokenMintTransaction()
         .setTokenId(tokenId)
         .addMetadata(CID.getBytes())
+        .setMaxTransactionFee(new Hbar(20)) //Use when HBAR is under 10 cents
 	.freezeWith(client);
 
 //Sign transaction with the supply key
@@ -144,29 +145,29 @@ TransactionReceipt mintRx = mintTxSubmit.getReceipt(client);
 
 //Log the serial number
 System.out.println("Created NFT " +tokenId + "with serial: " +mintRx.serials);
-   
 ```
 {% endtab %}
 
 {% tab title="JavaScript" %}
 ```javascript
 //IPFS content identifiers for which we will create a NFT
-CID = "ipfs://QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa";
+const CID = "ipfs://QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa";
 
-// Mint new NFT
-let mintTx = await new TokenMintTransaction()
+//Mint new NFT
+const mintTx = await new TokenMintTransaction()
 	.setTokenId(tokenId)
 	.setMetadata([Buffer.from(CID)])
+	.setMaxTransactionFee(new Hbar(20)) //Use when HBAR is under 10 cents
 	.freezeWith(client);
 
 //Sign the transaction with the supply key
-let mintTxSign = await mintTx.sign(supplyKey);
+const mintTxSign = await mintTx.sign(supplyKey);
 
 //Submit the transaction to a Hedera network
-let mintTxSubmit = await mintTxSign.execute(client);
+const mintTxSubmit = await mintTxSign.execute(client);
 
 //Get the transaction receipt
-let mintRx = await mintTxSubmit.getReceipt(client);
+const mintRx = await mintTxSubmit.getReceipt(client);
 
 //Log the serial number
 console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
@@ -182,18 +183,21 @@ CID := "QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa"
 mintTx, err := hedera.NewTokenMintTransaction().
 	SetTokenID(tokenId).
 	SetMetadata([]byte(CID)).
+        //Use when HBAR is under 10 cents
+	SetMaxTransactionFee(hedera.HbarFrom(20, hedera.HbarUnits.Hbar)).
 	FreezeWith(client)
 
-//Sign the transaction with the supply key
-mintTxSign := mintTx.Sign(supplyKey)
+// Sign the transaction with the supply key
+mintTxSign := mintTx.Sign(supplyKey).
+	
 
-//Submit the transaction to a Hedera network
+// Submit the transaction to a Hedera network
 mintTxSubmit, err := mintTxSign.Execute(client)
 
-//Get the transaction receipt
+// Get the transaction receipt
 mintRx, err := mintTxSubmit.GetReceipt(client)
 
-//Log the serial number
+// Log the serial number
 fmt.Print("Created NFT ", tokenId, " with serial: ", mintRx.SerialNumbers)o
 ```
 {% endtab %}
@@ -250,17 +254,17 @@ System.out.println("NFT association with Alice's account: " +associateAliceRx.st
 {% tab title="JavaScript" %}
 ```javascript
 //Create the associate transaction and sign with Alice's key 
-let associateAliceTx = await new TokenAssociateTransaction()
+const associateAliceTx = await new TokenAssociateTransaction()
 	.setAccountId(aliceId)
 	.setTokenIds([tokenId])
 	.freezeWith(client)
 	.sign(aliceKey);
 
 //Submit the transaction to a Hedera network
-let associateAliceTxSubmit = await associateAliceTx.execute(client);
+const associateAliceTxSubmit = await associateAliceTx.execute(client);
 
 //Get the transaction receipt
-let associateAliceRx = await associateAliceTxSubmit.getReceipt(client);
+const associateAliceRx = await associateAliceTxSubmit.getReceipt(client);
 
 //Confirm the transaction was successful
 console.log(`- NFT association with Alice's account: ${associateAliceRx.status}\n`);
@@ -339,13 +343,13 @@ console.log(`- Alice's balance: ${balanceCheckTx.tokens._map.get(tokenId.toStrin
 
 // Transfer the NFT from treasury to Alice
 // Sign with the treasury key to authorize the transfer
-let tokenTransferTx = await new TransferTransaction()
+const tokenTransferTx = await new TransferTransaction()
 	.addNftTransfer(tokenId, 1, treasuryId, aliceId)
 	.freezeWith(client)
 	.sign(treasuryKey);
 
-let tokenTransferSubmit = await tokenTransferTx.execute(client);
-let tokenTransferRx = await tokenTransferSubmit.getReceipt(client);
+const tokenTransferSubmit = await tokenTransferTx.execute(client);
+const tokenTransferRx = await tokenTransferSubmit.getReceipt(client);
 
 console.log(`\n- NFT transfer from Treasury to Alice: ${tokenTransferRx.status} \n`);
 
@@ -457,7 +461,6 @@ public class CreateNFTTutorial {
                 .setSupplyKey(supplyKey)
                 .freezeWith(client);
 
-
         //Sign the transaction with the treasury key
         TokenCreateTransaction nftCreateTxSign = nftCreate.sign(treasuryKey);
 
@@ -480,9 +483,11 @@ public class CreateNFTTutorial {
         TokenMintTransaction mintTx = new TokenMintTransaction()
                 .setTokenId(tokenId)
                 .addMetadata(CID.getBytes())
+                //Use when HBAR is under 10 cents
+                .setMaxTransactionFee(new Hbar(20)) 
 	        .freezeWith(client);
 
-        //Sign with the supply key
+        //Sign transaction with the supply key
         TokenMintTransaction mintTxSign = mintTx.sign(supplyKey);
 
         //Submit the transaction to a Hedera network
@@ -578,7 +583,7 @@ const supplyKey = PrivateKey.generate();
 
 async function main() {
 	//Create the NFT
-	let nftCreate = await new TokenCreateTransaction()
+	const nftCreate = await new TokenCreateTransaction()
 		.setTokenName("diploma")
 		.setTokenSymbol("GRAD")
 		.setTokenType(TokenType.NonFungibleUnique)
@@ -591,16 +596,16 @@ async function main() {
 		.freezeWith(client);
 
 	//Sign the transaction with the treasury key
-	let nftCreateTxSign = await nftCreate.sign(treasuryKey);
+	const nftCreateTxSign = await nftCreate.sign(treasuryKey);
 
 	//Submit the transaction to a Hedera network
-	let nftCreateSubmit = await nftCreateTxSign.execute(client);
+	const nftCreateSubmit = await nftCreateTxSign.execute(client);
 
 	//Get the transaction receipt
-	let nftCreateRx = await nftCreateSubmit.getReceipt(client);
+	const nftCreateRx = await nftCreateSubmit.getReceipt(client);
 
 	//Get the token ID
-	let tokenId = nftCreateRx.tokenId;
+	const tokenId = nftCreateRx.tokenId;
 
 	//Log the token ID
 	console.log(`- Created NFT with Token ID: ${tokenId} \n`);
@@ -608,36 +613,38 @@ async function main() {
 	//IPFS content identifiers for which we will create a NFT
 	CID = ["QmTzWcVfk88JRqjTpVwHzBeULRTNzHY7mnBSG42CpwHmPa"];
 
-	// Mint new NFT
-	let mintTx = await new TokenMintTransaction()
+	//Mint new NFT
+	const mintTx = await new TokenMintTransaction()
 		.setTokenId(tokenId)
 		.setMetadata([Buffer.from(CID)])
+		//Use when HBAR is under 10 cents
+		.setMaxTransactionFee(new Hbar(20)) 
 		.freezeWith(client);
 
 	//Sign the transaction with the supply key
-	let mintTxSign = await mintTx.sign(supplyKey);
+	const mintTxSign = await mintTx.sign(supplyKey);
 
 	//Submit the transaction to a Hedera network
-	let mintTxSubmit = await mintTxSign.execute(client);
+	const mintTxSubmit = await mintTxSign.execute(client);
 
 	//Get the transaction receipt
-	let mintRx = await mintTxSubmit.getReceipt(client);
+	const mintRx = await mintTxSubmit.getReceipt(client);
 
 	//Log the serial number
 	console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
 	
 	//Create the associate transaction and sign with Alice's key 
-	let associateAliceTx = await new TokenAssociateTransaction()
+	const associateAliceTx = await new TokenAssociateTransaction()
 		.setAccountId(aliceId)
 		.setTokenIds([tokenId])
 		.freezeWith(client)
 		.sign(aliceKey);
 
 	//Submit the transaction to a Hedera network
-	let associateAliceTxSubmit = await associateAliceTx.execute(client);
+	const associateAliceTxSubmit = await associateAliceTx.execute(client);
 
 	//Get the transaction receipt
-	let associateAliceRx = await associateAliceTxSubmit.getReceipt(client);
+	const associateAliceRx = await associateAliceTxSubmit.getReceipt(client);
 
 	//Confirm the transaction was successful
 	console.log(`- NFT association with Alice's account: ${associateAliceRx.status}\n`);
@@ -653,13 +660,13 @@ async function main() {
 
 	// Transfer the NFT from treasury to Alice
 	// Sign with the treasury key to authorize the transfer
-	let tokenTransferTx = await new TransferTransaction()
+	const tokenTransferTx = await new TransferTransaction()
 		.addNftTransfer(tokenId, 1, treasuryId, aliceId)
 		.freezeWith(client)
 		.sign(treasuryKey);
 
-	let tokenTransferSubmit = await tokenTransferTx.execute(client);
-	let tokenTransferRx = await tokenTransferSubmit.getReceipt(client);
+	const tokenTransferSubmit = await tokenTransferTx.execute(client);
+	const tokenTransferRx = await tokenTransferSubmit.getReceipt(client);
 
 	console.log(`\n- NFT transfer from Treasury to Alice: ${tokenTransferRx.status} \n`);
 
@@ -790,8 +797,11 @@ func main() {
 		SetMetadata([]byte(CID)).
 		FreezeWith(client)
 
-	//Sign the transaction with the supply key
-	mintTxSign := mintTx.Sign(supplyKey)
+	// Sign the transaction with the supply key
+	mintTxSign := mintTx.
+		//Use when HBAR is under 10 cents
+		SetMaxTransactionFee(hedera.HbarFrom(20, hedera.HbarUnits.Hbar)).
+		Sign(supplyKey)
 
 	//Submit the transaction to a Hedera network
 	mintTxSubmit, err := mintTxSign.Execute(client)

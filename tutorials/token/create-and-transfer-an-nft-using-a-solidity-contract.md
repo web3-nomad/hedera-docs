@@ -15,7 +15,7 @@ Besides creating NFTs using Hedera SDK, you can use a Solidity Contract to creat
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 If you are interested in creating, minting, and transferring NFTs using Hedera SDKs you can find the example [here](https://docs.hedera.com/guides/getting-started/try-examples/create-and-transfer-your-first-nft).
 
@@ -301,9 +301,10 @@ _**Note:** For the latest NFT Token Metadata JSON Schema see_ [_HIP-412_](https:
 ContractExecuteTransaction mintToken = new ContractExecuteTransaction()
 		.setContractId(newContractId)
 		.setGas(4_000_000)
+                .setMaxTransactionFee(new Hbar(20)) //Use when HBAR is <10 cents
 		.setFunction("mintNft", new ContractFunctionParameters()
-        .addAddress(tokenIdSolidityAddr) // Token address
-        .addBytesArray(byteArray)); // Metadata
+		.addAddress(tokenIdSolidityAddr) // Token address
+		.addBytesArray(byteArray)); // Metadata
 
 TransactionResponse mintTokenTx = mintToken.execute(client);
 TransactionRecord mintTokenRx = mintTokenTx.getRecord(client);
@@ -316,18 +317,20 @@ System.out.println("Minted NFT with serial: " + serial);
 
 {% tab title="JavaScript" %}
 ```javascript
-// ipfs URI
+// IPFS URI
 metadata = "ipfs://bafyreie3ichmqul4xa7e6xcy34tylbuq2vf3gnjf7c55trg3b6xyjr4bku/metadata.json";
  
 // Mint NFT
 const mintToken = new ContractExecuteTransaction()
     .setContractId(contractId)
     .setGas(4000000)
+    .setMaxTransactionFee(new hbar(20)) //Use when HBAR is under 10 cents
     .setFunction("mintNft",
         new ContractFunctionParameters()
         .addAddress(tokenIdSolidityAddr) // Token address
         .addBytesArray([Buffer.from(metadata)]) // Metadata
         );
+        
 const mintTokenTx = await mintToken.execute(client);
 const mintTokenRx = await mintTokenTx.getRecord(client);
 const serial = mintTokenRx.contractFunctionResult.getInt64(0);
@@ -362,6 +365,8 @@ mintToken, err := hedera.NewContractExecuteTransaction().
 	SetGas(4000000).
 	//The contract function to call and parameters
 	SetFunction("mintNft", mintParams).
+	//The max transaction fee. Use when HBAR is under 10 cents
+	SetMaxTransactionFee(hedera.HbarFrom(20, hedera.HbarUnits.Hbar)).
 	Execute(client)
 
 if err != nil {
@@ -446,6 +451,7 @@ const transferToken = await new ContractExecuteTransaction()
         .addInt64(serial)) // NFT serial number
     .freezeWith(client) // freezing using client
     .sign(aliceKey); // Sign transaction with Alice
+    
 const transferTokenTx = await transferToken.execute(client);
 const transferTokenRx = await transferTokenTx.getReceipt(client);
 
@@ -514,103 +520,103 @@ import com.hedera.hashgraph.sdk.*;
 import io.github.cdimascio.dotenv.Dotenv;
 
 public class Deploy {
-	
-	// Account creation function
-	private static AccountId accountCreator(PrivateKey pvKey, int iBal , Client client) throws TimeoutException, PrecheckStatusException, ReceiptStatusException {
-		AccountCreateTransaction transaction = new AccountCreateTransaction()
-		    .setKey(pvKey.getPublicKey())
-		    .setInitialBalance(new Hbar(iBal));
+    private static AccountId accountCreator(PrivateKey pvKey, int iBal, Client client)
+            throws TimeoutException, PrecheckStatusException, ReceiptStatusException {
+        AccountCreateTransaction transaction = new AccountCreateTransaction()
+                .setKey(pvKey.getPublicKey())
+                .setInitialBalance(new Hbar(iBal));
 
-		TransactionResponse txResponse = transaction.execute(client);
+        TransactionResponse txResponse = transaction.execute(client);
 
-		TransactionReceipt receipt = txResponse.getReceipt(client);
+        TransactionReceipt receipt = txResponse.getReceipt(client);
 
-		return receipt.accountId;
+        return receipt.accountId;
 
-	}
+    }
 
-        public static void main( String[] args ) throws TimeoutException, PrecheckStatusException, ReceiptStatusException, IOException
-	{
-	        // ipfs URI
-	        String metadata = ("ipfs://bafyreie3ichmqul4xa7e6xcy34tylbuq2vf3gnjf7c55trg3b6xyjr4bku/metadata.json");
-		byte[][] byteArray = new byte[1][metadata.length()];
-		byteArray[0] = metadata.getBytes();
-		
-		AccountId operatorId = AccountId.fromString(Objects.requireNonNull(Dotenv.load().get("ACCOUNT_ID")));
-           PrivateKey operatorKey = PrivateKey.fromString(Objects.requireNonNull(Dotenv.load().get("PRIVATE_KEY")));
-           
-           Client client = Client.forTestnet();
-           client.setOperator(operatorId, operatorKey);
-           
-           PrivateKey aliceKey = PrivateKey.generateED25519();
-           AccountId aliceId = accountCreator(aliceKey, 100, client);
-           System.out.print(aliceId);
-           
-           String bytecode = Files.readString(Paths.get("./NFTCreator_sol_NFTCreator.bin"));
-           
-           // Create contract
-           ContractCreateFlow createContract = new ContractCreateFlow()
+    public static void main(String[] args)
+            throws TimeoutException, PrecheckStatusException, ReceiptStatusException, IOException {
+        // ipfs URI
+        String metadata = ("ipfs://bafyreie3ichmqul4xa7e6xcy34tylbuq2vf3gnjf7c55trg3b6xyjr4bku/metadata.json");
+        byte[][] byteArray = new byte[1][metadata.length()];
+        byteArray[0] = metadata.getBytes();
+
+        AccountId operatorId = AccountId.fromString(Objects.requireNonNull(Dotenv.load().get("ACCOUNT_ID")));
+        PrivateKey operatorKey = PrivateKey.fromString(Objects.requireNonNull(Dotenv.load().get("PRIVATE_KEY")));
+
+        Client client = Client.forTestnet();
+        client.setOperator(operatorId, operatorKey);
+
+        PrivateKey aliceKey = PrivateKey.generateED25519();
+        AccountId aliceId = accountCreator(aliceKey, 100, client);
+        System.out.print(aliceId);
+
+        String bytecode = Files.readString(Paths.get("./NFTCreator_sol_NFTCreator.bin"));
+
+        // Create contract
+        ContractCreateFlow createContract = new ContractCreateFlow()
                 .setBytecode(bytecode) // Contract bytecode
                 .setGas(4_000_000); // Increase if revert
-   
-           TransactionResponse createContractTx = createContract.execute(client);
-           TransactionReceipt createContractRx = createContractTx.getReceipt(client);
-           // Get the new contract ID
-           ContractId newContractId = createContractRx.contractId;
-                   
-           System.out.println("Contract created with ID: " + newContractId);
-           
-           // Create NFT using contract
-           ContractExecuteTransaction createToken = new ContractExecuteTransaction()
-           		.setContractId(newContractId) // Contract id
-           		.setGas(4_000_000) // Increase if revert
-           		.setPayableAmount(new Hbar(50)) // Increase if revert
-           		.setFunction("createNft", new ContractFunctionParameters()
-                      .addString("Fall Collection") // NFT Name
-                      .addString("LEAF") // NFT Symbol
-                      .addString("Just a memo") // NFT Memo
-                      .addUint32(10) // NFT max supply
-                      .addUint32(7_000_000)); // Expiration: Needs to be between 6999999 and 8000001
-   
-           TransactionResponse createTokenTx = createToken.execute(client);
-           TransactionRecord createTokenRx = createTokenTx.getRecord(client);
-   
-           String tokenIdSolidityAddr = createTokenRx.contractFunctionResult.getAddress(0);
-           AccountId tokenId = AccountId.fromSolidityAddress(tokenIdSolidityAddr);
-   
-           System.out.println("Token created with ID: " + tokenId);
-           
-           // Mint NFT
-           ContractExecuteTransaction mintToken = new ContractExecuteTransaction()
-           		.setContractId(newContractId)
-           		.setGas(4_000_000)
-           		.setFunction("mintNft", new ContractFunctionParameters()
-                      .addAddress(tokenIdSolidityAddr) // Token address
-                      .addBytesArray(byteArray)); // Metadata
-   
-           TransactionResponse mintTokenTx = mintToken.execute(client);
-           TransactionRecord mintTokenRx = mintTokenTx.getRecord(client);
-           // NFT serial number
-           long serial = mintTokenRx.contractFunctionResult.getInt64(0);
-   
-           System.out.println("Minted NFT with serial: " + serial);
-           
-           // Transfer NFT to Alice
-           ContractExecuteTransaction transferToken = new ContractExecuteTransaction()
-           		.setContractId(newContractId)
-           		.setGas(4_000_000)
-           		.setFunction("transferNft", new ContractFunctionParameters()
-                      .addAddress(tokenIdSolidityAddr) // Token id
-                      .addAddress(aliceId.toSolidityAddress()) // Token receiver (Alice)
-                      .addInt64(serial)) // Serial number
-           		.freezeWith(client) // Freeze transaction using client
-           		.sign(aliceKey); //Sign using Alice Private Key
-   
-           TransactionResponse transferTokenTx = transferToken.execute(client);
-           TransactionReceipt transferTokenRx = transferTokenTx.getReceipt(client);
-   
-           System.out.println("Trasnfer status: " + transferTokenRx.status);
-        
+
+        TransactionResponse createContractTx = createContract.execute(client);
+        TransactionReceipt createContractRx = createContractTx.getReceipt(client);
+        // Get the new contract ID
+        ContractId newContractId = createContractRx.contractId;
+
+        System.out.println("Contract created with ID: " + newContractId);
+
+        // Create NFT using contract
+        ContractExecuteTransaction createToken = new ContractExecuteTransaction()
+                .setContractId(newContractId) // Contract id
+                .setGas(4_000_000) // Increase if revert
+                .setPayableAmount(new Hbar(50)) // Increase if revert
+                .setFunction("createNft", new ContractFunctionParameters()
+                        .addString("Fall Collection") // NFT Name
+                        .addString("LEAF") // NFT Symbol
+                        .addString("Just a memo") // NFT Memo
+                        .addUint32(10) // NFT max supply
+                        .addUint32(7_000_000)); // Expiration: Needs to be between 6999999 and 8000001
+
+        TransactionResponse createTokenTx = createToken.execute(client);
+        TransactionRecord createTokenRx = createTokenTx.getRecord(client);
+
+        String tokenIdSolidityAddr = createTokenRx.contractFunctionResult.getAddress(0);
+        AccountId tokenId = AccountId.fromSolidityAddress(tokenIdSolidityAddr);
+
+        System.out.println("Token created with ID: " + tokenId);
+
+        // Mint NFT
+        ContractExecuteTransaction mintToken = new ContractExecuteTransaction()
+                .setContractId(newContractId)
+                .setGas(4_000_000)
+                .setMaxTransactionFee(new Hbar(20)) // Use when HBAR is <10 cents
+                .setFunction("mintNft", new ContractFunctionParameters()
+                        .addAddress(tokenIdSolidityAddr) // Token address
+                        .addBytesArray(byteArray)); // Metadata
+
+        TransactionResponse mintTokenTx = mintToken.execute(client);
+        TransactionRecord mintTokenRx = mintTokenTx.getRecord(client);
+        // NFT serial number
+        long serial = mintTokenRx.contractFunctionResult.getInt64(0);
+
+        System.out.println("Minted NFT with serial: " + serial);
+
+        // Transfer NFT to Alice
+        ContractExecuteTransaction transferToken = new ContractExecuteTransaction()
+                .setContractId(newContractId)
+                .setGas(4_000_000)
+                .setFunction("transferNft", new ContractFunctionParameters()
+                        .addAddress(tokenIdSolidityAddr) // Token id
+                        .addAddress(aliceId.toSolidityAddress()) // Token receiver (Alice)
+                        .addInt64(serial)) // Serial number
+                .freezeWith(client) // Freeze transaction using client
+                .sign(aliceKey); // Sign using Alice Private Key
+
+        TransactionResponse transferTokenTx = transferToken.execute(client);
+        TransactionReceipt transferTokenRx = transferTokenTx.getReceipt(client);
+
+        System.out.println("Trasnfer status: " + transferTokenRx.status);
+
     }
 }
 ```
@@ -696,6 +702,7 @@ const main = async () => {
    const mintToken = new ContractExecuteTransaction()
        .setContractId(contractId)
        .setGas(4000000)
+       .setMaxTransactionFee(new hbar(20)) //Use when HBAR is under 10 cents
        .setFunction("mintNft",
            new ContractFunctionParameters()
            .addAddress(tokenIdSolidityAddr) // Token address
@@ -894,6 +901,8 @@ func main() {
 		SetGas(1000000).
 		//The contract function to call and parameters
 		SetFunction("mintNft", mintParams).
+		//The max transaction fee. Use when HBAR is under 10 cents
+		SetMaxTransactionFee(hedera.HbarFrom(20, hedera.HbarUnits.Hbar)).
 		Execute(client)
 
 	if err != nil {

@@ -1,6 +1,6 @@
 # Associate tokens to an account
 
-Associates the provided Hedera account with the provided Hedera token(s). Hedera accounts must be associated with a fungible or non-fungible token first before you can transfer tokens to that account. In the case of NON\_FUNGIBLE Type, once an account is associated, it can hold any number of NFTs (serial numbers) of that token type. The Hedera account that is being associated with a token is required to sign the transaction.
+Associates the provided Hedera account with the provided Hedera token(s). Hedera accounts must be associated with a fungible or non-fungible token first before you can transfer tokens to that account. In the case of NON\_FUNGIBLE Type, once an account is associated, it can hold any number of NFTs (serial numbers) of that token type. The Hedera account that is associated with a token is required to sign the transaction.
 
 * If the provided account is not found, the transaction will resolve to INVALID\_ACCOUNT\_ID.
 * If the provided account has been deleted, the transaction will resolve to ACCOUNT\_DELETED.
@@ -21,7 +21,7 @@ There is no limit on the number of token IDs that can be associated to an accoun
 
 **Transaction Fees**
 
-* Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for base transaction fee
+* Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
 ## Methods

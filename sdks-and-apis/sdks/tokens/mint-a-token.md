@@ -36,8 +36,7 @@ Minting fungible token allows you to increase the total supply of the token. Min
 //Mint another 1,000 tokens
 TokenMintTransaction transaction = new TokenMintTransaction()
      .setTokenId(tokenId)
-     //Uncomment when HBAR is under 10 cents
-     //.setMaxTransactionFee(new Hbar(20))
+     .setMaxTransactionFee(new Hbar(20)) //Use when HBAR is under 10 cents
      .setAmount(1000);
 
 //Freeze the unsigned transaction, sign with the supply private key of the token, submit the transaction to a Hedera network
@@ -64,8 +63,7 @@ System.out.println("The transaction consensus status is " +transactionStatus;
 const transaction = await new TokenMintTransaction()
      .setTokenId(tokenId)
      .setAmount(1000)
-     //When HBAR is under 10 cents, uncomment and use this method 
-     //.setMaxTransactionFee(new Hbar(20))
+     .setMaxTransactionFee(new Hbar(20)) //Use when HBAR is under 10 cents
      .freezeWith(client);
 
 //Sign with the supply private key of the token 
@@ -92,8 +90,8 @@ console.log("The transaction consensus status " +transactionStatus.toString());
 transaction, err = hedera.NewTokenMintTransaction().
 		SetTokenID(tokenId).
 		SetAmount(1000).
-		//Uncomment when HBAR is under 10 cents
-		//SetMaxTransactionFee(hedera.HbarFrom(20, hedera.HbarUnits.Hbar)).
+		//Use when HBAR is under 10 cents
+		SetMaxTransactionFee(hedera.HbarFrom(20, hedera.HbarUnits.Hbar)).
 		FreezeWith(client)
 
 if err != nil {

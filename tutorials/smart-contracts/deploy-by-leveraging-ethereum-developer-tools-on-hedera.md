@@ -7,12 +7,12 @@ Learning how to properly use new developer tools requires time and effort. Many 
 The most common EVM-based tools and workflows across Web3 ecosystems are built on the JSON-RPC specification. You can continue to utilize the following familiar Ethereum tooling, Web3JS, Truffle, Ethers, and Hardhat, to build on Hedera, thanks to the JSON-RPC Relay. As an Ethereum developer, your workflow does not have to change.
 
 | <p><br></p>                                                          | **web3js** | **Truffle** | **ethers** | **Hardhat** |
-| -------------------------------------------------------------------- | ---------- | ----------- | ---------- | ----------- |
-| Transfer HBARS                                                       | ✅          | ✅           | ✅          | ✅           |
-| Contract Deployment                                                  | ✅          | ✅           | ✅          | ✅           |
-| Can use the contract instance after deploy without re-initialization | ✅          | ✅           | ⚠️         | ⚠️          |
-| Contract View Function Call                                          | ✅          | ✅           | ✅          | ✅           |
-| Contract Function Call                                               | ✅          | ✅           | ✅          | ✅           |
+| -------------------------------------------------------------------- | :--------: | :---------: | :--------: | :---------: |
+| Transfer HBARS                                                       |      ✅     |      ✅      |      ✅     |      ✅      |
+| Contract Deployment                                                  |      ✅     |      ✅      |      ✅     |      ✅      |
+| Can use the contract instance after deploy without re-initialization |      ✅     |      ✅      |     ⚠️     |      ⚠️     |
+| Contract View Function Call                                          |      ✅     |      ✅      |      ✅     |      ✅      |
+| Contract Function Call                                               |      ✅     |      ✅      |      ✅     |      ✅      |
 
 You can transfer HBAR, deploy contracts, and perform contract calls bringing even greater usability to the developer community.
 

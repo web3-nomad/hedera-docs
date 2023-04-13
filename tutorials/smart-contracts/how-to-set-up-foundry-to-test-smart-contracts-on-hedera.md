@@ -1,27 +1,19 @@
 # How to Set Up Foundry to Test Smart Contracts on Hedera
 
-[Foundry](https://book.getfoundry.sh/) provides tools to developers who are developing smart contracts. One of the 3 main components of Foundry is [Forge](https://book.getfoundry.sh/forge/): Foundry’s testing framework. Tests are written in Solidity and are easily run with the forge test command. This tutorial will dive into configuring Foundry with Hedera to use Forge in order to write and run tests for smart contracts.
+[Foundry](https://book.getfoundry.sh/forge/) provides tools to developers who are developing smart contracts. One of the 3 main components of Foundry is _**Forge**: Foundry’s testing framework_. Tests are written in Solidity and are easily run with the forge test command. This tutorial will dive into configuring Foundry with Hedera to use Forge in order to write and run tests for smart contracts.
 
 <table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#create-a-hedera-project-and-install-the-hashgraph-js-sdk"><strong>CREATE PROJECT</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#create-a-hedera-project-and-install-the-hashgraph-js-sdk">#create-a-hedera-project-and-install-the-hashgraph-js-sdk</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#configure-foundry-in-your-hedera-project"><strong>CONFIGURE FOUNDRY</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#configure-foundry-in-your-hedera-project">#configure-foundry-in-your-hedera-project</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#create-tests-written-in-solidity"><strong>TEST CONTRACT</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#create-tests-written-in-solidity">#create-tests-written-in-solidity</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#deploy-your-smart-contract"><strong>DEPLOY CONTRACT</strong></a></td><td><a href="how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md#deploy-your-smart-contract">#deploy-your-smart-contract</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="https://github.com/a-ridley/hedera-smart-contract-testing-with-foundry"><strong>PROJECT REPO</strong></a></td><td><a href="https://github.com/a-ridley/hedera-smart-contract-testing-with-foundry">https://github.com/a-ridley/hedera-smart-contract-testing-with-foundry</a></td></tr></tbody></table>
 
-> _**Note:**_ [_**Hashio**_](https://swirldslabs.com/hashio/)_**, the SwirldsLabs hosted version of the JSON-RPC Relay, is in beta. If issues are encountered while using Foundry and Hashio, please create an issue in the JSON-RPC Relay GitHub**_ [_**repository**_](https://github.com/hashgraph/hedera-json-rpc-relay)_**.**_
+_**Note:**_ [_**Hashio**_](https://swirldslabs.com/hashio/)_**, the SwirldsLabs hosted version of the**_ [_**JSON-RPC Relay**_](../../core-concepts/smart-contracts/json-rpc-relay.md)_**, is in beta. If issues are encountered while using Foundry and Hashio, please create an issue in the JSON-RPC Relay GitHub**_ [_**repository**_](https://github.com/hashgraph/hedera-json-rpc-relay)_**.**_
 
 ## Prerequisites
 
-* Basic understanding of JavaScript and [Solidity](https://docs.soliditylang.org/en/latest/).
-* Installed [Foundry](https://book.getfoundry.sh/getting-started/installation) and have a Hedera Testnet account.
+* [Install Foundry](https://book.getfoundry.sh/getting-started/installation) and [a Hedera Testnet account](../../getting-started/introduction.md).
+* Basic understanding of [TypeScript](https://www.typescriptlang.org/) and [Solidity](https://docs.soliditylang.org/en/latest/).
+* Basic understanding of [Foundry](https://book.getfoundry.sh/) and [Forge](https://book.getfoundry.sh/forge/) framework.&#x20;
+* Basic understanding of the Hedera [JSON-RPC Relay](../../core-concepts/smart-contracts/json-rpc-relay.md).
 
-<details>
-
-<summary>Need a testnet account?</summary>
-
-Head over to [portal.hedera.com](https://portal.hedera.com/register) to create a testnet account and receive 10,000 test HBAR every 24 hours!
-
-_**Note: Never share your private key with anyone or post it anywhere. Add a .gitingore file with an entry for your .env file. This will ensure you don’t accidentally push your credentials to your repository.**_
-
-</details>
-
-## Create a Hedera project and Install the Hashgraph JS SDK
+## Create a Hedera Project and Install the Hedera JS SDK
 
 Open your terminal and create a directory called `my-hedera-project` by running the following command:
 
@@ -29,20 +21,26 @@ Open your terminal and create a directory called `my-hedera-project` by running 
 mkdir my-hedera-project && cd my-hedera-project
 ```
 
-Initialize a node project and accept all defaults
+Initialize a node project and accept all defaults:
 
 ```bash
-npm install --save @hashgraph/sdk
+npm init -y
 ```
 
-In your project's root directory, create your `.env` file and fill the contents with your account Id and private key from the [developer portal](https://portal.hedera.com/) where you created your Hedera Testnet account. They will be used to create your Hedera client.
+Install dependencies and the Hedera JavaScript SDK:
+
+```bash
+npm install --save @hashgraph/sdk 
+```
+
+In your project root directory, create your `.env` file and fill the contents with your account Id and private key from the [developer portal](https://portal.hedera.com/) where you created your Hedera Testnet account. They will be used to create your Hedera client.
 
 ```
 OPERATOR_ACCOUNT_ID=<account id>
 OPERATOR_PRIVATE_KEY=<private key>
 ```
 
-Create a file named index.ts and create your Hedera client
+Create a file named `index.ts` and create your Hedera client.
 
 ```javascript
 import { Client, AccountId, PrivateKey, Hbar, TokenId, ContractId } from "@hashgraph/sdk";
@@ -244,7 +242,7 @@ contract TodoListTest is Test {
 }
 ```
 
-## Build and run your tests
+#### Build and run your tests
 
 In your terminal, ensure you are in your forge project directory and run the following command to build:
 
@@ -262,7 +260,7 @@ forge test
 
 <figure><img src="https://images.hedera.com/forge-test.png?w=531&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680223875&#x26;s=48aa3022e94b7c2d04206d2bea7e5822" alt=""><figcaption></figcaption></figure>
 
-## Deploy your Smart Contract
+## Deploy Your Smart Contract
 
 #### Step 1: Compile your smart contract using solc
 
@@ -281,7 +279,7 @@ const bytecode = fs.readFileSync("binaries/contracts_ERC20FungibleToken_sol_ERC2
 
 #### Step 3: Create a function to deploy your smart contract
 
-```javascript
+```typescript
 import { ContractCreateFlow, Client} from '@hashgraph/sdk';
  
 /*
@@ -352,6 +350,6 @@ Your output will show you an estimated gas average, median, and max for each con
 
 In this tutorial, we have learned how to configure Foundry to work with a Hedera project to test our smart contracts using the [forge](https://book.getfoundry.sh/forge/) framework. We also learned how to generate gas reports for our smart contracts.
 
-#### Happy Building!
+Happy Building!
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/ridley___">Abi Castro</a>, DevRel Engineer</td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>

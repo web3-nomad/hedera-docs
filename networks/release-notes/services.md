@@ -6,6 +6,31 @@ description: Hedera Services release information
 
 Please visit the Hedera status page for the latest versions supported on each network.
 
+## v0.37
+
+{% hint style="info" %}
+**MAINNET UPDATE: MAY 9, 2023**&#x20;
+{% endhint %}
+
+{% hint style="info" %}
+**TESTNET UPDATE: APRIL 24, 2023**&#x20;
+{% endhint %}
+
+### Features
+
+* Implement topic deletion prehandle ([#5033](https://github.com/hashgraph/hedera-services/pull/5033))
+* Generalize workflows enabled and add workflow ports ([#5032](https://github.com/hashgraph/hedera-services/pull/5032))
+* Pre-handle improvements ([#5056](https://github.com/hashgraph/hedera-services/pull/5056))
+* Support auto-scheduling operations by type within a suite ([#5054](https://github.com/hashgraph/hedera-services/pull/5054))
+* Add SPI and App components supporting TransactionDispatcher for modularized HCS ([#5062](https://github.com/hashgraph/hedera-services/pull/5062))
+* added the missing functionality to FileSignTool ([#5100](https://github.com/hashgraph/hedera-services/pull/5100))
+* Consensus Message Submission Prehandle ([#5059](https://github.com/hashgraph/hedera-services/pull/5059))
+* Add IngestChecker mono adapters for sigs and solvency ([#5098](https://github.com/hashgraph/hedera-services/pull/5098))
+* \[HIP-583] Finalize hollow accounts via any required signature in a txn ([#4990](https://github.com/hashgraph/hedera-services/pull/4990))
+* Remove CryptoCreate capability to create hollow accounts ([#4998](https://github.com/hashgraph/hedera-services/pull/4998))
+* Populate EVM Address in CryptoTranscation ([#5010](https://github.com/hashgraph/hedera-services/pull/5010))
+* Enable All EVM E2E suites to run with Ethereum Calls ([#4375](https://github.com/hashgraph/hedera-services/pull/4375))
+
 ## [v0.36](https://github.com/hashgraph/hedera-services/releases/tag/v0.36.0)
 
 {% hint style="info" %}

@@ -14,7 +14,7 @@ _Smart contract entity auto renewal and expiry will be enabled in a future relea
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a><mark style="color:purple;"><strong></strong></mark></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## 1. Create Your "HTS" Smart Contract
 
@@ -947,7 +947,7 @@ const {
 // Import the compiled contract
 const htsContract = require("./HTS.json");
 
-async function main() {
+async function htsContract() {
     //Grab your Hedera testnet account ID and private key from your .env file
     const accountIdTest = AccountId.fromString(process.env.PREVIEWNET_ACCOUNT_ID);
     const accountKeyTest = PrivateKey.fromStringED25519(process.env.PREVIEWNET_PRIVATE_KEY);
@@ -1123,7 +1123,7 @@ async function main() {
 
 }
 
-void main();
+void htsContract();
 ```
 
 </details>

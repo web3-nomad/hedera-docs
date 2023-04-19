@@ -303,54 +303,70 @@ public class HederaExamples {
 
 <summary>JavaScript</summary>
 
-<pre class="language-javascript" data-title="index.js"><code class="lang-javascript">const {
- Client, 
- PrivateKey, 
- AccountCreateTransaction, 
-<strong> AccountBalanceQuery, 
-</strong><strong> Hbar 
-</strong>} = require("@hashgraph/sdk");
+{% code title="index.js" %}
+```javascript
+const {
+  Client,
+  PrivateKey,
+  AccountCreateTransaction,
+  AccountBalanceQuery,
+  Hbar,
+} = require("@hashgraph/sdk");
 require("dotenv").config();
 
-//Grab your Hedera testnet account ID and private key from your .env file
-const myAccountId = process.env.MY_ACCOUNT_ID;
-const myPrivateKey = process.env.MY_PRIVATE_KEY;
+async function createAccount() {
+  // Grab your Hedera testnet account ID and private key from your .env file
+  const myAccountId = process.env.MY_ACCOUNT_ID;
+  const myPrivateKey = process.env.MY_PRIVATE_KEY;
 
-// If we weren't able to grab it, we should throw a new error
-if (myAccountId == null || myPrivateKey == null ) {
-    throw new Error("Environment variables myAccountId and myPrivateKey must be present");
-}
+  // If we weren't able to grab it, we should throw a new error
+  if (myAccountId == null || myPrivateKey == null) {
+    throw new Error(
+      "Environment variables myAccountId and myPrivateKey must be present"
+    );
+  }
 
-// Create our connection to the Hedera network
-// The Hedera JS SDK makes this really easy!
-const client = Client.forTestnet();
+  // Create our connection to the Hedera network
+  // The Hedera JS SDK makes this really easy!
+  const client = Client.forTestnet();
 
-client.setOperator(myAccountId, myPrivateKey);
+  client.setOperator(myAccountId, myPrivateKey);
 
-//Create new keys
-const newAccountPrivateKey = PrivateKey.generateED25519(); 
-const newAccountPublicKey = newAccountPrivateKey.publicKey;
+  // Create new keys
+  const newAccountPrivateKey = PrivateKey.generateED25519();
+  const newAccountPublicKey = newAccountPrivateKey.publicKey;
 
-//Create a new account with 1,000 tinybar starting balance
-const newAccount = await new AccountCreateTransaction()
+  // Create a new account with 1,000 tinybar starting balance
+  const newAccount = await new AccountCreateTransaction()
     .setKey(newAccountPublicKey)
     .setInitialBalance(Hbar.fromTinybars(1000))
     .execute(client);
 
-// Get the new account ID
-const getReceipt = await newAccount.getReceipt(client);
-const newAccountId = getReceipt.accountId;
+  // Get the new account ID
+  const getReceipt = await newAccount.getReceipt(client);
+  const newAccountId = getReceipt.accountId;
 
-console.log("The new account ID is: " + newAccountId);
+  console.log("The new account ID is: " + newAccountId);
 
-//Verify the account balance
-const accountBalance = await new AccountBalanceQuery()
+  // Verify the account balance
+  const accountBalance = await new AccountBalanceQuery()
     .setAccountId(newAccountId)
     .execute(client);
 
-console.log("The new account balance is: " + accountBalance.hbars.toTinybars() + " tinybar.");
+  console.log(
+    "The new account balance is: " +
+      accountBalance.hbars.toTinybars() +
+      " tinybar."
+  );
 
-</code></pre>
+  return newAccountId;
+}
+
+// Call the async createAccount function
+createAccount();
+
+```
+{% endcode %}
 
 </details>
 
@@ -438,6 +454,13 @@ func main() {
 ```
 
 </details>
+
+#### Sample output:
+
+```
+The new account ID is: 0.0.4065569
+The new account balance is: 1000 tinybar.
+```
 
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

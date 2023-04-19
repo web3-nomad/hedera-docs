@@ -639,7 +639,7 @@ const client = Client.forTestnet().setOperator(operatorId, operatorKey);
 
 const supplyKey = PrivateKey.generate();
 
-async function main() {
+async function createFirstNft() {
   //Create the NFT
   const nftCreate = await new TokenCreateTransaction()
     .setTokenName("diploma")
@@ -788,7 +788,7 @@ async function main() {
     )} NFTs of ID ${tokenId}`
   );
 }
-main();
+createFirstNft();
 ```
 
 </details>

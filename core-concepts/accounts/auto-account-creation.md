@@ -52,7 +52,7 @@ Create an account alias and convert it to the alias account ID format. The alias
 
 ### **2. Deposit tokens to the account alias account ID**
 
-Once the alias account ID is created, applications can create a transaction to transfer tokens to the alias account ID for users. Users can transfer HBAR, custom fungible or non-fungible tokens to the alias account ID. This will trigger the creation of the official Hedera account.&#x20;
+Once the alias account ID is created, applications can create a transaction to transfer tokens to the alias account ID for users. Users can transfer HBAR, custom fungible or non-fungible tokens to the alias account ID. This will trigger the creation of the official Hedera account. When using the auto account creation flow, the first token transferred to the alias account ID is automatically associated to the account.
 
 The initial transfer of tokens to the alias account ID will do a few things:
 
@@ -62,7 +62,6 @@ The initial transfer of tokens to the alias account ID will do a few things:
    * For an account created via an EVM address alias, the account will not have an account public key, creating a [hollow account](auto-account-creation.md#auto-account-creation-evm-address-alias).
 3. Once the new account is officially created, the token transfer transaction instantiated by the user will transfer the tokens to the new account.&#x20;
 4. The account specified to pay for the token transfer transaction fees will also be charged the account creation transaction fees in tinybar.&#x20;
-5. When using the auto account creation flow, the first token transferred to the alias account ID is automatically associated to the account.
 
 The above interactions introduce the concept of [parent and child transactions](../transactions-and-queries.md#nested-transactions). The parent transaction is the transaction that represents the transfer of tokens from the sender account to the destination account. The child transaction is the transaction the system initiated to create the account. This concept is important since the parent transaction record or receipt will not return the new account number ID. You must get the transaction record or receipt of the child transaction. The parent and child transactions will share the same transaction ID, except the child transaction has an added nonce value. &#x20;
 

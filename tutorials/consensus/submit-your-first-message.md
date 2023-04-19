@@ -291,7 +291,7 @@ const client = Client.forTestnet();
 // Set the operator account ID and operator private key
 client.setOperator(myAccountId, myPrivateKey);
 
-async function main() {
+async function submitFirstMessage() {
   // Create a new topic
   let txResponse = await new TopicCreateTransaction().execute(client);
 
@@ -325,7 +325,7 @@ async function main() {
   console.log("The message transaction status: " + transactionStatus.toString());
 }
 
-main();
+submitFirstMessage();
 </code></pre>
 
 </details>

@@ -245,15 +245,15 @@ go run hedera_examples.go
 
 ## Step 3: **Create your .env File**
 
-The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key (DER encoded)**_**.** Create the file in your project's root directory.
+The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key (HEX encoded)**_**.** Create the file in your project's root directory.
 
 {% hint style="info" %}
 _**Note:** Testnet **HBAR** is required for this next step. Please follow the instructions to create a Hedera account on the_ [_portal_](https://docs.hedera.com/guides/getting-started/introduction) _before you move on to the next step._
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/environment portal (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/portal hex copy 2.png" alt=""><figcaption></figcaption></figure>
 
-Grab the Hedera Testnet _**account ID**_ and _**DER encoded**_ _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:
+Grab the Hedera Testnet _**account ID**_ and _**HEX encoded**_ _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:
 
 {% tabs %}
 {% tab title="Java" %}
@@ -378,29 +378,34 @@ public class HederaExamples {
 {% code title="index.js" %}
 ```javascript
 const {
- Client, 
- PrivateKey, 
- AccountCreateTransaction, 
- AccountBalanceQuery, 
- Hbar, 
- TransferTransaction
+  Client,
+  PrivateKey,
+  AccountCreateTransaction,
+  AccountBalanceQuery,
+  Hbar,
+  TransferTransaction,
 } = require("@hashgraph/sdk");
 
 require("dotenv").config();
 
-//Grab your Hedera testnet account ID and private key from your .env file
-const myAccountId = process.env.MY_ACCOUNT_ID;
-const myPrivateKey = process.env.MY_PRIVATE_KEY;
+async function environmentSetup() {
+  //Grab your Hedera testnet account ID and private key from your .env file
+  const myAccountId = process.env.MY_ACCOUNT_ID;
+  const myPrivateKey = process.env.MY_PRIVATE_KEY;
 
-// If we weren't able to grab it, we should throw a new error
-if (!myAccountId || !myPrivateKey) {
-    throw new Error("Environment variables MY_ACCOUNT_ID and MY_PRIVATE_KEY must be present");
+  // If we weren't able to grab it, we should throw a new error
+  if (!myAccountId || !myPrivateKey) {
+    throw new Error(
+      "Environment variables MY_ACCOUNT_ID and MY_PRIVATE_KEY must be present"
+    );
+  }
+
+  // Create our connection to the Hedera network
+  // The Hedera JS SDK makes this really easy!
+  const client = Client.forTestnet();
+  client.setOperator(myAccountId, myPrivateKey);
 }
-
-// Create our connection to the Hedera network
-// The Hedera JS SDK makes this really easy!
-const client = Client.forTestnet();
-client.setOperator(myAccountId, myPrivateKey);
+environmentSetup();
 ```
 {% endcode %}
 

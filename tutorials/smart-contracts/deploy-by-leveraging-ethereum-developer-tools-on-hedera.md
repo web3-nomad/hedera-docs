@@ -115,13 +115,15 @@ HashIO provides the URLs for each Hedera environment that will let you interact 
 
 Import your newly created ECDSA-based Hedera account into Metamask using your private key from above.
 
-<figure><img src="https://images.hedera.com/import-account-3.png?w=600&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680226573&#x26;s=24b38b60c8b2eeeb3666ca835ed143a2" alt=""><figcaption><p>Use your private key to import your Hedera account into Metamask</p></figcaption></figure>
+<div>
 
+<figure><img src="../../.gitbook/assets/import accounts mm1.png" alt=""><figcaption><p>Use your private key to import your Hedera account into Metamask</p></figcaption></figure>
 
+ 
 
-<figure><img src="https://images.hedera.com/account-imported_2022-08-26-232126_pcyv.png?w=600&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680222046&#x26;s=23a5d5d63f2dbc5f4e6f07939be4f295" alt=""><figcaption><p>Your Hedera Account in Metamask</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/import accounts mm2.png" alt=""><figcaption><p>Your Hedera Account in Metamask</p></figcaption></figure>
 
-
+</div>
 
 You’ve successfully connected your Hedera account to Metamask! You may now receive and send HBAR on testnet through Metamask!
 

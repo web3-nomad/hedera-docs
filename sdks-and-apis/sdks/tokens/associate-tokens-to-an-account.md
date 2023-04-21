@@ -11,7 +11,7 @@ Associates the provided Hedera account with the provided Hedera token(s). Hedera
 * On success, associations between the provided account and tokens are made and the account is ready to interact with the tokens.
 
 {% hint style="info" %}
-There is no limit on the number of token IDs that can be associated to an account. Reference [HIP-367](https://hips.hedera.com/hip/hip-367).
+There is currently no limit on the number of token IDs that can be associated with an account (reference [HIP-367](https://hips.hedera.com/hip/hip-367)). Still, you can see TOKENS\_PER\_ACCOUNT\_LIMIT\_EXCEEDED responses for _pre-HIP-367_ transactions.
 {% endhint %}
 
 **Transaction Signing Requirements**

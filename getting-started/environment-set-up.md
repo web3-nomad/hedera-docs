@@ -2,7 +2,7 @@
 
 ## Summary
 
-In this section, you will create your new project directory, your _**`.env`**_ file to store your, \_Hedera Testne\_t **account ID** and **private keys** and set up your _Hedera Testnet_ client.
+In this section, you will create your new project directory, your _**`.env`**_ file to store your, Hedera Testnet **account ID** and **private keys** and set up your _Hedera Testnet_ client.
 
 ## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
@@ -98,7 +98,7 @@ import com.hedera.hashgraph.sdk.AccountBalance;
 import java.util.concurrent.TimeoutException;
 ```
 
-Within the _`main`_ method, grab your testnet **account ID** and \_\_ **private key** \_\_ from the `.env` file.
+Within the _`main`_ method, grab your testnet **account ID** and **private key** from the `.env` file.
 
 ```java
 public class HederaExamples {
@@ -245,15 +245,15 @@ go run hedera_examples.go
 
 ## Step 3: **Create your .env File**
 
-The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key (HEX encoded)**_**.** Create the file in your project's root directory.
+The _`.env`_ file stores your environment variables, _**account ID**_ and _**private key (DER encoded)**_**.** Create the file in your project's root directory.
 
 {% hint style="info" %}
 _**Note:** Testnet **HBAR** is required for this next step. Please follow the instructions to create a Hedera account on the_ [_portal_](https://docs.hedera.com/guides/getting-started/introduction) _before you move on to the next step._
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/portal hex copy 2.png" alt=""><figcaption></figcaption></figure>
+![](<../.gitbook/assets/DER portal (1).png>)
 
-Grab the Hedera Testnet _**account ID**_ and _**HEX encoded**_ _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:
+Grab the Hedera Testnet _**account ID**_ and _**DER encoded**_ _**private key**_ from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot above) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:
 
 {% tabs %}
 {% tab title="Java" %}
@@ -280,7 +280,7 @@ MY_PRIVATE_KEY=ENTER TESTNET PRIVATE KEY
 
 ## Step 4: Create your Hedera Testnet client
 
-Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in **HBAR**. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet **account ID** and the operator private key is the corresponding testnet account **private key**.
+Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet **account ID** and the operator private key is the corresponding testnet account **private key**.
 
 {% tabs %}
 {% tab title="Java" %}
@@ -291,7 +291,7 @@ client.setOperator(myAccountId, myPrivateKey);
 ```
 
 {% hint style="info" %}
-_**Note:** The client has a default **max transaction fee** of 100,000,000 **tinybars** (1 **HBAR**) and default **max query payment** of 100,000,000 tinybars (1 **HBAR**). If you need to change these values, you can use`.setDefaultMaxTransactionFee()` for a transaction and `.setDefaultMaxQueryPayment()` for queries. You are only charged the actual cost of the transaction or query._
+_**Note:** The client has a default **max transaction fee** of 100,000,000 tinybars (1 HBAR) and default **max query payment** of 100,000,000 tinybars (1 HBAR). If you need to change these values, you can use`.setDefaultMaxTransactionFee()` for a transaction and `.setDefaultMaxQueryPayment()` for queries. You are only charged the actual cost of the transaction or query._
 {% endhint %}
 {% endtab %}
 

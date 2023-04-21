@@ -2,7 +2,7 @@
 
 ## Summary
 
-In this section, you will learn how to make a simple Hedera account. Hedera accounts are the entry point by which you can interact with the [Hedera APIs](../sdks-and-apis/hedera-api/). Accounts hold a balance of **HBAR** used to pay for API calls for the various transaction and query types.
+In this section, you will learn how to make a simple Hedera account. Hedera accounts are the entry point by which you can interact with the [Hedera APIs](../sdks-and-apis/hedera-api/). Accounts hold a balance of HBAR used to pay for API calls for the various transaction and query types.
 
 ## Prerequisites:
 
@@ -101,7 +101,7 @@ newAccountPublicKey := newAccountPrivateKey.PublicKey()
 
 ## Step 3: Create a new account
 
-Create a new account using _`AccountCreateTransaction()`_. Use the public key created in the previous step to enter in the _`setKey()`_ field. This will associate the key pair generated in the previous step with the new account. The public key of the account is visible to the public and can be viewed in a mirror node explorer. The private key is used to authorize account-related transactions like transferring _**HBAR**_ or tokens from that account to another account. The account will have an initial balance of _1,000 tinybars_ funded from your testnet account created by the Hedera portal.
+Create a new account using _`AccountCreateTransaction()`_. Use the public key created in the previous step to enter in the _`setKey()`_ field. This will associate the key pair generated in the previous step with the new account. The public key of the account is visible to the public and can be viewed in a mirror node explorer. The private key is used to authorize account-related transactions like transferring _HBAR_ or tokens from that account to another account. The account will have an initial balance of _1,000 tinybars_ funded from your testnet account created by the Hedera portal.
 
 You can view transactions successfully submitted to the network by getting the transaction ID and searching for it in a mirror node explorer. The transaction ID is composed of the account ID that paid for the transaction and the transaction's valid start time e.g. _`0.0.1234@1609348302`_<mark style="color:blue;">.</mark> The transaction's valid start time is the time the transaction begins to be valid on the network. The SDK automatically generates a transaction ID for each transaction behind the scenes.
 
@@ -182,7 +182,7 @@ fmt.Printf("The new account ID is %v\n", newAccountId)
 
 ## Step 5: Verify the new account balance
 
-Next, you will submit a query to the Hedera test network to return the balance of the new account using the new _account ID_. The current account balance for the new account should be 1,000 _**tinybars**_. Getting the balance of an account is free today.
+Next, you will submit a query to the Hedera test network to return the balance of the new account using the new _account ID_. The current account balance for the new account should be 1,000 _tinybars_. Getting the balance of an account is free today.
 
 {% tabs %}
 {% tab title="Java" %}

@@ -26,19 +26,19 @@ Topic info returns the following values for a topic. Queries do not change the s
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee cost
 
-| Method                         | Type                                           | Requirement |
-| ------------------------------ | ---------------------------------------------- | ----------- |
-| `setTopicId(<topicId>)`        | TopicId                                        | Required    |
-| `<TopicInfo>.adminKey`         | [Key](../keys/generate-a-new-key-pair.md)      | Optional    |
-| `<TopicInfo>.submitKey`        | [Key](../keys/generate-a-new-key-pair.md)      | Optional    |
-| `<TopicInfo>.topicId`          | [TopicId](../specialized-types.md#topicid)     | Optional    |
-| `<TopicInfo>.sequenceNumber`   | long                                           | Optional    |
-| `<TopicInfo>.runningHash`      | ByteString                                     | Optional    |
-| `<TopicInfo>.memo`             | String                                         | Optional    |
-| `<TopicInfo>.ledgerId`         | LedgerId                                       | Optional    |
-| `<TopicInfo>.expirationTime`   | Instant                                        | Optional    |
-| `<TopicInfo>.autoRenewAccount` | [AccountId](../specialized-types.md#accountid) | Optional    |
-| `<TopicInfo>.autoRenewPeriod`  | Instant                                        | Optional    |
+| Method                         | Type                                                              | Requirement |
+| ------------------------------ | ----------------------------------------------------------------- | ----------- |
+| `setTopicId(<topicId>)`        | TopicId                                                           | Required    |
+| `<TopicInfo>.adminKey`         | [Key](../keys/generate-a-new-key-pair.md)                         | Optional    |
+| `<TopicInfo>.submitKey`        | [Key](../keys/generate-a-new-key-pair.md)                         | Optional    |
+| `<TopicInfo>.topicId`          | [TopicId](../../deprecated/sdks/specialized-types.md#topicid)     | Optional    |
+| `<TopicInfo>.sequenceNumber`   | long                                                              | Optional    |
+| `<TopicInfo>.runningHash`      | ByteString                                                        | Optional    |
+| `<TopicInfo>.memo`             | String                                                            | Optional    |
+| `<TopicInfo>.ledgerId`         | LedgerId                                                          | Optional    |
+| `<TopicInfo>.expirationTime`   | Instant                                                           | Optional    |
+| `<TopicInfo>.autoRenewAccount` | [AccountId](../../deprecated/sdks/specialized-types.md#accountid) | Optional    |
+| `<TopicInfo>.autoRenewPeriod`  | Instant                                                           | Optional    |
 
 {% tabs %}
 {% tab title="Java" %}

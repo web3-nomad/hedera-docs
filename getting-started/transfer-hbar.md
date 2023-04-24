@@ -311,7 +311,7 @@ const {
 } = require("@hashgraph/sdk");
 require("dotenv").config();
 
-async function transferHbar() {
+async function main() {
   // Grab your Hedera testnet account ID and private key from your .env file
   const myAccountId = process.env.MY_ACCOUNT_ID;
   const myPrivateKey = process.env.MY_PRIVATE_KEY;
@@ -388,8 +388,8 @@ async function transferHbar() {
   );
 }
 
-// Call the async transferHbar function
-transferHbar();
+// Call the async main function
+main();
 ```
 {% endcode %}
 

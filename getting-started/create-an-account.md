@@ -314,7 +314,7 @@ const {
 } = require("@hashgraph/sdk");
 require("dotenv").config();
 
-async function createAccount() {
+async function main() {
   // Grab your Hedera testnet account ID and private key from your .env file
   const myAccountId = process.env.MY_ACCOUNT_ID;
   const myPrivateKey = process.env.MY_PRIVATE_KEY;
@@ -363,7 +363,7 @@ async function createAccount() {
 }
 
 // Call the async createAccount function
-createAccount();
+main();
 
 ```
 {% endcode %}

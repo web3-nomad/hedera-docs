@@ -388,7 +388,7 @@ const {
 
 require("dotenv").config();
 
-async function environmentSetup() {
+async function main() {
   //Grab your Hedera testnet account ID and private key from your .env file
   const myAccountId = process.env.MY_ACCOUNT_ID;
   const myPrivateKey = process.env.MY_PRIVATE_KEY;
@@ -405,7 +405,7 @@ async function environmentSetup() {
   const client = Client.forTestnet();
   client.setOperator(myAccountId, myPrivateKey);
 }
-environmentSetup();
+main();
 ```
 {% endcode %}
 

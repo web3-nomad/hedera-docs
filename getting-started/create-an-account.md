@@ -362,7 +362,7 @@ async function main() {
   return newAccountId;
 }
 
-// Call the async createAccount function
+// Call the async main function
 main();
 
 ```

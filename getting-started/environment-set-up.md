@@ -154,7 +154,7 @@ Grab your Hedera Testnet _**account ID**_ and _**private key**_ from the _`.env`
 ```javascript
 const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction } = require("@hashgraph/sdk");
 
-async function environmentSetup() {
+async function main() {
 
     //Grab your Hedera testnet account ID and private key from your .env file
     const myAccountId = process.env.MY_ACCOUNT_ID;
@@ -165,7 +165,7 @@ async function environmentSetup() {
         throw new Error("Environment variables MY_ACCOUNT_ID and MY_PRIVATE_KEY must be present");
     }
 }
-environmentSetup();
+main();
 ```
 {% endcode %}
 {% endtab %}

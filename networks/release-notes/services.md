@@ -12,7 +12,7 @@ Please visit the Hedera status page for the latest versions supported on each ne
 **MAINNET UPDATE: MAY 9, 2023**&#x20;
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="success" %}
 **TESTNET UPDATE: APRIL 24, 2023**&#x20;
 {% endhint %}
 

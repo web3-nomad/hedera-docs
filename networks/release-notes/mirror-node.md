@@ -8,7 +8,31 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.79](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.79.0)
+
+[HIP-584](https://hips.hedera.com/HIP/hip-584.html) EVM archive node saw further progress this release with a focus on testing and establishing the foundation for estimate gas functionality in the next release. While consensus nodes undergo a modularization effort that will pay dividends down the road, the archive node needs functionality for estimate gas before that process could be completed. To make progress on HIP-584, the necessary EVM logic was temporarily copied from consensus nodes into the mirror node web3 module. A large focus was placed on increasing acceptance test coverage for contract call with precompiles.
+
+Users writing dApps want to be able to monitor for token approval and transfer events. HAPI transactions like `CryptoTransfer`, `CryptoApproveAllowance`, `CryptoDeleteAllowance`, `TokenMint`, `TokenWipe`, and `TokenBurn` do not emit events that could be captured by monitoring tools like [The Graph](https://thegraph.com/en/) since they’re executed outside the EVM. To address, the mirror node now generates synthetic contract log events for these non-EVM HAPI transactions.
+
+A new subscription API was [designed](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/design/contract-log-subscription.md) for [HIP-668 GraphQL API](https://github.com/hashgraph/hedera-improvement-proposal/pull/668). Once it's implemented in a future release, the new contract log subscription will stream contract events to clients via a WebSocket connection.
+
+For our Citus database transition, PostgreSQL 15 compatibility was verified and made the default for this v2 schema. The lookup of historical balance information via `/api/v1/balances?timestamp=` was optimized for sharded databases so it stays performant. Performance testing showed a decrease in shard count could greatly improve performance so we lowered the number of shards from 32 to 16. This testing also allowed us to provide an initial [recommended](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/database.md#database-migration-from-v1-to-v2) resource configuration for the Citus deployment.
+
+There was a large focus on test improvements in this release. In addition to the aforementioned HIP-584 test coverage, we also optimized the acceptance tests to reduce the overall test duration in Kubernetes by half without reducing coverage. The acceptance test logs were cleaned up to reduce unnecessary log statements and standardize its output. The hbar balance used by the tests now is logged at the end of test execution. Acceptance tests for hollow account creation were added. We now generate multi-platform snapshot images from the `main` branch for testing with local node. [Testkube](https://testkube.io/) configuration was enhanced to make it more configurable. Finally, all Java test compiler warnings were fixed and will now fail the build if any future warnings occur.
+
+### Known Issues
+
+There is a [bug](https://github.com/hashgraph/hedera-mirror-node/issues/5944) introduced by [#5776](https://github.com/hashgraph/hedera-mirror-node/pull/5776) that causes the importer to fail on startup. It's recommended to hold off on upgrading to v0.79.0 until we can address this in a v0.79.1. Alternatively, it can be worked around by disabling the faulty migration by setting `hedera.mirror.importer.migration.syntheticTokenAllowanceOwnerMigration.enabled=false`.
+
 ## [v0.78](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.78.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: APRIL 21, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: APRIL 13, 2023**
+{% endhint %}
 
 [HIP-584](https://hips.hedera.com/HIP/hip-584.html) Mirror Evm Archive Node now has token precompile support. This was the last major piece of functionality needed for the `/api/v1/contracts/call` to be considered `eth_call` equivalent. The new API was added to the REST API's OpenAPI documentation so that it appears on our [Swagger UI](https://mainnet-public.mirrornode.hedera.com/api/v1/docs). A number of performance optimizations were worked on to make it scalable as well as various test improvements to verify its correctness. Various bugs were addressed including the proper handling of reverts. In the next few releases, we plan to fine tune contract call and implement contract gas estimation.
 

@@ -25,17 +25,18 @@ When creating a **new account** using the<mark style="color:purple;">`AccountCre
 
 #### Methods
 
-| Method                                            | Type      | Requirement |
-| ------------------------------------------------- | --------- | ----------- |
-| `setKey(<key>)`                                   | Key       | Required    |
-| `setInitialBalance(<initialBalance>)`             | HBar      | Optional    |
-| `setReceiverSignatureRequired(<booleanValue>)`    | boolean   | Optional    |
-| `setMaxAutomaticTokenAssociations(<amount>)`      | int       | Optional    |
-| `setStakedAccountId(<stakedAccountId>)`           | AccountId | Optional    |
-| `setStakedNodeId(<stakedNodeId>)`                 | long      | Optional    |
-| `setDeclineStakingReward(<declineStakingReward>)` | boolean   | Optional    |
-| `setAccountMemo(<memo>)`                          | String    | Optional    |
-| `setAutoRenewPeriod(<autoRenewPeriod>)`           | Duration  | Disabled    |
+| Method                                            | Type       | Requirement |
+| ------------------------------------------------- | ---------- | ----------- |
+| `setKey(<key>)`                                   | Key        | Required    |
+| `setAlias(<alias>)`                               | EvmAddress | Optional    |
+| `setInitialBalance(<initialBalance>)`             | HBar       | Optional    |
+| `setReceiverSignatureRequired(<booleanValue>)`    | boolean    | Optional    |
+| `setMaxAutomaticTokenAssociations(<amount>)`      | int        | Optional    |
+| `setStakedAccountId(<stakedAccountId>)`           | AccountId  | Optional    |
+| `setStakedNodeId(<stakedNodeId>)`                 | long       | Optional    |
+| `setDeclineStakingReward(<declineStakingReward>)` | boolean    | Optional    |
+| `setAccountMemo(<memo>)`                          | String     | Optional    |
+| `setAutoRenewPeriod(<autoRenewPeriod>)`           | Duration   | Disabled    |
 
 {% tabs %}
 {% tab title="Java" %}

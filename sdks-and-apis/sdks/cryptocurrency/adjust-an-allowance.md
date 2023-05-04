@@ -27,7 +27,7 @@ The total number of NFT serial number deletions contained within the transaction
 {% tab title="Java" %}
 ```java
 //Create the transaction
-AccountAllowanceAdjustTransaction transaction = new AccountAllowanceAdjustTransaction()
+AccountAllowanceDeleteTransaction transaction = new AccountAllowanceDeleteTransaction()
     .deleteAllTokenNftAllowances(nftId , ownerAccountId);
 
 //Sign the transaction with the owner account key  

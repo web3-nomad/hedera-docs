@@ -20,6 +20,7 @@
   * [Consensus](tutorials/consensus/README.md)
     * [Submit Your First Message](tutorials/consensus/submit-your-first-message.md)
     * [Submit Message to Private Topic](tutorials/consensus/submit-message-to-private-topic.md)
+    * [Query Messages with Mirror Node](tutorials/consensus/query-messages-with-mirror-node.md)
   * [Tokens](tutorials/token/README.md)
     * [Create and Transfer Your First NFT](tutorials/token/create-and-transfer-your-first-nft.md)
     * [Create and Transfer Your First Fungible Token](tutorials/token/create-and-transfer-your-first-fungible-token.md)

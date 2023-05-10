@@ -182,9 +182,9 @@ new MirrorConsensusTopicQuery()
 
 **NOTE**: It may take 10-15 seconds before the message appears on your console from the mirror node.
 
-Having trouble or have any comments, suggestions, or feedback?   
-Connect with us on [Discord](https://discordapp.com/invite/FFb9YFX)🤓!
-{% hint style="info" %}
+Having trouble or have any comments, suggestions, or feedback?  
+
+Connect with us on [Discord](http://hedera.com/discord)🤓!
+
 Have a question?
-[Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)&#x20;
-{% endhint %}
+[Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

@@ -22,7 +22,9 @@ git clone https://github.com/hashgraph/hedera-mirror-node.git
 cd hedera-mirror-node
 ```
 
-_**Note:** Cloning the mirror node repository might take a while._
+{% hint style="info" %}
+**Note:** Cloning the mirror node repository could require some time to complete.
+{% endhint %}
 
 ## Configure Mirror Node
 
@@ -150,7 +152,7 @@ The PostgreSQL container is responsible for creating the database for the mirror
 Open Docker and start the PostgreSQL and REST API containers in the root directory:
 
 ```bash
-docker-compose up -d db rest && docker logs hedera-mirror-node-db-1 --follow
+docker compose up -d db rest && docker logs hedera-mirror-node-db-1 --follow
 ```
 
 Wait until you see the _"database system is ready to accept connections"_ message in the console log, then `control + c` to terminate the current process.
@@ -170,7 +172,7 @@ This process may take some time, but once you see this in your console and the p
 <figure><img src="../../.gitbook/assets/importer hedera console (1).png" alt=""><figcaption><p>Mirror Importer process console</p></figcaption></figure>
 
 {% hint style="warning" %}
-**Note:** If you get an error on this step or the command fails, rerun the command.
+**Note:** Should you encounter an error during this step or if the command doesn't execute successfully, it's recommended to run the command again.
 {% endhint %}
 
 #### 3. Connect to the PostgreSQL database
@@ -310,7 +312,7 @@ To exit the `psql` console, run the quit command:
 Lastly, run the following command to stop and remove the created containers:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 **Congratulations! 🎉 You have successfully learned how to configure the Hedera Mirror Node to query specific data.**

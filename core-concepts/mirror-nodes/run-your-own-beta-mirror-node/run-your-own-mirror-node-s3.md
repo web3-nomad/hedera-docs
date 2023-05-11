@@ -101,7 +101,7 @@ hedera:
 
 ## 4. Run Your Mirror Node
 
-Start and run the Hedera Mirror Node using Docker. Docker packages development tools in a self-contained environment called a _container_ that can include libraries, code, runtime, and more.&#x20;
+Start and run the Hedera Mirror Node using Docker. Docker packages development tools in a self-contained environment called a _container_ that can include libraries, code, runtime, and more.
 
 * From the mirror node directory, run the following command:
 
@@ -153,4 +153,4 @@ psql "dbname=mirror_node host=localhost user=mirror_node password=mirror_node_pa
 docker compose down
 ```
 
-#### Congratulations! You have successfully run and deployed a Hedera Mirror Node using Amazon S3 🚀
+#### Congratulations! You have successfully run and deployed a Hedera Mirror Node with Amazon Web Services S3 (AWS)  🚀

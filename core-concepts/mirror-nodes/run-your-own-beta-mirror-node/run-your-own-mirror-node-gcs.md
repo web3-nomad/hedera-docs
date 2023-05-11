@@ -114,4 +114,4 @@ psql "dbname=mirror_node host=localhost user=mirror_node password=mirror_node_pa
 docker compose down
 ```
 
-#### Congratulations! You have successfully run and deployed a Hedera Mirror Node using the Google Cloud Platform 🚀
+#### Congratulations! You have successfully run and deployed a Hedera Mirror Node with Google Cloud Storage (GCS) 🚀

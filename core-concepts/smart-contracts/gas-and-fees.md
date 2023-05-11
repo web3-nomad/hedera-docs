@@ -59,7 +59,7 @@ Reference [HIP-185](https://hips.hedera.com/hip/hip-185)
 ### Smart Contract Rent: Auto Renewal and Storage
 
 {% hint style="danger" %}
-Smart contract expiry and auto renewal are currently disabled. Smart contracts will not be charged auto renewal fees or expire.&#x20;
+Smart contract expiry and auto renewal are currently disabled. Smart contracts will not be charged auto renewal fees or expire.
 {% endhint %}
 
 Rent is the recurring payment required for contracts to remain active on the network. Rent is comprised of **auto renewal** and **storage** payments.
@@ -98,7 +98,7 @@ If a high enough utilization threshold is reached, **congestion pricing applies*
 
 <summary>Why do contracts have to pay rent on Hedera?</summary>
 
-Distributed networks like Hedera have a finite amount of computational resources. When entities like smart contracts are deployed on a decentralized network, a portion of those resources are consumed. Thus, it is unfeasible to maintain an unlimited number of entities for an infinite amount of time on finite resources. Solving this problem is necessary, and it’s a key topic of discussion by Leemon and [others](https://www.coindesk.com/markets/2018/03/27/vitalik-wants-you-to-pay-to-slow-ethereums-growth/) in the layer 1 network space.&#x20;
+Distributed networks like Hedera have a finite amount of computational resources. When entities like smart contracts are deployed on a decentralized network, a portion of those resources are consumed. Thus, it is unfeasible to maintain an unlimited number of entities for an infinite amount of time on finite resources. Solving this problem is necessary, and it’s a key topic of discussion by Leemon and [others](https://www.coindesk.com/markets/2018/03/27/vitalik-wants-you-to-pay-to-slow-ethereums-growth/) in the layer 1 network space.
 
 Contract rent is an economically and technically viable approach to manage smart contract entities and state storage.
 
@@ -123,7 +123,7 @@ Rent is defined as the recurring payment required for contracts (and, eventually
 * **Auto-renewal payments** will be enabled on mainnet (for contracts only) with the Hedera Services release planned for February 2023. The auto-renewal fee for a contract is $0.026 USD per 90 days
 * **Storage payments** will start once a total of **100 million key-value pairs** are stored cumulatively across the network. These storage fees will be part of the rent payment collected when a contract is auto renewed. The storage fee rate is $0.02 per key-value pair per year
 
-<img src="../../.gitbook/assets/image (2).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image (3).png" alt="" data-size="original">
 
 </details>
 
@@ -146,7 +146,7 @@ Note that the ID number of a removed entity is not reused going forward. In addi
 
 See the diagram below and [HIP-16](https://hips.hedera.com/hip/hip-16) for more details.
 
-![](../../.gitbook/assets/Untitled.png)
+<img src="../../.gitbook/assets/Untitled.png" alt="" data-size="original">
 
 </details>
 
@@ -164,7 +164,7 @@ The grace period between entity expiration and deletion is 30 days.
 
 Smart contracts on Hedera can pay for rent in two ways: external funds or contract funds.
 
-When the `expirationTime` for a contract is reached, the network will first try to charge rent to the contract’s `autoRenewAccount`:&#x20;
+When the `expirationTime` for a contract is reached, the network will first try to charge rent to the contract’s `autoRenewAccount`:
 
 * If the `autoRenewAccount` has sufficient HBAR to pay for the `autoRenewPeriod`, then the contract is successfully renewed
 * If the `autoRenewAccount` has some HBAR but not enough to afford the full `autoRenewPeriod`, then the contract is extended for as long as possible (say, 1 week instead of 90 days). Once that extension (1 week) elapses, if the `autoRenewAccount` hasn't been re-funded to cover the `autoRenewPeriod`, then the contract account itself will be charged for rent
@@ -223,7 +223,7 @@ Mirror nodes provide the expiration time for contracts. You can obtain this info
 
 <summary>Where do the auto-renewal transactions appear? Can these be seen on network explorers like HashScan?</summary>
 
-According to [HIP-16: Entity Auto-Renewal](https://hips.hedera.com/hip/hip-16), records of auto-renew charges will appear as `actions` in the record stream, and will be available via mirror nodes. In addition, the fee breakdown is provided in network explorers like HashScan for the contract update transaction. No receipts or records for auto-renewal actions will be available via HAPI queries.&#x20;
+According to [HIP-16: Entity Auto-Renewal](https://hips.hedera.com/hip/hip-16), records of auto-renew charges will appear as `actions` in the record stream, and will be available via mirror nodes. In addition, the fee breakdown is provided in network explorers like HashScan for the contract update transaction. No receipts or records for auto-renewal actions will be available via HAPI queries.
 
 [HIP-449](https://hips.hedera.com/hip/hip-449) provides technical details on how information for expiring contracts is included in the record stream.
 
@@ -250,7 +250,7 @@ Yes, that is possible for contracts.
 
 <summary>For smart contracts created via <code>CREATE2</code>, how can I specify rent-related properties like<code>autorenewAccount</code> and <code>autorenewPeriod</code>?</summary>
 
-Contracts created via `CREATE2` inside the EVM will inherit the `autorenewaccount` and `autorenewPeriod`of the `sender` address.&#x20;
+Contracts created via `CREATE2` inside the EVM will inherit the `autorenewaccount` and `autorenewPeriod`of the `sender` address.
 
 For example, if you call contract `0xab...cd` which has `autorenewAccount` `0.0.X` and `autorenewPeriod` of 45 days, and this contract deploys a new contract `0xcd...ef`, then the new contract will also have `autorenewAccount` `0.0.X`and `autorenewPeriod` of 45 days.
 

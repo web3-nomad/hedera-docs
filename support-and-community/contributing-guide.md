@@ -2,7 +2,7 @@
 description: >-
   Welcome to Hedera documentation contributing and style guide! Ways you can
   contribute below⬇:
-cover: ../.gitbook/assets/28_ultraviolet (1) (1).jpg
+cover: ../.gitbook/assets/28_ultraviolet (1) (2) (2).jpg
 coverY: 31
 ---
 
@@ -25,9 +25,9 @@ If you find something that needs to be updated or would like to publish addition
 
 ### Hedera Improvement Proposal (HIP)
 
-Have a new feature request for consensus or mirror nodes? Looking to submit a standard or informational guide for the Hedera ecosystem? Submit a Hedera Improvement Proposal that will be reviewed and evaluated by the Hedera Team. These improvement proposals can range from core protocol changes to the applications, frameworks, and protocols built on top of the Hedera public network and used by the community. To view all active and pending HIPs, check out the [HIP website](https://hips.hedera.com/).&#x20;
+Have a new feature request for consensus or mirror nodes? Looking to submit a standard or informational guide for the Hedera ecosystem? Submit a Hedera Improvement Proposal that will be reviewed and evaluated by the Hedera Team. These improvement proposals can range from core protocol changes to the applications, frameworks, and protocols built on top of the Hedera public network and used by the community. To view all active and pending HIPs, check out the [HIP website](https://hips.hedera.com/).
 
-1. Fork the `hedera-improvement-proposal` repository [here](https://github.com/hashgraph/hedera-improvement-proposal).&#x20;
+1. Fork the `hedera-improvement-proposal` repository [here](https://github.com/hashgraph/hedera-improvement-proposal).
 2. Fill out this [HIP template](https://github.com/hashgraph/hedera-improvement-proposal/blob/main/hip-0000-template.md).
 3. Create a pull request against `hashgraph/hedera-improvement-proposal` main branch.
 
@@ -43,7 +43,7 @@ by Developer Advocate: Michael Garber
 ### Capitalization
 
 {% hint style="info" %}
-**Key Point:** Use standard American capitalization. Use sentence case for headings.&#x20;
+**Key Point:** Use standard American capitalization. Use sentence case for headings.
 {% endhint %}
 
 Follow the standard [capitalization rules](https://owl.purdue.edu/owl/general\_writing/mechanics/help\_with\_capitals.html) for American English. Additionally, use the following style standards consistently throughout the Hedera developer documentation:
@@ -55,15 +55,15 @@ Follow the standard [capitalization rules](https://owl.purdue.edu/owl/general\_w
 
 ### HBAR
 
-When referring to the Hedera native currency, use the singular form of the noun _**HBAR**_. For example:&#x20;
+When referring to the Hedera native currency, use the singular form of the noun _**HBAR**_. For example:
 
 * _"I bought 10 **HBAR** yesterday"_
 
-Do not use the plural form of the noun as this style rule applies even when referring to multiple units of _**HBAR**_.&#x20;
+Do not use the plural form of the noun as this style rule applies even when referring to multiple units of _**HBAR**_.
 
 ### tinybars
 
-When referring to fractions of _**HBAR**_, use the plural form _**tinybars**_. For example:&#x20;
+When referring to fractions of _**HBAR**_, use the plural form _**tinybars**_. For example:
 
 * _"I will transfer 1,000 **tinybars** from my account to yours"_
 
@@ -72,7 +72,7 @@ Do not use the singular form of the noun as any reference should be plural since
 ### Abbreviations
 
 {% hint style="info" %}
-**Key Point:** Use standard American and industry-standard abbreviations, e.g., _**NFT** for_ non-fungible token. Avoid internet slang.&#x20;
+**Key Point:** Use standard American and industry-standard abbreviations, e.g., _**NFT** for_ non-fungible token. Avoid internet slang.
 {% endhint %}
 
 Abbreviations include acronyms, initialisms, shortened words, and contractions. In most contexts, the technical distinction between acronyms and initialisms isn't relevant; it's OK to use the phrase _acronym_ to refer to both.
@@ -80,11 +80,11 @@ Abbreviations include acronyms, initialisms, shortened words, and contractions. 
 * An _acronym_ is formed from the first letters of words in a phrase/name but pronounced as if it were a word itself:
   * _**WAGMI** for We're All Gonna Make It_
   * _**DAO** for Decentralized Autonomous Organization_
-* An initialism is from the first letters of words in a phrase, but each letter is individually pronounced:&#x20;
+* An initialism is from the first letters of words in a phrase, but each letter is individually pronounced:
   * _**KYC** for Know Your Customer_
   * _**IPFS** for InterPlanetary File System_
 * A shortened word is just part of a word or phrase, sometimes with a period in the end:
-  * &#x20;_**Dr.** for_ _doctor_
+  * _**Dr.** for_ _doctor_
   * _**etc.** for et cetera_
 
 > **Note:** Some abbreviations can be either acronyms or initialisms, depending on the speaker's preference—examples include _**FAQ**_ and _**SQL**_. In some cases, the pronunciation determines [whether to use _a_ or _an_](https://developers.google.com/style/articles).
@@ -113,7 +113,7 @@ In general, when an abbreviation is likely to be unfamiliar to the audience, spe
 * _Miner Extracted Value (**MEV**)_
 * _elliptic-curve cryptography (**ECC**)_
 
-For all subsequent mentions of the term, use the abbreviation by itself. If the first mention of a term occurs in a heading or title, you can use the abbreviation and then spell out the abbreviation in the first paragraph that follows the heading or section title.&#x20;
+For all subsequent mentions of the term, use the abbreviation by itself. If the first mention of a term occurs in a heading or title, you can use the abbreviation and then spell out the abbreviation in the first paragraph that follows the heading or section title.
 
 In some cases, spelling out an acronym doesn't help the reader understand the term. For example, writing out a _portable document format_ doesn't help the reader understand what a _PDF_ document is.
 

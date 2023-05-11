@@ -6,6 +6,7 @@
   * [Environment Setup](getting-started/environment-set-up.md)
   * [Create an Account](getting-started/create-an-account.md)
   * [Transfer HBAR](getting-started/transfer-hbar.md)
+  * [Query Ledger Data](getting-started/transfer-hbar-1.md)
 * [Tutorials](tutorials/README.md)
   * [Smart Contracts](tutorials/smart-contracts/README.md)
     * [Deploy Your First Smart Contract](tutorials/smart-contracts/deploy-your-first-smart-contract.md)

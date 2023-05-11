@@ -106,108 +106,6 @@ fmt.Printf("The transaction consensus status is %v\n", transactionStatus)
 {% endtab %}
 {% endtabs %}
 
-## Step 3. Get the account balance
-
-### **Get the cost of requesting the query**
-
-You can request the cost of a query prior to submitting the query to the Hedera network. Checking an account balance is free of charge today. You can verify that by the method below.
-
-{% tabs %}
-{% tab title="Java" %}
-```java
-//Request the cost of the query
-Hbar queryCost = new AccountBalanceQuery()
-     .setAccountId(newAccountId)
-     .getCost(client);
-
-System.out.println("The cost of this query is: " +queryCost);
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-```javascript
-//Request the cost of the query
-const queryCost = await new AccountBalanceQuery()
-     .setAccountId(newAccountId)
-     .getCost(client);
-
-console.log("The cost of query is: " +queryCost);
-```
-{% endtab %}
-
-{% tab title="Go" %}
-```java
-//Create the query that you want to submit
-balanceQuery := hedera.NewAccountBalanceQuery().
-     SetAccountID(newAccountId)
-
-//Get the cost of the query
-cost, err := balanceQuery.GetCost(client)
-
-if err != nil {
-        panic(err)
-}
-
-println("The account balance query cost is:", cost.String())
-```
-{% endtab %}
-{% endtabs %}
-
-### **Get the account balance**
-
-You will verify the account balance was updated for the new account by requesting a get account balance query. The current account balance should be the sum of the initial balance (1,000 _**tinybars**_) plus the transfer amount (1,000 **tinybars**) and equal to 2,000 **tinybars**.
-
-{% tabs %}
-{% tab title="Java" %}
-```java
-//Check the new account's balance
-AccountBalance accountBalanceNew = new AccountBalanceQuery()
-     .setAccountId(newAccountId)
-     .execute(client);
-
-System.out.println("The new account balance is: " +accountBalanceNew.hbars);
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-```javascript
-//Check the new account's balance
-const getNewBalance = await new AccountBalanceQuery()
-     .setAccountId(newAccountId)
-     .execute(client);
-
-console.log("The account balance after the transfer is: " +getNewBalance.hbars.toTinybars() +" tinybar.")
-```
-{% endtab %}
-
-{% tab title="Go" %}
-```go
-//Check the new account's balance
-newAccountBalancequery := hedera.NewAccountBalanceQuery().
-     SetAccountID(newAccountId)
-
-//Sign with client operator private key and submit the query to a Hedera network
-newAccountBalance, err := newAccountBalancequery.Execute(client)
-if err != nil {
-    panic(err)
-}
-
-//Print the balance of tinybars
-fmt.Println("The hbar account balance for this account is", newAccountBalance.Hbars.AsTinybar())
-```
-{% endtab %}
-{% endtabs %}
-
-{% hint style="success" %}
-:star: **Congratulations! You have successfully transferred **_**HBAR**_** to another account on the Hedera Testnet! If you have followed the tutorial from the beginning, you have completed the following thus far:**&#x20;
-
-* Set up your Hedera environment to submit transactions and queries.
-* Created an account.
-* Transferred **HBAR** to another account.
-
-Do you want to keep learning? Visit our the [SDKs & APIs](../sdks-and-apis/) section to take your learning experience to the next level. You can also find additional Java SDK examples [here](https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java).
-{% endhint %}
-
 ## Code Check ✅
 
 Your complete code file should look something like this:
@@ -275,20 +173,6 @@ public class HederaExamples {
                 .execute(client);
 
         System.out.println("The transfer transaction was: " +sendHbar.getReceipt(client).status);
-
-        //Request the cost of the query
-        Hbar queryCost = new AccountBalanceQuery()
-                .setAccountId(newAccountId)
-                .getCost(client);
-
-        System.out.println("The cost of this query is: " +queryCost);
-
-        //Check the new account's balance
-        AccountBalance accountBalanceNew = new AccountBalanceQuery()
-                .setAccountId(newAccountId)
-                .execute(client);
-
-        System.out.println("The new account balance is: " +accountBalanceNew.hbars);
 
     }
 }
@@ -369,24 +253,6 @@ async function transferHbar() {
   console.log(
     "The transfer transaction from my account to the new account was: " +
       transactionReceipt.status.toString()
-  );
-
-  // Request the cost of the query
-  const queryCost = await new AccountBalanceQuery()
-    .setAccountId(newAccountId)
-    .getCost(client);
-
-  console.log("The cost of query is: " + queryCost);
-
-  // Check the new account's balance
-  const getNewBalance = await new AccountBalanceQuery()
-    .setAccountId(newAccountId)
-    .execute(client);
-
-  console.log(
-    "The account balance after the transfer is: " +
-      getNewBalance.hbars.toTinybars() +
-      " tinybars."
   );
 }
 
@@ -501,32 +367,6 @@ func main() {
     transactionStatus := transferReceipt.Status
 
     fmt.Printf("The transaction consensus status is %v\n", transactionStatus)
-
-    //Create the query that you want to submit
-    balanceQuery := hedera.NewAccountBalanceQuery().
-        SetAccountID(newAccountId)
-
-    //Get the cost of the query
-    cost, err := balanceQuery.GetCost(client)
-
-    if err != nil {
-        panic(err)
-    }
-
-    fmt.Println("The account balance query cost is:", cost.String())
-
-    //Check the new account's balance
-    newAccountBalancequery := hedera.NewAccountBalanceQuery().
-        SetAccountID(newAccountId)
-
-    //Sign with client operator private key and submit the query to a Hedera network
-    newAccountBalance, err := newAccountBalancequery.Execute(client)
-    if err != nil {
-        panic(err)
-    }
-
-    //Print the balance of tinybars
-    fmt.Println("The hbar account balance for this account is", newAccountBalance.Hbars.AsTinybar())
 }
 ```
 
@@ -534,12 +374,8 @@ func main() {
 
 #### Sample output:
 
-```
-The new account ID is: 0.0.4065563
-The new account balance is: 1000 tinybars.
+```bash
 The transfer transaction from my account to the new account was: SUCCESS
-The cost of query is: 0 tℏ
-The account balance after the transfer is: 2000 tinybars.
 ```
 
 {% hint style="info" %}

@@ -9,11 +9,11 @@ Please visit the Hedera status page for the latest versions supported on each ne
 ## v0.37
 
 {% hint style="info" %}
-**MAINNET UPDATE: MAY 17, 2023**&#x20;
+**MAINNET UPDATE: MAY 17, 2023**
 {% endhint %}
 
 {% hint style="success" %}
-**TESTNET UPDATE: APRIL 24, 2023**&#x20;
+**TESTNET UPDATE: APRIL 24, 2023**
 {% endhint %}
 
 ### Features
@@ -34,15 +34,15 @@ Please visit the Hedera status page for the latest versions supported on each ne
 ## [v0.36](https://github.com/hashgraph/hedera-services/releases/tag/v0.36.0)
 
 {% hint style="info" %}
-**MAINNET UPDATE: APRIL 20, 2023**&#x20;
+**MAINNET UPDATE: APRIL 20, 2023**
 {% endhint %}
 
 {% hint style="success" %}
-**TESTNET UPDATE: APRIL 13, 2023**&#x20;
+**TESTNET UPDATE: APRIL 13, 2023**
 {% endhint %}
 
 {% hint style="success" %}
-**TESTNET UPDATE: APRIL 4, 2023**&#x20;
+**TESTNET UPDATE: APRIL 4, 2023**
 {% endhint %}
 
 ### Features
@@ -81,11 +81,11 @@ Changes from services v0.35.2 have also been ported to v0.36.0.
 ## [v0.35](https://github.com/hashgraph/hedera-services/releases)
 
 {% hint style="success" %}
-**MAINNET UPDATE: MARCH 31, 2023**&#x20;
+**MAINNET UPDATE: MARCH 31, 2023**
 {% endhint %}
 
 {% hint style="success" %}
-**TESTNET UPDATE: MARCH 16, 2023**&#x20;
+**TESTNET UPDATE: MARCH 16, 2023**
 {% endhint %}
 
 ### [0.35.2 Hedera Smart Contract Service Security Model Changes](https://github.com/hashgraph/hedera-services/releases/tag/v0.35.2)
@@ -169,7 +169,7 @@ Services v0.33.0 adds the following features:
 * 'accounts send' subcommand added to yahcli to support sending HTS token units
 * Developer documentation updates
 
-<figure><img src="../../.gitbook/assets/Performance Measurement Results_033.001 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Performance Measurement Results_033.001.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.31](https://github.com/hashgraph/hedera-services/releases/tag/v0.31.0)
 
@@ -495,7 +495,7 @@ Please also note the following deprecations in the Hedera API protobufs:
 * The [<mark style="color:purple;">`ContractUpdateTransactionBody.fileID`</mark> <mark style="color:purple;">field</mark>](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L82), which is redundant given the existence of the [<mark style="color:purple;">`ContractGetBytecode`</mark> <mark style="color:purple;">quer</mark>y](https://github.com/hashgraph/hedera-protobufs/blob/main/services/smart\_contract\_service.proto#L63).
 * The [<mark style="color:purple;">`ContractCallLocalQuery.maxResultSize`</mark> <mark style="color:purple;">field</mark>](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_call\_local.proto#L136), as this limit is now simply a side-effect of the given gas limit.
 
-![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).jpeg>)
+![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).jpeg>)
 
 ## [v0.19.4](https://github.com/hashgraph/hedera-services/releases/tag/v0.19.4)
 

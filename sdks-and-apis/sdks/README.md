@@ -2,13 +2,13 @@
 description: Hedera supported and community-maintained SDKs
 cover: >-
   ../../.gitbook/assets/Hero-Desktop-Tooling_2022-12-07-021130_ayix (1) (1)
-  (2).webp
+  (1).webp
 coverY: -154.63917525773195
 ---
 
 # SDKs
 
-For friendly, language-specific access to the Hedera API and its network services, there are several options.&#x20;
+For friendly, language-specific access to the Hedera API and its network services, there are several options.
 
 ## Hedera Services Code SDKs
 

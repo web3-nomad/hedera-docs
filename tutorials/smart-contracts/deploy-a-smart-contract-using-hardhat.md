@@ -1,8 +1,8 @@
 # Deploy a Smart Contract Using Hardhat
 
-In this tutorial, you'll be guided through setting up a Hardhat project and deploying a Hedera smart contract to the **Hedera Testnet** using the **Hashio** JSON-RPC instance.&#x20;
+In this tutorial, you'll be guided through setting up a Hardhat project and deploying a Hedera smart contract to the **Hedera Testnet** using the **Hashio** JSON-RPC instance.
 
-**Hardhat** is a development environment for Ethereum smart contracts. It consists of different components for editing, compiling, debugging, and deploying your smart contracts and dApps, all working together to create a complete development environment. By the end of this tutorial, you'll have learned how to deploy smart contracts using Hardhat on the Hedera Testnet**.**
+**Hardhat** is a development environment for Ethereum smart contracts. It consists of different components for editing, compiling, debugging, and deploying your smart contracts and dApps, all working together to create a complete development environment. By the end of this tutorial, you'll have learned how to deploy smart contracts using Hardhat on the Hedera Testnet\*\*.\*\*
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="deploy-a-smart-contract-using-hardhat.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#hardhat-project-setup"><strong>HARDHAT SETUP</strong></a></td><td><a href="deploy-a-smart-contract-using-hardhat.md#hardhat-project-setup">#hardhat-project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#project-contents"><strong>PROJECT CONTENTS</strong></a></td><td><a href="deploy-a-smart-contract-using-hardhat.md#project-contents">#project-contents</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-a-smart-contract-using-hardhat.md#deploy-contract"><strong>DEPLOY CONTRACT</strong></a></td><td><a href="deploy-a-smart-contract-using-hardhat.md#test-and-deploy-contract">#test-and-deploy-contract</a></td></tr></tbody></table>
 
@@ -15,7 +15,7 @@ In this tutorial, you'll be guided through setting up a Hardhat project and depl
 
 ## Hardhat Project Setup
 
-To make the setup process simple, you'll use a pre-configured Hardhat project from the `hedera-hardhat-example-project` [repository](https://github.com/hashgraph/hedera-hardhat-example-project).&#x20;
+To make the setup process simple, you'll use a pre-configured Hardhat project from the `hedera-hardhat-example-project` [repository](https://github.com/hashgraph/hedera-hardhat-example-project).
 
 Open a terminal window and navigate to your preferred directory where your Hardhat project will live. Run the following command to clone the repo and install dependencies to your local machine:
 
@@ -31,13 +31,13 @@ The `dotenv` package is used to manage environment variables in a separate `.env
 
 In this step, you will update and configure the Hardhat configuration file that defines tasks, stores Hedera account private key information, and Hashio Testnet RPC URL. First, rename the `.env.example` file to `.env`. and update the `.env` and `hardhat.config.js` files with the following code.
 
-But first, in order to deploy the contract to the _Hedera Testnet_, you will need to get a testnet account and key. To get a testnet account, create an _ECDSA_ account using the [**Hedera Developer Portal**](https://portal.hedera.com/). Once you have your ECDSA account and HEX encoded private key, add the private key to the `TESTNET_OPERATOR_PRIVATE_KEY` variable in the `.env` file.&#x20;
+But first, in order to deploy the contract to the _Hedera Testnet_, you will need to get a testnet account and key. To get a testnet account, create an _ECDSA_ account using the [**Hedera Developer Portal**](https://portal.hedera.com/). Once you have your ECDSA account and HEX encoded private key, add the private key to the `TESTNET_OPERATOR_PRIVATE_KEY` variable in the `.env` file.
 
 <details>
 
 <summary>Create your testnet account 🛠️</summary>
 
-### Create Hedera Portal Profile (Faucet)
+#### Create Hedera Portal Profile (Faucet)
 
 The _Hedera Testnet_ account allows you to interact with our [APIs](../../sdks-and-apis/) and pay for the transaction fees. Visit the [Hedera portal](https://portal.hedera.com/register) to create your _Hedera Testnet_ account and follow the instructions.
 
@@ -45,7 +45,7 @@ The _Hedera Testnet_ account allows you to interact with our [APIs](../../sdks-a
 
 Once you have completed the instructions, you will receive a _Hedera Testnet_ **account ID** (0.0.x) and your **private/public key pair** on your testnet page. You will need to copy over your ECDSA _**HEX Encoded private key**_ and paste it in the `TESTNET_OPERATOR_PRIVATE_KEY` .env file variable.
 
-![](<../../.gitbook/assets/new portal 2 (1).png>)
+<img src="../../.gitbook/assets/new portal 2 (1).png" alt="" data-size="original">
 
 _**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR** upon creation that can only be utilized on the Hedera test network. Your balance will be topped up daily to 10,000 test **HBAR** when you use your funds._
 
@@ -53,7 +53,7 @@ _**Note:** Your Hedera Testnet account will be credited with 10,000 test **HBAR*
 
 #### Environment Variables
 
-The `.env` file defines environment variables used in the Hardhat configuration file. The `TESTNET_OPERATOR_PRIVATE_KEY` variable contains the _ECDSA_ _**Hex Encoded Private Key**_ for the Hedera Testnet account used in the `testnet` network Hardhat configuration.&#x20;
+The `.env` file defines environment variables used in the Hardhat configuration file. The `TESTNET_OPERATOR_PRIVATE_KEY` variable contains the _ECDSA_ _**Hex Encoded Private Key**_ for the Hedera Testnet account used in the `testnet` network Hardhat configuration.
 
 The `TESTNET_ENDPOINT` variable contains the [HashIO](https://swirldslabs.com/hashio/) Testnet endpoint URL. This is the JSON-RPC instance that will submit the transactions to the Hedera test network to test, create and deploy your smart contract.
 
@@ -66,7 +66,7 @@ TESTNET_ENDPOINT='https://testnet.hashio.io/api'
 
 #### Hardhat Configuration
 
-The `hardhat.config.js` file defines tasks for Hardhat, including `show-balance`, `transfer-hbars`, `deploy-contract`, `contract-view-call`, and `contract-call`. It exports a configuration object that includes the Solidity version and settings, default network, and network settings for the `testnet` network.&#x20;
+The `hardhat.config.js` file defines tasks for Hardhat, including `show-balance`, `transfer-hbars`, `deploy-contract`, `contract-view-call`, and `contract-call`. It exports a configuration object that includes the Solidity version and settings, default network, and network settings for the `testnet` network.
 
 The `url` property is set to the `TESTNET_ENDPOINT` environment variable, and `accounts` to an array containing the testnet private key imported from the `.env` file.
 
@@ -174,12 +174,11 @@ contract Greeter {
 
 The `scripts/` folder contains the automation scripts for the test file. This project contains 4 scripts.
 
-The `scripts/` folder contains test scripts for locally testing a smart contract before deploying it. Please read the comments to help you understand the code and its purpose:&#x20;
+The `scripts/` folder contains test scripts for locally testing a smart contract before deploying it. Please read the comments to help you understand the code and its purpose:
 
 {% tabs %}
 {% tab title="contractCall.js" %}
-Calls the `setGreeting` function from the Greeter contract and sets the greeter message to "Greeter."\
-
+Calls the `setGreeting` function from the Greeter contract and sets the greeter message to "Greeter."\\
 
 ```javascript
 const { ethers } = require('hardhat');
@@ -208,8 +207,7 @@ module.exports = async (address, msg) => {
 {% endtab %}
 
 {% tab title="contractViewCall.js" %}
-Returns the current greeter message value stored with the Greeter contract.\
-
+Returns the current greeter message value stored with the Greeter contract.\\
 
 ```javascript
 const { ethers } = require("hardhat");
@@ -234,8 +232,7 @@ module.exports = async (address) => {
 {% endtab %}
 
 {% tab title="deployContract.js" %}
-Deploys the Greeter contract and returns the contract public address. \
-
+Deploys the Greeter contract and returns the contract public address. \\
 
 ```javascript
 const { ethers } = require("hardhat");
@@ -263,8 +260,7 @@ module.exports = async () => {
 {% endtab %}
 
 {% tab title="showBalance.js" %}
-Returns the balance of the specified wallet address (account) in tinybars. Tinybars are the unit in which Hedera accounts hold HBAR balances.\
-
+Returns the balance of the specified wallet address (account) in tinybars. Tinybars are the unit in which Hedera accounts hold HBAR balances.\\
 
 ```javascript
 const { ethers } = require("hardhat");
@@ -334,9 +330,9 @@ The Hardhat project configuration file. This file includes information about the
 
 ## Test and Deploy
 
-Now that you have your project set up and configured, let's deploy the `Greeter.sol` smart contract to the Hedera Testnet using [Hash](https://swirldslabs.com/hashio/)[io](https://swirldslabs.com/hashio/). Hashio is an instance of the [Hedera JSON-RPC relay](../../core-concepts/smart-contracts/json-rpc-relay.md) hosted by [Swirlds Labs](https://swirldslabs.com/) and provides convenient access to the Hedera network for transactions and data querying. You can use any JSON-RPC instance supported by the community.&#x20;
+Now that you have your project set up and configured, let's deploy the `Greeter.sol` smart contract to the Hedera Testnet using [Hash](https://swirldslabs.com/hashio/)[io](https://swirldslabs.com/hashio/). Hashio is an instance of the [Hedera JSON-RPC relay](../../core-concepts/smart-contracts/json-rpc-relay.md) hosted by [Swirlds Labs](https://swirldslabs.com/) and provides convenient access to the Hedera network for transactions and data querying. You can use any JSON-RPC instance supported by the community.
 
-Run the following command in your terminal to run the `hedera-hardhat-example-project/test/rpc.js` test file on the Hedera testnet.&#x20;
+Run the following command in your terminal to run the `hedera-hardhat-example-project/test/rpc.js` test file on the Hedera testnet.
 
 ```bash
 npx hardhat test
@@ -382,14 +378,14 @@ Greeter deployed to: 0x157B93c04a294AbD88cF608672059814b3ea38aE
 
 </details>
 
-#### _Congrats! You've successfully deployed your contract to the Hedera Testnet._&#x20;
+#### _Congrats! You've successfully deployed your contract to the Hedera Testnet._
 
 You can view the contract you deployed by searching the smart contract _public_ address in a supported [Hedera Network Explorer](../../networks/community-mirror-nodes.md). For this example, we will use the [HashScan](https://hashscan.io/mainnet/dashboard) Network Explorer. Copy and paste your deployed `Greeter.sol` public contract address into the HashScan search bar.
 
 The Network Explorer will return the information about the contract created and deployed to the Hedera Testnet. The "EVM Address" field is the public address of the contract that was returned to you in your terminal. The terminal returned the public address with the "0x" hex encoding appended to the public address. You will also notice a contract ID in `0.0.contractNumber` (`0.0.3478001`) format. This is the _contract ID_ used to reference the contract entity in the Hedera Network.
 
-> _**Note:** At the top of the explorer page, remember to switch the network to **TESTNET** before you search for the contract._&#x20;
+> _**Note:** At the top of the explorer page, remember to switch the network to **TESTNET** before you search for the contract._
 
-<figure><img src="../../.gitbook/assets/new hashscan (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/new hashscan (1).png" alt=""><figcaption></figcaption></figure>
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/SimiHunjan">Simi</a>, Sr. Software Manager</td><td><a href="https://twitter.com/SimiHunjan">https://twitter.com/SimiHunjan</a></td></tr></tbody></table>

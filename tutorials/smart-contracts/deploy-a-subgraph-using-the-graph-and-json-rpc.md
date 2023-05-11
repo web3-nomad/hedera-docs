@@ -1,12 +1,12 @@
 # Deploy a Subgraph Using The Graph and JSON-RPC
 
-In this tutorial,  you'll learn how to create and deploy a subgraph using The Graph protocol. By indexing specific network data using user-defined data structures called "subgraphs," developers can easily query the indexed data through a GraphQL API, creating robust backends for dApps. Subgraphs simplify the process of obtaining blockchain/network data for developers building dApps. This approach removes the complexities of interacting directly with the network, allowing developers to focus on building. Although Hedera supports subgraphs, its hosted service is currently unavailable, so we'll need to set up and run a local graph node to deploy our subgraph.&#x20;
+In this tutorial, you'll learn how to create and deploy a subgraph using The Graph protocol. By indexing specific network data using user-defined data structures called "subgraphs," developers can easily query the indexed data through a GraphQL API, creating robust backends for dApps. Subgraphs simplify the process of obtaining blockchain/network data for developers building dApps. This approach removes the complexities of interacting directly with the network, allowing developers to focus on building. Although Hedera supports subgraphs, its hosted service is currently unavailable, so we'll need to set up and run a local graph node to deploy our subgraph.
 
 By the end of this tutorial, you'll be able to configure a mirror node, query data from your subgraph using the GraphQL API, and integrate it into your dApp. You'll also have a better understanding of how to define custom data schemas, indexing rules, and queries for your subgraph, allowing you to tailor it to your specific use case.
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#prerequisites"><mark style="color:blue;"><strong>PREREQUISITES</strong></mark></a></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#subgraph-project-setup"><mark style="color:blue;"><strong>SUBGRAPH SETUP</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#subgraph-project-setup">#subgraph-project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#project-contents-and-configuration"><mark style="color:blue;"><strong>PROJECT CONTENTS</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#project-contents-and-configuration">#project-contents-and-configuration</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#deploy-subgraph"><mark style="color:blue;"><strong>DEPLOY SUBGRAPH</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#deploy-subgraph">#deploy-subgraph</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="https://github.com/hashgraph/hedera-subgraph-example"><mark style="color:blue;"><strong>PROJECT REPO</strong></mark></a></td><td><a href="https://github.com/hashgraph/hedera-subgraph-example">https://github.com/hashgraph/hedera-subgraph-example</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example"><mark style="color:blue;"><strong>SUBGRAPH EXAMPLE</strong></mark></a></td><td><a href="https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example">https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#prerequisites"><mark style="color:blue;"><strong>PREREQUISITES</strong></mark></a></td><td><a href="broken-reference/">broken-reference</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#subgraph-project-setup"><mark style="color:blue;"><strong>SUBGRAPH SETUP</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#subgraph-project-setup">#subgraph-project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#project-contents-and-configuration"><mark style="color:blue;"><strong>PROJECT CONTENTS</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#project-contents-and-configuration">#project-contents-and-configuration</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#deploy-subgraph"><mark style="color:blue;"><strong>DEPLOY SUBGRAPH</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#deploy-subgraph">#deploy-subgraph</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="https://github.com/hashgraph/hedera-subgraph-example"><mark style="color:blue;"><strong>PROJECT REPO</strong></mark></a></td><td><a href="https://github.com/hashgraph/hedera-subgraph-example">https://github.com/hashgraph/hedera-subgraph-example</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example"><mark style="color:blue;"><strong>SUBGRAPH EXAMPLE</strong></mark></a></td><td><a href="https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example">https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example</a></td></tr></tbody></table>
 
-> _**NOTE:**  While it is possible to present and interact with HTS tokens in a similar manner as ERC-20/721 tokens, the network is presently unable to capture all the expected ERC-20/721 event logs. In other words, if ERC-like operations are conducted on HTS tokens, not all of them will be captured in smart contract event logging at this time._
+> _**NOTE:** While it is possible to present and interact with HTS tokens in a similar manner as ERC-20/721 tokens, the network is presently unable to capture all the expected ERC-20/721 event logs. In other words, if ERC-like operations are conducted on HTS tokens, not all of them will be captured in smart contract event logging at this time._
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ By the end of this tutorial, you'll be able to configure a mirror node, query da
 * Basic understanding of subgraphs and the [Graph CLI](deploy-a-subgraph-using-the-graph-and-json-rpc.md#graph-cli-installation) installed.
 * The deployed Greeter smart contract address from the [Hardhat tutorial](deploy-a-smart-contract-using-hardhat.md).
 * The [start block](deploy-a-subgraph-using-the-graph-and-json-rpc.md#find-start-block) number of when the Greeter smart contract was first deployed.
-* [Docker](https://www.docker.com/) `>= v20.10.x` installed and open on your machine. Run `docker -v` in your terminal to check the version you have installed.&#x20;
+* [Docker](https://www.docker.com/) `>= v20.10.x` installed and open on your machine. Run `docker -v` in your terminal to check the version you have installed.
 
 <details>
 
@@ -24,7 +24,7 @@ By the end of this tutorial, you'll be able to configure a mirror node, query da
 2. Enter your public contract address or contract ID in the search bar.
 3. Click on the `Create Transaction` ID ([0.0.902@1676712828.922009885](https://hashscan.io/testnet/transaction/1676712839.177574708?tid=0.0.902-1676712828-922009885)).
 
-![](<../../.gitbook/assets/explorer new 2.png>)
+<img src="../../.gitbook/assets/explorer new 2.png" alt="" data-size="original">
 
 _**Note:** When searching for contract addresses, there are two types with different formats - the **public** smart contract address (0x....) or **contract ID** (0.0.12345)._
 
@@ -92,7 +92,7 @@ In the `testnet.json` file, under the `config` folder, replace the `startBlock` 
 
 ## Project Contents and Configuration
 
-In this step, you will use the `Greeter` contract from the [Hardhat tutorial](deploy-a-smart-contract-using-hardhat.md) as an example subgraph, to configure four main project files: the subgraph manifest, GraphQL schema, event mappings, and Docker compose configuration. The manifest specifies which events the subgraph will listen for, while mappings map each event emitted by the smart contract into entities that can be indexed.&#x20;
+In this step, you will use the `Greeter` contract from the [Hardhat tutorial](deploy-a-smart-contract-using-hardhat.md) as an example subgraph, to configure four main project files: the subgraph manifest, GraphQL schema, event mappings, and Docker compose configuration. The manifest specifies which events the subgraph will listen for, while mappings map each event emitted by the smart contract into entities that can be indexed.
 
 #### Subgraph Manifest
 
@@ -131,7 +131,7 @@ The `eventHandlers` field specifies how each mapping connects to various event t
 
 #### GraphQL Schema
 
-The GraphQL schema (`schema.graphql`) defines the structure of the data you want to index in your subgraph. You will need to specify the entity properties that you want to index. For this example, the schema defines a GraphQL entity type called "Greeting" with two entity fields: `id` and `currentGreeting`.&#x20;
+The GraphQL schema (`schema.graphql`) defines the structure of the data you want to index in your subgraph. You will need to specify the entity properties that you want to index. For this example, the schema defines a GraphQL entity type called "Greeting" with two entity fields: `id` and `currentGreeting`.
 
 {% code title="schema.graphql" %}
 ```graphql
@@ -183,7 +183,7 @@ This is what the `ethereum` field should look like after you enter your API endp
 ethereum: 'testnet:https://testnet.hashio.io/api
 ```
 
-_**Note:** For more info on how to set up an indexer, check out_ T_he Graph_ [_docs_](https://thegraph.com/docs/en/) _and the_ [_official graph-node GitHub repository_](https://github.com/graphprotocol/graph-node)_. For a full subgraph project example, check out_ [_this_](https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example) _repo._
+_**Note:** For more info on how to set up an indexer, check out_ T\_he Graph\_ [_docs_](https://thegraph.com/docs/en/) _and the_ [_official graph-node GitHub repository_](https://github.com/graphprotocol/graph-node)_. For a full subgraph project example, check out_ [_this_](https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example) _repo._
 
 ## Deploy Subgraph
 
@@ -385,7 +385,7 @@ dataSources:
 
 <summary>docker-compose.yaml</summary>
 
-#### docker-compose.yaml
+**docker-compose.yaml**
 
 ```yaml
 version: '3'
@@ -438,11 +438,11 @@ services:
 
 </details>
 
-#### _Congratulations! You've successfully deployed a subgraph to your local graph node!_&#x20;
+#### _Congratulations! You've successfully deployed a subgraph to your local graph node!_
 
 Once the node finishes indexing, you can access the GraphQL API at: [http://localhost:8000/subgraphs/name/Greeter](http://localhost:8000/subgraphs/name/Greeter)
 
-Follow the steps below to execute the query and fetch the indexed data from the subgraph's entities:&#x20;
+Follow the steps below to execute the query and fetch the indexed data from the subgraph's entities:
 
 1. Enter the following GraphQL query into the left column of the playground _(see Step 1 in the screenshot below)_:
 
@@ -471,6 +471,6 @@ Follow the steps below to execute the query and fetch the indexed data from the 
 }
 ```
 
-<figure><img src="../../.gitbook/assets/graphql playground 4 (1).png" alt=""><figcaption><p>GraphQL Playground</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/graphql playground 4.png" alt=""><figcaption><p>GraphQL Playground</p></figcaption></figure>
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/SimiHunjan">Simi</a>, Sr. Software Manager</td><td><a href="https://twitter.com/SimiHunjan">https://twitter.com/SimiHunjan</a></td></tr></tbody></table>

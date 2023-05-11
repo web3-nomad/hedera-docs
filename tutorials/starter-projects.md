@@ -1,6 +1,6 @@
 ---
 cover: >-
-  ../.gitbook/assets/Hero-Desktop-Tooling_2022-12-07-021130_ayix (1) (1)
+  ../.gitbook/assets/Hero-Desktop-Tooling_2022-12-07-021130_ayix (1) (1) (2)
   (1).webp
 coverY: -69
 ---
@@ -21,7 +21,7 @@ coverY: -69
 {% endtab %}
 
 {% tab title="Go" %}
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Hyperledger Fabric</strong></td><td align="center">Maintainer: Hedera</td><td align="center"><a href="broken-reference"><strong>REFERENCE</strong></a></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Hyperledger Fabric</strong></td><td align="center">Maintainer: Hedera</td><td align="center"><a href="broken-reference/"><strong>REFERENCE</strong></a></td><td><a href="broken-reference/">broken-reference</a></td></tr></tbody></table>
 
 **More coming soon!**
 {% endtab %}

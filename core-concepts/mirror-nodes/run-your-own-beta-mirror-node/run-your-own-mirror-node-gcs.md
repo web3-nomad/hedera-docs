@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* A [Google Cloud Platform ](https://cloud.google.com/)account.&#x20;
+* A [Google Cloud Platform ](https://cloud.google.com/)account.
 * Basic understanding of Hedera Mirror Nodes.
 * [Docker](https://www.docker.com/) (`>= v20.10.x)` installed and opened on your machine. Run `docker -v` in your terminal to check the version you have installed.
 * [Java](https://www.java.com/en/) (openjdk@17: Java version 17), [Gradle](https://gradle.org/install/) (the latest version), and [PostgreSQL](https://www.postgresql.org/) (the latest version) are installed on your machine.
@@ -15,7 +15,7 @@ In this step, you will generate your Google Cloud Platform HMAC access keys. The
 * From the left navigation bar, select **Cloud Storage > Settings.**
 * Click the **Interoperability** tab and scroll down to the **User account HMAC** section.
 * If you don't already have a default project set, set it now.
-* Click **create keys** to generate access keys for your account.&#x20;
+* Click **create keys** to generate access keys for your account.
 
 <figure><img src="../../../.gitbook/assets/gcs mirror2.png" alt=""><figcaption></figcaption></figure>
 
@@ -74,7 +74,7 @@ docker compose up -d db && docker logs hedera-mirror-node-db-1 --follow
 
 ## 5. Access Your Hedera Mirror Node Data
 
-This step shows you how to access the data that your Hedera Mirror Node is collecting. The mirror node stores its data in a PostgreSQL database, and you're using Docker to connect to that database. To access the mirror node data, we'll have to enter the **`hedera-mirror-node-db-1`** container.&#x20;
+This step shows you how to access the data that your Hedera Mirror Node is collecting. The mirror node stores its data in a PostgreSQL database, and you're using Docker to connect to that database. To access the mirror node data, we'll have to enter the **`hedera-mirror-node-db-1`** container.
 
 * Open a new terminal and run the following command to view the list of containers:
 
@@ -100,7 +100,7 @@ psql "dbname=mirror_node host=localhost user=mirror_node password=mirror_node_pa
 \dt
 ```
 
-![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 * To exit the `psql` console, run the quit command:
 

@@ -1,8 +1,10 @@
 # Hedera Mirror Node
 
-The _Hedera Consensus Service (HCS)_ gRPC API is a public mirror node managed by Hedera. It offers the ability to subscribe to HCS topics and receive messages for the topic subscribed. API docs for the mirror nodes can be found here:
+The Hedera Consensus Service (HCS) gRPC API is a public mirror node managed by Hedera. It offers the ability to subscribe to HCS topics and receive messages for the topic subscribed.
 
 #### Mirror Node APIs&#x20;
+
+#### Mirror Node API docs:
 
 {% content-ref url="../../sdks-and-apis/rest-api.md" %}
 [rest-api.md](../../sdks-and-apis/rest-api.md)

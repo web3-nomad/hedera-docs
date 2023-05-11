@@ -8,7 +8,7 @@ Fungible tokens share a single set of properties and have interchangeable value 
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"> <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## 1. Create a Fungible Token
 

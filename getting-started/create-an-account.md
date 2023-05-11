@@ -6,7 +6,7 @@ In this section, you will learn how to make a simple Hedera account. Hedera acco
 
 ## Prerequisites:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## Step 1: Import modules
 
@@ -314,7 +314,7 @@ const {
 } = require("@hashgraph/sdk");
 require("dotenv").config();
 
-async function main() {
+async function transferHbar() {
   // Grab your Hedera testnet account ID and private key from your .env file
   const myAccountId = process.env.MY_ACCOUNT_ID;
   const myPrivateKey = process.env.MY_PRIVATE_KEY;
@@ -362,8 +362,8 @@ async function main() {
   return newAccountId;
 }
 
-// Call the async main function
-main();
+// Call the async transferHbar function
+transferHbar();
 
 ```
 {% endcode %}

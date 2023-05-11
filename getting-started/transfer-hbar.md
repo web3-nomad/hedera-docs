@@ -6,7 +6,9 @@ In this section, you will learn how to transfer **HBAR** from your account to an
 
 ## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center">➡ <a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr><tr><td align="center">➡ <a href="create-an-account.md"><mark style="color:purple;"><strong>CREATE AN ACCOUNT</strong></mark></a></td><td><a href="create-an-account.md">create-an-account.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr><tr><td align="center"><a href="create-an-account.md"><mark style="color:purple;"><strong>CREATE AN ACCOUNT</strong></mark></a></td><td><a href="create-an-account.md">create-an-account.md</a></td></tr></tbody></table>
+
+
 
 {% hint style="info" %}
 _**Note:** You can always check the "_[_Code Check ✅_](transfer-hbar.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
@@ -311,7 +313,7 @@ const {
 } = require("@hashgraph/sdk");
 require("dotenv").config();
 
-async function main() {
+async function transferHbar() {
   // Grab your Hedera testnet account ID and private key from your .env file
   const myAccountId = process.env.MY_ACCOUNT_ID;
   const myPrivateKey = process.env.MY_PRIVATE_KEY;
@@ -388,8 +390,8 @@ async function main() {
   );
 }
 
-// Call the async main function
-main();
+// Call the async transferHbar function
+transferHbar();
 ```
 {% endcode %}
 

@@ -6,7 +6,7 @@ In this section, you will create your new project directory, your _**`.env`**_ f
 
 ## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">➡ <mark style="color:purple;"><strong>INTRODUCTION</strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 _**Note:** You can always check the "_[_Code Check ✅_](environment-set-up.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._

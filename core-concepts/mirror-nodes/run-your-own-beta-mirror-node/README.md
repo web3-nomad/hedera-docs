@@ -18,39 +18,6 @@ In this tutorial, you will run your own Hedera Mirror Node. You will need to cre
 
 To run a Hedera Mirror Node, you'll need specific hardware and resources. The recommended minimum requirements for running a Mirror Node, along with the associated costs, are outlined below.&#x20;
 
-### Compute Engine
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><h3><mark style="background-color:yellow;">Compute Engine</mark></h3><ul><li><strong>Region:</strong> Iowa</li><li><strong>Provisioning Model:</strong> Regular</li><li><strong>Instance Type:</strong> n1-standard-4</li><li><strong>Operating System / Software:</strong> Free</li><li><strong>Total hours per month:</strong> 1,460</li><li><strong>Sustained Use Discount:</strong> Applied (30%)</li></ul></td><td>The estimated cost for the compute engine per month is <strong>USD 194.18</strong>.</td><td></td><td></td></tr><tr><td><h3><mark style="background-color:yellow;">Cloud SQL for PostgreSQL</mark></h3><ul><li><strong>Instance Type:</strong> db-highmem-4</li><li><strong>Location:</strong> Iowa</li><li><strong>Number of Instances:</strong> 1</li><li><strong>Total hours per month:</strong> 730.0</li><li><strong>SSD Storage:</strong> 200.0 GiB</li><li><strong>Backup:</strong> 200.0 GiB</li></ul></td><td>The estimated cost for Cloud SQL for PostgreSQL per month is <strong>USD 303.46</strong>.</td><td></td><td></td></tr><tr><td><h3><mark style="background-color:yellow;">Persistent Disk (Accompanying)</mark></h3><ul><li><strong>Product accompanying:</strong> GKE Standard</li><li><strong>Zonal SSD PD:</strong> 50 GiB (2 x boot disk)</li></ul></td><td><p>The estimated cost for the persistent disk per month is <strong>USD 17.00</strong>.</p><p></p><p>Based on these specifications, the total estimated cost to run a Hedera Mirror Node per month is <strong>USD 514.64</strong>.</p></td><td></td><td></td></tr></tbody></table>
 
-* **Region:** Iowa
-* **Provisioning Model:** Regular
-* **Instance Type:** n1-standard-4
-* **Operating System / Software:** Free
-* **Total hours per month:** 1,460
-* **Sustained Use Discount:** Applied (30%)
-
-The estimated cost for the compute engine per month is **USD 194.18**.
-
-### Cloud SQL for PostgreSQL
-
-* **Instance Type:** db-highmem-4
-* **Location:** Iowa
-* **Number of Instances:** 1
-* **Total hours per month:** 730.0
-* **SSD Storage:** 200.0 GiB
-* **Backup:** 200.0 GiB
-
-The estimated cost for Cloud SQL for PostgreSQL per month is **USD 303.46**.
-
-### Persistent Disk (Accompanying)
-
-* **Product accompanying:** GKE Standard
-* **Zonal SSD PD:** 50 GiB (2 x boot disk)
-
-The estimated cost for the persistent disk per month is **USD 17.00**.
-
-Based on these specifications, the total estimated cost to run a Hedera Mirror Node per month is **USD 514.64**.
-
-{% hint style="info" %}
-**Please note:** these are estimated costs and actual costs may vary depending on usage and any changes to the pricing of the resources used. Always refer to the most recent price lists from the respective services for accurate costs.
-{% endhint %}
-
-Lastly, this setup offers a good balance between cost and performance but you may need to adjust these specifications based on the specific needs and workload of your Mirror Node.
+**Please note:** these are estimated costs and actual costs will vary depending on usage and any changes to the pricing of the resources used. Always refer to the most recent price lists from the respective services for accurate costs.

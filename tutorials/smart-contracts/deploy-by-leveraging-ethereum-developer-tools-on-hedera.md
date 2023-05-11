@@ -125,10 +125,12 @@ Import your newly created ECDSA-based Hedera account into Metamask using your pr
 
 </div>
 
-You’ve successfully connected your Hedera account to Metamask! You may now receive and send HBAR on testnet through Metamask!
+## Summary
 
-The release of the JSON-RPC Relay to developers is bringing greater usability to the developer community by enabling the support of common Ethereum developer tooling while building on Hedera.
+Congratulations! 🎉 You’ve successfully connected your Hedera account to MetaMask! You may now send and receive HBAR on the Hedera Testnet via MetaMask!
 
-Happy Building!
+The release of the JSON-RPC Relay to developers brings greater usability to the developer community by supporting common Ethereum developer tooling while building on Hedera.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/ridley___">Abi Castro</a>, DevRel Engineer</td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>
+Happy Building! Feel free to reach out if you have any questions:
+
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Abi, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://www.linkedin.com/in/a-ridley/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/a-ridley/">https://www.linkedin.com/in/a-ridley/</a></td></tr><tr><td align="center"><p>Editor: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>

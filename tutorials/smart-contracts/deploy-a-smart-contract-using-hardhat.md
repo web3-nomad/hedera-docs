@@ -378,14 +378,14 @@ Greeter deployed to: 0x157B93c04a294AbD88cF608672059814b3ea38aE
 
 </details>
 
-#### _Congrats! You've successfully deployed your contract to the Hedera Testnet._
-
-You can view the contract you deployed by searching the smart contract _public_ address in a supported [Hedera Network Explorer](../../networks/community-mirror-nodes.md). For this example, we will use the [HashScan](https://hashscan.io/mainnet/dashboard) Network Explorer. Copy and paste your deployed `Greeter.sol` public contract address into the HashScan search bar.
+You've successfully deployed your contract to the Hedera Testnet! You can view the contract you deployed by searching the smart contract _public_ address in a supported [Hedera Network Explorer](../../networks/community-mirror-nodes.md). For this example, we will use the [HashScan](https://hashscan.io/mainnet/dashboard) Network Explorer. Copy and paste your deployed `Greeter.sol` public contract address into the HashScan search bar.
 
 The Network Explorer will return the information about the contract created and deployed to the Hedera Testnet. The "EVM Address" field is the public address of the contract that was returned to you in your terminal. The terminal returned the public address with the "0x" hex encoding appended to the public address. You will also notice a contract ID in `0.0.contractNumber` (`0.0.3478001`) format. This is the _contract ID_ used to reference the contract entity in the Hedera Network.
 
 > _**Note:** At the top of the explorer page, remember to switch the network to **TESTNET** before you search for the contract._
 
-<figure><img src="../../.gitbook/assets/new hashscan (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/new hashscan (2).png" alt=""><figcaption><p>Hashscan transaction</p></figcaption></figure>
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/SimiHunjan">Simi</a>, Sr. Software Manager</td><td><a href="https://twitter.com/SimiHunjan">https://twitter.com/SimiHunjan</a></td></tr></tbody></table>
+#### **Congratulations! 🎉 You have successfully learned how to deploy a smart contract using Hardhat.** Feel free to reach out if you have any questions:
+
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center"><p>Editor: Simi, Sr. Software Manager</p><p><a href="https://github.com/SimiHunjan">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/shunjan/">https://www.linkedin.com/in/shunjan/</a></td></tr></tbody></table>

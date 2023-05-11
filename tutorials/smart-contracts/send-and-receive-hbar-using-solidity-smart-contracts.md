@@ -469,8 +469,10 @@ If you run the entire example successfully, your console should look something l
 
 <figure><img src="https://images.hedera.com/2022-How-to-Send-and-Receive-HBAR-Using-Smart-Contracts-2-Image-1_2022-08-19-160324_onge.png?w=1395&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1676318312&#x26;s=5df20c93e5b39a04550b023da6acb3ee" alt=""><figcaption></figcaption></figure>
 
-Now you know how to send HBAR to and from a contract on Hedera using both the SDK and Solidity!
+Congratulations! 🎉 Now you know how to send HBAR to and from a contract on Hedera using both the SDK and Solidity!
 
 This tutorial used the Hedera JavaScript SDK. However, you can try this with the other officially supported [SDKs](../../sdks-and-apis/sdks/) for Java and Go.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/ed__marquez">Ed Marquez</a>, DevRel Engineer</td><td><a href="https://twitter.com/ed__marquez">https://twitter.com/ed__marquez</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>
+Feel free to reach out if you have any questions:
+
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Ed, DevRel Engineer</p><p><a href="https://github.com/ed-marquez">GitHub</a> | <a href="https://www.linkedin.com/in/ed-marquez/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/ed-marquez/">https://www.linkedin.com/in/ed-marquez/</a></td></tr><tr><td align="center"><p>Editor: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>

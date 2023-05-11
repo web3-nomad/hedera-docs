@@ -14,7 +14,7 @@ _Smart contract entity auto renewal and expiry will be enabled in a future relea
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"> <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## 1. Create Your "HTS" Smart Contract
 
@@ -724,10 +724,10 @@ fmt.Printf("The account token balance %v\n", transferAccountBalance.Tokens)
 _**Note:** Check out our_ [_smart contract mirror node rest APIs_](../../sdks-and-apis/rest-api.md#smart-contracts) _that return information about a contract like contract results and logs!_
 {% endhint %}
 
-#### Congratulations :tada:! You have completed the following:
+#### Congratulations :tada:! You have learned how to deploy a contract using the Hedera Token Service and completed the following:
 
 * Created a smart contract that calls HTS transactions
-* Associated a HTS token by using the deployed contract
+* Associated an HTS token by using the deployed contract
 * Requested a transaction record for a nested transaction
 * Transferred tokens using the deployed contract
 
@@ -1389,8 +1389,10 @@ func main() {
 
 </details>
 
+Happy Building! Feel free to reach out if you have any questions:
+
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
 {% endhint %}
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/SimiHunjan">Simi</a>, Sr Software Manager</td><td></td><td></td><td><a href="https://twitter.com/SimiHunjan">https://twitter.com/SimiHunjan</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td></td><td></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Simi, Sr. Software Manager </p><p><a href="https://github.com/ed-marquez">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan">LinkedIn</a></p></td><td></td><td></td><td><a href="https://www.linkedin.com/in/shunjan">https://www.linkedin.com/in/shunjan </a></td></tr><tr><td align="center"><p>Editor: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td></td><td></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>

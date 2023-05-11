@@ -438,7 +438,7 @@ services:
 
 </details>
 
-#### _Congratulations! You've successfully deployed a subgraph to your local graph node!_
+#### _Congratulations! You've successfully deployed a subgraph to your local graph node!_&#x20;
 
 Once the node finishes indexing, you can access the GraphQL API at: [http://localhost:8000/subgraphs/name/Greeter](http://localhost:8000/subgraphs/name/Greeter)
 
@@ -473,4 +473,6 @@ Follow the steps below to execute the query and fetch the indexed data from the 
 
 <figure><img src="../../.gitbook/assets/graphql playground 4.png" alt=""><figcaption><p>GraphQL Playground</p></figcaption></figure>
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/SimiHunjan">Simi</a>, Sr. Software Manager</td><td><a href="https://twitter.com/SimiHunjan">https://twitter.com/SimiHunjan</a></td></tr></tbody></table>
+#### **Congratulations! 🎉 You have successfully learned how to deploy a Subgraph using The Graph Protocol and JSON-RPC.** Feel free to reach out if you have any questions:
+
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center"><p>Editor: Simi, Sr. Software Manager</p><p><a href="https://github.com/SimiHunjan">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/shunjan/">https://www.linkedin.com/in/shunjan/</a></td></tr></tbody></table>

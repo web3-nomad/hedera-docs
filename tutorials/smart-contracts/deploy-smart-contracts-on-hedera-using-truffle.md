@@ -174,6 +174,10 @@ You can obtain more information about the newly deployed contract using the [mir
 
 </details>
 
-Now you know how to deploy smart contracts on Hedera using Truffle and the JSON RPC Relay. The first part of this example used the Hedera [JavaScript SDK](../../sdks-and-apis/sdks/#hedera-services-code-sdks). However, you can try this with the other officially supported SDKs for Java and Go.
+Now you know how to deploy smart contracts on Hedera using Truffle and the JSON RPC Relay. The first part of this example used the Hedera [JavaScript SDK](../../sdks-and-apis/sdks/#hedera-services-code-sdks). However, you can try this with the other officially supported SDKs for Java and Go.&#x20;
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/ed__marquez">Ed Marquez</a>, DevRel Engineer</td><td><a href="https://twitter.com/ed__marquez">https://twitter.com/ed__marquez</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>
+Feel free to reach out if you have any questions:
+
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Ed, DevRel Engineer</p><p><a href="https://github.com/ed-marquez">GitHub</a> | <a href="https://www.linkedin.com/in/ed-marquez/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/ed-marquez/">https://www.linkedin.com/in/ed-marquez/</a></td></tr><tr><td align="center"><p>Editor: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr></tbody></table>
+
+a

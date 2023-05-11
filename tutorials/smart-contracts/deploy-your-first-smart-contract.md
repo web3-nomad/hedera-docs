@@ -10,7 +10,7 @@ We recommend you complete the following introduction to get a basic understandin
 
 We recommend you complete the following introduction to get a basic understanding of Hedera transactions. This example does not build upon the previous examples.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
 ## 1. Create a "Hello Hedera" Smart Contract
 
@@ -619,14 +619,12 @@ fmt.Printf("The updated contract message: ", getMessage2)
 * Created a simple smart contract on Hedera
 * Interacted with contract functions
 
-**Want to see more examples? Check out the following SDKs:**
-
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java"><strong>Java</strong></a></td><td></td><td></td><td><a href="https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java">https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java</a></td></tr><tr><td align="center"><a href="https://github.com/hashgraph/hedera-sdk-js/tree/main/examples"><strong>JavaScript</strong></a></td><td></td><td></td><td><a href="https://github.com/hashgraph/hedera-sdk-js/tree/main/examples">https://github.com/hashgraph/hedera-sdk-js/tree/main/examples</a></td></tr><tr><td align="center"><a href="https://github.com/hashgraph/hedera-sdk-go/tree/main/examples"><strong>Go</strong></a></td><td></td><td></td><td><a href="https://github.com/hashgraph/hedera-sdk-go/tree/main/examples">https://github.com/hashgraph/hedera-sdk-go/tree/main/examples</a></td></tr></tbody></table>
-
 {% embed url="https://www.youtube.com/watch?amp%3Bt=24s&v=L9Tm6yn_ayY" %}
+Video tutorial
+{% endembed %}
 
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
 {% endhint %}
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writer: <a href="https://twitter.com/SimiHunjan">Simi</a>, Sr. Software Manager</td><td></td><td></td><td><a href="https://twitter.com/SimiHunjan">https://twitter.com/SimiHunjan</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Simi, Sr. Software Manager </p><p><a href="https://github.com/ed-marquez">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan">LinkedIn</a></p></td><td></td><td></td><td><a href="https://www.linkedin.com/in/shunjan">https://www.linkedin.com/in/shunjan</a></td></tr></tbody></table>

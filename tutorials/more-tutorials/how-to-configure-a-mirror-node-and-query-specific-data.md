@@ -2,7 +2,7 @@
 
 Hedera Mirror Node is a useful tool that lets developers and users access past transaction data on the Hedera network. You can view and analyze network data such as transactions, transfers, balances, and events from the past in a reliable, scalable, and efficient way. The best feature is the capability to configure your mirror node to query only data that meet your tailored specifications.
 
-This guide provides step-by-step instructions on how to configure and use a Hedera Mirror Node to access past transaction data on the Hedera network. You will learn how to configure your mirror node to store only the latest 90 days of data or data for a specific entity (account, smart contract, etc) and how to use basic SQL queries to analyze the data.&#x20;
+This guide provides step-by-step instructions on how to configure and use a Hedera Mirror Node to access past transaction data on the Hedera network. You will learn how to configure your mirror node to store only the latest 90 days of data or data for a specific entity (account, smart contract, etc) and how to use basic SQL queries to analyze the data.
 
 <table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#set-up-mirror-node"><strong>NODE SETUP</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#set-up-mirror-node">#set-up-mirror-node</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#configure-mirror-node"><strong>CONFIGURE NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#configure-mirror-node">#configure-mirror-node</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#start-mirror-node"><strong>START NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#start-mirror-node">#start-mirror-node</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#query-mirror-node"><strong>QUERY NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#query-mirror-node">#query-mirror-node</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="https://github.com/hashgraph/hedera-mirror-node"><strong>MIRROR NODE REPO</strong></a></td><td><a href="https://github.com/hashgraph/hedera-mirror-node">https://github.com/hashgraph/hedera-mirror-node</a></td></tr></tbody></table>
 
@@ -30,7 +30,7 @@ cd hedera-mirror-node
 
 In this example, we will configure the mirror node to store the last 90 days of data or data for a specific account ID (entity). To achieve this, we will need to create and modify an `application.yml` file. This file contains configuration settings for the mirror node, such as which data to store and how long to store it.
 
-First, create a new configuration folder and file inside the `hedera-mirror-importer` directory. The Mirror Node importer directory contains the source code for the importer tool, which allows users to import data from the Hedera Mainnet, Testnet, or Previewnet. This creates and imports a _read-only_ instance of the Hedera network data stored in its own database.&#x20;
+First, create a new configuration folder and file inside the `hedera-mirror-importer` directory. The Mirror Node importer directory contains the source code for the importer tool, which allows users to import data from the Hedera Mainnet, Testnet, or Previewnet. This creates and imports a _read-only_ instance of the Hedera network data stored in its own database.
 
 Run the following command to create the right folder and file:
 
@@ -41,9 +41,9 @@ touch hedera-mirror-importer/config/application.yml
 
 #### Transaction and entity filtering
 
-The mirror node may be configured only to store a subset of data for entities and/or transaction types of interest — essentially, which rows of data to retain.&#x20;
+The mirror node may be configured only to store a subset of data for entities and/or transaction types of interest — essentially, which rows of data to retain.
 
-In this example, we'll use the `application.yml` format for demonstration purposes. This configuration retains transaction and crypto transfer data for 90 days, excludes data for entity `0.0.111478`, and includes specific transactions for entities `0.0.111710` and `0.0.111734`. Furthermore, it prevents the storage of topic data. You can check out the other two alternative formats [here](how-to-configure-a-mirror-node-and-query-specific-data.md#there-are-two-alternative-configuration-formats) if you don't like working with the YAML format.&#x20;
+In this example, we'll use the `application.yml` format for demonstration purposes. This configuration retains transaction and crypto transfer data for 90 days, excludes data for entity `0.0.111478`, and includes specific transactions for entities `0.0.111710` and `0.0.111734`. Furthermore, it prevents the storage of topic data. You can check out the other two alternative formats [here](how-to-configure-a-mirror-node-and-query-specific-data.md#there-are-two-alternative-configuration-formats) if you don't like working with the YAML format.
 
 #### Breaking down application.yml configuration
 
@@ -84,28 +84,27 @@ Here's a breakdown of what each section of the configuration file does:
 * **`importer`**: This sub-section defines settings for the Mirror node's importer, which is responsible for retrieving transaction data from the network and storing it in a local database for querying.
 * **`importer.network: DEMO`**: This specifies that the importer should connect to a bucket with demo data. It's the easiest way to experiment with the mirror node and importer. If you want to connect to the `TESTNET`, `MAINNET`, or `PREVIEWNET`, you need to follow this [tutorial](../../core-concepts/mirror-nodes/run-your-own-beta-mirror-node/).
 * **`importer.retention`**: This sub-section specifies the retention period and frequency for importing data. In this case, the importer will clean data that is older than 90 days every 60 seconds.
-* **`importer.retention.include`**: This specifies the database tables that should be included in the imported data. The tables specified are **`transaction`** and **`crypto_transfer`**. You can find all tables in the [GitHub repository](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-importer/src/main/resources/db/migration/v2/V2.0.0\_\_create\_tables.sql) for the mirror node.\
-
+* **`importer.retention.include`**: This specifies the database tables that should be included in the imported data. The tables specified are **`transaction`** and **`crypto_transfer`**. You can find all tables in the [GitHub repository](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-importer/src/main/resources/db/migration/v2/V2.0.0\_\_create\_tables.sql) for the mirror node.\\
 * **`parser`**: This sub-section defines settings for the data parser, which determines the data that gets stored in the database or the data that should be filtered.
-* **`parser.exclude`**: This specifies the entities or transaction types that should be excluded from the imported data. In this case, the **`parser.exclude.entity`** with ID **`0.0.111478`** is excluded.&#x20;
-* **`parser.include`**: This specifies the entities or transaction types that should be included from the imported data. In this case, the **`parser.include.entity`** with ID **`0.0.111478`** is included, and two specific transaction types (**`CRYPTOTRANSFER`** and **`CRYPTOCREATEACCOUNT`**) are included via **`parser.include.transaction`**. \
+* **`parser.exclude`**: This specifies the entities or transaction types that should be excluded from the imported data. In this case, the **`parser.exclude.entity`** with ID **`0.0.111478`** is excluded.
+* **`parser.include`**: This specifies the entities or transaction types that should be included from the imported data. In this case, the **`parser.include.entity`** with ID **`0.0.111478`** is included, and two specific transaction types (**`CRYPTOTRANSFER`** and **`CRYPTOCREATEACCOUNT`**) are included via **`parser.include.transaction`**.\
   You can also combine **`entity`** and **`transaction`** fields. In our example, we only want to store **`CONTRACTCREATEINSTANCE`** transactions for the entity with ID **`0.0.111710`**.
 * **`parser.record`**: This sub-section specifies how the imported data should be recorded. In this case, the **`entity`** object is specified, which means that data should be recorded for each unique entity (account) involved in the transactions. The **`persist`** setting is set to **`false`**, which means that topic data for entities should not be persisted.
 * **`period: 90D`**: This indicates that the importer should retain the imported data for a period of 90 days. After this period, the data will be deleted.
 
 {% hint style="info" %}
-**Note:** The `parser.exclude` properties take priority over the `parser.include` properties. If you list the same value in both lists, it will be excluded. \
+**Note:** The `parser.exclude` properties take priority over the `parser.include` properties. If you list the same value in both lists, it will be excluded.\
 \
-In addition, the various boolean `hedera.mirror.importer.record.entity.persist` properties may be specified to control which additional fields get stored (which additional tables get recorded).&#x20;
+In addition, the various boolean `hedera.mirror.importer.record.entity.persist` properties may be specified to control which additional fields get stored (which additional tables get recorded).
 
 _See the `hedera.mirror.importer.parser.include.*` and `hedera.mirror.importer.parser.exclude.*` properties listed in_ [_this table_](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/configuration.md#importer)_._
 {% endhint %}
 
 <details>
 
-<summary>Alternative configuration formats </summary>
+<summary>Alternative configuration formats</summary>
 
-#### application.properties
+**application.properties**
 
 To configure the above scenario via `application.properties` file, include the following lines:
 
@@ -122,7 +121,7 @@ hedera.mirror.importer.parser.include.entity=0.0.111734
 hedera.mirror.importer.record.entity.persist.topics=false
 ```
 
-#### environment variables
+**environment variables**
 
 To configure the above scenario via environmental variables, set the following:
 
@@ -147,7 +146,7 @@ More details about retention [here](https://github.com/hashgraph/hedera-mirror-n
 
 The PostgreSQL container is responsible for creating the database for the mirror node instance, and the REST API container allows you to use the REST APIs to query the mirror node instance. The database stores the transaction data retrieved by the importer component of the mirror node, and the REST API provides an interface for accessing that data using HTTP requests. The importer component is responsible for retrieving the transaction data from the Hedera network and storing it in the database. Let's start up the database!
 
-#### 1.  Start the database
+#### 1. Start the database
 
 Open Docker and start the PostgreSQL and REST API containers in the root directory:
 
@@ -315,6 +314,6 @@ Lastly, run the following command to stop and remove the created containers:
 docker compose down
 ```
 
-**Congratulations! 🎉 You have successfully learned how to configure the Hedera Mirror Node to query specific data.**
+#### **Congratulations! 🎉 You have successfully learned how to configure the Hedera Mirror Node to query specific data.** Feel free to reach out if you have any questions:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Writers: <a href="https://twitter.com/theekrystallee">Krystal</a>, Technical Writer</td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center">Editor: <a href="https://twitter.com/michiel_mulders">Michiel</a>, Developer Advocate</td><td><a href="https://twitter.com/michiel_mulders">https://twitter.com/michiel_mulders</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td><td></td></tr><tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td><td></td></tr></tbody></table>

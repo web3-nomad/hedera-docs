@@ -11,7 +11,7 @@ In this section, we will guide you through the steps of querying your account ba
 
 
 {% hint style="info" %}
-_**Note:** You can always check the "_[_Code Check ✅_](transfer-hbar-1.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
+_**Note:** You can always check the "_[_Code Check ✅_](query-data.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
 {% endhint %}
 
 ## Query the account balance

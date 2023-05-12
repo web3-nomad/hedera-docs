@@ -12,6 +12,9 @@ We recommend you complete the following introduction to get a basic understandin
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
+* Get a [Hedera testnet account](https://portal.hedera.com/register).
+* Set up your environment [here](../../getting-started/environment-set-up.md).
+
 ## 1. Create a "Hello Hedera" Smart Contract
 
 Create a smart contract in solidity using the [remix IDE](https://remix.ethereum.org/#optimize=false\&runs=200\&evmVersion=null\&version=soljson-v0.8.7+commit.e28d00a7.js). The "Hello Hedera" contract Solidity file is sampled below along with the "Hello Hedera" JSON file that is produced after the contract has been compiled. You can use remix to create and compile the contract yourself or you can copy the files below into your project. If you are not familiar with Solidity you can check out the docs [here](https://docs.soliditylang.org/en/v0.8.9/). Hedera supports the latest version of Solidity (v0.8.9) on previewnet and testnet.

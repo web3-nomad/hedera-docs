@@ -16,8 +16,8 @@ Throughout the tutorial, you also learn how to check the HBAR balance of the con
 
 ## **Prerequisites**&#x20;
 
-* Get a [Hedera testnet account](https://portal.hedera.com/register)
-* Get the [example code from GitHub](https://github.com/ed-marquez/hedera-smart-contracts/tree/examples/examples/transfer-hbar2contracts-solidity)
+* Get a [Hedera testnet account](https://portal.hedera.com/register).
+* Get the [example code from GitHub](https://github.com/ed-marquez/hedera-smart-contracts/tree/examples/examples/transfer-hbar2contracts-solidity).
 
 ## **Create Accounts and Deploy a Contract**
 

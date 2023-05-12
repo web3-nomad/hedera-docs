@@ -6,7 +6,11 @@ By the end of this tutorial, you'll be able to configure a mirror node, query da
 
 <table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#prerequisites"><mark style="color:blue;"><strong>PREREQUISITES</strong></mark></a></td><td><a href="broken-reference/">broken-reference</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#subgraph-project-setup"><mark style="color:blue;"><strong>SUBGRAPH SETUP</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#subgraph-project-setup">#subgraph-project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#project-contents-and-configuration"><mark style="color:blue;"><strong>PROJECT CONTENTS</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#project-contents-and-configuration">#project-contents-and-configuration</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#deploy-subgraph"><mark style="color:blue;"><strong>DEPLOY SUBGRAPH</strong></mark></a></td><td><a href="deploy-a-subgraph-using-the-graph-and-json-rpc.md#deploy-subgraph">#deploy-subgraph</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="https://github.com/hashgraph/hedera-subgraph-example"><mark style="color:blue;"><strong>PROJECT REPO</strong></mark></a></td><td><a href="https://github.com/hashgraph/hedera-subgraph-example">https://github.com/hashgraph/hedera-subgraph-example</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example"><mark style="color:blue;"><strong>SUBGRAPH EXAMPLE</strong></mark></a></td><td><a href="https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example">https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example</a></td></tr></tbody></table>
 
-> _**NOTE:** While it is possible to present and interact with HTS tokens in a similar manner as ERC-20/721 tokens, the network is presently unable to capture all the expected ERC-20/721 event logs. In other words, if ERC-like operations are conducted on HTS tokens, not all of them will be captured in smart contract event logging at this time._
+> _**NOTE:**  While it is possible to present and interact with HTS tokens in a similar manner as ERC-20/721 tokens, the network is presently unable to capture all the expected ERC-20/721 event logs. In other words, if ERC-like operations are conducted on HTS tokens, not all of them will be captured in smart contract event logging at this time._
+
+{% hint style="info" %}
+**Note:**  While it is possible to present and interact with HTS tokens in a similar manner as ERC-20/721 tokens, the network is presently unable to capture all the expected ERC-20/721 event logs. In other words, if ERC-like operations are conducted on HTS tokens, not all of them will be captured in smart contract event logging.
+{% endhint %}
 
 ## Prerequisites
 
@@ -471,7 +475,7 @@ Follow the steps below to execute the query and fetch the indexed data from the 
 }
 ```
 
-<figure><img src="../../.gitbook/assets/graphql playground 4.png" alt=""><figcaption><p>GraphQL Playground</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/graphql playground 4 (1).png" alt=""><figcaption><p>GraphQL Playground</p></figcaption></figure>
 
 #### **Congratulations! 🎉 You have successfully learned how to deploy a Subgraph using The Graph Protocol and JSON-RPC.** Feel free to reach out if you have any questions:
 

@@ -12,7 +12,13 @@ Therefore, Hedera has developed the ["Token Metadata JSON Schema V2](https://git
 
 We recommend you complete one of the two tutorials below that teach you how to create a fungible or non-fungible token on the Hedera network.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><a href="create-and-transfer-your-first-nft.md"><strong>Create and Transfer Your First NFT</strong></a></td><td><a href="create-and-transfer-your-first-nft.md">create-and-transfer-your-first-nft.md</a></td><td></td></tr><tr><td align="center"><a href="create-and-transfer-your-first-fungible-token.md"><strong>Create and Transfer Your First Fingible Token</strong></a></td><td><a href="create-and-transfer-your-first-fungible-token.md">create-and-transfer-your-first-fungible-token.md</a></td><td></td></tr></tbody></table>
+{% content-ref url="create-and-transfer-your-first-nft.md" %}
+[create-and-transfer-your-first-nft.md](create-and-transfer-your-first-nft.md)
+{% endcontent-ref %}
+
+{% content-ref url="create-and-transfer-your-first-fungible-token.md" %}
+[create-and-transfer-your-first-fungible-token.md](create-and-transfer-your-first-fungible-token.md)
+{% endcontent-ref %}
 
 ## How do you connect metadata to a token?
 

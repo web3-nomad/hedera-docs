@@ -16,6 +16,9 @@ We recommend you complete the following introduction to get a basic understandin
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"> <a href="../../getting-started/introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="../../getting-started/introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="../../getting-started/environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="../../getting-started/environment-set-up.md">environment-set-up.md</a></td></tr></tbody></table>
 
+* Get a [Hedera testnet account](https://portal.hedera.com/register).
+* Set up your environment [here](../../getting-started/environment-set-up.md).
+
 ## 1. Create Your "HTS" Smart Contract
 
 In this example, you will associate a token to an account and transfer tokens to the associated account by interacting with the HTS contract deployed to Hedera. The HTS contract has three functions that allow you to associate, transfer, and dissociate tokens from a Hedera account.

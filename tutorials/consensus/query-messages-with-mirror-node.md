@@ -8,9 +8,7 @@ In this tutorial, you will learn how to query the Hedera Mirror Node API to retr
 
 ## Prerequisites
 
-We recommend that you complete the "Submit Your First Message" tutorial to get a basic understanding of the Hedera Consensus Service. **This example does not build upon the previous examples.**
-
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="submit-your-first-message.md"><strong>SUBMIT YOUR FIRST MESSAGE</strong></a></td><td><a href="submit-your-first-message.md">submit-your-first-message.md</a></td></tr></tbody></table>
+We recommend that you complete the "Submit Your First Message" tutorial [here](submit-your-first-message.md) to get a basic understanding of the Hedera Consensus Service. **This example does not build upon the previous examples.**
 
 ## 1. Create a topic and submit three messages
 

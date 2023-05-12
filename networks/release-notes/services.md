@@ -33,7 +33,7 @@ Please visit the Hedera status page for the latest versions supported on each ne
 
 ## [v0.36](https://github.com/hashgraph/hedera-services/releases/tag/v0.36.0)
 
-{% hint style="info" %}
+{% hint style="success" %}
 **MAINNET UPDATE: APRIL 20, 2023**
 {% endhint %}
 

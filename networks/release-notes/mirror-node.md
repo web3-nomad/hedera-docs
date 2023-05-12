@@ -8,7 +8,23 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.80](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.80.0)
+
+Work continues on [HIP-584](https://hips.hedera.com/HIP/hip-584.html) with this release the first to support non-static contract state reads for non-precompile functions. Please see the Swagger UI [table](https://github.com/hashgraph/hedera-mirror-node/pull/5949/files) for `/api/v1/contracts/call` for a breakdown of which functionality is supported in what release. More estimate gas functionality was copied from services code to make progress on estimation. A new stacked state frame functionality was added to be used in the future to support contract writes and cached reads.
+
+The [Spotless](https://github.com/diffplug/spotless/tree/main) code formatting tool was used to format the entire codebase to be consistent. A git commit hook was added to ensure any new changes stays consistent and developers can focus on what matters.
+
+Finally, there were a large number of bug fixes and performance improvements. See below for the full details.
+
 ## [v0.79](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.79.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: MAY 9, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: MAY 2, 2023**
+{% endhint %}
 
 [HIP-584](https://hips.hedera.com/HIP/hip-584.html) EVM archive node saw further progress this release with a focus on testing and establishing the foundation for estimate gas functionality in the next release. While consensus nodes undergo a modularization effort that will pay dividends down the road, the archive node needs functionality for estimate gas before that process could be completed. To make progress on HIP-584, the necessary EVM logic was temporarily copied from consensus nodes into the mirror node web3 module. A large focus was placed on increasing acceptance test coverage for contract call with precompiles.
 

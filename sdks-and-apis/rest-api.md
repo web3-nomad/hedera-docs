@@ -4,9 +4,9 @@ description: The mirror node REST API offers the ability to query transaction in
 
 # REST API
 
-Hedera Mirror Nodes store the history of transactions that occurred on mainnet, testnet, and previewnet. Each transaction generates a record that is stored in a record file. The transaction contents can be accessed by the mirror node Rest APIs
+Hedera Mirror Nodes store the history of transactions that occurred on mainnet, testnet, and previewnet. Each transaction generates a record that is stored in a record file. The transaction contents can be accessed by the mirror node REST APIs
 
-To make a request, use the network endpoint and the Rest API of choice. For example, to get a list of transactions on mainnet you would make the following request.
+To make a request, use the network endpoint and the REST API of choice. For example, to get a list of transactions on mainnet you would make the following request.
 
 {% embed url="https://mainnet-public.mirrornode.hedera.com/api/v1/transactions" %}
 

@@ -2,7 +2,7 @@
 
 The Hedera Consensus Service (HCS) gRPC API is a public mirror node managed by Hedera. It offers the ability to subscribe to HCS topics and receive messages for the topic subscribed.
 
-#### Mirror Node APIs&#x20;
+#### Mirror Node APIs
 
 #### Mirror Node API docs:
 
@@ -14,7 +14,7 @@ The Hedera Consensus Service (HCS) gRPC API is a public mirror node managed by H
 [hedera-consensus-service-api-1.md](../../sdks-and-apis/hedera-consensus-service-api-1.md)
 {% endcontent-ref %}
 
-### Mainnet:
+## Mainnet
 
 The non-production public mainnet mirror node serves to help developers build their applications without having to run their own mirror node. For production-ready mainnet mirror nodes, please check out [Arkhia](https://www.arkhia.io/), [Dragonglass](https://dragonglass.me/), or [Ledger Works](http://lworks.io/). When building your Hedera client via [SDK](../../sdks-and-apis/sdks/), you can use `setMirrorNetwork()` and enter the public mainnet mirror node endpoint. The gRPC API requires TLS. The following SDK versions support TLS:
 
@@ -57,7 +57,7 @@ client.SetMirrorNetwork([]string{"mainnet-public.mirrornode.hedera.com:443"})
 **REST API Mainnet Root Endpoint:**[ https://mainnet-public.mirrornode.hedera.com](https://mainnet-public.mirrornode.hedera.com/)
 {% endhint %}
 
-### Testnet:
+## Testnet
 
 The endpoints provided below allow developers to access the testnet mirror node, which contains testnet transaction data.
 
@@ -67,7 +67,7 @@ The endpoints provided below allow developers to access the testnet mirror node,
 **REST API Testnet Root Endpoint:**[ https://testnet.mirrornode.hedera.com](https://testnet.mirrornode.hedera.com/)
 {% endhint %}
 
-### Previewnet:
+## Previewnet
 
 The endpoints provided below allow developers to access the previewnet mirror node, which contains previewnet transaction data.
 
@@ -76,3 +76,37 @@ The endpoints provided below allow developers to access the previewnet mirror no
 
 **REST API Preview Testnet Root Endpoint:** [https://previewnet.mirrornode.hedera.com](https://previewnet.mirrornode.hedera.com)
 {% endhint %}
+
+## FAQs
+
+<details>
+
+<summary>How is data stored in a Hedera Mirror Node? Is it a specific type of database, or does it use a unique data structure?</summary>
+
+Hedera Mirror Node uses a PostgreSQL database to store the transaction and event data organized in a structure that mirrors the Hedera Network. Once the mirror node receives record files from Hedera Consensus nodes, the data is validated and loaded into the database.&#x20;
+
+</details>
+
+<details>
+
+<summary>How can I set up a Hedera Mirror Node? What are the hardware and software requirements?</summary>
+
+Setting up a Hedera Mirror Node involves both hardware and software components. The requirements can be found [here](run-your-own-beta-mirror-node/).
+
+</details>
+
+<details>
+
+<summary>Are there costs associated with running a mirror node?</summary>
+
+No, Hedera does not charge for running a mirror node. However, there are costs associated with purchasing the hardware, internet connection, and potential cloud service fees. The hardware and software requirements can be found [here](run-your-own-beta-mirror-node/).
+
+</details>
+
+<details>
+
+<summary>How can I provide feedback or create an issue to log errors?</summary>
+
+To provide feedback or log errors, please refer to the [Contributing Guide](../../support-and-community/contributing-guide.md) and submit an issue in the Hedera Docs [GitHub repository](https://github.com/hashgraph/hedera-json-rpc-relay/issues).
+
+</details>

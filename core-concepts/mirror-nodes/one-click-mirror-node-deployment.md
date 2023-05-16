@@ -19,7 +19,7 @@ Once you deploy your mirror node, you can access the mirror node via the GRPC AP
 
 Terminal commands:
 
-```
+```bash
 GRPC_IP=$(kubectl get service/hedera-mirror-node-1-grpc -n default -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
 grpcurl -plaintext "${GRPC_IP}:5600" list
@@ -29,7 +29,7 @@ grpcurl -plaintext "${GRPC_IP}:5600" list
 
 Terminal commands:
 
-```
+```bash
 REST_IP=$(kubectl get service/hedera-mirror-node-1-rest -n default -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
 curl -s "http://${REST_IP}/api/v1/transactions?limit=1"
@@ -43,7 +43,7 @@ You can also submit a `get` request from your browser:
 
 Example request:
 
-```
+```bash
 http://<yourEndpoint>/api/v1/transactions
 ```
 

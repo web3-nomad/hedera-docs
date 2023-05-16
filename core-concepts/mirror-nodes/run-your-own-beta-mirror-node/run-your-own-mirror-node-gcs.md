@@ -17,7 +17,7 @@ In this step, you will generate your Google Cloud Platform HMAC access keys. The
 * If you don't already have a default project set, set it now.
 * Click **create keys** to generate access keys for your account.
 
-<figure><img src="../../../.gitbook/assets/gcs mirror2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/gcs mirror2.png" alt=""><figcaption></figcaption></figure>
 
 * You should see the **access key** and **secret** columns populate on the access keys table.
 * You will use these keys to configure the **`application.yml`** file in a later step.
@@ -100,7 +100,7 @@ psql "dbname=mirror_node host=localhost user=mirror_node password=mirror_node_pa
 \dt
 ```
 
-![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 * To exit the `psql` console, run the quit command:
 

@@ -384,7 +384,7 @@ The Network Explorer will return the information about the contract created and 
 
 > _**Note:** At the top of the explorer page, remember to switch the network to **TESTNET** before you search for the contract._
 
-<figure><img src="../../.gitbook/assets/new hashscan (1).png" alt=""><figcaption><p>Hashscan transaction</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/new hashscan (2).png" alt=""><figcaption><p>Hashscan transaction</p></figcaption></figure>
 
 #### **Congratulations! 🎉 You have successfully learned how to deploy a smart contract using Hardhat.** Feel free to reach out if you have any questions:
 

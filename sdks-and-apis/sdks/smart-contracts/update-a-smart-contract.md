@@ -28,20 +28,20 @@ A transaction that allows you to modify the smart contract entity state like adm
 
 ### Methods
 
-| Method                                            | Type                                             | Requirement |
-| ------------------------------------------------- | ------------------------------------------------ | ----------- |
-| `setContractId(<contractId>)`                     | [ContractId](../specialized-types.md#contractid) | Required    |
-| `setAdminKey(<keys>)`                             | Key                                              | Optional    |
-| `setContractMemo(<memo>)`                         | String                                           | Optional    |
-| `setExpirationTime(<expirationTime)`              | Instant                                          | Optional    |
-| `setMaxAutomaticTokenAssociations()`              | int                                              | Optional    |
-| `setContractMemo(<memo>)`                         | String                                           | Optional    |
-| `setStakedAccountId(<stakedAccountId>)`           | [AccountId](../specialized-types.md#accountid)   | Optional    |
-| `setStakedNodeId(<stakedNodeId>)`                 | long                                             | Optional    |
-| `setDeclineStakingReward(<declineStakingReward>)` | boolean                                          | Optional    |
-| `setAutoRenewPeriod(<autoRenewPeriod>)`           | Duration                                         | Optional    |
-| `setAutoRenewAccountId(<accountId>)`              | [AccountId](../specialized-types.md#accountid)   | Optional    |
-| `clearAutoRenewAccountId()`                       |                                                  | Optional    |
+| Method                                            | Type                                                                | Requirement |
+| ------------------------------------------------- | ------------------------------------------------------------------- | ----------- |
+| `setContractId(<contractId>)`                     | [ContractId](../../deprecated/sdks/specialized-types.md#contractid) | Required    |
+| `setAdminKey(<keys>)`                             | Key                                                                 | Optional    |
+| `setContractMemo(<memo>)`                         | String                                                              | Optional    |
+| `setExpirationTime(<expirationTime)`              | Instant                                                             | Optional    |
+| `setMaxAutomaticTokenAssociations()`              | int                                                                 | Optional    |
+| `setContractMemo(<memo>)`                         | String                                                              | Optional    |
+| `setStakedAccountId(<stakedAccountId>)`           | [AccountId](../../deprecated/sdks/specialized-types.md#accountid)   | Optional    |
+| `setStakedNodeId(<stakedNodeId>)`                 | long                                                                | Optional    |
+| `setDeclineStakingReward(<declineStakingReward>)` | boolean                                                             | Optional    |
+| `setAutoRenewPeriod(<autoRenewPeriod>)`           | Duration                                                            | Optional    |
+| `setAutoRenewAccountId(<accountId>)`              | [AccountId](../../deprecated/sdks/specialized-types.md#accountid)   | Optional    |
+| `clearAutoRenewAccountId()`                       |                                                                     | Optional    |
 
 {% hint style="info" %}
 _**Note:** The new expiration time must be an instance of type **`Timestamp`**, thus, the **`Timestamp`** object has to be imported from the SDK package. The new expiration time has to be initialized as a new instance of that type._
@@ -138,18 +138,18 @@ fmt.Printf("The transaction consensus status %v\n", transactionStatus)
 
 ## Get transaction values
 
-| Method                      | Type                                             | Requirement |
-| --------------------------- | ------------------------------------------------ | ----------- |
-| `getContractId()`           | [ContractId](../specialized-types.md#contractid) | Required    |
-| `getAdminKey()`             | Key                                              | Optional    |
-| `getBytecodeFileId()`       | [FileId](../specialized-types.md#fileid)         | Optional    |
-| `getProxyAccountId()`       | [AccountId](../specialized-types.md#accountid)   | Optional    |
-| `getContractMemo()`         | String                                           | Optional    |
-| `getStakedAccountId()`      | [AccountId](../specialized-types.md#accountid)   | Optional    |
-| `getStakedNodeId()`         | long                                             | Optional    |
-| `getDeclineStakingReward()` | boolean                                          | Optional    |
-| `getAutoRenewAccountId()`   | [AccountId](../specialized-types.md#accountid)   | Required    |
-| `getAutoRenewPeriod()`      | Duration                                         | Required    |
+| Method                      | Type                                                                | Requirement |
+| --------------------------- | ------------------------------------------------------------------- | ----------- |
+| `getContractId()`           | [ContractId](../../deprecated/sdks/specialized-types.md#contractid) | Required    |
+| `getAdminKey()`             | Key                                                                 | Optional    |
+| `getBytecodeFileId()`       | [FileId](../../deprecated/sdks/specialized-types.md#fileid)         | Optional    |
+| `getProxyAccountId()`       | [AccountId](../../deprecated/sdks/specialized-types.md#accountid)   | Optional    |
+| `getContractMemo()`         | String                                                              | Optional    |
+| `getStakedAccountId()`      | [AccountId](../../deprecated/sdks/specialized-types.md#accountid)   | Optional    |
+| `getStakedNodeId()`         | long                                                                | Optional    |
+| `getDeclineStakingReward()` | boolean                                                             | Optional    |
+| `getAutoRenewAccountId()`   | [AccountId](../../deprecated/sdks/specialized-types.md#accountid)   | Required    |
+| `getAutoRenewPeriod()`      | Duration                                                            | Required    |
 
 {% tabs %}
 {% tab title="Java" %}

@@ -475,7 +475,7 @@ Follow the steps below to execute the query and fetch the indexed data from the 
 }
 ```
 
-<figure><img src="../../.gitbook/assets/graphql playground 4 (1).png" alt=""><figcaption><p>GraphQL Playground</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/graphql playground 4.png" alt=""><figcaption><p>GraphQL Playground</p></figcaption></figure>
 
 #### **Congratulations! 🎉 You have successfully learned how to deploy a Subgraph using The Graph Protocol and JSON-RPC.** Feel free to reach out if you have any questions:
 

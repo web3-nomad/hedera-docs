@@ -2,7 +2,7 @@
 description: >-
   Welcome to Hedera documentation contributing and style guide! Ways you can
   contribute below⬇:
-cover: ../.gitbook/assets/28_ultraviolet (1) (1) (1).jpg
+cover: ../.gitbook/assets/28_ultraviolet (1) (1) (2).jpg
 coverY: 31
 ---
 

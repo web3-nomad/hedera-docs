@@ -4,13 +4,13 @@ description: >-
   on the Hedera Network
 ---
 
-# How to Configure a Mirror Node and Query Specific Data
+# How to Configure a Mirror Node and Query Data
 
 Hedera Mirror Node is a useful tool that lets developers and users access past transaction data on the Hedera network. You can view and analyze network data such as transactions, transfers, balances, and events from the past in a reliable, scalable, and efficient way. The best feature is the capability to configure your mirror node to query only data that meet your tailored specifications.
 
-This guide provides step-by-step instructions on how to configure and use a Hedera Mirror Node to access past transaction data on the Hedera network. You will learn how to configure your mirror node to store only the latest 90 days of data or data for a specific entity (account, smart contract, etc) and how to use basic SQL queries to analyze the data.
+This guide provides step-by-step instructions on how to configure and use a Hedera Mirror Node to access past transaction data on the Hedera network. You will learn how to configure your mirror node to store only the latest 90 days of data or data for a specific entity (account, smart contract, etc.) and how to use basic SQL queries to analyze the data.
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#set-up-mirror-node"><strong>NODE SETUP</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#set-up-mirror-node">#set-up-mirror-node</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#configure-mirror-node"><strong>CONFIGURE NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#configure-mirror-node">#configure-mirror-node</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#start-mirror-node"><strong>START NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#start-mirror-node">#start-mirror-node</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#query-mirror-node"><strong>QUERY NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#query-mirror-node">#query-mirror-node</a></td></tr><tr><td align="center"><strong>6.</strong> <a href="https://github.com/hashgraph/hedera-mirror-node"><strong>MIRROR NODE REPO</strong></a></td><td><a href="https://github.com/hashgraph/hedera-mirror-node">https://github.com/hashgraph/hedera-mirror-node</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#set-up-mirror-node"><strong>NODE SETUP</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#set-up-mirror-node">#set-up-mirror-node</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#configure-mirror-node"><strong>CONFIGURE NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#configure-mirror-node">#configure-mirror-node</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#start-mirror-node"><strong>START NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#start-mirror-node">#start-mirror-node</a></td></tr><tr><td align="center"><strong>5.</strong> <a href="how-to-configure-a-mirror-node-and-query-specific-data.md#query-mirror-node"><strong>QUERY NODE</strong></a></td><td><a href="how-to-configure-a-mirror-node-and-query-specific-data.md#query-mirror-node">#query-mirror-node</a></td></tr><tr><td align="center"><a href="https://emojipedia.org/">📙</a> <a href="https://github.com/hashgraph/hedera-mirror-node"><strong>MIRROR NODE REPO</strong></a></td><td><a href="https://github.com/hashgraph/hedera-mirror-node">https://github.com/hashgraph/hedera-mirror-node</a></td></tr></tbody></table>
 
 ## Prerequisites
 
@@ -63,7 +63,7 @@ hedera:
       network: DEMO
       retention:
         period: 90D
-        frequency: 60S # Runs once a day by default.
+        frequency: 60S
         enabled: true
         include:
           - transaction
@@ -85,12 +85,12 @@ hedera:
 
 Here's a breakdown of what each section of the configuration file does:
 
-* **`hedera`**: This is the root section of the configuration file, indicating that the settings apply to the Hedera network.
+* **`behaviorhedera`**: This is the root section of the configuration file, indicating that the settings apply to the Hedera network.
 * **`mirror`**: This is a sub-section that pertains specifically to the Mirror node.
 * **`importer`**: This sub-section defines settings for the Mirror node's importer, which is responsible for retrieving transaction data from the network and storing it in a local database for querying.
 * **`importer.network: DEMO`**: This specifies that the importer should connect to a bucket with demo data. It's the easiest way to experiment with the mirror node and importer. If you want to connect to the `TESTNET`, `MAINNET`, or `PREVIEWNET`, you need to follow this [tutorial](../../core-concepts/mirror-nodes/run-your-own-beta-mirror-node/).
-* **`importer.retention`**: This sub-section specifies the retention period and frequency for importing data. In this case, the importer will clean data that is older than 90 days every 60 seconds.
-* **`importer.retention.include`**: This specifies the database tables that should be included in the imported data. The tables specified are **`transaction`** and **`crypto_transfer`**. You can find all tables in the [GitHub repository](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-importer/src/main/resources/db/migration/v2/V2.0.0\_\_create\_tables.sql) for the mirror node.\\
+* **`importer.retention`**: This sub-section specifies the retention period and frequency for importing data. In this case, the importer will clean data that is older than 90 days every 60 seconds. If you omit the `frequency` key, the default behavior for cleaning data is once a day.&#x20;
+* **`importer.retention.include`**: This specifies the database tables that should be included in the imported data. The tables specified are **`transaction`** and **`crypto_transfer`**. You can find all tables in the [GitHub repository](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-importer/src/main/resources/db/migration/v2/V2.0.0\_\_create\_tables.sql) for the mirror node.
 * **`parser`**: This sub-section defines settings for the data parser, which determines the data that gets stored in the database or the data that should be filtered.
 * **`parser.exclude`**: This specifies the entities or transaction types that should be excluded from the imported data. In this case, the **`parser.exclude.entity`** with ID **`0.0.111478`** is excluded.
 * **`parser.include`**: This specifies the entities or transaction types that should be included from the imported data. In this case, the **`parser.include.entity`** with ID **`0.0.111478`** is included, and two specific transaction types (**`CRYPTOTRANSFER`** and **`CRYPTOCREATEACCOUNT`**) are included via **`parser.include.transaction`**.\
@@ -210,7 +210,18 @@ mirror_node=> <ENTER YOUR SQL QUERIES GO HERE>
 In this section, you can try out multiple queries that show you how to retrieve data from the PostgreSQL database. You need a basic understanding of SQL queries to craft your own queries.
 
 {% hint style="info" %}
-Most queries include the field **`type`** which refers to a transaction type, e.g. **11** refers to`CRYPTOCREATEACCOUNT`and **14** refers to`CRYPTOTRANSFER`. Check out the complete list of transaction types in the [`TransactionTypes.java` file](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-common/src/main/java/com/hedera/mirror/common/domain/transaction/TransactionType.java).
+Most queries include the field **`type`** which refers to a transaction type, e.g. **11** refers to`CRYPTOCREATEACCOUNT`and **14** refers to`CRYPTOTRANSFER`. The most common transaction types are:
+
+* Type 7: `CONTRACTCALL`
+* Type  11: `CRYPTOCREATEACCOUNT`
+* Type 14: `CRYPTOTRANSFER`
+* Type 24: `CONSENSUSCREATETOPIC`
+* Type 27: `CONSENSUSSUBMITMESSAGE`
+* Type 29: `TOKENCREATION`
+* Type 37: `TOKENMINT`
+* Type 40: `TOKENASSOCIATE`
+
+Check out the complete list of transaction types in the [`TransactionTypes.java` file](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-common/src/main/java/com/hedera/mirror/common/domain/transaction/TransactionType.java).
 {% endhint %}
 
 Execute the following queries to analyze the data stored in your local database.

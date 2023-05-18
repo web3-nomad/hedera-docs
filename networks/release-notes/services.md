@@ -6,9 +6,25 @@ description: Hedera Services release information
 
 Please visit the Hedera status page for the latest versions supported on each network.
 
-## v0.37
+## [v0.38](https://github.com/hashgraph/hedera-services/releases/tag/v0.38.0)
 
 {% hint style="info" %}
+**MAINNET UPDATE: JUNE 6, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE: MAY 18, 2023**
+{% endhint %}
+
+* Upgrade EVM to Shanghai [#5964](https://github.com/hashgraph/hedera-services/pull/5964)
+* EVM version update and optimizations [#5962](https://github.com/hashgraph/hedera-services/pull/5962)
+* Turn on the Shanghai version of the EVM in previewnet [#6212](https://github.com/hashgraph/hedera-services/pull/6212)
+* Update hedera-protobufs-java version to 0.38.10 [#6579](https://github.com/hashgraph/hedera-services/pull/6579)
+* Add PCLI command to sign account balance files [#6264](https://github.com/hashgraph/hedera-services/pull/6264)
+
+## [v0.37](https://github.com/hashgraph/hedera-services/releases/tag/v0.37.0)
+
+{% hint style="success" %}
 **MAINNET UPDATE: MAY 17, 2023**
 {% endhint %}
 

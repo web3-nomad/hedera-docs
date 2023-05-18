@@ -73,7 +73,7 @@ The endpoints provided below allow developers to access the previewnet mirror no
 **REST API Preview Testnet Root Endpoint:** [https://previewnet.mirrornode.hedera.com](https://previewnet.mirrornode.hedera.com)
 {% endhint %}
 
-## FAQs
+## FAQ
 
 <details>
 

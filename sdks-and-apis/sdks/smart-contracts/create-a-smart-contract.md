@@ -6,10 +6,6 @@ The constructor will be executed using the given amount of gas, and any unspent 
 
 If this constructor stores information, it is charged gas to store it. There is a fee in hbars to maintain that storage until the expiration time, and that fee is added as part of the transaction fee.
 
-{% hint style="danger" %}
-Smart contract entity auto renewal and expiry has been enabled. Please check out [HIP-16](https://hips.hedera.com/hip/hip-16) and [HIP-372](https://hips.hedera.com/hip/hip-372) for more information.
-{% endhint %}
-
 {% hint style="info" %}
 **Solidity Support**
 

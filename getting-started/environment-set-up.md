@@ -288,7 +288,7 @@ const client = Client.forTestnet();
 client.setOperator(myAccountId, myPrivateKey);
 
 //Set the default maximum transaction fee (in Hbar)
-client.setMaxTransactionFee(new Hbar(100));
+client.setDefaultMaxTransactionFee(new Hbar(100));
 
 //Set the maximum payment for queries (in Hbar)
 client.setMaxQueryPayment(new Hbar(50));
@@ -401,7 +401,7 @@ async function environmentSetup() {
   client.setOperator(myAccountId, myPrivateKey);
 
   //Set the default maximum transaction fee (in Hbar)
-  client.setMaxTransactionFee(new Hbar(100));
+  client.setDefaultMaxTransactionFee(new Hbar(100));
 
   //Set the maximum payment for queries (in Hbar)
   client.setMaxQueryPayment(new Hbar(50));

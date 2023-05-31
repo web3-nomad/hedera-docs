@@ -173,8 +173,6 @@ public class HederaExamples {
         AccountId newAccountId = newAccount.getReceipt(client).accountId;
         
         System.out.println("\nNew account ID: " +newAccountId);
-        System.out.println("New account private key: " +newAccountPrivateKey);
-        System.out.println("New account public key: " +newAccountPublicKey);
 
         //Check the new account's balance
         AccountBalance accountBalance = new AccountBalanceQuery()
@@ -261,8 +259,7 @@ async function environmentSetup() {
   const newAccountId = getReceipt.accountId;
 
   console.log("\nNew account ID: " + newAccountId);
-  console.log("New account private key: " + newAccountPrivateKey);
-  console.log("New account public key: " + newAccountPrivateKey);
+
 
   // Verify the account balance
   const accountBalance = await new AccountBalanceQuery()
@@ -346,10 +343,6 @@ func main() {
 		panic(err)
 	}
 
-	//Print your testnet account ID and private key to the console to make sure there was no error
-	fmt.Printf("\nThe account ID is = %v\n", myAccountId)
-	fmt.Printf("The private key is = %v", myPrivateKey)
-
 	//Create your testnet client
 	client := hedera.ClientForTestnet()
 	client.SetOperator(myAccountId, myPrivateKey)
@@ -394,9 +387,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
-	fmt.Println("New account private key: ", newAccountPrivateKey)
-	fmt.Println("New account public key: ", newAccountPublicKey)
 
 	//Print the balance of tinybars
 	fmt.Println("New account balance for the new account is", accountBalance.Hbars.AsTinybar())
@@ -460,8 +450,6 @@ func main() {
 
 ```bash
 New account ID: 0.0.13724748
-New account private key: 302e020100300506032b657004220420..
-New account public key: 302e020100300506032b657004220420e...
 New account balance: 1000 tinybars.
 
 The transfer transaction from my account to the new account was: SUCCESS

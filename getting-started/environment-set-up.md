@@ -390,10 +390,6 @@ async function environmentSetup() {
     );
   }
   
-  //Print your testnet account ID and private key to the console to make sure there was no error
-  console.log("My account ID: " + myAccountId);
-  console.log("My private key: " + myPrivateKey);
-  
   //Create your Hedera Testnet client
   const client = Client.forTestnet();
 
@@ -447,10 +443,6 @@ func main() {
 		panic(err)
 	}
 
-	//Print your testnet account ID to the console to make sure there was no error
-	fmt.Printf("The account ID is = %v\n", myAccountId)
-	fmt.Printf("The private key is = %v\n", myPrivateKey)
-
 	//Create your testnet client
 	client := hedera.ClientForTestnet()
 	client.SetOperator(myAccountId, myPrivateKey)
@@ -464,12 +456,7 @@ func main() {
 
 </details>
 
-#### Sample output:
 
-```bash
-My account ID: 0.0.215975 
-My private key: 302e020100300506032b6570...
-```
 
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

@@ -242,11 +242,14 @@ The **max transaction fee** and **max query payment** are both set to 100\_000\_
 // For test network (testnet)
 Client client = Client.forTestnet()
 
-//Set the operator and operator private key
-client.setOperator(OPERATOR_ID, OPERATOR_KEY);
+//Set your account as the client's operator
+client.setOperator(myAccountId, myPrivateKey);
 
-//Set the max transaction fee the client is willing to pay to 2 hbars
-client.setMaxTransactionFee(new Hbar(2)); 
+//Set the default maximum transaction fee (in Hbar)
+client.setDefaultMaxTransactionFee(new Hbar(100));
+
+//Set the maximum payment for queries (in Hbar)
+client.setMaxQueryPayment(new Hbar(50));
 
 //v2.0.0
 ```
@@ -258,11 +261,14 @@ client.setMaxTransactionFee(new Hbar(2));
 // For test network (testnet)
 const client = Client.forTestnet()
 
-//Set the operator and operator private key
-client.setOperator(OPERATOR_ID, OPERATOR_KEY);
+//Set your account as the client's operator
+client.setOperator(myAccountId, myPrivateKey);
 
-//Set the max transaction fee the client is willing to pay to 2 hbars
-client.setMaxTransactionFee(new Hbar(2));
+//Set the default maximum transaction fee (in Hbar)
+client.setMaxTransactionFee(new Hbar(100));
+
+//Set the maximum payment for queries (in Hbar)
+client.setMaxQueryPayment(new Hbar(50));
 
 //v2.0.0
 ```
@@ -274,11 +280,14 @@ client.setMaxTransactionFee(new Hbar(2));
 // For test network (testnet)
 client := hedera.ClientForTestnet()
 
-//Set the operator and operator private key
-client.SetOperator(operatorAccountID, operatorKey)
+//Set your account as the client's operator
+client.SetOperator(myAccountId, myPrivateKey)
 
-//Set the max transaction fee the client is willing to pay to 2 hbars
-client.SetMaxTransactionFee(hedera.HbarFrom(2, hedera.HbarUnits.Hbar))
+// Set default max transaction fee
+client.SetDefaultMaxTransactionFee(hedera.HbarFrom(100, hedera.HbarUnits.Hbar))
+
+// Set max query payment
+client.SetDefaultMaxQueryPayment(hedera.HbarFrom(50, hedera.HbarUnits.Hbar))
 
 //v2.0.0
 ```

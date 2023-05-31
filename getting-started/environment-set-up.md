@@ -4,7 +4,7 @@
 
 In this section, you will create your new project directory, your _**`.env`**_ file to store your Hedera Testnet **account ID** and **private keys** and set up your Hedera Testnet client.
 
-## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
+## Prerequisites <a href="#pre-requisites" id="pre-requisites"></a>
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr></tbody></table>
 
@@ -260,7 +260,7 @@ go run hedera_examples.go
 
 ## Step 4: Create your Hedera Testnet client
 
-Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet **account ID,** and the operator private key is the corresponding testnet account **private key**.
+Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transasution or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet **account ID,** and the operator private key is the corresponding testnet account **private key**.
 
 {% tabs %}
 {% tab title="Java" %}

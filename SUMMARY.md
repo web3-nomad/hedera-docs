@@ -2,6 +2,7 @@
 
 * [Welcome to Hedera — let’s build the future](README.md)
 * [Getting Started](getting-started/README.md)
+  * [Page 1](getting-started/page-1.md)
   * [Introduction](getting-started/introduction.md)
   * [Environment Setup](getting-started/environment-set-up.md)
   * [Create an Account](getting-started/create-an-account.md)

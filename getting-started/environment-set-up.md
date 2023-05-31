@@ -260,7 +260,11 @@ go run hedera_examples.go
 
 ## Step 4: Create your Hedera Testnet client
 
-transactionCreate a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet account ID**,** and the operator private key is the corresponding testnet account private key.
+Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet account ID**,** and the operator private key is the corresponding testnet account private key.
+
+{% hint style="warning" %}
+The **max transaction fee** and **max query payment** are both set to 100,000,000 tinybar (1 HBAR) by default. This amount can be modified by using _**`.setDefaultMaxTransactionFee()`**_for transactions and **`.setMaxQueryPayment()`** for queries.&#x20;
+{% endhint %}
 
 {% tabs %}
 {% tab title="Java" %}
@@ -309,10 +313,6 @@ client.SetDefaultMaxQueryPayment(hedera.HbarFrom(50, hedera.HbarUnits.Hbar))
 ```
 {% endtab %}
 {% endtabs %}
-
-{% hint style="info" %}
-_**Note:** The client has a default **max transaction fee** of 100,000,000 tinybars (1 HBAR) and default **max query payment** of 100,000,000 tinybars (1 HBAR). If you need to change these values, you can use`.setDefaultMaxTransactionFee()` for a transaction and `.setDefaultMaxQueryPayment()` for queries. You are only charged the actual cost of the transaction or query._
-{% endhint %}
 
 **Your project environment is now set up to submit transactions and queries to the Hedera test network successfully!**
 

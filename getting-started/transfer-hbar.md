@@ -139,14 +139,16 @@ public class HederaExamples {
         //Grab your Hedera testnet account ID and private key
         AccountId myAccountId = AccountId.fromString(Dotenv.load().get("MY_ACCOUNT_ID"));
         PrivateKey myPrivateKey = PrivateKey.fromString(Dotenv.load().get("MY_PRIVATE_KEY"));
-
+        
         // Create your connection to the Hedera network
         const client = Client.forTestnet();
+
+        //Set your account as the client's operator
         client.setOperator(myAccountId, myPrivateKey);
-        
+  
         // Set default max transaction fee & max query payment
-        client.setDefaultMaxTransactionFee(new Hbar(100)); 
-        client.setMaxQueryPayment(new Hbar(50)); 
+        client.setMaxTransactionFee(new Hbar(100));
+        client.setMaxQueryPayment(new Hbar(50));
 
         // Generate a new key pair
         PrivateKey newAccountPrivateKey = PrivateKey.generateED25519();
@@ -160,15 +162,15 @@ public class HederaExamples {
 
         // Get the new account ID
         AccountId newAccountId = newAccount.getReceipt(client).accountId;
-
-        System.out.println("The new account ID is: " +newAccountId);
+        
+        System.out.println("\nNew account ID: " +newAccountId);
+        System.out.println("New account private key: " +newAccountPrivateKey);
+        System.out.println("New account public key: " +newAccountPublicKey);
 
         //Check the new account's balance
         AccountBalance accountBalance = new AccountBalanceQuery()
                 .setAccountId(newAccountId)
                 .execute(client);
-
-        System.out.println("The new account balance is: " +accountBalance.hbars);
 
         //Transfer HBAR
         TransactionResponse sendHbar = new TransferTransaction()
@@ -218,7 +220,7 @@ async function environmentSetup() {
 
   //Set your account as the client's operator
   client.setOperator(myAccountId, myPrivateKey);
-  
+
   // Set default max transaction fee & max query payment
   client.setMaxTransactionFee(new Hbar(100));
   client.setMaxQueryPayment(new Hbar(50));
@@ -237,7 +239,9 @@ async function environmentSetup() {
   const getReceipt = await newAccountTransactionResponse.getReceipt(client);
   const newAccountId = getReceipt.accountId;
 
-  console.log("The new account ID is: " + newAccountId);
+  console.log("\nNew account ID: " + newAccountId);
+  console.log("New account private key: " + newAccountPrivateKey);
+  console.log("New account public key: " + newAccountPrivateKey);
 
   // Verify the account balance
   const accountBalance = await new AccountBalanceQuery()
@@ -245,7 +249,7 @@ async function environmentSetup() {
     .execute(client);
 
   console.log(
-    "The new account balance is: " +
+    "\nNew account balance is: " +
       accountBalance.hbars.toTinybars() +
       " tinybars."
   );
@@ -259,7 +263,7 @@ async function environmentSetup() {
   // Verify the transaction reached consensus
   const transactionReceipt = await sendHbar.getReceipt(client);
   console.log(
-    "The transfer transaction from my account to the new account was: " +
+    "\nThe transfer transaction from my account to the new account was: " +
       transactionReceipt.status.toString()
   );
 }
@@ -385,7 +389,7 @@ func main() {
 #### Sample output:
 
 ```bash
-The transfer transaction was: SUCCESS
+The transfer transaction from my account to the new account was: SUCCESS
 ```
 
 {% hint style="info" %}

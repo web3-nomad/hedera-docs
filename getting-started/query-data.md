@@ -124,7 +124,6 @@ Your complete code file should look something like this:
 
 <summary>Java</summary>
 
-{% code title="HederaExamples.java" %}
 ```java
 import com.hedera.hashgraph.sdk.AccountId;
 import com.hedera.hashgraph.sdk.HederaPreCheckStatusException;
@@ -172,15 +171,15 @@ public class HederaExamples {
 
         // Get the new account ID
         AccountId newAccountId = newAccount.getReceipt(client).accountId;
-
-        System.out.println("The new account ID is: " +newAccountId);
+        
+        System.out.println("\nNew account ID: " +newAccountId);
+        System.out.println("New account private key: " +newAccountPrivateKey);
+        System.out.println("New account public key: " +newAccountPublicKey);
 
         //Check the new account's balance
         AccountBalance accountBalance = new AccountBalanceQuery()
                 .setAccountId(newAccountId)
                 .execute(client);
-
-        System.out.println("The new account balance is: " +accountBalance.hbars);
 
         //Transfer HBAR
         TransactionResponse sendHbar = new TransferTransaction()
@@ -195,19 +194,18 @@ public class HederaExamples {
                 .setAccountId(newAccountId)
                 .getCost(client);
 
-        System.out.println("The cost of this query is: " +queryCost);
+        System.out.println("The cost of this query: " +queryCost);
 
         //Check the new account's balance
         AccountBalance accountBalanceNew = new AccountBalanceQuery()
                 .setAccountId(newAccountId)
                 .execute(client);
 
-        System.out.println("The new account balance is: " +accountBalanceNew.hbars);
+        System.out.println("The new account balance: " +accountBalanceNew.hbars);
 
     }
 }
 ```
-{% endcode %}
 
 </details>
 
@@ -215,7 +213,6 @@ public class HederaExamples {
 
 <summary>JavaScript</summary>
 
-{% code title="index.js" %}
 ```javascript
 const {
   Client,
@@ -238,13 +235,13 @@ async function environmentSetup() {
       "Environment variables myAccountId and myPrivateKey must be present"
     );
   }
-  
+
   // Create your connection to the Hedera network
   const client = Client.forTestnet();
 
   //Set your account as the client's operator
   client.setOperator(myAccountId, myPrivateKey);
-  
+
   // Set default max transaction fee & max query payment
   client.setMaxTransactionFee(new Hbar(100));
   client.setMaxQueryPayment(new Hbar(50));
@@ -263,7 +260,9 @@ async function environmentSetup() {
   const getReceipt = await newAccountTransactionResponse.getReceipt(client);
   const newAccountId = getReceipt.accountId;
 
-  console.log("The new account ID is: " + newAccountId);
+  console.log("\nNew account ID: " + newAccountId);
+  console.log("New account private key: " + newAccountPrivateKey);
+  console.log("New account public key: " + newAccountPrivateKey);
 
   // Verify the account balance
   const accountBalance = await new AccountBalanceQuery()
@@ -271,7 +270,7 @@ async function environmentSetup() {
     .execute(client);
 
   console.log(
-    "The new account balance is: " +
+    "New account balance is: " +
       accountBalance.hbars.toTinybars() +
       " tinybars."
   );
@@ -294,7 +293,7 @@ async function environmentSetup() {
     .setAccountId(newAccountId)
     .getCost(client);
 
-  console.log("The cost of query is: " + queryCost);
+  console.log("\nThe cost of query is: " + queryCost);
 
   // Check the new account's balance
   const getNewBalance = await new AccountBalanceQuery()
@@ -308,8 +307,8 @@ async function environmentSetup() {
   );
 }
 environmentSetup();
+
 ```
-{% endcode %}
 
 </details>
 
@@ -348,8 +347,8 @@ func main() {
 	}
 
 	//Print your testnet account ID and private key to the console to make sure there was no error
-	fmt.Printf("The account ID is = %v\n", myAccountId)
-	fmt.Printf("The private key is = %v\n", myPrivateKey)
+	fmt.Printf("\nThe account ID is = %v\n", myAccountId)
+	fmt.Printf("The private key is = %v", myPrivateKey)
 
 	//Create your testnet client
 	client := hedera.ClientForTestnet()
@@ -383,7 +382,8 @@ func main() {
 	newAccountId := *receipt.AccountID
 
 	//Print the new account ID to the console
-	fmt.Printf("The new account ID is %v\n", newAccountId)
+	fmt.Println("\n")
+	fmt.Printf("New account ID: %v\n", newAccountId)
 
 	//Create the account balance query
 	query := hedera.NewAccountBalanceQuery().
@@ -395,59 +395,63 @@ func main() {
 		panic(err)
 	}
 
+	fmt.Println("New account private key: ", newAccountPrivateKey)
+	fmt.Println("New account public key: ", newAccountPublicKey)
+
 	//Print the balance of tinybars
-	fmt.Println("The account balance for the new account is", accountBalance.Hbars.AsTinybar())
+	fmt.Println("New account balance for the new account is", accountBalance.Hbars.AsTinybar())
 
 	//Transfer hbar from your testnet account to the new account
 	transaction := hedera.NewTransferTransaction().
 		AddHbarTransfer(myAccountId, hedera.HbarFrom(-1000, hedera.HbarUnits.Tinybar)).
 		AddHbarTransfer(newAccountId, hedera.HbarFrom(1000, hedera.HbarUnits.Tinybar))
 
-	//Submit the transaction to a Hedera network
+	// Submit the transaction to a Hedera network
 	txResponse, err := transaction.Execute(client)
 
 	if err != nil {
 		panic(err)
 	}
 
-	//Request the receipt of the transaction
+	// Request the receipt of the transaction
 	transferReceipt, err := txResponse.GetReceipt(client)
 
 	if err != nil {
 		panic(err)
 	}
 
-	//Get the transaction consensus status
+	// Get the transaction consensus status
 	transactionStatus := transferReceipt.Status
 
-	fmt.Printf("The transaction consensus status is %v\n", transactionStatus)
-	
+	fmt.Printf("\nThe transaction consensus status is %v\n\n", transactionStatus)
+
 	//Create the query that you want to submit
-    balanceQuery := hedera.NewAccountBalanceQuery().
-        SetAccountID(newAccountId)
+	balanceQuery := hedera.NewAccountBalanceQuery().
+		SetAccountID(newAccountId)
 
-    //Get the cost of the query
-    cost, err := balanceQuery.GetCost(client)
+	//Get the cost of the query
+	cost, err := balanceQuery.GetCost(client)
 
-    if err != nil {
-        panic(err)
-    }
+	if err != nil {
+		panic(err)
+	}
 
-    fmt.Println("The account balance query cost is:", cost.String())
+	fmt.Println("The account balance query cost is:", cost.String())
 
-    //Check the new account's balance
-    newAccountBalancequery := hedera.NewAccountBalanceQuery().
-        SetAccountID(newAccountId)
+	//Check the new account's balance
+	newAccountBalancequery := hedera.NewAccountBalanceQuery().
+		SetAccountID(newAccountId)
 
-    //Sign with client operator private key and submit the query to a Hedera network
-    newAccountBalance, err := newAccountBalancequery.Execute(client)
-    if err != nil {
-        panic(err)
-    }
+	//Sign with client operator private key and submit the query to a Hedera network
+	newAccountBalance, err := newAccountBalancequery.Execute(client)
+	if err != nil {
+		panic(err)
+	}
 
-    //Print the balance of tinybars
-    fmt.Println("The HBAR balance for this account is", newAccountBalance.Hbars.AsTinybar())
+	//Print the balance of tinybars
+	fmt.Println("The HBAR balance for this account is", newAccountBalance.Hbars.AsTinybar())
 }
+
 ```
 
 </details>
@@ -455,11 +459,15 @@ func main() {
 #### Sample output:
 
 ```bash
-The new account ID is: 0.0.215975 
-The new account balance is: 1000 tℏ 
-The transfer transaction was: SUCCESS 
-The cost of this query is: 0 
-The new account balance is: 2000 tℏ
+New account ID: 0.0.13724748
+New account private key: 302e020100300506032b657004220420..
+New account public key: 302e020100300506032b657004220420e...
+New account balance: 1000 tinybars.
+
+The transfer transaction from my account to the new account was: SUCCESS
+
+The cost of query: 0 tℏ
+The account balance after the transfer: 2000 tinybars.
 ```
 
 {% hint style="info" %}

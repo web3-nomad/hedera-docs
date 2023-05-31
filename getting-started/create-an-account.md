@@ -1,6 +1,6 @@
 # Create an Account
 
-Summary
+## Summary
 
 In this section, you will learn how to make a simple Hedera account. Hedera accounts are the entry point by which you can interact with the [Hedera APIs](../sdks-and-apis/hedera-api/). Accounts hold a balance of HBAR used to pay for API calls for the various transaction and query types.
 
@@ -237,8 +237,6 @@ You are now ready to transfer some HBAR to the new account :money\_mouth:!
 
 ## Code Check :white\_check\_mark:
 
-Your code should look something like this:
-
 <details>
 
 <summary>Java</summary>
@@ -288,14 +286,16 @@ public class HederaExamples {
         // Get the new account ID
         AccountId newAccountId = newAccount.getReceipt(client).accountId;
 ​
-        System.out.println("The new account ID is: " +newAccountId);
-​
+        System.out.println("\nNew account ID: " +newAccountId);
+        System.out.println("New account private key: " +newAccountPrivateKey);
+        System.out.println("New account public key: " +newAccountPublicKey);
+        
         //Check the new account's balance
         AccountBalance accountBalance = new AccountBalanceQuery()
                 .setAccountId(newAccountId)
                 .execute(client);
 ​
-        System.out.println("The new account balance is: " +accountBalance.hbars);
+        System.out.println("The new account balance: " +accountBalance.hbars);
 ​
     }
 }
@@ -353,8 +353,10 @@ async function environmentSetup() {
   // Get the new account ID
   const getReceipt = await newAccount.getReceipt(client);
   const newAccountId = getReceipt.accountId;
-
-  console.log("The new account ID is: " + newAccountId);
+  
+  console.log("\nNew account ID: " + newAccountId);
+  console.log("New account private key: " + newAccountPrivateKey);
+  console.log("New account public key: " + newAccountPublicKey);
 
   // Verify the account balance
   const accountBalance = await new AccountBalanceQuery()
@@ -409,8 +411,9 @@ func main() {
 		panic(err)
 	}
 
-	//Print your testnet account ID to the console to make sure there was no error
-	fmt.Printf("The account ID is = %v\n", myAccountId)
+	//Print your testnet account ID and private key to the console to make sure there was no error
+	fmt.Printf("\nThe account ID is = %v\n", myAccountId)
+	fmt.Printf("The private key is = %v", myPrivateKey)
 
 	//Create your testnet client
 	client := hedera.ClientForTestnet()
@@ -444,8 +447,26 @@ func main() {
 	newAccountId := *receipt.AccountID
 
 	//Print the new account ID to the console
-	fmt.Printf("The new account ID is %v\n", newAccountID)
+	fmt.Println("\n")
+	fmt.Printf("New account ID: %v\n", newAccountId)
+
+	//Create the account balance query
+	query := hedera.NewAccountBalanceQuery().
+		SetAccountID(newAccountId)
+
+	//Sign with client operator private key and submit the query to a Hedera network
+	accountBalance, err := query.Execute(client)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("New account private key: ", newAccountPrivateKey)
+	fmt.Println("New account public key: ", newAccountPublicKey)
+
+	//Print the balance of tinybars
+	fmt.Println("New account balance for the new account is", accountBalance.Hbars.AsTinybar())
 }
+
 ```
 
 </details>
@@ -453,8 +474,10 @@ func main() {
 #### Sample output:
 
 ```bash
-The new account ID is 0.0.13723260
-The new account balance is 1000 tℏ 
+New account ID: 0.0.13724748
+New account private key: 302e020100300506032b657004220420..
+New account public key: 302e020100300506032b657004220420e...
+New account balance: 1000 tinybars.
 ```
 
 {% hint style="info" %}

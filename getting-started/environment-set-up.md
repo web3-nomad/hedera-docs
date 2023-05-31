@@ -390,7 +390,7 @@ async function environmentSetup() {
     );
   }
   
-  // //Print your testnet account ID and private key to the console to make sure there was no error
+  //Print your testnet account ID and private key to the console to make sure there was no error
   console.log("My account ID: " + myAccountId);
   console.log("My private key: " + myPrivateKey);
   
@@ -467,8 +467,8 @@ func main() {
 #### Sample output:
 
 ```bash
-The new account ID is: 0.0.215975 
-The private key is: 302e020100300506032b6570...
+My account ID: 0.0.215975 
+My private key: 302e020100300506032b6570...
 ```
 
 {% hint style="info" %}

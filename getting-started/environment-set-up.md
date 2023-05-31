@@ -2,9 +2,9 @@
 
 ## Summary
 
-In this section, you will create your new project directory, your _**`.env`**_ file to store your Hedera Testnet **account ID** and **private keys** and set up your Hedera Testnet client.
+This environment setup guide will provide you with the necessary steps to get your development environment ready for building applications on the Hedera Network. You will set up a new project directory, establish a `.env` environment variable file to store your Hedera Testnet account ID and private keys and configure your Hedera Testnet client.
 
-## Prerequisites <a href="#pre-requisites" id="pre-requisites"></a>
+## Prerequisites
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr></tbody></table>
 
@@ -98,7 +98,7 @@ import com.hedera.hashgraph.sdk.AccountBalance;
 import java.util.concurrent.TimeoutException;
 ```
 
-_**Note:** You may choose to install the latest version of the SDK_ [_here_](https://github.com/hashgraph/hedera-sdk-java)_._
+_**Note:** You may install the latest version of the Java SDK_ [_here_](https://github.com/hashgraph/hedera-sdk-java)_._
 {% endtab %}
 
 {% tab title="JavaScript" %}
@@ -260,7 +260,7 @@ go run hedera_examples.go
 
 ## Step 4: Create your Hedera Testnet client
 
-Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transasution or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet **account ID,** and the operator private key is the corresponding testnet account **private key**.
+transactionCreate a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet account ID**,** and the operator private key is the corresponding testnet account private key.
 
 {% tabs %}
 {% tab title="Java" %}
@@ -316,11 +316,9 @@ _**Note:** The client has a default **max transaction fee** of 100,000,000 tinyb
 
 **Your project environment is now set up to submit transactions and queries to the Hedera test network successfully!**
 
-Next, you will learn how to create an account.
+Next, you will learn how to [create an account](create-an-account.md).
 
 ## Code Check :white\_check\_mark:
-
-This is what your code should look like so far:
 
 <details>
 

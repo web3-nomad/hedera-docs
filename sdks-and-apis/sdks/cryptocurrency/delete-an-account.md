@@ -13,10 +13,7 @@ A transaction that deletes an existing account from the Hedera network. Before d
 
 ### Methods
 
-| Method                                      | Type      | Description                                               | Requirement |
-| ------------------------------------------- | --------- | --------------------------------------------------------- | ----------- |
-| `setAccountId(<accountId>)`                 | AccountId | The ID of the account to delete.                          | Required    |
-| `setTransferAccountId(<transferAccountId>)` | AccountId | The ID of the account to transfer the remaining funds to. | Optional    |
+<table><thead><tr><th width="347">Method</th><th>Type</th><th>Description</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setAccountId(&#x3C;accountId>)</code></td><td>AccountId</td><td>The ID of the account to delete.</td><td>Required</td></tr><tr><td><code>setTransferAccountId(&#x3C;transferAccountId>)</code></td><td>AccountId</td><td>The ID of the account to transfer the remaining funds to.</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}
@@ -100,10 +97,7 @@ fmt.Printf("The transaction consensus status is %v\n", transactionStatus)
 
 ## Get transaction values
 
-| Method                                      | Type      | Description                                    |
-| ------------------------------------------- | --------- | ---------------------------------------------- |
-| `getAccountId(<accountId>)`                 | AccountId | The account to delete                          |
-| `getTransferAccountId(<transferAccountId>)` | AccountId | The account to transfer the remaining funds to |
+<table><thead><tr><th width="306.3333333333333">Method</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>getAccountId(&#x3C;accountId>)</code></td><td>AccountId</td><td>The account to delete</td></tr><tr><td><code>getTransferAccountId(&#x3C;transferAccountId>)</code></td><td>AccountId</td><td>The account to transfer the remaining funds to</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

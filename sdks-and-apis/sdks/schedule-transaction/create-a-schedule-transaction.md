@@ -54,17 +54,7 @@ new ScheduleCreateTransaction()
 
 ### Methods
 
-| Method                                   | Type            | Requirement |
-| ---------------------------------------- | --------------- | ----------- |
-| `setScheduledTransaction(<transaction>)` | Transaction\<?> | Required    |
-| `setAdminKey(<key>)`                     | Key             | Optional    |
-| `setPayerAccountId(<id>)`                | AccountId       | Optional    |
-| `setScheduleMemo(<memo>)`                | String          | Optional    |
-| `setExpirationTime(expirationTime)`      | Instant         | Optional    |
-| `setWaitForExpiry(waitForExpiry)`        | boolean         | Optional    |
-| `getAdminKey()`                          | Key             | Optional    |
-| `getPayerAccountId()`                    | AccountId       | Optional    |
-| `getScheduleMemo()`                      | String          | Optional    |
+<table><thead><tr><th>Method</th><th width="164.33333333333331">Type</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setScheduledTransaction(&#x3C;transaction>)</code></td><td>Transaction&#x3C;?></td><td>Required</td></tr><tr><td><code>setAdminKey(&#x3C;key>)</code></td><td>Key</td><td>Optional</td></tr><tr><td><code>setPayerAccountId(&#x3C;id>)</code></td><td>AccountId</td><td>Optional</td></tr><tr><td><code>setScheduleMemo(&#x3C;memo>)</code></td><td>String</td><td>Optional</td></tr><tr><td><code>setExpirationTime(expirationTime)</code></td><td>Instant</td><td>Optional</td></tr><tr><td><code>setWaitForExpiry(waitForExpiry)</code></td><td>boolean</td><td>Optional</td></tr><tr><td><code>getAdminKey()</code></td><td>Key</td><td>Optional</td></tr><tr><td><code>getPayerAccountId()</code></td><td>AccountId</td><td>Optional</td></tr><tr><td><code>getScheduleMemo()</code></td><td>String</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

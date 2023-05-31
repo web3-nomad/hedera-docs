@@ -26,19 +26,7 @@ Topic info returns the following values for a topic. Queries do not change the s
 * Please see the transaction and query [fees](../../../networks/mainnet/fees/#transaction-and-query-fees) table for the base transaction fee
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your query fee cost
 
-| Method                         | Type                                                              | Requirement |
-| ------------------------------ | ----------------------------------------------------------------- | ----------- |
-| `setTopicId(<topicId>)`        | TopicId                                                           | Required    |
-| `<TopicInfo>.adminKey`         | [Key](../keys/generate-a-new-key-pair.md)                         | Optional    |
-| `<TopicInfo>.submitKey`        | [Key](../keys/generate-a-new-key-pair.md)                         | Optional    |
-| `<TopicInfo>.topicId`          | [TopicId](../../deprecated/sdks/specialized-types.md#topicid)     | Optional    |
-| `<TopicInfo>.sequenceNumber`   | long                                                              | Optional    |
-| `<TopicInfo>.runningHash`      | ByteString                                                        | Optional    |
-| `<TopicInfo>.memo`             | String                                                            | Optional    |
-| `<TopicInfo>.ledgerId`         | LedgerId                                                          | Optional    |
-| `<TopicInfo>.expirationTime`   | Instant                                                           | Optional    |
-| `<TopicInfo>.autoRenewAccount` | [AccountId](../../deprecated/sdks/specialized-types.md#accountid) | Optional    |
-| `<TopicInfo>.autoRenewPeriod`  | Instant                                                           | Optional    |
+<table><thead><tr><th width="330.3333333333333">Method</th><th>Type</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setTopicId(&#x3C;topicId>)</code></td><td>TopicId</td><td>Required</td></tr><tr><td><code>&#x3C;TopicInfo>.adminKey</code></td><td><a href="../keys/generate-a-new-key-pair.md">Key</a></td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.submitKey</code></td><td><a href="../keys/generate-a-new-key-pair.md">Key</a></td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.topicId</code></td><td><a href="../../deprecated/sdks/specialized-types.md#topicid">TopicId</a></td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.sequenceNumber</code></td><td>long</td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.runningHash</code></td><td>ByteString</td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.memo</code></td><td>String</td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.ledgerId</code></td><td>LedgerId</td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.expirationTime</code></td><td>Instant</td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.autoRenewAccount</code></td><td><a href="../../deprecated/sdks/specialized-types.md#accountid">AccountId</a></td><td>Optional</td></tr><tr><td><code>&#x3C;TopicInfo>.autoRenewPeriod</code></td><td>Instant</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

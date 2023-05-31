@@ -19,24 +19,7 @@ A query that returns the current state of the account. This query **does not** i
 
 ### Methods
 
-| Method                                        | Type                              | Requirement |
-| --------------------------------------------- | --------------------------------- | ----------- |
-| `setAccountId(<accountId>)`                   | AccountId                         | Required    |
-| `<AccountInfo>.accountId`                     | AccountId                         | Optional    |
-| `<AccountInfo>.contractAccountId`             | String                            | Optional    |
-| `<AccountInfo>.isDeleted`                     | boolean                           | Optional    |
-| `<AccountInfo>.key`                           | Key                               | Optional    |
-| `<AccountInfo>.balance`                       | HBAR                              | Optional    |
-| `<AccountInfo>.isReceiverSignatureRequired`   | boolean                           | Optional    |
-| `<AccountInfo>.tokenRelationships`            | Map\<TokenId, TokenRelationships> | Optional    |
-| `<AccountInfo>.ownedNfts`                     | long                              | Optional    |
-| `<AccountInfo>.maxAutomaticTokenAssociations` | int                               | Optional    |
-| `<AccountInfo>.accountMemo`                   | String                            | Optional    |
-| `<AccountInfo>.expirationTime`                | Instant                           | Optional    |
-| `<AccountInfo>.autoRenewPeriod`               | Duration                          | Optional    |
-| `<AccountInfo>.ledgerId`                      | LedgerId                          | Optional    |
-| `<AccountInfo>.ethereumNonce`                 | long                              | Optional    |
-| `<AccountInfo>.stakingInfo`                   | StakingInfo                       | Optional    |
+<table><thead><tr><th width="431.3333333333333">Method</th><th>Type</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setAccountId(&#x3C;accountId>)</code></td><td>AccountId</td><td>Required</td></tr><tr><td><code>&#x3C;AccountInfo>.accountId</code></td><td>AccountId</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.contractAccountId</code></td><td>String</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.isDeleted</code></td><td>boolean</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.key</code></td><td>Key</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.balance</code></td><td>HBAR</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.isReceiverSignatureRequired</code></td><td>boolean</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.tokenRelationships</code></td><td>Map&#x3C;TokenId, TokenRelationships></td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.ownedNfts</code></td><td>long</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.maxAutomaticTokenAssociations</code></td><td>int</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.accountMemo</code></td><td>String</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.expirationTime</code></td><td>Instant</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.autoRenewPeriod</code></td><td>Duration</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.ledgerId</code></td><td>LedgerId</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.ethereumNonce</code></td><td>long</td><td>Optional</td></tr><tr><td><code>&#x3C;AccountInfo>.stakingInfo</code></td><td>StakingInfo</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

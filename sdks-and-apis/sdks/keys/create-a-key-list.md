@@ -4,9 +4,7 @@ Create a key list key structure where all the keys in the list are required to s
 
 If all the keys in the key list key structure do not sign, the transaction will fail and return an "INVALID\_SIGNATURE" error. A key list can have repeated keys. A signature for the repeated key will count as many times as the key is listed in the key list. For example, a key list has three keys. Two of the three public keys in the list are the same. When a user signs a transaction with the repeated key it will account for two out of the three keys required signature.
 
-| **Method**           | **Type** | **Description**             |
-| -------------------- | -------- | --------------------------- |
-| `KeyList.of(<keys>)` | Key      | Keys to add to the key list |
+<table data-header-hidden><thead><tr><th></th><th width="90.33333333333331"></th><th></th></tr></thead><tbody><tr><td><strong>Method</strong></td><td><strong>Type</strong></td><td><strong>Description</strong></td></tr><tr><td><code>KeyList.of(&#x3C;keys>)</code></td><td>Key</td><td>Keys to add to the key list</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

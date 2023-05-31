@@ -11,11 +11,7 @@ Queries are requests that do not require network consensus. Queries are processe
 
 A query that returns the cost of a query prior to submitting the query to the network node for processing. If the cost of the query is greater than the default max query payment (1 HBAR) you can use `setMaxQueryPayment(<hbar>)` to change the default.
 
-| Method                       | Type             | Description                                                                                                   |
-| ---------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------- |
-| `getCost(<client>)`          | Client           | Get the cost of the query in HBAR                                                                             |
-| `getCost(<client, timeout>)` | Client, Duration | The max length of time the SDK will attempt to retry in the event of repeated busy responses from the node(s) |
-| `getCostAsync(<client>)`     | Client           | Get the cost of a query asynchronously                                                                        |
+<table><thead><tr><th width="310.3333333333333">Method</th><th width="152">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>getCost(&#x3C;client>)</code></td><td>Client</td><td>Get the cost of the query in HBAR</td></tr><tr><td><code>getCost(&#x3C;client, timeout>)</code></td><td>Client, Duration</td><td>The max length of time the SDK will attempt to retry in the event of repeated busy responses from the node(s)</td></tr><tr><td><code>getCostAsync(&#x3C;client>)</code></td><td>Client</td><td>Get the cost of a query asynchronously</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

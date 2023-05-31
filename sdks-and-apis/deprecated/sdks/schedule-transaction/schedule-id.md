@@ -10,9 +10,7 @@ A `ScheduleId` is composed of a \<shardNum>.\<realmNum>.\<scheduleNum> (eg. 0.0.
 
 Together these values make up your `ScheduleId`. When a `ScheduleId` is requested in a field, be sure enter all three values.
 
-| **Constructor**                                       |     **Type**     | **Description**                                                                            |
-| ----------------------------------------------------- | :--------------: | ------------------------------------------------------------------------------------------ |
-| `new ScheduleId(<shardNum>,<realmNum>,<scheduleNum>)` | long, long, long | Constructs a `ScheduleId` with 0 for `shardNum` and `realmNum` (e.g., `0.0.<scheduleNum>`) |
+<table data-header-hidden><thead><tr><th></th><th width="155.33333333333331" align="center"></th><th></th></tr></thead><tbody><tr><td><strong>Constructor</strong></td><td align="center"><strong>Type</strong></td><td><strong>Description</strong></td></tr><tr><td><code>new ScheduleId(&#x3C;shardNum>,&#x3C;realmNum>,&#x3C;scheduleNum>)</code></td><td align="center">long, long, long</td><td>Constructs a <code>ScheduleId</code> with 0 for <code>shardNum</code> and <code>realmNum</code> (e.g., <code>0.0.&#x3C;scheduleNum></code>)</td></tr></tbody></table>
 
 ### Example
 

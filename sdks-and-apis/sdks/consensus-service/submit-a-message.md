@@ -18,12 +18,7 @@ HCS message size: 1024 bytes
 
 #### Methods
 
-| Method                  | Type       | Description                           | Requirement |
-| ----------------------- | ---------- | ------------------------------------- | ----------- |
-| `setTopicId(<topicId>)` | TopicId    | The topic ID to submit the message to | Required    |
-| `setMessage(<message>)` | String     | The message in a String format        | Optional    |
-| `setMessage(<message>)` | byte \[ ]  | The message in a byte array format    | Optional    |
-| `setMessage(<message>)` | ByteString | The message in a ByteString format    | Optional    |
+<table><thead><tr><th width="298">Method</th><th>Type</th><th>Description</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setTopicId(&#x3C;topicId>)</code></td><td>TopicId</td><td>The topic ID to submit the message to</td><td>Required</td></tr><tr><td><code>setMessage(&#x3C;message>)</code></td><td>String</td><td>The message in a String format</td><td>Optional</td></tr><tr><td><code>setMessage(&#x3C;message>)</code></td><td>byte [ ]</td><td>The message in a byte array format</td><td>Optional</td></tr><tr><td><code>setMessage(&#x3C;message>)</code></td><td>ByteString</td><td>The message in a ByteString format</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

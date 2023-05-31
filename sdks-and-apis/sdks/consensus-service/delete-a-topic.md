@@ -14,9 +14,7 @@ A transaction that deletes a topic from the Hedera network. Once a topic is dele
 
 #### Methods
 
-| Method                  | Type    | Description                   | Requirement |
-| ----------------------- | ------- | ----------------------------- | ----------- |
-| `setTopicId(<topicId>)` | TopicId | The ID of the topic to delete | Required    |
+<table><thead><tr><th width="264">Method</th><th>Type</th><th>Description</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setTopicId(&#x3C;topicId>)</code></td><td>TopicId</td><td>The ID of the topic to delete</td><td>Required</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

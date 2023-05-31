@@ -14,10 +14,7 @@ A transaction that deletes a scheduled transaction from the network. You can del
 
 ## Methods
 
-| Method                        | Type       | Requirement |
-| ----------------------------- | ---------- | ----------- |
-| `setScheduleId(<scheduleId>)` | ScheduleId | Required    |
-| `getScheduleId()`             | ScheduleId | Optional    |
+<table><thead><tr><th width="331.3333333333333">Method</th><th width="145">Type</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setScheduleId(&#x3C;scheduleId>)</code></td><td>ScheduleId</td><td>Required</td></tr><tr><td><code>getScheduleId()</code></td><td>ScheduleId</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

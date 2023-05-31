@@ -38,11 +38,7 @@ You can request a transaction record for up to 3 minutes after a transaction has
 * Include Children: Whether or not to include the record for children transactions triggered by a parent transaction
 * Include Duplicates: Whether or not to include the receipts for duplicate transactions
 
-| **Method**                          | **Type**      | **Requirement** |
-| ----------------------------------- | ------------- | --------------- |
-| `setTransactionId(<transactionId>)` | TransactionId | Required        |
-| `setIncludeChildren(<value>)`       | boolean       | Optional        |
-| `setIncludeDuplicates(<value>)`     | boolean       | Optional        |
+<table data-header-hidden><thead><tr><th width="383"></th><th width="140.33333333333331"></th><th></th></tr></thead><tbody><tr><td><strong>Method</strong></td><td><strong>Type</strong></td><td><strong>Requirement</strong></td></tr><tr><td><code>setTransactionId(&#x3C;transactionId>)</code></td><td>TransactionId</td><td>Required</td></tr><tr><td><code>setIncludeChildren(&#x3C;value>)</code></td><td>boolean</td><td>Optional</td></tr><tr><td><code>setIncludeDuplicates(&#x3C;value>)</code></td><td>boolean</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}
@@ -72,26 +68,7 @@ hedera.NewTransactionRecordQuery().
 
 ### Methods
 
-| **Method**                                       | **Type**                                    | **Requirement** |
-| ------------------------------------------------ | ------------------------------------------- | --------------- |
-| `<TransactionResponse>.getRecord(<client>)`      | TransactionRecord                           | Required        |
-| `<TransactionRecord>.transactionId`              | TransactionId                               | Optional        |
-| `<TransactionRecord>.consensusTimestamp`         | Instant                                     | Optional        |
-| `<TransactionRecord>.contractFunctionResult`     | ContractFunctionResult                      | Optional        |
-| `<TransactionRecord>.receipt`                    | TransactionReceipt                          | Optional        |
-| `<TransactionRecord>.transactionFee`             | Hbar                                        | Optional        |
-| `<TransactionRecord>.transactionHash`            | ByteString                                  | Optional        |
-| `<TransactionRecord>.transactionMemo`            | String                                      | Optional        |
-| `<TransactionRecord>.transfers`                  | List\<Transfer>                             | Optional        |
-| `<TransactionRecord>.tokentransfers`             | Map\<TokenId, Map\<AccountId, List\<Long>>> | Optional        |
-| `<TransactionRecord>.scheduleRef`                | ScheduleId                                  | Optional        |
-| `<TransactionRecord>.assessedCustomFees`         | List\<AssessedCustomFees>                   | Optional        |
-| `<TransactionRecord>.automaticTokenAssociations` | List\<TokenAssociation>                     | Optional        |
-| `<TransactionRecord>.ethereumHash`               | ByteString                                  | Optional        |
-| `<TransactionRecord>.parentConsensusTimestamp`   | Instant                                     | Optional        |
-| `<TransactionRecord>.paidStakingRewards`         | List\<Transfer>                             | Optional        |
-| `<TransactionRecord>.prngBytes`                  | ByteString                                  | Optional        |
-| `<TransactionRecord>.prngNumber`                 | Integer                                     | Optional        |
+<table data-header-hidden><thead><tr><th></th><th width="220.33333333333331"></th><th></th></tr></thead><tbody><tr><td><strong>Method</strong></td><td><strong>Type</strong></td><td><strong>Requirement</strong></td></tr><tr><td><code>&#x3C;TransactionResponse>.getRecord(&#x3C;client>)</code></td><td>TransactionRecord</td><td>Required</td></tr><tr><td><code>&#x3C;TransactionRecord>.transactionId</code></td><td>TransactionId</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.consensusTimestamp</code></td><td>Instant</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.contractFunctionResult</code></td><td>ContractFunctionResult</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.receipt</code></td><td>TransactionReceipt</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.transactionFee</code></td><td>Hbar</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.transactionHash</code></td><td>ByteString</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.transactionMemo</code></td><td>String</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.transfers</code></td><td>List&#x3C;Transfer></td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.tokentransfers</code></td><td>Map&#x3C;TokenId, Map&#x3C;AccountId, List&#x3C;Long>>></td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.scheduleRef</code></td><td>ScheduleId</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.assessedCustomFees</code></td><td>List&#x3C;AssessedCustomFees></td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.automaticTokenAssociations</code></td><td>List&#x3C;TokenAssociation></td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.ethereumHash</code></td><td>ByteString</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.parentConsensusTimestamp</code></td><td>Instant</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.paidStakingRewards</code></td><td>List&#x3C;Transfer></td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.prngBytes</code></td><td>ByteString</td><td>Optional</td></tr><tr><td><code>&#x3C;TransactionRecord>.prngNumber</code></td><td>Integer</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

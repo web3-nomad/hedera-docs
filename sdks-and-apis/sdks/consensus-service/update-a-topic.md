@@ -26,19 +26,7 @@ A transaction that updates the properties of an existing topic. This includes th
 
 #### Methods
 
-| Method                                  | Type      | Requirements |
-| --------------------------------------- | --------- | ------------ |
-| `setTopicId(<topicId>)`                 | TopicId   | Required     |
-| `setAdminKey(<adminKey>)`               | Key       | Optional     |
-| `setSubmitKey(<submitKey>)`             | Key       | Optional     |
-| `setExpirationTime(<expirationTime>)`   | Instant   | Optional     |
-| `setTopicMemo(<memo>)`                  | String    | Optional     |
-| `setAutoRenewAccountId(<accountId>)`    | AccountId | Optional     |
-| `setAutoRenewPeriod(<autoRenewPeriod>)` | Duration  | Optional     |
-| `clearAdminKey()`                       |           | Optional     |
-| `clearSubmitKey()`                      |           | Optional     |
-| `clearTopicMemo()`                      |           | Optional     |
-| `clearAutoRenewAccountId()`             |           | Optional     |
+<table><thead><tr><th width="417.3333333333333">Method</th><th>Type</th><th>Requirements</th></tr></thead><tbody><tr><td><code>setTopicId(&#x3C;topicId>)</code></td><td>TopicId</td><td>Required</td></tr><tr><td><code>setAdminKey(&#x3C;adminKey>)</code></td><td>Key</td><td>Optional</td></tr><tr><td><code>setSubmitKey(&#x3C;submitKey>)</code></td><td>Key</td><td>Optional</td></tr><tr><td><code>setExpirationTime(&#x3C;expirationTime>)</code></td><td>Instant</td><td>Optional</td></tr><tr><td><code>setTopicMemo(&#x3C;memo>)</code></td><td>String</td><td>Optional</td></tr><tr><td><code>setAutoRenewAccountId(&#x3C;accountId>)</code></td><td>AccountId</td><td>Optional</td></tr><tr><td><code>setAutoRenewPeriod(&#x3C;autoRenewPeriod>)</code></td><td>Duration</td><td>Optional</td></tr><tr><td><code>clearAdminKey()</code></td><td></td><td>Optional</td></tr><tr><td><code>clearSubmitKey()</code></td><td></td><td>Optional</td></tr><tr><td><code>clearTopicMemo()</code></td><td></td><td>Optional</td></tr><tr><td><code>clearAutoRenewAccountId()</code></td><td></td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

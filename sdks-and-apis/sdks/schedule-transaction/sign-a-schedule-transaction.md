@@ -14,11 +14,7 @@ A transaction that appends signatures to a scheduled transaction. You will need 
 
 ## Methods
 
-| Method                          | Type       | Requirement |
-| ------------------------------- | ---------- | ----------- |
-| `setScheduleId(<scheduleId>)`   | ScheduleId | Required    |
-| `clearScheduleId(<scheduleId>)` | ScheduleId | Optional    |
-| `getScheduleId()`               | ScheduleId | Optional    |
+<table><thead><tr><th width="351.3333333333333">Method</th><th>Type</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setScheduleId(&#x3C;scheduleId>)</code></td><td>ScheduleId</td><td>Required</td></tr><tr><td><code>clearScheduleId(&#x3C;scheduleId>)</code></td><td>ScheduleId</td><td>Optional</td></tr><tr><td><code>getScheduleId()</code></td><td>ScheduleId</td><td>Optional</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

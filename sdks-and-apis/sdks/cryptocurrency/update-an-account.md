@@ -120,17 +120,7 @@ println("The transaction consensus status is ", transactionStatus)
 
 Return the properties of an account create transaction.
 
-| Method                           | Type      | Description                                               |
-| -------------------------------- | --------- | --------------------------------------------------------- |
-| `getKey()`                       | Key       | Returns the public key on the account                     |
-| `getInitialBalance()`            | Hbar      | Returns the initial balance of the account                |
-| `getReceiverSignatureRequired()` | boolean   | Returns whether the receiver signature is required or not |
-| `getExpirationTime()`            | Instant   | Returns the expiration time                               |
-| `getAccountMemo()`               | String    | Returns the account memo                                  |
-| `getDeclineStakingReward()`      | boolean   | Returns whether or not the account is declining rewards   |
-| `getStakedNodeId()`              | long      | Returns the node ID the account is staked to              |
-| `getStakedAccountId()`           | AccountId | Returns the account ID the node is staked to              |
-| `getAutoRenewPeriod()`           | Duration  | Returns the auto renew period on the account              |
+<table><thead><tr><th width="362.3333333333333">Method</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>getKey()</code></td><td>Key</td><td>Returns the public key on the account</td></tr><tr><td><code>getInitialBalance()</code></td><td>Hbar</td><td>Returns the initial balance of the account</td></tr><tr><td><code>getReceiverSignatureRequired()</code></td><td>boolean</td><td>Returns whether the receiver signature is required or not</td></tr><tr><td><code>getExpirationTime()</code></td><td>Instant</td><td>Returns the expiration time</td></tr><tr><td><code>getAccountMemo()</code></td><td>String</td><td>Returns the account memo</td></tr><tr><td><code>getDeclineStakingReward()</code></td><td>boolean</td><td>Returns whether or not the account is declining rewards</td></tr><tr><td><code>getStakedNodeId()</code></td><td>long</td><td>Returns the node ID the account is staked to</td></tr><tr><td><code>getStakedAccountId()</code></td><td>AccountId</td><td>Returns the account ID the node is staked to</td></tr><tr><td><code>getAutoRenewPeriod()</code></td><td>Duration</td><td>Returns the auto renew period on the account</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

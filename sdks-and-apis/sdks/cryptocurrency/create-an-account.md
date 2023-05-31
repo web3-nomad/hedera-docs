@@ -25,18 +25,7 @@ When creating a **new account** using the<mark style="color:purple;">`AccountCre
 
 #### Methods
 
-| Method                                            | Type       | Requirement |
-| ------------------------------------------------- | ---------- | ----------- |
-| `setKey(<key>)`                                   | Key        | Required    |
-| `setAlias(<alias>)`                               | EvmAddress | Optional    |
-| `setInitialBalance(<initialBalance>)`             | HBar       | Optional    |
-| `setReceiverSignatureRequired(<booleanValue>)`    | boolean    | Optional    |
-| `setMaxAutomaticTokenAssociations(<amount>)`      | int        | Optional    |
-| `setStakedAccountId(<stakedAccountId>)`           | AccountId  | Optional    |
-| `setStakedNodeId(<stakedNodeId>)`                 | long       | Optional    |
-| `setDeclineStakingReward(<declineStakingReward>)` | boolean    | Optional    |
-| `setAccountMemo(<memo>)`                          | String     | Optional    |
-| `setAutoRenewPeriod(<autoRenewPeriod>)`           | Duration   | Disabled    |
+<table><thead><tr><th width="514">Method</th><th width="129.33333333333331">Type</th><th>Requirement</th></tr></thead><tbody><tr><td><code>setKey(&#x3C;key>)</code></td><td>Key</td><td>Required</td></tr><tr><td><code>setAlias(&#x3C;alias>)</code></td><td>EvmAddress</td><td>Optional</td></tr><tr><td><code>setInitialBalance(&#x3C;initialBalance>)</code></td><td>HBar</td><td>Optional</td></tr><tr><td><code>setReceiverSignatureRequired(&#x3C;booleanValue>)</code></td><td>boolean</td><td>Optional</td></tr><tr><td><code>setMaxAutomaticTokenAssociations(&#x3C;amount>)</code></td><td>int</td><td>Optional</td></tr><tr><td><code>setStakedAccountId(&#x3C;stakedAccountId>)</code></td><td>AccountId</td><td>Optional</td></tr><tr><td><code>setStakedNodeId(&#x3C;stakedNodeId>)</code></td><td>long</td><td>Optional</td></tr><tr><td><code>setDeclineStakingReward(&#x3C;declineStakingReward>)</code></td><td>boolean</td><td>Optional</td></tr><tr><td><code>setAccountMemo(&#x3C;memo>)</code></td><td>String</td><td>Optional</td></tr><tr><td><code>setAutoRenewPeriod(&#x3C;autoRenewPeriod>)</code></td><td>Duration</td><td>Disabled</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

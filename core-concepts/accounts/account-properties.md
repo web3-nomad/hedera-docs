@@ -46,9 +46,7 @@ The `account` can be one of the following:\
 
 Each Hedera account has a system-provided **account number** when the account is created.  An account number is a non-negative number of 8 bytes. You can use the account number to specify the account in all Hedera transactions and query requests. Account numbers are unique and immutable. The account number for a newly created account is returned in the transaction receipt or transaction record for the transaction ID that created the account. The account number ID has the following format  <mark style="color:purple;">`<shardNum>.<realmNum>.<accountNum>`</mark><mark style="color:blue;">.</mark>
 
-| Account Number ID | Description                                        |
-| ----------------- | -------------------------------------------------- |
-| `0.0.10`          | The account number 10 in account number ID format. |
+<table><thead><tr><th width="199">Account Number ID</th><th width="523.3333333333333">Description</th></tr></thead><tbody><tr><td><code>0.0.10</code></td><td>The account number 10 in account number ID format.</td></tr></tbody></table>
 
 #### Account Number Alias
 
@@ -58,9 +56,7 @@ This account property is not stored in consensus node state. You will not see th
 \
 The mirror node will calculate the account number alias from the account number. The account number alias is calculated and returned in account REST APIs only when the account does not have an existing account alias. For example, if the account was created through the [auto account creation](auto-account-creation.md) flow using an account alias the account number alias will not be populated. If the account was normally created then the account alias field will store the account number alias.
 
-| Account ID | Account Number Alias Example                                                                               |
-| ---------- | ---------------------------------------------------------------------------------------------------------- |
-| `0.0.10`   | <p>The hex encoding value for 10 is "0a."<br><br><code>000000000000000000000000000000000000000a</code></p> |
+<table><thead><tr><th width="175">Account ID</th><th>Account Number Alias Example</th></tr></thead><tbody><tr><td><code>0.0.10</code></td><td>The hex encoding value for 10 is "0a."<br><br><code>000000000000000000000000000000000000000a</code></td></tr></tbody></table>
 
 ### Account Alias
 

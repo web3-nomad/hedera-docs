@@ -18,15 +18,7 @@ _**Note:** The total size for a given transaction is limited to 6KiB._
 _**Note:** The SDKs do not require you to set these fields when submitting a transaction to a Hedera network. All methods below are optional and can be used to modify any fields._
 {% endhint %}
 
-| Method                                                  | Type             |
-| ------------------------------------------------------- | ---------------- |
-| `setTransactionID(<transactionId>)`                     | TransactionID    |
-| `setTransactionValidDuration(<validDuration>)`          | Duration         |
-| `setTransactionMemo(<memo>)`                            | String           |
-| `setNodeAccountIds(<nodeAccountIds>)`                   | List\<AccountId> |
-| `setMaxTransactionFee(<maxTransactionFee>)`             | Hbar             |
-| `setGrpcDeadline(<grpcDeadline>)`                       | Duration         |
-| `setRegenerateTransactionId(<regenerateTransactionId>)` | boolean          |
+<table><thead><tr><th width="432">Method</th><th width="314.3333333333333">Type</th></tr></thead><tbody><tr><td><code>setTransactionID(&#x3C;transactionId>)</code></td><td>TransactionID</td></tr><tr><td><code>setTransactionValidDuration(&#x3C;validDuration>)</code></td><td>Duration</td></tr><tr><td><code>setTransactionMemo(&#x3C;memo>)</code></td><td>String</td></tr><tr><td><code>setNodeAccountIds(&#x3C;nodeAccountIds>)</code></td><td>List&#x3C;AccountId></td></tr><tr><td><code>setMaxTransactionFee(&#x3C;maxTransactionFee>)</code></td><td>Hbar</td></tr><tr><td><code>setGrpcDeadline(&#x3C;grpcDeadline>)</code></td><td>Duration</td></tr><tr><td><code>setRegenerateTransactionId(&#x3C;regenerateTransactionId>)</code></td><td>boolean</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}
@@ -69,16 +61,7 @@ transaction := hedera.NewAccountCreateTransaction(). //Any transaction can be ap
 
 ## Get transaction properties
 
-| Method                          | Type                                        |
-| ------------------------------- | ------------------------------------------- |
-| `getTransactionID()`            | TransactionID                               |
-| `getTransactionValidDuration()` | Duration                                    |
-| `getTransactionMemo()`          | String                                      |
-| `getNodeAccountId()`            | AccountID                                   |
-| `getMaxTransactionFee()`        | Hbar                                        |
-| `getTransactionHash()`          | byte\[ ]                                    |
-| `getTransactionHashPerNode()`   | Map\<AccountId, byte \[ ]>                  |
-| `getSignatures()`               | Map\<AccountId, Map\<PublicKey, byte \[ ]>> |
+<table><thead><tr><th width="438">Method</th><th>Type</th></tr></thead><tbody><tr><td><code>getTransactionID()</code></td><td>TransactionID</td></tr><tr><td><code>getTransactionValidDuration()</code></td><td>Duration</td></tr><tr><td><code>getTransactionMemo()</code></td><td>String</td></tr><tr><td><code>getNodeAccountId()</code></td><td>AccountID</td></tr><tr><td><code>getMaxTransactionFee()</code></td><td>Hbar</td></tr><tr><td><code>getTransactionHash()</code></td><td>byte[ ]</td></tr><tr><td><code>getTransactionHashPerNode()</code></td><td>Map&#x3C;AccountId, byte [ ]></td></tr><tr><td><code>getSignatures()</code></td><td>Map&#x3C;AccountId, Map&#x3C;PublicKey, byte [ ]>></td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

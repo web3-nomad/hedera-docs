@@ -2,10 +2,7 @@
 
 Generate a 12 or 24-word mnemonic phrase that can be used to recover the private keys that are associated with it.
 
-| **Method**              | **Type** | **Description**                                                               |
-| ----------------------- | -------- | ----------------------------------------------------------------------------- |
-| `Mnemonic.generate24()` | Mnemonic | Generates a 24-word recovery phrase that can be used to recover a private key |
-| `Mnemonic.generate12()` | Mnemonic | Generates a 12-word recovery phrase that can be used to recover a private key |
+<table data-header-hidden><thead><tr><th></th><th width="117.33333333333331"></th><th></th></tr></thead><tbody><tr><td><strong>Method</strong></td><td><strong>Type</strong></td><td><strong>Description</strong></td></tr><tr><td><code>Mnemonic.generate24()</code></td><td>Mnemonic</td><td>Generates a 24-word recovery phrase that can be used to recover a private key</td></tr><tr><td><code>Mnemonic.generate12()</code></td><td>Mnemonic</td><td>Generates a 12-word recovery phrase that can be used to recover a private key</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

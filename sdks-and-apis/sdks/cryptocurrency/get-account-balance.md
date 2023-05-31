@@ -13,10 +13,7 @@ A query that returns the account balance for the specified account. Requesting a
 
 ### Methods
 
-| Method                        | Type       | Description                                        |
-| ----------------------------- | ---------- | -------------------------------------------------- |
-| `setAccountId(<accountId>)`   | AccountID  | The account ID to return the current balance for.  |
-| `setContractId(<contractId>)` | ContractID | The contract ID to return the current balance for. |
+<table><thead><tr><th width="322.3333333333333">Method</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>setAccountId(&#x3C;accountId>)</code></td><td>AccountID</td><td>The account ID to return the current balance for.</td></tr><tr><td><code>setContractId(&#x3C;contractId>)</code></td><td>ContractID</td><td>The contract ID to return the current balance for.</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Java" %}

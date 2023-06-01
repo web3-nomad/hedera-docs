@@ -263,7 +263,7 @@ go run hedera_examples.go
 Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet account ID**,** and the operator private key is the corresponding testnet account private key.
 
 {% hint style="warning" %}
-The **max transaction fee** and **max query payment** are both set to 100,000,000 tinybar (1 HBAR) by default. This amount can be modified by using _**`.setDefaultMaxTransactionFee()`**_for transactions and **`.setMaxQueryPayment()`** for queries.&#x20;
+To avoid encountering the **`INSUFFICIENT_TX_FEE`** error while conducting transactions,  you can adjust the maximum transaction fee limit through the **`.setDefaultMaxTransactionFee()`** method. Similarly, the maximum query payment can be adjusted using the **`.setDefaultMaxQueryPayment()`** method.&#x20;
 {% endhint %}
 
 {% tabs %}

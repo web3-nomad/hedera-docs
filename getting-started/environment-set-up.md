@@ -260,11 +260,33 @@ go run hedera_examples.go
 
 ## Step 4: Create your Hedera Testnet client
 
-Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The operator is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet account ID**,** and the operator private key is the corresponding testnet account private key.
+Create a _Hedera Testnet_ client and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The _operator_ is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet account ID**,** and the operator private key is the corresponding testnet account private key.
 
 {% hint style="warning" %}
 To avoid encountering the **`INSUFFICIENT_TX_FEE`** error while conducting transactions,  you can adjust the maximum transaction fee limit through the **`.setDefaultMaxTransactionFee()`** method. Similarly, the maximum query payment can be adjusted using the **`.setDefaultMaxQueryPayment()`** method.&#x20;
 {% endhint %}
+
+<details>
+
+<summary>🚨 How to resolve the <em>INSUFFIENT_TX_FEE</em> error</summary>
+
+To resolve this error, you must adjust the max transaction fee to a higher value suitable for your needs.
+
+Here is a simple example addition to your code:
+
+```javascript
+const maxTransactionFee = new Hbar(XX); // replace XX with desired fee in Hbar
+```
+
+In this example, you can set `maxTransactionFee` to any value greater than 5 HBAR (or 500,000,000 tinybars) to avoid the "_INSUFFICIENT\_TX\_FEE_" error for transactions greater than 5 HBAR. Please replace `XX` with the desired value.
+
+To implement this new max transaction fee, you use the  `setDefaultMaxTransactionFee()` method as shown below:
+
+```javascript
+client.setDefaultMaxTransactionFee(maxTransactionFee);
+```
+
+</details>
 
 {% tabs %}
 {% tab title="Java" %}

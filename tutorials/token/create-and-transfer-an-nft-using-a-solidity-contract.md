@@ -647,9 +647,6 @@ const {
   Hbar,
 } = require("@hashgraph/sdk");
 
-// Setup your .env path
-// require("dotenv").config({ path: __dirname + "/../../.env" });
-
 // ipfs URI
 metadata =
   "ipfs://bafyreie3ichmqul4xa7e6xcy34tylbuq2vf3gnjf7c55trg3b6xyjr4bku/metadata.json";

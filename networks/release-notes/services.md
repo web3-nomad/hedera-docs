@@ -8,7 +8,7 @@ Please visit the Hedera status page for the latest versions supported on each ne
 
 ## [v0.38](https://github.com/hashgraph/hedera-services/releases/tag/v0.38.0)
 
-{% hint style="info" %}
+{% hint style="success" %}
 **MAINNET UPDATE: JUNE 8, 2023**
 {% endhint %}
 

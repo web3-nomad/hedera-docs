@@ -8,7 +8,27 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.82](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.82.0)
+
+{% hint style="info" %}
+**TESTNET UPDATE COMPLETED: JUNE 8, 2023**
+{% endhint %}
+
+[HIP-679](https://hips.hedera.com/HIP/hip-679.html) saw its initial work completed in this release to support a restructured bucket. The importer now supports the existing account ID-based bucket path along with a future node ID-based bucket path. It also adds a path type property that can automatically switch between the two so the transition between the two formats is transparent to mirror node operators. For now, the default path type will stay as account ID until node ID becomes a reality to reduce the S3 costs.
+
+[HIP-584](https://hips.hedera.com/HIP/hip-584.html) Mirror EVM Archive Node saw a large number of improvements to bring it closer to parity with consensus nodes. Stacked state and database accessors were integrated to allow for smarts contracts to change state temporarily. An operation tracer was added to make it easier to debug smart contracts in an environment.
+
+Finally, a topic message lookup table was added to optimize finding topic messages on distributed databases.
+
 ## [v0.81](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.81.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: JUNE 1, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: MAY 24, 2023**
+{% endhint %}
 
 This release comes with a number of improvements to support the JSON-RPC Relay. We now support alias and EVM address lookups for the `account.id` parameter on the balances endpoint. We optimized the transaction nonce filtering in `/api/v1/contracts/{id}/results` by denormalizing the data. Finally, an issue with empty `function_parameters` in `/api/v1/contracts/results/{id}` response was addressed.
 
@@ -17,6 +37,14 @@ The other big item we worked on was [support](https://github.com/hashgraph/heder
 Other areas of improvement include improving documentation around disaster recovery efforts. This includes a [runbook](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/runbook/restore.md) on restoring a mirror node from backup. There's also a [runbook](https://github.com/hashgraph/hedera-mirror-node/blob/main/docs/runbook/stream-verification.md) on how to perform local stream file verification. Acceptance tests have been previously integrated into the automated deployment process but suffered from a long execution time mainly due to using Gradle to download dependencies at runtime. We containerized the acceptance tests so the dependencies are downloaded at build time reducing runtime by 3-4x.
 
 ## [v0.80](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.80.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: MAY 17, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: MAY 11, 2023**
+{% endhint %}
 
 Work continues on [HIP-584](https://hips.hedera.com/HIP/hip-584.html) with this release the first to support non-static contract state reads for non-precompile functions. Please see the Swagger UI [table](https://github.com/hashgraph/hedera-mirror-node/pull/5949/files) for `/api/v1/contracts/call` for a breakdown of which functionality is supported in what release. More estimate gas functionality was copied from services code to make progress on estimation. A new stacked state frame functionality was added to be used in the future to support contract writes and cached reads.
 

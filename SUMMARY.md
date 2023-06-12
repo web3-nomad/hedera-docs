@@ -71,6 +71,7 @@
     * [Hedera Services Integration with Smart Contracts](core-concepts/smart-contracts/hedera-services-integration-with-smart-contracts.md)
     * [JSON-RPC Relay](core-concepts/smart-contracts/json-rpc-relay.md)
     * [Hethers](core-concepts/smart-contracts/hethers.md)
+    * [Smart Contract Security](core-concepts/smart-contracts/security.md)
   * [Staking](core-concepts/staking/README.md)
     * [Staking Program](core-concepts/staking/staking.md)
     * [Stake HBAR](core-concepts/staking/stake-hbar.md)

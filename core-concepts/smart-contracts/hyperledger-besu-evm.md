@@ -1,12 +1,16 @@
 # Hyperledger Besu EVM
 
-The EthereumJ virtual machine was replaced with the [Hyperledger Besu](https://besu.hyperledger.org/en/stable/) virtual machine in the Hedera Services release [0.19](https://github.com/hashgraph/hedera-services/releases/tag/v0.19.4) as a result of [HIP-26](https://hips.hedera.com/hip/hip-26). This migration enables Hedera to maintain parity with Ethereum Mainnet evolutions such as the EVM container formats, new opcodes, and precompiled contracts. The Besu integration is configured to use the “London” hard fork of Ethereum Mainnet.&#x20;
+The EthereumJ virtual machine was replaced with the [Hyperledger Besu](https://besu.hyperledger.org/en/stable/) virtual machine in the Hedera Services release [0.19](https://github.com/hashgraph/hedera-services/releases/tag/v0.19.4) as a result of [HIP-26](https://hips.hedera.com/hip/hip-26). This migration enables Hedera to maintain parity with Ethereum Mainnet evolutions such as the EVM container formats, new opcodes, and precompiled contracts.&#x20;
+
+{% hint style="warning" %}
+The Besu integration is configured to use the “Shanghai” hard fork of Ethereum Mainnet as of the `0.38.6` June 2023 Hedera Mainnet release.
+{% endhint %}
 
 ### London Hard Fork
 
 The smart contract platform is upgraded to support the EVM visible changes for the “London” hard fork. This includes changes introduced in the “Istanbul” and “Berlin” hard forks. Changes relating to block production, data serialization, and the fee market will not be implemented because they are not relevant to Hedera’s architecture.
 
-Starting in the Hedera Services 0.22 release, the __ intrinsic gas cost and input data will be charged. The intrinsic gas cost is a constant that is charged before any code is executed. The intrinsic gas cost is 21,000 gas. The input data is 16 gas per non-zero byte and 4 gas per zero byte. The input data is the data provided to the external contract function parameters when calling a contract. To learn more about gas fees check out this [page](gas-and-fees.md).
+Starting in the Hedera Services 0.22 release, the \_\_ intrinsic gas cost and input data will be charged. The intrinsic gas cost is a constant that is charged before any code is executed. The intrinsic gas cost is 21,000 gas. The input data is 16 gas per non-zero byte and 4 gas per zero byte. The input data is the data provided to the external contract function parameters when calling a contract. To learn more about gas fees check out this [page](gas-and-fees.md).
 
 ### Gas Schedule
 

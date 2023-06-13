@@ -262,6 +262,92 @@ fmt.Printf("Created NFT %s with serial: %d\n", tokenId, mintRx.SerialNumbers[0])
 ```
 {% endcode %}
 
+### **🚨 Throttle cap warning**&#x20;
+
+Batch minting of NFTs can run into throughput issues and potentially hit the [transaction limit (throttle cap)](../../networks/mainnet/#network-throttles), causing the SDK to throw `BUSY` exceptions. Adding an application-level retry loop can help manage these exceptions and increase the robustness of the batch-minting process.
+
+The following are examples of retry loops:
+
+{% tabs %}
+{% tab title="Java" %}
+```java
+private static final int MAX_RETRIES = 5;
+
+private static TransactionReceipt executeTransaction
+(Transaction<?> transaction, PrivateKey key) 
+throws Exception {
+    int retries = 0;a
+
+    while (retries < MAX_RETRIES) {
+        try {
+            TransactionResponse txResponse = transaction.sign(key).execute(client);
+            TransactionReceipt txReceipt = txResponse.getReceipt(client);
+
+            return txReceipt;
+        } catch (PrecheckStatusException e) {
+            if (e.status == Status.BUSY) {
+                retries++;
+                System.out.println("Retry attempt: " + retries);
+            } else {
+                throw e;
+            }
+        }
+    }
+    
+    throw new Exception("Transaction failed after " + MAX_RETRIES + " attempts");
+}
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+async function executeTransaction(transaction, key) {
+  let retries = 0;
+  while (retries < MAX_RETRIES) {
+    try {
+      const txSign = await transaction.sign(key);
+      const txSubmit = await txSign.execute(client);
+      const txReceipt = await txSubmit.getReceipt(client);
+
+      // If the transaction succeeded, return the receipt
+      return txReceipt;
+    } catch (err) {
+      // If the error is BUSY, retry the transaction
+      if (err.toString().includes('BUSY')) {
+        retries++;
+        console.log(`Retry attempt: ${retries}`);
+      } else {
+        // If the error is not BUSY, throw the error
+        throw err;
+      }
+    }
+  }
+  throw new Error(`Transaction failed after ${MAX_RETRIES} attempts`);
+}
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+func retry(attempts int, sleep time.Duration, fn func() error) error {
+	err := fn()
+	if err != nil {
+		if attempts--; attempts > 0 {
+			// Exponential backoff
+			time.Sleep(sleep)
+			return retry(attempts, 2*sleep, fn)
+		}
+	}
+	return err
+}
+
+func executeWithRetry(fn func() error) error {
+	return retry(2, 1*time.Second, fn)
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## 3. Associate User Accounts with the NFT
 
 Before an account that is not the treasury for a token can receive or send this specific token ID, the account must become “associated” with the token. To associate a token to an account the account owner must sign the associate transaction.
@@ -827,10 +913,6 @@ func main() {
 		panic(err)
 	}
 
-	//Print your testnet account ID and private key to the console to make sure there was no error
-	fmt.Printf("The account ID is = %v\n", myAccountId)
-	fmt.Printf("The private key is = %v\n", myPrivateKey)
-
 	//Create your testnet client
 	client := hedera.ClientForTestnet()
 	client.SetOperator(myAccountId, myPrivateKey)
@@ -844,7 +926,7 @@ func main() {
 		SetKey(treasuryPublicKey).
 		SetInitialBalance(hedera.NewHbar(10)).
 		Execute(client)
-	
+
 	//Get the receipt of the transaction
 	receipt, err := treasuryAccount.GetReceipt(client)
 
@@ -860,7 +942,7 @@ func main() {
 		SetKey(alicePublicKey).
 		SetInitialBalance(hedera.NewHbar(10)).
 		Execute(client)
-	
+
 	//Get the receipt of the transaction
 	receipt2, err := aliceAccount.GetReceipt(client)
 
@@ -883,7 +965,7 @@ func main() {
 		SetSupplyKey(supplyKey).
 		FreezeWith(client)
 
-		//Sign the transaction with the treasury key
+	//Sign the transaction with the treasury key
 	nftCreateTxSign := nftCreate.Sign(treasuryKey)
 
 	//Submit the transaction to a Hedera network
@@ -903,81 +985,89 @@ func main() {
 
 	//IPFS content identifiers for which we will create a NFT
 	CID := [][]byte{
-    		[]byte("ipfs://bafyreiao6ajgsfji6qsgbqwdtjdu5gmul7tv2v3pd6kjgcw5o65b2ogst4/metadata.json"),
-    		[]byte("ipfs://bafyreic463uarchq4mlufp7pvfkfut7zeqsqmn3b2x3jjxwcjqx6b5pk7q/metadata.json"),
-    		[]byte("ipfs://bafyreihhja55q6h2rijscl3gra7a3ntiroyglz45z5wlyxdzs6kjh2dinu/metadata.json"),
-    		[]byte("ipfs://bafyreidb23oehkttjbff3gdi4vz7mjijcxjyxadwg32pngod4huozcwphu/metadata.json"),
-    		[]byte("ipfs://bafyreie7ftl6erd5etz5gscfwfiwjmht3b52cevdrf7hjwxx5ddns7zneu/metadata.json"),
+		[]byte("ipfs://bafyreiao6ajgsfji6qsgbqwdtjdu5gmul7tv2v3pd6kjgcw5o65b2ogst4/metadata.json"),
+		[]byte("ipfs://bafyreic463uarchq4mlufp7pvfkfut7zeqsqmn3b2x3jjxwcjqx6b5pk7q/metadata.json"),
+		[]byte("ipfs://bafyreihhja55q6h2rijscl3gra7a3ntiroyglz45z5wlyxdzs6kjh2dinu/metadata.json"),
+		[]byte("ipfs://bafyreidb23oehkttjbff3gdi4vz7mjijcxjyxadwg32pngod4huozcwphu/metadata.json"),
+		[]byte("ipfs://bafyreie7ftl6erd5etz5gscfwfiwjmht3b52cevdrf7hjwxx5ddns7zneu/metadata.json"),
 	}
 
-	// Mint new NFT
-	mintTx, err := hedera.NewTokenMintTransaction().
-    		SetTokenID(tokenId).
-    		SetMetadata(CID).
-    		SetMaxTransactionFee(hedera.HbarFromTinybars(maxTransactionFee)).
-    		FreezeWith(client)
+	for _, singleCID := range CID {
 
-	// Sign the transaction with the supply key
-	mintTxSign := mintTx.Sign(supplyKey)
+		mintTx, err := hedera.NewTokenMintTransaction().
+			SetTokenID(tokenId).
+			SetMetadata(singleCID).
+			SetMaxTransactionFee(hedera.NewHbar(maxTransactionFee)).
+			FreezeWith(client)
+		if err != nil {
+			fmt.Println("Error while creating mint transaction:", err)
+			continue
+		}
 
-	// Submit the transaction to a Hedera network
-	mintTxSubmit, err := mintTxSign.Execute(client)
+		mintTxSign := mintTx.Sign(supplyKey)
+		mintTxSubmit, err := mintTxSign.Execute(client)
+		if err != nil {
+			fmt.Println("Error while executing mint transaction:", err)
+			continue
+		}
 
-	// Get the transaction receipt
-	mintRx, err := mintTxSubmit.GetReceipt(client)
+		mintRx, err := mintTxSubmit.GetReceipt(client)
+		if err != nil {
+			fmt.Println("Error while getting mint transaction receipt:", err)
+			continue
+		}
 
-	// Log the serial number
-	fmt.Printf("Created NFT %s with serial: %d\n", tokenId, mintRx.SerialNumbers[0])
+		fmt.Printf("Created NFT %s with serial: %d\n", tokenId, mintRx.SerialNumbers[0])
 
-	//Create the associate transaction
-	associateAliceTx, err := hedera.NewTokenAssociateTransaction().
-		SetAccountID(aliceAccountId).
-		SetTokenIDs(tokenId).
-		FreezeWith(client)
+		//Create the associate transaction
+		associateAliceTx, err := hedera.NewTokenAssociateTransaction().
+			SetAccountID(aliceAccountId).
+			SetTokenIDs(tokenId).
+			FreezeWith(client)
 
-	//Sign with Alice's key
-	signTx := associateAliceTx.Sign(aliceKey)
+		//Sign with Alice's key
+		signTx := associateAliceTx.Sign(aliceKey)
 
-	//Submit the transaction to a Hedera network
-	associateAliceTxSubmit, err := signTx.Execute(client)
+		//Submit the transaction to a Hedera network
+		associateAliceTxSubmit, err := signTx.Execute(client)
 
-	//Get the transaction receipt
-	associateAliceRx, err := associateAliceTxSubmit.GetReceipt(client)
+		//Get the transaction receipt
+		associateAliceRx, err := associateAliceTxSubmit.GetReceipt(client)
 
-	//Confirm the transaction was successful
-	fmt.Println("NFT association with Alice's account:", associateAliceRx.Status)
+		//Confirm the transaction was successful
+		fmt.Println("\nNFT association with Alice's account:", associateAliceRx.Status)
 
-	// Check the balance before the transfer for the treasury account
-	balanceCheckTreasury, err := hedera.NewAccountBalanceQuery().SetAccountID(treasuryAccountId).Execute(client)
-	fmt.Println("Treasury balance:", balanceCheckTreasury.Tokens, "NFTs of ID", tokenId)
+		// Check the balance before the transfer for the treasury account
+		balanceCheckTreasury, err := hedera.NewAccountBalanceQuery().SetAccountID(treasuryAccountId).Execute(client)
+		fmt.Println("Treasury balance:", balanceCheckTreasury.Tokens, "NFTs of ID", tokenId)
 
-	// Check the balance before the transfer for Alice's account
-	balanceCheckAlice, err := hedera.NewAccountBalanceQuery().SetAccountID(aliceAccountId).Execute(client)
-	fmt.Println("Alice's balance:", balanceCheckAlice.Tokens, "NFTs of ID", tokenId)
+		// Check the balance before the transfer for Alice's account
+		balanceCheckAlice, err := hedera.NewAccountBalanceQuery().SetAccountID(aliceAccountId).Execute(client)
+		fmt.Println("Alice's balance:", balanceCheckAlice.Tokens, "NFTs of ID", tokenId)
 
-	// Transfer the NFT from treasury to Alice
-	tokenTransferTx, err := hedera.NewTransferTransaction().
-		AddNftTransfer(hedera.NftID{TokenID: tokenId, SerialNumber: 1}, treasuryAccountId, aliceAccountId).
-		FreezeWith(client)
-	
-	// Sign with the treasury key to authorize the transfer
-	signTransferTx := tokenTransferTx.Sign(treasuryKey)
+		// Transfer the NFT from treasury to Alice
+		tokenTransferTx, err := hedera.NewTransferTransaction().
+			AddNftTransfer(hedera.NftID{TokenID: tokenId, SerialNumber: 1}, treasuryAccountId, aliceAccountId).
+			FreezeWith(client)
 
-	tokenTransferSubmit, err := signTransferTx.Execute(client)
-	tokenTransferRx, err := tokenTransferSubmit.GetReceipt(client)
+		// Sign with the treasury key to authorize the transfer
+		signTransferTx := tokenTransferTx.Sign(treasuryKey)
 
-	fmt.Println("NFT transfer from Treasury to Alice:", tokenTransferRx.Status)
+		tokenTransferSubmit, err := signTransferTx.Execute(client)
+		tokenTransferRx, err := tokenTransferSubmit.GetReceipt(client)
 
-	// Check the balance of the treasury account after the transfer
-	balanceCheckTreasury2, err := hedera.NewAccountBalanceQuery().SetAccountID(treasuryAccountId).Execute(client)
-	fmt.Println("Treasury balance:", balanceCheckTreasury2.Tokens, "NFTs of ID", tokenId)
+		fmt.Println("\nNFT transfer from Treasury to Alice:", tokenTransferRx.Status)
 
-	// Check the balance of Alice's account after the transfer
-	balanceCheckAlice2, err := hedera.NewAccountBalanceQuery().SetAccountID(aliceAccountId).Execute(client)
-	fmt.Println("Alice's balance:", balanceCheckAlice2.Tokens, "NFTs of ID", tokenId)
+		// Check the balance of the treasury account after the transfer
+		balanceCheckTreasury2, err := hedera.NewAccountBalanceQuery().SetAccountID(treasuryAccountId).Execute(client)
+		fmt.Println("Treasury balance:", balanceCheckTreasury2.Tokens, "NFTs of ID", tokenId)
 
+		// Check the balance of Alice's account after the transfer
+		balanceCheckAlice2, err := hedera.NewAccountBalanceQuery().SetAccountID(aliceAccountId).Execute(client)
+		fmt.Println("Alice's balance:", balanceCheckAlice2.Tokens, "NFTs of ID", tokenId)
+
+	}
 }
-	
 ```
 
 </details>

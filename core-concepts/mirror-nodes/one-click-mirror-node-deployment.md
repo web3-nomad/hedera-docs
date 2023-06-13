@@ -31,7 +31,7 @@ Click [here](https://console.cloud.google.com/marketplace/details/mirror-node-pu
 * Importer GCP billing project ID
 * Importer GCP secret key
 
-Once you deploy your mirror node, you can access the mirror node via the [gRPC API](../../sdks-and-apis/hedera-consensus-service-api-1.md) or the R[EST API](../../sdks-and-apis/rest-api.md).
+Once you deploy your mirror node, you can access the mirror node via the [gRPC API](../../sdks-and-apis/hedera-consensus-service-api.md) or the R[EST API](../../sdks-and-apis/rest-api.md).
 
 #### **gRPC API**
 

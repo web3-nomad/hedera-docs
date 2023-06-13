@@ -53,12 +53,13 @@ This is what your console should look like after running the command:
 ```bash
 {
   "name": "hello-hedera-js-sdk",
-  "version": "",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC"
 }

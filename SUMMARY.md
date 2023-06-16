@@ -390,7 +390,6 @@
         * [Delete a topic](sdks-and-apis/deprecated/sdks/consensus/delete-a-topic.md)
         * [Get topic messages](sdks-and-apis/deprecated/sdks/consensus/get-topic-message.md)
         * [Get topic info](sdks-and-apis/deprecated/sdks/consensus/get-topic-info.md)
-        *
       * [Token Service](sdks-and-apis/deprecated/sdks/tokens/README.md)
         * [Token ID](sdks-and-apis/deprecated/sdks/tokens/token-id.md)
         * [NFT ID](sdks-and-apis/deprecated/sdks/tokens/nft-id.md)
@@ -425,7 +424,6 @@
         * [Get file contents](sdks-and-apis/deprecated/sdks/file-storage/get-file-contents.md)
         * [Get file info](sdks-and-apis/deprecated/sdks/file-storage/get-file-info.md)
         * [Network Response Messages](sdks-and-apis/deprecated/sdks/file-storage/network-response-messages.md)
-      *
 * [Support & Community](support-and-community/README.md)
   * [Discord](https://hedera.com/discord)
   * [GitHub](https://github.com/hashgraph)

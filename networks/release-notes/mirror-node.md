@@ -10,7 +10,7 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## [v0.82](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.82.0)
 
-{% hint style="info" %}
+{% hint style="success" %}
 **TESTNET UPDATE COMPLETED: JUNE 8, 2023**
 {% endhint %}
 

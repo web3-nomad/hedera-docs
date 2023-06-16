@@ -4,7 +4,19 @@ description: Hedera Services release information
 
 # Hedera Services
 
-Please visit the Hedera status page for the latest versions supported on each network.
+Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
+
+## [v0.39](https://github.com/hashgraph/hedera-services/tags)
+
+{% hint style="info" %}
+**MAINNET UPDATE: JULY 11, 2023**
+{% endhint %}
+
+{% hint style="info" %}
+**TESTNET UPDATE: JUNE 21, 2023**
+{% endhint %}
+
+Coming soon...
 
 ## [v0.38](https://github.com/hashgraph/hedera-services/releases/tag/v0.38.0)
 
@@ -25,6 +37,10 @@ Please visit the Hedera status page for the latest versions supported on each ne
 * Turn on the Shanghai version of the EVM in previewnet [#6212](https://github.com/hashgraph/hedera-services/pull/6212)
 * Update hedera-protobufs-java version to 0.38.10 [#6579](https://github.com/hashgraph/hedera-services/pull/6579)
 * Add PCLI command to sign account balance files [#6264](https://github.com/hashgraph/hedera-services/pull/6264)
+
+
+
+<figure><img src="../../.gitbook/assets/0.38_Performance Measurement Results_Extract.001.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## [v0.37](https://github.com/hashgraph/hedera-services/releases/tag/v0.37.0)
 
@@ -50,6 +66,8 @@ Please visit the Hedera status page for the latest versions supported on each ne
 * Remove CryptoCreate capability to create hollow accounts ([#4998](https://github.com/hashgraph/hedera-services/pull/4998))
 * Populate EVM Address in CryptoTranscation ([#5010](https://github.com/hashgraph/hedera-services/pull/5010))
 * Enable All EVM E2E suites to run with Ethereum Calls ([#4375](https://github.com/hashgraph/hedera-services/pull/4375))
+
+<figure><img src="../../.gitbook/assets/0_37Performance Measurement Results_Extract.001.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## [v0.36](https://github.com/hashgraph/hedera-services/releases/tag/v0.36.0)
 
@@ -97,6 +115,8 @@ Changes from services v0.35.2 have also been ported to v0.36.0.
   * Existing contracts deployed prior to this upgrade will be automatically grandfathered in and continue to use the old model that was in place prior to this release for a limited time to allow for DApp/UX modification to work with the new security model.
   * The grandfather logic will be maintained for an approximate period of 3 months from this release. In a future release in July 2023, the network will remove the grandfather logic, and all contracts will follow the new security model.
   * Developers are encouraged to test their DApps with new contracts and UX using the new security model to avoid unintended consequences. If any DApp developers fail to modify their applications or upgrade their contracts (as applicable) to adhere to the new security model, they may experience issues in their applications.
+
+<figure><img src="../../.gitbook/assets/0.36_Performance Measurement Results_Extract.001.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.35](https://github.com/hashgraph/hedera-services/releases)
 

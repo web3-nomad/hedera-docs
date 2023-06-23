@@ -44,9 +44,13 @@ The first cryptocurrency based on a [Proof of Work (PoW) ](glossary.md#proof-of-
 
 ### Block
 
-A block is a batch of transactions that are linked together using cryptographic hashes. Each block contains a reference to its parent block, preserving the transaction history in a strictly ordered manner. Blocks are created approximately every 12 seconds to allow consensus on the network, and contain a wide range of information.
+A block is a batch of transactions that are linked together using cryptographic hashes. Each block contains a reference to its parent block, preserving the transaction history in a strictly ordered manner. Blocks are created approximately every 12 seconds to allow consensus on the network and contain a wide range of information.
 
 In the context of Hedera, as per [HIP-415](https://hips.hedera.com/hip/hip-415), a "block" is a record file that contains all Record Stream Objects within a specific timeframe. Key properties of a block include the block number, block hash, and block timestamp. The concept of blocks is introduced to enhance [interoperability](glossary.md#interoperable) with [Ethereum Virtual Machine (EVM)](glossary.md#ethereum-virtual-machine-evm) based tools and platforms.
+
+### Blockchain
+
+A type of distributed ledger technology (DLT) that maintains a growing list of records, called blocks, which are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data. The design of a blockchain is inherently resistant to data modification, making it secure and reliable for recording transactions across many computers. Please note that Hedera is a [directed acyclic graph (DAG)](glossary.md#directed-acyclic-graph-dag) and _not_ a blockchain.&#x20;
 
 ### Block Hash
 
@@ -60,11 +64,11 @@ A successive number assigned to each record file, incremented by one for each ne
 
 The [consensus](glossary.md#consensus) [timestamp](glossary.md#timestamp) of the first transaction in the Record file.
 
-### Blockchain
-
-A type of distributed ledger technology (DLT) that maintains a growing list of records, called blocks, which are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data. The design of a blockchain is inherently resistant to data modification, making it secure and reliable for recording transactions across many computers. Please note that Hedera is a [directed acyclic graph (DAG)](glossary.md#directed-acyclic-graph-dag) and _not_ a blockchain.&#x20;
-
 ## C
+
+### Centralized Exchange (CEX)
+
+A marketplace for buying, selling, and trading cryptocurrencies. A CEX is owned and operated by a centralized authority that maintains control over accounts and transactions. Some examples of a CEX are Coinbase and Crypto.com.
 
 ### Chain
 
@@ -74,9 +78,9 @@ Another term for a [blockchain](glossary.md#blockchain).
 
 A unique identifier for a specific chain within a network. In networks that support multiple chains or side chains, the chain ID helps distinguish between different chains.
 
-### Centralized Exchange (CEX)
+### Client
 
-A marketplace for buying, selling, and trading cryptocurrencies. A CEX is owned and operated by a centralized authority that maintains control over accounts and transactions. Some examples of a CEX are Coinbase and Crypto.com.
+In the context of the Hedera SDK, a client is an object that allows you to interact with the Hedera Network by submitting transactions and queries. It is used to set up the operator account, configure the network, and set default transaction fees and query payments.
 
 ### Cold Wallet
 
@@ -90,13 +94,19 @@ In the context of distributed ledger technologies (like blockchain and Hedera), 
 
 Contract accounts are accounts that are controlled by the code of a [smart contract](glossary.md#smart-contract). They don't have a [private key](glossary.md#private-key); instead, their behavior is determined by the smart contract's code. They can hold Ether and send transactions, but only in response to a transaction they received (i.e., as part of the execution of a smart contract's code).
 
+### Cryptocurrency
+
+A type of digital or virtual currency used for payment transactions. Unlike [fiat currencies](glossary.md#fiat-currency), such as the U.S. Dollar, it is not issued or controlled by governments or financial institutions. Instead, it is monitored on a [peer-to-peer](glossary.md#peer-to-peer-p2p) network, such as a [distributed ledger](glossary.md#distributed-ledger).
+
 ### Crypto Faucet
 
 A platform, application, or website that rewards users in cryptocurrency when they complete certain tasks. Rewards tend to be in tiny increments of cryptocurrency. Rewardable tasks can include browser mining, playing games, watching videos, completing surveys, referring new users, etc.
 
-### Cryptocurrency
+### Cryptography/Cryptographic
 
-A type of digital or virtual currency used for payment transactions. Unlike [fiat currencies](glossary.md#fiat-currency), such as the U.S. Dollar, it is not issued or controlled by governments or financial institutions. Instead, it is monitored on a [peer-to-peer](glossary.md#peer-to-peer-p2p) network, such as a [distributed ledger](glossary.md#distributed-ledger).
+Cryptography is the art of disguising data, so that only the intended recipient can read it. Encryption and decryption are the main components of cryptography. In blockchain technology, cryptography offers security by ensuring transactions between nodes are encrypted.
+
+The use of cryptography in conjunction with distributed networks allows for these networks to be both public and secure. Each DLT address generated for a user is paired with a private key, which allows the user to send and receive transactions with that address.
 
 ### Crypto Wallet
 
@@ -105,12 +115,6 @@ A form of digital wallet designed for [web3](glossary.md#web3). Crypto wallets h
 In this way, you can think of a wallet like MetaMask or [HashPack](https://www.hashpack.app/) as a digital identity management system.
 
 Examples: [non-custodial walle](glossary.md#non-custodial-wallet)t, [hardware wallet](glossary.md#cold-wallet), [custodial wallet](glossary.md#custodial-wallet)
-
-### Cryptography/Cryptographic
-
-Cryptography is the art of disguising data, so that only the intended recipient can read it. Encryption and decryption are the main components of cryptography. In blockchain technology, cryptography offers security by ensuring transactions between nodes are encrypted.
-
-The use of cryptography in conjunction with distributed networks allows for these networks to be both public and secure. Each DLT address generated for a user is paired with a private key, which allows the user to send and receive transactions with that address.
 
 ### Custodial Wallet
 
@@ -262,11 +266,17 @@ Several [DLTs](glossary.md#distributed-ledger-technology-dlt), such as [blockcha
 
 ### Governance
 
-The system of proposing, managing, and implementing changes to distributed ledgers, including management of transaction fee allocation, user interface changes, developer recruitment, licensing, product roadmaps, development fund distribution, and other policies. There are two types of DLT governance: on-chain and off-chain.
+The system of proposing, managing, and implementing changes to distributed ledgers, including management of transaction fee allocation, user interface changes, developer recruitment, licensing, product roadmaps, development fund distribution, and other policies.&#x20;
 
-_On-chain governance**:** stakeholders can vote on changes via rules encoded into the blockchain protocol. Stakeholders typically hold governance tokens, including miners, developers, and investors. Developers propose changes through code updates, and each node votes to accept or reject the proposed changes. Voting mechanisms for on-chain governance vary but likely include smart contract functionality._ [_Decentralized Autonomous Organizations (DAOs)_](glossary.md#decentralized-autonomous-organization-dao) _utilize on-chain governance to run operations without a central authority._
+<details>
 
-_Off-chain governance**:** changes are made in online forums, social media, conferences, email groups, and other public spaces. Off-chain governance is successful when all stakeholders agree and make all updates and implementations in unison. If consensus cannot be reached, the network can split, or fork, into two chains running different versions of the software, and the chain with the most transactional hashing power is considered to be the successor to the original chain._
+<summary>There are two types of DLT governance: on-chain and off-chain</summary>
+
+_**On-chain governance:** stakeholders can vote on changes via rules encoded into the blockchain protocol. Stakeholders typically hold governance tokens, including miners, developers, and investors. Developers propose changes through code updates, and each node votes to accept or reject the proposed changes. Voting mechanisms for on-chain governance vary but likely include smart contract functionality._ [_Decentralized Autonomous Organizations (DAOs)_](glossary.md#decentralized-autonomous-organization-dao) _utilize on-chain governance to run operations without a central authority._
+
+_**Off-chain governance:** changes are made in online forums, social media, conferences, email groups, and other public spaces. Off-chain governance is successful when all stakeholders agree and make all updates and implementations in unison. If consensus cannot be reached, the network can split, or fork, into two chains running different versions of the software, and the chain with the most transactional hashing power is considered to be the successor to the original chain._
+
+</details>
 
 ### Governance Token
 
@@ -302,10 +312,6 @@ The [native cryptocurrency](glossary.md#native-cryptocurrency) of the Hedera Net
 
 This service enables developers to create a verifiable timestamp and order of events for any application. In other words, it allows any application to send messages to the Hedera Network and receive consensus timestamps and [fair order](glossary.md#fair-order). This can be useful for various applications, including supply chain tracking, fair order for marketplaces, and distributed systems coordination.
 
-### Hedera Token Service (HTS)
-
-This service provides the ability to issue and manage tokens on the Hedera Network. With the Hedera Token Service, users can define, mint, burn, and configure tokens without deploying a smart contract. It supports both [fungible tokens](glossary.md#fungible-token) (like [ERC-20](glossary.md#erc-20) [tokens](glossary.md#token)) and [non-fungible tokens](glossary.md#non-fungible-token-nft) (like [ERC-721](glossary.md#erc-721) tokens). The HTS is designed to be fast, secure, and efficient, with low fees and finality of transactions.
-
 ### Hedera File Service
 
 The [Hedera File Service](../sdks-and-apis/hedera-api/file-service/) provides a decentralized file storage platform that allows developers to securely store and access files on a distributed network of computers using hash as a file identifier.
@@ -313,6 +319,10 @@ The [Hedera File Service](../sdks-and-apis/hedera-api/file-service/) provides a 
 ### Hedera Improvement Proposal (HIP)
 
 A Hedera Improvement Proposal (HIP) is a proposal that can range from core protocol changes to the applications, frameworks, and protocols built on the Hedera public network and used by the community. HIPs are reviewed and evaluated by the Hedera Council, core developers, and editors.
+
+### Hedera Token Service (HTS)
+
+This service provides the ability to issue and manage tokens on the Hedera Network. With the Hedera Token Service, users can define, mint, burn, and configure tokens without deploying a smart contract. It supports both [fungible tokens](glossary.md#fungible-token) (like [ERC-20](glossary.md#erc-20) [tokens](glossary.md#token)) and [non-fungible tokens](glossary.md#non-fungible-token-nft) (like [ERC-721](glossary.md#erc-721) tokens). The HTS is designed to be fast, secure, and efficient, with low fees and finality of transactions.
 
 ### Hot Wallet
 

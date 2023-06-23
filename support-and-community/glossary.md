@@ -1,5 +1,5 @@
 ---
-description: Hedera glossary.
+description: Hedera & Web3 Glossary - Comprehensive Guide for Developers
 ---
 
 # Glossary

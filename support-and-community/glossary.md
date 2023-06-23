@@ -1,8 +1,14 @@
+---
+description: Hedera glossary.
+---
+
 # Glossary
 
 This glossary intends to provide a reference for Hedera and general web3 key terms. The purpose is to assist developers, particularly those new to the field or non-specialists, in understanding essential definitions related to various aspects of this technology. It covers basic to complex concepts and essential development tools and is an accessible resource for developers.
 
-## 0-9
+## [#](glossary.md#undefined) [A](glossary.md#a) [B](glossary.md#b) [C](glossary.md#c) [D](glossary.md#d) [E](glossary.md#e) [F](glossary.md#f) [G](glossary.md#g) [H](glossary.md#h) [I](glossary.md#i) [J](glossary.md#j) [K](glossary.md#m) [L](glossary.md#m) [M](glossary.md#m) [N](glossary.md#n) [O](glossary.md#o) [P](glossary.md#p) [Q](glossary.md#r) [R](glossary.md#r) [S](glossary.md#s) [T](glossary.md#t) [U](glossary.md#v) [V](glossary.md#v) [W](glossary.md#w) [X](glossary.md#z) [Y](glossary.md#z) [Z](glossary.md#z)
+
+## \#
 
 ### 51% and 1/3 Attacks&#x20;
 

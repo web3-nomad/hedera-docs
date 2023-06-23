@@ -8,8 +8,6 @@ This glossary intends to provide a reference for Hedera and general web3 key ter
 
 ## [#](glossary.md#undefined) [A](glossary.md#a) [B](glossary.md#b) [C](glossary.md#c) [D](glossary.md#d) [E](glossary.md#e) [F](glossary.md#f) [G](glossary.md#g) [H](glossary.md#h) [I](glossary.md#i) [J](glossary.md#j) [K](glossary.md#m) [L](glossary.md#m) [M](glossary.md#m) [N](glossary.md#n) [O](glossary.md#o) [P](glossary.md#p) [Q](glossary.md#r) [R](glossary.md#r) [S](glossary.md#s) [T](glossary.md#t) [U](glossary.md#v) [V](glossary.md#v) [W](glossary.md#w) [X](glossary.md#z) [Y](glossary.md#z) [Z](glossary.md#z)
 
-## \#
-
 ### 51% and 1/3 Attacks&#x20;
 
 A 51% attack, also known as a majority or double-spend attack, is a recognized threat in distributed networks like blockchains. This occurs when a miner or group gains control of more than half the network's mining power, thereby gaining the ability to disrupt transactions. While this is a widely acknowledged issue in the blockchain community, all DLTs are susceptible to 1/3 attacks when an attacker can establish a firewall.

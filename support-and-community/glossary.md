@@ -80,7 +80,7 @@ A unique identifier for a specific chain within a network. In networks that supp
 
 ### Client
 
-In the context of the Hedera SDK, a client is an object that allows you to interact with the Hedera Network by submitting transactions and queries. It is used to set up the operator account, configure the network, and set default transaction fees and query payments.
+In the context of the [Hedera SDK](../sdks-and-apis/), a client is an object that allows you to interact with the Hedera Network by submitting transactions and queries. It is used to set up the operator account, configure the network, and set default transaction fees and query payments. [Here](../sdks-and-apis/sdks/client.md) is how to build a Hedera Client.
 
 ### Cold Wallet
 

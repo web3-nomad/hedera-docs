@@ -36,6 +36,12 @@ A unique identifier that represents a user or a destination on the network. It's
 
 An algorithm is a sequence of instructions that ensures a task or computation is completed. It can also predict results based on a specific input. Distributed ledger technology uses [consensus](glossary.md#consensus) algorithms to help reconcile a customer’s bank account.
 
+### Asynchronous Byzantine Fault Tolerance (aBFT)
+
+Asynchronous Byzantine fault tolerance (aBFT) is a property of Byzantine fault tolerant consensus algorithms, which allow for honest nodes of a network to guarantee to agree on the timing and order of a set of transactions fairly and securely. It's considered the highest degree of security in distributed systems.
+
+In the context of Hedera, aBFT means that the network can reach [consensus](glossary.md#consensus) on the order and validity of transactions, even if some nodes aren't trustworthy or become compromised. This is achieved through the hashgraph consensus algorithm, which allows all nodes to agree on the order of transactions in a fair and secure way.
+
 ## B
 
 ### Balance Files
@@ -161,6 +167,12 @@ Examples: [Stader Labs](https://www.staderlabs.com/hedera/), [hashport](https://
 ### Directed Acyclic Graph (DAG)
 
 A structure used for data organization and representation of associations using circles and lines. DAGs are good for mapping an efficient process and visualizing relationship flows, such as family trees, and are viable replacements for blockchains due to their speed and data-storage capabilities. Hedera is a DAG and _not_ a blockchain.
+
+### Distributed Denial-of-Service (DDoS)
+
+A Distributed Denial-of-Service (DDoS) attack is a malicious attempt to disrupt the normal operations of a network, service, or website by overwhelming it with a flood of internet traffic from multiple sources.
+
+In the context of Hedera, a DDoS attack would involve an attempt to overwhelm the network with a flood of transactions or requests, aiming to disrupt its normal operation. However, due to Hedera's unique consensus mechanism and its use of [asynchronous Byzantine Fault Tolerance (aBFT)](glossary.md#asynchronous-byzantine-fault-tolerance-abft), it is designed to be resilient to such attacks.
 
 ### Distributed Ledger
 

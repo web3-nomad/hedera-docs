@@ -6,7 +6,9 @@ description: Hedera & Web3 Glossary - Comprehensive Guide for Developers
 
 This glossary intends to provide a reference for Hedera and general web3 key terms. The purpose is to assist developers, particularly those new to the field or non-specialists, in understanding essential definitions related to various aspects of this technology. It covers basic to complex concepts and essential development tools and is an accessible resource for developers.
 
-## [#](glossary.md#undefined) [A](glossary.md#a) [B](glossary.md#b) [C](glossary.md#c) [D](glossary.md#d) [E](glossary.md#e) [F](glossary.md#f) [G](glossary.md#g) [H](glossary.md#h) [I](glossary.md#i) [J](glossary.md#j) [K](glossary.md#m) [L](glossary.md#m) [M](glossary.md#m) [N](glossary.md#n) [O](glossary.md#o) [P](glossary.md#p) [Q](glossary.md#r) [R](glossary.md#r) [S](glossary.md#s) [T](glossary.md#t) [U](glossary.md#v) [V](glossary.md#v) [W](glossary.md#w) [X](glossary.md#z) [Y](glossary.md#z) [Z](glossary.md#z)
+## [#](glossary.md#undefined) [A](glossary.md#a) [B](glossary.md#b) [C](glossary.md#c) [D](glossary.md#d) [E](glossary.md#e) [F](glossary.md#f) [G](glossary.md#g) [H](glossary.md#h) [I](glossary.md#i) [J](glossary.md#j) [K](glossary.md#m) [L](glossary.md#m) [M](glossary.md#m) [N](glossary.md#n) [O](glossary.md#o) [P](glossary.md#p) [Q](glossary.md#q) [R](glossary.md#r) [S](glossary.md#s) [T](glossary.md#t) [U](glossary.md#v) [V](glossary.md#v) [W](glossary.md#w) [X](glossary.md#z) [Y](glossary.md#z) [Z](glossary.md#z)
+
+## \#
 
 ### 51% and 1/3 Attacks&#x20;
 
@@ -238,6 +240,10 @@ An account controlled by [private keys](glossary.md#private-key) that can send t
 
 The principle that all transactions on a distributed ledger should be treated equally, without preferential treatment and describes the consistency of records for the transaction queue of a ledger. Transactions in fair order are recorded on a ledger consistent with the order in which they are transmitted.
 
+### Fallback Fee
+
+A "fallback fee" in the context of Hedera and smart contracts is a type of custom fee that is charged to the recipient of a token transfer, rather than the sender. This can lead to vulnerabilities in smart contracts if they unknowingly accept a token with a high fallback fee, resulting in a loss of funds. Discussions on mitigation strategies, such as sender-pays models or limits on custom fees, are ongoing. [Here's](https://hedera.com/blog/nft-royalty-fees-hedera-hashgraph) a comprehensive blog post covering fallback fees.
+
 ### Fiat Currency
 
 A term widely used across the financial industry (and even beyond) to refer to government-backed national currencies such as the U.S. dollar or the British pound. Even so, the concept of fiat currency is deeply intertwined with multiple aspects of distributed ledger technology and cryptocurrency usage. One of those aspects concerns how individuals and organizations onboard themselves into the worlds of DLTs and [cryptocurrency](glossary.md#cryptocurrency).
@@ -330,7 +336,7 @@ This service enables developers to create a verifiable timestamp and order of ev
 
 ### Hedera File Service
 
-The [Hedera File Service](../sdks-and-apis/hedera-api/file-service/) provides a decentralized file storage platform that allows developers to securely store and access files on a distributed network of computers using hash as a file identifier.
+The [Hedera File Service](<../sdks-and-apis/hedera-api/file-service/README (1).md>) provides a decentralized file storage platform that allows developers to securely store and access files on a distributed network of computers using hash as a file identifier.
 
 ### Hedera Improvement Proposal (HIP)
 
@@ -517,6 +523,12 @@ Cryptography, and the modern software tools built with it, often center around a
 In messaging, the public key is obtained and used by anyone to encrypt messages before they are sent to a known recipient with a matching private key for decryption.
 
 By pairing a public key with a private key, transactions can be sent in public with no fear of someone “hacking” or altering them: the public key has encrypted the transaction into a format unreadable by anyone except the intended party and the intended party only.
+
+## Q
+
+### Queries
+
+Queries are requests processed only by the single node to which they are sent. [Clients](glossary.md#client) send queries to retrieve some aspect of the current consensus state, like the balance of an account. Certain queries are free, but generally, queries are subject to [fees](../networks/mainnet/fees/).
 
 ## R
 

@@ -194,7 +194,7 @@ Spending the same coins more than once, especially at the same time. This is one
 
 A cryptographic algorithm for digital signatures is a crucial component in distributed ledger technology. It is a variant of the Digital Signature Algorithm (DSA) that operates on elliptic curve cryptography. Elliptic curve cryptography, and thus ECDSA, offers a high level of security with relatively small keys, which makes it more efficient than some other cryptographic systems. As a result, ECDSA is widely used in many systems that require secure digital signatures, including Bitcoin, Ethereum, and other distributed ledger networks.
 
-### ECDSA secp256k
+### ECDSA secp256k1
 
 A cryptographic algorithm used for data integrity and widely used in cryptocurrencies. In this term, "[secp256k1](../sdks-and-apis/sdks/keys/generate-a-new-key-pair.md#ecdsa-secp256k1\_)" refers to the specific parameters of the elliptic curve used, making it efficient for computations. Hedera supports this signature scheme for generating cryptographic keys and signing transactions.
 

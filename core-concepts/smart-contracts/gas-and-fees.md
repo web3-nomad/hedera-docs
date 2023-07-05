@@ -2,6 +2,10 @@
 
 Gas is used to pay for Hedera Smart Contract Service transactions like creating a contract, calling a smart contract function, or returning contract values. Gas reflects the cost necessary to pay for the computational resources used to process transactions.
 
+{% hint style="warning" %}
+The Besu integration is configured to use the “Shanghai” hard fork of Ethereum Mainnet as of the `0.38.6` June 2023 Hedera Mainnet release.
+{% endhint %}
+
 ### Gas Fees
 
 Gas fees include the intrinsic gas cost and the cost of the EVM operation from the London gas schedule for all non-Hedera Service transactions. The changes from the London gas schedule are noted [here](hyperledger-besu-evm.md#gas-schedule). The intrinsic gas cost is 21,000 per transaction plus the cost of input data (16 gas per non-zero byte and 4 gas per zero byte). If you are calling a Hedera Service transaction in your contract then an additional Hedera Service transaction gas fee will be assessed along with the intrinsic gas cost and EVM operation cost.

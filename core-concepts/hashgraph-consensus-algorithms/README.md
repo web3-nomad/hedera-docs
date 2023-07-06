@@ -10,7 +10,7 @@ The [hashrgaph consensus algorithm](./) and platform code are open-source under 
 
 {% embed url="https://www.youtube.com/watch?v=cje1vuVKhwY&t=5s" %}
 
-***
+
 
 ## Performance
 

@@ -135,7 +135,7 @@ Changes from services v0.35.2 have also been ported to v0.36.0.
   * The grandfather logic will be maintained for an approximate period of 3 months from this release. In a future release in July 2023, the network will remove the grandfather logic, and all contracts will follow the new security model.
   * Developers are encouraged to test their DApps with new contracts and UX using the new security model to avoid unintended consequences. If any DApp developers fail to modify their applications or upgrade their contracts (as applicable) to adhere to the new security model, they may experience issues in their applications.
 
-<figure><img src="../../.gitbook/assets/0.36_Performance Measurement Results_Extract.001.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/0.36_Performance Measurement Results_Extract.001 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.35](https://github.com/hashgraph/hedera-services/releases)
 

@@ -6,17 +6,19 @@ description: >-
 
 # How to Connect to Hedera Networks Over RPC
 
-There are three options to establish a connection to Hedera Networks:
+There are four options to establish a connection to Hedera Networks:
 
 * Hashio
 * Arkhia
 * Hedera JSON-RPC Relay
+* Validation Cloud (Beta)
 
-The first two options are managed services, whereas the 3rd option involves running your own instance of the service.
+Validation Cloud, Arkhia, and Hashio are all managed JSON-RPC providers; the Hedera JSON-RPC Relay is for running your own JSON-RPC instance.&#x20;
 
-These options are arranged in ascending order of difficulty levels and reliability, with higher levels of reliability requiring more upfront work.
+* Validation Cloud is in beta and only available on testnet.
+* Hashio is a Hedera community service offered by Swirlds Labs with limited capabilities.
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><strong>➡️ Hashio</strong></td><td><a href="hashio.md">hashio.md</a></td><td></td></tr><tr><td align="center"><strong>➡️ Arkhia</strong></td><td><a href="arkhia.md">arkhia.md</a></td><td></td></tr><tr><td align="center"><strong>➡️ Hedera JSON-RPC Relay</strong></td><td><a href="hedera-json-rpc-relay.md">hedera-json-rpc-relay.md</a></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><strong>➡️ Hashio</strong></td><td><a href="hashio.md">hashio.md</a></td><td></td></tr><tr><td align="center"><strong>➡️ Arkhia</strong></td><td><a href="arkhia.md">arkhia.md</a></td><td></td></tr><tr><td align="center"><strong>➡️ Hedera JSON-RPC Relay</strong></td><td><a href="hedera-json-rpc-relay.md">hedera-json-rpc-relay.md</a></td><td></td></tr><tr><td align="center">➡️ <strong>Validation Cloud (Beta)</strong></td><td><a href="https://validationcloud.notion.site/Validation-Cloud-Hedera-Beta-Users-feccd755878f4c1a9246aeb758e790bb">https://validationcloud.notion.site/Validation-Cloud-Hedera-Beta-Users-feccd755878f4c1a9246aeb758e790bb</a></td><td></td></tr></tbody></table>
 
 
 

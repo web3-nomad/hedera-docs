@@ -8,7 +8,33 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.83](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.83.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: JULY 7, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE COMPLETED: JUNE 29, 2023**
+{% endhint %}
+
+In this release we made the highly requested change to show the list of NFT transfers on the transactions list REST API. Originally, only the `/api/v1/transactions/{id}` showed the list of `nft_transfers` due to performance concerns with joining on another large table for such a heavily used and heavyweight API. To show this information while staying performant, we had to denormalize the NFT transfer information to nest it under the `transaction` table as a JSONB column. This avoids an extra join and allows us to return the given information with the existing query.
+
+The mirror node is focused on tracking all possible changes to Hedera entities over time. To that end a NFT history table was created to capture all possible changes to a NFT over time. In addition to persisting this data, we're also exposing more of this historical information via the API. Now when the `timestamp` parameter is supplied on the `/api/v1/accounts/{id}` endpoint it will show the historical view of that account. Previously, the parameter would only be used for displaying the list of `transactions` at the given time. Expect additional improvements around historical entity information in the next release.
+
+[HIP-584](https://hips.hedera.com/HIP/hip-584.html) continues to make strides every release. This release focused on improving precompile support for `/api/v1/contracts/call`. There is now support for the CREATE2 opcode along with non-static contract state reads for precompile and non-precompile functions. Non-static contract modifications for non-precompile functions (excluding lazy account creation) was also worked on. Finally, acceptance test coverage was greatly increased and a number of bugs were addressed.
+
+This release adds integration with the [Stackgres Operator](https://stackgres.io/) to provide a highly available [Citus](https://www.citusdata.com/) deployment. Stackgres is an established Kubernetes operator for PostgreSQL and their support for the Citus extension has made it easy to provide a production ready deployment without depending upon expensive, cloud-specific managed database services. This along with the ZFS volume compression we added in a previous release should greatly reduce the total cost of running a mirror node while providing horizontal scalability.
+
+### Upgrading
+
+Expect upgrading to take about an hour due to the large NFT transfer migration in this release. As always, it's recommended upgrades be completed in a staging environment first (e.g. a red/black deployment) to allow for deployment verification and reduce downtime before being opened up to customer traffic.
+
 ## [v0.82](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.82.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE COMPLETED: JUNE 22, 2023**
+{% endhint %}
 
 {% hint style="success" %}
 **TESTNET UPDATE COMPLETED: JUNE 8, 2023**

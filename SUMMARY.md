@@ -38,6 +38,7 @@
       * [Configuring Hashio RPC endpoints](tutorials/more-tutorials/json-rpc-connections/hashio.md)
       * [Configuring Arkhia RPC endpoints](tutorials/more-tutorials/json-rpc-connections/arkhia.md)
       * [Configuring Hedera JSON-RPC Relay endpoints](tutorials/more-tutorials/json-rpc-connections/hedera-json-rpc-relay.md)
+    * [JavaScript Testing](tutorials/more-tutorials/javascript-testing.md)
   * [Demo Applications](tutorials/demo-applications.md)
   * [Starter Projects](tutorials/starter-projects.md)
 * [Networks](networks/README.md)

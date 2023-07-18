@@ -228,7 +228,7 @@ hedera.HbarFrom(100, hedera.HbarUnits.Tinybar)
 
 ## HBAR decimal places
 
-The decimal precision of _**HBAR**_ varies across the different Hedera APIs, with HAPI, JSON-RPC Relay, and Hedera Smart Contract Service (EVM) returning 8 decimal places, while JSON-RPC Relay _**`msg.value`**_ returns 18 decimal places.&#x20;
+The decimal precision of _**HBAR**_ varies across the different Hedera APIs. While HAPI, JSON-RPC Relay, and Hedera Smart Contract Service (EVM) provide 8 decimal places, the **`msg.value`** in JSON-RPC Relay provides 18 decimal places.
 
 <table><thead><tr><th width="495">API</th><th>Decimal</th></tr></thead><tbody><tr><td>Hedera API (HAPI) (Crypto + SCS Service (<code>msg.value</code>))</td><td>8</td></tr><tr><td>Hedera Smart Contract Service (EVM)</td><td>8</td></tr><tr><td>JSON RPC Relay (passed as arguments)</td><td>8</td></tr><tr><td>JSON RPC Relay (<code>msg.value</code>)</td><td>18</td></tr></tbody></table>
 

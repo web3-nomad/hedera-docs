@@ -9,7 +9,7 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 ## [v0.40](https://github.com/hashgraph/hedera-services/releases/tag/v0.40.0)
 
 {% hint style="info" %}
-**TESTNET UPDATE: JULY 18, 2023**
+**TESTNET UPDATE: JULY 19, 2023**
 {% endhint %}
 
 The 0.40 release of Hedera Services delivers [HIP-729 \~ "Contract Accounts Nonce Externalization"](https://hips.hedera.com/hip/hip-729). Smart contract developers using the Hedera public mirror node can now track contract nonces as they would on e.g., Ethereum. Use cases might include troubleshooting failed contract calls or writing unit tests that validate transaction ordering based on `CREATE1` addresses (once these are set by default in release 0.41+).

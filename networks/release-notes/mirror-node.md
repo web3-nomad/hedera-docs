@@ -1606,8 +1606,6 @@ The monitor saw a brand new REST API that lists active subscriptions. This is us
 
 Special thanks to [@si618](https://github.com/si618) for fixing the build on Windows and adding a GitHub workflow to make sure it stays fixed.
 
-And also thanks to [@safinbot](https://github.com/safinbot) for addressing some errors in our REST API OpenAPI specification.
-
 ### Breaking changes
 
 The REST API maximum and default limit was lowered from 1000 to 500. If you explicitly send a number of more than 500, your request will fail. Please update your client code appropriately.

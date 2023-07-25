@@ -3,7 +3,7 @@
 Transactions and queries for the Token Service.
 
 {% hint style="info" %}
-To transfer tokens created by HTS, please reference the [`cryptoTransfer`](https://github.com/theekrystallee/hedera-style-guide/blob/sdk-v1/deprecated/hedera-api/token-service/broken-reference/README.md) API.
+To transfer tokens created by HTS, please reference the [`cryptoTransfer`](../cryptocurrency-accounts/cryptotransfer.md) API.
 {% endhint %}
 
 ## TokenService

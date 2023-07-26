@@ -31,7 +31,7 @@ The mirror node and consensus node test network are scheduled to reset once a qu
 
 Developers will no longer have access to the state data from test network consensus nodes. For example, you will not be able to perform transactions or queries on an account that existed before the reset.
 
-The testnet mirror node will be available for developers for two weeks after the date of the reset to store any data before access is completely removed. You will be able to query old testnet information for the two-week period if is it available.
+The testnet resets do not include version updates to the network.&#x20;
 
 What you should do:
 

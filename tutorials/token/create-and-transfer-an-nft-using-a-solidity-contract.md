@@ -183,10 +183,10 @@ fmt.Printf("The new contract ID is %v\n", newContractId)
 
 ## 3. Execute the Contract to Create an NFT
 
-The parameters you need to specify for this contract call are Name, Symbol, Memo, Maximum Supply, and Expiration. Setting an expiration date in seconds is required because entities on Hedera will need to pay a “rent” to persist. In this case, the contract entity will pay all NFT auto-renewal fees.
+The parameters you need to specify for this contract call are Name, Symbol, Memo, Maximum Supply, and Expiration. The smart contract "rent" feature is currently _NOT_ enabled. Once enabled in the future, setting an expiration date _in seconds_ is required because entities on Hedera will need to pay "rent" to persist. In this case, the contract entity will pay all NFT auto-renewal fees.
 
 {% hint style="warning" %}
-Note that expiration must be between 82 and 91 days **specified in seconds**. This window will change when [HIP-372](https://hips.hedera.com/hip/hip-372) replaces [HIP-16](https://hips.hedera.com/hip/hip-16).
+**Note:** The expiration must be between 82 and 91 days, **specified in seconds**. This window will change when [HIP-372](https://hips.hedera.com/hip/hip-372) replaces [HIP-16](https://hips.hedera.com/hip/hip-16).
 {% endhint %}
 
 {% tabs %}

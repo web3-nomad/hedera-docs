@@ -6,8 +6,6 @@ the ID for a single entity (account, claim, file, or smart contract instance)
 
 | Field        | Type                                       | Description                                    |
 | ------------ | ------------------------------------------ | ---------------------------------------------- |
-| entity       | \*\*\*\*                                   | The Account ID for the cryptocurrency account  |
-| **one of:**  |                                            |                                                |
 | `accountID`  | [AccountID](../basic-types/accountid.md)   | The Account ID for the cryptocurrency account  |
 | `liveHash`   | LiveHash                                   | A uniquely identifying livehash of an acount   |
 | `fileID`     | [FileID](../basic-types/fileid.md)         | The file ID of the file                        |

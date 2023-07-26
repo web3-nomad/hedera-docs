@@ -6,7 +6,6 @@ Delete a file or smart contract - can only be done with a Hedera administrative 
 
 | Field            | Type                                       | Description                                                                              |
 | ---------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| `id`             | **one of:**                                |                                                                                          |
-|                  | [FileID](../basic-types/fileid.md)         | The file ID of the file to delete, in the format used in transactions                    |
-|                  | [ContractID](../basic-types/contractid.md) | The contract ID instance to delete, in the format used in transactions                   |
+| `fileId`         | [FileID](../basic-types/fileid.md)         | The file ID of the file to delete, in the format used in transactions                    |
+| `contractId`     | [ContractID](../basic-types/contractid.md) | The contract ID instance to delete, in the format used in transactions                   |
 | `expirationTime` | [TimestampSeconds](timestamp.md)           | The timestamp in seconds at which the "deleted" file should truly be permanently deleted |

@@ -8,7 +8,7 @@ The table below defines the mapping of Solidity variables and operation codes to
 | `block.basefee`                           | The `BASEFEE` opcode will return zero. Hedera does not use the Fee Market mechanism this is designed to support.                                                                                                                    |
 | `block.chainid`                           | The `CHAINID` opcode will return 295(hex `0x0127`) for mainnet, 296( hex `0x0128`) for testnet, 297( hex `0x0129`) for previewnet, and 298 (`0x12A`) for development networks.                                                      |
 | `block.coinbase`                          | The `COINBASE` operation will return the funding account (Hedera transaction fee collecting account `0.0.98`).                                                                                                                      |
-| `block.number`                            | The index of the record file (not recommended use `block.timestamp`).                                                                                                                                                               |
+| `block.number`                            | The index of the record file (not recommended, use `block.timestamp`).                                                                                                                                                              |
 | `block.timestamp`                         | The transaction consensus timestamp.                                                                                                                                                                                                |
 | `block.difficulty`                        | Always zero.                                                                                                                                                                                                                        |
 | `block.gaslimit`                          | The `GASLIMIT` operation will return the `gasLimit` of the transaction. The transaction `gasLimit` will be the lowest of the gas limit requested in the transaction or a global upper gas limit configured for all smart contracts. |
@@ -21,11 +21,9 @@ The table below defines the mapping of Solidity variables and operation codes to
 | `<address>.codehash`                      | Precompile contract addresses will report the empty code hash.                                                                                                                                                                      |
 | `delegateCall`                            | Contracts may no longer use `delegateCall()` to invoke system contracts. Contracts should instead use the `call()` method.                                                                                                          |
 
-| Opcodes       | Hedera                                                                                                                                                               |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `SELFBALANCE` | This opcode will operate as expected with no change from Ethereum Mainnet.                                                                                           |
-| `CREATE2`     | The `CREATE2` operation is supported as of the 0.23 Hedera services release. Please check out the [status page](https://status.hedera.com/) for network availabilty. |
-| `PUSH0`       | The `PUSH0` (`0x5f`) operation pushes the constant value `0` onto the stack and is supported as of the 0.38.6 Hedera Mainnet release.                                |
+| Opcodes    | Hedera                                                                    |
+| ---------- | ------------------------------------------------------------------------- |
+| `PRNGSEED` | This opcode returns a random number based on the n-3 record running hash. |
 
 {% hint style="warning" %}
 ### _HBAR decimal places_

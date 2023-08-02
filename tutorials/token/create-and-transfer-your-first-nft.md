@@ -117,6 +117,10 @@ fmt.Println("Created NFT with token ID ", tokenId)
 
 ## 2. Mint a New NFT
 
+{% hint style="info" %}
+🔔 **NOTE:** Reflecting significant growth in Hedera's NFT ecosystem, network fee changes for bulk minting NFTs will be implemented in the v0.41 release. See [this](https://hedera.com/blog/hederas-expanding-nft-ecosystem-new-pricing-to-meet-growing-demand) blog post for more details.
+{% endhint %}
+
 When creating an NFT, the decimals and initial supply must be set to zero. After the token is created, you mint each NFT using the token mint operation. Specifying a _supply key_ during token creation is a requirement to be able to [mint](https://docs.hedera.com/guides/docs/sdks/tokens/mint-a-token) and [burn](https://docs.hedera.com/guides/docs/sdks/tokens/burn-a-token) tokens. The supply key is required to sign mint and burn transactions.
 
 Both the NFT image and metadata live in the InterPlanetary File System (IPFS), which provides decentralized storage. The file diploma\_metadata.json contains the metadata for the NFT. A content identifier (CID) pointing to the metadata file is used during minting of the new NFT. Notice that the metadata file contains a URI pointing to the NFT image.

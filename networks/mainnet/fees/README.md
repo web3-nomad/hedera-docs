@@ -28,6 +28,10 @@ Mainnet transaction and query fees can be estimated using the [Hedera Fee Estima
 
 All fees are subject to change. The fees below reflect a base price for the transaction or query. Transaction characteristics may increase the price from the base price shown below. Transaction characteristics include having more than one signature, a memo field, etc. Please reference the [Hedera fee estimator](https://hedera.com/fees) to estimate the transaction or query fee.
 
+{% hint style="info" %}
+🔔 **NOTE:** Reflecting significant growth in Hedera's NFT ecosystem, network fee changes for bulk minting NFTs will be implemented in the v0.41 release. See [this](https://hedera.com/blog/hederas-expanding-nft-ecosystem-new-pricing-to-meet-growing-demand) blog post for more details.
+{% endhint %}
+
 ### Cryptocurrency Service
 
 | Operations                   | USD ($)  |

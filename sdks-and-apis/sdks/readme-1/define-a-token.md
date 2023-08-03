@@ -17,7 +17,7 @@ You can also create, access, or transfer HTS tokens using smart contracts - see 
 
 **NFTs**
 
-For non-fungible tokens, the token ID represents a NFT class. Once the token is created, you will have to mint each NFT using the [token mint](mint-a-token.md) operation.
+For non-fungible tokens, the token ID represents a NFT class. Once the token is created, you will have to mint each NFT using the [token mint](../token-service/mint-a-token.md) operation.
 
 {% hint style="warning" %}
 Note: It is required to set the initial supply for an NFT to 0.

@@ -13,7 +13,7 @@ A transaction that submits a topic message to the Hedera network. To access the 
 * Please use the [Hedera fee estimator](https://hedera.com/fees) to estimate your transaction fee cost
 
 {% hint style="info" %}
-HCS message size: 1024 bytes
+🚨 **NOTE:** Max size of an HCS message: 1024 bytes (1 kb).
 {% endhint %}
 
 #### Methods

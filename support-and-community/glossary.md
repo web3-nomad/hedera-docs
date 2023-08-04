@@ -198,9 +198,9 @@ A cryptographic algorithm for digital signatures is a crucial component in distr
 
 A cryptographic algorithm used for data integrity and widely used in cryptocurrencies. In this term, "[secp256k1](../sdks-and-apis/sdks/keys/generate-a-new-key-pair.md#ecdsa-secp256k1\_)" refers to the specific parameters of the elliptic curve used, making it efficient for computations. Hedera supports this signature scheme for generating cryptographic keys and signing transactions.
 
-### ED25519
+### Ed25519
 
-In the context of Hedera, ED25519 is one of the signature schemes supported for the creation and verification of digital signatures. It's often used for signing transactions, as it provides a strong level of security while still being efficient to compute.
+In the context of Hedera, Ed25519 is one of the signature schemes supported for the creation and verification of digital signatures. It's often used for signing transactions, as it provides a strong level of security while still being efficient to compute.
 
 ### ERC-20
 

@@ -28,13 +28,11 @@ https://pool.arkhia.io/hedera/mainnet/json-rpc/v1/YOUR_API_KEY
 https://pool.arkhia.io/hedera/testnet/json-rpc/v1/YOUR_API_KEY
 ```
 {% endtab %}
-
-{% tab title="Hedera Previewnet" %}
-```
-https://pool.arkhia.io/hedera/previewnet/json-rpc/v1/YOUR_API_KEY
-```
-{% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+**Note:** Arkhia provides RPC endpoints for Hedera Mainnet and Hedera Testnet but not for Hedera Previewnet.
+{% endhint %}
 
 You will need to replace `YOUR_API_KEY` with an Arkhia API, and that requires the following pre-requisite steps:
 

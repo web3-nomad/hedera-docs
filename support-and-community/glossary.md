@@ -244,6 +244,10 @@ The principle that all transactions on a distributed ledger should be treated eq
 
 A "fallback fee" in the context of Hedera and smart contracts is a type of custom fee that is charged to the recipient of a token transfer, rather than the sender. This can lead to vulnerabilities in smart contracts if they unknowingly accept a token with a high fallback fee, resulting in a loss of funds. Discussions on mitigation strategies, such as sender-pays models or limits on custom fees, are ongoing. [Here's](https://hedera.com/blog/nft-royalty-fees-hedera-hashgraph) a comprehensive blog post covering fallback fees.
 
+### Fee Collector Account
+
+A fee collector account is an account designated to receive transaction and [custom token fees](../sdks-and-apis/sdks/readme-1/custom-token-fees.md) on the Hedera network. The account collects the fees users pay for executing transactions and queries on the network.
+
 ### Fiat Currency
 
 A term widely used across the financial industry (and even beyond) to refer to government-backed national currencies such as the U.S. dollar or the British pound. Even so, the concept of fiat currency is deeply intertwined with multiple aspects of distributed ledger technology and cryptocurrency usage. One of those aspects concerns how individuals and organizations onboard themselves into the worlds of DLTs and [cryptocurrency](glossary.md#cryptocurrency).

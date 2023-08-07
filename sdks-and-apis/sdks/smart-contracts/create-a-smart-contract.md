@@ -57,7 +57,7 @@ The contract state size limit is 10 MB and the system gas throttle is 15 million
 
 The <mark style="color:purple;">`ContractCreateFlow()`</mark>streamlines the creation of a contract by taking the bytecode of the contract and creating the file on Hedera to store the bytecode for you.
 
-First, a <mark style="color:purple;">`FileCreateTransaction()`</mark> will be executed to create a file on Hedera to store the specified contract bytecode. Second, the <mark style="color:purple;">`ContractCreateTransaction()`</mark> will be executed to create the contract instance on Hedera.
+First, a <mark style="color:purple;">`FileCreateTransaction()`</mark> will be executed to create a file on Hedera to store the specified contract bytecode. Then, the <mark style="color:purple;">`ContractCreateTransaction()`</mark> will be executed to create the contract instance on Hedera. Lastly, a [<mark style="color:blue;">`FileDeleteTransaction()`</mark>](../file-storage/delete-a-file.md) will be executed to remove the file.
 
 The response will return the contract create transaction information like the new contract ID. You will not get the ID of the file that was created that stored your contract bytecode. If you would like to know the file ID of your contract bytecode, you can [create a file](../file-storage/create-a-file.md) and use the <mark style="color:purple;">`ContractCreateTransaction()`</mark> API directly.
 

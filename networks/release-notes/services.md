@@ -12,8 +12,8 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 **MAINNET UPDATE: AUGUST 15, 2023**
 {% endhint %}
 
-{% hint style="info" %}
-**TESTNET UPDATE: JULY 19, 2023**
+{% hint style="success" %}
+**TESTNET UPDATE: AUGUST 8, 2023**
 {% endhint %}
 
 {% hint style="success" %}

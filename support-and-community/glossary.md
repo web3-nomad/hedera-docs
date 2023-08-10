@@ -6,7 +6,7 @@ description: Hedera & Web3 Glossary - Comprehensive Guide for Developers
 
 This glossary intends to provide a reference for Hedera and general web3 key terms. The purpose is to assist developers, particularly those new to the field or non-specialists, in understanding essential definitions related to various aspects of this technology. It covers basic to complex concepts and essential development tools and is an accessible resource for developers.
 
-## [#](glossary.md#undefined) [A](glossary.md#a) [B](glossary.md#b) [C](glossary.md#c) [D](glossary.md#d) [E](glossary.md#e) [F](glossary.md#f) [G](glossary.md#g) [H](glossary.md#h) [I](glossary.md#i) [J](glossary.md#j) [K](glossary.md#m) [L](glossary.md#m) [M](glossary.md#m) [N](glossary.md#n) [O](glossary.md#o) [P](glossary.md#p) [Q](glossary.md#q) [R](glossary.md#r) [S](glossary.md#s) [T](glossary.md#t) [U](glossary.md#v) [V](glossary.md#v) [W](glossary.md#w) [X](glossary.md#z) [Y](glossary.md#z) [Z](glossary.md#z)
+## [#](glossary.md#undefined) [A](glossary.md#a) [B](glossary.md#b) [C](glossary.md#c) [D](glossary.md#d) [E](glossary.md#e) [F](glossary.md#f) [G](glossary.md#g) [H](glossary.md#h) [I](glossary.md#i) [J](glossary.md#j) [K](glossary.md#k) [L](glossary.md#l) [M](glossary.md#m) [N](glossary.md#n) [O](glossary.md#o) [P](glossary.md#p) [Q](glossary.md#q) [R](glossary.md#r) [S](glossary.md#s) [T](glossary.md#t) [U](glossary.md#v) [V](glossary.md#v) [W](glossary.md#w) [X](glossary.md#z) [Y](glossary.md#z) [Z](glossary.md#z)
 
 ## \#
 
@@ -37,6 +37,10 @@ A unique identifier that represents a user or a destination on the network. It's
 ### Algorithm
 
 An algorithm is a sequence of instructions that ensures a task or computation is completed. It can also predict results based on a specific input. Distributed ledger technology uses [consensus](glossary.md#consensus) algorithms to help reconcile a customer’s bank account.
+
+### Anti-Money Laundering (AML)
+
+A set of regulations and laws to help prevent crimes that produce monetary gain, such as tax evasion, fraud, selling stolen goods, drug and human trafficking, and corruption. Similar laws are being created for the blockchain industry to prevent money laundering activity.
 
 ### Asynchronous Byzantine Fault Tolerance (aBFT)
 
@@ -77,6 +81,10 @@ A successive number assigned to each record file, incremented by one for each ne
 The [consensus](glossary.md#consensus) [timestamp](glossary.md#timestamp) of the first transaction in the Record file.
 
 ## C
+
+### Central Bank Digital Currency (CBDC)
+
+A digital currency that’s issued by a central, nation-state-backed bank. The US Federal Reserve, the European Central Bank, and the Bank of England are examples of central banks. A nation’s CBDC should be considered the digital equivalent of the nation’s fiat currency.
 
 ### Centralized Exchange (CEX)
 
@@ -122,15 +130,17 @@ The use of cryptography in conjunction with distributed networks allows for thes
 
 ### Crypto Wallet
 
-A form of digital wallet designed for [web3](glossary.md#web3). Crypto wallets help you manage permissions with whom you share data, store, and send cryptocurrency, NFTs, and more. Your crypto wallet contains a private key that identifies and assesses the assets that are yours.&#x20;
-
-In this way, you can think of a wallet like MetaMask or [HashPack](https://www.hashpack.app/) as a digital identity management system.
+A form of digital wallet designed for [web3](glossary.md#web3). Crypto wallets help you manage permissions with whom you share data, store, and send cryptocurrency, NFTs, and more. Your crypto wallet contains a private key that identifies and assesses the assets that are yours.  In this way, you can think of a wallet like [MetaMask](https://metamask.io/) or [HashPack](https://www.hashpack.app/) as a digital identity management system.
 
 Examples: [non-custodial walle](glossary.md#non-custodial-wallet)t, [hardware wallet](glossary.md#cold-wallet), [custodial wallet](glossary.md#custodial-wallet)
 
 ### Custodial Wallet
 
 A wallet used to digitally store fiat and cryptocurrencies. A trusted third party (custodian) is empowered with their own private key to manage the wallet for the owner of the wallet holder. For example, the custodian can send and receive payments at the owner’s request.
+
+### Custody
+
+Custody refers to the secure storage of digital assets by a specialized provider on behalf of clients. It involves safeguarding private keys and providing insurance, audits, and reporting to prove holdings.
 
 ## D
 
@@ -250,7 +260,7 @@ A fee collector account is an account designated to receive transaction and [cus
 
 ### Fiat Currency
 
-A term widely used across the financial industry (and even beyond) to refer to government-backed national currencies such as the U.S. dollar or the British pound. Even so, the concept of fiat currency is deeply intertwined with multiple aspects of distributed ledger technology and cryptocurrency usage. One of those aspects concerns how individuals and organizations onboard themselves into the worlds of DLTs and [cryptocurrency](glossary.md#cryptocurrency).
+A term widely used across the financial industry (and even beyond) to refer to government-backed national currencies such as the U.S. dollar or the British pound. Even so, the concept of fiat currency is deeply intertwined with multiple aspects of distributed ledger technology and cryptocurrency usage. One of those aspects concerns how individuals and organizations onboard themselves into the worlds of DLTs and [cryptocurrency](glossary.md#cryptocurrency).&#x20;
 
 ### Finality
 
@@ -388,6 +398,18 @@ Currently, seven DLTs adhere to ISO 20022 standards: Algorand (ALGO), [Hedera (H
 
 An open-source project implementing the Ethereum JSON-RPC standard. The [Hedera JSON-RPC relay](https://github.com/hashgraph/hedera-json-rpc-relay) allows developers to interact with Hedera nodes using familiar Ethereum tools. This allows Ethereum developers to deploy, query, and execute contracts on the Hedera Network as they would on Ethereum.
 
+## K
+
+### Know Your Customer (KYC)
+
+A standard for the investment industry in which an investor’s identity can be verified and evaluated for business relationships. Players in the blockchain industry must heed to KYC standards because cryptocurrency exchanges require them for [Anti-money laundering (AML)](glossary.md#anti-money-laundering-aml) compliance.
+
+## L
+
+### Liquidity Pool
+
+A collection of shared cryptocurrency coins/tokens locked under a smart contract, ensuring liquidity that allows participants to trade easily. They are used for trading in [decentralized exchanges (DEX)](glossary.md#decentralized-exchange-dex), and for providing liquidity to [decentralized financed (DeFi) protocols](glossary.md#decentralized-finance-defi), which makes them an important part of yield farming.
+
 ## &#x20;M
 
 ### Mainnet
@@ -498,6 +520,10 @@ For example, Ethereum includes precompiled contracts for operations like ellipti
 
 A private key is an alphanumeric string of data that corresponds to a single specific account in a wallet. Private keys can be thought of as a password that grants access to, and control over, that specific crypto account. Never reveal your private key to anyone, as [whoever controls the private key controls the account](https://youtu.be/dnC5mFaIW3Q). If you lose your private key, you lose access to that account.
 
+### Proof-of-Reserves (PoR)
+
+A Proof of Reserves (PoR) is an independent audit conducted by a third party that seeks to ensure that a custodian holds the assets it claims to on behalf of its clients.
+
 ### Proof-of-Stake (PoS)
 
 A consensus mechanism in which an individual runs distributed ledger software (a “validator node”) responsible for validating transactions, blocks, and the state of the network.
@@ -579,6 +605,10 @@ Examples of SBT uses include attendance verification for events, job achievement
 ### Source Code
 
 Source code, which software developers program, is data, metadata, and data schema that collectively form the basis of any given ledger’s transactional content. Source code is used to automate the business processes and algorithms behind the operation of a given distributed network (e.g., Bitcoin, Ethereum, Hedera, etc.).
+
+### Stablecoin
+
+A stablecoin is a cryptocurrency designed to have a stable value attached to an external asset like the US dollar or gold in order to maintain low volatility. Stablecoins aim to provide the benefits of cryptocurrencies while avoiding price swings.
 
 ### Staking
 

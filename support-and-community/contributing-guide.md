@@ -6,7 +6,7 @@ cover: ../.gitbook/assets/28_ultraviolet (1) (1) (2).jpg
 coverY: 31
 ---
 
-# Contributing Guide
+# Contributing & Style Guide
 
 We value every form of contribution, no matter how small. In this guide, you will find steps on submitting an issue, creating a pull request, submitting a demo application, creating Hedera Improvement Proposals (HIPs), and adhering to our style guide.  Thanks in advance for your contributions!
 
@@ -76,11 +76,73 @@ Thank you for your valuable contribution to the Hedera community! We look forwar
 
 ## Style Guide
 
-### Capitalization
+<details>
 
-{% hint style="info" %}
+<summary>Use of HBAR</summary>
+
+When referring to the Hedera native currency, use the singular form of the noun **HBAR**. For example:
+
+* "I bought 10 **HBAR** yesterday"
+
+Do not use the plural form of the noun, as this style rule applies even when referring to multiple units of **HBAR**.
+
+#### tinybars
+
+When referring to fractions of **HBAR**, use the plural form **tinybars**. For example:
+
+* "I will transfer 1,000 **tinybars** from my account to yours"
+
+Do not use the singular form of the noun, as any reference should be plural since one **HBAR** equals 100,000 **tinybars**.
+
+</details>
+
+<details>
+
+<summary>America English</summary>
+
+Follow the American English spelling standard. This means that words should follow the American English conventions, employing **'z'** instead of **'s'** in words such as 'decentralized,' 'realized,' and 'organized.'
+
+**For example:**
+
+* Use 'color' instead of the British English 'colour.'
+* Use 'analyze' instead of the British English 'analyse.'
+* Use 'organization' instead of the British English 'organisation.'
+
+Use an American English dictionary or a recognized American English style guide to ensure consistency and accuracy throughout the text. Tools like Grammarly or spell checkers set to American English can assist in maintaining this standard.
+
+</details>
+
+<details>
+
+<summary>Tutorial steps</summary>
+
+When presenting steps or instructions within the documentation, the following guidelines should be observed:
+
+**Ordered Steps (Numbered List):** If the steps must be followed in a specific sequence, use a numbered list to present the order clearly. This ensures that readers understand the progression and importance of each step.
+
+**Example:**
+
+1. Clone repo.
+2. `cd` into the cloned directory.
+3. `npm install`
+
+**Unordered Steps (Bulleted List):** If the order of the steps is not crucial to the outcome, use bulleted points. This provides flexibility for readers to approach the tasks as they prefer.
+
+**Example:**
+
+* Choose a color.
+* Select a size.
+* Identify a preferred style.
+
+Adhering to these guidelines will ensure readers' clarity and ease of understanding, allowing them to follow instructions effectively, whether in a precise sequence or with more flexible options.
+
+</details>
+
+<details>
+
+<summary>Capitalization</summary>
+
 **Key Point:** Use standard American capitalization. Use sentence case for headings.
-{% endhint %}
 
 Follow the standard [capitalization rules](https://owl.purdue.edu/owl/general\_writing/mechanics/help\_with\_capitals.html) for American English. Additionally, use the following style standards consistently throughout the Hedera developer documentation:
 
@@ -89,27 +151,25 @@ Follow the standard [capitalization rules](https://owl.purdue.edu/owl/general\_w
 * Do not use all-uppercase or camel case except in the following contexts: in official names, abbreviations, or variable names in a code block, e.g., **HBAR, HIPs,** or **SHA384**.
 * You should revise any sentence starting with lowercase word stylization to avoid creating a sentence with a lowercase word.
 
-### HBAR
+</details>
 
-When referring to the Hedera native currency, use the singular form of the noun **HBAR**. For example:
+<details>
 
-* "I bought 10 **HBAR** yesterday"
+<summary>Oxford comma</summary>
 
-Do not use the plural form of the noun, as this style rule applies even when referring to multiple units of **HBAR**.
+The Oxford comma is the comma used immediately before the coordinating conjunction ("and" or "or") in a list of three or more items. In our written content, the use of the Oxford comma is required to maintain clarity and prevent ambiguity.
 
-### tinybars
+**Example:** "The team consists of product managers, developers, designers, and writers."
 
-When referring to fractions of **HBAR**, use the plural form **tinybars**. For example:
+By consistently applying the Oxford comma, we ensure that the meaning of lists is clear, especially when individual items contain commas themselves. This standard reflects our dedication to ensuring clear and accurate communication in all of our documentation.
 
-* "I will transfer 1,000 **tinybars** from my account to yours"
+</details>
 
-Do not use the singular form of the noun, as any reference should be plural since one **HBAR** equals 100,000 **tinybars**.
+<details>
 
-### Abbreviations
+<summary>Abbreviations</summary>
 
-{% hint style="info" %}
 **Key Point:** Use standard American and industry-standard abbreviations, e.g., **NFT** for non-fungible tokens. Avoid internet slang.
-{% endhint %}
 
 Abbreviations include acronyms, initialisms, shortened words, and contractions. In most contexts, the technical distinction between acronyms and initialisms isn't relevant; it's OK to use the phrase _acronym_ to refer to both.
 
@@ -123,9 +183,7 @@ Abbreviations include acronyms, initialisms, shortened words, and contractions. 
   * **Dr.** for doctor
   * **etc.** for et cetera
 
-{% hint style="info" %}
 **Note:** Some abbreviations can be acronyms or initialisms, depending on the speaker's preference—examples include _**FAQ**_ and _**SQL**_. In some cases, the pronunciation determines [whether to use _a_ or _an_](https://developers.google.com/style/articles).
-{% endhint %}
 
 #### Long and short versions of a word <a href="#long-and-short-versions" id="long-and-short-versions"></a>
 
@@ -155,6 +213,6 @@ For all subsequent mentions of the term, use the abbreviation by itself. If the 
 
 In some cases, spelling out an acronym doesn't help the reader understand the term. For example, writing out a _portable document format_ doesn't help the reader understand what a _PDF_ document is.
 
-{% hint style="info" %}
 **Note:** The following acronyms rarely need to be spelled out: **API**, **SDK**, **HTML**, **REST**, **URL**, **USB**, and file formats such as **PDF** or **XML**.
-{% endhint %}
+
+</details>

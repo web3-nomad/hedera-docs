@@ -433,6 +433,6 @@
   * [Bug Bounty](https://hedera.com/bounty)
   * [Hedera Help](https://help.hedera.com/hc/en-us)
   * [Meetups](support-and-community/meetups.md)
-  * [Contributing Guide](support-and-community/contributing-guide.md)
+  * [Contributing & Style Guide](support-and-community/contributing-guide.md)
   * [Brand Guidelines](support-and-community/brand-guidelines.md)
   * [Status Page](https://status.hedera.com)

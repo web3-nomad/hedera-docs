@@ -1,10 +1,14 @@
 # Smart Contract Security
 
-The Hedera Smart Contract Service (HSCS) integrates the features of Hedera's third-generation native entity functionality—high throughput, fast finality, predictable and affordable fees, and fair transaction ordering—with a highly optimized and performant second-generation Ethereum Virtual Machine (EVM). We aim to offer comprehensive support for smart contracts originally written for other EVM-compatible chains and to enable their seamless deployment on Hedera.
+The Hedera Smart Contract Service (HSCS) integrates the features of Hedera's third-generation native entity functionality—high throughput, fast finality, predictable and affordable fees, and fair transaction ordering—with a highly optimized and performant second-generation [Ethereum Virtual Machine (EVM)](../../support-and-community/glossary.md#ethereum-virtual-machine-evm). We aim to offer comprehensive support for smart contracts originally written for other EVM-compatible chains and to enable their seamless deployment on Hedera.
 
 ## EVM Equivalence
 
-We strive to ensure that developers can conveniently point to a Hedera-supported RPC endpoint and perform smart contract executions and queries using the same code and similar tools to achieve EVM equivalence. To realize this objective, all smart contract transactions are executed using the [Besu EVM](hyperledger-besu-evm.md), and the resulting changes are stored in the Hedera-optimized Virtual Merkle Tree state. Users are thus guaranteed deterministic finality (as opposed to probabilistic finality) of smart contract executions within 2-3 seconds while ensuring that state changes are entirely encompassed within smart contract functionality.
+We strive to ensure that developers can conveniently point to a Hedera-supported RPC endpoint and perform smart contract executions and queries using the same code and similar tools to achieve EVM equivalence. All smart contract transactions are executed using the [Besu EVM](hyperledger-besu-evm.md) to realize this objective, and the resulting changes are stored in the Hedera-optimized [Virtual Merkle Tree](../../support-and-community/glossary.md#virtual-merkle-tree) state. Users are thus guaranteed deterministic finality (as opposed to probabilistic finality) of smart contract executions within 2-3 seconds while ensuring that state changes are entirely encompassed within smart contract functionality.&#x20;
+
+{% hint style="info" %}
+🔔 A Comprehensive breakdown of Hedera's EVM equivalence goals and exceptions can be found [**here**](hederas-evm-equivalence-goals-and-exceptions.md).&#x20;
+{% endhint %}
 
 ## Security Model
 
@@ -12,12 +16,12 @@ We strive to ensure that developers can conveniently point to a Hedera-supported
 
 The old security model (pre [0.35.2](https://github.com/hashgraph/hedera-services/releases/tag/v0.35.2)) supported account key signatures provided at transaction time for authorization. Some of the key characteristics of this model included:
 
-* Smart contracts could only change their own storage or the storage they were [delegate called](https://docs.soliditylang.org/en/v0.8.19/introduction-to-smart-contracts.html#delegatecall-and-libraries) with.
-* System smart contracts could be delegate called to carry out Hedera Token Service (HTS) operations on behalf of another account - Externally Owned Account (EOA) or contract account.
+* [Smart contracts](../../support-and-community/glossary.md#smart-contract) could only change their own storage or the storage they were [delegate called](https://docs.soliditylang.org/en/v0.8.19/introduction-to-smart-contracts.html#delegatecall-and-libraries) with.
+* System smart contracts could be delegate called to carry out [Hedera Token Service (HTS)](../../support-and-community/glossary.md#hedera-token-service-hts) operations on behalf of another account - Externally Owned Account (EOA) or contract account.
 * Smart Contracts could change an EOA’s storage with the appropriate signature in the transaction.
 * Smart Contracts could change an EOA’s balance with the appropriate signature in the transaction or with prior addition to an allowance approval list.
 
-This provided a huge improvement to user experience as contracts could combine transactions in an attempt at atomicity. For instance, a contract could associate, transfer and approve transactions on a user's behalf with one signature. While focusing on usability, this approach did not address cases in which bad actors could carry out an unsanctioned transaction on behalf of a user, e.g., [https://hedera.com/blog/analysis-remediation-of-the-precompile-attack-on-the-hedera-network](https://hedera.com/blog/analysis-remediation-of-the-precompile-attack-on-the-hedera-network)
+This greatly improved user experience as contracts could combine transactions in an attempt at atomicity. For instance, a contract could associate, transfer and approve transactions on a user's behalf with one signature. While focusing on usability, this approach did not address cases in which bad actors could carry out an unsanctioned transaction on behalf of a user, e.g., [https://hedera.com/blog/analysis-remediation-of-the-precompile-attack-on-the-hedera-network](https://hedera.com/blog/analysis-remediation-of-the-precompile-attack-on-the-hedera-network)
 
 To address this, the core Hedera engineers thoroughly analyzed the Smart Contract Service and the HTS system contracts, aiming to secure the state and token assets of users and the network during Smart Contract executions. The results of this effort are the guidelines in [Hedera Services release v0.35.2](https://github.com/hashgraph/hedera-services/releases/tag/v0.35.2).
 

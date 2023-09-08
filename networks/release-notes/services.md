@@ -6,13 +6,16 @@ description: Hedera Services release information
 
 Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
 
-## v0.41
+## [v0.41](https://github.com/hashgraph/hedera-services/releases/tag/v0.41.0)
 
-{% hint style="info" %}
+{% hint style="success" %}
 **TESTNET UPDATE: AUGUST 22, 2023**
 {% endhint %}
 
-Coming soon...
+* Ethereum transaction type support is expanded to include type 1 transactions ([#7670](https://github.com/hashgraph/hedera-services/issues/7670)) which follow EIP 2930 RLP encoding. This increases the number of native EVM tools and scenarios the Hedera Smart Contract Service supports.
+* NFT mint pricing is changed to linearly scale based on number of serials minted. Also, minting a single NFT in collection is changed to cost $0.02 from $0.05. [#7769](https://github.com/hashgraph/hedera-services/issues/7769)
+
+<figure><img src="../../.gitbook/assets/0.41_Performance Measurement.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.40](https://github.com/hashgraph/hedera-services/releases/tag/v0.40.0)
 
@@ -31,6 +34,8 @@ Coming soon...
 The 0.40 release of Hedera Services delivers [HIP-729 \~ "Contract Accounts Nonce Externalization"](https://hips.hedera.com/hip/hip-729). Smart contract developers using the Hedera public mirror node can now track contract nonces as they would on e.g., Ethereum. Use cases might include troubleshooting failed contract calls or writing unit tests that validate transaction ordering based on `CREATE1` addresses (once these are set by default in release 0.41+).
 
 Open source contributors to the project will notice major refinements in the Gradle build, thanks to [@jjohannes](https://github.com/jjohannes)'s expert touch.
+
+<figure><img src="../../.gitbook/assets/0.40_Performance Measurement.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.39](https://github.com/hashgraph/hedera-services/tags)
 
@@ -62,6 +67,8 @@ Services v0.39.0 adds the following features:
 * Implementation of handle workflow [#6476](https://github.com/hashgraph/hedera-services/pull/6476)
 * Implement the modular record cache [#6754](https://github.com/hashgraph/hedera-services/pull/6754)
 * CryptoDelete handle implementation [#6694](https://github.com/hashgraph/hedera-services/pull/6694)
+
+<figure><img src="../../.gitbook/assets/0.39_Performance Measurement.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.38](https://github.com/hashgraph/hedera-services/releases/tag/v0.38.0)
 

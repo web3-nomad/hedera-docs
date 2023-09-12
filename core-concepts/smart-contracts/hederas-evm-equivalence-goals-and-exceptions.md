@@ -36,7 +36,7 @@ Hedera encourages developers to contribute to its EVM development and join the c
 
 ## Key Differences and Exceptions between Hedera and Ethereum
 
-While Hedera aims to achieve EVM equivalence, there are several exceptions and key differences to be aware of:
+While Hedera aims to achieve EVM equivalence, there are several exceptions and key differences to be aware of.
 
 ### Transaction and Network Differences
 
@@ -60,19 +60,18 @@ While Hedera aims to achieve EVM equivalence, there are several exceptions and k
 
 ### Token and Fee Differences
 
-| Function           | Hedera                                                                                                       | Ethereum                                                         |
-| ------------------ | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
-|  Native Tokens     | Supports native tokens in addition to [ERC-20 and ERC-721 token standards](supported-erc-token-standards.md) | All ERC token standards but primarily ERC-20 and ERC-721 tokens. |
-| Contract Lifecycle | Contract entities can expire, rent fees may apply                                                            | No expiration or rent fees                                       |
-| Gas Fees           | Charges at least 80% of gas fees regardless of transaction outcome                                           | Gas fees depend on transaction outcome                           |
-| Fee Structure      | [Complex with two different gas prices](gas-and-fees.md)                                                     | Single gas price                                                 |
-| Token Association  | [Concept of token association ](../../sdks-and-apis/sdks/readme-1/associate-tokens-to-an-account.md)         | No concept of token association                                  |
+| Function                | Hedera                                                                                                       | Ethereum                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+|  Native Tokens          | Supports native tokens in addition to [ERC-20 and ERC-721 token standards](supported-erc-token-standards.md) | All ERC token standards but primarily ERC-20 and ERC-721 tokens. |
+| Contract Lifecycle      | Contract entities can expire, rent fees may apply                                                            | No expiration or rent fees                                       |
+| Gas Fees                | Charges at least 80% of gas fees regardless of transaction outcome                                           | Gas fees depend on transaction outcome                           |
+| Fee Structure           | [Complex with two different gas prices](gas-and-fees.md)                                                     | Single gas price                                                 |
+| Token Association**\*** | [Concept of token association ](../../sdks-and-apis/sdks/readme-1/associate-tokens-to-an-account.md)         | No concept of token association                                  |
+
+{% hint style="info" %}
+**\*Note:** Token Association only applies to native HTS tokens and does _not_ affect ERC-20/721 tokens.
+{% endhint %}
 
 ### Keys and Other Differences
 
-| Function                     | Hedera                                                                                            | Ethereum                              |
-| ---------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| Keys for Token Functionality | Keys control access to token functionality (KYC, freeze, wipe, supply, fee, and pause)            | No equivalent functionality           |
-| Precheck Failures            | [Multiple precheck failure reasons](../../sdks-and-apis/hedera-api/miscellaneous/responsecode.md) | Typically single failure reason       |
-| Communication                | Requires communication with both consensus and mirror nodes                                       | Direct communication with nodes       |
-| HBAR Decimal Precision       | 8 or 18[ (varies across Hedera APIs)](../../sdks-and-apis/sdks/hbars.md#hbar-decimal-places)      | Consistent 18 point decimal precision |
+<table><thead><tr><th>Function</th><th width="249.33333333333331">Hedera</th><th>Ethereum</th></tr></thead><tbody><tr><td>Keys for Token Functionality</td><td>Keys control access to token functionality (<code>KYC</code>, <code>FREEZE</code>, <code>WIPE</code>, supply, fee, and <code>PAUSE</code>)</td><td>No equivalent <em>native</em> functionality, only as extensions</td></tr><tr><td>Precheck Failures</td><td><a href="../../sdks-and-apis/hedera-api/miscellaneous/responsecode.md">Multiple precheck failure reasons</a></td><td>Typically single failure reason</td></tr><tr><td>Communication</td><td>Requires communication with both consensus and mirror nodes</td><td>Direct communication with nodes</td></tr><tr><td>HBAR Decimal Precision</td><td>8 or 18<a href="../../sdks-and-apis/sdks/hbars.md#hbar-decimal-places"> (varies across Hedera APIs)</a></td><td>Consistent 18 point decimal precision</td></tr></tbody></table>

@@ -28,6 +28,9 @@ npm install
 {% endcode %}
 
 {% embed url="https://youtu.be/eThs08nUsLI?si=52IX_yl74R8rilVr" %}
+How to Issue Stablecoins on Hedera: Studio Intro & Installation\
+by Ed Marquez
+{% endembed %}
 
 ***
 
@@ -370,6 +373,11 @@ Select "Create a new stablecoin" and proceed through the prompts to fill in the 
 
 <figure><img src="../../.gitbook/assets/create cli prompts.png" alt=""><figcaption><p>CLI stablecoin creation prompts</p></figcaption></figure>
 
+{% embed url="https://youtu.be/gh7f_VX1iY0?si=nwVuA2YkV-cJje2A" %}
+How to Issue Stablecoins on Hedera: Create a Stablecoin\
+by Developer Advocate: Michiel Mulders
+{% endembed %}
+
 ***
 
 ## Stablecoin Administration
@@ -385,6 +393,9 @@ Select the "Operate with an existing stablecoin" option and proceed through the 
 <figure><img src="../../.gitbook/assets/operate stablecoin cli.png" alt=""><figcaption><p>CLI stablecoin operation menu</p></figcaption></figure>
 
 {% embed url="https://youtu.be/41ag-y9cYck?si=RO-6P9TQJLXJdgyQ" %}
+How to Issue Stablecoins on Hedera: Stablecoin Administration\
+by Developer Advocate: Pathorn Tengkiattrakul
+{% endembed %}
 
 🪙 [Here](cli-management.md#operate-with-an-existing-stablecoin) is a list of stablecoin operations.
 
@@ -403,4 +414,6 @@ Select the "Create a new stablecoin" option, then proceed through the prompts.&#
 <figure><img src="../../.gitbook/assets/POR config cli.png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://youtu.be/a7sNXD5GKWA?si=i__uPkensCQu23P0" %}
-
+How to Issue Stablecoins on Hedera: Create a Stablecoin\
+by Developer Advocate: Greg Scullard
+{% endembed %}

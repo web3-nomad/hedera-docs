@@ -66,7 +66,7 @@ Lastly, when using Stablecoin Studio, you can link an existing Oracle-fed reserv
 
 ## Stablecoin Studio: How It All Works Together
 
-At a functional level, Stablecoin Studio provides a comprehensive architecture that enables developers to create, manage, and operate stablecoins on the Hedera network using pre-built “factory smart contracts” [audited by CertiK.](https://github.com/hashgraph/hedera-accelerator-stablecoin/blob/main/Certik%20final%20smart%20contracts%20audit%20report.pdf) The architecture consists of several components that work together to facilitate the deployment and management of stablecoins:
+At a functional level, Stablecoin Studio provides a comprehensive architecture that enables developers to create, manage, and operate stablecoins on the Hedera network using pre-built “factory smart contracts” [audited by CertiK.](https://files.hedera.com/stablecoin-studio-audit.pdf) The architecture consists of several components that work together to facilitate the deployment and management of stablecoins:
 
 1. **SDK**: The Software Development Kit (SDK) provides a set of tools and libraries for developers to build and deploy stablecoin applications on the Hedera network. It simplifies the process of interacting with Stablecoin Studio’s “factory contracts” used to create and manage stablecoins.
 2. **CLI**: The Command Line Interface (CLI) offers a user-friendly way for developers to interact with the SDK and manage stablecoins. It allows developers to perform various operations, such as creating, managing, and operating stablecoins using simple commands.

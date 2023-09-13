@@ -17,7 +17,7 @@ The Command Line Interface (CLI) is a core component of Stablecoin Studio and es
 
 ## Stablecoin Studio Installation
 
-Open a new terminal and navigate to your preferred directory where you want your Stablecoin Studio project to live. Clone the Stablecoin Studio repo, `cd` into the cloned directory, and install dependencies (this may take a few minutes):
+Open a new terminal and navigate to your preferred directory where you want your Stablecoin Studio project to live. Clone the repo, `cd` into the cloned directory, and install dependencies (this may take a few minutes):
 
 {% code fullWidth="false" %}
 ```bash
@@ -33,7 +33,7 @@ npm install
 
 ## CLI Configuration
 
-To use the CLI correctly, it is necessary to generate a configuration file where the default network, their associated accounts, and the factory contract ID will be included. These parameters can be modified later on from the CLI.&#x20;
+To use the CLI correctly, it is necessary to generate a configuration file where the default network, their associated accounts, and the factory contract ID will be included. These parameters can be modified later on.&#x20;
 
 #### Create a config file
 
@@ -44,11 +44,11 @@ cd cli
 npm run start:wizard
 ```
 
-The first time you execute the `wizard` command in your terminal, if you haven't added your default configuration path, the interface will ask you whether you want to create a new configuration file in the default path. This will create a new `hsca-config.yaml` configuration file. Let's go over the configuration details:
+The first time you execute the `wizard` command in your terminal, if you haven't added your default configuration path, the interface will ask you whether you want to create a new configuration file in the default path. This will create a new `hsca-config.yaml` file. Let's go over the configuration details:
 
 **`defaultNetwork`**
 
-This sets the default network that the application will connect to when it starts. It’s essential for defining the environment where transactions will occur (e.g., `testnet` for testing, `mainnet` for production).&#x20;
+This sets the default network the application will connect to when it starts. It’s essential for defining the environment where transactions will occur (e.g., `testnet` for testing, `mainnet` for production).&#x20;
 
 ```yaml
 defaultNetwork: testnet
@@ -70,7 +70,7 @@ networks:
 
 **`accounts`**
 
-This property holds the credentials for various Hedera accounts. Each account has an `accountId`, a `privateKey`, and a network association. This is critical for performing transactions, as the private key is used to sign them. The `alias` field provides a user-friendly identifier for the account, and `importedTokens` can store any tokens imported into this account. You can use the Hedera Developer Portal to create the default testnet account.
+This property holds the credentials for various Hedera accounts. Each account has an `accountId`, a `privateKey`, and a network association. This is critical for performing transactions, as the private key is used to sign them. The `alias` field provides a user-friendly identifier for the account and `importedTokens` can store any tokens imported into this account. You can use the Hedera Developer Portal to create the default testnet account.
 
 ```yaml
 accounts:
@@ -146,7 +146,7 @@ factories:
 
 <details>
 
-<summary>Example <code>hsca-config.yaml</code> file ✅</summary>
+<summary>Example configured <code>hsca-config.yaml</code> file ✅</summary>
 
 ```yaml
 defaultNetwork: testnet
@@ -220,6 +220,14 @@ A factory contract is a specialized type of smart contract designed to generate 
 ### Deploy custom factory contract (optional)
 
 If you want to deploy your own factory contract with custom logic tailored to your specific needs, check out the `/contracts` folder [`README`](https://github.com/hashgraph/hedera-accelerator-stablecoin/blob/main/contracts/README.md) for a comprehensive guide.&#x20;
+
+***
+
+## CLI flow
+
+<figure><img src="../../.gitbook/assets/CLI Flow.png" alt=""><figcaption></figcaption></figure>
+
+
 
 ***
 
@@ -346,10 +354,6 @@ This last option allows the user to display the current configuration file, modi
 
 </details>
 
-#### CLI flow
-
-<figure><img src="../../.gitbook/assets/CLI Flow.png" alt=""><figcaption></figcaption></figure>
-
 ***
 
 ## Stablecoin Creation
@@ -366,13 +370,11 @@ Select "Create a new stablecoin" and proceed through the prompts to fill in the 
 
 <figure><img src="../../.gitbook/assets/create cli prompts.png" alt=""><figcaption><p>CLI stablecoin creation prompts</p></figcaption></figure>
 
-{% embed url="https://youtu.be/iT-1xVEz4eU?si=pOyAmkswdxR3ZUg5" %}
-
 ***
 
-## Stablecoin Operation
+## Stablecoin Administration
 
-Start the CLI tool using the wizard command:
+Start the CLI using the wizard command:
 
 ```bash
 npm run start:wizard
@@ -382,9 +384,9 @@ Select the "Operate with an existing stablecoin" option and proceed through the 
 
 <figure><img src="../../.gitbook/assets/operate stablecoin cli.png" alt=""><figcaption><p>CLI stablecoin operation menu</p></figcaption></figure>
 
-
-
 {% embed url="https://youtu.be/41ag-y9cYck?si=RO-6P9TQJLXJdgyQ" %}
+
+🪙 [Here](cli-management.md#operate-with-an-existing-stablecoin) is a list of stablecoin operations.
 
 ***
 

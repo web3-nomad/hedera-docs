@@ -356,6 +356,10 @@ The [Hedera File Service](../sdks-and-apis/hedera-api/readme-1/) provides a dece
 
 A Hedera Improvement Proposal (HIP) is a proposal that can range from core protocol changes to the applications, frameworks, and protocols built on the Hedera public network and used by the community. HIPs are reviewed and evaluated by the Hedera Council, core developers, and editors.
 
+### Hedera Smart Contract Service (HSCS)
+
+The Hedera Smart Contract Service (HSCS) is a service provided by the Hedera network that integrates the features of Hedera's native entity functionality with a highly optimized and performant Ethereum Virtual Machine (EVM). It allows developers to deploy and interact with smart contracts on the Hedera network, offering high throughput, fast finality, predictable and affordable fees, and fair transaction ordering.
+
 ### Hedera Token Service (HTS)
 
 This service provides the ability to issue and manage tokens on the Hedera Network. With the Hedera Token Service, users can define, mint, burn, and configure tokens without deploying a smart contract. It supports both [fungible tokens](glossary.md#fungible-token) (like [ERC-20](glossary.md#erc-20) [tokens](glossary.md#token)) and [non-fungible tokens](glossary.md#non-fungible-token-nft) (like [ERC-721](glossary.md#erc-721) tokens). The HTS is designed to be fast, secure, and efficient, with low fees and finality of transactions.

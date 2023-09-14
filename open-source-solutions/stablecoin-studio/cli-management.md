@@ -15,7 +15,8 @@ The Command Line Interface (CLI) is a core component of Stablecoin Studio and es
 5. [Start CLI](cli-management.md#start-cli)
 6. [Create Stablecoin](cli-management.md#create-stablecoin)
 7. [Operate Stablecoin](cli-management.md#operate-stablecoin)
-8. [Configure Proof-of-Reserve](cli-management.md#configure-proof-of-reserve-por)&#x20;
+8. [Configure Proof-of-Reserve](cli-management.md#configure-proof-of-reserve-por)
+9. [Additional Resources](cli-management.md#additional-resources)
 
 ***
 
@@ -431,4 +432,22 @@ Select the "Create a new stablecoin" option, then proceed through the prompts.&#
 {% embed url="https://youtu.be/a7sNXD5GKWA?si=i__uPkensCQu23P0" %}
 How to Issue Stablecoins on Hedera: Create a Stablecoin\
 by Developer Advocate: Greg Scullard
+{% endembed %}
+
+***
+
+## Additional Resources
+
+{% embed url="https://portal.hedera.com" %}
+
+{% embed url="https://docs.hedera.com/hedera/support-and-community/glossary" %}
+Hedera and Web3 Glossary
+{% endembed %}
+
+{% embed url="https://www.hashpack.app/download" %}
+Hedera Non-Custodial Wallet
+{% endembed %}
+
+{% embed url="https://hashscan.io" %}
+Hedera Network Explorer
 {% endembed %}

@@ -14,6 +14,7 @@ The Stablecoin Studio Web User Interface (Web UI) is designed to provide a more 
 6. [Operate Stablecoins](web-ui-application.md#operate-stablecoins)
 7. [Manage Roles](web-ui-application.md#manage-roles)
 8. [Stablecoin Details](web-ui-application.md#stablecoin-details)
+9. [Additional Resources](web-ui-application.md#additional-resources)
 
 ***
 
@@ -35,7 +36,7 @@ After setting up a [Hedera testnet account](https://portal.hedera.com/), explore
 * [Solidity >= 0.8.16](https://docs.soliditylang.org/en/latest/installing-solidity.html)
 * [TypeScript >= 4.7](https://www.npmjs.com/package/typescript)
 * [Git Command Line](https://git-scm.com/downloads)
-* &#x20;[Hedera Testnet Account](https://portal.hedera.com/)
+* [Hedera Testnet Account](https://portal.hedera.com/)
 * [HashPack Wallet](https://www.hashpack.app/download)
 
 ***
@@ -235,3 +236,23 @@ This menu option displays stablecoin details and allows the user to update some 
 <figure><img src="../../.gitbook/assets/hashscan.png" alt=""><figcaption><p>HashScan</p></figcaption></figure>
 
 </div>
+
+***
+
+## Additional Resources
+
+{% embed url="https://portal.hedera.com/" %}
+Hedera Developer Portal (Testnet Accounts)
+{% endembed %}
+
+{% embed url="https://docs.hedera.com/hedera/support-and-community/glossary" %}
+Hedera and Web3 Glossary
+{% endembed %}
+
+{% embed url="https://www.hashpack.app/download" %}
+Hedera Non-Custodial Wallet
+{% endembed %}
+
+{% embed url="https://hashscan.io" %}
+Hedera Network Explorer
+{% endembed %}

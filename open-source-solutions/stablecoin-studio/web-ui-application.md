@@ -1,5 +1,24 @@
 # Web UI Application
 
+The Stablecoin Studio Web User Interface (Web UI) is designed to provide a more intuitive and user-friendly experience for managing stablecoins. Developed using React, this interface offers a visual representation of all our Web UI capabilities, from initial setup to advanced administration. Whether you're a newcomer looking for an easier entry point or a seasoned developer seeking a more efficient way to manage stablecoins, this documentation offers the insights and resources to harness the full power of our React-based Web UI.
+
+***
+
+## Table of Contents
+
+1. [Interactive Demo](web-ui-application.md#interactive-demo)
+2. [Prerequisites](web-ui-application.md#prerequisites)
+3. [Installation](web-ui-application.md#install-stablecoin-studio)
+4. [Start Web UI](web-ui-application.md#start-the-web-ui)
+5. [Create Stablecoins](web-ui-application.md#create-stablecoins)
+6. [Operate Stablecoins](web-ui-application.md#operate-stablecoins)
+7. [Manage Roles](web-ui-application.md#manage-roles)
+8. [Stablecoin Details](web-ui-application.md#stablecoin-details)
+
+***
+
+## Interactive Demo
+
 Get firsthand experience with Stablecoin Studio's capabilities using the open-source, React-based demo application sandbox. The sandbox application is built using Stablecoin Studio's TypeScript SDK.&#x20;
 
 <figure><img src="../../.gitbook/assets/web ui platform user.png" alt=""><figcaption></figcaption></figure>
@@ -96,6 +115,8 @@ Click "Connect your wallet" and select the wallet ([HashPack](https://www.hashpa
 
 Now that your project is set up and the web application is running let's create our first stablecoin!
 
+***
+
 ## Create Stablecoins
 
 #### Basic details (Required)
@@ -150,7 +171,7 @@ Final validation before creating the stablecoin. Review the stablecoin details a
 
 ***
 
-## Stablecoin Operations
+## Operate Stablecoins
 
 To operate your stablecoin, connect your wallet to the platform. After successful authentication, select the stablecoin you wish to interact with from the drop-down list of available coins. Once the stablecoin information is loaded, navigate to the "Operations" tab.
 
@@ -178,7 +199,7 @@ The "Operations" tab in Stablecoin Studio is your hub for managing every aspect 
 
 ***
 
-## Role Management
+## Manage Roles
 
 In Stablecoin Studio, role management is a pivotal feature that gives you control over various functions related to your stablecoin. If your account has been designated with the "Admin Role," you unlock the capability to manage other roles for your stablecoin, making governance easier and more secure.
 
@@ -214,4 +235,3 @@ This menu option displays stablecoin details and allows the user to update some 
 <figure><img src="../../.gitbook/assets/hashscan.png" alt=""><figcaption><p>HashScan</p></figcaption></figure>
 
 </div>
-

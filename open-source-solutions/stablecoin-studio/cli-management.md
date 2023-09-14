@@ -4,6 +4,21 @@ The Command Line Interface (CLI) is a core component of Stablecoin Studio and es
 
 ***
 
+## Table of Contents
+
+1. [Prerequisites](cli-management.md#prerequisites)
+2. [Install Stablecoin Studio](cli-management.md#install-stablecoin-studio)
+3. [Configure CLI](cli-management.md#configure-cli)
+   1. [Factory Contracts](cli-management.md#factory-contracts)
+   2. [Deploy Factory Contracts](cli-management.md#deploy-custom-factory-contract-optional)
+4. [CLI Flow](cli-management.md#cli-flow)
+5. [Start CLI](cli-management.md#start-cli)
+6. [Create Stablecoin](cli-management.md#create-stablecoin)
+7. [Operate Stablecoin](cli-management.md#operate-stablecoin)
+8. [Configure Proof-of-Reserve](cli-management.md#configure-proof-of-reserve-por)&#x20;
+
+***
+
 ## Prerequisites
 
 * [NodeJS >= 18.13](https://nodejs.org/en)
@@ -15,7 +30,7 @@ The Command Line Interface (CLI) is a core component of Stablecoin Studio and es
 
 ***
 
-## Stablecoin Studio Installation
+## Install Stablecoin Studio
 
 Open a new terminal and navigate to your preferred directory where you want your Stablecoin Studio project to live. Clone the repo, `cd` into the cloned directory, and install dependencies (this may take a few minutes):
 
@@ -34,7 +49,7 @@ by Ed Marquez
 
 ***
 
-## CLI Configuration
+## Configure CLI
 
 To use the CLI correctly, it is necessary to generate a configuration file where the default network, their associated accounts, and the factory contract ID will be included. These parameters can be modified later on.&#x20;
 
@@ -226,7 +241,7 @@ If you want to deploy your own factory contract with custom logic tailored to yo
 
 ***
 
-## CLI flow
+## CLI Flow
 
 <figure><img src="../../.gitbook/assets/CLI Flow.png" alt=""><figcaption></figcaption></figure>
 
@@ -234,7 +249,7 @@ If you want to deploy your own factory contract with custom logic tailored to yo
 
 ***
 
-## Start CLI Tool
+## Start CLI
 
 Start the CLI tool using the `wizard` command:
 
@@ -359,7 +374,7 @@ This last option allows the user to display the current configuration file, modi
 
 ***
 
-## Stablecoin Creation
+## Create Stablecoin
 
 Start the CLI tool using the wizard command:
 
@@ -380,7 +395,7 @@ by Developer Advocate: Michiel Mulders
 
 ***
 
-## Stablecoin Administration
+## Operate Stablecoin
 
 Start the CLI using the wizard command:
 

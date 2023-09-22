@@ -9,6 +9,10 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 ## [v0.41](https://github.com/hashgraph/hedera-services/releases/tag/v0.41.0)
 
 {% hint style="success" %}
+**MAINNET UPDATE: SEPTEMBER 20, 2023**
+{% endhint %}
+
+{% hint style="success" %}
 **TESTNET UPDATE: AUGUST 22, 2023**
 {% endhint %}
 

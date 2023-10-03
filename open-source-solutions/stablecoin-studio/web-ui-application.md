@@ -256,3 +256,5 @@ Hedera Non-Custodial Wallet
 {% embed url="https://hashscan.io" %}
 Hedera Network Explorer
 {% endembed %}
+
+{% embed url="https://www.npmjs.com/package/@hashgraph/stablecoin-npm-sdk" %}

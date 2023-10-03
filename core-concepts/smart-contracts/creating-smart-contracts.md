@@ -1,13 +1,13 @@
 # Creating Smart Contracts
 
-A [**smart contract**](../../support-and-community/glossary.md#smart-contract) is an immutable program consisting of a set of logic (state variables, functions, event handlers, etc.) or rules that can be deployed, stored, and accessed on a [distributed ledger technology](../../support-and-community/glossary.md#distributed-ledger-technology-dlt) such as Hedera. The functions contained within a smart contract can update and manage the state of the contract and read data from the deployed contract. They may also create and call other smart contracts functions on the network. Smart contracts are secure, tamper-proof, and transparent, offering a new level of trust and efficiency.
+A [smart contract](../../support-and-community/glossary.md#smart-contract) is an immutable program consisting of a set of logic (state variables, functions, event handlers, etc.) or rules that can be deployed, stored, and accessed on a [distributed ledger technology](../../support-and-community/glossary.md#distributed-ledger-technology-dlt) such as Hedera. The functions contained within a smart contract can update and manage the state of the contract and read data from the deployed contract. They may also create and call other smart contracts functions on the network. Smart contracts are secure, tamper-proof, and transparent, offering a new level of trust and efficiency.
 
-Hedera supports any language that compiles to the Ethereum Mainnet. This includes [Solidity](../../support-and-community/glossary.md#solidity) and [Vyper](../../support-and-community/glossary.md#vyper). These are programming languages that compile code and produce [bytecode](../../support-and-community/glossary.md#bytecode) that the [Ethereum Virtual Machine (EVM)](../../support-and-community/glossary.md#ethereum-virtual-machine-evm) can interpret and understand.
+Hedera supports any language that compiles to the Ethereum Mainnet. This includes [Solidity](../../support-and-community/glossary.md#solidity) and [Vyper](../../support-and-community/glossary.md#vyper). These programming languages compile code and produce [bytecode](../../support-and-community/glossary.md#bytecode) that the [Ethereum Virtual Machine (EVM)](../../support-and-community/glossary.md#ethereum-virtual-machine-evm) can interpret and understand.
 
 * To learn more about the Solidity programming language, check out the documentation maintained by the Solidity team [here](https://docs.soliditylang.org/en/v0.8.19/).
 * To learn more about Vyper, check out the documentation maintained by the Vyper team [here](https://docs.vyperlang.org/en/stable/).
 
-In addition, there are many tools available to write and compile smart contracts, including the popular [Remix IDE](../../support-and-community/glossary.md#remix-ide) and [Hardhat](../../support-and-community/glossary.md#hardhat). The Remix IDE is a user-friendly platform that allows you to easily write and compile your smart contracts and perform other tasks such as debugging and testing. Using these tools, you can create powerful and secure smart contracts that can be used for various purposes, from simple token transfers to complex financial instruments.
+In addition, many tools are available to write and compile smart contracts, including the popular [Remix IDE](../../support-and-community/glossary.md#remix-ide) and [Hardhat](../../support-and-community/glossary.md#hardhat). The Remix IDE is a user-friendly platform that allows you to easily write and compile your smart contracts and perform other tasks such as debugging and testing. Using these tools, you can create powerful and secure smart contracts that can be used for various purposes, from simple token transfers to complex financial instruments.
 
 **Example**
 
@@ -63,7 +63,7 @@ Contracts have the option to have an [admin key](https://github.com/hashgraph/he
 * [`staked_id`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L116)
 * [`decline_reward`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L134)
 
-If you deploy a contract via tools like Hardhat, you cannot set the admin key field. This field can be set if desired by deploying a contract using one of the Hedera [SDKs](../../sdks-and-apis/sdks/).&#x20;
+You cannot set the admin key field if you deploy a contract via tools like Hardhat. This field can be set if desired by deploying a contract using one of the Hedera [SDKs](../../sdks-and-apis/sdks/).&#x20;
 
 **Rent**
 

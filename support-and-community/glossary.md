@@ -268,7 +268,7 @@ A "fallback fee" in the context of Hedera and smart contracts is a type of custo
 
 ### Fee Collector Account
 
-A fee collector account is an account designated to receive transaction and [custom token fees](../sdks-and-apis/sdks/readme-1/custom-token-fees.md) on the Hedera network. The account collects the fees users pay for executing transactions and queries on the network.
+A fee collector account is an account designated to receive transaction fees and [custom token fees](../sdks-and-apis/sdks/readme-1/custom-token-fees.md) on the Hedera network. The account collects the fees users pay for executing transactions and queries on the network.
 
 ### Fiat Currency
 
@@ -278,9 +278,17 @@ A term widely used across the financial industry (and even beyond) to refer to g
 
 The assurance or guarantee that completed transactions or blocks can't be reversed, revoked, canceled, or changed in any way. The latency level of a ledger will ultimately affect the chain's finality rate.
 
+### Fixed Fee
+
+A fixed fee refers to a predetermined amount of tokens or HBAR that is transferred to a specified fee collection account each time a token transfer occurs. Fixed fees are one of the types of custom fees you can define when creating a token on Hedera.&#x20;
+
 ### Fork
 
 A fork is an event in which a [blockchain](glossary.md#blockchain) splits into two separate chains. A fork occurs when software updates to its functionality are introduced, but not all participants (miners, developers) agree on them.
+
+### Fractional Fee
+
+A fractional fee is a type of custom fee that can be set when creating a token on the Hedera network. Fractional fees are calculated as a fraction of the total value of the tokens that are being transferred in a transaction.
 
 ### Fungible Token
 
@@ -595,6 +603,10 @@ The Remix IDE is a user-friendly platform that allows you to easily write and co
 REST APIs are used for interactions with services provided by Hedera, such as account balance checks, transaction submissions, and other actions related to the consensus service, token service, and file service.
 
 Hedera's REST APIs allow developers to easily interact with the Hedera Network without needing to directly connect to the network's nodes. Instead, they can send HTTP requests to a server that acts as an intermediary between them and the Hedera Network, simplifying the process of building applications on top of Hedera.
+
+### Royalty Fee
+
+A royalty fee refers to a specific type of custom fee that is applied to the transfer of non-fungible tokens (NFTs). A royalty fee is essentially a way to ensure that the original creator of an NFT continues to earn revenue from it even after the initial sale, as it allows them to earn a fraction of the sales every time the NFT is bought or sold in the future.
 
 ## S
 

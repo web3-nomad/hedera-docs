@@ -105,6 +105,7 @@
     * [Web UI Application](open-source-solutions/stablecoin-studio/web-ui-application.md)
     * [CLI Management](open-source-solutions/stablecoin-studio/cli-management.md)
     * [TypeScript SDK](https://github.com/hashgraph/hedera-accelerator-stablecoin/tree/main/sdk)
+  * [Hedera Guardian](https://docs.hedera.com/guardian/guardian/)
 * [SDKs & APIs](sdks-and-apis/README.md)
   * [SDKs](sdks-and-apis/sdks/README.md)
     * [Build Your Hedera Client](sdks-and-apis/sdks/client.md)

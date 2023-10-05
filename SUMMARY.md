@@ -82,6 +82,7 @@
       * [ERC-20 (Fungible Tokens)](core-concepts/smart-contracts/tokens-managed-by-smart-contracts/erc-20-fungible-tokens.md)
       * [ERC-721: Non-Fungible Tokens (NFTs)](core-concepts/smart-contracts/tokens-managed-by-smart-contracts/erc-721-non-fungible-tokens-nfts.md)
       * [Hedera Token Service System Contract](core-concepts/smart-contracts/tokens-managed-by-smart-contracts/hedera-token-service-system-contract.md)
+    * [Smart Contract Rent](core-concepts/smart-contracts/smart-contract-rent.md)
     * [Smart Contract Security](core-concepts/smart-contracts/security.md)
     * [Hethers](core-concepts/smart-contracts/hethers.md)
   * [Staking](core-concepts/staking/README.md)

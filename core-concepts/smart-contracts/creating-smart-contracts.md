@@ -48,7 +48,7 @@ contract HelloHedera {
 
 **Automatic Token Associations**
 
-An auto association slot is one or more slots you approve that allow tokens to be sent to your contract without explicit authorization for each token type. If this property is not set, you will have to approve each token before it is transferred to the contract for the transfer to be successful via the `TokenAssociateTransaction` in the SDKs. Learn more about auto token associations [here](../accounts/account-properties.md#automatic-token-associations).
+An auto association slot is one or more slots you approve that allow tokens to be sent to your contract without explicit authorization for each token type. If this property is not set, you must approve each token before it is transferred to the contract for the transfer to be successful via the `TokenAssociateTransaction` in the SDKs. Learn more about auto-token associations [here](../accounts/account-properties.md#automatic-token-associations).
 
 This functionality is exclusively accessible when configuring a `ContractCreateTransaction` API through the Hedera SDKs. If you are deploying a contract on Hedera using EVM tools such as Hardhat and the Hedera JSON RPC Relay, please note that this property cannot be configured, as EVM tools lack compatibility with Hedera's unique features.
 
@@ -67,8 +67,52 @@ You cannot set the admin key field if you deploy a contract via tools like Hardh
 
 **Rent**
 
-While rent is not enabled for contracts deployed on Hedera today, you will want to be familiar with the concept of rent, as it may potentially impact the costs of maintaining your contract state on the network. _More information on smart contract rent is coming soon._&#x20;
+While rent is not enabled for contracts deployed on Hedera today, you will want to be familiar with the concept of rent, as it may potentially impact the costs of maintaining your contract state on the network. Please refer to the Smart Contract Rent documentation [here](smart-contract-rent.md).
 
 **Transaction and Gas Fees**
 
 There are Hedera transaction fees and EVM fees associated with deploying a contract. To view the list of base fees, check out the fees page [here](../../networks/mainnet/fees/) and the fee estimator calculator [here](https://hedera.com/fees).
+
+***
+
+## Smart Contract FAQs
+
+<details>
+
+<summary>What is a smart contract?</summary>
+
+A smart contract is a program that is written in a language that can be interpreted by the EVM. Please refer to the [glossary](../../support-and-community/glossary.md) for more keywords and definitions.
+
+</details>
+
+<details>
+
+<summary>What programming language does Hedera support for smart contracts?</summary>
+
+Hedera supports Solidity and Vyper.
+
+</details>
+
+<details>
+
+<summary>Can I write and compile my smart contracts using Remix IDE or other Ethereum ecosystem tools? </summary>
+
+You can use Remix IDE or other Ethereum ecosystem tools to write, compile, and deploy your smart contract on Hedera. Check out our EVM-compatible tools [here](../../#evm-compatible-tools).&#x20;
+
+</details>
+
+<details>
+
+<summary>Where can I find the smart contracts that are deployed to each Hedera network (previewnet, testnet, mainnet)?</summary>
+
+On your favorite trusted Block Explorer (also called Mirror Node Explorer on Hedera). To view community-hosted explorers check out the network explorer tools page [here](../../networks/community-mirror-nodes.md).&#x20;
+
+</details>
+
+<details>
+
+<summary>Which ERC token standards are supported on Hedera?</summary>
+
+Hedera supports ERC-20 and ERC-721 token standards and can find the full list of supported standards [here](tokens-managed-by-smart-contracts/).
+
+</details>

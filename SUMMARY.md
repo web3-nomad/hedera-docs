@@ -99,7 +99,6 @@
     * [Run Your Own Mirror Node](core-concepts/mirror-nodes/run-your-own-beta-mirror-node/README.md)
       * [Run Your Own Mirror Node with Google Cloud Storage (GCS)](core-concepts/mirror-nodes/run-your-own-beta-mirror-node/run-your-own-mirror-node-gcs.md)
       * [Run Your Mirror Node with Amazon Web Services S3 (AWS)](core-concepts/mirror-nodes/run-your-own-beta-mirror-node/run-your-own-mirror-node-s3.md)
-    * [Hedera ETL](core-concepts/mirror-nodes/hedera-etl.md)
 * [Open Source Solutions](open-source-solutions/README.md)
   * [Stablecoin Studio](open-source-solutions/stablecoin-studio/README.md)
     * [Core Concepts](open-source-solutions/stablecoin-studio/core-concepts.md)

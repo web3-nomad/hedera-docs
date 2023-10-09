@@ -516,6 +516,12 @@ Short for operation codes, [opcodes](broken-reference) are the low-level human-r
 
 In distributed ledger technology, oracles are third-party services that connect distributed ledger ([on-chain](glossary.md#on-chain)) data to data coming from external ([off-chain](glossary.md#off-chain)) systems. With this function, oracle technologies can provide the off-chain data needed to meet the conditions of a [smart contract](glossary.md#smart-contract).
 
+### Ordinals
+
+Bitcoin Ordinals is a protocol that allows individual satoshis (SATs) in a Bitcoin blockchain to be assigned a unique identifier and transacted with extra data attached. This protocol became the foundation for a unique collaborative venture between [Hgraph](https://www.hgraph.io/), a developer tooling and Web3 consulting entity, and [Turtle Moon](https://twitter.com/TurtleMoonCC), a pioneer in NFT services. Together, they orchestrated the first token-gated vote on Bitcoin using the [H4NGRY](https://twitter.com/H444NGRY)'s Ordinals NFT collection titled "[Kid Pepes](https://magiceden.io/ordinals/marketplace/kidpepes)." Every vote cast during this initiative was instantaneously recorded on Hedera, serving as the trust layer of the voting system, with the final vote outcomes being inscribed back onto Bitcoin.
+
+The integration showcases a groundbreaking application of distributed ledger technology by initiating the voting process on Bitcoin, where ballot details including start and end times, a unique identifier, and a Hedera Consensus Service topic ID are inscribed. This process transitioned to Hedera for recording votes, offering a transparent, tamper-proof voting system. The final ballot results, which are recorded back on Bitcoin, can be validated against the original data points, embodying a robust, transparent, and innovative use of blockchain technology for democratic processes. Read more about this integration [here](https://medium.com/@hgraph\_io/hgraph-powers-the-first-token-gated-vote-on-ordinals-42829fd50d5b).&#x20;
+
 ## P
 
 ### Peer-to-Peer (P2P)

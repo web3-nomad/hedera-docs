@@ -48,6 +48,21 @@ _The JSON RPC Relay **`msg.value`** uses 18 decimals when it returns HBAR._ This
 
 ***
 
+## Limitation on `fallback()` / `receive()` Functions in Hedera Smart Contracts
+
+While developing smart contracts on the Hedera network, it's crucial to note some behavioral differences compared to other networks like Ethereum. When a Hedera smart contract receives HBAR through a crypto transfer, the contract's `fallback()` and `receive()` functions **do not get triggered**.&#x20;
+
+In a typical smart contract on Ethereum,  `fallback()` and `receive()` functions serve as "catch-all" mechanisms that execute when the contract receives the native cryptocurrency (Ether in Ethereum's case). Here are the impacted variables for Hedera smart contracts and their _usual_ expected values:
+
+* **`msg.sender`:** The address initiating the contract call.
+* **`msg.value`:** The amount of HBAR sent along with the call.
+
+Because the contract's balance may change through native HAPI operations, independent of EVM message calls, it is not possible to preserve balance-related invariants simply by implementing the `receive()` or `fallback()` methods. This is an important design consideration. Users who want the option to entirely disable native operations against their contract are invited to contribute a [Hedera Improvement Proposal (HIP)](https://hips.hedera.com/) for this feature.
+
+Understanding this limitation is crucial for anyone developing smart contracts on Hedera, especially for those who have deployed smart contracts on Ethereum. Developers should implement explicit functions to manage HBAR transfers, given that `fallback()` and `receive()` functions do not trigger in such scenarios.
+
+***
+
 ## Gas
 
 When executing the smart contract, the EVM requires the amount of work to be paid in gas. The “work” includes computation, state transitions, and storage. Gas is the unit of measurement used to charge a fee per opcode that is executed by the EVM. Each opcode code has a defined gas cost. Gas reflects the cost necessary to pay for the computational resources used to process transactions.

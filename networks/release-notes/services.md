@@ -6,6 +6,22 @@ description: Hedera Services release information
 
 Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
 
+## [v0.43](https://github.com/hashgraph/hedera-services/releases/tag/v0.43.0)
+
+Services v0.43.0 adds the following features:
+
+* HIP-786 ([#8620](https://github.com/hashgraph/hedera-services/pull/8620))
+
+### Enhancements
+
+Services v0.43.0 adds the following enhancements:
+
+* Update Besu to 23.10.0 - cherry pick ([#9199](https://github.com/hashgraph/hedera-services/pull/9199))
+* Update the Besu EVM library to version 23.7.2 ([#8472](https://github.com/hashgraph/hedera-services/pull/8472))
+* "Productizing" contract disassembler at last ([#8563](https://github.com/hashgraph/hedera-services/pull/8563))
+* Auto sidecar validations ([#8404](https://github.com/hashgraph/hedera-services/pull/8404))
+* Create fat jar with services CLI so it can be run standalone ([#8519](https://github.com/hashgraph/hedera-services/pull/8519))
+
 ## [v0.42](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.1)
 
 {% hint style="success" %}
@@ -20,6 +36,8 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 * Remove support for legacy sync gossip. ([#8059](https://github.com/hashgraph/hedera-services/pull/8059))
 * Disable account balance exports ([#8272](https://github.com/hashgraph/hedera-services/pull/8272))
 * Modify config to support state on disk by default ([#8510](https://github.com/hashgraph/hedera-services/pull/8510))
+
+<figure><img src="../../.gitbook/assets/0.42_Performance Measurement Results.001.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.41](https://github.com/hashgraph/hedera-services/releases/tag/v0.41.0)
 
@@ -108,8 +126,6 @@ Services v0.39.0 adds the following features:
 * Turn on the Shanghai version of the EVM in previewnet [#6212](https://github.com/hashgraph/hedera-services/pull/6212)
 * Update hedera-protobufs-java version to 0.38.10 [#6579](https://github.com/hashgraph/hedera-services/pull/6579)
 * Add PCLI command to sign account balance files [#6264](https://github.com/hashgraph/hedera-services/pull/6264)
-
-
 
 <figure><img src="../../.gitbook/assets/0.38_Performance Measurement Results_Extract.001.jpeg" alt=""><figcaption></figcaption></figure>
 

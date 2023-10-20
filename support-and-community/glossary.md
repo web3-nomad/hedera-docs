@@ -648,6 +648,10 @@ Examples of SBT uses include attendance verification for events, job achievement
 
 Source code, which software developers program, is data, metadata, and data schema that collectively form the basis of any given ledger’s transactional content. Source code is used to automate the business processes and algorithms behind the operation of a given distributed network (e.g., Bitcoin, Ethereum, Hedera, etc.).
 
+### Sourcify
+
+Sourcify is a decentralized Solidity source code and metadata verification tool and repository and acts as a base layer allowing other tools to build on top of it. Sourcify enables transparent and human-readable smart contract interactionsd through automated Solidity contract verification, contract metadata, and NatSpec comments. More info on [Sourcify.dev](https://sourcify.dev/).
+
 ### Stablecoin
 
 A stablecoin is a specialized form of cryptocurrency engineered to maintain a stable value by pegging it to an external asset, such as a fiat currency like the US Dollar or a commodity like gold. By doing so, stablecoins seek to combine the programmability and ease of transfer inherent in cryptocurrencies with the price stability typically associated with traditional currencies. This low-volatility makes stablecoins particularly useful for transactions, cross-border payments, and as a stable asset within decentralized finance ecosystems. They essentially serve as a bridge between the conventional financial infrastructure and the emerging _crypto-economic_ landscape, enabling fiat currencies to exist in a format that can be transferred with greater fluidity and efficiency across distributed networks.

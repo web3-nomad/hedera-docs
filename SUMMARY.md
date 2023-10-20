@@ -84,7 +84,6 @@
       * [Hedera Token Service System Contract](core-concepts/smart-contracts/tokens-managed-by-smart-contracts/hedera-token-service-system-contract.md)
     * [Smart Contract Rent](core-concepts/smart-contracts/smart-contract-rent.md)
     * [Smart Contract Security](core-concepts/smart-contracts/security.md)
-    * [Hethers](core-concepts/smart-contracts/hethers.md)
   * [Staking](core-concepts/staking/README.md)
     * [Staking Program](core-concepts/staking/staking.md)
     * [Stake HBAR](core-concepts/staking/stake-hbar.md)

@@ -53,7 +53,6 @@
     * [Mainnet Accounts](networks/mainnet/mainnet-access.md)
     * [Mainnet Consensus Nodes](networks/mainnet/mainnet-nodes/README.md)
       * [Node Requirements](networks/mainnet/mainnet-nodes/node-requirements/README.md)
-        * [Reference Configuration](networks/mainnet/mainnet-nodes/node-requirements/reference-configuration.md)
         * [FAQ](networks/mainnet/mainnet-nodes/node-requirements/faq.md)
     * [Fees](networks/mainnet/fees/README.md)
       * [Transaction Records](networks/mainnet/fees/transaction-records.md)

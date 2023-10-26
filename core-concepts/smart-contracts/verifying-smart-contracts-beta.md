@@ -65,21 +65,21 @@ When you compile a Solidity smart contract, it generates a JSON metadata file. T
 
 <details>
 
-<summary>Hardhat </summary>
-
-To create the `.json` metadata file with Hardhat, compile the contract using the `npx hardhat compile` command. The compiled artifacts will be saved in the `artifacts/` directory and the `.json` metadata file will be under `artifacts/build-info`. See Sourcify Hardhat metadata [here](https://docs.sourcify.dev/docs/metadata/#hardhat).&#x20;
-
-</details>
-
-<details>
-
-<summary>Remix IDE</summary>
+<summary>Remix IDE (recommended)</summary>
 
 To create a metadata file in Remix, compile your smart contract and the compiled artifacts will be saved in the `artifacts/` directory and the `.json` metadata file will be under `artifacts/build-info`. Alternatively, you can copy and paste it from the Solidity compiler tab. Please see the image below.
 
 ![](<../../.gitbook/assets/remix metadata.png>)
 
 **Note:** Taking the bytecode and metadata from Remix and then deploying that on Hedera results in a _**full (perfect) match**_. Taking the bytecode and metadata from Remix _after_ deploying the contract on Hedera results in a _**partial match**_.
+
+</details>
+
+<details>
+
+<summary>Hardhat </summary>
+
+To create the `.json` metadata file with Hardhat, compile the contract using the `npx hardhat compile` command. The compiled artifacts will be saved in the `artifacts/` directory and the `.json` metadata file will be under `artifacts/build-info`. See Sourcify Hardhat metadata [here](https://docs.sourcify.dev/docs/metadata/#hardhat).&#x20;
 
 </details>
 
@@ -100,6 +100,10 @@ solc --metadata HelloWorld.sol > metadata.json
 ```
 
 </details>
+
+{% hint style="warning" %}
+**Note**: Using the Solidity compiler method to create the metadata file is intended for advanced users. If you're new to smart contracts or Solidity, we recommend using the Remix method.
+{% endhint %}
 
 #### Example:
 

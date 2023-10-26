@@ -86,6 +86,10 @@ Once you click _**View Contract**_, you'll be directed to the Contract Lookup pa
 
 ## Additional Resources
 
+{% embed url="https://verify.hashscan.io/" %}
+[verify.hashscan.io/](https://verify.hashscan.io/)
+{% endembed %}
+
 {% embed url="https://hashscan.io/" %}
 
 {% embed url="https://docs.sourcify.dev/" %}

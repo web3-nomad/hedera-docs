@@ -195,6 +195,10 @@ An essential detail to remember is that smart contracts verified on Hedera's Sou
 
 {% embed url="https://docs.sourcify.dev/docs/full-vs-partial-match/" %}
 
+{% embed url="https://verify.hashscan.io/" %}
+[verify.hashscan.io](https://verify.hashscan.io/)
+{% endembed %}
+
 {% embed url="https://hashscan.io" %}
 
 {% embed url="https://hardhat.org/hardhat-runner/docs/guides/compile-contracts" %}

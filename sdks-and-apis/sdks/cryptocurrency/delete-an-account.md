@@ -1,6 +1,10 @@
 # Delete an account
 
-A transaction that deletes an existing account from the Hedera network. Before deleting an account, the existing HBAR must be transferred to another account. Submitting a transaction to delete an account without assigning a beneficiary through `setTransferAccountId()` will result in a `ACCOUNT_ID_DOES_NOT_EXIST` error. Transfers cannot be made into a deleted account. A record of the deleted account will remain in the ledger until it expires. The expiration of a deleted account can be extended. The account that is being deleted is required to sign the transaction.
+A transaction that deletes an existing account from the Hedera network. Before deleting an account, the existing HBAR must be transferred to another account. Submitting a transaction to delete an account without assigning a beneficiary via `setTransferAccountId()` will result in a `ACCOUNT_ID_DOES_NOT_EXIST` error. Transfers cannot be made into a deleted account. A record of the deleted account will remain in the ledger until it expires. The expiration of a deleted account can be extended. The account that is being deleted is required to sign the transaction.
+
+{% hint style="info" %}
+**Note**: The `setTransferAccountId()` method is required, regardless of whether the account has a zero balance.
+{% endhint %}
 
 **Transaction Fees**
 

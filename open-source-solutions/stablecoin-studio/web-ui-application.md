@@ -57,7 +57,7 @@ npm install
 
 ```bash
 cd web
-npm install @hashgraph-dev/stablecoin-dapp
+npm install @hashgraph/stablecoin-dapp
 ```
 
 #### Environment variables

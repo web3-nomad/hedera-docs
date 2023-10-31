@@ -25,6 +25,10 @@ Services v0.43.0 adds the following enhancements:
 ## [v0.42](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.1)
 
 {% hint style="success" %}
+**MAINNET UPDATE: OCTOBER 24, 2023**
+{% endhint %}
+
+{% hint style="success" %}
 **TESTNET UPDATE: SEPTEMBER 26, 2023**
 {% endhint %}
 

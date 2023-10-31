@@ -20,13 +20,13 @@ The Stablecoin Studio Web User Interface (Web UI) is designed to provide a more 
 
 ## Interactive Demo
 
-Get firsthand experience with Stablecoin Studio's capabilities using the open-source, React-based demo application sandbox. The sandbox application is built using Stablecoin Studio's TypeScript SDK.&#x20;
+Get firsthand experience with Stablecoin Studio's capabilities using the open-source, React-based demo application sandbox. The sandbox application is built using Stablecoin Studio's TypeScript SDK.
 
 <figure><img src="../../.gitbook/assets/web ui platform user.png" alt=""><figcaption></figcaption></figure>
 
 After setting up a [Hedera testnet account](https://portal.hedera.com/), explore creating and managing stablecoins on Hedera through the interactive demo and follow along. Let's get started and explore the three paths for launching the Stablecoin Studio web application:
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><ol><li><a href="https://stablecoinstudio.com/"><strong>Code Sandbox</strong></a></li></ol></td><td>For a quick and effortless start, you can use the pre-configured Code Sandbox environment directly from StablecoinStudio.com. This approach requires no setup and provides a fully functional demo application. </td><td><a href="../../.gitbook/assets/Code Sandbox Icon.png">Code Sandbox Icon.png</a></td><td><a href="https://www.stablecoinstudio.com">www.stablecoinstudio.com</a></td></tr><tr><td><ol start="2"><li><a href="https://gitpod.io/new/#https://github.com/hashgraph/stablecoin-studio"><strong>GitPod Instance</strong></a></li></ol></td><td>Another easy way to get started is by launching a GitPod instance, which automates the initial setup and lets you dive into the application immediately. You can skip the p<em>rerequisites</em> and <em>installation</em> steps. </td><td><a href="../../.gitbook/assets/GitPod Icon.png">GitPod Icon.png</a></td><td><a href="https://gitpod.io/#https://github.com/hashgraph/stablecoin-studio">https://gitpod.io/#https://github.com/hashgraph/stablecoin-studio</a></td></tr><tr><td><ol start="3"><li><a href="web-ui-application.md#prerequisites"><strong>Local Environment</strong></a></li></ol></td><td>A more technical method to build and install on your local machine. This guide focuses on this method, walking you through the steps needed to set up your local environment. Start from the first step: Prerequisites.</td><td><a href="../../.gitbook/assets/Local Environment Icon.png">Local Environment Icon.png</a></td><td><a href="web-ui-application.md#prerequisites">#prerequisites</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><ol><li><a href="https://stablecoinstudio.com/"><strong>Code Sandbox</strong></a></li></ol></td><td>For a quick and effortless start, you can use the pre-configured Code Sandbox environment directly from StablecoinStudio.com. This approach requires no setup and provides a fully functional demo application.</td><td><a href="../../.gitbook/assets/Code Sandbox Icon.png">Code Sandbox Icon.png</a></td><td><a href="https://www.stablecoinstudio.com">https://www.stablecoinstudio.com</a></td></tr><tr><td><ol start="2"><li><a href="https://gitpod.io/new/#https://github.com/hashgraph/stablecoin-studio"><strong>GitPod Instance</strong></a></li></ol></td><td>Another easy way to get started is by launching a GitPod instance, which automates the initial setup and lets you dive into the application immediately. You can skip the p<em>rerequisites</em> and <em>installation</em> steps.</td><td><a href="../../.gitbook/assets/GitPod Icon.png">GitPod Icon.png</a></td><td><a href="https://gitpod.io/#https://github.com/hashgraph/stablecoin-studio">https://gitpod.io/#https://github.com/hashgraph/stablecoin-studio</a></td></tr><tr><td><ol start="3"><li><a href="web-ui-application.md#prerequisites"><strong>Local Environment</strong></a></li></ol></td><td>A more technical method to build and install on your local machine. This guide focuses on this method, walking you through the steps needed to set up your local environment. Start from the first step: Prerequisites.</td><td><a href="../../.gitbook/assets/Local Environment Icon.png">Local Environment Icon.png</a></td><td><a href="web-ui-application.md#prerequisites">#prerequisites</a></td></tr></tbody></table>
 
 ***
 
@@ -53,11 +53,10 @@ npm install
 ```
 {% endcode %}
 
-`cd` in to the `web` directory and install from `npm`:
+`cd` in to the `web` directory:
 
 ```bash
 cd web
-npm install @hashgraph/stablecoin-dapp
 ```
 
 #### Environment variables
@@ -65,7 +64,7 @@ npm install @hashgraph/stablecoin-dapp
 Before we can start the web application, we need to configure the environment variables. From the root of the `web` project workspace, rename the `.env.sample` file to `.env` and configure the variables required to run the application. For the purposes of this demo, we will need:
 
 1. The [factory contract ID.](https://github.com/hashgraph/hedera-accelerator-stablecoin/tree/main/cli#factories)
-2. The [REST API](https://docs.hedera.com/hedera/sdks-and-apis/rest-api) testnet endpoint.&#x20;
+2. The [REST API](https://docs.hedera.com/hedera/sdks-and-apis/rest-api) testnet endpoint.
 3. The [JSON-RPC relay ](https://docs.hedera.com/hedera/core-concepts/smart-contracts/json-rpc-relay)testnet endpoint.
 
 The `.env` file contains the following parameters:
@@ -92,7 +91,7 @@ GENERATE_SOURCEMAP=false
 
 ## Start the Web UI
 
-Once you have configured your environment variables, start the web UI:
+Once you have configured your environment variables, start the web UI from the `web` directory:
 
 ```bash
 npm run start
@@ -102,7 +101,7 @@ If the application is successfully run, the web application interface will open 
 
 <figure><img src="../../.gitbook/assets/start web ui.png" alt=""><figcaption><p>http://localhost:3000/</p></figcaption></figure>
 
-Click "Connect your wallet" and select the wallet ([HashPack](https://www.hashpack.app/) or [MetaMask](https://metamask.io/)) and network you want to interact with. For the purposes of this demo, we will use HashPack and select Testnet.&#x20;
+Click "Connect your wallet" and select the wallet ([HashPack](https://www.hashpack.app/) or [MetaMask](https://metamask.io/)) and network you want to interact with. For the purposes of this demo, we will use HashPack and select Testnet.
 
 <div>
 
@@ -139,8 +138,6 @@ While the basic details are mandatory, you also have an option to further specif
 * **Decimals**: You can set additional decimal places if you need more precision.
 
 <figure><img src="../../.gitbook/assets/optional details.png" alt=""><figcaption></figcaption></figure>
-
-
 
 #### Manage permissions
 
@@ -190,7 +187,7 @@ You'll see a variety of actions and your accessible operations will be tied to t
 * **Grant KYC**: Approve an account for KYC verification.
 * **Revoke KYC**: Remove previously granted KYC approval.
 * **Check KYC**: Confirm the KYC status of an account.
-* **Danger Zone**: Access to operations that carry higher risk, generally because they affect every token owner (PAUSE) or can not be rolled back (DELETE).&#x20;
+* **Danger Zone**: Access to operations that carry higher risk, generally because they affect every token owner (PAUSE) or can not be rolled back (DELETE).
 
 To carry out an operation, simply click on the corresponding button and follow the on-screen prompts. The platform will automatically perform the operation based on the capabilities your account has been assigned.
 
@@ -215,7 +212,7 @@ Roles you can manage include:
 * **Delete**: Allows the removal of accounts or certain data, irreversible.
 * **Admin Role**: Provides overarching administrative privileges, often reserved for key governance participants.
 
-Connect your wallet and select the stablecoin from the drop-down list you want to interact with. Once the stablecoin information loads, head to the "Role management" tab.&#x20;
+Connect your wallet and select the stablecoin from the drop-down list you want to interact with. Once the stablecoin information loads, head to the "Role management" tab.
 
 <figure><img src="../../.gitbook/assets/role management.png" alt=""><figcaption></figcaption></figure>
 

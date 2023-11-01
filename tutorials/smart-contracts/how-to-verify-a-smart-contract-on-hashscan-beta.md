@@ -43,7 +43,7 @@ Open a web browser and navigate to [HashScan](https://hashscan.io/). Make sure y
 
 ## Step 2: Import Your Files
 
-Import the Solidity JSON file once you're on the HashScan Smart Contract Verifier page. The `.json` metadata file can be found under `artifacts/build-info` in your Hardhat project repository. The file usually has a name correlating with your smart contract and a hash value to differentiate it from other compilations.&#x20;
+Import the Solidity JSON file once you're on the HashScan Smart Contract Verifier page. The `.json` [metadata file](../../core-concepts/smart-contracts/verifying-smart-contracts-beta.md#the-metadata-file) can be found under `artifacts/build-info` in your Hardhat project repository. The file usually has a name correlating with your smart contract and a hash value to differentiate it from other compilations.&#x20;
 
 <figure><img src="../../.gitbook/assets/verifier.png" alt=""><figcaption><p>HashScan Smart Contract Verifier Interface</p></figcaption></figure>
 

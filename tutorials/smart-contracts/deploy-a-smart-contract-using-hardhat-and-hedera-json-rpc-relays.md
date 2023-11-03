@@ -24,14 +24,14 @@ By the end of this tutorial, you'll be equipped to deploy smart contracts on the
 
 ## Table of Contents&#x20;
 
-1. [Project Setup](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#step-1-set-up-project)
-2. [Project Configuration](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#step-2-configure-project)
-   1. [Environment Variables](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#environment-variables)
-   2. [Hardhat Config File](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#hardhat-configuration-file)
-3. [Compile Smart Contract](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#step-3-compile-contract)
-4. [Deploy Smart Contract](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#step-4-test-and-deploy-contract)
-   1. [Next Steps](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#next-steps)
-5. [Additional Resources](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#additional-resources)
+1. [Project Setup](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#step-1-set-up-project)
+2. [Project Configuration](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#step-2-configure-project)
+   1. [Environment Variables](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#environment-variables)
+   2. [Hardhat Config File](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#hardhat-configuration-file)
+3. [Compile Smart Contract](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#step-3-compile-contract)
+4. [Deploy Smart Contract](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#step-4-test-and-deploy-contract)
+   1. [Next Steps](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#next-steps)
+5. [Additional Resources](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#additional-resources)
 
 ***
 
@@ -275,7 +275,7 @@ describe("RPC", function () {
 
 <summary>.env.example</summary>
 
-A file that stores your environment variables like your accounts, private keys, and references to Hedera network. Details of this file are available in [Step 2](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#environment-variables) of this tutorial.
+A file that stores your environment variables like your accounts, private keys, and references to Hedera network. Details of this file are available in [Step 2](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#environment-variables) of this tutorial.
 
 </details>
 
@@ -283,7 +283,7 @@ A file that stores your environment variables like your accounts, private keys, 
 
 <summary>hardhat.config.js</summary>
 
-The Hardhat configuration file. This file includes information about the Hedera network RPC URLs, accounts, and tasks defined. Details of this file are available in [Step 2](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#hardhat-configuration-file) of this tutorial.
+The Hardhat configuration file. This file includes information about the Hedera network RPC URLs, accounts, and tasks defined. Details of this file are available in [Step 2](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#hardhat-configuration-file) of this tutorial.
 
 </details>
 
@@ -382,7 +382,7 @@ require("dotenv").config(); // Import dotenv library to access the .env file
 
 #### Hardhat Tasks
 
-These lines define tasks that are accessed and executed from the [`test/`](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#test) or [`scripts/`](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#scripts) folders.
+These lines define tasks that are accessed and executed from the [`test/`](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#test) or [`scripts/`](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md#scripts) folders.
 
 {% code title="hardhat.config.js" %}
 ```javascript

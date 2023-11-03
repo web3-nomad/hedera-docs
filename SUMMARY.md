@@ -11,7 +11,7 @@
   * [Smart Contracts](tutorials/smart-contracts/README.md)
     * [How to Verify a Smart Contract on HashScan (Beta)](tutorials/smart-contracts/how-to-verify-a-smart-contract-on-hashscan-beta.md)
     * [Deploy a Smart Contract Using Remix](tutorials/smart-contracts/deploy-a-smart-contract-using-remix.md)
-    * [Deploy a Smart Contract Using Hardhat and Hedera JSON-RPC Relay](tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md)
+    * [Deploy a Smart Contract Using Hardhat and Hedera JSON-RPC Relay](tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md)
     * [Deploy Your First Smart Contract](tutorials/smart-contracts/deploy-your-first-smart-contract.md)
     * [Deploy a Contract Using the Hedera Token Service](tutorials/smart-contracts/deploy-a-contract-using-the-hedera-token-service.md)
     * [Send and Receive HBAR Using Solidity Smart Contracts](tutorials/smart-contracts/send-and-receive-hbar-using-solidity-smart-contracts.md)

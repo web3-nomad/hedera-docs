@@ -17,7 +17,7 @@
     * [Send and Receive HBAR Using Solidity Smart Contracts](tutorials/smart-contracts/send-and-receive-hbar-using-solidity-smart-contracts.md)
     * [Create an HBAR Faucet App Using React and MetaMask](tutorials/smart-contracts/create-an-hbar-faucet-app-using-react-and-metamask.md)
     * [Deploy By Leveraging Ethereum Developer Tools On Hedera](tutorials/smart-contracts/deploy-by-leveraging-ethereum-developer-tools-on-hedera.md)
-    * [Deploy a Subgraph Using The Graph and JSON-RPC](tutorials/smart-contracts/deploy-a-subgraph-using-the-graph-and-json-rpc.md)
+    * [Deploy a Subgraph Using The Graph and Hedera JSON-RPC Relay](tutorials/smart-contracts/deploy-a-subgraph-using-the-graph-and-json-rpc.md)
     * [How to Set Up Foundry to Test Smart Contracts on Hedera](tutorials/smart-contracts/how-to-set-up-foundry-to-test-smart-contracts-on-hedera.md)
     * [Deploy Smart Contracts on Hedera Using Truffle](tutorials/smart-contracts/deploy-smart-contracts-on-hedera-using-truffle.md)
     * [Hedera Smart Contracts Workshop](tutorials/smart-contracts/hscs-workshop/README.md)

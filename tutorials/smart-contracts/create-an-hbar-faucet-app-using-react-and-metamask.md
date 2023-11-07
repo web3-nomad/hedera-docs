@@ -40,8 +40,6 @@ The complete JavaScript project can be found on GitHub [here](https://github.com
 
 ***
 
-***
-
 ## Create React App
 
 Open your terminal and run the following command to create a React app that utilizes TypeScript and Material UI.

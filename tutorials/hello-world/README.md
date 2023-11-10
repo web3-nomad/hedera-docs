@@ -16,9 +16,3 @@ To start, you **must** do the first sequence, as you will need a **funded accoun
 
 * [Create and fund an account](create-fund-account/)
 * [HFS: Files](hfs-files/)
-
-## Next
-
-Ok now what?
-
-👉 [docs.hedera.com](https://docs.hedera.com/) 👈

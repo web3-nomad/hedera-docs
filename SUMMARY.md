@@ -11,6 +11,7 @@
   * [Hello World](tutorials/hello-world/README.md)
     * [Create and fund account](tutorials/hello-world/create-fund-account.md)
     * [HFS: Files](tutorials/hello-world/hfs-files.md)
+    * [HTS: Fungible Token](tutorials/hello-world/hts-fungible-token.md)
     * [HSCS: Smart Contract](tutorials/hello-world/hscs-smart-contract.md)
   * [Smart Contracts](tutorials/smart-contracts/README.md)
     * [How to Verify a Smart Contract on HashScan (Beta)](tutorials/smart-contracts/how-to-verify-a-smart-contract-on-hashscan-beta.md)

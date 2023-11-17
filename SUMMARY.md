@@ -84,7 +84,7 @@
     * [Deploying Smart Contracts](core-concepts/smart-contracts/deploying-smart-contracts/README.md)
       * [JSON-RPC Relay](core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay.md)
     * [Smart Contract Addresses](core-concepts/smart-contracts/smart-contract-addresses.md)
-    * [Verifying Smart Contracts (Beta)](core-concepts/smart-contracts/verifying-smart-contracts-beta.md)
+    * [Verifying Smart Contracts (Beta)](core-concepts/smart-contracts/verifying-smart-contracts.md)
     * [Smart Contract Traceability](core-concepts/smart-contracts/smart-contract-traceability.md)
     * [Tokens Managed by Smart Contracts](core-concepts/smart-contracts/tokens-managed-by-smart-contracts/README.md)
       * [ERC-20 (Fungible Tokens)](core-concepts/smart-contracts/tokens-managed-by-smart-contracts/erc-20-fungible-tokens.md)

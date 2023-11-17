@@ -502,7 +502,7 @@ Compiled 1 contract successfully
 
 </details>
 
-The compiled artifacts will be saved in the `artifacts/` directory by default, or whatever your [configured artifacts path](https://hardhat.org/hardhat-runner/docs/config#path-configuration) is. The metadata file generated in this directory will be used for the [smart contract verification process](../../core-concepts/smart-contracts/verifying-smart-contracts-beta.md) in a later step.&#x20;
+The compiled artifacts will be saved in the `artifacts/` directory by default, or whatever your [configured artifacts path](https://hardhat.org/hardhat-runner/docs/config#path-configuration) is. The metadata file generated in this directory will be used for the [smart contract verification process](../../core-concepts/smart-contracts/verifying-smart-contracts.md) in a later step.&#x20;
 
 <figure><img src="../../.gitbook/assets/hardhat artifacts metadata file.png" alt="" width="373"><figcaption></figcaption></figure>
 

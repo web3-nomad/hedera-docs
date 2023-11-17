@@ -43,7 +43,7 @@ Open a web browser and navigate to [HashScan](https://hashscan.io/). Make sure y
 
 ## Step 2: Import Your Files
 
-Import the Solidity JSON file once you're on the HashScan Smart Contract Verifier page. The `.json` [metadata file](../../core-concepts/smart-contracts/verifying-smart-contracts-beta.md#the-metadata-file) can be found under `artifacts/build-info` in your Hardhat project repository. The file usually has a name correlating with your smart contract and a hash value to differentiate it from other compilations. For example, `HelloWorld.json`.
+Import the Solidity JSON file once you're on the HashScan Smart Contract Verifier page. The `.json` [metadata file](../../core-concepts/smart-contracts/verifying-smart-contracts.md#the-metadata-file) can be found under `artifacts/build-info` in your Hardhat project repository. The file usually has a name correlating with your smart contract and a hash value to differentiate it from other compilations. For example, `HelloWorld.json`.
 
 <figure><img src="../../.gitbook/assets/verifier.png" alt=""><figcaption><p>HashScan Smart Contract Verifier Interface</p></figcaption></figure>
 
@@ -94,6 +94,6 @@ Once you click _**View Contract**_, you'll be directed to the Contract Lookup pa
 
 **➡** [**Sourcify Documentation**](https://docs.sourcify.dev/docs/intro)
 
-**➡** [**Smart Contract Documentation**](../../core-concepts/smart-contracts/verifying-smart-contracts-beta.md)
+**➡** [**Smart Contract Documentation**](../../core-concepts/smart-contracts/verifying-smart-contracts.md)
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://hashnode.com/@theekrystallee">Hashnode</a></p></td><td><a href="https://hashnode.com/@theekrystallee">https://hashnode.com/@theekrystallee</a></td></tr><tr><td align="center"><p>Editor: Nana, Sr. Software Manager</p><p><a href="https://github.com/Nana-EC">GitHub</a> | <a href="https://www.linkedin.com/in/nconduah/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/nconduah/">https://www.linkedin.com/in/nconduah/</a></td></tr></tbody></table>

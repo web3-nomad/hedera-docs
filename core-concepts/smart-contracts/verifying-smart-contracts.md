@@ -12,11 +12,11 @@ The verification status is then publicly available across all community-hosted H
 
 For verification, you will need the following items:
 
-**➡** [**Smart Contract Source Code**](verifying-smart-contracts-beta.md#smart-contract-source-code)
+**➡** [**Smart Contract Source Code**](verifying-smart-contracts.md#smart-contract-source-code)
 
-**➡** [**The Metadata File**](verifying-smart-contracts-beta.md#the-metadata-file)
+**➡** [**The Metadata File**](verifying-smart-contracts.md#the-metadata-file)
 
-**➡** [**Deployed Smart Contract Address**](verifying-smart-contracts-beta.md#deployed-smart-contract-address)
+**➡** [**Deployed Smart Contract Address**](verifying-smart-contracts.md#deployed-smart-contract-address)
 
 ***
 

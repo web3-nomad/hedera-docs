@@ -28,7 +28,7 @@ Before you begin, you should have completed the "Create and Fund Account" sequen
 
 ***
 
-## Steps
+## Get started
 
 ### Set up project
 
@@ -40,22 +40,26 @@ You should already have this from the "Create and Fund Account" sequence. If you
 Alternatively, you may wish to create a `.env` file and populate it as required.
 {% endhint %}
 
-In the terminal, reuse the `.env` file by copying the one that you have previously created into the directory for this sequence.
+In the terminal, from the `hello-future-world` directory, enter the subdirectory for this sequence.
 
 ```shell
 cd 03-hscs-smart-contract-ethersjs/
+```
+
+Reuse the `.env` file by copying the one that you have previously created into the directory for this sequence.
+
+```shell
 cp ../00-create-fund-account/.env ./
 ```
 
-Next, install the dependencies using `npm`. Then open the script file in a code editor.
+Next, install the dependencies using `npm`.
 
 ```shell
 npm install
-code script-hscs-smart-contract-ethersjs.js
-code my_contract.sol
 ```
 
-You will also need to install a Solidity compiler. This time use the `--global` flag.
+You will also need to install a Solidity compiler.
+This time use the `--global` flag.
 
 ```shell
 npm install --global solc@0.8.17
@@ -64,6 +68,11 @@ npm install --global solc@0.8.17
 {% hint style="info" %}
 Note that although the `npm` package is named `solc`, the executable exposed on your command line is named `solcjs`.
 {% endhint %}
+
+Then open both these files in a code editor, such as VS Code.
+
+* `my_contract.sol`
+* `script-hscs-smart-contract-ethersjs.js`
 
 ***
 
@@ -122,21 +131,23 @@ Click on link in your confirmation email.
 
 Click on the "create project" button in the top-right corner of the Arkhia dashboard.
 
-[![arkhia-init-step-03.png](https://i.stack.imgur.com/JY5Ck.png)](https://i.stack.imgur.com/JY5Ck.png)
+[![](../../.gitbook/assets/hello-world--hscs--arkhia-01-create-project.png)](../../.gitbook/assets/hello-world--account--arkhia-01-create-project.png "Arkhia RPC Configuration - 01 - Create Project")
 
 Fill in whatever you like in the modal dialog that pops up.
 
-[![arkhia-init-step-04](https://i.stack.imgur.com/wYNj3.png)](https://i.stack.imgur.com/wYNj3.png)
+[![](../../.gitbook/assets/hello-world--hscs--arkhia-02-project-form.png)](../../.gitbook/assets/hello-world--account--arkhia-02-project-form "Arkhia RPC Configuration - 02 - Project Form")
 
 Click on the "Manage" button on the right side of your newly created project.
 
-[![arkhia-init-step-05](https://i.stack.imgur.com/yhCQp.png)](https://i.stack.imgur.com/yhCQp.png)
+[![](../../.gitbook/assets/hello-world--hscs--arkhia-03-manage-project.png)](../../.gitbook/assets/hello-world--account--arkhia-03-manage-project "Arkhia RPC Configuration - 03 - Manage Project")
 
-In the "Services" section, under "Network", select "Hedera Testnet".
-Copy the "JSON-RPC" field.
-In the "Security" section, copy the "API Key" field.
+Now you should see the project details.
 
-[![arkhia-init-step-06-07](https://i.stack.imgur.com/f8A1b.png)](https://i.stack.imgur.com/f8A1b.png)
+* (1) In the "Services" section, under "Network", select "Hedera Testnet".
+* (2) Copy the "JSON-RPC" field.
+* (3) In the "Security" section, copy the "API Key" field.
+
+<img src="../../.gitbook/assets/hello-world--hscs--arkhia-04-project-details.drawing.svg" alt="Arkhia RPC Configuration - 04 - Project Details" class="gitbook-drawing">
 
 Create a new line in the `.env` file with the key as `YOUR_JSON_RPC_URL`, and with the "JSON-RPC" value followed by the "API key" value.
 
@@ -145,6 +156,16 @@ For example, if the API key field is `ABC123`, and the JSON-RPC field is `https:
 ```
 RPC_URL=https://pool.arkhia.io/hedera/testnet/json-rpc/v1/ABC123
 ```
+
+<details>
+
+<summary>Alternative RPC configuration</summary>
+
+Arkhia is one of several different options for JSON-RPC connections.
+This tutorial covers all of the different options:
+[How to Connect to Hedera Networks Over RPC](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections).
+
+</details>
 
 ***
 
@@ -216,7 +237,7 @@ myContractWriteTxExplorerUrl: https://hashscan.io/testnet/transaction/0x32684e8d
 myContractQueryResult: Hello future - bguiz
 ```
 
-Open the URL, that was output as `myContractExplorerUrl` above, in your browser and check that:
+Open `myContractExplorerUrl` in your browser and check that:
 
 * (1) The contract exists
 * (2) Under the "Contract Details" section,
@@ -224,13 +245,13 @@ Open the URL, that was output as `myContractExplorerUrl` above, in your browser 
   the Solidity compiler that you used (`0.8.17`)
 * (3) Under the "Recent Contract Calls" section,
   There should be 2 transactions:
-  * (1) The transaction with the earlier timestamp (bottom) should be the deployment transaction.
+  * (A) The transaction with the earlier timestamp (bottom) should be the deployment transaction.
     * Navigate to this transaction by clicking on the timestamp.
     * Under the "Contract Result" section, the "Input - Function & Args" field
       should be a *fairly long* set of hexadecimal values.
     * This is the EVM bytecode output by the Solidity compiler.
     * Navigate back to the Contract page (browser `⬅` button).
-  * (2) The transaction with the later timestamp (top) should be the transaction in which the `introduce` function was invoked.
+  * (B) The transaction with the later timestamp (top) should be the transaction in which the `introduce` function was invoked.
     * Navigate to this transaction by clicking on the timestamp.
     * Under the "Contract Result" section, the "Input - Function & Args" field
       should be a *fairly short* set of hexadecimal values.
@@ -238,11 +259,20 @@ Open the URL, that was output as `myContractExplorerUrl` above, in your browser 
       and the input string value (e.g. `0x5626775697a0` for `bguiz`).
     * Navigate back to the Contract page (browser `⬅` button).
 
-Open the URL, that was output as `myContractWriteTxExplorerUrl` above, in your browser and check that:
+<img src="../../.gitbook/assets/hello-world--hscs--contract.drawing.svg" alt="HSCS contract in Hashscan, with annotated items to check." class="gitbook-drawing">
+
+Open `myContractWriteTxExplorerUrl` in your browser.
+Note that this should be the same page as "the transaction with the later timestamp".
+Check that:
 
 * (1) The transaction exists
 * (2) Its "Type" field is "ETHEREUM TRANSACTION"
-* (3) Under the "Contract Result" section, its "To" field matches the value of `myContractAddress`
+* (3) Under the "Contract Result" section,
+  its "From" field matches the value of `accountId`
+* (4) Under the "Contract Result" section,
+  its "To" field matches the value of `myContractAddress`
+
+<img src="../../.gitbook/assets/hello-world--hscs--transaction.drawing.svg" alt="HSCS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
 
 ***
 
@@ -296,6 +326,10 @@ Note that the branch names are delimited by `..`, and not by `...`, as the latte
 
 ***
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr><tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr>
+<tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr>
+<tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr>
+</tbody></table>
 
 ***

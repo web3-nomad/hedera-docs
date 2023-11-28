@@ -14,7 +14,20 @@ There are multiple Hello World sequences for you to follow along.
 
 To start, you **must** do the first sequence, as you will need a **funded account** to do any other tasks on Hedera. Subsequently, you can do the remaining sequences in any order.
 
-* [Create and fund an account](create-fund-account.md)
-* [HFS: Files](hfs-files.md)
-* [HTS: Fungible token](hts-fungible-token.md)
-* [HSCS: Smart contract](hscs-smart-contract.md)
+{% content-ref url="./create-fund-account.md" %} . {% endcontent-ref %}
+
+{% content-ref url="./hfs-files.md" %} . {% endcontent-ref %}
+
+{% content-ref url="./hts-fungible-token.md" %} . {% endcontent-ref %}
+
+{% content-ref url="./hscs-smart-contract.md" %} . {% endcontent-ref %}
+
+***
+
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr>
+<tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr>
+<tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr>
+</tbody></table>
+
+***

@@ -9,7 +9,7 @@ description: >-
 ## What you will accomplish
 
 * [ ] Create an account on Hedera Testnet
-* [ ] Fund this new account with tHBAR
+* [ ] Fund this new account with Testnet HBAR
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
@@ -23,21 +23,25 @@ Before you begin, you should be familiar with the following:
 
 Also, you should have the following set up on your computer:
 
+* [ ] POSIX-compliant shell
+  * For Linux & Mac: The shell that ships with the operating system will work. Either `bash` or `zsh` will work.
+  * For Windows: The shells that ship with the operating system (`cmd.exe`, `powershell.exe`) _will not_ work.
+    * Recommended: `git-bash` which ships with `git-for-windows`. [Install Git for Windows (Git for Windows)](https://gitforwindows.org/)
+    * Recommended (alternative): Windows Subsystem for Linux. [Install WSL (Microsoft)](https://learn.microsoft.com/en-us/windows/wsl/install)
 * [ ] `git` installed
   * Minimum version: 2.37
   * [Install Git (Github)](https://github.com/git-guides/install-git)
+* [ ] A code editor or IDE
+  * Recommended: VS Code. [Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
 * [ ] NodeJs + `npm` installed
   * Minimum version of NodeJs: 18
   * Minimum version of `npm`: 9.5
   * Recommended for Linux & Mac: [`nvm`](https://github.com/nvm-sh/nvm)
   * Recommended for Windows: [`nvm-windows`](https://github.com/coreybutler/nvm-windows)
-* [ ] POSIX-compliant shell
-  * For Linux & Mac: The shell that ships with the operating system will work. Either `bash` or `zsh` will work.
-  * For Windows: The shell that ships with the operating system (`cmd.exe`, `powershell.exe`) _will not_ work. Recommended alternatives: WSL/2, or `git-bash` which ships with `git-for-windows`.
 
 ***
 
-## Steps
+## Get started
 
 ### Set up project
 
@@ -60,13 +64,19 @@ git clone git@github.com:hedera-dev/hello-future-world.git
 
 </details>
 
-In the terminal, make a `.env` file by copying the provided `.env.sample` file. Then open that file in a code editor, such as VS code (`code`).
+In the terminal, from the `hello-future-world` directory, enter the subdirectory for this sequence.
 
 ```shell
 cd 00-create-fund-account/
-cp .env.sample .env
-code .env
 ```
+
+Make a `.env` file by copying the provided `.env.sample` file.
+
+```shell
+cp .env.sample .env
+```
+
+Then open the `.env` file in a code editor, such as VS Code.
 
 ### Create account
 
@@ -78,19 +88,19 @@ If you already have an account on the [Hedera Portal](https://portal.hedera.com)
 
 Visit the [Hedera Portal](https://portal.hedera.com), and create a Testnet account.
 
-[![localhost-init-step-03](https://i.stack.imgur.com/tgkvS.png)](https://i.stack.imgur.com/tgkvS.png)
+[![](../../.gitbook/assets/hello-world--account--portal-01-create-account.png)](../../.gitbook/assets/hello-world--account--portal-01-create-account.png "Hedera Portal - 01 - Create Account")
 
 Copy-paste the confirmation code sent to your email.
 
-[![localhost-init-step-04](https://i.stack.imgur.com/4H9XT.png)](https://i.stack.imgur.com/4H9XT.png)
+[![](../../.gitbook/assets/hello-world--account--portal-02-email-verification.png)](../../.gitbook/assets/hello-world--account--portal-02-email-verification.png "Hedera Portal - 02 - Email Verification")
 
 Fill out this form.
 
-[![localhost-init-step-05](https://i.stack.imgur.com/atW69.png)](https://i.stack.imgur.com/atW69.png)
+[![](../../.gitbook/assets/hello-world--account--portal-03-profile-form.png)](../../.gitbook/assets/hello-world--account--portal-03-profile-form.png "Hedera Portal - 03 - Profile Form"
 
 In the top-left select Hedera Testnet from the drop-down.
 
-[![localhost-init-step-07](https://i.stack.imgur.com/2A2ua.png)](https://i.stack.imgur.com/2A2ua.png)
+[![](../../.gitbook/assets/hello-world--account--portal-04-select-network.png)](../../.gitbook/assets/hello-world--account--portal-04-select-network.png "Hedera Portal - 04 - Select Network")
 
 </details>
 
@@ -107,7 +117,7 @@ To follow along, use **Account ECDSA**.
 
 Copy the value of "HEX Encoded Private Key", and replace `ACCOUNT_PRIVATE_KEY` in the `.env` file with it.
 
-[![localhost-init-step-08](https://i.stack.imgur.com/PrQbt.png)](https://i.stack.imgur.com/PrQbt.png)
+[![](../../.gitbook/assets//hello-world--account--portal-05-copy-fields.png)](../../.gitbook/assets/hello-world--account--portal-05-copy-fields.png "Hedera Portal - 05 - Copy Fields")
 
 From the same screen, copy the value of "Account ID", and replace `ACCOUNT_ID` in the `.env` file with it.
 
@@ -146,7 +156,7 @@ Now the `client` instance represents and operates your account.
 
 #### Step 2: Obtain the balance of the account
 
-Use the `AccountBalanceQuery` method to obtain the tHBAR balance of your account.
+Use the `AccountBalanceQuery` method to obtain the Testnet HBAR balance of your account.
 
 ```javascript
     const accountBalance = await new AccountBalanceQuery()
@@ -156,7 +166,7 @@ Note that the return value is an object, and needs to be parsed.
 
 #### Step 3: Convert balance result object to Hbars
 
-Parse that return value to extract its tHBAR balance, so that you may convert into a string for display purposes.
+Parse that return value to extract its Testnet HBAR balance, so that you may convert into a string for display purposes.
 
 ```javascript
     const accountBalanceHbars = accountBalance.hbars.toBigNumber();
@@ -173,15 +183,17 @@ node script-create-fund-account.js
 You should see output similar to the following:
 
 ```
-accountId: 0.0.1186
+accountId: 0.0.1201
 accountBalanceTinybars: 10,000.00000000
-accountExplorerUrl: https://hashscan.io/testnet/account/0.0.1186
+accountExplorerUrl: https://hashscan.io/testnet/account/0.0.1201
 ```
 
-Open the URL, that was output as `accountExplorerUrl` above, in your browser and check that:
+Open `accountExplorerUrl` in your browser and check that:
 
-* (1) The accounts exists.
-* (2) The balance matches.
+* (1) The account exists, and its "account ID" should match `accountId`.
+* (2) The "balances" should match `accountBalanceTinybars`.
+
+<img src="../../.gitbook/assets/hello-world--account--account.drawing.svg" alt="Account in Hashscan, with annotated items to check." class="gitbook-drawing">
 
 ***
 
@@ -192,7 +204,7 @@ Congratulations, you have completed the **create and fund account** Hello World 
 You have learnt how to:
 
 * [x] Create an account on Hedera Testnet
-* [x] Fund this new account with tHBAR
+* [x] Fund this new account with Testnet HBAR
 
 ***
 
@@ -230,6 +242,10 @@ Note that the branch names are delimited by `..`, and not by `...`, as the latte
 
 ***
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr><tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr>
+<tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr>
+<tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr>
+</tbody></table>
 
 ***

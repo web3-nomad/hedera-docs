@@ -8,8 +8,8 @@ description: >-
 
 ## What you will accomplish
 
-* ✅ Create and mint a new fungible token on HTS
-* ✅ Query the token balance
+- [ ] Create and mint a new fungible token on HTS
+- [ ] Query the token balance
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
@@ -40,7 +40,7 @@ Alternatively, you may wish to create a `.env` file and populate it as required.
 In the terminal, reuse the `.env` file by copying the one that you have previously created into the directory for this sequence.
 
 ```shell
-cd 04-hts-ft-sdkdir/
+cd 04-hts-ft-sdk/
 cp ../00-create-fund-account/.env ./
 ```
 
@@ -62,8 +62,8 @@ An almost-complete script has already been prepared for you, and you will only n
 To create a new HTS token, we will use `TokenCreateTransaction`. This transaction requires many properties to be set on it.
 
 * For fungible tokens (which are analogous to ERC20 tokens), set the token type to `TokenType.FungibleCommon`.
-* Set the token name and token symbol based on your name (or other moniker).
-* Set the decimal property to `2` in order to mimic "cents" on your fungible token.
+* Set the token name and token symbol based on your name (or nickname).
+* Set the decimal property to `2`.
 * Set the initial supply to 1 million.
 
 ```js
@@ -78,6 +78,19 @@ To create a new HTS token, we will use `TokenCreateTransaction`. This transactio
         .setFreezeDefault(false)
         .freezeWith(client);
 ```
+<details>
+
+<summary>HTS token create details</summary>
+
+- Token Type: Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to *ERC20* tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, whioch may be thought of as analogous to *ERC721* tokens.
+- Token Name: This is the full name of the token. For example, "Singapore Dollar".
+- Token Symbol: This is the abbreviation of the token's name. For example, "SGD".
+- Decimals: This is the number of decimal places the currency uses. For example, `2` mimic "cents", where the smallest unit of the token is 1/100th of a single token.
+- Initial Supply: This is the number units of the token to "mint" when first creating the token. Note that this is specified in the smallest units, so `1_000_000` initial supply when decimals is 2, results in `10_000` full units of the token being minted. It might be easier to think about it as "one million cents equals ten thousand dollars".
+- Treasury Account ID: This is the account that the initial supply is credited to. For example, using `accountId` would mean that your own account receives all the tokens when they are minted.
+- Admin Key: This is the account that is authorised to administrate this token. For example, using `accountKey` would mean that your own account would get to perform actions such as minting additional supply.
+
+</details>
 
 #### Step 2: Mirror Node API to query specified token balance
 
@@ -119,16 +132,21 @@ accountBalanceFetchApiUrl: https://testnet.mirrornode.hedera.com/api/v1/accounts
 Open the URL, that was output as `tokenExplorerUrl` above, in your browser and check that:
 
 * (1) The token should exist
-* (2) The "name" and "symbol" should be shown as the same values derived from your name (or other moniker) that you chose earlier
+* (2) The "name" and "symbol" should be shown as the same values derived from your name (or nickname) that you chose earlier
 * (3) The "treasury account" should match `accountId`
 * (4) Both the "total supply" and "initial supply" should be `10,000`
-  * Note that it is not `1,000,000` because of the 2 decimal places configured
+    * Note that it is not `1,000,000` because of the 2 decimal places configured
 
 ***
 
 ## Complete
 
-Congratulations, you have completed this Hello World sequence! 🎉🎉🎉
+Congratulations, you have completed the **Hedera Token Service** Hello World sequence! 🎉🎉🎉
+
+You have learnt how to:
+
+- [x] Create and mint a new fungible token on HTS
+- [x] Query the token balance
 
 ***
 
@@ -158,7 +176,8 @@ cd 04-hts-ft-sdkdir/
 git diff main..completed -- ./
 ```
 
-Alternatively, you may view the `diff`` rendered on Github: [`hedera-dev/hello-future-world/compare/main..completed`](https://github.com/hedera-dev/hello-future-world/compare/main..completed) (This will show the` diff\` for _all_ sequences.)
+Alternatively, you may view the `diff` rendered on Github:
+[`hedera-dev/hello-future-world/compare/main..completed`](https://github.com/hedera-dev/hello-future-world/compare/main..completed) (This will show the `diff` for *all* sequences.)
 
 Note that the branch names are delimited by `..`, and not by `...`, as the latter finds the `diff` with the latest common ancestor commit, which _is not_ what we want in this case.
 

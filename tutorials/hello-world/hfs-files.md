@@ -8,8 +8,8 @@ description: >-
 
 ## What you will accomplish
 
-* ✅ Upload a file onto HFS
-* ✅ Retrieve the file from HFS
+* [ ] Upload a file onto HFS
+* [ ] Retrieve the file from HFS
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
@@ -117,7 +117,12 @@ Open the URL, that was output as `txExplorerUrl` above, in your browser and chec
 
 ## Complete
 
-Congratulations, you have completed this Hello World sequence! 🎉🎉🎉
+Congratulations, you have completed the **Hedera File Service** Hello World sequence! 🎉🎉🎉
+
+You have learnt how to:
+
+* [x] Upload a file onto HFS
+* [x] Retrieve the file from HFS
 
 ***
 

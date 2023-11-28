@@ -8,11 +8,11 @@ description: >-
 
 ## What you will accomplish
 
-* ✅ Write a smart contract
-* ✅ Compile the smart contract
-* ✅ Deploy a smart contract
-* ✅ Update smart contract state
-* ✅ Query smart contract state
+* [ ] Write a smart contract
+* [ ] Compile the smart contract
+* [ ] Deploy a smart contract
+* [ ] Update smart contract state
+* [ ] Query smart contract state
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
@@ -52,6 +52,7 @@ Next, install the dependencies using `npm`. Then open the script file in a code 
 ```shell
 npm install
 code script-hscs-smart-contract-ethersjs.js
+code my_contract.sol
 ```
 
 You will also need to install a Solidity compiler. This time use the `--global` flag.
@@ -68,7 +69,9 @@ Note that although the `npm` package is named `solc`, the executable exposed on 
 
 ### Write the smart contract
 
-An almost-complete smart contract has already been prepared for you, and you will only need to make one modification (outlined below) for it to compile successfully.
+An almost-complete smart contract has already been prepared for you, `my_contract.sol`.
+You will only need to make one modification (outlined below)
+for it to compile successfully.
 
 #### Step 1: Get name stored in mapping
 
@@ -129,7 +132,9 @@ Click on the "Manage" button on the right side of your newly created project.
 
 [![arkhia-init-step-05](https://i.stack.imgur.com/yhCQp.png)](https://i.stack.imgur.com/yhCQp.png)
 
-In the project details, copy the "API Key" field, and also copy the "JSON-RPC" field.
+In the "Services" section, under "Network", select "Hedera Testnet".
+Copy the "JSON-RPC" field.
+In the "Security" section, copy the "API Key" field.
 
 [![arkhia-init-step-06-07](https://i.stack.imgur.com/f8A1b.png)](https://i.stack.imgur.com/f8A1b.png)
 
@@ -145,7 +150,9 @@ RPC_URL=https://pool.arkhia.io/hedera/testnet/json-rpc/v1/ABC123
 
 ### Write the script
 
-An almost-complete script has already been prepared for you, and you will only need to make a few modifications (outlined below) for it to run successfully.
+An almost-complete script has already been prepared for you, `script-hscs-smart-contract-ethersjs.js`.
+You will only need to make a few modifications (outlined below)
+for it to run successfully.
 
 #### Step 2: Prepare smart contract for deployment
 
@@ -167,7 +174,10 @@ When invoking functions in a smart contract, you may do so in two different ways
 * (1) With a transaction → Smart contract state may be changed.
 * (2) Without a transaction → Smart contract state may be queried, but may not be changed.
 
-The `introduce` function requires a single parameter of type `string`, and changes the state of the smart contract to store this value. Enter your name (or other moniker) as the parameter. For example, if you wish to use "bguiz", the invocation should look like this:
+The `introduce` function requires a single parameter of type `string`,
+and changes the state of the smart contract to store this value.
+Enter your name (or nickname) as the parameter.
+For example, if you wish to use "bguiz", the invocation should look like this:
 
 ```js
     const myContractWriteTxRequest = await myContract.functions.introduce('bguiz');
@@ -209,26 +219,44 @@ myContractQueryResult: Hello future - bguiz
 Open the URL, that was output as `myContractExplorerUrl` above, in your browser and check that:
 
 * (1) The contract exists
-* (2) Under the "Contract Details" section, its "Compiler Version" field matches the version of the Solidity compiler that you used (`0.8.17`)
-* (3) Under the "Recent Contract Calls" section, There should be 2 transactions
+* (2) Under the "Contract Details" section,
+  its "Compiler Version" field matches the version of
+  the Solidity compiler that you used (`0.8.17`)
+* (3) Under the "Recent Contract Calls" section,
+  There should be 2 transactions:
+  * (1) The transaction with the earlier timestamp (bottom) should be the deployment transaction.
+    * Navigate to this transaction by clicking on the timestamp.
+    * Under the "Contract Result" section, the "Input - Function & Args" field
+      should be a *fairly long* set of hexadecimal values.
+    * This is the EVM bytecode output by the Solidity compiler.
+    * Navigate back to the Contract page (browser `⬅` button).
+  * (2) The transaction with the later timestamp (top) should be the transaction in which the `introduce` function was invoked.
+    * Navigate to this transaction by clicking on the timestamp.
+    * Under the "Contract Result" section, the "Input - Function & Args" field
+      should be a *fairly short* set of hexadecimal values.
+    * This is the representation of the function identifier (first 8 characters),
+      and the input string value (e.g. `0x5626775697a0` for `bguiz`).
+    * Navigate back to the Contract page (browser `⬅` button).
 
 Open the URL, that was output as `myContractWriteTxExplorerUrl` above, in your browser and check that:
 
 * (1) The transaction exists
 * (2) Its "Type" field is "ETHEREUM TRANSACTION"
 * (3) Under the "Contract Result" section, its "To" field matches the value of `myContractAddress`
-  * The earlier one (bottom) should be the deployment transaction. Navigate to it.
-    * Under the "Contract Result" section, the "Input - Function & Args" field should be a fairly long set of hexadecimal values.
-    * This is the EVM bytecode output by the Solidity compiler.
-  * The later one (top) should be the transaction in which the `introduce` function was invoked. Navigate to it.
-    * Under the "Contract Result" section, the "Input - Function & Args" field should be a fairly short set of hexadecimal values.
-    * This is the representation of the function identifier (first 8 characters), and the input string value (e.g. `0x5626775697a0` for `bguiz`).
 
 ***
 
 ## Complete
 
-Congratulations, you have completed this Hello World sequence! 🎉🎉🎉
+Congratulations, you have completed the **Hedera Smart Contract Service** Hello World sequence! 🎉🎉🎉
+
+You have learnt how to:
+
+* [x] Write a smart contract
+* [x] Compile the smart contract
+* [x] Deploy a smart contract
+* [x] Update smart contract state
+* [x] Query smart contract state
 
 ***
 

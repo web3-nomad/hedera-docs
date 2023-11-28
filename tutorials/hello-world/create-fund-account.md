@@ -8,8 +8,8 @@ description: >-
 
 ## What you will accomplish
 
-* ✅ Create an account on Hedera Testnet
-* ✅ Fund this new account with tHBAR
+* [ ] Create an account on Hedera Testnet
+* [ ] Fund this new account with tHBAR
 
 The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
@@ -19,21 +19,21 @@ The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera
 
 Before you begin, you should be familiar with the following:
 
-* ✅ Javascript syntax
+* [ ] Javascript syntax
 
 Also, you should have the following set up on your computer:
 
-* ✅ `git` installed
+* [ ] `git` installed
   * Minimum version: 2.37
   * [Install Git (Github)](https://github.com/git-guides/install-git)
-* ✅ NodeJs + `npm` installed
+* [ ] NodeJs + `npm` installed
   * Minimum version of NodeJs: 18
   * Minimum version of `npm`: 9.5
   * Recommended for Linux & Mac: [`nvm`](https://github.com/nvm-sh/nvm)
   * Recommended for Windows: [`nvm-windows`](https://github.com/coreybutler/nvm-windows)
-* ✅ POSIX-compliant shell
+* [ ] POSIX-compliant shell
   * For Linux & Mac: The shell that ships with the operating system will work. Either `bash` or `zsh` will work.
-  * For Windows: The shell that ships with the operating system (`cmd.exe`, `powershell.exe`) will _not_ work. Recommended alternatives: WSL/2, or git-bash which ships with git-for-windows.
+  * For Windows: The shell that ships with the operating system (`cmd.exe`, `powershell.exe`) _will not_ work. Recommended alternatives: WSL/2, or `git-bash` which ships with `git-for-windows`.
 
 ***
 
@@ -44,8 +44,21 @@ Also, you should have the following set up on your computer:
 To follow along, start with the `main` branch, which is the _default branch_ of this repo. This gives you the initial state from which you can follow along with the steps as described in the tutorial.
 
 ```shell
+git clone https://github.com/hedera-dev/hello-future-world.git
+```
+
+<details>
+
+<summary>Alternative with `git` and SSH</summary>
+
+If you have [configured SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+to work with `git`, you may wish use this command instead:
+
+```shell
 git clone git@github.com:hedera-dev/hello-future-world.git
 ```
+
+</details>
 
 In the terminal, make a `.env` file by copying the provided `.env.sample` file. Then open that file in a code editor, such as VS code (`code`).
 
@@ -98,7 +111,7 @@ Copy the value of "HEX Encoded Private Key", and replace `ACCOUNT_PRIVATE_KEY` i
 
 From the same screen, copy the value of "Account ID", and replace `ACCOUNT_ID` in the `.env` file with it.
 
-For example, if your Account ID is `0.0.123`, and your DER-encoded private key is `0xabcd1234`, the 2 lines in your `.env` file should look like this:
+For example, if your Account ID is `0.0.123`, and your HEX-encoded private key is `0xabcd1234`, the 2 lines in your `.env` file should look like this:
 
 ```
 ACCOUNT_ID=0.0.123
@@ -174,7 +187,12 @@ Open the URL, that was output as `accountExplorerUrl` above, in your browser and
 
 ## Complete
 
-Congratulations, you have completed this Hello World sequence! 🎉🎉🎉
+Congratulations, you have completed the **create and fund account** Hello World sequence! 🎉🎉🎉
+
+You have learnt how to:
+
+* [x] Create an account on Hedera Testnet
+* [x] Fund this new account with tHBAR
 
 ***
 

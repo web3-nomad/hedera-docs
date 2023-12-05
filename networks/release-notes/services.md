@@ -72,6 +72,10 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 * Increase contract kv/pairs storage allowed by 100x [#9581](https://github.com/hashgraph/hedera-services/pull/9581) / [#9590](https://github.com/hashgraph/hedera-services/pull/9590)
 * 9582: Backport the fix for 9479 to release/0.44 [#9583](https://github.com/hashgraph/hedera-services/pull/9583)
 
+### Performance Results
+
+<figure><img src="../../.gitbook/assets/0.44_Performance Measurement Results.001.png" alt=""><figcaption></figcaption></figure>
+
 ## [v0.43](https://github.com/hashgraph/hedera-services/releases/tag/v0.43.0)
 
 {% hint style="success" %}
@@ -95,6 +99,10 @@ Services v0.43.0 adds the following enhancements:
 * "Productizing" contract disassembler at last ([#8563](https://github.com/hashgraph/hedera-services/pull/8563))
 * Auto sidecar validations ([#8404](https://github.com/hashgraph/hedera-services/pull/8404))
 * Create fat jar with services CLI so it can be run standalone ([#8519](https://github.com/hashgraph/hedera-services/pull/8519))
+
+### Performance Results
+
+<figure><img src="../../.gitbook/assets/0.43_Performance Measurement Results.001.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.42](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.1)
 

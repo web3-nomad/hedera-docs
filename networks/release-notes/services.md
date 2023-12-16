@@ -6,6 +6,23 @@ description: Hedera Services release information
 
 Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
 
+## [v.045](https://github.com/hashgraph/hedera-services/releases/tag/v0.45.0)
+
+* Populate evm function result on failing eth transaction by [@stoqnkpL](https://github.com/stoqnkpL) in [#9453](https://github.com/hashgraph/hedera-services/pull/9453)
+* Disable compression. by [@cody-littley](https://github.com/cody-littley) in [#9554](https://github.com/hashgraph/hedera-services/pull/9554)
+* Fix tests in unique token management spec by [@mhess-swl](https://github.com/mhess-swl) in [#9537](https://github.com/hashgraph/hedera-services/pull/9537)
+* enaled one more test and remove the other one that not really in use by [@povolev15](https://github.com/povolev15) in [#9557](https://github.com/hashgraph/hedera-services/pull/9557)
+* Enable tests from CannotDeleteSystemEntitiesSuite by [@Ivo-Yankov](https://github.com/Ivo-Yankov) in [#9440](https://github.com/hashgraph/hedera-services/pull/9440)
+* Fix tests in ContractBurnHTSSuite by [@agadzhalov](https://github.com/agadzhalov) in [#9572](https://github.com/hashgraph/hedera-services/pull/9572)
+* Tune dependency scopes by [@jjohannes](https://github.com/jjohannes) in [#8455](https://github.com/hashgraph/hedera-services/pull/8455)
+* unneeded calls to swirlds-common removed by [@hendrikebbers](https://github.com/hendrikebbers) in [#9003](https://github.com/hashgraph/hedera-services/pull/9003)
+* Fixed CryptoRecordsSanityCheckSuite by [@iwsimon](https://github.com/iwsimon) in [#9551](https://github.com/hashgraph/hedera-services/pull/9551)
+* Enable test from AssociatePrecompileSuite by [@mustafauzunn](https://github.com/mustafauzunn) in [#9571](https://github.com/hashgraph/hedera-services/pull/9571)
+* Implement TransactionRateMultiplierSource by [@MiroslavGatsanoga](https://github.com/MiroslavGatsanoga) in [#9305](https://github.com/hashgraph/hedera-services/pull/9305)
+* 9514: Reduce Java allocations when sending internal node hashes during reconnect by [@artemananiev](https://github.com/artemananiev) in [#9538](https://github.com/hashgraph/hedera-services/pull/9538)
+* Address PR review comments for [#8374](https://github.com/hashgraph/hedera-services/pull/8374) by [@vtronkov](https://github.com/vtronkov) in [#9266](https://github.com/hashgraph/hedera-services/pull/9266)
+* 9479: Add more logs to debug virtual map reconnect issues by [@artemananiev](https://github.com/artemananiev) in [#9481](https://github.com/hashgraph/hedera-services/pull/9481)
+
 ## [v0.44](https://github.com/hashgraph/hedera-services/releases)
 
 ### 0.44.3

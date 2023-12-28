@@ -8,6 +8,18 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 ## [v0.45](https://github.com/hashgraph/hedera-services/releases/tag/v0.45.0)
 
+{% hint style="success" %}
+**TESTNET UPDATE: DECEMBER 28, 2023**
+{% endhint %}
+
+### 0.45.2
+
+#### What's Changed
+
+* fix: Added a feature flag which is by default enabled to disable tokenBalances and tokenRelationships in `getAccountInfo`, `getAccountBalance` and `getContractInfo` queries. [#10639](https://github.com/hashgraph/hedera-services/pull/10639)
+
+### 0.45.0
+
 * Populate evm function result on failing eth transaction by [@stoqnkpL](https://github.com/stoqnkpL) in [#9453](https://github.com/hashgraph/hedera-services/pull/9453)
 * Disable compression. by [@cody-littley](https://github.com/cody-littley) in [#9554](https://github.com/hashgraph/hedera-services/pull/9554)
 * Fix tests in unique token management spec by [@mhess-swl](https://github.com/mhess-swl) in [#9537](https://github.com/hashgraph/hedera-services/pull/9537)
@@ -23,7 +35,19 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 * Address PR review comments for [#8374](https://github.com/hashgraph/hedera-services/pull/8374) by [@vtronkov](https://github.com/vtronkov) in [#9266](https://github.com/hashgraph/hedera-services/pull/9266)
 * 9479: Add more logs to debug virtual map reconnect issues by [@artemananiev](https://github.com/artemananiev) in [#9481](https://github.com/hashgraph/hedera-services/pull/9481)
 
+### Performance Results
+
+<figure><img src="../../.gitbook/assets/0.45_Performance Measurement Results_Extract.png" alt=""><figcaption></figcaption></figure>
+
 ## [v0.44](https://github.com/hashgraph/hedera-services/releases)
+
+{% hint style="success" %}
+**MAINNET UPDATE: DECEMBER 19, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE: DECEMBER 12, 2023**
+{% endhint %}
 
 ### 0.44.3
 

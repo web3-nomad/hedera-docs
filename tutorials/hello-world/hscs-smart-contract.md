@@ -18,7 +18,7 @@ description: >-
 
 ## Prerequisites
 
-Before you begin, you should have completed the "Create and Fund Account" sequence:&#x20;
+Before you begin, you should have completed the "Create and Fund Account" sequence:
 
 {% content-ref url="create-fund-account.md" %}
 [create-fund-account.md](create-fund-account.md)
@@ -56,8 +56,7 @@ Next, install the dependencies using `npm`.
 npm install
 ```
 
-You will also need to install a Solidity compiler.
-This time use the `--global` flag.
+You will also need to install a Solidity compiler. This time use the `--global` flag.
 
 ```shell
 npm install --global solc@0.8.17
@@ -78,9 +77,7 @@ Then open both these files in a code editor, such as VS Code.
 
 ### Write the smart contract
 
-An almost-complete smart contract has already been prepared for you, `my_contract.sol`.
-You will only need to make one modification (outlined below)
-for it to compile successfully.
+An almost-complete smart contract has already been prepared for you, `my_contract.sol`. You will only need to make one modification (outlined below) for it to compile successfully.
 
 #### Step 1: Get name stored in mapping
 
@@ -112,10 +109,10 @@ my_contract_sol_MyContract.bin
 ```
 
 {% hint style="info" %}
-- The `.abi` file contains JSON, and describes the interface used to interact with the smart contract.
-- The `.bin` file contains EVM bytecode, and this is used in the deployment of the smart contract.
+* The `.abi` file contains JSON, and describes the interface used to interact with the smart contract.
+* The `.bin` file contains EVM bytecode, and this is used in the deployment of the smart contract.
 
-Note that while the `.abi` file is human readable, the `.bin` file is *not intended* to be human readable.
+Note that while the `.abi` file is human readable, the `.bin` file is _not intended_ to be human readable.
 {% endhint %}
 
 ***
@@ -128,15 +125,15 @@ If prompted to do so, click on the link in your confirmation email.
 
 Click on the "create project" button in the top-right corner of the Arkhia dashboard.
 
-[![](../../.gitbook/assets/hello-world--hscs--arkhia-01-create-project.png)](../../.gitbook/assets/hello-world--account--arkhia-01-create-project.png "Arkhia RPC Configuration - 01 - Create Project")
+[![](../../.gitbook/assets/hello-world--hscs--arkhia-01-create-project.png)](../../.gitbook/assets/hello-world--account--arkhia-01-create-project.png)
 
 Fill in whatever you like in the modal dialog that pops up.
 
-[![](../../.gitbook/assets/hello-world--hscs--arkhia-02-project-form.png)](../../.gitbook/assets/hello-world--account--arkhia-02-project-form "Arkhia RPC Configuration - 02 - Project Form")
+[![](../../.gitbook/assets/hello-world--hscs--arkhia-02-project-form.png)](../../.gitbook/assets/hello-world--account--arkhia-02-project-form/)
 
 Click on the "Manage" button on the right side of your newly created project.
 
-[![](../../.gitbook/assets/hello-world--hscs--arkhia-03-manage-project.png)](../../.gitbook/assets/hello-world--account--arkhia-03-manage-project "Arkhia RPC Configuration - 03 - Manage Project")
+[![](../../.gitbook/assets/hello-world--hscs--arkhia-03-manage-project.png)](../../.gitbook/assets/hello-world--account--arkhia-03-manage-project/)
 
 Now you should see the project details.
 
@@ -158,9 +155,7 @@ RPC_URL=https://pool.arkhia.io/hedera/testnet/json-rpc/v1/ABC123
 
 <summary>Alternative RPC configuration</summary>
 
-Arkhia is one of several different options for JSON-RPC connections.
-This tutorial covers all of the different options:
-[How to Connect to Hedera Networks Over RPC](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections).
+Arkhia is one of several different options for JSON-RPC connections. This tutorial covers all of the different options: [How to Connect to Hedera Networks Over RPC](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections).
 
 </details>
 
@@ -168,9 +163,7 @@ This tutorial covers all of the different options:
 
 ### Write the script
 
-An almost-complete script has already been prepared for you, `script-hscs-smart-contract-ethersjs.js`.
-You will only need to make a few modifications (outlined below)
-for it to run successfully.
+An almost-complete script has already been prepared for you, `script-hscs-smart-contract-ethersjs.js`. You will only need to make a few modifications (outlined below) for it to run successfully.
 
 #### Step 2: Prepare smart contract for deployment
 
@@ -192,10 +185,7 @@ When invoking functions in a smart contract, you may do so in two different ways
 * (1) With a transaction → Smart contract state may be changed.
 * (2) Without a transaction → Smart contract state may be queried, but may not be changed.
 
-The `introduce` function requires a single parameter of type `string`,
-and changes the state of the smart contract to store this value.
-Enter your name (or nickname) as the parameter.
-For example, if you wish to use "bguiz", the invocation should look like this:
+The `introduce` function requires a single parameter of type `string`, and changes the state of the smart contract to store this value. Enter your name (or nickname) as the parameter. For example, if you wish to use "bguiz", the invocation should look like this:
 
 ```js
     const myContractWriteTxRequest = await myContract.functions.introduce('bguiz');
@@ -237,37 +227,27 @@ myContractQueryResult: Hello future - bguiz
 Open `myContractExplorerUrl` in your browser and check that:
 
 * (1) The contract exists
-* (2) Under the "Contract Details" section,
-  its "Compiler Version" field matches the version of
-  the Solidity compiler that you used (`0.8.17`)
-* (3) Under the "Recent Contract Calls" section,
-  There should be 2 transactions:
+* (2) Under the "Contract Details" section, its "Compiler Version" field matches the version of the Solidity compiler that you used (`0.8.17`)
+* (3) Under the "Recent Contract Calls" section, There should be 2 transactions:
   * (A) The transaction with the earlier timestamp (bottom) should be the deployment transaction.
     * Navigate to this transaction by clicking on the timestamp.
-    * Under the "Contract Result" section, the "Input - Function & Args" field
-      should be a *fairly long* set of hexadecimal values.
+    * Under the "Contract Result" section, the "Input - Function & Args" field should be a _fairly long_ set of hexadecimal values.
     * This is the EVM bytecode output by the Solidity compiler.
     * Navigate back to the Contract page (browser `⬅` button).
   * (B) The transaction with the later timestamp (top) should be the transaction in which the `introduce` function was invoked.
     * Navigate to this transaction by clicking on the timestamp.
-    * Under the "Contract Result" section, the "Input - Function & Args" field
-      should be a *fairly short* set of hexadecimal values.
-    * This is the representation of the function identifier (first 8 characters),
-      and the input string value (e.g. `0x5626775697a0` for `bguiz`).
+    * Under the "Contract Result" section, the "Input - Function & Args" field should be a _fairly short_ set of hexadecimal values.
+    * This is the representation of the function identifier (first 8 characters), and the input string value (e.g. `0x5626775697a0` for `bguiz`).
     * Navigate back to the Contract page (browser `⬅` button).
 
 <img src="../../.gitbook/assets/hello-world--hscs--contract.drawing.svg" alt="HSCS contract in Hashscan, with annotated items to check." class="gitbook-drawing">
 
-Open `myContractWriteTxExplorerUrl` in your browser.
-Note that this should be the same page as "the transaction with the later timestamp".
-Check that:
+Open `myContractWriteTxExplorerUrl` in your browser. Note that this should be the same page as "the transaction with the later timestamp". Check that:
 
 * (1) The transaction exists
 * (2) Its "Type" field is "ETHEREUM TRANSACTION"
-* (3) Under the "Contract Result" section,
-  its "From" field matches the value of `accountId`
-* (4) Under the "Contract Result" section,
-  its "To" field matches the value of `myContractAddress`
+* (3) Under the "Contract Result" section, its "From" field matches the value of `accountId`
+* (4) Under the "Contract Result" section, its "To" field matches the value of `myContractAddress`
 
 <img src="../../.gitbook/assets/hello-world--hscs--transaction.drawing.svg" alt="HSCS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
 
@@ -325,11 +305,4 @@ Note that the branch names are delimited by `..`, and not by `...`, as the latte
 
 ***
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
-<tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr>
-<tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr>
-<tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr>
-<tr><td align="center"><p>Editor: Ryan Arndt, DevRel Education</p><p><a href="https://github.com/swirlds-ryan">GitHub</a> | <a href="https://www.linkedin.com/in/ryaneh/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/ryaneh/">https://www.linkedin.com/in/ryaneh/</a></td></tr>
-</tbody></table>
-
-***
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr><tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr><tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr><tr><td align="center"><p>Editor: Ryan Arndt, DevRel Education</p><p><a href="https://github.com/swirlds-ryan">GitHub</a> | <a href="https://www.linkedin.com/in/ryaneh/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/ryaneh/">https://www.linkedin.com/in/ryaneh/</a></td></tr></tbody></table>

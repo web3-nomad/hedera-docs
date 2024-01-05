@@ -61,7 +61,7 @@ const logAccountInfo = async (accountId) => {
 
 ```javascript
 const main = async () => {
-    await tokenTransferTxn(operatorAccountId, aliasAccountId, 100);
+    await tokenTransferTxn(operatorAccountId, aliasAccountId, 5);
     await logAccountInfo(aliasAccountId);
 }
  

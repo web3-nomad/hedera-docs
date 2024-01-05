@@ -15,7 +15,7 @@ description: >-
 
 ## Prerequisites
 
-Before you begin, you should have completed the "Create and Fund Account" sequence:&#x20;
+Before you begin, you should have completed the "Create and Fund Account" sequence:
 
 {% content-ref url="create-fund-account.md" %}
 [create-fund-account.md](create-fund-account.md)
@@ -35,8 +35,7 @@ You should already have this from the "Create and Fund Account" sequence. If you
 Alternatively, you may wish to create a `.env` file and populate it as required.
 {% endhint %}
 
-In the terminal, from the `hello-future-world` directory,
-enter the subdirectory for this sequence.
+In the terminal, from the `hello-future-world` directory, enter the subdirectory for this sequence.
 
 ```shell
 cd 04-hts-ft-sdk/
@@ -78,11 +77,12 @@ To create a new HTS token, we will use `TokenCreateTransaction`. This transactio
         .setDecimals(2)
         .setInitialSupply(1_000_000)
 ```
+
 <details>
 
 <summary>Key terminology for HTS token create transaction</summary>
 
-* Token Type: Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to *ERC20* tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, which may be thought of as analogous to *ERC721* tokens.
+* Token Type: Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to _ERC20_ tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, which may be thought of as analogous to _ERC721_ tokens.
 * Token Name: This is the full name of the token. For example, "Singapore Dollar".
 * Token Symbol: This is the abbreviation of the token's name. For example, "SGD".
 * Decimals: This is the number of decimal places the currency uses. For example, `2` mimics "cents", where the smallest unit of the token is 0.01 (1/100) of a single token.
@@ -112,16 +112,13 @@ Using string interpolation, construct `accountBalanceFetchApiUrl` like so:
 
 <summary>Learn more about Mirror Node APIs</summary>
 
-You can explore the Mirror Node APIs interactively via its Swagger page:
-[Hedera Testnet Mirror Node REST API](https://testnet.mirrornode.hedera.com/api/v1/docs/#/).
+You can explore the Mirror Node APIs interactively via its Swagger page: [Hedera Testnet Mirror Node REST API](https://testnet.mirrornode.hedera.com/api/v1/docs/#/).
 
-You can perform the same Mirror Node API query as `accountBalanceFetchApiUrl` above.
-This is what the relevant part of the Swagger page would look like when doing so:
+You can perform the same Mirror Node API query as `accountBalanceFetchApiUrl` above. This is what the relevant part of the Swagger page would look like when doing so:
 
-![](../../.gitbook/assets/hello-world--hts--mirror-node-swagger.drawing.svg "Mirror Node API Swagger for account tokens, with annotations.")
+<img src="../../.gitbook/assets/hello-world--hts--mirror-node-swagger.drawing.svg" alt="" data-size="original">
 
-You can learn more about the Mirror Nodes via its documentation:
-[REST API](https://docs.hedera.com/hedera/sdks-and-apis/rest-api).
+You can learn more about the Mirror Nodes via its documentation: [REST API](https://docs.hedera.com/hedera/sdks-and-apis/rest-api).
 
 </details>
 
@@ -199,8 +196,7 @@ cd 04-hts-ft-sdkdir/
 git diff main..completed -- ./
 ```
 
-Alternatively, you may view the `diff` rendered on Github:
-[`hedera-dev/hello-future-world/compare/main..completed`](https://github.com/hedera-dev/hello-future-world/compare/main..completed) (This will show the `diff` for *all* sequences.)
+Alternatively, you may view the `diff` rendered on Github: [`hedera-dev/hello-future-world/compare/main..completed`](https://github.com/hedera-dev/hello-future-world/compare/main..completed) (This will show the `diff` for _all_ sequences.)
 
 Note that the branch names are delimited by `..`, and not by `...`, as the latter finds the `diff` with the latest common ancestor commit, which _is not_ what we want in this case.
 
@@ -208,11 +204,4 @@ Note that the branch names are delimited by `..`, and not by `...`, as the latte
 
 ***
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
-<tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr>
-<tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr>
-<tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr>
-<tr><td align="center"><p>Editor: Ryan Arndt, DevRel Education</p><p><a href="https://github.com/swirlds-ryan">GitHub</a> | <a href="https://www.linkedin.com/in/ryaneh/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/ryaneh/">https://www.linkedin.com/in/ryaneh/</a></td></tr>
-</tbody></table>
-
-***
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr><tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr><tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr><tr><td align="center"><p>Editor: Ryan Arndt, DevRel Education</p><p><a href="https://github.com/swirlds-ryan">GitHub</a> | <a href="https://www.linkedin.com/in/ryaneh/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/ryaneh/">https://www.linkedin.com/in/ryaneh/</a></td></tr></tbody></table>

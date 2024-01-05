@@ -17,39 +17,36 @@ To ensure accurate conformity with the minimum requirements, please provide node
 {% endhint %}
 
 * CPU: X86/X64 compatible (Intel Xeon or AMD EPYC); 24 cores/48 threads meeting or exceeding the following benchmarks:
-    - Geekbench 6 single-core score
-      - Minimum: 1000 or greater
-      - Recommended: 1500 or greater
-    - Passmark single thread rating: 
-      - Minimum to remain on Mainnet: 2300 or greater
-      - Recommended: 2800 or greater
+  * Geekbench 6 single-core score
+    * Minimum: 1000 or greater
+    * Recommended: 1500 or greater
+  * Passmark single thread rating:
+    * Minimum to remain on Mainnet: 2300 or greater
+    * Recommended: 2800 or greater
 * Network Connectivity: Sustained 1Gb/s internet bandwidth via a single 1-Gigabit / 10-Gigabit Ethernet interface
 * Memory: 256 GB PC4-21300 2666MHz DDR4 ECC Registered DIMM or faster (minimum), 320GB or higher PC4-25600 3200MHz (recommended)
-* Storage: It is recommended to mount 240 GB SSD with Raid 1 as a root volume `/` and then provide usable storage via different
-  devices later mounted during installation. This may not be possible on your hardware, so alternatively all required 
-  storage may be allocated to the root volume.
-  - Minimum: 5TB of SSD NVMe usable storage
-  - Recommended:
-    - 2 x 240GB SSD with RAID 1 for OS Storage
-    - 2 x NVMe devices as a 7.5TB RAID 0 (or 4x as RAID 10 array)
-* Storage performance: If mounted to root volume, the root volume must meet these requirements. If provisioned via RAID,
-  the RAID array should meet these requirements:
-  - Sequential write sustained:
-    - Minimum: 2,000GB/s
-    - Recommended: 3,000GB/s
-  - Sequential read sustained:
-    - Minimum: 3,000GB/s
-    - Recommended: 4,500GB/s
-  - Random read, synchronous: 
-    - Minimum: 250,000 IOPS
-    - Recommended: 375,000 IOPS
-  - Random read, AIO:
-    - Minimum: 500,000 IOPS
-    - Recommended: 750,000 IOPS
-  - Random write, synchronous:
-    - Minimum 100,000 IOPS
-    - Recommended: 150,000 IOPS
-  - Less than 200µs random read latency, average
+* Storage: It is recommended to mount 240 GB SSD with Raid 1 as a root volume `/` and then provide usable storage via different devices later mounted during installation. This may not be possible on your hardware, so alternatively all required storage may be allocated to the root volume.
+  * Minimum: 5TB of SSD NVMe usable storage
+  * Recommended:
+    * 2 x 240GB SSD with RAID 1 for OS Storage
+    * 2 x NVMe devices as a 7.5TB RAID 0 (or 4x as RAID 10 array)
+* Storage performance: If mounted to root volume, the root volume must meet these requirements. If provisioned via RAID, the RAID array should meet these requirements:
+  * Sequential write sustained:
+    * Minimum: 2,000GB/s
+    * Recommended: 3,000GB/s
+  * Sequential read sustained:
+    * Minimum: 3,000GB/s
+    * Recommended: 4,500GB/s
+  * Random read, synchronous:
+    * Minimum: 250,000 IOPS
+    * Recommended: 375,000 IOPS
+  * Random read, AIO:
+    * Minimum: 500,000 IOPS
+    * Recommended: 750,000 IOPS
+  * Random write, synchronous:
+    * Minimum 100,000 IOPS
+    * Recommended: 150,000 IOPS
+  * Less than 200µs random read latency, average
 * Nodes must pass the Hedera performance test suite performed at installation time
 
 ### **Node Operating System:**
@@ -167,7 +164,7 @@ Interface Bonding (optional)
 
 ## Network Topology /(Typical Corporate Datacenter Configuration/)
 
-![](<../../../../.gitbook/assets/Network-topology (1) (1) (1) (1) (1) (1) (1) (1).jpg>)
+![](../../../../.gitbook/assets/Network-topology.jpg)
 
 ## Deployment Steps
 

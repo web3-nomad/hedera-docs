@@ -1,8 +1,8 @@
 # Delete an allowance
 
-A transaction called by the token owner to delete allowances for NFTs only. In order to delete an existing hbar or fungible token allowance the `AccountAllowanceApproveTransaction` API should be used with an `amount` of 0.
+A transaction called by the token owner to delete allowances for NFTs only. In order to delete an existing HBAR  or fungible token allowance the `AccountAllowanceApproveTransaction` API should be used with an `amount` of 0.
 
-The total number of NFT serial number deletions contained within the transaction body cannot exceed 20.
+The total number of NFT serial number deletions within the transaction body cannot exceed 20.
 
 **Transaction Fees**
 
@@ -13,15 +13,15 @@ The total number of NFT serial number deletions contained within the transaction
 
 * The transaction must be signed by the owner's account
 * The transaction must be signed by the transaction fee-paying account if different than the owner's account
-* If the owner's account and transaction fee-paying account are the same only one signature is required
+* If the owner's account and transaction fee-paying account are the same, only one signature is required
 
 **Reference:** [HIP-336](https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-336.md)
 
 ### Methods
 
-| **Method**                                               | **Type**                                                                                       | **Description**                                     |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| `deleteAllTokenNftAllowances(<nftId>, <ownerAccountId>)` | <p>NFT ID,<br><a href="../../deprecated/sdks/specialized-types.md#accountid">AccountId</a></p> | Removes the NFT allowance from the spender account. |
+| **Method**                                               | **Type**                                                                    | **Description**                                     |
+| -------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------- |
+| `deleteAllTokenNftAllowances(<nftId>, <ownerAccountId>)` | <p>NFT ID,<br><a href="../specialized-types.md#accountid">AccountId</a></p> | Removes the NFT allowance from the spender account. |
 
 {% tabs %}
 {% tab title="Java" %}

@@ -268,7 +268,7 @@ A "fallback fee" in the context of Hedera and smart contracts is a type of custo
 
 ### Fee Collector Account
 
-A fee collector account is an account designated to receive transaction fees and [custom token fees](../sdks-and-apis/sdks/readme-1/custom-token-fees.md) on the Hedera network. The account collects the fees users pay for executing transactions and queries on the network.
+A fee collector account is an account designated to receive transaction fees and [custom token fees](../sdks-and-apis/sdks/token-service/custom-token-fees.md) on the Hedera network. The account collects the fees users pay for executing transactions and queries on the network.
 
 ### Fiat Currency
 

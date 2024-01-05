@@ -67,11 +67,11 @@ While Hedera aims to achieve EVM equivalence, there are several exceptions and k
 
 ### Token and Fee Differences
 
-| Function                | Hedera                                                                                               | Ethereum                                                         |
-| ----------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-|  Native Tokens          | Supports native tokens in addition to [ERC-20 and ERC-721 token standards](broken-reference)         | All ERC token standards but primarily ERC-20 and ERC-721 tokens. |
-| Fee Structure           | [Complex with two different gas prices](broken-reference)                                            | Single gas price                                                 |
-| Token Association**\*** | [Concept of token association ](../../sdks-and-apis/sdks/readme-1/associate-tokens-to-an-account.md) | No concept of token association                                  |
+| Function                | Hedera                                                                                                    | Ethereum                                                         |
+| ----------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+|  Native Tokens          | Supports native tokens in addition to [ERC-20 and ERC-721 token standards](broken-reference)              | All ERC token standards but primarily ERC-20 and ERC-721 tokens. |
+| Fee Structure           | [Complex with two different gas prices](broken-reference)                                                 | Single gas price                                                 |
+| Token Association**\*** | [Concept of token association ](../../sdks-and-apis/sdks/token-service/associate-tokens-to-an-account.md) | No concept of token association                                  |
 
 {% hint style="info" %}
 **\*Note:** Token Association only applies to native HTS tokens and does _not_ affect ERC-20/721 tokens.

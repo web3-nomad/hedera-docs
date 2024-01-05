@@ -26,7 +26,7 @@ By the end of this tutorial, you'll be able to configure a mirror node, query da
 2. Enter your public contract address or contract ID in the search bar.
 3. Click on the `Create Transaction` ID ([0.0.902@1676712828.922009885](https://hashscan.io/testnet/transaction/1676712839.177574708?tid=0.0.902-1676712828-922009885)).
 
-<img src="../../.gitbook/assets/explorer new 2.png" alt="" data-size="original">
+<img src="../../.gitbook/assets/explorer new 2 (1).png" alt="" data-size="original">
 
 _**Note:** When searching for contract addresses, there are two types with different formats - the **public** smart contract address (0x....) or **contract ID** (0.0.12345)._
 

@@ -508,7 +508,7 @@ AccountId contractIdAsAccountId = AccountId.fromString(newContractId.toString())
 
 //Approve the token allowance
 AccountAllowanceApproveTransaction transaction = new AccountAllowanceApproveTransaction()
-    .approveHbarAllowance(treasuryAccountId, newContractId, Hbar.from(10));
+    .approveHbarAllowance(treasuryAccountId, newContractId, Hbar.from(5));
 
 //Sign the transaction with the owner account key and the transaction fee payer key (client)  
 TransactionResponse txResponse = transaction.freezeWith(client).sign(treasuryKey).execute(client);
@@ -527,7 +527,7 @@ System.out.println("The transaction consensus status for the allowance function 
 ```javascript
 //Approve the token allowance
 const transactionAllowance = new AccountAllowanceApproveTransaction()
-  .approveTokenAllowance(tokenId, treasuryAccountId, newContractId, 10)
+  .approveTokenAllowance(tokenId, treasuryAccountId, newContractId, 5)
   .freezeWith(client);
 
 //Sign the transaction with the owner account key
@@ -553,7 +553,7 @@ console.log(
 ```go
 //Create the transaction
 transaction := hedera.NewAccountAllowanceApproveTransaction().
-     ApproveHbarAllowance(ownerAccount, spenderAccountId, Hbar.fromTinybars(10))
+     ApproveHbarAllowance(ownerAccount, spenderAccountId, Hbar.fromTinybars(500)
         FreezeWith(client)
 
 if err != nil {
@@ -603,7 +603,7 @@ ContractExecuteTransaction tokenTransfer = new ContractExecuteTransaction()
           //The account to transfer the tokens to
           .addAddress(accountIdTest.toSolidityAddress())
           //The number of tokens to transfer
-         .addInt64(10));
+         .addInt64(5));
 
 //Sign the token transfer transaction with the treasury account to authorize the transfer and submit
 ContractExecuteTransaction signTokenTransfer = tokenTransfer.freezeWith(client).sign(treasuryKey);
@@ -614,7 +614,7 @@ TransactionResponse submitTransfer = signTokenTransfer.execute(client);
 //Get transaction status
 Status txStatus = submitTransfer.getReceipt(client).status;
 
-//Verify your account received the 10 tokens
+//Verify your account received the 5 tokens
  AccountBalance newAccountBalance = new AccountBalanceQuery()
       .setAccountId(accountIdTest)
       .execute(client);
@@ -638,7 +638,7 @@ const tokenTransfer = new ContractExecuteTransaction()
          //The account to transfer the tokens to
          .addAddress(accountIdTest.toSolidityAddress())
           //The number of tokens to transfer
-         .addInt64(10));
+         .addInt64(5));
 
 //Sign the token transfer transaction with the treasury account to authorize the transfer and submit
 const signTokenTransfer = await tokenTransfer.freezeWith(client).sign(treasuryKey);
@@ -652,7 +652,7 @@ const transferTxStatus = await (await submitTransfer.getReceipt(client)).status;
 //Get the transaction status
 console.log("The transfer transaction status " +transferTxStatus.toString());
 
-//Verify the account received the 100 tokens
+//Verify the account received the 5 tokens
 const newAccountBalance = new AccountBalanceQuery()
        .setAccountId(accountIdTest)
        .execute(client);
@@ -879,7 +879,7 @@ public class HTS {
                         //The account to transfer the tokens to
                         .addAddress(accountIdTest.toSolidityAddress())
                         //The number of tokens to transfer
-                        .addInt64(10));
+                        .addInt64(5);
 
         //Sign the token transfer transaction with the treasury account to authorize the transfer and submit
         ContractExecuteTransaction signTokenTransfer = tokenTransfer.freezeWith(client).sign(treasuryKey);
@@ -893,7 +893,7 @@ public class HTS {
         //Get the transaction status
         System.out.println("The transfer transaction status " +txStatus);
 
-        //Verify your account received the 10 tokens
+        //Verify your account received the 5 tokens
         AccountBalance newAccountBalance = new AccountBalanceQuery()
                 .setAccountId(accountIdTest)
                 .execute(client);
@@ -958,7 +958,7 @@ async function htsContractFunction() {
   //Create token treasury account
   const treasuryAccount = new AccountCreateTransaction()
     .setKey(treasuryKey)
-    .setInitialBalance(new Hbar(10))
+    .setInitialBalance(new Hbar(5))
     .setAccountMemo("treasury account");
 
   //Submit the transaction to a Hedera network
@@ -1048,7 +1048,7 @@ async function htsContractFunction() {
 
   //Approve the token allowance
   const transactionAllowance = new AccountAllowanceApproveTransaction()
-    .approveTokenAllowance(tokenId, treasuryAccountId, newContractId, 10)
+    .approveTokenAllowance(tokenId, treasuryAccountId, newContractId, 5)
     .freezeWith(client);
 
   //Sign the transaction with the owner account key
@@ -1083,7 +1083,7 @@ async function htsContractFunction() {
         //The account to transfer the tokens to
         .addAddress(accountIdTest.toSolidityAddress())
         //The number of tokens to transfer
-        .addInt64(10)
+        .addInt64(5)
     );
 
   //Sign the token transfer transaction with the treasury account to authorize the transfer and submit
@@ -1170,7 +1170,7 @@ func main() {
 	//Create token treasury account
 	treasuryAccount := hedera.NewAccountCreateTransaction().
 		SetKey(treasuryKey).
-		SetInitialBalance(hedera.NewHbar(10)).
+		SetInitialBalance(hedera.NewHbar(5).
 		SetAccountMemo("treasury account")
 
 	//Submit the transaction to a Hedera network
@@ -1302,7 +1302,7 @@ func main() {
 
 	//Create the transaction
 	transaction := hedera.NewAccountAllowanceApproveTransaction().
-     	ApproveHbarAllowance(ownerAccount, spenderAccountId, Hbar.fromTinybars(10))
+     	ApproveHbarAllowance(ownerAccount, spenderAccountId, Hbar.fromTinybars(500))
         	FreezeWith(client)
 
 	if err != nil {
@@ -1378,4 +1378,4 @@ func main() {
 
 **➡ Feel free to reach out in** [**Discord**](https://hedera.com/discord)**!**
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Simi, Sr. Software Manager </p><p><a href="https://github.com/ed-marquez">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan">LinkedIn</a></p></td><td></td><td></td><td><a href="https://www.linkedin.com/in/shunjan">https://www.linkedin.com/in/shunjan </a></td></tr><tr><td align="center"><p>Editor: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td></td><td></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center"><p>Editor: Lucía, The Hashgraph Association</p><p><a href="https://github.com/luciamunozdev">GitHub</a> | <a href="https://twitter.com/luciamunozdev">Twitter</a></p></td><td></td><td></td><td><a href="https://github.com/luciamunozdev">https://github.com/luciamunozdev</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Simi, Sr. Software Manager </p><p><a href="https://github.com/ed-marquez">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan">LinkedIn</a></p></td><td></td><td></td><td><a href="https://www.linkedin.com/in/shunjan">https://www.linkedin.com/in/shunjan </a></td></tr><tr><td align="center"><p>Editor: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td></td><td></td><td><a href="https://twitter.com/theekrystallee">https://twitter.com/theekrystallee</a></td></tr><tr><td align="center"><p>Editor: Lucía, Solutions Engineer</p><p>(Hashgraph Association)</p><p><a href="https://github.com/luciamunozdev">GitHub</a> | <a href="https://twitter.com/luciamunozdev">Twitter</a></p></td><td></td><td></td><td><a href="https://github.com/luciamunozdev">https://github.com/luciamunozdev</a></td></tr></tbody></table>

@@ -37,24 +37,24 @@ The debiting account is the owner's account when using this feature.
 
 ### Methods
 
-| Method                                                                              | Type                                                                                                                                                      | Description                                                                                                                                                                                            |
-| ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `addHbarTransfer(<accountId>, <value>)`                                             | [AccountId](../../deprecated/sdks/specialized-types.md#accountid), HBAR                                                                                   | <p>The account involved in the transfer and the number of hbars.<br><br>The sender and recipient values must net zero.</p>                                                                             |
-| `addTokenTransfer(<tokenId>, <accountId>,<value>)`                                  | [TokenId](../readme-1/token-id.md), [AccountId](../../deprecated/sdks/specialized-types.md#accountid), long                                               | <p>The ID of the token, the account ID involved in the transfer, and the number of tokens to transfer.<br><br>The sender and recipient values must net zero.</p>                                       |
-| `addNftTransfer(<nftId>, <sender>, <receiver>)`                                     | [NftId](../readme-1/nft-id.md), [AcountId](../../deprecated/sdks/specialized-types.md), [AccountId](../../deprecated/sdks/specialized-types.md#accountid) | The NFT ID (token + serial number), the sending account, and receiving account.                                                                                                                        |
-| `addTokenTransferWithDecimals(<tokenId>, <accountId>, <value>, <int>)`              | [TokenId](../readme-1/token-id.md), AccountId, long, decimals                                                                                             | <p>The ID of the token, the account ID involved in the transfer, the number of tokens to transfer, the decimals of the token.<br><br>The sender and recipient values must net zero.</p>                |
-| `addApprovedHbarTransfer(<ownerAccountId>,<amount>)`                                | [AccountId](../../deprecated/sdks/specialized-types.md#accountid), Hbar                                                                                   | <p>The owner account ID the spender is authorized to transfer from and the amount.<br>Applicable to allowance transfers only.</p>                                                                      |
-| `addApprovedTokenTransfer(<tokenId>, <accountId>, <value>)`                         | [TokenId](../readme-1/token-id.md), [AccountId](../../deprecated/sdks/specialized-types.md#accountid), long                                               | <p>The owner account ID and token the spender is authorized to transfer from. The debiting account is the owner account.<br>Applicable to allowance transfers only.<br></p>                            |
-| `addApprovedTokenTransferWithDecimals(<tokenId>, <accountId>, <value>, <decimals>)` | [TokenId](../readme-1/token-id.md), [AccountId](../../deprecated/sdks/specialized-types.md#accountid), long, int                                          | <p>The owner account ID and token ID (with decimals) the spender is authorized to transfer from. The debit account is the account ID of the sender.<br>Applicable to allowance transfers only.<br></p> |
-| `addApprovedNftTransfer(<nftId>,<sender>, <receiver>)`                              | [NftId](../readme-1/nft-id.md), [AcountId](../../deprecated/sdks/specialized-types.md), [AccountId](../../deprecated/sdks/specialized-types.md#accountid) | <p>The NFT ID the spender is authorized to transfer. The sender is the owner account and receiver is the receiving account.<br>Applicable to allowance transfers only.</p>                             |
+| Method                                                                              | Type                                                                                                                     | Description                                                                                                                                                                                            |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `addHbarTransfer(<accountId>, <value>)`                                             | [AccountId](../specialized-types.md#accountid), HBAR                                                                     | <p>The account involved in the transfer and the number of hbars.<br><br>The sender and recipient values must net zero.</p>                                                                             |
+| `addTokenTransfer(<tokenId>, <accountId>,<value>)`                                  | [TokenId](../token-service/token-id.md), [AccountId](../specialized-types.md#accountid), long                            | <p>The ID of the token, the account ID involved in the transfer, and the number of tokens to transfer.<br><br>The sender and recipient values must net zero.</p>                                       |
+| `addNftTransfer(<nftId>, <sender>, <receiver>)`                                     | [NftId](../token-service/nft-id.md), [AcountId](../specialized-types.md), [AccountId](../specialized-types.md#accountid) | The NFT ID (token + serial number), the sending account, and receiving account.                                                                                                                        |
+| `addTokenTransferWithDecimals(<tokenId>, <accountId>, <value>, <int>)`              | [TokenId](../token-service/token-id.md), AccountId, long, decimals                                                       | <p>The ID of the token, the account ID involved in the transfer, the number of tokens to transfer, the decimals of the token.<br><br>The sender and recipient values must net zero.</p>                |
+| `addApprovedHbarTransfer(<ownerAccountId>,<amount>)`                                | [AccountId](../specialized-types.md#accountid), Hbar                                                                     | <p>The owner account ID the spender is authorized to transfer from and the amount.<br>Applicable to allowance transfers only.</p>                                                                      |
+| `addApprovedTokenTransfer(<tokenId>, <accountId>, <value>)`                         | [TokenId](../token-service/token-id.md), [AccountId](../specialized-types.md#accountid), long                            | <p>The owner account ID and token the spender is authorized to transfer from. The debiting account is the owner account.<br>Applicable to allowance transfers only.<br></p>                            |
+| `addApprovedTokenTransferWithDecimals(<tokenId>, <accountId>, <value>, <decimals>)` | [TokenId](../token-service/token-id.md), [AccountId](../specialized-types.md#accountid), long, int                       | <p>The owner account ID and token ID (with decimals) the spender is authorized to transfer from. The debit account is the account ID of the sender.<br>Applicable to allowance transfers only.<br></p> |
+| `addApprovedNftTransfer(<nftId>,<sender>, <receiver>)`                              | [NftId](../token-service/nft-id.md), [AcountId](../specialized-types.md), [AccountId](../specialized-types.md#accountid) | <p>The NFT ID the spender is authorized to transfer. The sender is the owner account and receiver is the receiving account.<br>Applicable to allowance transfers only.</p>                             |
 
 {% tabs %}
 {% tab title="Java" %}
 ```java
-// Create a transaction to transfer 100 hbars
+// Create a transaction to transfer 1 HBAR 
 TransferTransaction transaction = new TransferTransaction()
-     .addHbarTransfer(OPERATOR_ID, new Hbar(-10))
-     .addHbarTransfer(newAccountId, new Hbar(10));
+     .addHbarTransfer(OPERATOR_ID, new Hbar(-1))
+     .addHbarTransfer(newAccountId, new Hbar(1));
 
 //Submit the transaction to a Hedera network
 TransactionResponse txResponse = transaction.execute(client);
@@ -73,10 +73,10 @@ System.out.println("The transaction consensus status is " +transactionStatus);
 
 {% tab title="JavaScript" %}
 ```javascript
-// Create a transaction to transfer 100 hbars
+// Create a transaction to transfer 1 HBAR
 const transaction = new TransferTransaction()
-    .addHbarTransfer(OPERATOR_ID, new Hbar(-100))
-    .addHbarTransfer(newAccountId, new Hbar(100));
+    .addHbarTransfer(OPERATOR_ID, new Hbar(-1))
+    .addHbarTransfer(newAccountId, new Hbar(1));
     
 //Submit the transaction to a Hedera network
 const txResponse = await transaction.execute(client);
@@ -95,7 +95,7 @@ console.log("The transaction consensus status is " +transactionStatus.toString()
 
 {% tab title="Go" %}
 ```java
-// Create a transaction to transfer 100 hbars
+// Create a transaction to transfer 1 HBAR
 transaction := hedera.NewTransferTransaction().
 		AddHbarTransfer(client.GetOperatorAccountID(), hedera.NewHbar(-1)).
 		AddHbarTransfer(hedera.AccountID{Account: 3}, hedera.NewHbar(1))
@@ -136,8 +136,8 @@ fmt.Printf("The transaction consensus status is %v\n", transactionReceipt.Status
 ```java
 // Create a transaction 
 CryptoTransferTransaction transaction = new CryptoTransferTransaction()
-    .addSender(OPERATOR_ID, new Hbar(10))
-    .addRecipient(newAccountId, new Hbar(10));
+    .addSender(OPERATOR_ID, new Hbar(1)
+    .addRecipient(newAccountId, new Hbar(1));
 
 //Get transfers
 List<Transfer> transfers = transaction.getTransfers();
@@ -150,8 +150,8 @@ List<Transfer> transfers = transaction.getTransfers();
 ```javascript
 // Create a transaction 
 const transaction = new CryptoTransferTransaction()
-    .addSender(OPERATOR_ID, new Hbar(10))
-    .addRecipient(newAccountId, new Hbar(10));
+    .addSender(OPERATOR_ID, new Hbar(1))
+    .addRecipient(newAccountId, new Hbar(1));
 
 //Get transfers
 const transfers = transaction.getTransfers();

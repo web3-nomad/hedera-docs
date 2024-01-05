@@ -124,7 +124,7 @@ fmt.Println("Created NFT with token ID ", tokenId)
 
 ## 2. Mint a New NFT
 
-When creating an NFT, the decimals and initial supply must be set to zero. After the token is created, you mint each NFT using the token mint operation. Specifying a _supply key_ during token creation is a requirement to be able to [mint](../../sdks-and-apis/sdks/token-service/mint-a-token.md) and [burn](../../sdks-and-apis/sdks/readme-1/burn-a-token.md) tokens. The supply key is required to sign mint and burn transactions.
+When creating an NFT, the decimals and initial supply must be set to zero. After the token is created, you mint each NFT using the token mint operation. Specifying a _supply key_ during token creation is a requirement to be able to [mint](../../sdks-and-apis/sdks/token-service/mint-a-token.md) and [burn](../../sdks-and-apis/sdks/token-service/burn-a-token.md) tokens. The supply key is required to sign mint and burn transactions.
 
 Both the NFT image and metadata live in the InterPlanetary File System (IPFS), which provides decentralized storage. The file diploma\_metadata.json contains the metadata for the NFT. A content identifier (CID) pointing to the metadata file is used during minting of the new NFT. Notice that the metadata file contains a URI pointing to the NFT image.
 

@@ -126,7 +126,7 @@ async function mirrorQueryFcn(publicKey) {
 
 Now it’s time to compile _**SimpleStorage**_, which is a basic smart contract that allows anyone to set and get data.
 
-```javascript
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 

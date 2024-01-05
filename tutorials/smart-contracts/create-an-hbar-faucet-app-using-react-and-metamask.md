@@ -198,7 +198,7 @@ REACT_APP_MY_PRIVATE_KEY=
 
 In a react-app, the environment variables in your .env file must start with REACT\_APP\_. Set the values to the testnet account you created through the Hedera developer portal.
 
-_**Note**: If you need to create a Hedera Testnet account, visit_ [_portal.hedera.com_](https://portal.hedera.com/) _and register to receive 10,000 test HBAR._
+_**Note**: If you need to create a Hedera Testnet account, visit_ [_portal.hedera.com_](https://portal.hedera.com/) _and register to receive 10,000 testnet HBAR._
 
 ***
 

@@ -10,7 +10,7 @@ The _Hedera Testnet_ account allows you to interact with our [APIs](../sdks-and-
 
 Once you have completed the instructions, you will receive a _Hedera Testnet_ account ID (0.0.x) and your private/public key pair on your testnet page. You will need to copy over your **account ID** and the _**DER**_**-encoded private key** information when you set up your coding environment in the following steps.
 
-![](<../.gitbook/assets/DER portal (2).png>)
+![](<../.gitbook/assets/DER portal (1) (1).png>)
 
 {% hint style="info" %}
 _**Note:** Your Hedera Testnet account will be credited with 10,000 test_ **HBAR** _upon creation that can only be utilized on the Hedera test network. Your balance will be topped up daily to 10,000 test_ **HBAR** _when you use your funds._

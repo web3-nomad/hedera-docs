@@ -7,7 +7,7 @@ Transfer tokens from some accounts to other accounts. The transaction must be si
 Custom fee tokens are tokens that have a unique custom fee schedule associated to them. The sender account is required to pay for the custom fee(s) associated with the token that is being transferred. The sender account must have the amount of the custom fee token being transferred and the custom fee amounts to successfully process the transaction. You can check to see if the token has a custom fee schedule by requesting the [token info query](get-token-info.md). Token with custom fees allow up two levels of nesting in a transfer transaction.
 
 {% hint style="warning" %}
-* A max of 10 balance adjustments in its HBAR transferList
+* A max of 10 balance adjustments in its hbar transferList
 * A max of 10 token fungible balance adjustments across all its tokenTransferList’s
 * A max of 10 NFT ownership changes across all its tokenTransferList’s
 * There’s also a maximum of 20 balance adjustments or NFT ownership changes implied by a transaction (including custom fees)
@@ -42,8 +42,8 @@ Custom fee tokens are tokens that have a unique custom fee schedule associated t
 ```java
 //Create the transfer transaction
 TransferTransaction transaction = new TransferTransaction()
-     .addTokenTransfer(tokenId, OPERATOR_ID, -1)
-     .addTokenTransfer(tokenId, accountId, 1);
+     .addTokenTransfer(tokenId, OPERATOR_ID, -10)
+     .addTokenTransfer(tokenId, accountId, 10);
 
 //Sign with the client operator key and submit the transaction to a Hedera network
 TransactionResponse txResponse = transaction.execute(client);
@@ -64,8 +64,8 @@ System.out.println("The transaction consensus status is " +transactionStatus);
 ```javascript
 //Create the transfer transaction
 const transaction = await new TransferTransaction()
-     .addTokenTransfer(tokenId, accountId1, -1)
-     .addTokenTransfer(tokenId, accountId2, 1)
+     .addTokenTransfer(tokenId, accountId1, -10)
+     .addTokenTransfer(tokenId, accountId2, 10)
      .freezeWith(client);
 
 //Sign with the sender account private key
@@ -90,8 +90,8 @@ console.log("The transaction consensus status " +transactionStatus.toString());
 ```go
 //Create the transfer transaction and freeze the transaction from further modification
 transaction, err := hedera.NewTransferTransaction().
-        AddTokenTransfer(tokenId, accountId1, -1).
-        AddTokenTransfer(tokenId, accountId2, 0).
+        AddTokenTransfer(tokenId, accountId1, -10).
+        AddTokenTransfer(tokenId, accountId2, 10).
         FreezeWith(client)
 
 //Sign with the accountId1 private key, sign with the client operator key and submit to a Hedera network

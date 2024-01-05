@@ -2,20 +2,15 @@
 
 ## Summary
 
-In this section, we will guide you through querying your account balance, enabling you to retrieve the most current information about the available funds in your new Hedera account.
+In this section, we will guide you through the steps of querying your account balance, enabling you to retrieve the most current information about the available funds in your new Hedera account.
 
-## Prerequisites <a href="#pre-requisites" id="pre-requisites"></a>
+## Prerequisites: <a href="#pre-requisites" id="pre-requisites"></a>
 
-* Completed the [Introduction](introduction.md) step.
-* Completed the [Environment Setup](environment-set-up.md) step.
-* Completed the [Created an Account](create-an-account.md) step.
-* Completed the [Transfer HBAR ](transfer-hbar.md)step.
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr><tr><td align="center"><a href="create-an-account.md"><mark style="color:purple;"><strong>CREATE AN ACCOUNT</strong></mark></a></td><td><a href="create-an-account.md">create-an-account.md</a></td></tr><tr><td align="center"><a href="transfer-hbar.md"><mark style="color:purple;"><strong>TRANSFER HBAR</strong></mark></a></td><td><a href="transfer-hbar.md">transfer-hbar.md</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 _**Note:** You can always check the "_[_Code Check ✅_](query-data.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
 {% endhint %}
-
-***
 
 ## Query the account balance
 
@@ -110,7 +105,7 @@ fmt.Println("The hbar account balance for this account is", newAccountBalance.Hb
 {% endtabs %}
 
 {% hint style="success" %}
-:star: **Congratulations! You have successfully transferred **_**HBAR**_** to another account on the Hedera Testnet! If you have followed the tutorial from the beginning, you have completed the following thus far:**&#x20;
+:star: **Congratulations! You have successfully transferred \_HBAR**\_\*\* to another account on the Hedera Testnet! If you have followed the tutorial from the beginning, you have completed the following thus far:\*\*
 
 * Set up your Hedera environment to submit transactions and queries.
 * Created an account.
@@ -118,8 +113,6 @@ fmt.Println("The hbar account balance for this account is", newAccountBalance.Hb
 
 Do you want to keep learning? Visit our the [SDKs & APIs](../sdks-and-apis/) section to take your learning experience to the next level. You can also find additional Java SDK examples [here](https://github.com/hashgraph/hedera-sdk-java/tree/main/examples/src/main/java).
 {% endhint %}
-
-***
 
 ## Code Check ✅
 

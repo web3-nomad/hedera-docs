@@ -5,7 +5,7 @@ In this tutorial, you'll learn how to create and deploy a subgraph using The Gra
 By the end of this tutorial, you'll be able to configure a mirror node, query data from your subgraph using the GraphQL API, and integrate it into your dApp. You'll also have a better understanding of how to define custom data schemas, indexing rules, and queries for your subgraph, allowing you to tailor it to your specific use case.
 
 {% hint style="info" %}
-**Note:**  While it is possible to present and interact with HTS tokens in a similar manner as ERC-20/721 tokens, the network is presently unable to capture all the expected ERC-20/721 event logs. In other words, if ERC-like operations are conducted on HTS tokens, not all of them will be captured in smart contract event logging.
+**Note:** While it is possible to present and interact with HTS tokens in a similar manner as ERC-20/721 tokens, the network is presently unable to capture all the expected ERC-20/721 event logs. In other words, if ERC-like operations are conducted on HTS tokens, not all of them will be captured in smart contract event logging.
 {% endhint %}
 
 ***
@@ -14,7 +14,7 @@ By the end of this tutorial, you'll be able to configure a mirror node, query da
 
 * Basic understanding of JavaScript and NPM installed.
 * Basic understanding of subgraphs and the [Graph CLI](deploy-a-subgraph-using-the-graph-and-json-rpc.md#graph-cli-installation) installed.
-* The deployed Greeter smart contract address from the [Hardhat tutorial](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md).
+* The deployed Greeter smart contract address from the [Hardhat tutorial](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md).
 * The [start block](deploy-a-subgraph-using-the-graph-and-json-rpc.md#find-start-block) number of when the Greeter smart contract was first deployed.
 * [Docker](https://www.docker.com/) `>= v20.10.x` installed and open on your machine. Run `docker -v` in your terminal to check the version you have installed.
 
@@ -26,7 +26,7 @@ By the end of this tutorial, you'll be able to configure a mirror node, query da
 2. Enter your public contract address or contract ID in the search bar.
 3. Click on the `Create Transaction` ID ([0.0.902@1676712828.922009885](https://hashscan.io/testnet/transaction/1676712839.177574708?tid=0.0.902-1676712828-922009885)).
 
-<img src="../../.gitbook/assets/explorer new 2 (1).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/explorer new 2.png" alt="" data-size="original">
 
 _**Note:** When searching for contract addresses, there are two types with different formats - the **public** smart contract address (0x....) or **contract ID** (0.0.12345)._
 
@@ -108,7 +108,7 @@ In the `testnet.json` file, under the `config` folder, replace the `startBlock` 
 
 ## Project Configuration
 
-In this step, you will use the `Greeter` contract from the [Hardhat tutorial](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md) as an example subgraph, to configure four main project files: the subgraph manifest, GraphQL schema, event mappings, and Docker compose configuration. The manifest specifies which events the subgraph will listen for, while mappings map each event emitted by the smart contract into entities that can be indexed.
+In this step, you will use the `Greeter` contract from the [Hardhat tutorial](deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays.md) as an example subgraph, to configure four main project files: the subgraph manifest, GraphQL schema, event mappings, and Docker compose configuration. The manifest specifies which events the subgraph will listen for, while mappings map each event emitted by the smart contract into entities that can be indexed.
 
 #### Subgraph Manifest
 
@@ -458,7 +458,7 @@ services:
 
 </details>
 
-#### _Congratulations! You've successfully deployed a subgraph to your local graph node!_&#x20;
+#### _Congratulations! You've successfully deployed a subgraph to your local graph node!_
 
 Once the node finishes indexing, you can access the GraphQL API at: [http://localhost:8000/subgraphs/name/Greeter](http://localhost:8000/subgraphs/name/Greeter)
 
@@ -503,4 +503,4 @@ Follow the steps below to execute the query and fetch the indexed data from the 
 
 **➡** [**Subgraph Example**](https://github.com/hashgraph/hedera-json-rpc-relay/tree/main/tools/subgraph-example)
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://hashnode.com/@theekrystallee">Hashnode</a></p></td><td><a href="https://github.com/theekrystallee">https://github.com/theekrystallee</a></td></tr><tr><td align="center"><p>Editor: Simi, Sr. Software Manager</p><p><a href="https://github.com/SimiHunjan">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/shunjan/">https://www.linkedin.com/in/shunjan/</a></td></tr><tr><td align="center"><p>Editor: Georgi, Sr Software Dev (LimeChain) </p><p><a href="https://github.com/georgi-l95">GitHub</a> | <a href="https://www.linkedin.com/in/georgi-dimitorv-lazarov/">LinkedIn</a></p></td><td><a href="https://github.com/georgi-l95">https://github.com/georgi-l95</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://hashnode.com/@theekrystallee">Hashnode</a></p></td><td><a href="https://github.com/theekrystallee">https://github.com/theekrystallee</a></td></tr><tr><td align="center"><p>Editor: Simi, Sr. Software Manager</p><p><a href="https://github.com/SimiHunjan">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/shunjan/">https://www.linkedin.com/in/shunjan/</a></td></tr><tr><td align="center"><p>Editor: Georgi, Sr Software Dev (LimeChain)</p><p><a href="https://github.com/georgi-l95">GitHub</a> | <a href="https://www.linkedin.com/in/georgi-dimitorv-lazarov/">LinkedIn</a></p></td><td><a href="https://github.com/georgi-l95">https://github.com/georgi-l95</a></td></tr></tbody></table>

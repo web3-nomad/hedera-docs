@@ -16,8 +16,8 @@ In this tutorial, a treasury account will be created to transfer HTS tokens to B
 
 ## **Prerequisites**
 
-* Get a [Hedera Testnet](https://portal.hedera.com/register) account [here](../../getting-started/introduction.md).&#x20;
-* Set up your environment and create a client [here](../../getting-started/environment-set-up.md).&#x20;
+* Get a [Hedera Testnet](https://portal.hedera.com/register) account [here](../../getting-started/introduction.md).
+* Set up your environment and create a client [here](../../getting-started/environment-set-up.md).
 
 <details>
 
@@ -41,10 +41,10 @@ In this tutorial, a treasury account will be created to transfer HTS tokens to B
 
 ## Create Treasury Account
 
-We create the treasury account, which will be the holder of the fungible and non-fungible tokens. The treasury account will be created with an initial balance of 5 HBAR.
+We create the treasury account which will be the holder of the fungible and non-fungible tokens. The treasury account will be created with an initial balance of 100 HBAR.
 
 ```javascript
-const [treasuryAccId, treasuryAccPvKey] = await createAccount(client, 5);
+const [treasuryAccId, treasuryAccPvKey] = await createAccount(client, 100);
 ```
 
 #### Set Up Helper Functions
@@ -251,7 +251,7 @@ const tokenId = await createFungibleToken(client, treasuryAccId, supplyKey, trea
 
 An alias is an initial public key that will convert into a Hedera account through auto-account creation. An alias consists of \<shard>.\<realm>.\<bytes>.
 
-To learn more about accounts created via an account alias go [here](../../sdks-and-apis/sdks/accounts-and-hbar/create-an-account.md).
+To learn more about accounts created via an account alias go [here](../../sdks-and-apis/sdks/cryptocurrency/create-an-account.md).
 
 ```javascript
  const privateKey = PrivateKey.generateECDSA();
@@ -270,7 +270,7 @@ To learn more about accounts created via an account alias go [here](../../sdks-a
 
 #### Set up helper functions for transferring HTS tokens
 
-Once we have our treasury account with FT and a new NFT collection created, our next step is to transfer them to Bob using their alias. We'll create the _**sendToken**_ helper function to send fungible tokens and create _**transferNft**_ to send a single NFT.&#x20;
+Once we have our treasury account with FT and a new NFT collection created, our next step is to transfer them to Bob using their alias. We'll create the _**sendToken**_ helper function to send fungible tokens and create _**transferNft**_ to send a single NFT.
 
 A quick reminder to use the tab on the left of the code block to switch between the two helper functions.
 
@@ -315,16 +315,16 @@ export const transferNft = async (client: Client, nftTokenId: TokenId, nftId: nu
 {% endtab %}
 {% endtabs %}
 
-#### Transfer FT and an NFT to Bob using their alias&#x20;
+#### Transfer FT and an NFT to Bob using their alias
 
-Transfer 5 fungible tokens to Bob using their alias and the helper function _**sendToken**_.
+Transfer 10 fungible tokens to Bob using their alias and the helper function _**sendToken**_.
 
 Transfer the NFT with serial number 1 to Bob using the helper function _**transfertNFT**_.
 
 {% tabs %}
 {% tab title="Send Bob 10 FT" %}
 ```javascript
-await sendToken(client, tokenId, treasuryAccId, aliasAccountId, 5, treasuryAccPvKey);
+await sendToken(client, tokenId, treasuryAccId, aliasAccountId, 10, treasuryAccPvKey);
 ```
 {% endtab %}
 
@@ -362,9 +362,9 @@ console.log(`The normal account ID of the given alias: ${accountId}`);
 
 <figure><img src="https://images.hedera.com/normal-account-id-both-hip-542.png?w=436&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680227702&#x26;s=ed33d949bedd10e7de6a645ff9805f57" alt=""><figcaption></figcaption></figure>
 
-#### Show Bob's new account owns the 5 FT tokens
+#### Show Bob's new account owns the 10 FT tokens
 
-Complete an AccountBalanceQuery to show that Bob's new account owns the 5 fungible tokens the treasury account sent.
+Complete an AccountBalanceQuery to show that Bob's new account owns the 10 fungible tokens the treasury account sent.
 
 ```javascript
  const accountBalances = await new AccountBalanceQuery()
@@ -382,7 +382,7 @@ Complete an AccountBalanceQuery to show that Bob's new account owns the 5 fungib
    throw new Error(`account balance does not have tokens for token id: ${tokenId}.`);
  }
  
- tokenBalanceAccountId.toInt() === 5
+ tokenBalanceAccountId.toInt() === 10
    ? console.log(
      `Account is created successfully using HTS 'TransferTransaction'`
    )
@@ -397,7 +397,7 @@ Complete an AccountBalanceQuery to show that Bob's new account owns the 5 fungib
 
 #### Show Bob's new account owns the NFT
 
-First, create a helper function that creates a TokenNftInfoQuery transaction and returns the account id of the NFT owner for a specific NFT serial number.
+First create a helper function that creates a TokenNftInfoQuery transaction and returns the account id of the nft owner for a specific nft serial number.
 
 ```javascript
 export const getNftOwnerByNftId = async (client: Client, nftTokenId: TokenId, exampleNftId: number) => {
@@ -432,9 +432,9 @@ Then call _**getNftOwnerByNft**_ and do a simple check to ensure the account id 
 
 <figure><img src="https://images.hedera.com/account-create-with-hts-tokens-output.png?w=1104&#x26;auto=compress%2Cformat&#x26;fit=crop&#x26;dm=1680222036&#x26;s=531aa614802acac1166d1849cb0158fe" alt=""><figcaption></figcaption></figure>
 
-And that's a wrap! 🎬 You've completed sending HTS tokens to an alias and triggering an auto-account creation! As well as learned that the account creation fee is paid by the payer of the transfer transaction.&#x20;
+And that's a wrap! 🎬 You've completed sending HTS tokens to an alias and triggering an auto-account creation! As well as learned that the account creation fee is paid by the payer of the transfer transaction.
 
-Join and collaborate with Hedera Developers on the [Hedera Discord Server](https://hedera.com/discord)! \
+Join and collaborate with Hedera Developers on the [Hedera Discord Server](https://hedera.com/discord)!\
 \
 Happy Building! 🛠️
 

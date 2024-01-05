@@ -4,19 +4,13 @@
 
 In this section, you will learn how to transfer **HBAR** from your account to another on the Hedera test network.
 
-***
-
 ## Prerequisites <a href="#pre-requisites" id="pre-requisites"></a>
 
-* Completed the [Introduction](introduction.md) step.
-* Completed the [Environment Setup](environment-set-up.md) step.
-* Completed the [Created an Account](create-an-account.md) step.
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="introduction.md"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></a></td><td><a href="introduction.md">introduction.md</a></td></tr><tr><td align="center"><a href="environment-set-up.md"><mark style="color:purple;"><strong>ENVIRONMENT SETUP</strong></mark></a></td><td><a href="environment-set-up.md">environment-set-up.md</a></td></tr><tr><td align="center"><a href="create-an-account.md"><mark style="color:purple;"><strong>CREATE AN ACCOUNT</strong></mark></a></td><td><a href="create-an-account.md">create-an-account.md</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 _**Note:** You can always check the "_[_Code Check ✅_](transfer-hbar.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
 {% endhint %}
-
-***
 
 ## Step 1. Create a transfer transaction
 
@@ -74,8 +68,6 @@ if err != nil {
 _**Note:** The net value of the transfer must equal zero (the total number of_ **HBAR** _sent by the sender must equal the total number of_ **HBAR** _received by the recipient)._
 {% endhint %}
 
-***
-
 ## Step 2. Verify the transfer transaction reached consensus
 
 To verify the transfer transaction reached consensus by the network, you will submit a request to obtain the receipt of the transaction. The receipt status will let you know if the transaction was successful (reached consensus) or not.
@@ -83,7 +75,7 @@ To verify the transfer transaction reached consensus by the network, you will su
 {% tabs %}
 {% tab title="Java" %}
 ```java
-System.out.println("The transfer transaction was: " +sendHbar.getReceipt(client).status);
+System.out.println("The transfer transaction from my account to the new account was: " +sendHbar.getReceipt(client).status);
 ```
 {% endtab %}
 
@@ -111,8 +103,6 @@ fmt.Printf("The transaction consensus status is %v\n", transactionStatus)
 ```
 {% endtab %}
 {% endtabs %}
-
-***
 
 ## Code Check ✅
 
@@ -177,6 +167,8 @@ public class HederaExamples {
         AccountBalance accountBalance = new AccountBalanceQuery()
                 .setAccountId(newAccountId)
                 .execute(client);
+        
+        System.out.println("New account balance: " +accountBalance.hbars);
 
         //Transfer HBAR
         TransactionResponse sendHbar = new TransferTransaction()
@@ -184,7 +176,7 @@ public class HederaExamples {
                 .addHbarTransfer(newAccountId, Hbar.fromTinybars(1000))
                 .execute(client);
 
-        System.out.println("The transfer transaction was: " +sendHbar.getReceipt(client).status);
+        System.out.println("The transfer transaction from my account to the new account was: " +sendHbar.getReceipt(client).status);
 
     }
 }

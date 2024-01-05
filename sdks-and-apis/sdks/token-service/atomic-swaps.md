@@ -15,8 +15,8 @@ Hedera accounts must be associated with the specified token before you can trans
 ```java
 //Atomic swap between a Hedera Token Service token and hbar
 TransferTransaction atomicSwap = new TransferTransaction()
-        .addHbarTransfer(accountId1, new Hbar(-1))
-        .addHbarTransfer(accountId2, new Hbar(1))
+        .addHbarTransfer(accountId1, new Hbar(-10))
+        .addHbarTransfer(accountId2, new Hbar(10))
         .addTokenTransfer(tokenId, accountId2, -1)
         .addTokenTransfer(tokenId, accountId1, 1)
         .freezeWith(client);
@@ -43,8 +43,8 @@ TransactionResponse txResponse = atomicSwap.sign(accountKey1).sign(accountKey2).
 ```javascript
 //Atomic swap between a Hedera Token Service token and hbar
 const atomicSwap = await new TransferTransaction()
-        .addHbarTransfer(accountId1, new Hbar(-1))
-        .addHbarTransfer(accountId2, new Hbar(1))
+        .addHbarTransfer(accountId1, new Hbar(-10))
+        .addHbarTransfer(accountId2, new Hbar(10))
         .addTokenTransfer(tokenId, accountId2, -1)
         .addTokenTransfer(tokenId, accountId1, 1)
         .freezeWith(client);
@@ -71,8 +71,8 @@ const txResponse = await (await (await atomicSwap.sign(accountKey1)).sign(accoun
 ```go
 //Atomic swap between a Hedera Token Service token and hbar
 atomicSwap, err := hedera.NewTransferTransaction().
-        AddHbarTransfer(accountId1, hedera.NewHbar(-1)).
-        AddHbarTransfer(accountId2, hedera.NewHbar(1)).
+        AddHbarTransfer(accountId1, hedera.NewHbar(-10)).
+        AddHbarTransfer(accountId2, hedera.NewHbar(10)).
         AddTokenTransfer(tokenId, accountId2, -1).
         AddTokenTransfer(tokenId, accountId1, 1).
         FreezeWith(client)

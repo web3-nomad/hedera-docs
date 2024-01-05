@@ -8,22 +8,6 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
-## [v0.94.1](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.94.1)
-
-Provides an important fix to pending reward calculation that regressed due to the balance deduplication work. The database migration for this will take approximately 17 minutes on mainnet.
-
-## [v0.94.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.94.0)
-
-This release is mainly a bug fix release along with some minor technical debt items. A new Helm chart for the new REST Java module was added in anticipation of future work to support new APIs in Java only instead of the current JavaScript based approach. Support for Elasticsearch metrics export was removed in favor of relying solely upon Prometheus. The `/api/v1/contracts/call` API some some notable bug fixes and performance improvements. Finally, some technical debt was tackled by refactoring `SqlEntityListener` to use a new `ParserContext` which should reduce its maintenance burden.
-
-## [v0.93.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.93.0)
-
-This release deduplicates balance history resulting in a major reduction in database size with no loss in balance granularity. The mainnet database saw a 45% reduction going from 50 TB to 28TB! This deduplication process works by not updating balance history if the account did not experience a balance change since the last snapshot. A migration to deduplicate historical balances runs asynchronously in the background and against mainnet state took about 24 hours to complete. Because the index was changed to reverse the order from `(timestamp, account_id)` to `(account_id, timestamp)`, this required a large effort to rework queries in multiple REST APIs. Also, the balance tables are now partitioned and this meant changes in our database metrics to properly aggregate child tables on their parent name.
-
-HIP-584 continues to chug along with multiple bug fixes and optimizations. Changing per request objects to be singletons resulted in a large decrease in memory and CPU usage, allowing more concurrent requests to be handled. Web3 k6 tests were hooked into our automated performance testing to ensure they run every release to ensure no regressions. Finally, support for historical blocks made progress with more of the plumbing put in place to process non-latest blocks.
-
-A new cluster database health check was added to the monitor to provide proper failover in multi-cluster deployments. The local file stream provider now allows for input files to be grouped by date for faster processing when the directory contains millions of files. This is a step towards a faster historical syncing mode. Finally, REST API queries were optimized for Citus deployments so that they could reach parity with PostgreSQL.
-
 ## [v0.92.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.92.0)
 
 [HIP-584](https://hips.hedera.com/hip/hip-584) Mirror EVM Archive node saw further refinements in this release. Memory usage was optimized by making most classes stateless and leveraging `ThreadLocal` where appropriate. Work continues on making `/api/v1/contracts/call` support historical blocks with lower level support for historical contract state, account, and contract information added. Additional test coverage for estimate gas was introduced to compare gas estimation is close to the actual gas used via HAPI. Finally, an issue with the `blockhash` operation returning `0x0` was resolved.
@@ -269,8 +253,6 @@ The `/api/v1/contracts/{id}/state` REST API shows the current state of a contrac
 {% hint style="success" %}
 **TESTNET UPDATE COMPLETED: MARCH 13, 2023**
 {% endhint %}
-
-
 
 The new `/api/v1/contracts/call` REST API as specified in [HIP-584](https://hips.hedera.com/HIP/hip-584.html) is finally ready for initial production use. This release adds support for rate limiting the API with an initial value of 100 requests per second per instance. Tags were added to the gas per second metric to indicate if the request was a call, an estimate, or resulted in an error for increased observability. Various bug fixes were also addressed.
 

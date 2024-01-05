@@ -4,17 +4,13 @@
 
 This environment setup guide will provide you with the necessary steps to get your development environment ready for building applications on the Hedera Network. You will set up a new project directory, establish a `.env` environment variable file to store your Hedera Testnet account ID and private keys and configure your Hedera Testnet client.
 
-***
-
 ## Prerequisites
 
-* Completed the [Introduction](introduction.md) step.
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><mark style="color:purple;"><strong>INTRODUCTION</strong></mark></td><td><a href="introduction.md">introduction.md</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 _**Note:** You can always check the "_[_Code Check ✅_](environment-set-up.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
 {% endhint %}
-
-***
 
 ## **Step 1: Create your project directory**
 
@@ -79,8 +75,6 @@ mkdir hedera-go-examples && cd hedera-go-examples
 {% endtab %}
 {% endtabs %}
 
-***
-
 ## Step 2: Install Dependencies and SDKs
 
 {% tabs %}
@@ -137,7 +131,7 @@ touch index.js
 
 Your project structure should look something like this:
 
-![](../.gitbook/assets/project\_directory.png)
+![](<../.gitbook/assets/image105 (1) (1) (1) (1) (1).png>)
 {% endtab %}
 
 {% tab title="Go" %}
@@ -167,8 +161,6 @@ import (
 _**Note:** Testnet **HBAR** is required for this next step. Please follow the instructions to create a Hedera account on the_ [_portal_](https://docs.hedera.com/guides/getting-started/introduction) _before you move on to the next step._
 {% endhint %}
 
-***
-
 ## Step 3: **Create your .env File**
 
 Create the `.env` file in your project's root directory. The `.env` file stores your environment variables, account ID, and private key (DER encoded).
@@ -180,7 +172,7 @@ MY_PRIVATE_KEY=ENTER TESTNET PRIVATE KEY
 
 Grab the Hedera Testnet account ID and DER-encoded private key from your [Hedera portal profile](https://portal.hedera.com/)(see screenshot below) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:
 
-<figure><img src="../.gitbook/assets/DER portal (1).png" alt="" width="563"><figcaption><p>Hedera Developer Portal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/DER portal.png" alt="" width="563"><figcaption><p>Hedera Developer Portal</p></figcaption></figure>
 
 Next, you will load your account ID and private key variables from the `.env` file created in the previous step.
 
@@ -268,8 +260,6 @@ go run hedera_examples.go
 {% endtab %}
 {% endtabs %}
 
-***
-
 ## Step 4: Create your Hedera Testnet client
 
 Create a Hedera Testnet [client](../support-and-community/glossary.md#client) and set the operator information using the testnet account ID and private key for transaction and query fee authorization. The _operator_ is the default account that will pay for the transaction and query fees in HBAR. You will need to sign the transaction or query with the private key of that account to authorize the payment. In this case, the operator ID is your testnet `account ID**.**` and the operator private key is the corresponding testnet account private key.
@@ -351,8 +341,6 @@ client.SetDefaultMaxQueryPayment(hedera.HbarFrom(50, hedera.HbarUnits.Hbar))
 **Your project environment is now set up to submit transactions and queries to the Hedera test network successfully!**
 
 Next, you will learn how to [create an account](create-an-account.md).
-
-***
 
 ## Code Check :white\_check\_mark:
 

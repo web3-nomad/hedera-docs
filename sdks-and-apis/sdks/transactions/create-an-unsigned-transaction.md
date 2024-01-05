@@ -60,9 +60,9 @@ println(freezeTransaction.String())
 {% endtab %}
 {% endtabs %}
 
-**Sample Output**
-
-```bash
+{% tabs %}
+{% tab title="Sample Output:" %}
+```
 crypto_create_account {
 auto_renew_period {
 seconds: 7776000
@@ -95,3 +95,5 @@ seconds: 120
 }
 }
 ```
+{% endtab %}
+{% endtabs %}

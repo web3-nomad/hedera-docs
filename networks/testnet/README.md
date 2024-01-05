@@ -47,10 +47,17 @@ If you have any questions or concerns, please connect with us via [Discord](http
 
 **Reset Dates:**
 
+**2024**
+
+* January 25, 2024
+* April 25, 2024
+* July 25, 2024
+* Oct 31, 2024
+
 **2023**
 
-* January 26, 2023 - Completed
-* April 27, 2023 - Skipped
+* January 26, 2023 - Completed&#x20;
+* April 27, 2023 - Skipped&#x20;
 * July 27, 2023 - Completed
 * October 26, 2023 - Skipped
 

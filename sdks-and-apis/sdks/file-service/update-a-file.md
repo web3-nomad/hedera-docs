@@ -6,7 +6,7 @@ A transaction that updates the state of an existing file on a Hedera network. On
 
 * The key or keys on the file are required to sign this transaction to modify the file properties
 * If you are updating the keys on the file, you must sign with the old key and the new key
-* If you do not sign with the key(s) on the file, you will receive an INVALID\_SIGNATURE network error
+* If you do not sign with the key(s) on the file, you will receive an `INVALID_SIGNATURE` network error
 
 **Transaction Fees**
 

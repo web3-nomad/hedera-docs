@@ -6,4 +6,3 @@ coverY: -751.6690909090909
 
 # Tutorials
 
-<mark style="color:purple;"></mark>

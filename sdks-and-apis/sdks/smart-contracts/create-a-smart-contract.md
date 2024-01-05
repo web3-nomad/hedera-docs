@@ -18,12 +18,12 @@ The latest version of Solidity is supported on all networks (v0.8.9).
 The contract state size limit is 10 MB and the system gas throttle is 15 million gas per second. Contract call and contract create are throttled at 8 million gas per second.
 {% endhint %}
 
-{% content-ref url="https://github.com/hashgraph/hedera-docs/blob/staging/sdks-and-apis/sdks/smart-contracts/broken-reference/README.md" %}
-[https://github.com/hashgraph/hedera-docs/blob/staging/sdks-and-apis/sdks/smart-contracts/broken-reference/README.md](https://github.com/hashgraph/hedera-docs/blob/staging/sdks-and-apis/sdks/smart-contracts/broken-reference/README.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="https://github.com/hashgraph/hedera-docs/blob/staging/sdks-and-apis/sdks/smart-contracts/broken-reference/README.md" %}
-[https://github.com/hashgraph/hedera-docs/blob/staging/sdks-and-apis/sdks/smart-contracts/broken-reference/README.md](https://github.com/hashgraph/hedera-docs/blob/staging/sdks-and-apis/sdks/smart-contracts/broken-reference/README.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 **Transaction Signing Requirements**

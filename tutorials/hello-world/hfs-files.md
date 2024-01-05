@@ -8,20 +8,22 @@ description: >-
 
 ## What you will accomplish
 
-* ✅ Upload a file onto HFS
-* ✅ Retrieve the file from HFS
-
-The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
+* [ ] Upload a file onto HFS
+* [ ] Retrieve the file from HFS
 
 ***
 
 ## Prerequisites
 
-Before you begin, you should have completed the "Create and Fund Account" sequence: [`docs.hedera.com/tutorials/hello-world/create-fund-account`](https://docs.hedera.com/tutorials/hello-world/create-fund-account/).
+Before you begin, you should have completed the "Create and Fund Account" sequence:
+
+{% content-ref url="create-fund-account.md" %}
+[create-fund-account.md](create-fund-account.md)
+{% endcontent-ref %}
 
 ***
 
-## Steps
+## Get started
 
 ### Set up project
 
@@ -33,38 +35,45 @@ You should already have this from the "Create and Fund Account" sequence. If you
 Alternatively, you may wish to create a `.env` file and populate it as required.
 {% endhint %}
 
-In the terminal, reuse the `.env` file by copying the one that you have previously created into the directory for this sequence.
+In the terminal, from the `hello-future-world` directory, enter the subdirectory for this sequence.
 
 ```shell
 cd 01-hfs-files-sdk/
+```
+
+Reuse the `.env` file by copying the one that you have previously created into the directory for this sequence.
+
+```shell
 cp ../00-create-fund-account/.env ./
 ```
 
-Next, install the dependencies using `npm`. Then open the script file in a code editor.
+Next, install the dependencies using `npm`.
 
 ```shell
 npm install
-code script-hfs-files-sdk.js
 ```
 
-You will also need a file to write onto the network. Copy the sample text file provided, and edit it to replace `YOUR_NAME` with your name.
+Then open the `script-hfs-files-sdk.js` file in a code editor, such as VS Code.
+
+You will also need a file to write onto the network. Copy the sample text file provided.
 
 ```shell
 cp my-file.txt.sample my-file.txt
-code my-file.txt
 ```
+
+Edit `my-file.txt` to replace `YOUR_NAME` with your name (or nickname) in a code editor.
 
 ***
 
 ### Write the script
 
-An almost-complete script has already been prepared for you, and you will only need to make a few modifications (outlined below) for it to run successfully.
+An almost-complete script has already been prepared for you, `script-hfs-files-sdk.js`, and you will only need to make a few modifications (outlined below) for it to run successfully.
 
 #### Step 1: File create transaction
 
-The contents of `my-file.txt` have been read from disk, and stored in a `Buffer`, `localFileContents`.
+The contents of `my-file.txt` have been read from disk, and stored in a `Buffer` named `localFileContents`.
 
-Set the contents of this in `FileCreateTransaction`, so that your file is written onto the network.
+Set the contents of `localFileContents` in `FileCreateTransaction`, to write your file onto Hedera Testnet.
 
 ```js
         .setContents(localFileContents.toString())
@@ -72,9 +81,7 @@ Set the contents of this in `FileCreateTransaction`, so that your file is writte
 
 #### Step 2: File contents query
 
-After the `FileCreateTransaction` has been executed, the response contains a file ID.
-
-You will be reading this file back from the network, and check that it has worked, and its contents are the same what you have on disk.
+After the `FileCreateTransaction` has been executed, the response will contain a file ID. Read this file from the network, by querying it.
 
 Set the file ID in `FileContentsQuery`.
 
@@ -86,7 +93,7 @@ Set the file ID in `FileContentsQuery`.
 
 ### Run the script
 
-Run the script using the following command:
+In the terminal, run the script using the following command:
 
 ```shell
 node script-hfs-files-sdk.js
@@ -104,16 +111,25 @@ networkFileContents: Hello future! - bguiz
 
 ```
 
-Open the URL, that was output as `txExplorerUrl` above, in your browser and check that:
+To verify that both the `FileCreateTransaction` and `FileContentsQuery` have worked, check that `localFileContents` and `networkFileContents` are the same. This indicates that what has been stored on Hedera Testnet is the same as what you have on disk.
+
+Open `txExplorerUrl` in your browser and check that:
 
 * (1) The transaction exists
 * (2) The "type" is shown as "FILE CREATE"
+
+<img src="../../.gitbook/assets/hello-world--hfs--transaction.drawing.svg" alt="HFS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
 
 ***
 
 ## Complete
 
-Congratulations, you have completed this Hello World sequence! 🎉🎉🎉
+Congratulations, you have completed the **Hedera File Service** Hello World sequence! 🎉🎉🎉
+
+You have learned how to:
+
+* [x] Upload a file onto HFS
+* [x] Retrieve the file from HFS
 
 ***
 
@@ -128,6 +144,8 @@ Now that you have completed this Hello World sequence, you have interacted with 
 <details>
 
 <summary>Skip to final state</summary>
+
+The repo, [`github.com/hedera-dev/hello-future-world`](https://github.com/hedera-dev/hello-future-world/), is intended to be used alongside this tutorial.
 
 To skip ahead to the final state, use the `completed` branch. This gives you the final state with which you can compare your implementation to the completed steps of the tutorial.
 
@@ -151,4 +169,6 @@ Note that the branch names are delimited by `..`, and not by `...`, as the latte
 
 ***
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr><tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Brendan, DevRel Engineer</p><p><a href="https://github.com/bguiz">GitHub</a> | <a href="https://blog.bguiz.com">Blog</a></p></td><td><a href="https://blog.bguiz.com">https://blog.bguiz.com</a></td></tr><tr><td align="center"><p>Editor: Abi Castro, DevRel Engineer</p><p><a href="https://github.com/a-ridley">GitHub</a> | <a href="https://twitter.com/ridley___">Twitter</a></p></td><td><a href="https://twitter.com/ridley___">https://twitter.com/ridley___</a></td></tr><tr><td align="center"><p>Editor: Michiel, Developer Advocate</p><p><a href="https://github.com/michielmulders">GitHub</a> | <a href="https://www.linkedin.com/in/michielmulders/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/michielmulders/">https://www.linkedin.com/in/michielmulders/</a></td></tr><tr><td align="center"><p>Editor: Ryan Arndt, DevRel Education</p><p><a href="https://github.com/swirlds-ryan">GitHub</a> | <a href="https://www.linkedin.com/in/ryaneh/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/ryaneh/">https://www.linkedin.com/in/ryaneh/</a></td></tr></tbody></table>
+
+***

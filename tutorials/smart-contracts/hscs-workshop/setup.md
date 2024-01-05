@@ -6,7 +6,7 @@ description: >-
 
 # Setup
 
-## &#x20;Video
+## Video
 
 {% embed url="https://www.youtube.com/watch?v=25y5zslOUj8" %}
 Hedera Smart Contract Service Workshop Part 2/6 | Setup

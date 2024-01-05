@@ -184,6 +184,8 @@ You can alternatively use the [<mark style="color:purple;">`CreateContractFlow()
 _**Note:** The bytecode is required to be hex-encoded. It should not be the actual data the hex represents._
 {% endhint %}
 
+
+
 {% tabs %}
 {% tab title="Java" %}
 ```java
@@ -461,7 +463,7 @@ contractQuery, err := hedera.NewContractCallQuery().
 	SetGas(100000).
 	//Set the query payment for the node returning the request
         //This value must cover the cost of the request otherwise will fail
-	SetQueryPayment(hedera.NewHbar(1)).
+	SetQueryPayment(hedera.NewHbar(2)).
 	//Set the contract function to call
 	SetFunction("getMessage", nil). // nil -> no parameters
 	//Submit the query to a Hedera network
@@ -561,7 +563,7 @@ const contractCallQuery = new ContractCallQuery()
         .setFunction("get_message")
         //Set the query payment for the node returning the request
         //This value must cover the cost of the request otherwise will fail 
-        .setQueryPayment(new Hbar(10));
+        .setQueryPayment(new Hbar(2));
 
 //Submit the transaction to a Hedera network 
 const contractUpdateResult = await contractCallQuery.execute(client);
@@ -645,4 +647,4 @@ Video tutorial
 
 **➡ Have a question? Ask on** [**StackOverflow**](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
 
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Simi, Sr. Software Manager</p><p><a href="https://github.com/ed-marquez">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan">LinkedIn</a></p></td><td></td><td></td><td><a href="https://www.linkedin.com/in/shunjan">https://www.linkedin.com/in/shunjan</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Simi, Sr. Software Manager </p><p><a href="https://github.com/ed-marquez">GitHub</a> | <a href="https://www.linkedin.com/in/shunjan">LinkedIn</a></p></td><td></td><td></td><td><a href="https://www.linkedin.com/in/shunjan">https://www.linkedin.com/in/shunjan</a></td></tr></tbody></table>

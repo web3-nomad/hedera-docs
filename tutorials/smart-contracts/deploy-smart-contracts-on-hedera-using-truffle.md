@@ -14,7 +14,7 @@ You can find more examples using Truffle, Web3JS, and Hardhat in [this GitHub re
 
 ## **Prerequisites**
 
-* Get a[ ](https://portal.hedera.com/register)[Hedera testnet account](https://portal.hedera.com/register)
+* Get a[ ](https://portal.hedera.com/register)[Hedera testnet account](https://portal.hedera.com/register)&#x20;
 * This[ Codesandbox](https://codesandbox.io/s/hedera-example-json-rpc-truffle-q6kibt?file=/create-account.js) is already setup for you to try this example
   * Fork the sandbox
   * Remember to provide your testnet account credentials for the _**operator**_ in the _**.env**_ file
@@ -126,7 +126,7 @@ async function mirrorQueryFcn(publicKey) {
 
 Now it’s time to compile _**SimpleStorage**_, which is a basic smart contract that allows anyone to set and get data.
 
-```javascript
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
@@ -189,7 +189,7 @@ You can obtain more information about the newly deployed contract using the [mir
 
 </details>
 
-Now you know how to deploy smart contracts on Hedera using Truffle and the JSON RPC Relay. The first part of this example used the Hedera [JavaScript SDK](../../sdks-and-apis/sdks/#hedera-services-code-sdks). However, you can try this with the other officially supported SDKs for Java and Go.
+Now you know how to deploy smart contracts on Hedera using Truffle and the JSON RPC Relay. The first part of this example used the Hedera [JavaScript SDK](../../sdks-and-apis/sdks/#hedera-services-code-sdks). However, you can try this with the other officially supported SDKs for Java and Go.&#x20;
 
 ***
 

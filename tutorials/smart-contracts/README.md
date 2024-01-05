@@ -1,2 +1,2 @@
-# Smart Contracts Service
+# Smart Contracts
 

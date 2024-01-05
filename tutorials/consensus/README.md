@@ -1,2 +1,2 @@
-# Consensus Service
+# Consensus
 

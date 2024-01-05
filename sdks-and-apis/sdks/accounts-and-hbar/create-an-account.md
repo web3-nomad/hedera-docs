@@ -152,8 +152,3 @@ accountKey, err := AccountCreateTransaction.GetKey()
 ```
 {% endtab %}
 {% endtabs %}
-
-
-
-
-

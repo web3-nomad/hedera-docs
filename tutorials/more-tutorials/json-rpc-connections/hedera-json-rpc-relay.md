@@ -81,7 +81,7 @@ git clone git@github.com:hashgraph/hedera-json-rpc-relay.git
 On either Hedera Previewnet or Hedera Testnet, continue on to **step 3**.
 
 \
-On Hedera Mainnet, you can proceed directly to **step 8**. You are advised to utilize an account already funded with HBAR for the _`OPERATOR_ID_MAIN`_ and_`OPERATOR_KEY_MAIN`_ values. Please note that setting up a Hedera Mainnet account and funding it is out of scope for this article.
+On Hedera Mainnet, you can proceed directly to **step 8**. You are advised to utilize an account already funded with HBAR for the _`OPERATOR_ID_MAIN`_ and\_`OPERATOR_KEY_MAIN`\_ values. Please note that setting up a Hedera Mainnet account and funding it is out of scope for this article.
 {% endhint %}
 
 <details>
@@ -90,7 +90,7 @@ On Hedera Mainnet, you can proceed directly to **step 8**. You are advised to ut
 
 Like on any other EVM-compatible networks, transactions must be paid for in the native currency. This is true for Hedera as well, where all transactions are paid for, denominated in HBAR.
 
-Unlike other EVM-compatible networks, when an EVM transaction is submitted on a Hedera network, that transaction can be paid for by a different "payer account". The  `hedera-json-rpc-relay` takes care of this automatically for you, wrapping the transaction. This is why there is a need for an `OPERATOR_ID_MAIN` and `OPERATOR_KEY_MAIN`, as this is the "payer acount".
+Unlike other EVM-compatible networks, when an EVM transaction is submitted on a Hedera network, that transaction can be paid for by a different "payer account". The `hedera-json-rpc-relay` takes care of this automatically for you, wrapping the transaction. This is why there is a need for an `OPERATOR_ID_MAIN` and `OPERATOR_KEY_MAIN`, as this is the "payer acount".
 
 This effectively means that running and instance of `hedera-json-rpc-relay` on Hedera Mainnet is **not free**. On other Hedera networks, e.g. Hedera Testnet, where HBAR are obtained for free, it is effectively **free**. Apart from HBAR costs, the relay service is indeed free to use, and you are really limited only by your own hardware.
 

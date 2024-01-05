@@ -2,16 +2,16 @@
 
 Associates the provided Hedera account with the provided Hedera token(s). Hedera accounts must be associated with a fungible or non-fungible token first before you can transfer tokens to that account. When you transfer a custom fungible or non-fungible token to the alias account ID, the token association step is skipped and the account will automatically be associated with the token upon creation. In the case of NON\_FUNGIBLE Type, once an account is associated, it can hold any number of NFTs (serial numbers) of that token type. The Hedera account that is associated with a token is required to sign the transaction.
 
-* If the provided account is not found, the transaction will resolve to INVALID\_ACCOUNT\_ID.
-* If the provided account has been deleted, the transaction will resolve to ACCOUNT\_DELETED.
-* If any of the provided tokens is not found, the transaction will resolve to INVALID\_TOKEN\_REF.
-* If any of the provided tokens has been deleted, the transaction will resolve to TOKEN\_WAS\_DELETED.
-* If an association between the provided account and any of the tokens already exists, the transaction will resolve to TOKEN\_ALREADY\_ASSOCIATED\_TO\_ACCOUNT.
-* If the provided account's associations count exceeds the constraint of maximum token associations per account, the transaction will resolve to TOKENS\_PER\_ACCOUNT\_LIMIT\_EXCEEDED.
+* If the provided account is not found, the transaction will resolve to `INVALID_ACCOUNT_ID`.
+* If the provided account has been deleted, the transaction will resolve to `ACCOUNT_DELETED`.
+* If any of the provided tokens is not found, the transaction will resolve to `INVALID_TOKEN_REF`.
+* If any of the provided tokens has been deleted, the transaction will resolve to `TOKEN_WAS_DELETED`.
+* If an association between the provided account and any of the tokens already exists, the transaction will resolve to `TOKEN_ALREADY_ASSOCIATED_TO_ACCOUNT`.
+* If the provided account's associations count exceeds the constraint of maximum token associations per account, the transaction will resolve to `TOKENS_PER_ACCOUNT_LIMIT_EXCEEDED`.
 * On success, associations between the provided account and tokens are made and the account is ready to interact with the tokens.
 
 {% hint style="info" %}
-There is currently no limit on the number of token IDs that can be associated with an account (reference [HIP-367](https://hips.hedera.com/hip/hip-367)). Still, you can see TOKENS\_PER\_ACCOUNT\_LIMIT\_EXCEEDED responses for _pre-HIP-367_ transactions.
+There is currently no limit on the number of token IDs that can be associated with an account (reference [HIP-367](https://hips.hedera.com/hip/hip-367)). Still, you can see `TOKENS_PER_ACCOUNT_LIMIT_EXCEEDED` responses for _pre-HIP-367_ transactions.
 {% endhint %}
 
 **Transaction Signing Requirements**

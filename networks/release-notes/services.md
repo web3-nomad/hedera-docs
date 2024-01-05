@@ -6,7 +6,122 @@ description: Hedera Services release information
 
 Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
 
+## [v0.45](https://github.com/hashgraph/hedera-services/releases/tag/v0.45.0)
+
+{% hint style="success" %}
+**TESTNET UPDATE: DECEMBER 28, 2023**
+{% endhint %}
+
+### 0.45.2
+
+#### What's Changed
+
+* fix: Added a feature flag which is by default enabled to disable tokenBalances and tokenRelationships in `getAccountInfo`, `getAccountBalance` and `getContractInfo` queries. [#10639](https://github.com/hashgraph/hedera-services/pull/10639)
+
+### 0.45.0
+
+* Populate evm function result on failing eth transaction by [@stoqnkpL](https://github.com/stoqnkpL) in [#9453](https://github.com/hashgraph/hedera-services/pull/9453)
+* Disable compression. by [@cody-littley](https://github.com/cody-littley) in [#9554](https://github.com/hashgraph/hedera-services/pull/9554)
+* Fix tests in unique token management spec by [@mhess-swl](https://github.com/mhess-swl) in [#9537](https://github.com/hashgraph/hedera-services/pull/9537)
+* enaled one more test and remove the other one that not really in use by [@povolev15](https://github.com/povolev15) in [#9557](https://github.com/hashgraph/hedera-services/pull/9557)
+* Enable tests from CannotDeleteSystemEntitiesSuite by [@Ivo-Yankov](https://github.com/Ivo-Yankov) in [#9440](https://github.com/hashgraph/hedera-services/pull/9440)
+* Fix tests in ContractBurnHTSSuite by [@agadzhalov](https://github.com/agadzhalov) in [#9572](https://github.com/hashgraph/hedera-services/pull/9572)
+* Tune dependency scopes by [@jjohannes](https://github.com/jjohannes) in [#8455](https://github.com/hashgraph/hedera-services/pull/8455)
+* unneeded calls to swirlds-common removed by [@hendrikebbers](https://github.com/hendrikebbers) in [#9003](https://github.com/hashgraph/hedera-services/pull/9003)
+* Fixed CryptoRecordsSanityCheckSuite by [@iwsimon](https://github.com/iwsimon) in [#9551](https://github.com/hashgraph/hedera-services/pull/9551)
+* Enable test from AssociatePrecompileSuite by [@mustafauzunn](https://github.com/mustafauzunn) in [#9571](https://github.com/hashgraph/hedera-services/pull/9571)
+* Implement TransactionRateMultiplierSource by [@MiroslavGatsanoga](https://github.com/MiroslavGatsanoga) in [#9305](https://github.com/hashgraph/hedera-services/pull/9305)
+* 9514: Reduce Java allocations when sending internal node hashes during reconnect by [@artemananiev](https://github.com/artemananiev) in [#9538](https://github.com/hashgraph/hedera-services/pull/9538)
+* Address PR review comments for [#8374](https://github.com/hashgraph/hedera-services/pull/8374) by [@vtronkov](https://github.com/vtronkov) in [#9266](https://github.com/hashgraph/hedera-services/pull/9266)
+* 9479: Add more logs to debug virtual map reconnect issues by [@artemananiev](https://github.com/artemananiev) in [#9481](https://github.com/hashgraph/hedera-services/pull/9481)
+
+### Performance Results
+
+<figure><img src="../../.gitbook/assets/0.45_Performance Measurement Results_Extract.png" alt=""><figcaption></figcaption></figure>
+
+## [v0.44](https://github.com/hashgraph/hedera-services/releases)
+
+{% hint style="success" %}
+**MAINNET UPDATE: DECEMBER 19, 2023**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE: DECEMBER 12, 2023**
+{% endhint %}
+
+### 0.44.3
+
+#### What's Changed
+
+* Enforce NFT allowance check on auto-creation by [@tinker-michaelj](https://github.com/tinker-michaelj) in [e69d0a9](https://github.com/hashgraph/hedera-services/commit/e69d0a917c1c0a9417a3f335129a74ac3004b7c9)
+
+### 0.44.2
+
+#### What's Changed
+
+* Catch UncheckedIOException during PCES file copy. ([#10083](https://github.com/hashgraph/hedera-services/pull/10083)) by [@cody-littley](https://github.com/cody-littley) in [#10087](https://github.com/hashgraph/hedera-services/pull/10087)
+
+### 0.44.1
+
+#### Bug Fixes
+
+* Fix PCES copy bugs. ([#10057](https://github.com/hashgraph/hedera-services/pull/10057)) [#10062](https://github.com/hashgraph/hedera-services/pull/10062)
+
+### 0.44.0
+
+#### Features
+
+* Re-add bootstrap.properties file to maintain downstream processes and increase accounts.maxNumber=20\_000\_000 [#8915](https://github.com/hashgraph/hedera-services/pull/8915)
+* 8815: sort dirty leaves during flush [#8981](https://github.com/hashgraph/hedera-services/pull/8981)
+* Add setting to disable critical quorum. [#8961](https://github.com/hashgraph/hedera-services/pull/8961)
+* Add a doc for all system entity numbers [#8993](https://github.com/hashgraph/hedera-services/pull/8993)
+* 08566 - Validate PCES Events When Loading State On Different Network [#8568](https://github.com/hashgraph/hedera-services/pull/8568)
+* Differential testing analytic engine: State file file dumper now dumps special files [#8991](https://github.com/hashgraph/hedera-services/pull/8991)
+* Added improved startup ASCII art. [#9028](https://github.com/hashgraph/hedera-services/pull/9028)
+* Characterize invalid id failure modes for classic HTS calls [#9053](https://github.com/hashgraph/hedera-services/pull/9053)
+* Add ordinals to status diagram, and update javadocs [#9108](https://github.com/hashgraph/hedera-services/pull/9108)
+* 5552: Create a Grafana Data Dashboard to view all existing relevant data metrics [#8845](https://github.com/hashgraph/hedera-services/pull/8845)
+* Update Besu to version 23.10.0 [#9168](https://github.com/hashgraph/hedera-services/pull/9168)
+* Move EventDescriptor from Platform-Core to Common Library [#9200](https://github.com/hashgraph/hedera-services/pull/9200)
+* Add lables to the merkle tree visualziation in the logs. [#9206](https://github.com/hashgraph/hedera-services/pull/9206)
+* Remove legacy address book stuff. [#9204](https://github.com/hashgraph/hedera-services/pull/9204)
+* Rename event creation classes. [#9167](https://github.com/hashgraph/hedera-services/pull/9167)
+* 9072 Enable Hapi Tests - General Improvements [#9212](https://github.com/hashgraph/hedera-services/pull/9212)
+* Remove obsolete tests as discussed [#9219](https://github.com/hashgraph/hedera-services/pull/9219)
+* 09162 cleanup ConsensusHashManager [#9165](https://github.com/hashgraph/hedera-services/pull/9165)
+* Added new metrics for event creation. [#9228](https://github.com/hashgraph/hedera-services/pull/9228)
+* Consensus changes [#6844](https://github.com/hashgraph/hedera-services/pull/6844)
+* Write standalone event deduplicator [#9247](https://github.com/hashgraph/hedera-services/pull/9247)
+* 09162 event creation metrics [#9242](https://github.com/hashgraph/hedera-services/pull/9242)
+* 08670 Non linking orphan buffer [#9241](https://github.com/hashgraph/hedera-services/pull/9241)
+* Cleanup platform construction. [#9250](https://github.com/hashgraph/hedera-services/pull/9250)
+* Add feature that enables us to ignore janky state modification during testing. [#9288](https://github.com/hashgraph/hedera-services/pull/9288)
+* Tests for new Logging classes [#8783](https://github.com/hashgraph/hedera-services/pull/8783)
+* Add new tests to JTR metadata. [#9315](https://github.com/hashgraph/hedera-services/pull/9315)
+* 08461 cli transplant state 2 [#9309](https://github.com/hashgraph/hedera-services/pull/9309)
+* Change setup to have only one Gradle build [#8858](https://github.com/hashgraph/hedera-services/pull/8858)
+* Allow build to run without internet connection using --offline [#9037](https://github.com/hashgraph/hedera-services/pull/9037)
+* Platform Stress Testing Tool [#8485](https://github.com/hashgraph/hedera-services/pull/8485)
+* update nfts.maxAllowedMints [#9464](https://github.com/hashgraph/hedera-services/pull/9464)
+* Compress data sent over the network. [#9416](https://github.com/hashgraph/hedera-services/pull/9416)
+* 07501 Redesign compaction [#9060](https://github.com/hashgraph/hedera-services/pull/9060)
+* 09285 Create standalone event validator [#9360](https://github.com/hashgraph/hedera-services/pull/9360)
+* Remove config option to disable event sig verification [#9478](https://github.com/hashgraph/hedera-services/pull/9478)
+* Add an optional reconnect rate limit. [#9522](https://github.com/hashgraph/hedera-services/pull/9522)
+* remove deprecated method [#9497](https://github.com/hashgraph/hedera-services/pull/9497)
+* 09412 Create standalone in-order linker [#9417](https://github.com/hashgraph/hedera-services/pull/9417)
+* Increase contract kv/pairs storage allowed by 100x [#9581](https://github.com/hashgraph/hedera-services/pull/9581) / [#9590](https://github.com/hashgraph/hedera-services/pull/9590)
+* 9582: Backport the fix for 9479 to release/0.44 [#9583](https://github.com/hashgraph/hedera-services/pull/9583)
+
+### Performance Results
+
+<figure><img src="../../.gitbook/assets/0.44_Performance Measurement Results.001.png" alt=""><figcaption></figcaption></figure>
+
 ## [v0.43](https://github.com/hashgraph/hedera-services/releases/tag/v0.43.0)
+
+{% hint style="success" %}
+**MAINNET UPDATE: NOVEMBER 27, 2023**
+{% endhint %}
 
 {% hint style="success" %}
 **TESTNET UPDATE: NOVEMBER 2, 2023**
@@ -25,6 +140,10 @@ Services v0.43.0 adds the following enhancements:
 * "Productizing" contract disassembler at last ([#8563](https://github.com/hashgraph/hedera-services/pull/8563))
 * Auto sidecar validations ([#8404](https://github.com/hashgraph/hedera-services/pull/8404))
 * Create fat jar with services CLI so it can be run standalone ([#8519](https://github.com/hashgraph/hedera-services/pull/8519))
+
+### Performance Results
+
+<figure><img src="../../.gitbook/assets/0.43_Performance Measurement Results.001.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.42](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.1)
 
@@ -486,7 +605,7 @@ Approved operators can manage an owner's tokens on their behalf; this is necessa
 
 Any permissions granted in a contract through `approve()` or `setApprovalForAll()` have an equivalent HAPI `cryptoApproveAllowance` or `cryptoDeleteAllowance` expression---and this expression is externalized as a HAPI `TransactionBody` in the record stream. That is, the HIP-376 system contracts expose a subset of the native HAPI operations, only within the EVM.
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (4).png>)
 
 ## [v0.25](https://github.com/hashgraph/hedera-services/releases/tag/v0.25.0)
 
@@ -560,7 +679,7 @@ Hedera Services 0.23 fleshes out our smart contract service via the implementati
 
 Please note two issues fixed in this release. [First](https://github.com/hashgraph/hedera-services/issues/2841), in release 0.22, the nodes returned the `bytes ledger_id` stipulated by [HIP-33](https://hips.hedera.com/hip/hip-33) as a UTF-8 encoding of a hex string. The returned bytes are now the big-endian representation of the ledger's numeric id. [Second](https://github.com/hashgraph/hedera-services/issues/2857), prior to this release, the record of a `dissociateToken` from a deleted token did not list the discarded balance of the dissociated account if the token's treasury was missing. This is now fixed.
 
-![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (2) (1).jpeg>)
+![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (2).jpeg>)
 
 ## [v0.22](https://github.com/hashgraph/hedera-services/releases/tag/v0.22.1)
 
@@ -587,7 +706,7 @@ There are two other HIP's included in this release not related to the smart cont
 
 While we are gaining momentum in our smart contracts roadmap, we are also deeply committed to improving the developer experience, and welcome issues and ideas in our [GitHub repository](https://github.com/hashgraph/hedera-services) and [Discord](https://hedera.com/discord)!
 
-![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1).jpeg>)
+![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1).jpeg>)
 
 ## [v0.21.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.21.0-rc.1)
 
@@ -630,7 +749,7 @@ Please also note the following deprecations in the Hedera API protobufs:
 * The [<mark style="color:purple;">`ContractUpdateTransactionBody.fileID`</mark> <mark style="color:purple;">field</mark>](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L82), which is redundant given the existence of the [<mark style="color:purple;">`ContractGetBytecode`</mark> <mark style="color:purple;">quer</mark>y](https://github.com/hashgraph/hedera-protobufs/blob/main/services/smart\_contract\_service.proto#L63).
 * The [<mark style="color:purple;">`ContractCallLocalQuery.maxResultSize`</mark> <mark style="color:purple;">field</mark>](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_call\_local.proto#L136), as this limit is now simply a side-effect of the given gas limit.
 
-![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2).jpeg>)
+![](<../../.gitbook/assets/Performance Measurement Results\_Extract.001 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).jpeg>)
 
 ## [v0.19.4](https://github.com/hashgraph/hedera-services/releases/tag/v0.19.4)
 
@@ -676,7 +795,7 @@ Third, please note that the `TokenService` `getTokenNftInfos` and `getAccountNft
 
 Developers will likely appreciate two other release 0.18.1 items. First, we have migrated to [Dagger2](https://dagger.dev/) for dependency injection. Second, there is a new `getExecutionTime` query in the [`NetworkService`](https://hashgraph.github.io/hedera-protobufs/#proto.NetworkService) that supports granular performance testing in development environments.
 
-![](<../../.gitbook/assets/image (1) (1).png>)
+![](<../../.gitbook/assets/image (5).png>)
 
 ## v0.18.0
 

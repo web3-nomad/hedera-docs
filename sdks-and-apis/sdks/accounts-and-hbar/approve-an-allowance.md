@@ -8,7 +8,7 @@ The maximum number of token approvals for the `AccountAllowanceApproveTransactio
 
 A single NFT serial number can only be granted to one spender at a time. If an approval assigns a previously approved NFT serial number to a new user, the old user will have their approval removed.
 
-Each account is limited to 100 allowances. This limit spans HBAR, fungible token allowances, and non-fungible token `approved_for_all` grants. No limit exists on the number of NFT serial number approvals an owner may grant.
+Each owner account is limited to granting 100 allowances. This limit spans HBAR, fungible token allowances, and non-fungible token `approved_for_all` grants. No limit exists on the number of NFT serial number approvals an owner may grant.
 
 The number of allowances set on an account will increase the auto-renewal fee for the account. Conversely, removing allowances will decrease the auto-renewal fee for the account.
 

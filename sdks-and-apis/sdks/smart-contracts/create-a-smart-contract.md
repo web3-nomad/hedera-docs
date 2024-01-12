@@ -15,16 +15,8 @@ The latest version of Solidity is supported on all networks (v0.8.9).
 {% hint style="info" %}
 **Smart Contract State Size and Gas Limits**
 
-The contract state size limit is 10 MB and the system gas throttle is 15 million gas per second. Contract call and contract create are throttled at 8 million gas per second.
+The [max contract key](https://github.com/hashgraph/hedera-services/pull/9592/files) value pairs are 16,384,000 (\~100 MB).  The system gas throttle is 15 million gas per second. Contract call and contract create are throttled at 8 million gas per second.
 {% endhint %}
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
 
 **Transaction Signing Requirements**
 

@@ -8,6 +8,37 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.96.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.96.0)
+
+With a lot of the developers taking some time off for the holiday season, this release is a bit smaller than normal but still contains some important changes. The previewnet and testnet bootstrap address books were updated to reflect the current state of the network. The default volume size for Loki was increased from 100 GB to 250 GB to account for increasing amounts of log activity. The processing of `EthereumTransaction` was made more resilient so that the importer does not halt if encounters a badly encoded transaction. Finally, a memory leak in the REST API should greatly reduce out of memory errors and improve request throughput.
+
+To improve ingest performance of entity tables when used with a distributed SQL database we introduced a new `temporary` database [schema](https://www.postgresql.org/docs/current/ddl-schemas.html). This schema is used to hold the temporary data inserted when processing entities from a record file. Previously this information was added to temporary tables created within the transaction scope, but these temporary tables could not be made distributed in Citus. With the temporary schema, this information can now be distributed appropriately to ensure optimal ingest performance. This change does require manual DDL statements be ran before the next upgrade (see next section).
+
+### Breaking Changes
+
+As previously mentioned, a new database schema was introduced to handle the processing of upsertable entities. This change\
+doesn't require any manual steps for new operators that use one of our initialization scripts or helm charts to\
+configure the database. However, existing operators upgrading to 0.96.0 or later are required to create the schema by\
+configuring and executing a [script](https://github.com/hashgraph/hedera-mirror-node/blob/v0.96.0/hedera-mirror-importer/src/main/resources/db/scripts/init-temp-schema.sh) _**before**_ the upgrade.
+
+```
+PGHOST=127.0.0.1 ./init-temp-schema.sh
+```
+
+Another breaking change concerns operators using our `hedera-mirror-common` chart. The aforementioned Loki volume size increase was made to the embedded `PersistentVolumeClaim` on the Loki `StatefulSet`. Kubernetes does not allow changes to this immutable field so to workaround the `StatefulSet` will need to be manually deleted for the upgrade of the common chart.
+
+## [v0.95.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.95.0)
+
+This release saw the Java components upgraded to use [Java 21](https://www.oracle.com/news/announcement/ocw-oracle-releases-java-21-2023-09-19/). In a future release, we will explore the new language features in 21 like virtual threads to unlock additional scalability. Some technical debt items were tackled including removing redundant test configuration by creating a common test hierarchy. Explicit `@Autowired` annotations on test constructors were removed, reducing boilerplate. Finally, various classes were renamed to align to our naming standards including the removal of the `Mirror` prefix from classes that were not used across modules.
+
+[HIP-584](https://hips.hedera.com/hip/hip-584) EVM archive node for historical blocks saw some major additions including initial support for historical blocks. EVM Configuration is now loaded based upon block number instead of always utilizing the latest EVM. This ensures that `/api/v1/contracts/call` simulates the execution as it would've been on consensus nodes at that point in time. Database queries were adapted to work with timestamp filters to allow for returning historical block information.
+
+Our distributed database effort saw some notable improvements including upgrading the version of Citus to 12.1. PostgreSQL 16 support was tested confirming compatibility with both regular PostgreSQL and Citus. Both `/api/v1/topics/{id}/messages/{sequenceNumber}` and `/api/v1/topics/{id}/messages` saw optimizations implemented when used with Citus.
+
+### Upgrading
+
+If you're compiling locally, ensure you have upgraded to Java 21 in your terminal and IDE. For MacOS, we recommend using [SDKMAN!](https://sdkman.io/) to manage Java versions so that upgrading is as simple as `sdk install java 21-tem`. If you're using a custom `Dockerfile` ensure it is also updated to Java 21. We recommend [Eclipse Temurin](https://hub.docker.com/\_/eclipse-temurin) as the base image for our Java components.
+
 ## [v0.94.1](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.94.1)
 
 Provides an important fix to pending reward calculation that regressed due to the balance deduplication work. The database migration for this will take approximately 17 minutes on mainnet.

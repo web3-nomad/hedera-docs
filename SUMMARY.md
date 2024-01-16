@@ -449,6 +449,7 @@
         * [Get file contents](sdks-and-apis/deprecated/sdks/readme-1-1/get-file-contents.md)
         * [Get file info](sdks-and-apis/deprecated/sdks/readme-1-1/get-file-info.md)
         * [Network Response Messages](sdks-and-apis/deprecated/sdks/readme-1-1/network-response-messages.md)
+* [Hedera Wallet Snap](https://docs.tuum.tech/hedera-wallet-snap/basics/introduction)
 * [Support & Community](support-and-community/README.md)
   * [Glossary](support-and-community/glossary.md)
   * [Discord](https://hedera.com/discord)

@@ -1,5 +1,7 @@
 ---
-description: A step-by-step tutorial on how to use the Hedera Wallet Snap by MetaMask.
+description: >-
+  A step-by-step tutorial on how to integrate the Hedera Wallet Snap by MetaMask
+  into a dApp.
 ---
 
 # MetaMask Snaps – What Are They and How to Use Them

@@ -14,6 +14,7 @@
     * [HTS: Fungible Token](tutorials/hello-world/hts-fungible-token.md)
     * [HSCS: Smart Contract](tutorials/hello-world/hscs-smart-contract.md)
   * [Smart Contracts](tutorials/smart-contracts/README.md)
+    * [MetaMask Snaps – What Are They and How to Use Them](tutorials/smart-contracts/metamask-hedera-wallet-snap-tutorial.md)
     * [How to Verify a Smart Contract on HashScan](tutorials/smart-contracts/how-to-verify-a-smart-contract-on-hashscan.md)
     * [Deploy a Smart Contract Using Remix](tutorials/smart-contracts/deploy-a-smart-contract-using-remix.md)
     * [Deploy a Smart Contract Using Hardhat and Hedera JSON-RPC Relay](tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md)

@@ -679,7 +679,7 @@ This tutorial provides a comprehensive guide on how to use MetaMask Snaps, focus
 * The tutorial also dives into the technical aspects, detailing the _App.jsx_ file, which includes state management, functions for button actions, and the layout of the UI components. It explains the use of React components like _MyGroup_, _MyButton_, and _MyInputBox_ to create an interactive and user-friendly interface.&#x20;
 * It then elaborates on MetaMask Snaps, its purpose, and how to use them, specifically focusing on the Hedera Wallet Snap for tasks like pairing the dApp with MetaMask, installing the Snap, managing the Snap account, and executing crypto transfers.
 
-&#x20;**🎉  Congratulations! You have learned about the new Hedera Wallet Snap by MetaMask Snaps and how to integrate it into a dApp. Feel free to reach out in** [**Discord**](https://hedera.com/discord) **if you have any questions!**
+&#x20;**🎉  Congratulations! You have learned about the new Hedera Wallet Snap by MetaMask and how to integrate it into a dApp. Feel free to reach out in** [**Discord**](https://hedera.com/discord) **if you have any questions!**
 
 ***
 

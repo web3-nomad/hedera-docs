@@ -114,7 +114,7 @@
     * [TypeScript SDK](https://github.com/hashgraph/hedera-accelerator-stablecoin/tree/main/sdk)
   * [Hedera Wallet Snap By MetaMask](open-source-solutions/hedera-wallet-snap-by-metamask/README.md)
     * [Hedera Wallet Snap Documentation](https://docs.tuum.tech/hedera-wallet-snap/basics/introduction)
-    * [MetaMask Snaps – What Are They and How to Use Them](open-source-solutions/hedera-wallet-snap-by-metamask/metamask-hedera-wallet-snap-tutorial.md)
+    * [Tutorial: MetaMask Snaps – What Are They and How to Use Them](open-source-solutions/hedera-wallet-snap-by-metamask/metamask-hedera-wallet-snap-tutorial.md)
   * [Hedera Guardian](https://docs.hedera.com/guardian/guardian/)
 * [SDKs & APIs](sdks-and-apis/README.md)
   * [SDKs](sdks-and-apis/sdks/README.md)

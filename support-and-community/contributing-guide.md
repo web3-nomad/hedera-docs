@@ -106,6 +106,19 @@ Do not use the singular form of the noun, as any reference should be plural sinc
 
 <details>
 
+<summary>Use of web2 and web3</summary>
+
+When documenting or referring to "web2" and "web3," it's important to maintain consistency. Both terms should be in lowercase. The only exception to this rule is when either term starts a sentence. In such cases, the initial letter should be capitalized. For example:&#x20;
+
+* ❌ **Incorrect**: "web3 technologies are evolving rapidly."
+* ✅ **Correct**: "Web3 represents a shift towards decentralization."
+* ✅ **Correct**: "In the context of web2, user data is often controlled by centralized entities."
+* ✅ **Correct**: "The principles of transparency and user empowerment are fundamental to the development of web3 platforms."
+
+</details>
+
+<details>
+
 <summary>American English</summary>
 
 Follow the American English spelling standard. This means that words should follow the American English conventions, employing **'z'** instead of **'s'** in words such as 'decentralized,' 'realized,' and 'organized.'

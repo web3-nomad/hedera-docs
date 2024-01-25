@@ -62,7 +62,7 @@ pwd
 
 This should output a path that ends with `/hello-future-world/03-hscs-smart-contract-ethersjs`. If not, you will need to start over.
 
-```text
+```
 /some/path/hello-future-world/03-hscs-smart-contract-ethersjs
 ```
 
@@ -74,7 +74,7 @@ ls -a
 
 The first few line of the output should look display `.env`. If not, you'll need to start over.
 
-```text
+```
 .
 ..
 .env
@@ -188,6 +188,7 @@ For example, if the API key field is `ABC123`, and the JSON-RPC field is `https:
 ```
 RPC_URL=https://pool.arkhia.io/hedera/testnet/json-rpc/v1/ABC123
 ```
+
 {% hint style="info" %}
 Ensure that you have a `/` just before in fornt of the API key.
 {% endhint %}
@@ -301,8 +302,6 @@ Open `myContractWriteTxExplorerUrl` in your browser. Note that this should be th
 * (2) Its "Type" field is "ETHEREUM TRANSACTION"
 * (3) Under the "Contract Result" section, its "From" field matches the value of `accountId`
 * (4) Under the "Contract Result" section, its "To" field matches the value of `myContractAddress`
-
-<img src="../../.gitbook/assets/hello-world--hscs--transaction.drawing.svg" alt="HSCS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
 
 </details>
 

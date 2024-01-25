@@ -530,3 +530,7 @@ func main() {
 {% hint style="info" %}
 Have a question? [Ask it on StackOverflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
 {% endhint %}
+
+***
+
+**Contributors:** [fabianstraubinger99](https://github.com/fabianstraubinger99)

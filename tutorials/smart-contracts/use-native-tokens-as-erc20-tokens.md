@@ -1,14 +1,27 @@
-# The power of native Hedera tokens as ERC-20 tokens: A step-by-step guide 
+# The Power of Native Hedera Tokens as ERC-20 Tokens: A step-by-step guide
 
-In this tutorial you’ll learn how to make Hedera native tokens work just like Ethereum's ERC-20 tokens using the [Hashio](https://swirldslabs.com/hashio/) JSON-RPC instance.
-
+In this tutorial, you’ll learn how to make Hedera native tokens work like Ethereum's ERC-20 tokens using the [Hashio](https://swirldslabs.com/hashio/) JSON-RPC instance.
 
 <table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>1.</strong> <a href="use-native-tokens-as-erc20-tokens.md#prerequisites"><strong>PREREQUISITES</strong></a></td><td><a href="use-native-tokens-as-erc20-tokens.md#prerequisites">#prerequisites</a></td></tr><tr><td align="center"><strong>2.</strong> <a href="use-native-tokens-as-erc20-tokens.md#project-setup"><strong>PROJECT SETUP</strong></a></td><td><a href="use-native-tokens-as-erc20-tokens.md#project-setup">#project-setup</a></td></tr><tr><td align="center"><strong>3.</strong> <a href="use-native-tokens-as-erc20-tokens.md#project-contents"><strong>PROJECT CONTENTS</strong></a></td><td><a href="use-native-tokens-as-erc20-tokens.md#project-contents">#project-contents</a></td></tr><tr><td align="center"><strong>4.</strong> <a href="use-native-tokens-as-erc20-tokens.md#running-the-project"><strong>RUNNING THE PROJECT</strong></a></td><td><a href="use-native-tokens-as-erc20-tokens.md#running-the-project">#running-the-project</a></td></tr></tbody></table>
 
+***
+
 ## Prerequisites
 
-- Basic understanding of [TypeScript](https://www.typescriptlang.org/) and [Solidity](https://docs.soliditylang.org/en/latest/).
-- Get a [Hedera testnet account](https://portal.hedera.com/register).
+* Basic understanding of [TypeScript](https://www.typescriptlang.org/) and [Solidity](https://docs.soliditylang.org/en/latest/).
+* Get a [Hedera testnet account](https://portal.hedera.com/register).
+* Have [`ts-node`](https://www.npmjs.com/package/ts-node) installed.
+
+***
+
+## Table of Contents
+
+1. [Project Setup](use-native-tokens-as-erc20-tokens.md#project-setup)
+2. [Project Configuration](use-native-tokens-as-erc20-tokens.md#project-configuration)
+3. [Project Contents](use-native-tokens-as-erc20-tokens.md#project-contents)
+4. [Running the Project](use-native-tokens-as-erc20-tokens.md#running-the-project)
+
+***
 
 ## Project Setup
 
@@ -24,56 +37,62 @@ npm install
 
 The `dotenv` package is used to manage environment variables in a separate `.env` file, which is loaded at runtime. This helps protect sensitive information like your private keys and API secrets, but it's still best practice to add `.env` to your `.gitignore` to prevent you from pushing your credentials to GitHub.
 
+***
+
 ## Project Configuration
 
 In this step, you will update and configure the Hardhat configuration file that defines tasks, stores Hedera account private key information, and Hashio Testnet RPC URL. First, rename the `.env.example` file to `.env`. and update the `.env` files with the following code.
 
 **Environment Variables**
 
-The `.env` file defines environment variables used in the project. The `OPERATOR_ID` and `OPERATOR_KEY` variables contains the *ECDSA* ***Account ID*** and ***DER Encoded Private Key,*** respectively for the Hedera Testnet account. The `HEX_ENCODED_PRIVATE_KEY` variable contains the HEX ***Encoded Private Key.***
+The `.env` file defines environment variables used in the project. The `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` variables contains the _ECDSA_ _**Account ID**_ and _**DER Encoded Private Key,**_ respectively for the Hedera Testnet account. The `HEX_ENCODED_PRIVATE_KEY` variable contains the HEX _**Encoded Private Key.**_
 
 The `JSON_RPC_RELAY_URL` variable contains the [HashIO](https://swirldslabs.com/hashio/) Testnet endpoint URL. This is the JSON-RPC instance that will submit the transactions to the Hedera test network to test, create and deploy your smart contract.
 
+{% code title=".env" %}
 ```bash
-OPERATOR_ID =
-OPERATOR_KEY =
+MY_ACCOUNT_ID =
+MY_PRIVATE_KEY = 
 HEX_ENCODED_PRIVATE_KEY = 
 JSON_RPC_RELAY_URL = https://testnet.hashio.io/api
 ```
+{% endcode %}
+
+***
 
 ## Project Contents
 
 In this step, you'll examine the descriptions of the project contents in your existing project. If you don't need to review the project contents, you can proceed directly to [Running the project](use-native-tokens-as-erc20-tokens.md#running-the-project).
 
-`artifacts/`
-
-This directory contains compiled smart contracts used for generating TypeScript bindings with Typechain. We compile these contracts using Hardhat, a versatile Ethereum development tool. You'll find the configuration in **`hardhat.config.js`**. 
+{% tabs %}
+{% tab title="artifacts/" %}
+This directory contains compiled smart contracts used for generating TypeScript bindings with Typechain. We compile these contracts using Hardhat, a versatile Ethereum development tool. You'll find the configuration in **`hardhat.config.js`**.
 
 Think of Hardhat as your all-in-one environment for Ethereum development tasks like compiling, deploying, testing, and debugging.
+{% endtab %}
 
-`contracts/`
+{% tab title="contracts/" %}
+This directory contains the smart contracts that will be compiled and deployed to the Hedera network. This directory contains the smart contracts that will be compiled and deployed to the Hedera network. Let's take a look at the smart contracts in this directory:
 
-This directory contains the smart contracts that will be compiled and deployed to the Hedera network.This directory contains the smart contracts that will be compiled and deployed to the Hedera network.
-Let's take a look at the smart contracts in this directory:
+* **ERC20.sol** - This is the ERC20 token contract.
+* **HederaResponseCodes.sol** - This is a contract that contains the response codes for the Hedera network.
+* **HederaTokenService.sol** - This contract provides the transactions to interact with the tokens created on Hedera.
+* **IHederaTokenService.sol** - This is the interface for the HederaTokenService contract.
+* **Vault.sol** - This contract, when deployed, manages the functionality of a vault and serves as a testing ground to understand how Hedera native tokens interact with the ERC20 contract.
+{% endtab %}
 
-- **ERC20.sol** - This is the ERC20 token contract.
-- **HederaResponseCodes.sol** - This is a contract that contains the response codes for the Hedera network.
-- **HederaTokenService.sol** - This contract provides the transactions to interact with the tokens created on Hedera.
-- **IHederaTokenService.sol** - This is the interface for the HederaTokenService contract.
-- **Vault.sol** - This contract, when deployed, manages the functionality of a vault and serves as a testing ground to understand how Hedera native tokens interact with the ERC20 contract.
+{% tab title=" scripts/" %}
+In this directory, you'll find two main scripts: _**ERC20.ts**_ and _**utils.ts.**_ They play a crucial role in our interaction with smart contracts. Here's how it all unfolds:
 
-`scripts/`
-
-In this directory, you'll find two main scripts: ***ERC20.ts*** and ***utils.ts.*** They play a crucial role in our interaction with smart contracts. Here's how it all unfolds:
-
-We kick things off by setting up our environment and defining the essential variables. Using the ***Hedera SDK,*** we create a new fungible token, which gives us a unique tokenId.
+We kick things off by setting up our environment and defining the essential variables. Using the _**Hedera SDK,**_ we create a new fungible token, which gives us a unique tokenId.
 
 To streamline our interaction with smart contracts, we utilize the Typechain class to create instances of **`contractERC20`** and **`contractVault`**. We provide **`contractERC20`** with the tokenId's solidity address and the Ethereum provider. Similarly, we create an instance for **`contractVault`** using the **`vaultContractAddress`** (after deployed) and the provider. This approach ensures that both contracts are seamlessly integrated into our development process.
 
-With our environment ready, we dive into interactions with the contracts. We demonstrate a token transfer operation, moving native tokens created on Hedera from one account to another through the ***ERC20 contract.*** After that, we check how the balance of the receiving account changes. We do this in two ways: first, by calling a function in the ***SDK,*** and second, by using the **`balanceOf`** function in the ***ERC20 contract.***
+With our environment ready, we dive into interactions with the contracts. We demonstrate a token transfer operation, moving native tokens created on Hedera from one account to another through the _**ERC20 contract.**_ After that, we check how the balance of the receiving account changes. We do this in two ways: first, by calling a function in the _**SDK,**_ and second, by using the **`balanceOf`** function in the _**ERC20 contract.**_
 
-In our second example, we deposit 1000 tokens into the ***Vault contract*** and then withdraw them. We keep an eye on how this affects the Vault contract's balance. It's worth noting that in Hedera, you need to associate the recipient account with the token before making transfers. To handle this requirement, we use the **`associate`** function from the ***HederaTokenService*** contract, which establishes the connection between the ***Vault contract*** and the token. Once associated, we can easily deposit and withdraw tokens.
+In our second example, we deposit 1000 tokens into the _**Vault contract**_ and then withdraw them. We keep an eye on how this affects the Vault contract's balance. It's worth noting that in Hedera, you need to associate the recipient account with the token before making transfers. To handle this requirement, we use the **`associate`** function from the _**HederaTokenService**_ contract, which establishes the connection between the _**Vault contract**_ and the token. Once associated, we can easily deposit and withdraw tokens.
 
+{% code title="ERC20.ts" %}
 ```typescript
 console.clear();
 import { AccountId, PrivateKey, TokenAssociateTransaction, Client, AccountBalanceQuery } from "@hashgraph/sdk";
@@ -96,7 +115,7 @@ const wallet = new ethers.Wallet(process.env.HEX_ENCODED_PRIVATE_KEY!, provider)
 // Client to interact with the Hedera network
 const client = Client.forTestnet();
 const operatorPrKey = PrivateKey.fromStringECDSA(process.env.HEX_ENCODED_PRIVATE_KEY!);
-const operatorAccountId = AccountId.fromString(process.env.OPERATOR_ID!);
+const operatorAccountId = AccountId.fromString(process.env.MY_ACCOUNT_ID!);
 client.setOperator(operatorAccountId, operatorPrKey);
 
 async function main() {
@@ -191,13 +210,19 @@ async function main() {
 
 main();
 ```
+{% endcode %}
+{% endtab %}
 
-`typechain-types/`
-This directory contains the typescript bindings generated by typechain. These bindings are used to interact with the smart contracts.
+{% tab title="typechain-types/" %}
+&#x20;This directory contains the typescript bindings generated by typechain. These bindings are used to interact with the smart contracts.
+{% endtab %}
+{% endtabs %}
+
+***
 
 ## Running the project
 
-Now that you have your project set up and configured, we can run it. 
+Now that you have your project set up and configured, we can run it.
 
 To do so, run the following command:
 
@@ -214,7 +239,7 @@ To see the transactions on the Hedera network, you can use the [**Hedera Testnet
 
 <details>
 
-<summary>console check ✅</summary>    
+<summary>console check ✅</summary>
 
 ```bash
 - The token ID is: 0.0.2576296
@@ -393,7 +418,6 @@ To see the transactions on the Hedera network, you can use the [**Hedera Testnet
 
 </details>
 
+#### **Congratulations! 🎉 You have successfully learned to use native Hedera tokens as ERC20 tokens.** Feel free to reach out if you have any questions:
 
-#### **Congratulations! 🎉 You have successfully learned how to use native tokens as ERC20 tokens.** Feel free to reach out if you have any questions:
-
-<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer and Editor: Lucía, Developer</p><p><a href="https://github.com/luciamunozdev">GitHub</a> | <a href="https://twitter.com/luciamunozdev">Twitter</a></p></td><td><a href="https://twitter.com/luciamunozdev">https://twitter.com/luciamunozdev</a></td></tr><tr><td align="center"><p>Editor: Lucía, Developer</p><p> <a href="https://www.linkedin.com/in/luciamunozmartinez/">LinkedIn</a></p></td><td><a href="https://www.linkedin.com/in/luciamunozmartinez/">https://www.linkedin.com/in/luciamunozmartinez/</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><p>Writer: Lucía, Developer </p><p>(Hashgraph Association)</p><p><a href="https://github.com/luciamunozdev">GitHub</a> | <a href="https://twitter.com/luciamunozdev">Twitter</a> | <a href="https://www.linkedin.com/in/luciamunozmartinez/">LinkedIn</a></p></td><td><a href="https://twitter.com/luciamunozdev">https://twitter.com/luciamunozdev</a></td></tr><tr><td align="center"><p>Editor: Krystal, Technical Writer</p><p><a href="https://github.com/theekrystallee">GitHub</a> | <a href="https://twitter.com/theekrystallee">Twitter</a></p></td><td><a href="https://github.com/theekrystallee">https://github.com/theekrystallee</a></td></tr></tbody></table>

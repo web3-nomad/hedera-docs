@@ -24,7 +24,7 @@
     * [Deploy By Leveraging Ethereum Developer Tools On Hedera](tutorials/smart-contracts/deploy-by-leveraging-ethereum-developer-tools-on-hedera.md)
     * [Deploy a Subgraph Using The Graph and Hedera JSON-RPC Relay](tutorials/smart-contracts/deploy-a-subgraph-using-the-graph-and-json-rpc.md)
     * [Deploy Smart Contracts on Hedera Using Truffle](tutorials/smart-contracts/deploy-smart-contracts-on-hedera-using-truffle.md)
-    * [The power of native Hedera tokens as ERC-20 tokens: A step-by-step guide](tutorials/smart-contracts/use-native-tokens-as-erc20-tokens.md)
+    * [The Power of Native Hedera Tokens as ERC-20 Tokens: A step-by-step guide](tutorials/smart-contracts/use-native-tokens-as-erc20-tokens.md)
     * [Hedera Smart Contracts Workshop](tutorials/smart-contracts/hscs-workshop/README.md)
       * [Setup](tutorials/smart-contracts/hscs-workshop/setup.md)
       * [Solidity](tutorials/smart-contracts/hscs-workshop/solidity.md)

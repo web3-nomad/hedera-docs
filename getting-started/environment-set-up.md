@@ -40,10 +40,10 @@ dependencies {
 {% endtab %}
 
 {% tab title="Java Maven" %}
-Create a new Gradle project and name it `HederaExamples`. Add the following dependencies to your `pom.xml` file.
+Create a new Maven project and name it `HederaExamples`. Add the following dependencies to your `pom.xml` file.
 
 {% code title="pom.xml " %}
-```maven
+```xml
 <dependencies>
         <dependency>
             <groupId>com.hedera.hashgraph</groupId>

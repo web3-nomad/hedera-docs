@@ -8,7 +8,7 @@
   * [Transfer HBAR](getting-started/transfer-hbar.md)
   * [Query Ledger Data](getting-started/query-data.md)
 * [Tutorials](tutorials/README.md)
-  * [⁉ Hello World](tutorials/hello-world/README.md)
+  * [Hello World](tutorials/hello-world/README.md)
     * [Create and fund account](tutorials/hello-world/create-fund-account.md)
     * [HFS: Files](tutorials/hello-world/hfs-files.md)
     * [HTS: Fungible Token](tutorials/hello-world/hts-fungible-token.md)

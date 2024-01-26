@@ -34,7 +34,7 @@ Ensure the following configurations are set at minimum in Docker **Settings** ->
 
 **Note:** The image may look different if you are on a different version
 
-![](../../.gitbook/assets/docker-settings.png)
+![](<../../.gitbook/assets/docker settings.png>)
 
 </details>
 

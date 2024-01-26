@@ -2,7 +2,7 @@
 description: >-
   Learn how to submit a demo application, create pull requests, or log issues in
   the Hedera Contributing Guide.
-cover: ../.gitbook/assets/28_ultraviolet (3).jpg
+cover: broken-reference
 coverY: 31
 ---
 

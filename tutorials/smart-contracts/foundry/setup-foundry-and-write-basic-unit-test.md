@@ -75,7 +75,6 @@ npm --version
 ## Get started
 
 ### Set up project
-
 To follow along, start with the `main` branch, which is the _default branch_ of this repository. This gives you the initial state from which you can follow along with the steps as described in the tutorial.
 
 ```shell
@@ -152,6 +151,8 @@ In order to make the import of the forge standard library easier to write, we wi
 
 **Open the project `setup-foundry-and-write-basic-unit-test`, in a code editor.**
 
+**Open the project `setup-foundry-and-write-basic-unit-test`, in a code editor.**
+
 Create a new text file under the root directory named `remappings.txt`
 
 Paste in the following line of code
@@ -212,6 +213,8 @@ Assert that the `numberOfTodosAfter` executing `createTodo()` is equal to the `n
 
 Foundry expects the `test` keyword as a prefix to distinguish a test. Therefore, all tests you want to run must be prefixed with the `test` keyword.
 
+Foundry expects the `test` keyword as a prefix to distinguiash a test. Therefore, all tests that you want to run must be prefixed with the `test` keyword.
+
 In the terminal, ensure you are in the root project directory and build the project.
 
 ```shell
@@ -220,7 +223,7 @@ forge build
 
 You should see output similar to the following:
 
-```
+```text
 [⠒] Compiling...
 [⠔] Compiling 22 files with 0.8.23
 [⠑] Solc 0.8.23 finished in 3.44s
@@ -235,7 +238,7 @@ forge test
 
 You should see output similar to the following:
 
-```
+```text
 [⠢] Compiling...
 No files changed, compilation skipped
 
@@ -253,6 +256,9 @@ In the terminal, re-run your test but include a verbosity level 4. This will dis
 ```shell
 forge test -vvvv
 ```
+<details>
+
+<summary>Level 4 verbosity output</summary>
 
 <details>
 
@@ -260,7 +266,7 @@ forge test -vvvv
 
 You should see output similar to the following:
 
-```
+```text
 [⠢] Compiling...
 No files changed, compilation skipped
 
@@ -278,6 +284,7 @@ Test result: ok. 1 passed; 0 failed; 0 skipped; finished in 580.08µs
  
 Ran 1 test suites: 1 tests passed, 0 failed, 0 skipped (1 total tests)
 ```
+</details>
 
 </details>
 
@@ -329,7 +336,6 @@ Your output will show you an estimated gas average, median, and max for each con
 Congratulations, you have completed how to setup Foundry and write a basic unit test.
 
 You have learned how to:
-
 * [x] Configure Foundry and forge with a hedera project
 * [x] Write unit tests in Solidity
 * [x] Run your tests using Foundry `forge` command

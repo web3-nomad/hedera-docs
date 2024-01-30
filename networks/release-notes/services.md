@@ -8,6 +8,24 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 ## [v0.46](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.0)
 
+### [**0.46.3**](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.3)
+
+### What's Changed
+
+* chore: bump HAPI proto version by [@tinker-michaelj](https://github.com/tinker-michaelj) in [#11232](https://github.com/hashgraph/hedera-services/pull/11232)
+
+### [**0.46.2**](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.2)
+
+### What's Changed
+
+* fix: Ensure that the pending creation customizer applies to the address being created by [@lukelee-sl](https://github.com/lukelee-sl) in [#11213](https://github.com/hashgraph/hedera-services/pull/11213)
+
+### [**0.46.1**](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.1)
+
+### What's Changed
+
+* chore: bump HAPI proto version by [@tinker-michaelj](https://github.com/tinker-michaelj) in [#11232](https://github.com/hashgraph/hedera-services/pull/11232)
+
 ### 0.46.0
 
 {% hint style="success" %}

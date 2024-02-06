@@ -10,11 +10,19 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 ### [**0.46.3**](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.3)
 
+{% hint style="success" %}
+**TESTNET UPDATE: FEBRUARY 6, 2024**
+{% endhint %}
+
 ### What's Changed
 
 * chore: bump HAPI proto version by [@tinker-michaelj](https://github.com/tinker-michaelj) in [#11232](https://github.com/hashgraph/hedera-services/pull/11232)
 
 ### [**0.46.2**](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.2)
+
+{% hint style="success" %}
+**TESTNET UPDATE: JANUARY 30, 2024**
+{% endhint %}
 
 ### What's Changed
 

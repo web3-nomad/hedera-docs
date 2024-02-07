@@ -34,6 +34,7 @@
     * [Foundry](tutorials/smart-contracts/foundry/README.md)
       * [How to Setup Foundry and Write a Basic Unit Test](tutorials/smart-contracts/foundry/setup-foundry-and-write-basic-unit-test.md)
       * [How to Test A Solidity Event](tutorials/smart-contracts/foundry/test-an-event-with-foundry.md)
+      * [How to Fork Testnet on Latest Block](tutorials/smart-contracts/foundry/fork-hedera-testnet-on-latest-block.md)
   * [Consensus](tutorials/consensus/README.md)
     * [Submit Your First Message](tutorials/consensus/submit-your-first-message.md)
     * [Submit Message to Private Topic](tutorials/consensus/submit-message-to-private-topic.md)

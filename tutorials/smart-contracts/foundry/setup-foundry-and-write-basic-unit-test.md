@@ -23,22 +23,27 @@ Before you begin, you should be familiar with the following:
 * [Solidity](https://docs.soliditylang.org/en/latest/)
 * [Foundry](https://book.getfoundry.sh/)
 
-Have the following set up on your computer:
+<details>
 
-* [ ] git installed
+<summary>Also, you should have the following set up on your computer ⬇ </summary>
+
+
+* [x] git installed
   * Minimum version: 2.37
   * Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
-* [ ] A code editor or IDE
+* [x] A code editor or IDE
   * Recommended: [VS Code. Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
-* [ ] NodeJs + npm installed
+* [x] NodeJs + npm installed
   * Minimum version of NodeJs: 18
   * Minimum version of npm: 9.5
   * Recommended for Linux & Mac: [nvm](https://github.com/nvm-sh/nvm)
   * Recommended for Windows: [nvm-windows](https://github.com/coreybutler/nvm-windows)
 
+</details>
+
 <details>
 
-<summary>Check your prerequisites set up</summary>
+<summary>Check your prerequisites set up ⬇ </summary>
 
 Open your terminal, and enter the following commands.
 
@@ -75,6 +80,7 @@ npm --version
 ## Get started
 
 ### Set up project
+
 To follow along, start with the `main` branch, which is the _default branch_ of this repository. This gives you the initial state from which you can follow along with the steps as described in the tutorial.
 
 ```shell
@@ -163,8 +169,6 @@ forge install
 ### Remap dependencies
 
 In order to make the import of the forge standard library easier to write, we will remap the dependency.
-
-**Open the project `setup-foundry-and-write-basic-unit-test`, in a code editor.**
 
 **Open the project `setup-foundry-and-write-basic-unit-test`, in a code editor.**
 

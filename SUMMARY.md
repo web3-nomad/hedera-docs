@@ -33,6 +33,7 @@
       * [Outro](tutorials/smart-contracts/hscs-workshop/outro.md)
     * [Foundry](tutorials/smart-contracts/foundry/README.md)
       * [How to Setup Foundry and Write a Basic Unit Test](tutorials/smart-contracts/foundry/setup-foundry-and-write-basic-unit-test.md)
+      * [How to Deploy and Verify a Hedera Smart Contract with Foundry](tutorials/smart-contracts/foundry/deploy-and-verify-smart-contract.md)
       * [How to Test A Solidity Event](tutorials/smart-contracts/foundry/test-an-event-with-foundry.md)
       * [How to Fork Testnet on Latest Block](tutorials/smart-contracts/foundry/fork-hedera-testnet-on-latest-block.md)
   * [Consensus](tutorials/consensus/README.md)

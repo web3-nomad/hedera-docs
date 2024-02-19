@@ -54,7 +54,7 @@ To ensure accurate conformity with the minimum requirements, please provide node
 * Linux
   * Kernel minimum version 3.10+
   * Actively Support Long-Term-Support Release
-    * Ubuntu LTS 22.04+ 
+    * Ubuntu LTS 22.04+
     * RHEL 8
 
 ### **Node Software:**

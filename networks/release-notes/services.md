@@ -82,6 +82,10 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 * chore: Fix `HashMap` in token service `CryptoTransfer` to `LinkedHashMap` by [@Neeharika-Sompalli](https://github.com/Neeharika-Sompalli) in [#10361](https://github.com/hashgraph/hedera-services/pull/10361)
 * chore: Fix ContractKeysHTSSuite records by [@thenswan](https://github.com/thenswan) in [#10110](https://github.com/hashgraph/hedera-services/pull/10110)
 
+### Performance Results
+
+<figure><img src="../../.gitbook/assets/0.46_Performance Measurement Results.001.png" alt=""><figcaption></figcaption></figure>
+
 ## [v0.45](https://github.com/hashgraph/hedera-services/releases/tag/v0.45.0)
 
 {% hint style="success" %}

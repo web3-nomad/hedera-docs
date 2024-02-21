@@ -21,9 +21,11 @@ By the end of this tutorial, you'll be equipped to run a Hedera local node and g
 
 Ensure the **`VirtioFS`** file sharing implementation is enabled in the docker settings.
 
-**Note:** The image may look different if you are on a different version
+![](../../.gitbook/assets/docker-compose-settings.png)
 
-![](broken-reference)
+Ensure the **`Allow the default Docker sockets to be used (requires password)`** is enabled in Docker **Settings -> Advanced**.
+
+![](../../.gitbook/assets/docker-socket-setting.png)
 
 Ensure the following configurations are set at minimum in Docker **Settings** -> **Resources** and are available for use:
 
@@ -32,9 +34,9 @@ Ensure the following configurations are set at minimum in Docker **Settings** ->
 * **Swap:** 1 GB
 * **Disk Image Size:** 64 GB
 
-**Note:** The image may look different if you are on a different version
-
 ![](<../../.gitbook/assets/docker settings.png>)
+
+**Note:** The image may look different if you are on a different version
 
 </details>
 

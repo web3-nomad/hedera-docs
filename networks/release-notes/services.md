@@ -248,6 +248,10 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 ### [**0.46.3**](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.3)
 
 {% hint style="success" %}
+**MAINNET UPDATE: FEBRUARY 21, 2024**
+{% endhint %}
+
+{% hint style="success" %}
 **TESTNET UPDATE: FEBRUARY 6, 2024**
 {% endhint %}
 

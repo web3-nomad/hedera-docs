@@ -19,6 +19,8 @@ This demo is a simple example of using Pyth prices in Hedera and is based on the
 
 This demo is similar to the contract written in the tutorial. The only difference is that it uses a different math to calculate the price of 1$ in HBAR because, In the Hedera EVM layer, the native token has only 8 decimal places, while Ethereum has 18 decimal places. This means that the smallest unit of HBAR (1 wei in Hedera EVM) is 0.00000001 HBAR, while the smallest unit of ETH is 0.000000000000000001 ETH. You can see the change in the code in the [MyFirstPythContract.sol](https://github.com/ali-bahjati/hedera-demo-contract/blob/main/contracts/src/MyFirstPythContract.sol).
 
+{% embed url="https://youtu.be/2_ry0sTvnGo" %}
+
 For more details, please visit this [GitHub repository](https://github.com/ali-bahjati/hedera-demo-contract).
 
 If you have any questions, please refer to the Pyth Network [documentation](https://docs.pyth.network/home) or join [Discord](https://discord.gg/invite/PythNetwork).

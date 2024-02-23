@@ -22,3 +22,7 @@ This demo is similar to the contract written in the tutorial. The only differenc
 For more details, please visit this [GitHub repository](https://github.com/ali-bahjati/hedera-demo-contract).
 
 If you have any questions, please refer to the Pyth Network [documentation](https://docs.pyth.network/home) or join [Discord](https://discord.gg/invite/PythNetwork).
+
+***
+
+**Contributors:** [**@KemarTiti**](https://github.com/KemarTiti)

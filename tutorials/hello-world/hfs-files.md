@@ -55,7 +55,7 @@ pwd
 
 This should output a path that ends with `/hello-future-world/01-hfs-files-sdk`. If not, you will need to start over.
 
-```text
+```
 /some/path/hello-future-world/01-hfs-files-sdk
 ```
 
@@ -67,7 +67,7 @@ ls -a
 
 The first few line of the output should look display `.env`. If not, you'll need to start over.
 
-```text
+```
 .
 ..
 .env
@@ -89,7 +89,13 @@ You will also need a file to write onto the network. Copy the sample text file p
 cp my-file.txt.sample my-file.txt
 ```
 
-Edit `my-file.txt` to replace `YOUR_NAME` with your name (or nickname) in a code editor.
+Edit `my-file.txt` to replace `YOUR_NAME` with your name (or nickname) in a code editor. For example, if you used "bguiz", the file contents should now be the following.
+
+{% code title="my-file.txt" %}
+```
+Hello future! - bguiz
+```
+{% endcode %}
 
 ***
 
@@ -133,7 +139,7 @@ node script-hfs-files-sdk.js
 
 You should see output similar to the following:
 
-```text
+```
 fileId: 0.0.5835692
 fileCreateTxId: 0.0.1186@1699277862.561525871
 txExplorerUrl: https://hashscan.io/testnet/transaction/0.0.1186@1699277862.561525871

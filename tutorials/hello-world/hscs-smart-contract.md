@@ -20,7 +20,7 @@ description: >-
 
 Before you begin, you should have completed the following HW sequence:
 
-* #### [create-fund-account.md](create-fund-account.md "mention") <a href="#hw-create-and-fund-account" id="hw-create-and-fund-account"></a>
+* [create-fund-account.md](create-fund-account.md "mention")
 
 ***
 
@@ -58,7 +58,7 @@ pwd
 
 This should output a path that ends with `/hello-future-world/03-hscs-smart-contract-ethersjs`. If not, you will need to start over.
 
-```text
+```
 /some/path/hello-future-world/03-hscs-smart-contract-ethersjs
 ```
 
@@ -70,7 +70,7 @@ ls -a
 
 The first few line of the output should look display `.env`. If not, you'll need to start over.
 
-```text
+```
 .
 ..
 .env
@@ -78,16 +78,10 @@ The first few line of the output should look display `.env`. If not, you'll need
 
 </details>
 
-Next, install the dependencies using `npm`.
+Next, install the dependencies using `npm`. You will also need to install a Solidity compiler, using the `--global` flag.
 
 ```shell
-npm install
-```
-
-You will also need to install a Solidity compiler. This time use the `--global` flag.
-
-```shell
-npm install --global solc@0.8.17
+npm install && npm install --global solc@0.8.17
 ```
 
 {% hint style="info" %}
@@ -138,7 +132,7 @@ ls
 
 You should see an output similar to the following:
 
-```text
+```
 my_contract.sol
 my_contract_sol_MyContract.abi
 my_contract_sol_MyContract.bin
@@ -171,10 +165,10 @@ Note that while the `.abi` file is human-readable, the `.bin` file is _not inten
 Now, you should see the project details.
 
 * Under "Network", select "Hedera Testnet".
-* Copy the "JSON-RPC" field.
+* Copy the "JSON-RPC Relay" field.
 * In the "Security" section, copy the "API Key" field.
 
-In the `.env` file, edit the property with the key `RPC_URL`, to replace `YOUR_JSON_RPC_URL` with the "JSON-RPC" value, followed by a `/` character, and finally, the "API key" value that you have just copied.
+In the `.env` file, edit the property with the key `RPC_URL`, to replace `YOUR_JSON_RPC_URL` with the "JSON-RPC Relay" value, followed by a `/` character, and finally, the "API key" value that you have just copied.
 
 For example, if the JSON-RPC field is `https://pool.arkhia.io/hedera/testnet/json-rpc/v1`, and if the API key field is `ABC123`, the line in your `.env` file should look like this:
 
@@ -260,7 +254,7 @@ node script-hscs-smart-contract-ethersjs.js
 
 You should see output similar to the following:
 
-```text
+```
 accountId: 0.0.1201
 accountAddress: 0x7394111093687e9710b7a7aEBa3BA0f417C54474
 accountExplorerUrl: https://hashscan.io/testnet/address/0x7394111093687e9710b7a7aEBa3BA0f417C54474
@@ -278,18 +272,18 @@ Open `myContractExplorerUrl` in your browser and check that:
 * The contract exists
 * Under the "Contract Bytecode" section, its "Compiler Version" field matches the version of the Solidity compiler that you used (`0.8.17`) **(2)**
 * Under the "Recent Contract Calls" section, There should be _two_ transactions:
-   * The transaction with the *earlier timestamp* (bottom) should be the *deployment* transaction. **(3A)**
-     * Navigate to this transaction by clicking on the timestamp.
-     * Under the "Contract Result" section, the "Input - Function & Args" field should be a _relatively long_ set of hexadecimal values.
-     * This is the EVM bytecode output by the Solidity compiler.
-     * Navigate back to the Contract page (browser `⬅` button).
-   * The transaction with the *later timestamp* (top) should be the *function invocation* transaction, of the `introduce` function. **(3B)**
-     * Navigate to this transaction by clicking on the timestamp.
-     * Under the "Contract Result" section, the "Input - Function & Args" field should be a _relatively short_ set of hexadecimal values.
-     * This is the representation of
-       * the function identifier as the first _eight_ characters (e.g. `0xc63193f6` for the `introduce` function), and
-       * the input string value (e.g. `0x5626775697a0` for `bguiz`).
-     * Navigate back to the Contract page (browser `⬅` button).
+  * The transaction with the _earlier timestamp_ (bottom) should be the _deployment_ transaction. **(3A)**
+    * Navigate to this transaction by clicking on the timestamp.
+    * Under the "Contract Result" section, the "Input - Function & Args" field should be a _relatively long_ set of hexadecimal values.
+    * This is the EVM bytecode output by the Solidity compiler.
+    * Navigate back to the Contract page (browser `⬅` button).
+  * The transaction with the _later timestamp_ (top) should be the _function invocation_ transaction, of the `introduce` function. **(3B)**
+    * Navigate to this transaction by clicking on the timestamp.
+    * Under the "Contract Result" section, the "Input - Function & Args" field should be a _relatively short_ set of hexadecimal values.
+    * This is the representation of
+      * the function identifier as the first _eight_ characters (e.g. `0xc63193f6` for the `introduce` function), and
+      * the input string value (e.g. `0x5626775697a0` for `bguiz`).
+    * Navigate back to the Contract page (browser `⬅` button).
 
 <details>
 

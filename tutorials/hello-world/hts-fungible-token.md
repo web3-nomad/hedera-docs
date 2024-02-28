@@ -15,9 +15,9 @@ description: >-
 
 ## Prerequisites
 
-Before you begin, you should have completed the following HW sequence:
+Before you begin, you should have **completed** the following Hello World sequence:
 
-* #### [create-fund-account.md](create-fund-account.md "mention") <a href="#hw-create-and-fund-account" id="hw-create-and-fund-account"></a>
+* [create-fund-account.md](create-fund-account.md "mention")
 
 ***
 
@@ -55,7 +55,7 @@ pwd
 
 This should output a path that ends with `/hello-future-world/04-hts-ft-sdk`. If not, you will need to start over.
 
-```text
+```
 /some/path/hello-future-world/04-hts-ft-sdk
 ```
 
@@ -67,7 +67,7 @@ ls -a
 
 The first few line of the output should look display `.env`. If not, you'll need to start over.
 
-```text
+```
 .
 ..
 .env
@@ -166,7 +166,7 @@ node script-hts-ft.js
 
 You should see output similar to the following:
 
-```text
+```
 accountId: 0.0.1201
 tokenId: 0.0.5878530
 tokenExplorerUrl: https://hashscan.io/testnet/token/0.0.5878530

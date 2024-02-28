@@ -15,7 +15,7 @@ description: >-
 
 ## Prerequisites
 
-Before you begin, you should have completed the following HW sequence:
+Before you begin, you should have **completed** the following Hello World sequence:
 
 * [x] [create-fund-account.md](create-fund-account.md "mention")
 

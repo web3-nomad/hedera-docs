@@ -216,7 +216,7 @@
       * [Delete a smart contract](sdks-and-apis/sdks/smart-contracts/delete-a-smart-contract.md)
       * [Call a smart contract function](sdks-and-apis/sdks/smart-contracts/call-a-smart-contract-function.md)
       * [Ethereum transaction](sdks-and-apis/sdks/smart-contracts/ethereum-transaction.md)
-      * [Get a smart contract function](sdks-and-apis/sdks/smart-contracts/call-a-smart-contract-function-1.md)
+      * [Get a smart contract function](sdks-and-apis/sdks/smart-contracts/get-a-smart-contract-function.md)
       * [Get smart contract bytecode](sdks-and-apis/sdks/smart-contracts/get-smart-contract-bytecode.md)
       * [Get smart contract info](sdks-and-apis/sdks/smart-contracts/get-smart-contract-info.md)
       * [Hedera Service Solidity Libraries](sdks-and-apis/sdks/smart-contracts/hedera-service-solidity-libraries.md)

@@ -462,6 +462,7 @@
         * [Network Response Messages](sdks-and-apis/deprecated/sdks/readme-1-1/network-response-messages.md)
 * [Support & Community](support-and-community/README.md)
   * [Glossary](support-and-community/glossary.md)
+  * [Documentation Survey](https://forms.gle/x2bkUbLMqBfyndqH7)
   * [Discord](https://hedera.com/discord)
   * [GitHub](https://github.com/hashgraph)
   * [Stack Overflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)

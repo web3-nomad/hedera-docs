@@ -462,7 +462,6 @@
         * [Network Response Messages](sdks-and-apis/deprecated/sdks/readme-1-1/network-response-messages.md)
 * [Support & Community](support-and-community/README.md)
   * [Glossary](support-and-community/glossary.md)
-  * [Documentation Survey](https://forms.gle/x2bkUbLMqBfyndqH7)
   * [Discord](https://hedera.com/discord)
   * [GitHub](https://github.com/hashgraph)
   * [Stack Overflow](https://stackoverflow.com/questions/tagged/hedera-hashgraph)
@@ -473,3 +472,4 @@
   * [Contributing & Style Guide](support-and-community/contributing-guide.md)
   * [Brand Guidelines](support-and-community/brand-guidelines.md)
   * [Status Page](https://status.hedera.com)
+* [Documentation Survey](https://forms.gle/x2bkUbLMqBfyndqH7)

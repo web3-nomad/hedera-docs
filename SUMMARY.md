@@ -61,6 +61,7 @@
     * [JavaScript Testing](tutorials/more-tutorials/javascript-testing.md)
   * [Demo Applications](tutorials/demo-applications.md)
   * [Starter Projects](tutorials/starter-projects.md)
+  * [Building on Hedera (course)](https://hashgraphdev.com/?code=docs.hedera.com)
 * [Networks](networks/README.md)
   * [Mainnet](networks/mainnet/README.md)
     * [Mainnet Accounts](networks/mainnet/mainnet-access.md)

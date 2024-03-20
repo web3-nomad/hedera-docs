@@ -8,9 +8,36 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 ## [v0.47](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.0)
 
+### 0.47.3
+
+{% hint style="info" %}
+
+{% endhint %}
+
+
+
+### [0.47.2](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.2)
+
+#### What's Changed
+
+* fix: Update Configuration `hashesRamToDiskThreshold` to 0 in `MerkleDbConfig`
+* fix: Backport the fix for virtual map flushes.
+
+**Full Changelog**: [v0.47.1...v0.47.2](https://github.com/hashgraph/hedera-services/compare/v0.47.1...v0.47.2)
+
+### [0.47.1](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.1)
+
 {% hint style="success" %}
 **TESTNET UPDATE: FEBRUARY 29, 2024**
 {% endhint %}
+
+#### What's Changed
+
+* fix: only compare child time created against self-parent time created by [@alittley](https://github.com/alittley) in [#11673](https://github.com/hashgraph/hedera-services/pull/11673)
+* chore: add an old-style queue thread for intake by [@cody-littley](https://github.com/cody-littley) in [#11671](https://github.com/hashgraph/hedera-services/pull/11671)
+* fix: 11746: Backport the fix for [#11304](https://github.com/hashgraph/hedera-services/issues/11304) to release 0.47 by [@artemananiev](https://github.com/artemananiev) in [#11747](https://github.com/hashgraph/hedera-services/pull/11747)
+
+### [0.47.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.0)
 
 #### What's Changed
 

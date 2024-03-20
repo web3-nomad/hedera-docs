@@ -8,6 +8,20 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 ## [v0.47](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.0)
 
+{% hint style="info" %}
+**MAINNET UPDATE: MARCH 27, 2024**
+{% endhint %}
+
+{% hint style="success" %}
+**TESTNET UPDATE: MARCH 20, 2024**
+{% endhint %}
+
+### [0.47.3](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.3)
+
+#### What's Changed
+
+* fix: Increase token `maxAggregateRels`  to 15 million (all envs).
+
 ### [0.47.2](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.2)
 
 #### What's Changed

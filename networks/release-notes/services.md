@@ -746,15 +746,13 @@ contracts.evm.version=v0.34
 
 <figure><img src="../../.gitbook/assets/0.35_results.001.jpeg" alt=""><figcaption></figcaption></figure>
 
-## [v0.34](https://github.com/hashgraph/hedera-services/releases/tag/v0.34.0)
+<details>
 
-{% hint style="success" %}
-**MAINNET UPDATE: FEBRUARY 9, 2023**
-{% endhint %}
+<summary><a href="https://github.com/hashgraph/hedera-services/releases/tag/v0.34.0"><strong>v0.34</strong></a></summary>
 
-{% hint style="success" %}
-**TESTNET UPDATE: JANUARY 24, 2023**
-{% endhint %}
+✅ **MAINNET UPDATE: FEBRUARY 9, 2023**
+
+**✅ TESTNET UPDATE: JANUARY 24, 2023**
 
 Services `v0.34.0` completes the implementation of [HIP-583](https://hips.hedera.com/hip/hip-583).
 
@@ -763,7 +761,9 @@ To ensure full test coverage of this intricate feature, it will first be enabled
 ~~➡️ This release will, however, enable contract expiry on all production networks \[previewnet, testnet, and mainnet].~~\
 This release will not enable smart contract rent.
 
-<figure><img src="../../.gitbook/assets/0.34.1.001.png" alt=""><figcaption></figcaption></figure>
+![](../../.gitbook/assets/0.34.1.001.png)
+
+</details>
 
 ## [v0.33](https://github.com/hashgraph/hedera-services/releases/tag/v0.33.0)
 

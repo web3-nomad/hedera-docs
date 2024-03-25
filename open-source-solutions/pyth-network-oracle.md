@@ -1,4 +1,4 @@
-# Pyth Network Oracle
+# Pyth Oracles
 
 ## What is Pyth?
 

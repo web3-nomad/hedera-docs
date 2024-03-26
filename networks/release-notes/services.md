@@ -20,7 +20,7 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 #### What's Changed
 
-* fix: Increase token `maxAggregateRels`  to 15 million (all envs).
+* chore: Configure `maxAggregateRels` to 15 million (all envs) ([#12053](https://github.com/hashgraph/hedera-services/pull/12053)).
 
 ### [0.47.2](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.2)
 
@@ -28,8 +28,6 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 * fix: Update Configuration `hashesRamToDiskThreshold` to 0 in `MerkleDbConfig`
 * fix: Backport the fix for virtual map flushes.
-
-**Full Changelog**: [v0.47.1...v0.47.2](https://github.com/hashgraph/hedera-services/compare/v0.47.1...v0.47.2)
 
 ### [0.47.1](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.1)
 

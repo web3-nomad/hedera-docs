@@ -125,13 +125,13 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 **TESTNET UPDATE: DECEMBER 28, 2023**
 {% endhint %}
 
-### 0.45.2
+### [0.45.2](https://github.com/hashgraph/hedera-services/releases/tag/v0.45.2)
 
 #### What's Changed
 
 * fix: Added a feature flag which is by default enabled to disable tokenBalances and tokenRelationships in `getAccountInfo`, `getAccountBalance` and `getContractInfo` queries. [#10639](https://github.com/hashgraph/hedera-services/pull/10639)
 
-### 0.45.0
+### [0.45.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.45.0)
 
 * Populate evm function result on failing eth transaction by [@stoqnkpL](https://github.com/stoqnkpL) in [#9453](https://github.com/hashgraph/hedera-services/pull/9453)
 * Disable compression. by [@cody-littley](https://github.com/cody-littley) in [#9554](https://github.com/hashgraph/hedera-services/pull/9554)
@@ -143,10 +143,6 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 * unneeded calls to swirlds-common removed by [@hendrikebbers](https://github.com/hendrikebbers) in [#9003](https://github.com/hashgraph/hedera-services/pull/9003)
 * Fixed CryptoRecordsSanityCheckSuite by [@iwsimon](https://github.com/iwsimon) in [#9551](https://github.com/hashgraph/hedera-services/pull/9551)
 * Enable test from AssociatePrecompileSuite by [@mustafauzunn](https://github.com/mustafauzunn) in [#9571](https://github.com/hashgraph/hedera-services/pull/9571)
-* Implement TransactionRateMultiplierSource by [@MiroslavGatsanoga](https://github.com/MiroslavGatsanoga) in [#9305](https://github.com/hashgraph/hedera-services/pull/9305)
-* 9514: Reduce Java allocations when sending internal node hashes during reconnect by [@artemananiev](https://github.com/artemananiev) in [#9538](https://github.com/hashgraph/hedera-services/pull/9538)
-* Address PR review comments for [#8374](https://github.com/hashgraph/hedera-services/pull/8374) by [@vtronkov](https://github.com/vtronkov) in [#9266](https://github.com/hashgraph/hedera-services/pull/9266)
-* 9479: Add more logs to debug virtual map reconnect issues by [@artemananiev](https://github.com/artemananiev) in [#9481](https://github.com/hashgraph/hedera-services/pull/9481)
 
 ### Performance Results
 
@@ -216,7 +212,7 @@ Services v0.43.0 adds the following features:
 
 * HIP-786 ([#8620](https://github.com/hashgraph/hedera-services/pull/8620))
 
-### Enhancements
+#### Enhancements
 
 Services v0.43.0 adds the following enhancements:
 
@@ -230,7 +226,7 @@ Services v0.43.0 adds the following enhancements:
 
 <figure><img src="../../.gitbook/assets/0.43_Performance Measurement Results.001.png" alt=""><figcaption></figcaption></figure>
 
-## [v0.42](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.1)
+## [v0.42](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.0)
 
 {% hint style="success" %}
 **MAINNET UPDATE: OCTOBER 24, 2023**
@@ -240,6 +236,30 @@ Services v0.43.0 adds the following enhancements:
 **TESTNET UPDATE: SEPTEMBER 26, 2023**
 {% endhint %}
 
+### [0.42.6](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.6)
+
+This release updates the platform SDK version from `0.42.0` to `0.42.6`, which removes `reconnect.asyncStreamTimeout` from the settings files. Doing so ensures that this property will default to the value specified in code (300 seconds).
+
+#### Changes
+
+* Upgrade platform SDK ([#9224](https://github.com/hashgraph/hedera-services/pull/9224))
+
+### [0.42.2](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.2)
+
+#### Changes
+
+* 0.42 account balance test ([#8866](https://github.com/hashgraph/hedera-services/pull/8866))
+* Re-add bootstrap.properties file and increase `accounts.maxNumber=20_000_000` ([#8928](https://github.com/hashgraph/hedera-services/pull/8928))
+
+### [0.42.1](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.1)
+
+#### Changes
+
+* Chore: normalize configuration values (release/0.42) ([#8668](https://github.com/hashgraph/hedera-services/pull/8668))
+* 8751: No data source metrics for accounts, NFTs, or token rels ([#8798](https://github.com/hashgraph/hedera-services/pull/8798))
+
+### [0.42.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.42.0)
+
 * Add EIP 2930 support to EthTXData ([#7696](https://github.com/hashgraph/hedera-services/pull/7696))
 * Provide entity and throttle dashboards ([#7774](https://github.com/hashgraph/hedera-services/pull/7774))
 * 07748 Postconsensus signature gathering ([#7776](https://github.com/hashgraph/hedera-services/pull/7776))
@@ -248,6 +268,8 @@ Services v0.43.0 adds the following enhancements:
 * Remove support for legacy sync gossip. ([#8059](https://github.com/hashgraph/hedera-services/pull/8059))
 * Disable account balance exports ([#8272](https://github.com/hashgraph/hedera-services/pull/8272))
 * Modify config to support state on disk by default ([#8510](https://github.com/hashgraph/hedera-services/pull/8510))
+
+### Performance Results
 
 <figure><img src="../../.gitbook/assets/0.42_Performance Measurement Results.001.png" alt=""><figcaption></figcaption></figure>
 
@@ -263,6 +285,8 @@ Services v0.43.0 adds the following enhancements:
 
 * Ethereum transaction type support is expanded to include type 1 transactions ([#7670](https://github.com/hashgraph/hedera-services/issues/7670)) which follow EIP 2930 RLP encoding. This increases the number of native EVM tools and scenarios the Hedera Smart Contract Service supports.
 * NFT mint pricing is changed to linearly scale based on number of serials minted. Also, minting a single NFT in collection is changed to cost $0.02 from $0.05. [#7769](https://github.com/hashgraph/hedera-services/issues/7769)
+
+### Performance Results
 
 <figure><img src="../../.gitbook/assets/0.41_Performance Measurement.png" alt=""><figcaption></figcaption></figure>
 
@@ -283,6 +307,8 @@ Services v0.43.0 adds the following enhancements:
 The 0.40 release of Hedera Services delivers [HIP-729 \~ "Contract Accounts Nonce Externalization"](https://hips.hedera.com/hip/hip-729). Smart contract developers using the Hedera public mirror node can now track contract nonces as they would on e.g., Ethereum. Use cases might include troubleshooting failed contract calls or writing unit tests that validate transaction ordering based on `CREATE1` addresses (once these are set by default in release 0.41+).
 
 Open source contributors to the project will notice major refinements in the Gradle build, thanks to [@jjohannes](https://github.com/jjohannes)'s expert touch.
+
+### Performance Results
 
 <figure><img src="../../.gitbook/assets/0.40_Performance Measurement.png" alt=""><figcaption></figcaption></figure>
 
@@ -317,6 +343,8 @@ Services v0.39.0 adds the following features:
 * Implement the modular record cache [#6754](https://github.com/hashgraph/hedera-services/pull/6754)
 * CryptoDelete handle implementation [#6694](https://github.com/hashgraph/hedera-services/pull/6694)
 
+### Performance Results
+
 <figure><img src="../../.gitbook/assets/0.39_Performance Measurement.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.38](https://github.com/hashgraph/hedera-services/releases/tag/v0.38.0)
@@ -338,6 +366,8 @@ Services v0.39.0 adds the following features:
 * Turn on the Shanghai version of the EVM in previewnet [#6212](https://github.com/hashgraph/hedera-services/pull/6212)
 * Update hedera-protobufs-java version to 0.38.10 [#6579](https://github.com/hashgraph/hedera-services/pull/6579)
 * Add PCLI command to sign account balance files [#6264](https://github.com/hashgraph/hedera-services/pull/6264)
+
+### Performance Results
 
 <figure><img src="../../.gitbook/assets/0.38_Performance Measurement Results_Extract.001.jpeg" alt=""><figcaption></figcaption></figure>
 
@@ -366,6 +396,8 @@ Services v0.39.0 adds the following features:
 * Populate EVM Address in CryptoTranscation ([#5010](https://github.com/hashgraph/hedera-services/pull/5010))
 * Enable All EVM E2E suites to run with Ethereum Calls ([#4375](https://github.com/hashgraph/hedera-services/pull/4375))
 
+### Performance Results
+
 <figure><img src="../../.gitbook/assets/0_37Performance Measurement Results_Extract.001.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## [v0.36](https://github.com/hashgraph/hedera-services/releases/tag/v0.36.0)
@@ -382,7 +414,7 @@ Services v0.39.0 adds the following features:
 **TESTNET UPDATE: APRIL 4, 2023**
 {% endhint %}
 
-### Features
+#### Features
 
 Services v0.36.0 adds the following functionality:
 
@@ -415,6 +447,8 @@ Changes from services v0.35.2 have also been ported to v0.36.0.
   * The grandfather logic will be maintained for an approximate period of 3 months from this release. In a future release in July 2023, the network will remove the grandfather logic, and all contracts will follow the new security model.
   * Developers are encouraged to test their DApps with new contracts and UX using the new security model to avoid unintended consequences. If any DApp developers fail to modify their applications or upgrade their contracts (as applicable) to adhere to the new security model, they may experience issues in their applications.
 
+### Performance Results
+
 <figure><img src="../../.gitbook/assets/0.36_Performance Measurement Results_Extract.001 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.35](https://github.com/hashgraph/hedera-services/releases)
@@ -445,7 +479,7 @@ Changes from services v0.35.2 have also been ported to v0.36.0.
   * The grandfather logic will be maintained for an approximate period of 3 months from this release. In a future release in July 2023, the network will remove the grandfather logic, and all contracts will follow the new security model.
   * Developers are encouraged to test their DApps with new contracts and UX using the new security model to avoid unintended consequences. If any DApp developers fail to modify their applications or upgrade their contracts (as applicable) to adhere to the new security model, they may experience issues in their applications.
 
-### Features
+#### Features
 
 * [HIP-583](https://hips.hedera.com/hip/hip-583) to expand alias support in CryptoCreate & CryptoTransfer Transactions.
 
@@ -462,7 +496,7 @@ Use cases for HIP-583 that work in this release :
 4. As a Hedera user with an Ethereum-native wallet, I can receive HBAR or tokens in my account by sharing only my evm-address alias.
 5. As a Hedera user with a Hedera-native wallet, I can transfer HBAR or tokens to another account using only the recipient's evm-address alias.
 
-### Configuration Changes
+#### Configuration Changes
 
 ```
 autoCreation.enabled=true
@@ -471,26 +505,35 @@ cryptoCreateWithAliasAndEvmAddress.enabled=false
 contracts.evm.version=v0.34
 ```
 
+### Performance Results
+
 <figure><img src="../../.gitbook/assets/0.35_results.001.jpeg" alt=""><figcaption></figcaption></figure>
 
-<details>
+## [**v0.34**](https://github.com/hashgraph/hedera-services/releases/tag/v0.34.0)
 
-<summary><a href="https://github.com/hashgraph/hedera-services/releases/tag/v0.34.0"><strong>v0.34</strong></a></summary>
+{% hint style="success" %}
+**MAINNET UPDATE: FEBRUARY 9, 2023**
+{% endhint %}
 
-✅ **MAINNET UPDATE: FEBRUARY 9, 2023**
+{% hint style="success" %}
+**TESTNET UPDATE: JANUARY 24, 2023**
+{% endhint %}
 
-**✅ TESTNET UPDATE: JANUARY 24, 2023**
+### [0.34.3](https://github.com/hashgraph/hedera-services/releases/tag/v0.34.3)
+
+Use `v0.34.3` SDK.
+
+### [0.34.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.34.0)
 
 Services `v0.34.0` completes the implementation of [HIP-583](https://hips.hedera.com/hip/hip-583).
 
 To ensure full test coverage of this intricate feature, it will first be enabled **only on previewnet**.
 
-~~➡️ This release will, however, enable contract expiry on all production networks \[previewnet, testnet, and mainnet].~~\
 This release will not enable smart contract rent.
 
-![](../../.gitbook/assets/0.34.1.001.png)
+### Performance Results
 
-</details>
+<figure><img src="../../.gitbook/assets/0.34.1.001.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.33](https://github.com/hashgraph/hedera-services/releases/tag/v0.33.0)
 

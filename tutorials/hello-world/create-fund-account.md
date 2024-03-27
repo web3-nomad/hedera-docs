@@ -45,55 +45,6 @@ Before you begin, you should be familiar with the following:
 
 </details>
 
-<details>
-
-<summary>Check your prerequisites set up <strong>⬇</strong></summary>
-
-Open your terminal, and enter the following commands.
-
-```shell
-bash --version
-zsh --version
-git --version
-code --version
-node --version
-npm --version
-```
-
-Each of these commands should output some text that includes a version number, for example:
-
-```
-bash --version
-GNU bash, version 3.2.57(1)-release (arm64-apple-darwin22)
-Copyright (C) 2007 Free Software Foundation, Inc.
-
-zsh --version
-zsh 5.9 (x86_64-apple-darwin22.0)
-
-git --version
-git version 2.39.2 (Apple Git-143)
-
-code --version
-1.81.1
-6c3e3dba23e8fadc360aed75ce363ba185c49794
-arm64
-
-node --version
-v20.6.1
-
-npm --version
-9.8.1
-
-```
-
-If the output contains text similar to `command not found`, please install that item.
-
-If the version number that is output is **lower** than the required versions, please re-install or update that item.
-
-If the version number that is output is **same or higher** than the required versions, you have met the prerequisites! 🎉
-
-</details>
-
 ***
 
 ## Get started
@@ -137,6 +88,41 @@ Make a `.env` file by copying the provided `.env.sample` file. Then open the `.e
 ```shell
 cp .env.sample .env
 ```
+
+### Checkpoint
+
+<details>
+
+<summary>Check your prerequisites and project set up <strong>⬇</strong></summary>
+
+In your terminal, enter the following command.
+
+```sh
+node checkpoint-setup.js
+```
+
+This script checks multiple set up related items, and should produce output like this:
+
+```
+git check:
+OK!
+git version check:
+OK!
+node version check:
+OK!
+npm version check:
+OK!
+npm install check:
+OK!
+.env file check:
+OK!
+shell check:
+OK!
+```
+
+If the output contains any errors, please address them before continuing with the rest of this sequence.
+
+</details>
 
 ### Generate seed phrase
 

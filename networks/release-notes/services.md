@@ -12,6 +12,16 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 **MAINNET UPDATE SCHEDULED: APRIL 3, 2024**
 {% endhint %}
 
+### [0.47.4](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.4)
+
+{% hint style="success" %}
+**TESTNET UPDATE: MARCH 28, 2024**
+{% endhint %}
+
+#### What's Changed
+
+* chore: cherry-pick unified CryptoCreate throttle reclamation ([#12339](https://github.com/hashgraph/hedera-services/pull/12339)).
+
 ### [0.47.3](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.3)
 
 {% hint style="success" %}

@@ -467,6 +467,10 @@ The creation of a token on a distributed network. Most often used in the context
 
 A mirror node is used to store and cost-effectively query historical data from the public ledger while minimizing the use of Hedera Network resources. Mirror nodes support the Hedera Network services currently available and can be used to retrieve [transactions](glossary.md#transaction) and records, [event files](glossary.md#event-files), and [balance files](glossary.md#balance-files).
 
+### Multisig
+
+The requirement for a transaction to have two or more signatures before it can be executed, often used in DAOs. Multisig provides more security than single-signature transactions.&#x20;
+
 ## N
 
 ### Native Cryptocurrency
@@ -596,6 +600,10 @@ By pairing a public key with a private key, transactions can be sent in public w
 ### Queries
 
 Queries are requests processed only by the single node to which they are sent. [Clients](glossary.md#client) send queries to retrieve some aspect of the current consensus state, like the balance of an account. Certain queries are free, but generally, queries are subject to [fees](../networks/mainnet/fees/).
+
+### Quorum
+
+The minimum number of members required to vote on a proposal before it can be accepted, ensuring decisions are made with sufficient participation.
 
 ## R
 

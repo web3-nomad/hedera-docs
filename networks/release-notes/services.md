@@ -8,15 +8,15 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 ## [v0.47](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.0)
 
-{% hint style="info" %}
-**MAINNET UPDATE SCHEDULED: APRIL 4, 2024**
+{% hint style="success" %}
+**MAINNET UPDATE: APRIL 4, 2024**
 {% endhint %}
-
-### [0.47.4](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.4)
 
 {% hint style="success" %}
 **TESTNET UPDATE: MARCH 28, 2024**
 {% endhint %}
+
+### [0.47.4](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.4)
 
 #### What's Changed
 
@@ -68,9 +68,11 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 **➡ See the full list of changes** [**here**](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.0)**.**
 
-## [v0.46](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.0)
+### Performance Results
 
-### [**0.46.3**](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.3)
+<figure><img src="../../.gitbook/assets/0.47_Performance Measurement Results_Extract.png" alt=""><figcaption></figcaption></figure>
+
+## [v0.46](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.0)
 
 {% hint style="success" %}
 **MAINNET UPDATE: FEBRUARY 21, 2024**
@@ -79,6 +81,8 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 {% hint style="success" %}
 **TESTNET UPDATE: FEBRUARY 6, 2024**
 {% endhint %}
+
+### [**0.46.3**](https://github.com/hashgraph/hedera-services/releases/tag/v0.46.3)
 
 #### What's Changed
 

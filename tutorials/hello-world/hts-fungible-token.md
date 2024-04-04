@@ -118,7 +118,7 @@ To create a new HTS token, we will use `TokenCreateTransaction`. This transactio
 * **Decimals**: This is the number of decimal places the currency uses. For example, `2` mimics "cents", where the smallest unit of the token is 0.01 (1/100) of a single token.
 * **Initial Supply**: This is the number of units of the token to "mint" when first creating the token. Note that this is specified in the smallest units, so `1_000_000` initial supply when decimals is 2, results in `10_000` full units of the token being minted. It might be easier to think about it as "one million cents equals ten thousand dollars".
 * **Treasury Account ID**: This is the account for which the initial supply is credited. For example, using `accountId` would mean that your own account receives all the tokens when they are minted.
-* [**Admin Key**](../../sdks-and-apis/sdks/token-service/define-a-token.md#token-properties): This is the account that is authorized to administrate this token. For example, using `accountKey` would mean that your own account would get to perform actions such as minting additional supply.
+* [**Admin Key**](../../sdks-and-apis/sdks/token-service/create-a-token.md#token-properties): This is the account that is authorized to administrate this token. For example, using `accountKey` would mean that your own account would get to perform actions such as minting additional supply.
 
 </details>
 

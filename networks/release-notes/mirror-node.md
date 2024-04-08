@@ -8,6 +8,16 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.101.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.101.0)
+
+This release adds support for storing the new mutable metadata information available in [HIP-646](https://hips.hedera.com/hip/hip-646), [HIP-657](https://hips.hedera.com/hip/hip-657), and [HIP-765](https://hips.hedera.com/hip/hip-765). For now, it just persists the data and in future releases we'll expose it via the REST APIs.
+
+The `/api/v1/tokens` REST API now supports multiple `token.id` parameters. This allows users to efficiently query for multiple tokens in a single call.
+
+The `/api/v1/contracts/call` REST API saw some major performance improvements this release. The first change was to switch the Kubernetes node pools to a different machine class that provides dedicated resource allocation. The endpoint was also switched from a reactive MVC stack to a synchronous MVC stack. Simultaneously, the module enabled the new virtual thread technology that replaces platform threads. These changes combined to improve the request throughput by 1-2x.
+
+Another important change was to enable batching between the download and parser threads in the importer. For now, this functionality is configured to behave as before with no batching. When configured manually, this can reduce sync times for historical data by at least 12x. In the future, we'll look at ways to automatically enable this functionality when the importer is attempting to catch up.
+
 ## [v0.100.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.100.0)
 
 This release implements [HIP-859](https://hips.hedera.com/hip/hip-859), adding support for returning gas consumed in the contract result REST APIs. The current `gasUsed` field in the API holds the amount of gas charged, while the new `gasConsumed` field holds the amount of gas actually used during EVM execution. Providing this extra data will allow users to provide a more accurate gas when invoking a contract and reduce the fees they are charged.

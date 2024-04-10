@@ -62,4 +62,3 @@ Congrats on successfully creating your first DAO using the multisig model! In th
 
 ➡ [**Gnosis Safe Governance Docs**](https://safe.global/governance)
 
-If you have any feedback on this tutorial, please [let us know](https://surveymonkey.com/r/TC2K9YK), and feel free to reach out on [Discord](https://hedera.com/discord)!&#x20;

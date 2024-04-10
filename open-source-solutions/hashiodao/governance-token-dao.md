@@ -81,5 +81,3 @@ Congrats on successfully creating your first DAO using the governance token mode
 ➡ [**HashioDAO Web Application**](https://hashiodao.swirldslabs.com/)
 
 **➡** [**What is a Goverance Token?**](https://blockchainjournal.com/glossary/what-is-a-governance-token/)
-
-If you have any feedback on this tutorial, please [let us know](https://surveymonkey.com/r/TC2K9YK), and feel free to reach out on [Discord](https://hedera.com/discord)!&#x20;

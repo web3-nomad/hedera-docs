@@ -92,4 +92,3 @@ Congrats on successfully creating, voting, and executing your first DAO proposal
 
 ➡ [**HashioDAO Web Application**](https://hashiodao.swirldslabs.com/)
 
-If you have any feedback on this tutorial, please [let us know](https://surveymonkey.com/r/TC2K9YK), and feel free to reach out on [Discord](https://hedera.com/discord)!&#x20;

@@ -588,7 +588,7 @@ Greeter deployed to: 0x157B93c04a294AbD88cF608672059814b3ea38aE
 {% tab title="local node" %}
 **Stop Local Node**
 
-Stop your local node and remove Docker containers by running `hedera stop` in your `hedera-local-node` terminal. Reference the [_Stop Your Local Node_](../more-tutorials/how-to-set-up-a-hedera-local-node.md#stop-your-local-node-and-remove-containers) section of the local node setup tutorial.&#x20;
+Stop your local node and remove Docker containers by running `hedera stop` or `docker compose down` in your `hedera-local-node` terminal. Reference the [_Stop Your Local Node_](../more-tutorials/how-to-set-up-a-hedera-local-node.md#stop-your-local-network) section of the local node setup tutorial.&#x20;
 
 #### Deploy on Hedera Testnet
 

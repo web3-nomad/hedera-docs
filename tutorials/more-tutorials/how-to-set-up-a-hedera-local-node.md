@@ -72,6 +72,12 @@ dos2unix compose-network/mirror-node/init.sh
 Ensure Docker is installed and open on your machine before running this command to get the network up and running:
 
 ```bash
+// starts and generates the first 30 accounts
+npm run start -- -d
+
+or
+
+// will start local node but will not generate the first 30 accounts
 docker compose up -d
 ```
 

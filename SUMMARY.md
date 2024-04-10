@@ -47,6 +47,7 @@
     * [Create and Transfer an NFT using a Solidity Contract](tutorials/token/create-and-transfer-an-nft-using-a-solidity-contract.md)
     * [Structure Your Token Metadata Using JSON Schema V2](tutorials/token/structure-your-token-metadata-using-json-schema-v2.md)
   * [More Tutorials](tutorials/more-tutorials/README.md)
+    * [How to Run a Hedera Local Node with GitPod](tutorials/more-tutorials/how-to-run-a-hedera-local-node-with-gitpod.md)
     * [How to Create a Personal Access Token (API Key) on the Hedera Portal](tutorials/more-tutorials/how-to-create-a-personal-access-token-api-key-on-the-hedera-portal.md)
     * [How to Set Up a Hedera Local Node](tutorials/more-tutorials/how-to-set-up-a-hedera-local-node.md)
     * [How to Auto-Create Hedera Accounts with HBAR and Token Transfers](tutorials/more-tutorials/how-to-auto-create-hedera-accounts-with-hbar-and-token-transfers.md)

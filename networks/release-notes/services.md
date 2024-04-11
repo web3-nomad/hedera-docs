@@ -6,6 +6,22 @@ description: Hedera Services release information
 
 Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
 
+## [v0.48](https://github.com/hashgraph/hedera-services/releases/tag/v0.48.0)
+
+{% hint style="info" %}
+**MAINNET UPDATE SCHEDULED: APRIL 24, 2024**
+{% endhint %}
+
+### [0.48.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.48.0)
+
+{% hint style="success" %}
+**TESTNET UPDATE: APRIL 11, 2024**
+{% endhint %}
+
+#### What's Changed
+
+* feat: Check platform status before syncing ([#11429](https://github.com/hashgraph/hedera-services/pull/11429)) by [@alittley](https://github.com/alittley) in [#12679](https://github.com/hashgraph/hedera-services/pull/12679)
+
 ## [v0.47](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.0)
 
 {% hint style="success" %}

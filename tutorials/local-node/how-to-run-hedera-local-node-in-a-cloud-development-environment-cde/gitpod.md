@@ -1,6 +1,6 @@
-# How to Run a Hedera Local Node with GitPod
+# Run a Local Node in Gitpod
 
-The [**Hedera Local Node**](https://github.com/hashgraph/hedera-local-node) project enables developers to establish their own local network for development and testing. The local network comprises the consensus node, mirror node, [JSON-RPC relay](https://github.com/hashgraph/hedera-json-rpc-relay#readme), and other Hedera services and now be set up without Docker and draining your computer’s resources by using Gitpod. Gitpod provides Cloud Development Environments (CDEs) and allows developers to work from any device without the need to maintain static and brittle local development environments. By the end of this tutorial, you will have your Hedera local node running on Gitpod.
+The local network comprises the consensus node, mirror node, [JSON-RPC relay](https://github.com/hashgraph/hedera-json-rpc-relay#readme), and other Hedera services and now be set up without Docker and draining your computer’s resources by using Gitpod. Gitpod provides Cloud Development Environments (CDEs) and allows developers to work from any device without the need to maintain static and brittle local development environments. By the end of this tutorial, you will have your Hedera local node running on Gitpod.
 
 ***
 
@@ -18,9 +18,9 @@ The [**Hedera Local Node**](https://github.com/hashgraph/hedera-local-node) proj
 
 Enable `public_repo` permission for GitHub provider on [Gitpod’s Git integrations page](https://gitpod.io/user/integrations).
 
-<figure><img src="../../.gitbook/assets/gitpod-git-providers-table.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/gitpod-git-providers-table.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/gitpod-git-providers-edit-permissions-dialog.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/gitpod-git-providers-edit-permissions-dialog.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -28,26 +28,9 @@ Enable `public_repo` permission for GitHub provider on [Gitpod’s Git integrati
 
 The `hedera-local-node` project repository already has a Gitpod configuration file ([`.gitpod.yml`](https://github.com/hashgraph/hedera-local-node/blob/main/.gitpod.yml)), which makes it easy to run it within a workspace on Gitpod. Open the [Hedera Local Node repo](https://github.com/hashgraph/hedera-local-node). Click on the Gitpod `Open` button.
 
-<figure><img src="../../.gitbook/assets/gitpod-button-github-repo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/gitpod-button-github-repo.png" alt=""><figcaption></figcaption></figure>
 
 The Gitpod browser extension modifies the Github UI to add this button. This will spin up a new Gitpod workspace with your choice of CDE which will run the Hedera Local Node in your cloud environment.
-
-### **Available Services**
-
-The Hedera local node comes with various services, each serving different functions, and accessible locally. These are the endpoints for each service:
-
-| Type                              | Endpoint                                                                         |
-| --------------------------------- | -------------------------------------------------------------------------------- |
-| Consensus Node Endpoint           | [http://localhost:50211/](http://localhost:50211/)                               |
-| Mirror Node GRPC Endpoint         | [http://localhost:5600/](http://localhost:5600/)                                 |
-| Mirror Node REST API Endpoint     | [http://localhost:5551/](http://localhost:5551/)                                 |
-| JSON RPC Relay Endpoint           | [http://localhost:7546/](http://localhost:7546/)                                 |
-| JSON RPC Relay Websocket Endpoint | [http://localhost:8546/](http://localhost:8546/)                                 |
-| Mirror Node Explorer (HashScan)   | [http://localhost:8080/devnet/dashboard](http://localhost:8080/devnet/dashboard) |
-| Grafana UI                        | [http://localhost:3000/](http://localhost:3000/)                                 |
-| Prometheus UI                     | [http://localhost:9090/](http://localhost:9090/)                                 |
-
-You may access these services on `localhost`, and these endpoints are set up to be accessed from your own computer as if they were running locally. Since this setup is on Gitpod (a cloud-based development environment), “localhost” here refers to a virtual environment on Gitpod's servers that you're accessing through your browser. Gitpod redirects these local addresses to your cloud workspace, making it feel as though you're working on a local setup.
 
 ### **Testing the Setup**
 
@@ -81,7 +64,7 @@ See the [endpoint table](https://github.com/hashgraph/hedera-json-rpc-relay/blob
 
 Visit the local mirror node explorer endpoint ([http://localhost:8080/devnet/dashboard](http://localhost:8080/devnet/dashboard)) in your web browser. Ensure that `LOCALNET` is selected, as this will show you the Hedera network running within your Gitpod, and not one of the public nodes.
 
-<figure><img src="../../.gitbook/assets/mirror-node-explorer-localnet.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/mirror-node-explorer-localnet.png" alt=""><figcaption></figcaption></figure>
 
 ### Shut Down the Gitpod Workspace
 
@@ -89,7 +72,7 @@ Visit the local mirror node explorer endpoint ([http://localhost:8080/devnet/das
 **Note**: Gitpod usage is billed by the hour on paid plans, and hours are limited on the free plans. Therefore, once completed, remember to stop the Gitpod workspace.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/gitpod-stop-workspace.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/gitpod-stop-workspace.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -100,5 +83,3 @@ Congrats on successfully setting up your Gitpod workspace and running a Hedera L
 **➡** [**Hedera Local Node Repository**](https://github.com/hashgraph/hedera-local-node#readme)
 
 **➡** [**Gitpod Documentation**](https://www.gitpod.io/docs/introduction/getting-started)
-
-If you have any feedback on this tutorial, please [let us know](https://surveymonkey.com/r/TC2K9YK), and feel free to reach out on [Discord](https://hedera.com/discord)!

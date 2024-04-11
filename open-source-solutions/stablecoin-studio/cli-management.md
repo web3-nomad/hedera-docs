@@ -125,7 +125,7 @@ mirrors:
     selected: true
   - name: HEDERA
     network: mainnet
-    baseUrl: https://mainnet-public.mirrornode.hedera.com/api/v1
+    baseUrl: https://mainnet.mirrornode.hedera.com/api/v1
     selected: true
 ```
 
@@ -202,7 +202,7 @@ mirrors:
     selected: true
   - name: HEDERA
     network: mainnet
-    baseUrl: https://mainnet-public.mirrornode.hedera.com/api/v1
+    baseUrl: https://mainnet.mirrornode.hedera.com/api/v1
     selected: true
 rpcs:
   - name: HASHIO

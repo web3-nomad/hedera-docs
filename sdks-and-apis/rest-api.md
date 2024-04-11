@@ -8,7 +8,7 @@ Hedera Mirror Nodes store the history of transactions that occurred on mainnet, 
 
 To make a request, use the network endpoint and the REST API of choice. For example, to get a list of transactions on mainnet you would make the following request.
 
-{% embed url="https://mainnet-public.mirrornode.hedera.com/api/v1/transactions" %}
+{% embed url="https://mainnet.mirrornode.hedera.com/api/v1/transactions" %}
 
 <details>
 
@@ -25,7 +25,7 @@ To make a request, use the network endpoint and the REST API of choice. For exam
 
 {% hint style="info" %}
 **MAINNET BASEURL**\
-`https://mainnet-public.mirrornode.hedera.com/`
+`https://mainnet.mirrornode.hedera.com/`
 
 **TESTNET BASEURL**\
 `https://testnet.mirrornode.hedera.com/`
@@ -37,7 +37,7 @@ You may also check out [DragonGlass](https://app.dragonglass.me/hedera/pricing),
 {% endhint %}
 
 {% hint style="warning" %}
-**Note**: Public mainnet mirror node requests per second (RPS) are throttled at _50 per IP address_. These configurations may change in the future depending on performance or security considerations. At this time, no authentication is required.&#x20;
+**Note**: Public mainnet mirror node requests per second (RPS) are throttled at _50 per IP address_. These configurations may change in the future depending on performance or security considerations. At this time, no authentication is required.
 {% endhint %}
 
 ## Accounts <a href="#accounts" id="accounts"></a>

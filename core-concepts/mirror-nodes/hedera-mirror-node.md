@@ -27,7 +27,7 @@ Requests are throttled at 100 requests per second (rps). This may change in the 
 ```java
 //You will need to upgrade to v2.0.6 or higher
 Client client = Client.forMainnet();
-client.setMirrorNetwork(Collections.singletonList("mainnet-public.mirrornode.hedera.com:443"))
+client.setMirrorNetwork(Collections.singletonList("mainnet.mirrornode.hedera.com:443"))
 ```
 {% endtab %}
 
@@ -35,22 +35,22 @@ client.setMirrorNetwork(Collections.singletonList("mainnet-public.mirrornode.hed
 ```javascript
 //You will need to upgrade to v2.0.23 or higher
 const client = Client.forMainnet()
-client.setMirrorNetwork("mainnet-public.mirrornode.hedera.com:443")
+client.setMirrorNetwork("mainnet.mirrornode.hedera.com:443")
 ```
 {% endtab %}
 
 {% tab title="Go" %}
 ```go
 client := hedera.ClientForMainnet()
-client.SetMirrorNetwork([]string{"mainnet-public.mirrornode.hedera.com:443"})
+client.SetMirrorNetwork([]string{"mainnet.mirrornode.hedera.com:443"})
 ```
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-**Mainnet Mirror Node Endpoint:** mainnet-public.mirrornode.hedera.com:443\
+**Mainnet Mirror Node Endpoint:** mainnet.mirrornode.hedera.com:443\
 \
-**REST API Mainnet Root Endpoint:**[ https://mainnet-public.mirrornode.hedera.com](https://mainnet-public.mirrornode.hedera.com/)
+**REST API Mainnet Root Endpoint:**[ https://mainnet.mirrornode.hedera.com](https://mainnet-public.mirrornode.hedera.com/)
 {% endhint %}
 
 ## Testnet

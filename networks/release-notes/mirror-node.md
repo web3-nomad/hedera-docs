@@ -8,6 +8,14 @@ For the latest versions supported on each network please visit the Hedera status
 
 ## Latest Releases
 
+## [v0.102.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.102.0)
+
+This is a smaller bug fix release with incremental improvements to some in-flight projects.
+
+For [HIP-857](https://hips.hedera.com/hip/hip-857), an alpha version of the NFT allowance REST API is now in place. It can be used to experiment with while we work towards implementing the remaining query parameters and squashing any bugs. The Jooq library was integrated into the rest-java module to allow for dynamic SQL querying based upon user input. The next release should leverage this functionality to fully implement the remaining parts of the API.
+
+Our Citus implementation was successfully deployed to the performance environment and it is passing initial benchmarks. Preliminary results show that Citus improves ingest performance by 600ms while sharding the data across multiple nodes. Promtail was enabled on Citus nodes to capture database logs and a new ZFS dashboard was added to Grafana.
+
 ## [v0.101.0](https://github.com/hashgraph/hedera-mirror-node/releases/tag/v0.101.0)
 
 This release adds support for storing the new mutable metadata information available in [HIP-646](https://hips.hedera.com/hip/hip-646), [HIP-657](https://hips.hedera.com/hip/hip-657), and [HIP-765](https://hips.hedera.com/hip/hip-765). For now, it just persists the data and in future releases we'll expose it via the REST APIs.

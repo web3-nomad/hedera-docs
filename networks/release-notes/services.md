@@ -12,6 +12,16 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 **MAINNET UPDATE SCHEDULED: APRIL 24, 2024**
 {% endhint %}
 
+### [0.48.1](https://github.com/hashgraph/hedera-services/releases/tag/v0.48.1)
+
+{% hint style="success" %}
+**TESTNET UPDATE: APRIL 18, 2024**
+{% endhint %}
+
+#### What's Changed
+
+* fix: remove adjustments limit by [@tinker-michaelj](https://github.com/tinker-michaelj) in [#12826](https://github.com/hashgraph/hedera-services/pull/12826)
+
 ### [0.48.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.48.0)
 
 {% hint style="success" %}

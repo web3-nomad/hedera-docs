@@ -299,7 +299,7 @@ The `.env` file securely stores environment variables, such as your Hedera netwo
 
 {% tabs %}
 {% tab title="local node" %}
-**Prerequisite**: A Hedera Local Node set up and running ([setup tutorial](../local-node/how-to-set-up-a-hedera-local-node.md)).
+**Prerequisite**: A Hedera Local Node set up and running ([setup tutorial](../more-tutorials/how-to-set-up-a-hedera-local-node.md)).
 
 **Hedera Local Node environment variables**
 
@@ -522,7 +522,7 @@ Before you deploy your contract, let's ensure you have all the necessary tools o
 * Have Docker open and start your local node.
   * In the `hedera-local-node` terminal, start your local node by running `hedera start -d`.
 
-_**Note**: If you have not set up your Hedera Local Node, you can do so by following_ [_this_](../local-node/how-to-set-up-a-hedera-local-node.md) _tutorial and returning to this step once you complete the setup._
+_**Note**: If you have not set up your Hedera Local Node, you can do so by following_ [_this_](../more-tutorials/how-to-set-up-a-hedera-local-node.md) _tutorial and returning to this step once you complete the setup._
 
 </details>
 
@@ -588,7 +588,7 @@ Greeter deployed to: 0x157B93c04a294AbD88cF608672059814b3ea38aE
 {% tab title="local node" %}
 **Stop Local Node**
 
-Stop your local node and remove Docker containers by running `hedera stop` or `docker compose down` in your `hedera-local-node` terminal. Reference the [_Stop Your Local Node_](../local-node/how-to-set-up-a-hedera-local-node.md#stop-your-local-network) section of the local node setup tutorial.&#x20;
+Stop your local node and remove Docker containers by running `hedera stop` or `docker compose down` in your `hedera-local-node` terminal. Reference the [_Stop Your Local Node_](../more-tutorials/how-to-set-up-a-hedera-local-node.md#stop-your-local-network) section of the local node setup tutorial.&#x20;
 
 #### Deploy on Hedera Testnet
 
@@ -624,7 +624,7 @@ _**Note:** At the top of the explorer page, remember to switch the network to **
 
 **➡** [**Hedera JSON-RPC Relay Repository**](https://github.com/hashgraph/hedera-json-rpc-relay)
 
-**➡** [**Hedera Local Node Setup Tutorial**](../local-node/how-to-set-up-a-hedera-local-node.md)
+**➡** [**Hedera Local Node Setup Tutorial**](../more-tutorials/how-to-set-up-a-hedera-local-node.md)
 
 **➡**[ **Hardhat Documentation**](https://hardhat.org/hardhat-runner/docs/getting-started#overview)
 

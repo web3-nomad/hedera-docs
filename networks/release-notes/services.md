@@ -6,6 +6,33 @@ description: Hedera Services release information
 
 Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
 
+## [v0.49](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.0)
+
+{% hint style="info" %}
+**MAINNET UPDATE SCHEDULED: MAY 14, 2024**
+{% endhint %}
+
+### [0.49.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.0)
+
+{% hint style="success" %}
+**TESTNET UPDATE: APRIL 24, 2024**
+{% endhint %}
+
+#### What's changed&#x20;
+
+* chore: Update throttles.json by [@rbair23](https://github.com/rbair23) in [#11339](https://github.com/hashgraph/hedera-services/pull/11339)
+* feat: address cold read issue in ExtCodeHash operation by [@lukelee-sl](https://github.com/lukelee-sl) in [#11323](https://github.com/hashgraph/hedera-services/pull/11323)
+* fix: 11348: The fix for 11231 doesn't cover ParsedBucket by [@artemananiev](https://github.com/artemananiev) in [#11349](https://github.com/hashgraph/hedera-services/pull/11349)
+* chore: Create ISS detector component by [@lpetrovic05](https://github.com/lpetrovic05) in [#11075](https://github.com/hashgraph/hedera-services/pull/11075)
+* chore: Add `orderedSolderTo` method to OutputWire by [@poulok](https://github.com/poulok) in [#11330](https://github.com/hashgraph/hedera-services/pull/11330)
+* chore: remove hashgraph demo by [@lpetrovic05](https://github.com/lpetrovic05) in [#11352](https://github.com/hashgraph/hedera-services/pull/11352)
+* feat: Migrate transaction handling to framework by [@alittley](https://github.com/alittley) in [#11144](https://github.com/hashgraph/hedera-services/pull/11144)
+* fix: broken unit test by [@kfa-aguda](https://github.com/kfa-aguda) in [#11233](https://github.com/hashgraph/hedera-services/pull/11233)
+* fix: Return invalid token even if expected decimals are present by [@mhess-swl](https://github.com/mhess-swl) in [#11342](https://github.com/hashgraph/hedera-services/pull/11342)
+* fix: 11298: VirtualMapReconnectTest fails intermittently with path not in range log message by [@artemananiev](https://github.com/artemananiev) in [#11370](https://github.com/hashgraph/hedera-services/pull/11370)
+
+**➡ See the full list of changes** [**here**](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.0)**.**
+
 ## [v0.48](https://github.com/hashgraph/hedera-services/releases/tag/v0.48.0)
 
 {% hint style="info" %}
@@ -31,6 +58,10 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 #### What's Changed
 
 * feat: Check platform status before syncing ([#11429](https://github.com/hashgraph/hedera-services/pull/11429)) by [@alittley](https://github.com/alittley) in [#12679](https://github.com/hashgraph/hedera-services/pull/12679)
+
+### Performance Results
+
+<figure><img src="../../.gitbook/assets/0.48_Performance Measurement Results_Extract.001.png" alt=""><figcaption></figcaption></figure>
 
 ## [v0.47](https://github.com/hashgraph/hedera-services/releases/tag/v0.47.0)
 

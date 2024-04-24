@@ -199,6 +199,7 @@
       * [Custom token fees](sdks-and-apis/sdks/token-service/custom-token-fees.md)
       * [Update a token](sdks-and-apis/sdks/token-service/update-a-token.md)
       * [Update token custom fees](sdks-and-apis/sdks/token-service/update-a-fee-schedule.md)
+      * [Update NFT metadata](sdks-and-apis/sdks/token-service/update-nft-metadata.md)
       * [Transfer tokens](sdks-and-apis/sdks/token-service/transfer-tokens.md)
       * [Delete a token](sdks-and-apis/sdks/token-service/delete-a-token.md)
       * [Mint a token](sdks-and-apis/sdks/token-service/mint-a-token.md)

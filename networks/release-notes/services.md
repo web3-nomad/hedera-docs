@@ -12,11 +12,17 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 **MAINNET UPDATE SCHEDULED: MAY 14, 2024**
 {% endhint %}
 
-### [0.49.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.0)
+### [0.49.1](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.1)
 
 {% hint style="success" %}
 **TESTNET UPDATE: APRIL 24, 2024**
 {% endhint %}
+
+#### What's Changed
+
+* fix: manage `StakingInfos` in restart by [@tinker-michaelj](https://github.com/tinker-michaelj) in [#12911](https://github.com/hashgraph/hedera-services/pull/12911)
+
+### [0.49.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.0)
 
 #### What's changed&#x20;
 

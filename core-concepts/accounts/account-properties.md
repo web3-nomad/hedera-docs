@@ -256,7 +256,7 @@ The auto renew account is the account that will be used to pay for the auto rene
 
 <summary><strong>Auto Renew Period</strong></summary>
 
-The interval at which this account will be charged the auto renewal fees. The maximum auto renew period for an account is be limited to 3 months (8100000 sec seconds). The minimum auto renew period is 30 days. The auto renew period is mutable and can be updated at any time. If there are insufficient funds, then it extends as long as possible. If it is empty when it expires, then it is deleted.
+The interval at which this account will be charged the auto renewal fees. The maximum auto renew period for an account is be limited to 3 months (8000001 sec seconds). The minimum auto renew period is 30 days. The auto renew period is mutable and can be updated at any time. If there are insufficient funds, then it extends as long as possible. If it is empty when it expires, then it is deleted.
 
 </details>
 

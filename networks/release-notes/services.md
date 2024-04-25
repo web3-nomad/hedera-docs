@@ -41,15 +41,15 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 
 ## [v0.48](https://github.com/hashgraph/hedera-services/releases/tag/v0.48.0)
 
-{% hint style="info" %}
-**MAINNET UPDATE SCHEDULED: APRIL 25, 2024**
+{% hint style="success" %}
+**MAINNET UPDATE: APRIL 25, 2024**
 {% endhint %}
-
-### [0.48.1](https://github.com/hashgraph/hedera-services/releases/tag/v0.48.1)
 
 {% hint style="success" %}
 **TESTNET UPDATE: APRIL 18, 2024**
 {% endhint %}
+
+### [0.48.1](https://github.com/hashgraph/hedera-services/releases/tag/v0.48.1)
 
 #### What's Changed
 

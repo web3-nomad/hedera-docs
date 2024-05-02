@@ -12,6 +12,16 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 **MAINNET UPDATE SCHEDULED: MAY 14, 2024**
 {% endhint %}
 
+### [0.49.5](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.5)
+
+{% hint style="success" %}
+**TESTNET UPDATE: MAY 2,2024**
+{% endhint %}
+
+#### What's Changed
+
+* fix: storage link management by [@tinker-michaelj](https://github.com/tinker-michaelj) in [#13056](https://github.com/hashgraph/hedera-services/pull/13056)
+
 ### [0.49.1](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.1)
 
 {% hint style="success" %}

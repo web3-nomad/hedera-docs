@@ -163,7 +163,7 @@ Custody refers to the secure storage of digital assets by a specialized provider
 
 A fundamental concept in [distributed ledger technology](glossary.md#distributed-ledger-technology-dlt) that refer to the distribution of power and decision-making across a network or system rather than being controlled by a single entity or authority. Decentralization is a key feature that allows for trustless and transparent transactions without intermediaries.&#x20;
 
-Hedera, for example, is governed by a decentralized council of diverse organizations. A distributed network of nodes validates transactions on the Hedera Network, and the source code for the Hedera protocol is open review.
+Hedera, for example, is governed by a decentralized council of diverse organizations. A distributed network of nodes processes transactions on the Hedera Network, and the source code for the Hedera protocol is open review.
 
 ### **Decentralized Application (DApp)**
 
@@ -445,7 +445,7 @@ Mainnet (main network) is a distributed ledger network that is developed, tested
 
 ### Mempool
 
-An Unordered Transaction Pool or Memory Pool, also referred to as mempool (a combination of the words memory and pool), is a list of cryptocurrency transactions that have not yet been validated by a node. Once a transaction is added to a block, it disappears from the mempool. The larger the mempool size, the more congestion in network traffic, and the longer the confirmation time, which results in higher transaction fees. Hedera uses aBFT consensus (aBFT) algorithms, and the most important aspect of aBFT networks is that there is no memory pool of transactions. Learn more about it [here](https://hedera.com/blog/unblocking-and-unloading-the-speed-secrets-behind-hedera-smart-contracts-2-0).
+An Unordered Transaction Pool or Memory Pool, also referred to as mempool (a combination of the words memory and pool), is a list of cryptocurrency transactions that have not yet been processed by a node. Once a transaction is added to a block, it disappears from the mempool. The larger the mempool size, the more congestion in network traffic, and the longer the confirmation time, which results in higher transaction fees. Hedera uses aBFT consensus (aBFT) algorithms, and the most important aspect of aBFT networks is that there is no memory pool of transactions. Learn more about it [here](https://hedera.com/blog/unblocking-and-unloading-the-speed-secrets-behind-hedera-smart-contracts-2-0).
 
 ### Merkle Root
 
@@ -567,9 +567,9 @@ A Proof of Reserves (PoR) is an independent audit conducted by a third party tha
 
 ### Proof-of-Stake (PoS)
 
-A consensus mechanism in which an individual runs distributed ledger software (a “validator node”) responsible for validating transactions, blocks, and the state of the network.
+A consensus mechanism in which an individual runs distributed ledger software (a “consensus node”) responsible for validating transactions, blocks, and the state of the network.
 
-The individual must first “stake” an amount of cryptocurrency, such as ether, in a smart contract; this allows them to participate in consensus-building. If the individual’s validator node functions within specifications, they are rewarded, usually with cryptocurrency. If, on the other hand, the node functions poorly or maliciously, the staked tokens can be “slashed” or taken away.
+The individual must first “stake” an amount of cryptocurrency, such as ether, in a smart contract; this allows them to participate in consensus-building. If the individual’s consensus node functions within specifications, they are rewarded, usually with cryptocurrency. If, on the other hand, the node functions poorly or maliciously, the staked tokens can be “slashed” or taken away.
 
 PoS requires a negligible amount of computing power compared to Proof of Work consensus.
 
@@ -725,7 +725,7 @@ Turing complete means a system or a language has the ability to simulate any com
 
 ### Validation
 
-A distributed network maintains its integrity and security through validation. The nodes in the network validate transactions before adding them to the ledger. This includes checking that the transaction is properly signed, that the sender's account has enough HBAR to cover the transaction and its fees, and that the transaction doesn't conflict with the current state of the ledger. By ensuring that all transactions adhere to the network's rules, validation helps prevent fraud, double-spending, and other forms of abuse.
+A distributed network maintains its integrity and security through validation. The nodes in the network process transactions before adding them to the ledger. This includes checking that the transaction is properly signed, that the sender's account has enough HBAR to cover the transaction and its fees, and that the transaction doesn't conflict with the current state of the ledger. By ensuring that all transactions adhere to the network's rules, validation helps prevent fraud, double-spending, and other forms of abuse.
 
 ### Virtual Machine
 

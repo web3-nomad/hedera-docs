@@ -31,7 +31,6 @@ For non-fungible tokens, the token ID represents an NFT class. Once the token is
 
 * Treasury key is required to sign
 * Admin key, if specified
-* Metadata key, if specified
 * Transaction fee payer key
 
 **Transaction Fees**

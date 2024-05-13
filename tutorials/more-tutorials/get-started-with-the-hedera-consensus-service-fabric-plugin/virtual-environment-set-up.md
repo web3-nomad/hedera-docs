@@ -38,4 +38,8 @@ vagrant ssh
 
 * You should now be back in the **fabric** folder
 
-Now you have your virtual environment ready to go. Please refer to **step two**: [Build Fabric Binaries and Docker Images](./#id-2.-build-fabric-binaries-and-docker-images) in the master tutorial to continue.
+Now you have your virtual environment ready to go. Please refer to **step two**: [Build Fabric Binaries and Docker Images](https://github.com/hashgraph/hedera-docs/blob/master/tutorials/more-tutorials/get-started-with-the-hedera-consensus-service-fabric-plugin/broken-reference/README.md) in the master tutorial to continue.
+
+{% content-ref url="https://github.com/hashgraph/hedera-docs/blob/master/tutorials/more-tutorials/get-started-with-the-hedera-consensus-service-fabric-plugin/broken-reference/README.md" %}
+[https://github.com/hashgraph/hedera-docs/blob/master/tutorials/more-tutorials/get-started-with-the-hedera-consensus-service-fabric-plugin/broken-reference/README.md](https://github.com/hashgraph/hedera-docs/blob/master/tutorials/more-tutorials/get-started-with-the-hedera-consensus-service-fabric-plugin/broken-reference/README.md)
+{% endcontent-ref %}

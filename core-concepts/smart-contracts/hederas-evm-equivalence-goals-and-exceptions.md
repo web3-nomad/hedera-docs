@@ -16,7 +16,7 @@ Hedera plans to integrate its native services with the EVM seamlessly. This will
 
 #### Leverage Existing Expertise
 
-Hedera's strategy involves leveraging the [HyperLedger Besu EVM](https://github.com/hashgraph/hedera-docs/blob/master/core-concepts/smart-contracts/broken-reference/README.md) client, which allows developers to capitalize on their existing Solidity expertise. This means that developers already familiar with [Solidity](../../support-and-community/glossary.md#solidity) and the EVM can easily transition to developing on Hedera, taking advantage of its unique strengths such as faster transactions, low and fixed fees, fair transaction ordering, immediate finality, and heightened security.
+Hedera's strategy involves leveraging the [HyperLedger Besu EVM](../../support-and-community/glossary.md#hyperledger-besu-evm) client, which allows developers to capitalize on their existing Solidity expertise. This means that developers already familiar with [Solidity](../../support-and-community/glossary.md#solidity) and the EVM can easily transition to developing on Hedera, taking advantage of its unique strengths such as faster transactions, low and fixed fees, fair transaction ordering, immediate finality, and heightened security.
 
 #### Smooth Transition
 

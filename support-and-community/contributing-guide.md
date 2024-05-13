@@ -2,9 +2,8 @@
 description: >-
   Learn how to submit a demo application, create pull requests, or log issues in
   the Hedera Contributing Guide.
-cover: >-
-  https://github.com/hashgraph/hedera-docs/blob/master/support-and-community/broken-reference
-coverY: 31
+cover: ../.gitbook/assets/28_ultraviolet (1).jpg
+coverY: 0
 ---
 
 # Contributing & Style Guide

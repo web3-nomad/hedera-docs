@@ -170,8 +170,8 @@ If the `tokenId` of the NFT is not paused, and if the token has `metadataKey` th
 
 </details>
 
-* Reference: [HIP-657](https://hips.hedera.com/hip/hip-657), [HIP-646](https://hips.hedera.com/hip/hip-646), [HIP-765](https://hips.hedera.com/hip/hip-765).
+* Reference: [HIP-657](https://hips.hedera.com/hip/hip-657), [HIP-646](https://hips.hedera.com/hip/hip-646), [HIP-765](https://hips.hedera.com/hip/hip-765)
 
 ***
 
-**Contributors:** [MilanWR](https://github.com/MilanWR)
+**Contributors:** [MilanWR](https://github.com/MilanWR)&#x20;

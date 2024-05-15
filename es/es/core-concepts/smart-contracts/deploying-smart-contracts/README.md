@@ -42,18 +42,18 @@ Modified descriptions for Solidity functions and opcodes to better reflect the H
 
 {% hint style="warning" %}
 
-### _HBAR decimal places_
+#### _HBAR decimal places_
 
-_The JSON RPC Relay **`msg.value`** uses 18 decimals when it returns HBAR._ This was to provide an equivalent decimal length for web3 tools used across multiple EVM chains. _As a result, the **`gasPrice`** also uses 18 decimal places since it is only utilized from the JSON RPC Relay. Refer to the_ [_HBAR page_](../../../sdks-and-apis/sdks/hbars.md) _for a table of Hedera APIs and the decimal places they return._&#x20;
+_The JSON RPC Relay **`msg.value`** uses 18 decimals when it returns HBAR._ This was to provide an equivalent decimal length for web3 tools used across multiple EVM chains. _As a result, the **`gasPrice`** also uses 18 decimal places since it is only utilized from the JSON RPC Relay. Refer to the_ [_HBAR page_](../../../sdks-and-apis/sdks/hbars.md) _for a table of Hedera APIs and the decimal places they return._
 {% endhint %}
 
 ***
 
 ## Limitation on `fallback()` / `receive()` Functions in Hedera Smart Contracts
 
-While developing smart contracts on the Hedera network, it's crucial to note some behavioral differences compared to other networks like Ethereum. When a Hedera smart contract receives HBAR through a crypto transfer, the contract's `fallback()` and `receive()` functions **do not get triggered**.&#x20
+While developing smart contracts on the Hedera network, it's crucial to note some behavioral differences compared to other networks like Ethereum. When a Hedera smart contract receives HBAR through a crypto transfer, the contract's `fallback()` and `receive()` functions **do not get triggered**.
 
-In a typical smart contract on Ethereum,  `fallback()` and `receive()` functions serve as "catch-all" mechanisms that execute when the contract receives the native cryptocurrency (Ether in Ethereum's case). Here are the impacted variables for Hedera smart contracts and their _usual_ expected values:
+In a typical smart contract on Ethereum, `fallback()` and `receive()` functions serve as "catch-all" mechanisms that execute when the contract receives the native cryptocurrency (Ether in Ethereum's case). Here are the impacted variables for Hedera smart contracts and their _usual_ expected values:
 
 - **`msg.sender`:** The address initiating the contract call.
 - **`msg.value`:** The amount of HBAR sent along with the call.
@@ -80,7 +80,7 @@ Gas fees paid for EVM transactions on Hedera can be composed of three different 
 - EVM opcode Gas
 - Hedera System Contract Gas
 
-<table><thead><tr><th width="226">Gas Fee Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>Intrinsic Gas</strong></td><td>The minimum amount of gas required to execute a transaction. It is a fixed gas cost that is independent of the specific operations or computations performed within the transaction.<br><br>Intrinsic gas cost: 21,000 gas</td></tr><tr><td><strong>EVM Operation Code</strong></td><td>The gas required to execute the defined operation code(s) for the smart contract call</td></tr><tr><td><strong>Hedera System Contract Transaction</strong></td><td><p>The required gas that is associated with a Hedera-defined transaction like using the Hedera Token Service system contract that allows you to burn (<code>TokenBurnTransaction</code>) or mint (<code>TokenMintTransaction</code>) a token.</p><p></p><p>If you are not using a system contract that maps to one of the native Hedera services, you do not need to apply this fee.</p><p></p><p>The Hedera transaction gas calculation is: Cost of the transaction in USD x Gas Conversion gas/USD + 20%</p><p>Example System Contracts:</p><ul><li>Hedera Token Service</li><li>Pseudo Random Number Generator (PRNG)</li><li>Exchange Rate</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="226">Gas Fee Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>Intrinsic Gas</strong></td><td>The minimum amount of gas required to execute a transaction. It is a fixed gas cost that is independent of the specific operations or computations performed within the transaction.<br><br>Intrinsic gas cost: 21,000 gas</td></tr><tr><td><strong>EVM Operation Code</strong></td><td>The gas required to execute the defined operation code(s) for the smart contract call</td></tr><tr><td><strong>Hedera System Contract Transaction</strong></td><td><p>The required gas that is associated with a Hedera-defined transaction like using the Hedera Token Service system contract that allows you to burn (<code>TokenBurnTransaction</code>) or mint (<code>TokenMintTransaction</code>) a token.</p><p>If you are not using a system contract that maps to one of the native Hedera services, you do not need to apply this fee.</p><p>The Hedera transaction gas calculation is: Cost of the transaction in USD x Gas Conversion gas/USD + 20%</p><p>Example System Contracts:</p><ul><li>Hedera Token Service</li><li>Pseudo Random Number Generator (PRNG)</li><li>Exchange Rate</li></ul></td></tr></tbody></table>
 
 ### Gas Limit
 
@@ -126,9 +126,9 @@ Most EVM-compatible networks place a gas limit per block to manage resource allo
 
 For smart contract transactions, gas is a better measure of the complexity of the EVM transaction than counting all transactions the same, so metering the limits on gas provides a more reasonable limit on resource consumption.
 
-To allow for more flexibility in what transactions we accept and to mirror Ethereum Mainnet behavior, the transaction limits will be calculated on a per-gas basis for smart contract calls (`ContractCreate`, `ContractCall`, `ContractCallLocalQuery`) in addition to a per-transaction limit. This dual approach allows for better resource management, providing a nuanced way to regulate smart contract executions.&#x20
+To allow for more flexibility in what transactions we accept and to mirror Ethereum Mainnet behavior, the transaction limits will be calculated on a per-gas basis for smart contract calls (`ContractCreate`, `ContractCall`, `ContractCallLocalQuery`) in addition to a per-transaction limit. This dual approach allows for better resource management, providing a nuanced way to regulate smart contract executions.
 
-The Hedera network has implemented a system gas throttle of **15 million gas per second** in the Hedera Service release [0.22](../../../networks/release-notes/services.md#v0.22).&#x20
+The Hedera network has implemented a system gas throttle of **15 million gas per second** in the Hedera Service release [0.22](../../../networks/release-notes/services.md#v0.22).
 
 ### Gas Reservation and Unused Gas Refund
 

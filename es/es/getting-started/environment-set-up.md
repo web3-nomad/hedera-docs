@@ -8,7 +8,7 @@ This environment setup guide will provide you with the necessary steps to get yo
 
 ## Prerequisites
 
-* Completed the [Introduction](introduction.md) step.
+- Completed the [Introduction](introduction.md) step.
 
 {% hint style="info" %}
 _**Note:** You can always check the "_[_Code Check ✅_](environment-set-up.md#code-check) _" section at the bottom of each page to view the entire code if you run into issues. You can also post your issue to the respective SDK channel in our Discord community_ [_here_](http://hedera.com/discord) _or on the GitHub repository_ [_here_](https://github.com/hashgraph/hedera-docs)_._
@@ -25,6 +25,7 @@ Open your IDE of choice and follow the below steps to create your new project di
 Create a new Gradle project and name it `HederaExamples`. Add the following dependencies to your `build.gradle` file.
 
 {% code title="build.gradle " %}
+
 ```gradle
 dependencies {
 
@@ -36,6 +37,7 @@ dependencies {
 
 }
 ```
+
 {% endcode %}
 {% endtab %}
 
@@ -43,6 +45,7 @@ dependencies {
 Create a new Maven project and name it `HederaExamples`. Add the following dependencies to your `pom.xml` file.
 
 {% code title="pom.xml " %}
+
 ```xml
 <dependencies>
         <dependency>
@@ -72,6 +75,7 @@ Create a new Maven project and name it `HederaExamples`. Add the following depen
         </dependency>
 </dependencies>
 ```
+
 {% endcode %}
 {% endtab %}
 
@@ -104,6 +108,7 @@ This is what your console should look like after running the command:
   "license": "ISC"
 }
 ```
+
 {% endtab %}
 
 {% tab title="Go" %}
@@ -112,6 +117,7 @@ Open your terminal and create a project directory called something like `hedera-
 ```bash
 mkdir hedera-go-examples && cd hedera-go-examples
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -196,6 +202,7 @@ import (
     "github.com/hashgraph/hedera-sdk-go/v2"
 )
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -207,24 +214,25 @@ _**Note:** Testnet **HBAR** is required for this next step. Please follow the in
 
 ## Step 3: **Create your .env File**
 
-Create the `.env` file in your project's root directory. The `.env` file stores your environment variables, such as your account ID and private key.\&#x20
+Create the `.env` file in your project's root directory. The `.env` file stores your environment variables, such as your account ID and private key.&#x20
 
 _**📣 Note**: If you have not created an account, please do so_ [_here_](introduction.md) _before this step._
 
 {% tabs %}
 {% tab title="Hedera Developer Portal" %}
-If you created your testnet account through the developer portal, grab the Hedera Testnet account ID and DER-encoded private key from your [Hedera portal profile](https://portal.hedera.com/) (see screenshot below) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:\&#x20
+If you created your testnet account through the developer portal, grab the Hedera Testnet account ID and DER-encoded private key from your [Hedera portal profile](https://portal.hedera.com/) (see screenshot below) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:&#x20
 
-<figure><img src="../.gitbook/assets/DER%20portal%20(1).png" alt="" width="563"><figcaption><p>Hedera Developer Portal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/DER portal (1).png" alt="" width="563"><figcaption><p>Hedera Developer Portal</p></figcaption></figure>
 
 ```markdown
 MY_ACCOUNT_ID=0.0.1234
 MY_PRIVATE_KEY=302e020100300506032b657004220420ed5a93073.....
 ```
+
 {% endtab %}
 
 {% tab title="Hedera Faucet" %}
-Alternatively, if you used the faucet to create a testnet account, grab your faucet account ID and the private key (how to export a private key from MetaMask [here](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)) and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:
+Alternatively, if you used the faucet to create a testnet account, grab your faucet account ID and the private key (how to export a private key from MetaMask [here](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key))  and assign them to the `MY_ACCOUNT_ID` and `MY_PRIVATE_KEY` environment variables in your `.env` file:
 
 <figure><img src="../.gitbook/assets/faucet-success-account-id.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -232,6 +240,7 @@ Alternatively, if you used the faucet to create a testnet account, grab your fau
 MY_ACCOUNT_ID=0.0.1234
 MY_PRIVATE_KEY=0xfd154395435c81233b2fc906486f35e068...
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -242,6 +251,7 @@ Next, you will load your account ID and private key variables from the `.env` fi
 Within the _`main`_ method, add your testnet account ID and private key from the environment file.
 
 {% code title="HederaExamples.java" %}
+
 ```java
 public class HederaExamples {
 
@@ -253,11 +263,13 @@ public class HederaExamples {
     }
 }
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript" %}
 {% code title="index.js" %}
+
 ```javascript
 const { Client, PrivateKey, AccountCreateTransaction, AccountBalanceQuery, Hbar, TransferTransaction } = require("@hashgraph/sdk");
 require('dotenv').config();
@@ -275,11 +287,13 @@ async function environmentSetup() {
 }
 environmentSetup();
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Go" %}
 {% code title="hedera_examples.go" %}
+
 ```go
 func main() {
 
@@ -305,6 +319,7 @@ func main() {
     fmt.Printf("The private key is = %v\n", myPrivateKey)
 }
 ```
+
 {% endcode %}
 
 In your terminal, enter the following command to create your `go.mod` file. This module is used for tracking dependencies and is required.
@@ -318,6 +333,7 @@ Run your code to see your testnet account ID and private key printed to the cons
 ```go-module
 go run hedera_examples.go
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -355,6 +371,7 @@ client.setDefaultMaxTransactionFee(maxTransactionFee);
 
 {% tabs %}
 {% tab title="Java" %}
+
 ```java
 //Create your Hedera Testnet client
 Client client = Client.forTestnet();
@@ -368,9 +385,11 @@ client.setDefaultMaxTransactionFee(new Hbar(100));
 //Set the maximum payment for queries (in Hbar)
 client.setMaxQueryPayment(new Hbar(50));
 ```
+
 {% endtab %}
 
 {% tab title="JavaScript" %}
+
 ```javascript
 //Create your Hedera Testnet client
 const client = Client.forTestnet();
@@ -384,9 +403,11 @@ client.setDefaultMaxTransactionFee(new Hbar(100));
 //Set the maximum payment for queries (in Hbar)
 client.setMaxQueryPayment(new Hbar(50));
 ```
+
 {% endtab %}
 
 {% tab title="Go" %}
+
 ```go
 //Create your testnet client
 client := hedera.ClientForTestnet()
@@ -398,6 +419,7 @@ client.SetDefaultMaxTransactionFee(hedera.HbarFrom(100, hedera.HbarUnits.Hbar))
 // Set max query payment
 client.SetDefaultMaxQueryPayment(hedera.HbarFrom(50, hedera.HbarUnits.Hbar))
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -440,7 +462,7 @@ public class HederaExamples {
 <strong>                Client client = Client.forTestnet();
 </strong>                client.setOperator(myAccountId, myPrivateKey);
         
-                // Set default max transaction fee &#x26; max query payment
+                // Set default max transaction fee & max query payment
                 client.setDefaultMaxTransactionFee(new Hbar(100)); 
                 client.setMaxQueryPayment(new Hbar(50)); 
     }
@@ -454,6 +476,7 @@ public class HederaExamples {
 <summary>JavaScript</summary>
 
 {% code title="index.js" %}
+
 ```javascript
 const {
   Client,
@@ -492,6 +515,7 @@ async function environmentSetup() {
 }
 environmentSetup();
 ```
+
 {% endcode %}
 
 </details>
@@ -501,6 +525,7 @@ environmentSetup();
 <summary>Go</summary>
 
 {% code title="hedera_examples.go" %}
+
 ```go
 package main
 
@@ -540,6 +565,7 @@ func main() {
 	client.SetDefaultMaxQueryPayment(hedera.HbarFrom(50, hedera.HbarUnits.Hbar))
 }
 ```
+
 {% endcode %}
 
 </details>

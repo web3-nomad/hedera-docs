@@ -1,17 +1,15 @@
 ---
-description: >-
-  Learn how to set up Foundry and use the Forge command-line tool to run your
-  smart contract tests written in Solidity.
+description: Learn how to set up Foundry and use the Forge command-line tool to run your smart contract tests written in Solidity.
 ---
 
 # How to Setup Foundry and Write a Basic Unit Test
 
 ## What you will accomplish
 
-* [ ] Configure Foundry and Forge with a Hedera Project
-* [ ] Write unit tests in Solidity
-* [ ] Run your tests using Foundry `forge` command
-* [ ] Create a Forge Gas Report
+- [ ] Configure Foundry and Forge with a Hedera Project
+- [ ] Write unit tests in Solidity
+- [ ] Run your tests using Foundry `forge` command
+- [ ] Create a Forge Gas Report
 
 ***
 
@@ -19,30 +17,30 @@ description: >-
 
 Before you begin, you should be familiar with the following:
 
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [Solidity](https://docs.soliditylang.org/en/latest/)
-* [Foundry](https://book.getfoundry.sh/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Solidity](https://docs.soliditylang.org/en/latest/)
+- [Foundry](https://book.getfoundry.sh/)
 
 <details>
 
-<summary>Also, you should have the following set up on your computer ⬇</summary>
+<summary>Also, you should have the following set up on your computer ⬇ </summary>
 
-* [x] git installed
-  * Minimum version: 2.37
-  * Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
-* [x] A code editor or IDE
-  * Recommended: [VS Code. Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
-* [x] NodeJs + npm installed
-  * Minimum version of NodeJs: 18
-  * Minimum version of npm: 9.5
-  * Recommended for Linux & Mac: [nvm](https://github.com/nvm-sh/nvm)
-  * Recommended for Windows: [nvm-windows](https://github.com/coreybutler/nvm-windows)
+- [x] git installed
+  - Minimum version: 2.37
+  - Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
+- [x] A code editor or IDE
+  - Recommended: [VS Code. Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
+- [x] NodeJs + npm installed
+  - Minimum version of NodeJs: 18
+  - Minimum version of npm: 9.5
+  - Recommended for Linux & Mac: [nvm](https://github.com/nvm-sh/nvm)
+  - Recommended for Windows: [nvm-windows](https://github.com/coreybutler/nvm-windows)
 
 </details>
 
 <details>
 
-<summary>Check your prerequisites set up ⬇</summary>
+<summary>Check your prerequisites set up ⬇ </summary>
 
 Open your terminal, and enter the following commands.
 
@@ -239,7 +237,7 @@ forge build
 
 You should see output similar to the following:
 
-```
+```text
 [⠒] Compiling...
 [⠔] Compiling 22 files with 0.8.23
 [⠑] Solc 0.8.23 finished in 3.44s
@@ -254,7 +252,7 @@ forge test
 
 You should see output similar to the following:
 
-```
+```text
 [⠢] Compiling...
 No files changed, compilation skipped
 
@@ -277,7 +275,32 @@ forge test -vvvv
 
 <summary>Level 4 verbosity output</summary>
 
+<details>
 
+<summary>Level 4 verbosity output</summary>
+
+You should see output similar to the following:
+
+```text
+[⠢] Compiling...
+No files changed, compilation skipped
+
+Running 1 test for test/TodoList.t.sol:TodoListTest
+[PASS] test_createTodo_returnsNumberOfTodosIncrementedByOne() (gas: 76346)
+Traces:
+  [76346] TodoListTest::test_createTodo_returnsNumberOfTodosIncrementedByOne()
+    ├─ [2325] TodoList::getNumberOfTodos() [staticcall]
+    │   └─ ← 0
+    ├─ [68126] TodoList::createTodo("A new todo for you!")
+    │   └─ ← 1
+    └─ ← ()
+
+Test result: ok. 1 passed; 0 failed; 0 skipped; finished in 580.08µs
+ 
+Ran 1 test suites: 1 tests passed, 0 failed, 0 skipped (1 total tests)
+```
+
+</details>
 
 </details>
 
@@ -335,10 +358,10 @@ Congratulations, you have completed how to setup Foundry and write a basic unit 
 
 You have learned how to:
 
-* [x] Configure Foundry and forge with a hedera project
-* [x] Write unit tests in Solidity
-* [x] Run your tests using Foundry `forge` command
-* [x] Create a forge gas report
+- [x] Configure Foundry and forge with a hedera project
+- [x] Write unit tests in Solidity
+- [x] Run your tests using Foundry `forge` command
+- [x] Create a forge gas report
 
 ***
 

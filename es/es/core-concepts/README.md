@@ -1,7 +1,6 @@
 ---
-cover: ../.gitbook/assets/HH-Eco-Cat-Hero-Desktop-R1%20(2).webp
+cover: ../.gitbook/assets/HH-Eco-Cat-Hero-Desktop-R1 (2).webp
 coverY: -37
 ---
 
 # Core Concepts
-

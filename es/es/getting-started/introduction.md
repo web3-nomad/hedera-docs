@@ -32,7 +32,7 @@ You will receive an error message and be prompted to return when your account is
 
 The Hedera developer portal allows you to create a testnet account to receive HBAR upon creation. Visit the [Hedera developer portal](https://portal.hedera.com/register) and follow the instructions to create an account.
 
-<figure><img src="../.gitbook/assets/portal testnet account.png" alt="Screenshot of the Hedera Developer portal (portal.hedera.com/register) account creation page."><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/portal%20testnet%20account.png" alt="Screenshot of the Hedera Developer portal (portal.hedera.com/register) account creation page."><figcaption></figcaption></figure>
 
 After account creation, your portal testnet account will automatically receive **1000 HBAR,** and you'll see your account ID and key pair from the portal dashboard (see image below). Copy your account ID and DER-encoded private key for the coding environment setup step.
 
@@ -41,5 +41,5 @@ After account creation, your portal testnet account will automatically receive *
 {% hint style="info" %}
 **Note**: Testnet accounts on the developer portal are subject to a daily top-up limit of 1000 HBAR. Accounts _**do not**_ automatically get topped up. To maintain your balance, you must manually request a refill through the portal dashboard every 24 hours.
 
-For clarity, topping up does not add 1000 HBAR to your account balance each time you refill. Instead, your account balance is replenished up to 1000 HBAR if it falls below this threshold. For example, if your account balance is 500 HBAR, refilling will only add enough HBAR to bring your balance to 1000 HBAR, not an additional 1000 HBAR.&#x20;
+For clarity, topping up does not add 1000 HBAR to your account balance each time you refill. Instead, your account balance is replenished up to 1000 HBAR if it falls below this threshold. For example, if your account balance is 500 HBAR, refilling will only add enough HBAR to bring your balance to 1000 HBAR, not an additional 1000 HBAR.
 {% endhint %}

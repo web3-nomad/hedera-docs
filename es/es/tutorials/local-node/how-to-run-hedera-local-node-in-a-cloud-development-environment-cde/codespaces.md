@@ -6,15 +6,15 @@ Codespaces is a cloud development environment (CDE) that's hosted in the cloud. 
 
 ## Prerequisites
 
-- Review first the [Quickstart for GitHub Codespaces](https://docs.github.com/en/codespaces/getting-started/quickstart) guide.
-- Install VS Code Desktop application.
-- In [Editor preference](https://github.com/settings/codespaces) change your client to `Visual Studio Code` (Should not be `Visual Studio Code for the Web`)
+* Review first the [Quickstart for GitHub Codespaces](https://docs.github.com/en/codespaces/getting-started/quickstart) guide.
+* Install VS Code Desktop application.
+* In [Editor preference](https://github.com/settings/codespaces) change your client to `Visual Studio Code` (Should not be `Visual Studio Code for the Web`)
 
 ***
 
 ## Configure Dev Container
 
-To configure t he dev container, open the [Hedela Local Node repo](https://github.com/hashgraph/hedera-local-node) and click on the `Code`->`Codespaces`->`...`-> `Configure dev container`.&#x20
+To configure t he dev container, open the [Hedela Local Node repo](https://github.com/hashgraph/hedera-local-node) and click on the `Code`->`Codespaces`->`...`-> `Configure dev container`.\&#x20
 
 <figure><img src="../../../.gitbook/assets/codespace-config-dev-container.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -30,7 +30,7 @@ This will open the dev container configuration file where you can customize your
 
 Open the [Hedela Local Node repo](https://github.com/hashgraph/hedera-local-node) and click on the `Code`->`Codespaces`->`...`-> `New with options...` button and choose the appropriate settings:
 
-<figure><img src="../../../.gitbook/assets/local-node-codespaces (1).jpeg" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/local-node-codespaces%20(1).jpeg" alt="" width="563"><figcaption></figcaption></figure>
 
 Once your codespace is created, the template repository will be automatically cloned into it. Your codespace is all set up and have the local node running!
 
@@ -40,7 +40,7 @@ Once your codespace is created, the template repository will be automatically cl
 
 ## Conclusion and Additional Resources
 
-Congrats on successfully setting up your Codespace and running a Hedera Local Node!&#x20
+Congrats on successfully setting up your Codespace and running a Hedera Local Node!\&#x20
 
 **➡** [**Hedera Local Node Repository**](https://github.com/hashgraph/hedera-local-node#readme)
 

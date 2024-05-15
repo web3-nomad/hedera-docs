@@ -6,18 +6,18 @@ description: Store history and cost-effectively query data
 
 Mirror nodes provide a way to store and cost-effectively query historical data from the public ledger while minimizing the use of Hedera network resources. Mirror nodes support the Hedera network services currently available and can be used to retrieve the following information:
 
-- Transactions and records
-- Event files
-- Balance files
+* Transactions and records
+* Event files
+* Balance files
 
 ## Understanding Mirror Nodes
 
 Hedera Mirror Nodes receive information from Hedera network consensus nodes, either mainnet or testnet, and provide a more effective means to perform:
 
-- Queries
-- Analytics
-- Audit support
-- Monitoring
+* Queries
+* Analytics
+* Audit support
+* Monitoring
 
 While mirror nodes receive information from the consensus nodes, they do not contribute to consensus themselves. The trust of Hedera is derived based on the consensus reached by the consensus nodes. That trust is transferred to the mirror nodes using signatures, chain of hashes, and state proofs.
 
@@ -37,14 +37,14 @@ Hedera consensus nodes push new record files and signature files to the cloud st
 
 Starting with [v0.79](../../networks/release-notes/mirror-node.md#v0.79) of Hedera Mirror Node release, synthetic event logs for Hedera Token Service (HTS) token transactions have been introduced to mimic the behavior of smart contract tokens. Synthetic events are generated for transactions such as:
 
-- `CryptoTransfer`
-- `CryptoApproveAllowance`
-- `CryptoDeleteAllowance`
-- `TokenMint`
-- `TokenWipe`
-- `TokenBurn`
+* `CryptoTransfer`
+* `CryptoApproveAllowance`
+* `CryptoDeleteAllowance`
+* `TokenMint`
+* `TokenWipe`
+* `TokenBurn`
 
-This feature enables developers to effectively monitor HTS token activities as if they were smart contract tokens. An example code implementation demonstrating using ethers.js to listen to synthetic events can be found [here](https://github.com/ed-marquez/hedera-example-hts-synthetic-events-sdk-ethers).&#x20
+This feature enables developers to effectively monitor HTS token activities as if they were smart contract tokens. An example code implementation demonstrating using ethers.js to listen to synthetic events can be found [here](https://github.com/ed-marquez/hedera-example-hts-synthetic-events-sdk-ethers).\&#x20
 
 ### REST API from Hedera
 
@@ -72,7 +72,7 @@ Anyone can run a Hedera Mirror Node by downloading and configuring the software 
 
 <summary>How is data stored in a Hedera Mirror Node? Is it a specific type of database, or does it use a unique data structure?</summary>
 
-Hedera Mirror Nodes use [PostgreSQL](../../support-and-community/glossary.md#postgresql) databases to store the transaction and event data organized in a structure that mirrors the Hedera Network. Once the mirror node receives record files from Hedera Consensus nodes, the data is validated and loaded into the database.&#x20
+Hedera Mirror Nodes use [PostgreSQL](../../support-and-community/glossary.md#postgresql) databases to store the transaction and event data organized in a structure that mirrors the Hedera Network. Once the mirror node receives record files from Hedera Consensus nodes, the data is validated and loaded into the database.\&#x20
 
 </details>
 

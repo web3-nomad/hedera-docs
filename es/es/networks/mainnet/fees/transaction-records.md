@@ -27,18 +27,18 @@ There are, in general, 5 types of accounts associated with a transaction:
 
 **Notes**
 
-- For any transaction, the sum of transfers out of all accounts will always be equal to the sum of all transfers into all accounts.
-- The payer, in general, is different than either the sender or receiver. Nevertheless, a typical case is that the sender will also be the payer.
-- Not all transactions have a sender or receiver as there is no remittance aspect to the transaction, e.g. a FileCreate or ConsensusSubmitMessage transaction will have a fee but no associated remittance.
-- A single CryptoTransfer can have multiple senders and multiple receivers.
-- A remittance can be the number of HBARs a CryptoTransfer directs be moved, the amount of HBARs a CryptoCreate directs be funded into the new account, or the amount of HBARs in an account to be deleted, with those funds moved into another account.
-- A remittance will need to be authorized by the owner of those HBARs.
-- An account owner can specify thresholds for transfers in and out of that account. If a transaction causes an account’s threshold to be triggered, then the record for that transaction will persist for 25 hours and not the default 3 minutes.
-- The account owner that specified the threshold will pay a threshold fee – distinct from the fee for the transaction itself - for that extra storage time.
-- It is account 0.0.98 that receives the component of the transaction fee that compensates all the nodes for their work in processing the transaction into consensus
-- 0.0.98 also collects any threshold record fees
-- As of early February 2024, there are 31 nodes with account numbers in the range of 0.0.3-0.0.4698971.
-- While accounts 0.0.98 and the node accounts are special with respect to receiving fees, they can also send & receive HBARs and, as such, could be the sender or receiver of a transaction.
+* For any transaction, the sum of transfers out of all accounts will always be equal to the sum of all transfers into all accounts.
+* The payer, in general, is different than either the sender or receiver. Nevertheless, a typical case is that the sender will also be the payer.
+* Not all transactions have a sender or receiver as there is no remittance aspect to the transaction, e.g. a FileCreate or ConsensusSubmitMessage transaction will have a fee but no associated remittance.
+* A single CryptoTransfer can have multiple senders and multiple receivers.
+* A remittance can be the number of HBARs a CryptoTransfer directs be moved, the amount of HBARs a CryptoCreate directs be funded into the new account, or the amount of HBARs in an account to be deleted, with those funds moved into another account.
+* A remittance will need to be authorized by the owner of those HBARs.
+* An account owner can specify thresholds for transfers in and out of that account. If a transaction causes an account’s threshold to be triggered, then the record for that transaction will persist for 25 hours and not the default 3 minutes.
+* The account owner that specified the threshold will pay a threshold fee – distinct from the fee for the transaction itself - for that extra storage time.
+* It is account 0.0.98 that receives the component of the transaction fee that compensates all the nodes for their work in processing the transaction into consensus
+* 0.0.98 also collects any threshold record fees
+* As of early February 2024, there are 31 nodes with account numbers in the range of 0.0.3-0.0.4698971.
+* While accounts 0.0.98 and the node accounts are special with respect to receiving fees, they can also send & receive HBARs and, as such, could be the sender or receiver of a transaction.
 
 ### Scenarios
 

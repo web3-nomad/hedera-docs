@@ -41,10 +41,10 @@ A consensus service plugin for the Hyperledger Fabric network that leverages the
 
 A Hedera mirror node reads the ordered messages from a Hedera mainnet node and communicates that information back to the Hyperledger Fabric network. Each message has the following information:
 
-- ConsensusTimestamp
-- Message Body
-- Topic Running Hash
-- Topic Sequence Number
+* ConsensusTimestamp
+* Message Body
+* Topic Running Hash
+* Topic Sequence Number
 
 **Hedera Mainnet Node**
 
@@ -82,12 +82,12 @@ If you would like to run the sample using a virtual environment, please follow t
 
 ### Hedera Consensus Service
 
-- Testnet account ID and private key
-  - Please follow the instructions [here](../../../networks/testnet/testnet-access.md)
+* Testnet account ID and private key
+  * Please follow the instructions [here](../../../networks/testnet/testnet-access.md)
 
 ### pluggable-hcs Repository
 
-- You will be directed to clone this [repository](https://github.com/hyperledger-labs/pluggable-hcs) in the outlined steps below
+* You will be directed to clone this [repository](https://github.com/hyperledger-labs/pluggable-hcs) in the outlined steps below
 
 {% hint style="info" %}
 The HCS Fabric plugin supports Fabric ordering service 2.0 and is compatible with older versions peers.
@@ -97,28 +97,28 @@ The HCS Fabric plugin supports Fabric ordering service 2.0 and is compatible wit
 
 Download and install the following if you do not already have them on your computer.
 
-- Git
-  - [Download Git](https://git-scm.com/downloads)
-  - Check to see if you have it installed from your terminal: `git --version`
-- cURL
-  - [Download cURL](https://curl.haxx.se/download.html)
-  - Check to see if you have it installed from your terminal: `curl --version`
-- wget
-  - Install from your terminal (MacOS):`brew install wget`
-  - Check to see if you have it installed from your terminal: `wget --version`
-- Docker and Docker Compose
-  - [Download Docker](https://www.docker.com/get-docker)
-  - Docker version 17.06.2-ce or greater is required
-  - Check to see if you have it installed from your terminal: `docker --version && docker-compose --version`
-- Go Programming Language
-  - [Download Go](https://golang.org/dl/)
-  - Go version 1.13.x is required
-  - Check to see if you have it installed from your terminal: `go version`
-- make
-  - Install from your terminal (MacOS): `brew install make`
-  - Check to see if you have installed from your terminal: `make --version`
-- gcc
-  - Check to see if you have it installed from your terminal: `gcc --version`
+* Git
+  * [Download Git](https://git-scm.com/downloads)
+  * Check to see if you have it installed from your terminal: `git --version`
+* cURL
+  * [Download cURL](https://curl.haxx.se/download.html)
+  * Check to see if you have it installed from your terminal: `curl --version`
+* wget
+  * Install from your terminal (MacOS):`brew install wget`
+  * Check to see if you have it installed from your terminal: `wget --version`
+* Docker and Docker Compose
+  * [Download Docker](https://www.docker.com/get-docker)
+  * Docker version 17.06.2-ce or greater is required
+  * Check to see if you have it installed from your terminal: `docker --version && docker-compose --version`
+* Go Programming Language
+  * [Download Go](https://golang.org/dl/)
+  * Go version 1.13.x is required
+  * Check to see if you have it installed from your terminal: `go version`
+* make
+  * Install from your terminal (MacOS): `brew install make`
+  * Check to see if you have installed from your terminal: `make --version`
+* gcc
+  * Check to see if you have it installed from your terminal: `gcc --version`
 
 Additionally, you may reference Hyperledger Fabric's documentation for the [prerequisites](https://hyperledger-fabric.readthedocs.io/en/release-2.0/prereqs.html).
 
@@ -128,30 +128,30 @@ You should be able to use the commands provided in this tutorial in terminal pro
 
 ## 1. Clone the [pluggable-hcs](https://github.com/hyperledger-labs/pluggable-hcs) Project
 
-- Open your terminal or favorite IDE
-- Enter the following commands to set-up your environment variables (**required**)
-  - Optionally you can make these settings permanent by placing them in the appropriate startup file, such as your personal `~/.bashrc` file if you are using the `bash` shell under Linux.
+* Open your terminal or favorite IDE
+* Enter the following commands to set-up your environment variables (**required**)
+  * Optionally you can make these settings permanent by placing them in the appropriate startup file, such as your personal `~/.bashrc` file if you are using the `bash` shell under Linux.
 
 ```
 $ export GOPATH=$HOME/go
 $ export PATH=$PATH:$GOPATH/bin
 ```
 
-- Create a **hyperledger** directory and navigate into that directory
+* Create a **hyperledger** directory and navigate into that directory
 
 ```
 $ mkdir -p $GOPATH/src/github.com/hyperledger && cd $GOPATH/src/github.com/hyperledger
 ```
 
-- Clone the **pluggable-hcs** repository and rename it to **fabric**
-- You **must** rename the folder to **fabric** otherwise you will run into issues in the following steps
+* Clone the **pluggable-hcs** repository and rename it to **fabric**
+* You **must** rename the folder to **fabric** otherwise you will run into issues in the following steps
 
 ```
 $ git clone https://github.com/hyperledger-labs/pluggable-hcs fabric
 $ cd fabric
 ```
 
-- Confirm you are on the main branch
+* Confirm you are on the main branch
 
 ```
 $ git branch
@@ -161,15 +161,15 @@ $ git branch
 
 ## 2. Build Fabric Binaries and Docker Images
 
-- cd to the **fabric** directory if you are not there already from your terminal or favorite IDE
+* cd to the **fabric** directory if you are not there already from your terminal or favorite IDE
 
 ```
 $ cd fabric
 ```
 
-- Follow the commands below to build the required fabric binaries and docker images
-  - Note: This process may take a few minutes to complete
-  - Note: Newer versions of Docker enable gRPC FUSE file sharing implementation by default which result in a failure. Switch to osxfs (Legacy) in Docker Settings
+* Follow the commands below to build the required fabric binaries and docker images
+  * Note: This process may take a few minutes to complete
+  * Note: Newer versions of Docker enable gRPC FUSE file sharing implementation by default which result in a failure. Switch to osxfs (Legacy) in Docker Settings
 
 ```
 $ make clean
@@ -180,22 +180,22 @@ $ make configtxgen configtxlator cryptogen orderer peer docker
 
 You will now enter your Hedera testnet account ID and private key information to the relevant configuration files. If you have not previously generated your testnet account, please follow the instructions [here](https://docs.hedera.com/guides/testnet/testnet-access).
 
-- Navigate to the **first-network** directory from your terminal or favorite IDE
+* Navigate to the **first-network** directory from your terminal or favorite IDE
 
 ```
 $ cd first-network
 ```
 
-- Edit the **hedera\_env.json** file via the terminal or IDE
-  - This sets up the Hedera environment and allows you to create topics and submit messages to the Hedera network. The Hedera account entered here pays for the transaction fees associated with creating and submitting messages.
-  - If you are using an IDE, you may skip this command and edit the file
+* Edit the **hedera\_env.json** file via the terminal or IDE
+  * This sets up the Hedera environment and allows you to create topics and submit messages to the Hedera network. The Hedera account entered here pays for the transaction fees associated with creating and submitting messages.
+  * If you are using an IDE, you may skip this command and edit the file
 
 ```
 $ nano hedera_env.json
 ```
 
-- Enter your Hedera account ID (e.g. 0.0.1234) in the **operatorId** field
-- Enter your account private key in the **operatorKey** field
+* Enter your Hedera account ID (e.g. 0.0.1234) in the **operatorId** field
+* Enter your account private key in the **operatorKey** field
 
 ```javascript
 {
@@ -213,21 +213,21 @@ $ nano hedera_env.json
 }
 ```
 
-- Save the **hedera\_env.json** file
-- Open the **orderer.yaml** file from your terminal or favorite IDE
-  - Here you will set the configurations for the HCS Hyperledger Fabric orderer node
-    - This file configures hcs as the ordering service
-    - This also contains the node address and node ID to interact with the Hedera mainnet nodes
-    - The Hedera mirror node address to receive ordered transaction from
-  - If you are using an IDE, you may skip this command and edit the file
+* Save the **hedera\_env.json** file
+* Open the **orderer.yaml** file from your terminal or favorite IDE
+  * Here you will set the configurations for the HCS Hyperledger Fabric orderer node
+    * This file configures hcs as the ordering service
+    * This also contains the node address and node ID to interact with the Hedera mainnet nodes
+    * The Hedera mirror node address to receive ordered transaction from
+  * If you are using an IDE, you may skip this command and edit the file
 
 ```
 $ nano orderer.yaml
 ```
 
-- Scroll down to the "**SECTION: Hcs**" heading
-- Enter your Hedera account ID in the **Operator.Id** field
-- Enter your Hedera account private key in the **Operator.PrivateKey.Key** field
+* Scroll down to the "**SECTION: Hcs**" heading
+* Enter your Hedera account ID in the **Operator.Id** field
+* Enter your Hedera account private key in the **Operator.PrivateKey.Key** field
 
 ```yaml
 # operator set for the orderer
@@ -240,7 +240,7 @@ Operator:
         Key: Your Hedera testnet account private key string here
 ```
 
-- Save the **orderer.yaml** file
+* Save the **orderer.yaml** file
 
 {% hint style="info" %}
 Please make sure you have entered your Hedera information correctly with no syntax errors as it will cause issues when trying to run the network later.
@@ -254,25 +254,25 @@ In this step you will create your HCS Hyperledger Fabric Network.
 
 Make sure you are within the **first-network** directory before running these commands.
 
-- Enter the following command to start the HCS Hyperledger Fabric network
+* Enter the following command to start the HCS Hyperledger Fabric network
 
 ```
 $ ./byfn.sh up -t 20
 ```
 
-- Enter "Y" to accept the 20 second timeout and CLI delay of 3 seconds
+* Enter "Y" to accept the 20 second timeout and CLI delay of 3 seconds
 
 {% hint style="info" %}
 Please note it's necessary to set the timeout to 20 seconds since otherwise some checks in the script may fail due to HCS having a larger consensus delay than raft/kafka based ordering service.
 {% endhint %}
 
-- The script generates two HCS topics
-  - One topic will be for the Hyperledger Fabric system channel
-  - One topic will be for the Hyperledger Fabric application channel
-  - HCS topics n this example are configured so that anyone can submit messages to them
-  - HCS messages can be configured to be private topics where the sender would require the `submitKey` to successfully publish messages to them
-- Transactions submitted to either of these channels will be visible from a mirror node [explorer](https://docs.hedera.com/guides/testnet/mirror-nodes)
-  - Transactions can be fragmented into smaller chunks resulting in multiple HCS messages for a single transaction
+* The script generates two HCS topics
+  * One topic will be for the Hyperledger Fabric system channel
+  * One topic will be for the Hyperledger Fabric application channel
+  * HCS topics n this example are configured so that anyone can submit messages to them
+  * HCS messages can be configured to be private topics where the sender would require the `submitKey` to successfully publish messages to them
+* Transactions submitted to either of these channels will be visible from a mirror node [explorer](https://docs.hedera.com/guides/testnet/mirror-nodes)
+  * Transactions can be fragmented into smaller chunks resulting in multiple HCS messages for a single transaction
 
 The sample is almost identical with the upstream first-network sample as of 2.0.0 release. In summary, the modifications are:
 
@@ -282,17 +282,17 @@ The sample is almost identical with the upstream first-network sample as of 2.0.
 
 A successful run will end with the following message:
 
-\\`========= All GOOD, BYFN execution completed ===========
+\\\`========= All GOOD, BYFN execution completed ===========
 
-\| _\*\*\_| | | | |**_\*\* \\\
-\*\*| \_| | | | | | | |\_**\
+\| _\*\*\_| | | | |\*\*_\*\* \\\
+\*\*| \_| | | | | | | |\_\*\*\
 **\_**| |\*\*\_ | | | | |_| |_\
-_|\_\**| |_| \\_| |_\_\**/\\`
+_|\_\*\*| |_| \\_| |_\_\*\*/\\\`
 
 ## 5. Tear down the network
 
-- It is required to run the following command to tear down the network
-- If you do not tear down the network and try to restart the network you may run into issues
+* It is required to run the following command to tear down the network
+* If you do not tear down the network and try to restart the network you may run into issues
 
 ```
 $ ./byfn.sh down
@@ -300,19 +300,19 @@ $ ./byfn.sh down
 
 ## 6. Verify Topics & Messages
 
-- Topics and messages created in this tutorial can be verified on any available mirror node explorer
-- At the start of the script, you can see the two HCS topic IDs that were created
+* Topics and messages created in this tutorial can be verified on any available mirror node explorer
+* At the start of the script, you can see the two HCS topic IDs that were created
 
 `installing hcscli ...`\
 `generated HCS topics: 0.0.23419 0.0.23420`\
 `0.0.23419 will be used for the system channel, and 0.0.23420 will be used for the application channel`
 
-- Visit a Hedera [mirror node explorer](https://docs.hedera.com/guides/testnet/mirror-nodes) to verify the topics and messages that were created on testnet by searching the two topic IDs
-- You will be able to view the application channel and system channel topics and all associated messages from this example
-  - A single Fabric transaction sent to an ordering node could result in multiple HCS consensus messages as HCS messages have a 6k message size limit
-  - i.e. there may not be a 1:1 correlation between a Fabric transaction and HCS message
-- A fabric transaction payload is encrypted by the ordering node therefore the subsequent HCS transaction payload is also encrypted
-- All messages on the mirror node explorer will be displayed in encrypted format.
+* Visit a Hedera [mirror node explorer](https://docs.hedera.com/guides/testnet/mirror-nodes) to verify the topics and messages that were created on testnet by searching the two topic IDs
+* You will be able to view the application channel and system channel topics and all associated messages from this example
+  * A single Fabric transaction sent to an ordering node could result in multiple HCS consensus messages as HCS messages have a 6k message size limit
+  * i.e. there may not be a 1:1 correlation between a Fabric transaction and HCS message
+* A fabric transaction payload is encrypted by the ordering node therefore the subsequent HCS transaction payload is also encrypted
+* All messages on the mirror node explorer will be displayed in encrypted format.
 
 {% hint style="info" %}
 Make sure you have selected the testnet network toggle in the explorer as the topics and messages created through this tutorial will not appear on the main network.
@@ -320,7 +320,7 @@ Make sure you have selected the testnet network toggle in the explorer as the to
 
 You have successfully done the following:
 
-- Created a Hyperledger Fabric network using the HCS Fabric plugin as the ordering service
-- Verified the topics and messages created in this example network
+* Created a Hyperledger Fabric network using the HCS Fabric plugin as the ordering service
+* Verified the topics and messages created in this example network
 
 Running into issues or have suggestions? Visit the developer advocates in [Discord](http://hedera.com/discord) and post your comments to the hedera-consensus-service channel 🤓 .

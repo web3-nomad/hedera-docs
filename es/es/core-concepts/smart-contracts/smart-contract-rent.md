@@ -14,9 +14,9 @@ Smart contract rent is a recurring payment mechanism designed to maintain resour
 
 ## Contract Auto-Renewal
 
-Auto-renewal is a feature that automatically renews the life of non-deleted smart contracts by a minimum of 90 days. Contract authors are encouraged to establish an auto-renew account specifically for this purpose.&#x20
+Auto-renewal is a feature that automatically renews the life of non-deleted smart contracts by a minimum of 90 days. Contract authors are encouraged to establish an auto-renew account specifically for this purpose.\&#x20
 
-The network will attempt to automatically charge the **renewal payment** to the expired contract's auto-renew account. The network will attempt to charge the contract if an auto-renew account has zero balance.&#x20
+The network will attempt to automatically charge the **renewal payment** to the expired contract's auto-renew account. The network will attempt to charge the contract if an auto-renew account has zero balance.\&#x20
 
 If the account lacks sufficient funds for renewal, the contract goes into a one-week grace period. During this time, the contract is inoperable unless funds are added, its expiry is extended (via `ContractUpdate`), or it receives HBAR. Failing to renew will result in the contract being purged from the state.
 
@@ -26,7 +26,7 @@ If the account lacks sufficient funds for renewal, the contract goes into a one-
 
 Contract storage payments on Hedera will activate once **100 million key-value pairs** are stored cumulatively across the network. The Hedera Coin Economics Committee is expected to set a rate of **$0.02 per key-value pair per year**. This applies to all contracts on Hedera, regardless of the contract being created before or after the rent payments go live.
 
-Once storage payments are enabled on Hedera, each contract has **100 free key-value pairs** of storage available. Then, once a contract exceeds the first 100 free key-value pairs, it must pay storage fees.&#x20
+Once storage payments are enabled on Hedera, each contract has **100 free key-value pairs** of storage available. Then, once a contract exceeds the first 100 free key-value pairs, it must pay storage fees.\&#x20
 
 > _Storage fees will be part of the rent payment collected when a contract is auto-renewed. Valid renewal windows are between \~30 and \~92 days (see_ [_HIP-372_](https://hips.hedera.com/hip/hip-372)_)._
 
@@ -60,8 +60,8 @@ All other network entities (e.g., Tokens, accounts, topics, and files) will also
 
 Rent is defined as the recurring payment required for contracts (and, eventually, all other Hedera entities) to remain active on the network. For contracts, rent is comprised of **auto-renewal** and **storage** payments:
 
-- **Auto-renewal payments** The auto-renewal fee for a contract is $0.026 USD per 90 days.
-- **Storage payments** will start once a total of **100 million key-value pairs** are stored cumulatively across the network. These storage fees will be part of the rent payment collected when a contract is auto-renewed. The storage fee rate is $0.02 per key-value pair per year.
+* **Auto-renewal payments** The auto-renewal fee for a contract is $0.026 USD per 90 days.
+* **Storage payments** will start once a total of **100 million key-value pairs** are stored cumulatively across the network. These storage fees will be part of the rent payment collected when a contract is auto-renewed. The storage fee rate is $0.02 per key-value pair per year.
 
 <img src="../../.gitbook/assets/smart-contracts-rent-storage-payments.png" alt="" data-size="original">
 
@@ -74,13 +74,13 @@ Rent is defined as the recurring payment required for contracts (and, eventually
 Every entity on Hedera has the fields `expirationTime`, `autorenewPeriod`, and `autorenewAccount`.
 
 1. When the `expirationTime` for a contract is reached, the network will first try to charge rent to the contract’s `autoRenewAccount`
-   - If renewal is successful, then the contract remains active on the network
-   - If renewal fails, then the contract is marked as `expired`
+   * If renewal is successful, then the contract remains active on the network
+   * If renewal fails, then the contract is marked as `expired`
 2. An `expired` entity is given a grace period before it is removed from the network. During the grace period, the entity (contract) is inactive, and all transactions involving it will fail, except for an update transaction to extend the `expirationTime`
-   - A contract in the grace period can be immediately "re-activated" by either sending it some HBAR or manually extending its `expirationTime` via a contract update transaction
+   * A contract in the grace period can be immediately "re-activated" by either sending it some HBAR or manually extending its `expirationTime` via a contract update transaction
 3. At the end of the grace period, the contract is permanently removed from the ledger if:
-   - The contract and its `autoRenewAccount` still have a zero HBAR balance at the end of the grace period, OR
-   - The contract is not manually extended during the grace period
+   * The contract and its `autoRenewAccount` still have a zero HBAR balance at the end of the grace period, OR
+   * The contract is not manually extended during the grace period
 
 Note that the ID number of a removed entity is not reused going forward. In addition, if an entity was marked as `deleted`, then it cannot have its `expirationTime` extended. Neither an update transaction nor an auto-renew will be able to extend it.
 
@@ -106,10 +106,10 @@ Smart contracts on Hedera can pay for rent in two ways: external funds or contra
 
 When the `expirationTime` for a contract is reached, the network will first try to charge rent to the contract’s `autoRenewAccount`:
 
-- If the `autoRenewAccount` has sufficient HBAR to pay for the `autoRenewPeriod`, then the contract is successfully renewed
-- If the `autoRenewAccount` has some HBAR but not enough to afford the full `autoRenewPeriod`, then the contract is extended for as long as possible (say, 1 week instead of 90 days). Once that extension (1 week) elapses, if the `autoRenewAccount` hasn't been re-funded to cover the `autoRenewPeriod`, then the contract account itself will be charged for rent
-- If the `autoRenewAccount` has a zero HBAR balance, then the contract itself is charged
-- If the `autoRenewAccount` and the contract both have a zero HBAR balance at the time that renewal fees are due, the contract is marked as `expired`
+* If the `autoRenewAccount` has sufficient HBAR to pay for the `autoRenewPeriod`, then the contract is successfully renewed
+* If the `autoRenewAccount` has some HBAR but not enough to afford the full `autoRenewPeriod`, then the contract is extended for as long as possible (say, 1 week instead of 90 days). Once that extension (1 week) elapses, if the `autoRenewAccount` hasn't been re-funded to cover the `autoRenewPeriod`, then the contract account itself will be charged for rent
+* If the `autoRenewAccount` has a zero HBAR balance, then the contract itself is charged
+* If the `autoRenewAccount` and the contract both have a zero HBAR balance at the time that renewal fees are due, the contract is marked as `expired`
 
 </details>
 
@@ -181,8 +181,8 @@ Yes, that is possible for contracts.
 
 <summary>What are the key-value pair thresholds that I should be aware of that impact the size of the storage payment?</summary>
 
-- Storage payments for contracts will only start being charged once **100 million key-value pairs** are reached cumulatively across the network
-- After than, each contract has **100 free key-value pairs** of storage available. Once a contract exceeds the first 100 free key-value pairs, it must pay storage fees
+* Storage payments for contracts will only start being charged once **100 million key-value pairs** are reached cumulatively across the network
+* After than, each contract has **100 free key-value pairs** of storage available. Once a contract exceeds the first 100 free key-value pairs, it must pay storage fees
 
 </details>
 

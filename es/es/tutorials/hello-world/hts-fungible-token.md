@@ -1,13 +1,15 @@
 ---
-description: "Hello World sequence: Create a new fungible token using Hedera Token Service (HTS)."
+description: >-
+  Hello World sequence: Create a new fungible token using Hedera Token Service
+  (HTS).
 ---
 
 # HTS: Fungible Token
 
 ## What you will accomplish
 
-- [ ] Create and mint a new fungible token on HTS
-- [ ] Query the token balance
+* [ ] Create and mint a new fungible token on HTS
+* [ ] Query the token balance
 
 ***
 
@@ -15,7 +17,7 @@ description: "Hello World sequence: Create a new fungible token using Hedera Tok
 
 Before you begin, you should have **completed** the following Hello World sequence:
 
-- [create-fund-account.md](create-fund-account.md "mention")
+* [create-fund-account.md](create-fund-account.md "mention")
 
 ***
 
@@ -91,13 +93,12 @@ An almost-complete script has already been prepared for you, and you will only n
 
 To create a new HTS token, we will use `TokenCreateTransaction`. This transaction requires many properties to be set on it.
 
-- For fungible tokens (which are analogous to ERC20 tokens), set the token type to `TokenType.FungibleCommon`.
-- Set the token name and token symbol based on your name (or nickname).
-- Set the decimal property to `2`.
-- Set the initial supply to 1 million.
+* For fungible tokens (which are analogous to ERC20 tokens), set the token type to `TokenType.FungibleCommon`.
+* Set the token name and token symbol based on your name (or nickname).
+* Set the decimal property to `2`.
+* Set the initial supply to 1 million.
 
 {% code title="script-hts-ft.js" overflow="wrap" %}
-
 ```js
         .setTokenType(TokenType.FungibleCommon)
         .setTokenName("bguiz coin")
@@ -105,20 +106,19 @@ To create a new HTS token, we will use `TokenCreateTransaction`. This transactio
         .setDecimals(2)
         .setInitialSupply(1_000_000)
 ```
-
 {% endcode %}
 
 <details>
 
 <summary>Key terminology for HTS token create transaction</summary>
 
-- [**Token Type**](../../sdks-and-apis/sdks/token-service/token-types.md): Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to _ERC20_ tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, which may be thought of as analogous to _ERC721_ tokens.
-- **Token Name**: This is the full name of the token. For example, "Singapore Dollar".
-- **Token Symbol**: This is the abbreviation of the token's name. For example, "SGD".
-- **Decimals**: This is the number of decimal places the currency uses. For example, `2` mimics "cents", where the smallest unit of the token is 0.01 (1/100) of a single token.
-- **Initial Supply**: This is the number of units of the token to "mint" when first creating the token. Note that this is specified in the smallest units, so `1_000_000` initial supply when decimals is 2, results in `10_000` full units of the token being minted. It might be easier to think about it as "one million cents equals ten thousand dollars".
-- **Treasury Account ID**: This is the account for which the initial supply is credited. For example, using `accountId` would mean that your own account receives all the tokens when they are minted.
-- [**Admin Key**](../../sdks-and-apis/sdks/token-service/define-a-token.md#token-properties): This is the account that is authorized to administrate this token. For example, using `accountKey` would mean that your own account would get to perform actions such as minting additional supply.
+* [**Token Type**](../../sdks-and-apis/sdks/token-service/token-types.md): Fungible tokens, declared using `TokenType.FungibleCommon`, may be thought of as analogous to _ERC20_ tokens. Note that HTS also supports another token type, `TokenType.NonFungibleUnique`, which may be thought of as analogous to _ERC721_ tokens.
+* **Token Name**: This is the full name of the token. For example, "Singapore Dollar".
+* **Token Symbol**: This is the abbreviation of the token's name. For example, "SGD".
+* **Decimals**: This is the number of decimal places the currency uses. For example, `2` mimics "cents", where the smallest unit of the token is 0.01 (1/100) of a single token.
+* **Initial Supply**: This is the number of units of the token to "mint" when first creating the token. Note that this is specified in the smallest units, so `1_000_000` initial supply when decimals is 2, results in `10_000` full units of the token being minted. It might be easier to think about it as "one million cents equals ten thousand dollars".
+* **Treasury Account ID**: This is the account for which the initial supply is credited. For example, using `accountId` would mean that your own account receives all the tokens when they are minted.
+* [**Admin Key**](../../sdks-and-apis/sdks/token-service/define-a-token.md#token-properties): This is the account that is authorized to administrate this token. For example, using `accountKey` would mean that your own account would get to perform actions such as minting additional supply.
 
 </details>
 
@@ -128,18 +128,16 @@ Now, query the token balance of our account. Since the _treasury account_ was co
 
 You will want to use the Mirror Node API with the path `/api/v1/accounts/{idOrAliasOrEvmAddress}/tokens` for this task.
 
-- Specify `accountId` within the URL path
-- Specify `tokenId` as the `token.id` query parameter
-- Specify `1` as the `limit` query parameter (you are only interested in one token)
+* Specify `accountId` within the URL path
+* Specify `tokenId` as the `token.id` query parameter
+* Specify `1` as the `limit` query parameter (you are only interested in one token)
 
 Using string interpolation, construct `accountBalanceFetchApiUrl` like so:
 
 {% code title="script-hts-ft.js" overflow="wrap" %}
-
 ```js
     const accountBalanceFetchApiUrl = `https://testnet.mirrornode.hedera.com/api/v1/accounts/${accountId}/tokens?token.id=${tokenId}&limit=1&order=desc`;
 ```
-
 {% endcode %}
 
 <details>
@@ -178,12 +176,12 @@ accountBalanceFetchApiUrl: https://testnet.mirrornode.hedera.com/api/v1/accounts
 
 Open `tokenExplorerUrl` in your browser and check that:
 
-<img src="../../.gitbook/assets/hello-world--hts--token.drawing.svg" alt="HTS transaction in Hashscan, with annotated items to check." class="gitbook-drawing">
+![HTS transaction in Hashscan, with annotated items to check.](../../.gitbook/assets/hello-world--hts--token.drawing.svg)
 
-- The token should exist, and its "token ID" should match `tokenId`. **(1)**
-- The "name" and "symbol" should be shown as the same values derived from your name (or nickname) that you chose earlier. **(2)**
-- The "treasury account" should match `accountId`. **(3)**
-- Both the "total supply" and "initial supply" should be `10,000`. **(4)**
+* The token should exist, and its "token ID" should match `tokenId`. **(1)**
+* The "name" and "symbol" should be shown as the same values derived from your name (or nickname) that you chose earlier. **(2)**
+* The "treasury account" should match `accountId`. **(3)**
+* Both the "total supply" and "initial supply" should be `10,000`. **(4)**
 
 {% hint style="info" %}
 **Note**: "total supply" and "initial supply" are not displayed as `1,000,000` because of the two decimal places configured. Instead, these are displayed as `10,000.00`.
@@ -197,8 +195,8 @@ Congratulations, you have completed the **Hedera Token Service** Hello World seq
 
 You have learned how to:
 
-- [x] Create and mint a new fungible token on HTS
-- [x] Query the token balance
+* [x] Create and mint a new fungible token on HTS
+* [x] Query the token balance
 
 ***
 

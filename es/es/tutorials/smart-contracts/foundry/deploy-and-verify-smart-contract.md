@@ -1,46 +1,49 @@
 ---
-description: Discover how to deploy and automatically verify your Hedera smart contract. Learn how to verify a pre-existing contract and check a contracts verification status.
+description: >-
+  Discover how to deploy and automatically verify your Hedera smart contract.
+  Learn how to verify a pre-existing contract and check a contracts verification
+  status.
 ---
 
 # How to Deploy and Verify a Hedera Smart Contract with Foundry
 
 ## What you will accomplish
 
-- [ ] Deploy your smart contract to Hedera Testnet and automatically verify
-- [ ] Verify a pre-existing smart contract on Hedera Testnet
-- [ ] Check the verification status of a smart contract
+* [ ] Deploy your smart contract to Hedera Testnet and automatically verify
+* [ ] Verify a pre-existing smart contract on Hedera Testnet
+* [ ] Check the verification status of a smart contract
 
 ## Prerequisites
 
 Before you begin, you should be familiar with the following:
 
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Solidity](https://docs.soliditylang.org/en/latest/)
-- [Foundry](https://book.getfoundry.sh/)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Solidity](https://docs.soliditylang.org/en/latest/)
+* [Foundry](https://book.getfoundry.sh/)
 
 <details>
 
-<summary>Also, you should have the following set up on your computer ⬇ </summary>
+<summary>Also, you should have the following set up on your computer ⬇</summary>
 
-- [x] `git` installed
-  - Minimum version: 2.37
-  - Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
-- [x] A code editor or IDE
-  - Recommended: [VS Code. Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
-- [x] NodeJs + npm installed
-  - Minimum version of NodeJs: 18
-  - Minimum version of npm: 9.5
-  - Recommended for Linux & Mac: [nvm](https://github.com/nvm-sh/nvm)
-  - Recommended for Windows: [nvm-windows](https://github.com/coreybutler/nvm-windows)
-- [x] foundry `forge` and `cast` installed
-  - `forge` Minimum version: 0.2.0 (3cdee82 2024-02-15T00:19:38.655803000Z)
-  - `cast` Minimum version: 0.2.0 (3cdee82 2024-02-15T00:19:38.543163000Z)
+* [x] `git` installed
+  * Minimum version: 2.37
+  * Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
+* [x] A code editor or IDE
+  * Recommended: [VS Code. Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
+* [x] NodeJs + npm installed
+  * Minimum version of NodeJs: 18
+  * Minimum version of npm: 9.5
+  * Recommended for Linux & Mac: [nvm](https://github.com/nvm-sh/nvm)
+  * Recommended for Windows: [nvm-windows](https://github.com/coreybutler/nvm-windows)
+* [x] foundry `forge` and `cast` installed
+  * `forge` Minimum version: 0.2.0 (3cdee82 2024-02-15T00:19:38.655803000Z)
+  * `cast` Minimum version: 0.2.0 (3cdee82 2024-02-15T00:19:38.543163000Z)
 
 </details>
 
 <details>
 
-<summary>Check your prerequisites set up ⬇ </summary>
+<summary>Check your prerequisites set up ⬇</summary>
 
 Open your terminal, and enter the following commands.
 
@@ -55,7 +58,7 @@ cast --version
 
 Each of these commands should output some text that includes a version number, for example:
 
-```text
+```
 git --version
 git version 2.39.2 (Apple Git-143)
 
@@ -88,10 +91,7 @@ If the output contains text similar to `command not found`, please install that 
 
 ### Set up project
 
-To follow along, start with the `main` branch,
-which is the _default branch_ of this repository.
-This gives you the initial state from which you can follow along
-with the steps as described in the tutorial.
+To follow along, start with the `main` branch, which is the _default branch_ of this repository. This gives you the initial state from which you can follow along with the steps as described in the tutorial.
 
 `forge` manages dependencies by using git submodules. Clone the following project and pass `--recurse-submodules` to the `git clone` command to automatically initialize and update the submodule in the repository.
 
@@ -135,12 +135,12 @@ If you need to create a Hedera account, follow the [create a hedera portal profi
 Keep your private key accessible as it will be needed in the following steps.
 {% endhint %}
 
-### Choose your Testnet RPC_URL
+### Choose your Testnet RPC\_URL
 
 Choose one of the options over at [How to Connect to Hedera Networks Over RPC](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections)
 
 {% hint style="warning" %}
-Keep the Testnet RPC_URL accessible as it will be needed in the next step.
+Keep the Testnet RPC\_URL accessible as it will be needed in the next step.
 {% endhint %}
 
 ### Deploy and Automatically Verify Your Contract on Hedera Testnet
@@ -153,7 +153,7 @@ forge create --rpc-url "RPC_URL" --private-key "HEX_Encoded_Private_Key" --verif
 
 <details>
 
-<summary>Example forge create command </summary>
+<summary>Example forge create command</summary>
 
 ```shell
 forge create --rpc-url https://testnet.hashio.io/api --private-key 0x348ce564d427a3317b6536bbcff9290d69395b06ed6c486954e971d960fe87ac --verify --verifier sourcify --verifier-url https://server-verify.hashscan.io src/TodoList.sol:TodoList
@@ -171,7 +171,7 @@ Hashscan is a Hedera Mirror Node Explorer that integrates with Sourcify to provi
 
 You should see output similar to the following:
 
-```text
+```
 [⠒] Compiling...
 [⠔] Compiling 22 files with 0.8.23
 [⠘] Solc 0.8.23 finished in 3.43s
@@ -187,10 +187,9 @@ Submitting verification for [TodoList] "0x3b096B1c56A48119CB4fe140F1D26196590aF4
 Contract successfully verified
 ```
 
-Open the Hashscan explorer in your browser by
-copying the **Deployed to** EVM address and replacing `<Deployed_Contract_EVM_Address>` in the link below:
+Open the Hashscan explorer in your browser by copying the **Deployed to** EVM address and replacing `<Deployed_Contract_EVM_Address>` in the link below:
 
-```text
+```
 https://hashscan.io/testnet/contract/<Deployed_Contract_EVM_Address>
 ```
 
@@ -202,10 +201,10 @@ Example: `https://hashscan.io/testnet/contract/0x3b096B1c56A48119CB4fe140F1D2619
 
 You should see a page with:
 
-- The title "Contract" **(1)**
-- An "EVM Address" field that matches the value of `Deployed To` in the output above. **(2)**
-- A section titled "Contract Bytecode" with a green `verified` tag. **(3)**
-- Two tabs titled "Source" and "Bytecode". **(4)**
+* The title "Contract" **(1)**
+* An "EVM Address" field that matches the value of `Deployed To` in the output above. **(2)**
+* A section titled "Contract Bytecode" with a green `verified` tag. **(3)**
+* Two tabs titled "Source" and "Bytecode". **(4)**
 
 ### Verify A Pre-Existing Contract on Testnet
 
@@ -217,14 +216,13 @@ Deploy a contract without verifying by running this command in your terminal:
 ```shell
 forge create --rpc-url "RPC_URL" --private-key "HEX_Encoded_Private_Key" src/TodoList.sol:TodoList
 ```
-
 {% endhint %}
 
 In order to verify a pre-existing smart contract you will need:
 
-- the contract EVM address with `0x` prefix
-- the contract name or path to the contract
-- the chain ID
+* the contract EVM address with `0x` prefix
+* the contract name or path to the contract
+* the chain ID
 
 In your terminal, replace `<CONTRACT_ADDRESS>` with the contract EVM address you wish to verify.
 
@@ -233,15 +231,14 @@ forge verify-contract --chain-id 296 --verifier sourcify --verifier-url https://
 ```
 
 {% hint style="info" %}
-
-- The chain ID for Mainnet is `295`.
-- The chain ID for Testnet is `296`, which is what you are using.
-- The chain ID for Previewnet is `297`.
-  {% endhint %}
+* The chain ID for Mainnet is `295`.
+* The chain ID for Testnet is `296`, which is what you are using.
+* The chain ID for Previewnet is `297`.
+{% endhint %}
 
 You should see output similar to the following:
 
-```text
+```
 Start verifying contract `0xC08d3Cf01739C713BaD1cf65FD4127CB90550568` deployed on 296
 
 Submitting verification for [TodoList] "0xC08d3Cf01739C713BaD1cf65FD4127CB90550568".
@@ -258,7 +255,7 @@ forge verify-check --chain-id 296 --verifier sourcify --verifier-url https://ser
 
 You should see output similar to the following:
 
-```text
+```
 Checking verification status on 296
 Contract successfully verified
 ```
@@ -269,9 +266,9 @@ Congratulations, on completing the tutorial on how to verify smart contracts on 
 
 You have learned how to:
 
-- [x] Deploy your smart contract to Hedera Testnet and Automatically Verify
-- [x] Verify a pre-existing smart contract on Hedera Testnet
-- [x] Check a smart contracts verification status
+* [x] Deploy your smart contract to Hedera Testnet and Automatically Verify
+* [x] Verify a pre-existing smart contract on Hedera Testnet
+* [x] Check a smart contracts verification status
 
 ***
 

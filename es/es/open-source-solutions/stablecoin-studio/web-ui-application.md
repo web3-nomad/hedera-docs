@@ -22,22 +22,22 @@ The Stablecoin Studio Web User Interface (Web UI) is designed to provide a more 
 
 Get firsthand experience with Stablecoin Studio's capabilities using the open-source, React-based demo application sandbox. The sandbox application is built using Stablecoin Studio's TypeScript SDK.
 
-<figure><img src="../../.gitbook/assets/web ui platform user.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/web%20ui%20platform%20user.png" alt=""><figcaption></figcaption></figure>
 
 After setting up a [Hedera testnet account](https://portal.hedera.com/), explore creating and managing stablecoins on Hedera through the interactive demo and follow along. Let's get started and explore the three paths for launching the Stablecoin Studio web application:
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><ol><li><a href="https://stablecoinstudio.com/"><strong>Code Sandbox</strong></a></li></ol></td><td>For a quick and effortless start, you can use the pre-configured Code Sandbox environment directly from StablecoinStudio.com. This approach requires no setup and provides a fully functional demo application.</td><td><a href="../../.gitbook/assets/Code Sandbox Icon.png">Code Sandbox Icon.png</a></td><td><a href="https://www.stablecoinstudio.com">https://www.stablecoinstudio.com</a></td></tr><tr><td><ol start="2"><li><a href="https://gitpod.io/new/#https://github.com/hashgraph/stablecoin-studio"><strong>GitPod Instance</strong></a></li></ol></td><td>Another easy way to get started is by launching a GitPod instance, which automates the initial setup and lets you dive into the application immediately. You can skip the p<em>rerequisites</em> and <em>installation</em> steps.</td><td><a href="../../.gitbook/assets/GitPod Icon.png">GitPod Icon.png</a></td><td><a href="https://gitpod.io/#https://github.com/hashgraph/stablecoin-studio">https://gitpod.io/#https://github.com/hashgraph/stablecoin-studio</a></td></tr><tr><td><ol start="3"><li><a href="web-ui-application.md#prerequisites"><strong>Local Environment</strong></a></li></ol></td><td>A more technical method to build and install on your local machine. This guide focuses on this method, walking you through the steps needed to set up your local environment. Start from the first step: Prerequisites.</td><td><a href="../../.gitbook/assets/Local Environment Icon.png">Local Environment Icon.png</a></td><td><a href="web-ui-application.md#prerequisites">#prerequisites</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><ol><li><a href="https://stablecoinstudio.com/"><strong>Code Sandbox</strong></a></li></ol></td><td>For a quick and effortless start, you can use the pre-configured Code Sandbox environment directly from StablecoinStudio.com. This approach requires no setup and provides a fully functional demo application.</td><td></td><td><a href="https://www.stablecoinstudio.com">https://www.stablecoinstudio.com</a></td></tr><tr><td><ol start="2"><li><a href="https://gitpod.io/new/#https://github.com/hashgraph/stablecoin-studio"><strong>GitPod Instance</strong></a></li></ol></td><td>Another easy way to get started is by launching a GitPod instance, which automates the initial setup and lets you dive into the application immediately. You can skip the p<em>rerequisites</em> and <em>installation</em> steps.</td><td></td><td><a href="https://gitpod.io/#https://github.com/hashgraph/stablecoin-studio">https://gitpod.io/#https://github.com/hashgraph/stablecoin-studio</a></td></tr><tr><td><ol start="3"><li><a href="web-ui-application.md#prerequisites"><strong>Local Environment</strong></a></li></ol></td><td>A more technical method to build and install on your local machine. This guide focuses on this method, walking you through the steps needed to set up your local environment. Start from the first step: Prerequisites.</td><td></td><td><a href="web-ui-application.md#prerequisites">#prerequisites</a></td></tr></tbody></table>
 
 ***
 
 ## Prerequisites
 
-- [NodeJS >= 18.13](https://nodejs.org/en)
-- [Solidity >= 0.8.16](https://docs.soliditylang.org/en/latest/installing-solidity.html)
-- [TypeScript >= 4.7](https://www.npmjs.com/package/typescript)
-- [Git Command Line](https://git-scm.com/downloads)
-- [Hedera Testnet Account](https://portal.hedera.com/)
-- [HashPack Wallet](https://www.hashpack.app/download)
+* [NodeJS >= 18.13](https://nodejs.org/en)
+* [Solidity >= 0.8.16](https://docs.soliditylang.org/en/latest/installing-solidity.html)
+* [TypeScript >= 4.7](https://www.npmjs.com/package/typescript)
+* [Git Command Line](https://git-scm.com/downloads)
+* [Hedera Testnet Account](https://portal.hedera.com/)
+* [HashPack Wallet](https://www.hashpack.app/download)
 
 ***
 
@@ -46,13 +46,11 @@ After setting up a [Hedera testnet account](https://portal.hedera.com/), explore
 Open a new terminal and navigate to your preferred directory location where you want your Stablecoin Studio project to live. Clone the repo, `cd` in to the cloned directory, and install dependencies:
 
 {% code fullWidth="false" %}
-
 ```bash
 git clone https://github.com/hashgraph/stablecoin-studio.git
 cd stablecoin-studio
 npm install
 ```
-
 {% endcode %}
 
 `cd` in to the `web` directory:
@@ -78,7 +76,6 @@ The `.env` file contains the following parameters:
 <summary>Example configured <code>.env</code> file ✅</summary>
 
 {% code title=".env" overflow="wrap" fullWidth="false" %}
-
 ```bash
 REACT_APP_LOG_LEVEL=ERROR
 REACT_APP_FACTORIES='[{"Environment":"testnet","STABLE_COIN_FACTORY_ADDRESS":"0.0.467235"}]'
@@ -86,7 +83,6 @@ REACT_APP_MIRROR_NODE='[{"Environment":"testnet","BASE_URL":"https://testnet.mir
 REACT_APP_RPC_NODE='[{"Environment":"testnet","BASE_URL":"https://testnet.hashio.io/api", "API_KEY": "", "HEADER": ""}]'
 GENERATE_SOURCEMAP=false
 ```
-
 {% endcode %}
 
 </details>
@@ -103,15 +99,17 @@ npm run start
 
 If the application is successfully run, the web application interface will open in a new browser:
 
-<figure><img src="../../.gitbook/assets/start web ui.png" alt=""><figcaption><p>http://localhost:3000/</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/start%20web%20ui.png" alt=""><figcaption><p>http://localhost:3000/</p></figcaption></figure>
 
 Click "Connect your wallet" and select the wallet ([HashPack](https://www.hashpack.app/) or [MetaMask](https://metamask.io/)) and network you want to interact with. For the purposes of this demo, we will use HashPack and select Testnet.
 
 <div>
 
-<figure><img src="../../.gitbook/assets/web connect wallet.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/web%20connect%20wallet.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/select testnet.png" alt=""><figcaption></figcaption></figure>
+ 
+
+<figure><img src="../../.gitbook/assets/select%20testnet.png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -125,21 +123,21 @@ Now that your project is set up and the web application is running let's create 
 
 To initiate the creation of your stablecoin, head to the top of the interface and click on the <mark style="background-color:purple;">＋</mark> symbol. From the options that appear, select "Create coin." The required fields for basic details will be displayed:
 
-- **HederaTokenManager impl.**: By default, this is set to a factory contract ID provided by Hedera, in the format `0.0.XXXXXX`. Advanced users have the option to deploy their own factory contract implementation.
-- **Name**: This is where you name your new stablecoin, for example, "NewStableCoin."
-- **Symbol**: Enter a symbol to represent your stablecoin, like "$NSC."
+* **HederaTokenManager impl.**: By default, this is set to a factory contract ID provided by Hedera, in the format `0.0.XXXXXX`. Advanced users have the option to deploy their own factory contract implementation.
+* **Name**: This is where you name your new stablecoin, for example, "NewStableCoin."
+* **Symbol**: Enter a symbol to represent your stablecoin, like "$NSC."
 
-<figure><img src="../../.gitbook/assets/create new stablecoin.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create%20new%20stablecoin.png" alt=""><figcaption></figcaption></figure>
 
 #### Optional details
 
 While the basic details are mandatory, you also have an option to further specify:
 
-- **Initial Supply**: You can expand on the initial number of tokens that will be minted.
-- **Max Supply**: If you chose 'Finite' in the 'Supply Type,' you might want to set an upper limit.
-- **Decimals**: You can set additional decimal places if you need more precision.
+* **Initial Supply**: You can expand on the initial number of tokens that will be minted.
+* **Max Supply**: If you chose 'Finite' in the 'Supply Type,' you might want to set an upper limit.
+* **Decimals**: You can set additional decimal places if you need more precision.
 
-<figure><img src="../../.gitbook/assets/optional details.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/optional%20details.png" alt=""><figcaption></figcaption></figure>
 
 #### Manage permissions
 
@@ -149,7 +147,7 @@ If the KYC key is tied to the smart contract and the supply key isn't tied to th
 
 As for ownership settings, by default, the account that initiates the stablecoin creation also becomes the stablecoin proxy admin owner. However, you’re not locked into this default setup. You can alter this by specifying a different account ID during creation. This could be any account, including specialized accounts like a timelock controller for scheduled operations or a cold wallet for enhanced security.
 
-<figure><img src="../../.gitbook/assets/permission management.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/permission%20management.png" alt=""><figcaption></figcaption></figure>
 
 #### Proof-of-reserve (PoR)
 
@@ -161,7 +159,7 @@ Choose if the stablecoin will be linked to a Proof of Reserve (PoR) contract. Yo
 
 For those using the project's demo PoR contract, you also have the option to modify its reserve amount. This can be done via the PoR admin account used during the stablecoin's deployment. Because the reserve can be changed arbitrarily in the demo, it's intended for demonstration purposes only.
 
-<figure><img src="../../.gitbook/assets/proof of reserve.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/proof%20of%20reserve.png" alt=""><figcaption></figcaption></figure>
 
 #### Review
 
@@ -177,19 +175,19 @@ To operate your stablecoin, connect your wallet to the platform. After successfu
 
 You'll see a variety of actions and your accessible operations will be tied to the roles assigned to your account for the chosen stablecoin. Here's a quick rundown of what each operation allows:
 
-- **Cash In**: Deposit assets into your stablecoin account.
-- **Burn**: Permanently remove specific tokens from circulation.
-- **Get Balance**: View the current balance of your stablecoin account.
-- **Rescue**: Recover tokens in unique scenarios.
-- **Rescue HBAR**: Specialized recovery for HBAR.
-- **Wipe**: Clear particular stablecoin balances.
-- **Freeze Account**: Temporarily disable transaction capabilities for an account.
-- **Unfreeze**: Lift the freeze status from an account.
-- **Check Account Frozen Status**: Verify whether an account is frozen.
-- **Grant KYC**: Approve an account for KYC verification.
-- **Revoke KYC**: Remove previously granted KYC approval.
-- **Check KYC**: Confirm the KYC status of an account.
-- **Danger Zone**: Access to operations that carry higher risk, generally because they affect every token owner (PAUSE) or can not be rolled back (DELETE).
+* **Cash In**: Deposit assets into your stablecoin account.
+* **Burn**: Permanently remove specific tokens from circulation.
+* **Get Balance**: View the current balance of your stablecoin account.
+* **Rescue**: Recover tokens in unique scenarios.
+* **Rescue HBAR**: Specialized recovery for HBAR.
+* **Wipe**: Clear particular stablecoin balances.
+* **Freeze Account**: Temporarily disable transaction capabilities for an account.
+* **Unfreeze**: Lift the freeze status from an account.
+* **Check Account Frozen Status**: Verify whether an account is frozen.
+* **Grant KYC**: Approve an account for KYC verification.
+* **Revoke KYC**: Remove previously granted KYC approval.
+* **Check KYC**: Confirm the KYC status of an account.
+* **Danger Zone**: Access to operations that carry higher risk, generally because they affect every token owner (PAUSE) or can not be rolled back (DELETE).
 
 To carry out an operation, simply click on the corresponding button and follow the on-screen prompts. The platform will automatically perform the operation based on the capabilities your account has been assigned.
 
@@ -205,18 +203,18 @@ In Stablecoin Studio, role management is a pivotal feature that gives you contro
 
 Roles you can manage include:
 
-- **Cash In**: Permits an account to deposit or 'cash in' assets.
-- **Burn**: Authorizes an account to remove tokens from circulation permanently.
-- **Wipe**: Allows an account to clear specific balances.
-- **Rescue**: Grants the ability to recover tokens in special circumstances.
-- **Pause**: Enables stopping all transactions temporarily, which is useful in emergency situations.
-- **Freeze**: Authorizes freezing specific accounts, disabling their ability to transact.
-- **Delete**: Allows the removal of accounts or certain data, irreversible.
-- **Admin Role**: Provides overarching administrative privileges, often reserved for key governance participants.
+* **Cash In**: Permits an account to deposit or 'cash in' assets.
+* **Burn**: Authorizes an account to remove tokens from circulation permanently.
+* **Wipe**: Allows an account to clear specific balances.
+* **Rescue**: Grants the ability to recover tokens in special circumstances.
+* **Pause**: Enables stopping all transactions temporarily, which is useful in emergency situations.
+* **Freeze**: Authorizes freezing specific accounts, disabling their ability to transact.
+* **Delete**: Allows the removal of accounts or certain data, irreversible.
+* **Admin Role**: Provides overarching administrative privileges, often reserved for key governance participants.
 
 Connect your wallet and select the stablecoin from the drop-down list you want to interact with. Once the stablecoin information loads, head to the "Role management" tab.
 
-<figure><img src="../../.gitbook/assets/role management.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/role%20management.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -228,9 +226,11 @@ This menu option displays stablecoin details and allows the user to update some 
 
 <div>
 
-<figure><img src="../../.gitbook/assets/stablecoin details (1).png" alt=""><figcaption><p>HashScan Explorer link</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/stablecoin%20details%20(1).png" alt=""><figcaption><p>HashScan Explorer link</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/hashscan (2).png" alt=""><figcaption><p>HashScan</p></figcaption></figure>
+ 
+
+<figure><img src="../../.gitbook/assets/hashscan%20(2).png" alt=""><figcaption><p>HashScan</p></figcaption></figure>
 
 </div>
 

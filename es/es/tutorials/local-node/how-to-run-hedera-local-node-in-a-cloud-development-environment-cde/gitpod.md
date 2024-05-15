@@ -6,11 +6,11 @@ The local network comprises the consensus node, mirror node, [JSON-RPC relay](ht
 
 ## Prerequisites
 
-- Signed into your GitHub account in your browser.
-- [Register](https://gitpod.io/login/) a Gitpod account with your GitHub account.
-- If this is your first time using Gitpod, please read the [Gitpod getting started](https://www.gitpod.io/docs/introduction/getting-started) guide.
-- Install the browser extension: [Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
-- The Mirror Node Web Explorer requires [VS Code Desktop](https://www.gitpod.io/docs/references/ides-and-editors/vscode) to be installed, as [VS Code Browser](https://www.gitpod.io/docs/references/ides-and-editors/vscode-browser) has limitations related to communicating with local ports, e.g. `http://127.0.0.1:5551/`.
+* Signed into your GitHub account in your browser.
+* [Register](https://gitpod.io/login/) a Gitpod account with your GitHub account.
+* If this is your first time using Gitpod, please read the [Gitpod getting started](https://www.gitpod.io/docs/introduction/getting-started) guide.
+* Install the browser extension: [Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+* The Mirror Node Web Explorer requires [VS Code Desktop](https://www.gitpod.io/docs/references/ides-and-editors/vscode) to be installed, as [VS Code Browser](https://www.gitpod.io/docs/references/ides-and-editors/vscode-browser) has limitations related to communicating with local ports, e.g. `http://127.0.0.1:5551/`.
 
 ***
 
@@ -78,7 +78,7 @@ Visit the local mirror node explorer endpoint ([http://localhost:8080/devnet/das
 
 ## Conclusion and Additional Resources
 
-Congrats on successfully setting up your Gitpod workspace and running a Hedera Local Node!&#x20
+Congrats on successfully setting up your Gitpod workspace and running a Hedera Local Node!\&#x20
 
 **➡** [**Hedera Local Node Repository**](https://github.com/hashgraph/hedera-local-node#readme)
 

@@ -1,5 +1,7 @@
 ---
-description: A step-by-step guide on how to configure a mirror node and query specific data on the Hedera Network
+description: >-
+  A step-by-step guide on how to configure a mirror node and query specific data
+  on the Hedera Network
 ---
 
 # How to Configure a Mirror Node and Query Data
@@ -12,10 +14,10 @@ This guide provides step-by-step instructions on how to configure and use a Hede
 
 ## Prerequisites
 
-- Basic understanding of Hedera Mirror Nodes.
-- Basic understanding of terminal commands and SQL.
-- [Java](https://www.java.com/en/) (openjdk@17: Java version 17), [Gradle](https://gradle.org/install/) (the latest version), and [PostgreSQL](https://www.postgresql.org/) (the latest version) are installed on your machine.
-- [Docker](https://www.docker.com/) (`>= v20.10.x)` installed and open on your machine. Run `docker -v` in your terminal to check the version you have installed.
+* Basic understanding of Hedera Mirror Nodes.
+* Basic understanding of terminal commands and SQL.
+* [Java](https://www.java.com/en/) (openjdk@17: Java version 17), [Gradle](https://gradle.org/install/) (the latest version), and [PostgreSQL](https://www.postgresql.org/) (the latest version) are installed on your machine.
+* [Docker](https://www.docker.com/) (`>= v20.10.x)` installed and open on your machine. Run `docker -v` in your terminal to check the version you have installed.
 
 ***
 
@@ -68,7 +70,6 @@ In this example, we'll use the `application.yml` format for demonstration purpos
 Here's an overview the `application.yml` file. Copy the following lines into `application.yml` and save it.
 
 {% code title="application.yml" %}
-
 ```yaml
 hedera:
   mirror:
@@ -94,23 +95,22 @@ hedera:
             persist:
               topics: false
 ```
-
 {% endcode %}
 
 Here's a breakdown of what each section of the configuration file does:
 
-- **`behaviorhedera`**: This is the root section of the configuration file, indicating that the settings apply to the Hedera network.
-- **`mirror`**: This is a sub-section that pertains specifically to the Mirror node.
-- **`importer`**: This sub-section defines settings for the Mirror node's importer, which is responsible for retrieving transaction data from the network and storing it in a local database for querying.
-- **`importer.network: DEMO`**: This specifies that the importer should connect to a bucket with demo data. It's the easiest way to experiment with the mirror node and importer. If you want to connect to the `TESTNET`, `MAINNET`, or `PREVIEWNET`, you need to follow this [tutorial](../../core-concepts/mirror-nodes/run-your-own-beta-mirror-node/).
-- **`importer.retention`**: This sub-section specifies the retention period and frequency for importing data. In this case, the importer will clean data that is older than 90 days every 60 seconds. If you omit the `frequency` key, the default behavior for cleaning data is once a day.&#x20
-- **`importer.retention.include`**: This specifies the database tables that should be included in the imported data. The tables specified are **`transaction`** and **`crypto_transfer`**. You can find all tables in the [GitHub repository](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-importer/src/main/resources/db/migration/v2/V2.0.0\_\_create\_tables.sql) for the mirror node.
-- **`parser`**: This sub-section defines settings for the data parser, which determines the data that gets stored in the database or the data that should be filtered.
-- **`parser.exclude`**: This specifies the entities or transaction types that should be excluded from the imported data. In this case, the **`parser.exclude.entity`** with ID **`0.0.111478`** is excluded.
-- **`parser.include`**: This specifies the entities or transaction types that should be included from the imported data. In this case, the **`parser.include.entity`** with ID **`0.0.111478`** is included, and two specific transaction types (**`CRYPTOTRANSFER`** and **`CRYPTOCREATEACCOUNT`**) are included via **`parser.include.transaction`**.\
+* **`behaviorhedera`**: This is the root section of the configuration file, indicating that the settings apply to the Hedera network.
+* **`mirror`**: This is a sub-section that pertains specifically to the Mirror node.
+* **`importer`**: This sub-section defines settings for the Mirror node's importer, which is responsible for retrieving transaction data from the network and storing it in a local database for querying.
+* **`importer.network: DEMO`**: This specifies that the importer should connect to a bucket with demo data. It's the easiest way to experiment with the mirror node and importer. If you want to connect to the `TESTNET`, `MAINNET`, or `PREVIEWNET`, you need to follow this [tutorial](../../core-concepts/mirror-nodes/run-your-own-beta-mirror-node/).
+* **`importer.retention`**: This sub-section specifies the retention period and frequency for importing data. In this case, the importer will clean data that is older than 90 days every 60 seconds. If you omit the `frequency` key, the default behavior for cleaning data is once a day.\&#x20
+* **`importer.retention.include`**: This specifies the database tables that should be included in the imported data. The tables specified are **`transaction`** and **`crypto_transfer`**. You can find all tables in the [GitHub repository](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-importer/src/main/resources/db/migration/v2/V2.0.0\_\_create\_tables.sql) for the mirror node.
+* **`parser`**: This sub-section defines settings for the data parser, which determines the data that gets stored in the database or the data that should be filtered.
+* **`parser.exclude`**: This specifies the entities or transaction types that should be excluded from the imported data. In this case, the **`parser.exclude.entity`** with ID **`0.0.111478`** is excluded.
+* **`parser.include`**: This specifies the entities or transaction types that should be included from the imported data. In this case, the **`parser.include.entity`** with ID **`0.0.111478`** is included, and two specific transaction types (**`CRYPTOTRANSFER`** and **`CRYPTOCREATEACCOUNT`**) are included via **`parser.include.transaction`**.\
   You can also combine **`entity`** and **`transaction`** fields. In our example, we only want to store **`CONTRACTCREATEINSTANCE`** transactions for the entity with ID **`0.0.111710`**.
-- **`parser.record`**: This sub-section specifies how the imported data should be recorded. In this case, the **`entity`** object is specified, which means that data should be recorded for each unique entity (account) involved in the transactions. The **`persist`** setting is set to **`false`**, which means that topic data for entities should not be persisted.
-- **`period: 90D`**: This indicates that the importer should retain the imported data for a period of 90 days. After this period, the data will be deleted.
+* **`parser.record`**: This sub-section specifies how the imported data should be recorded. In this case, the **`entity`** object is specified, which means that data should be recorded for each unique entity (account) involved in the transactions. The **`persist`** setting is set to **`false`**, which means that topic data for entities should not be persisted.
+* **`period: 90D`**: This indicates that the importer should retain the imported data for a period of 90 days. After this period, the data will be deleted.
 
 {% hint style="info" %}
 **Note:** The `parser.exclude` properties take priority over the `parser.include` properties. If you list the same value in both lists, it will be excluded.\
@@ -178,7 +178,7 @@ docker compose up -d db rest && docker logs hedera-mirror-node-db-1 --follow
 
 Wait until you see the _"database system is ready to accept connections"_ message in the console log, then `control + c` to terminate the current process.
 
-<figure><img src="../../.gitbook/assets/docker command up postgres.png" alt=""><figcaption><p>Console output after starting both containers.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/docker%20command%20up%20postgres.png" alt=""><figcaption><p>Console output after starting both containers.</p></figcaption></figure>
 
 #### 2. Run the importer
 
@@ -230,14 +230,14 @@ In this section, you can try out multiple queries that show you how to retrieve 
 {% hint style="info" %}
 Most queries include the field **`type`** which refers to a transaction type, e.g. **11** refers to`CRYPTOCREATEACCOUNT`and **14** refers to`CRYPTOTRANSFER`. The most common transaction types are:
 
-- Type 7: `CONTRACTCALL`
-- Type  11: `CRYPTOCREATEACCOUNT`
-- Type 14: `CRYPTOTRANSFER`
-- Type 24: `CONSENSUSCREATETOPIC`
-- Type 27: `CONSENSUSSUBMITMESSAGE`
-- Type 29: `TOKENCREATION`
-- Type 37: `TOKENMINT`
-- Type 40: `TOKENASSOCIATE`
+* Type 7: `CONTRACTCALL`
+* Type 11: `CRYPTOCREATEACCOUNT`
+* Type 14: `CRYPTOTRANSFER`
+* Type 24: `CONSENSUSCREATETOPIC`
+* Type 27: `CONSENSUSSUBMITMESSAGE`
+* Type 29: `TOKENCREATION`
+* Type 37: `TOKENMINT`
+* Type 40: `TOKENASSOCIATE`
 
 Check out the complete list of transaction types in the [`TransactionTypes.java` file](https://github.com/hashgraph/hedera-mirror-node/blob/main/hedera-mirror-common/src/main/java/com/hedera/mirror/common/domain/transaction/TransactionType.java).
 {% endhint %}

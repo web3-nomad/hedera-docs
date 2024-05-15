@@ -1,5 +1,7 @@
 ---
-description: Hardhat and EthersJs tutorial - HSCS workshop. Learn how to enable custom logic & processing on Hedera through smart contracts.
+description: >-
+  Hardhat and EthersJs tutorial - HSCS workshop. Learn how to enable custom
+  logic & processing on Hedera through smart contracts.
 ---
 
 # Hardhat and EthersJs
@@ -16,8 +18,8 @@ Hedera Smart Contract Service Workshop Part 5/6 | Hardhat & EtherJs
 
 ## Prerequisites
 
-- ✅ Complete the [Introduction](00-intro.md) section of this same tutorial.
-- ✅ Optionally, complete the [Hedera SDK JS](01-hederasdkjs.md) section of this tutorial.
+* ✅ Complete the [Introduction](00-intro.md) section of this same tutorial.
+* ✅ Optionally, complete the [Hedera SDK JS](01-hederasdkjs.md) section of this tutorial.
 
 ## Set up the project
 
@@ -65,12 +67,11 @@ That being said, in order to attain interoperability with EVM-compatible network
 JSON-RPC is a Remote Procedure Call protocol, where the requests and responses are serialised in JSON. Importantly, Ethereum has defined a JSON-RPC API, and this API has become the de-facto standard API to interact with EVM-compatible networks.
 
 {% hint style="info" %}
-
-- [Ref: Hedera: What is Hashgraph Consensus](https://hedera.com/learning/hedera-hashgraph/what-is-hashgraph-consensus)
-- [Ref: HIP-415: Introduction of Blocks](https://hips.hedera.com/hip/hip-415)
-- [Ref: JSON-RPC: Specification](https://www.jsonrpc.org/specification)
-- [Ref: Ethereum: JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/)
-  {% endhint %}
+* [Ref: Hedera: What is Hashgraph Consensus](https://hedera.com/learning/hedera-hashgraph/what-is-hashgraph-consensus)
+* [Ref: HIP-415: Introduction of Blocks](https://hips.hedera.com/hip/hip-415)
+* [Ref: JSON-RPC: Specification](https://www.jsonrpc.org/specification)
+* [Ref: Ethereum: JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/)
+{% endhint %}
 
 Let's verify that we are able to interact with Hedera Testnet using JSON-RPC by issuing an `eth_getBlockByNumber` JSON-RPC request. The expected response will be the most recent block's number on the network.
 
@@ -86,9 +87,9 @@ This does indeed respond with a block number, in hexadecimal.
 
 ### Check block number on Hashscan
 
-- Convert this to decimal: `0x6f8741` --> `7309121`
-- Check on Hashscan: https://hashscan.io/testnet/blocks --> latest block is `7309352` --> more, as new blocks occur every 2 seconds, approximately
-- Click on it: https://hashscan.io/testnet/block/7309352 --> timestamp is `3:41:10.0120 PM Jul 14, 2023` --> matches time now
+* Convert this to decimal: `0x6f8741` --> `7309121`
+* Check on Hashscan: https://hashscan.io/testnet/blocks --> latest block is `7309352` --> more, as new blocks occur every 2 seconds, approximately
+* Click on it: https://hashscan.io/testnet/block/7309352 --> timestamp is `3:41:10.0120 PM Jul 14, 2023` --> matches time now
 
 ### Address
 
@@ -160,15 +161,15 @@ You'll now return to your regular shell.
 
 ### Check address on Hashscan
 
-- Copy the EVM address that Hardhat uses by default
-- Go to Hashscan, and search for that address
-- You should get redirected to an Account page
-  - For example, from: `https://hashscan.io/testnet/account/0x07ffAaDFe3a598b91ee08C88e5924be3EfF35796`
-  - to: `https://hashscan.io/testnet/account/0.0.3996359`
-- This verifies that the account exists
-- Check that the account has a balance of HBAR
-- If it does not exist, or does not have balance, you'll need to create or fund it before proceeding
-  - To do so, you'll need to repeat [_Step B4: Fund several Hedera EVM accounts_](../setup/#step-b4-fund-several-hedera-evm-accounts) from the Setup section of this tutorial.
+* Copy the EVM address that Hardhat uses by default
+* Go to Hashscan, and search for that address
+* You should get redirected to an Account page
+  * For example, from: `https://hashscan.io/testnet/account/0x07ffAaDFe3a598b91ee08C88e5924be3EfF35796`
+  * to: `https://hashscan.io/testnet/account/0.0.3996359`
+* This verifies that the account exists
+* Check that the account has a balance of HBAR
+* If it does not exist, or does not have balance, you'll need to create or fund it before proceeding
+  * To do so, you'll need to repeat [_Step B4: Fund several Hedera EVM accounts_](../setup/#step-b4-fund-several-hedera-evm-accounts) from the Setup section of this tutorial.
 
 ## Compiling smart contracts
 
@@ -184,9 +185,9 @@ npx hardhat compile
 
 Let's take a look at the compiled outputs, and where Hardhat stores them.
 
-- Build cache:`hardhat/cache/solidity-files-cache.json`
-- ABI: `hardhat/artifacts/contracts/trogdor.sol/Trogdor.json`
-- Bytecode + other compiler outputs: `hardhat/artifacts/build-info/${SOME_HASH}.json`
+* Build cache:`hardhat/cache/solidity-files-cache.json`
+* ABI: `hardhat/artifacts/contracts/trogdor.sol/Trogdor.json`
+* Bytecode + other compiler outputs: `hardhat/artifacts/build-info/${SOME_HASH}.json`
 
 You do not need to do anything with these, just good to know what is happening behind the scenes.
 
@@ -197,9 +198,8 @@ However, Hardhat + EthersJs do not understand HAPIs, and are only aware of the E
 This is the low-level protocol supported by the Hedera network which is the gateway for software libraries, developer tools, developer frameworks, and even end use software such as wallets, which were originally designed to work with Ethereum, to also work on Hedera, and is an integral part of Hedera's EVM-compatibility.
 
 {% hint style="info" %}
-
-- [Ref: HIP-410 - Wrapping Ethereum Transaction Bytes in a Hedera Transaction](https://hips.hedera.com/hip/hip-410)
-  {% endhint %}
+* [Ref: HIP-410 - Wrapping Ethereum Transaction Bytes in a Hedera Transaction](https://hips.hedera.com/hip/hip-410)
+{% endhint %}
 
 In this section of the tutorial, you are using Hardhat and EthersJs, and this framework/ software library are unaware of HAPIs, including `ContractCreateTransaction`, `ContractExecuteTransaction`, and `ContractCallQuery`, which you used earlier.
 
@@ -241,8 +241,8 @@ On Hedera networks, gas is paid for using HBAR.
 
 **Gas** is denominated in tinybars, and is equal to **gas price** multiplied by **gas units**. Both of these are variable in different ways:
 
-- **Gas price** depends on the demand for, and supply of, computational resources of the nodes in the Hedera network. Gas price usually increases with demand levels, and against supply levels.
-- **Gas units** depend on the computational and storage costs as metered by the EVM when processing that specific transaction. When processing a transaction, each bytecode has a specific numeric cost, and a running tally of their sum is tracked during transaction processing.
+* **Gas price** depends on the demand for, and supply of, computational resources of the nodes in the Hedera network. Gas price usually increases with demand levels, and against supply levels.
+* **Gas units** depend on the computational and storage costs as metered by the EVM when processing that specific transaction. When processing a transaction, each bytecode has a specific numeric cost, and a running tally of their sum is tracked during transaction processing.
 
 </details>
 
@@ -427,12 +427,12 @@ We will need the `contractAddress` property, so copy that for later use.
 
 ### Using Hashscan to check smart contract deployment
 
-- Copy the output smart contract account address, e.g. `0xeB9922B24D82603A543C764A3e4c9BC451FB8752`.
-- Visit [Hashscan](https://hashscan.io/testnet/dashboard)
-- Paste the copied address into the search box
-- You should get redirected to a "Contract" page, e.g. `https://hashscan.io/testnet/contract/0.0.15546633`
-- In it, you can see the EVM address, e.g. `0xeb9922b24d82603a543c764a3e4c9bc451fb8752`
-- Under "Contract Bytecode", you can see "Runtime Bytecode"
+* Copy the output smart contract account address, e.g. `0xeB9922B24D82603A543C764A3e4c9BC451FB8752`.
+* Visit [Hashscan](https://hashscan.io/testnet/dashboard)
+* Paste the copied address into the search box
+* You should get redirected to a "Contract" page, e.g. `https://hashscan.io/testnet/contract/0.0.15546633`
+* In it, you can see the EVM address, e.g. `0xeb9922b24d82603a543c764a3e4c9bc451fb8752`
+* Under "Contract Bytecode", you can see "Runtime Bytecode"
 
 ## Interacting with smart contacts
 
@@ -462,7 +462,7 @@ Therefore, to be able to handle `uint256` and other large number types, the `Big
 
 Now this is redundant, because JavaScript has since added a `bigint` primitive type, which is able to comfortably handle `uint256` values. Future versions of EthersJs and Web3Js are likely to deprecate the use of `BigNumber`.
 
-- [Ref: MDN - BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/BigInt)
+* [Ref: MDN - BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/BigInt)
 
 </details>
 
@@ -508,7 +508,7 @@ The _Value of gas price and value fields_ part of HIP-410 offers this explanatio
 
 _For Ethereum transactions, we introduce the concept of “WeiBars”, which are 1 to 10^-18th the value of a HBAR. This is to maximize compatibility with third party tools that expect ether units to be operated on in fractions of 10^18, also known as a Wei. Thus, 1 tinyBar is 10^10 weiBars or 10 gWei. When calculating gas prices and transferred value the fractional parts below a tiny bar are dropped when converted to tinyBars._
 
-- [Ref: HIP-410 - Wrapping Ethereum Transaction Bytes in a Hedera Transaction - Value of gas price and value fields](https://hips.hedera.com/hip/hip-410#value-of-gas-price-and-value-fields)
+* [Ref: HIP-410 - Wrapping Ethereum Transaction Bytes in a Hedera Transaction - Value of gas price and value fields](https://hips.hedera.com/hip/hip-410#value-of-gas-price-and-value-fields)
 
 The _compatibility_ above refers to may software libraries, developer tools, developer frameworks, and even end user software such as wallets, assuming/ hardcoding the value of the "full unit" in relation to the "fractional unit" of the native currency of that network. Since 1 HBAR = 10^8 tinybar, but 1 Ether = 10^18 wei, when using client software originally designed to interact with Ethereum, you need to be aware of this and convert between the two.
 
@@ -597,17 +597,17 @@ This returns a value of `0`, which is expected since this account has not yet in
 
 ### Using Hashscan to check smart contract interactions
 
-- Visit the "Contract" page for your previously deployed smart contract, e.g. `https://hashscan.io/testnet/contract/0.0.15426051`
-- Scroll down to the "Recent Contract Calls" section
-- If you see "REFRESH PAUSED" at the top right of this section, press the "play" button next to it to unpause (otherwise it does not load new transactions)
-- You should see a list of transactions, with most recent at the top
-- There should be a successful transaction, denoted by the absence of an exclamation mark in a red triangle, e.g. `https://hashscan.io/testnet/transaction/1689667816.410045835`
-- Scroll down to the "Contract Result" section
-- You should see "Result" as `SUCCESS`
-- You should also see "Error Message" as `None`
-- Scroll down to the "Logs" section
-- You should see a single log entry (address, data, index, and topics)
-  - The "Address" field matches that of the smart contract
-  - The "Index" field should be `0` since there was only a single event that was emitted
-  - The "Topics" field corresponds to the hash of the signature of the event that was emitted, e.g. `Burnination(address,uint256)`
-  - The "Data" field corresponds to the values of the event parameters, e.g. `0x0000000000000000000000007394111093687e9710b7a7aeba3ba0f417c54474000000000000000000000000000000000000000000000000000000000000007b` is `0x7394111093687e9710b7a7aeba3ba0f417c54474` (your address) and `0x7b` is the amount (`123` when converted to decimal)
+* Visit the "Contract" page for your previously deployed smart contract, e.g. `https://hashscan.io/testnet/contract/0.0.15426051`
+* Scroll down to the "Recent Contract Calls" section
+* If you see "REFRESH PAUSED" at the top right of this section, press the "play" button next to it to unpause (otherwise it does not load new transactions)
+* You should see a list of transactions, with most recent at the top
+* There should be a successful transaction, denoted by the absence of an exclamation mark in a red triangle, e.g. `https://hashscan.io/testnet/transaction/1689667816.410045835`
+* Scroll down to the "Contract Result" section
+* You should see "Result" as `SUCCESS`
+* You should also see "Error Message" as `None`
+* Scroll down to the "Logs" section
+* You should see a single log entry (address, data, index, and topics)
+  * The "Address" field matches that of the smart contract
+  * The "Index" field should be `0` since there was only a single event that was emitted
+  * The "Topics" field corresponds to the hash of the signature of the event that was emitted, e.g. `Burnination(address,uint256)`
+  * The "Data" field corresponds to the values of the event parameters, e.g. `0x0000000000000000000000007394111093687e9710b7a7aeba3ba0f417c54474000000000000000000000000000000000000000000000000000000000000007b` is `0x7394111093687e9710b7a7aeba3ba0f417c54474` (your address) and `0x7b` is the amount (`123` when converted to decimal)

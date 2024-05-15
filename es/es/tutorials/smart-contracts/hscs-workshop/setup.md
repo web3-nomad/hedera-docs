@@ -1,10 +1,12 @@
 ---
-description: Setup tutorial - HSCS workshop. Learn how to enable custom logic & processing on Hedera through smart contracts.
+description: >-
+  Setup tutorial - HSCS workshop. Learn how to enable custom logic & processing
+  on Hedera through smart contracts.
 ---
 
 # Setup
 
-## &#x20;Video
+## Video
 
 {% embed url="https://www.youtube.com/watch?v=25y5zslOUj8" %}
 Hedera Smart Contract Service Workshop Part 2/6 | Setup
@@ -81,9 +83,9 @@ Subsequently, we will use that seed phrase as an input and generate multiple acc
 
 <summary>BIP, EIP, and HIP</summary>
 
-- "BIP" stands for Bitcoin Improvement Proposal.
-- "EIP" stands for Ethereum Improvement Proposal, and was preceded by "ERC" which stands for Ethereum Request for Comments.
-- "HIP" stands for Hedera Improvement Proposal.
+* "BIP" stands for Bitcoin Improvement Proposal.
+* "EIP" stands for Ethereum Improvement Proposal, and was preceded by "ERC" which stands for Ethereum Request for Comments.
+* "HIP" stands for Hedera Improvement Proposal.
 
 </details>
 
@@ -105,25 +107,24 @@ Hedera native accounts use EdDSA with Ed25519, and Hedera EVM accounts use ECDSA
 
 Enough theory - let's generate a seed phrase!
 
-Visit [`iancoleman.io/bip39`](https://iancoleman.io/bip39/), and you can generate a BIP39 seed phrase there: \\`
+Visit [`iancoleman.io/bip39`](https://iancoleman.io/bip39/), and you can generate a BIP39 seed phrase there: \\\`
 
 <figure><img src="../../../.gitbook/assets/bip39-seed-phrase-generate-iancolemanio.png" alt="Screenshot highlighting steps to generate a BIP39 seed phrase (using iancoleman.io/bip39)."><figcaption></figcaption></figure>
 
-\\`
+\\\`
 
-- Locate the line that is labelled "Generate a random mnemonic"
-- Select any number from the dropdown that is more than or equal to `12`
-- Press "GENERATE"
-- Locate the section that is labelled "BIP39 Mnemonic"
-- Copy these words from the text box - this will be your BIP39 seed phrase
+* Locate the line that is labelled "Generate a random mnemonic"
+* Select any number from the dropdown that is more than or equal to `12`
+* Press "GENERATE"
+* Locate the section that is labelled "BIP39 Mnemonic"
+* Copy these words from the text box - this will be your BIP39 seed phrase
 
 Replace the value of the `BIP39_SEED_PHRASE` variable in the `.env` file with this phrase.
 
 {% hint style="info" %}
-
-- [Ref: BIP-39 Mnemonic code for generating deterministic keys](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
-- [Ref: BIP-44: Multi-Account Hierarchy for Deterministic Wallets](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki)
-  {% endhint %}
+* [Ref: BIP-39 Mnemonic code for generating deterministic keys](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
+* [Ref: BIP-44: Multi-Account Hierarchy for Deterministic Wallets](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki)
+{% endhint %}
 
 ### Step B4: Fund several Hedera EVM accounts
 
@@ -200,18 +201,17 @@ Finally Hedera also supports a _Key Alias_, and this is something that you're un
 While you may choose to interact with the Hedera network using any of the address formats, when interacting with smart contracts, the _EVM Address Alias_ is the most useful, as that is what is visible and understood by smart contracts when they are invoked.
 
 {% hint style="info" %}
-
-- [Ref: Hedera - Account Properties](https://docs.hedera.com/hedera/core-concepts/accounts/account-properties)
-- [Ref: HIP-583 - Expand alias support in CryptoCreate & CryptoTransfer Transactions](https://hips.hedera.com/hip/hip-583)
-- [Ref: hedera-code-snippets - Convert address from Hedera-native (`S.R.N`) format to EVM (`0x...`) format](https://github.com/hedera-dev/hedera-code-snippets/tree/main/convert-hedera-native-address-to-evm-address)
-- [Ref: Stackoverflow - How to convert a Hedera native address into a non-long-zero EVM address?](https://stackoverflow.com/q/76680532/194982)
-  {% endhint %}
+* [Ref: Hedera - Account Properties](https://docs.hedera.com/hedera/core-concepts/accounts/account-properties)
+* [Ref: HIP-583 - Expand alias support in CryptoCreate & CryptoTransfer Transactions](https://hips.hedera.com/hip/hip-583)
+* [Ref: hedera-code-snippets - Convert address from Hedera-native (`S.R.N`) format to EVM (`0x...`) format](https://github.com/hedera-dev/hedera-code-snippets/tree/main/convert-hedera-native-address-to-evm-address)
+* [Ref: Stackoverflow - How to convert a Hedera native address into a non-long-zero EVM address?](https://stackoverflow.com/q/76680532/194982)
+{% endhint %}
 
 ### Step B5: RPC endpoint
 
 For this step, you have a choice:
 
-- Run your own Hedera RPC Relay server: [Configuring Hedera JSON-RPC Relay endpoints](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections/hedera-json-rpc-relay)
-- Use an RPC service provider, Arkhia: [Configuring Arkhia RPC endpoints](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections/arkhia)
+* Run your own Hedera RPC Relay server: [Configuring Hedera JSON-RPC Relay endpoints](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections/hedera-json-rpc-relay)
+* Use an RPC service provider, Arkhia: [Configuring Arkhia RPC endpoints](https://docs.hedera.com/hedera/tutorials/more-tutorials/json-rpc-connections/arkhia)
 
 Whichever method you choose, obtain the JSON-RPC URL for Hedera Testnet, and replace the value of the `RPC_URL_HEDERATESTNET` variable in the `.env` file with this.

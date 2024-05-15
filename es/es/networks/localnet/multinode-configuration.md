@@ -10,10 +10,10 @@ Multinode configuration is an advanced feature designed for specific scenarios t
 
 To run the multinode mode, ensure the following configurations are set at minimum in Docker **Settings** -> **Resources** and at least 14 GB of memory are available for Docker:
 
-- **CPUs:** 6
-- **Memory:** 14 GB
-- **Swap:** 1 GB
-- **Disk Image Size:** 64 GB
+* **CPUs:** 6
+* **Memory:** 14 GB
+* **Swap:** 1 GB
+* **Disk Image Size:** 64 GB
 
 <img src="../../.gitbook/assets/localnode-multinode-requirements.png" alt="" data-size="original">
 
@@ -48,7 +48,7 @@ _📣 **Note**: In multinode mode, you need at least three healthy nodes for ope
 
 #### **Starting and Stopping Nodes**
 
-Individual nodes can be started or stopped to test consensus, synchronization, and node selection processes using `npm` or `docker` management commands:&#x20
+Individual nodes can be started or stopped to test consensus, synchronization, and node selection processes using `npm` or `docker` management commands:\&#x20
 
 <details>
 

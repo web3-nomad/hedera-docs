@@ -91,19 +91,19 @@ HashIO provides the URLs for each Hedera environment that will let you interact 
 
 #### Step 2: Open Metamask and add Hedera as a custom network.
 
-| **Network Name**                                               |
-| -------------------------------------------------------------- |
-| Hedera                                                         |
-| **New RPC URL**                                                |
+| **Network Name**                                                                                               |
+| -------------------------------------------------------------------------------------------------------------- |
+| Hedera                                                                                                         |
+| **New RPC URL**                                                                                                |
 | [https://testnet.hashio.io/api](https://testnet.hashio.io/api) |
-| **Chain ID**                                                   |
-| 296                                                            |
-| **Currency Symbol**                                            |
-| HBAR                                                           |
+| **Chain ID**                                                                                                   |
+| 296                                                                                                            |
+| **Currency Symbol**                                                                                            |
+| HBAR                                                                                                           |
 
-| **Config** | **Default** | **Description**                                                                                                                                                          |
-| ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| CHAIN\_ID  | 0x12a       | The network chain id. Local and previewnet envs should use 0x12a (298). Previewnet, Testnet and Mainnet should use 0x129 (297), 0x128 (296) and 0x127 (295) respectively |
+| **Config**                      | **Default** | **Description**                                                                                                                                                                                                                                                                      |
+| ------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| CHAIN\_ID | 0x12a       | The network chain id. Local and previewnet envs should use 0x12a (298). Previewnet, Testnet and Mainnet should use 0x129 (297), 0x128 (296) and 0x127 (295) respectively |
 
 #### Step 3: Import your Hedera account into Metamask
 
@@ -111,11 +111,9 @@ Import your newly created ECDSA-based Hedera account into Metamask using your pr
 
 <div>
 
-<figure><img src="../../.gitbook/assets/import%20accounts%20mm1.png" alt=""><figcaption><p>Use your private key to import your Hedera account into Metamask</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/import accounts mm1.png" alt=""><figcaption><p>Use your private key to import your Hedera account into Metamask</p></figcaption></figure>
 
- 
-
-<figure><img src="../../.gitbook/assets/import%20accounts%20mm2.png" alt=""><figcaption><p>Your Hedera Account in Metamask</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/import accounts mm2.png" alt=""><figcaption><p>Your Hedera Account in Metamask</p></figcaption></figure>
 
 </div>
 

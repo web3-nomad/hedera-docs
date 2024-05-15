@@ -10,7 +10,7 @@ Single node configuration simulates the network’s functions on a smaller scale
 
 Ensure the **`VirtioFS`** file sharing implementation is enabled in the docker settings.
 
-<img src="../../.gitbook/assets/docker-compose-settings.png" alt="" data-size="original">
+![](../../.gitbook/assets/docker-compose-settings.png)
 
 Ensure the following configurations are set at minimum in Docker **Settings** -> **Resources** and are available for use:
 
@@ -22,11 +22,11 @@ Ensure the following configurations are set at minimum in Docker **Settings** ->
 
 **Disk Image Size:** 64 GB
 
-<img src="../../.gitbook/assets/docker%20settings.png" alt="" data-size="original">
+![](<../../.gitbook/assets/docker settings.png>)
 
 Ensure the **`Allow the default Docker sockets to be used (requires password)`** is enabled in Docker **Settings -> Advanced**.
 
-<img src="../../.gitbook/assets/docker-socket-setting.png" alt="" data-size="original">
+![](../../.gitbook/assets/docker-socket-setting.png)
 
 **Note:** The image may look different if you are on a different version
 
@@ -41,6 +41,7 @@ Before launching the network commands, confirm that Docker is installed and open
 <summary><strong>npm commands</strong></summary>
 
 {% code overflow="wrap" %}
+
 ```bash
 # npm command to start the local network and generate accounts in detached mode
 npm run start -- -d
@@ -51,6 +52,7 @@ npm run stop
 # npm command to restart node
 npm run restart
 ```
+
 {% endcode %}
 
 </details>

@@ -24,14 +24,14 @@ Hedera aims to provide a seamless transition for developers already working with
 
 #### Support for EVM Tools
 
-Hedera plans to support familiar [EVM tools](../../../#evm-compatible-tools), libraries, and environments. This includes providing support for popular development environments like [Truffle](https://trufflesuite.com/) and [HardHat](https://hardhat.org/), as well as libraries like [Web3js](https://web3js.readthedocs.io/en/v1.10.0/) and [EthersJS](https://ethers.org/). The network also supports tools like [MetaMask](../../support-and-community/glossary.md#metamask), [The Graph](https://thegraph.com/), and [Remix](https://remix.ethereum.org/#lang=en\\\&optimize=false\\\&runs=200\\\&evmVersion=null). This goal is to make it easier for developers to build on Hedera, as they can use the same tools they are already familiar with from the Ethereum ecosystem.
+Hedera plans to support familiar [EVM tools](../../#evm-compatible-tools), libraries, and environments. This includes providing support for popular development environments like [Truffle](https://trufflesuite.com/) and [HardHat](https://hardhat.org/), as well as libraries like [Web3js](https://web3js.readthedocs.io/en/v1.10.0/) and [EthersJS](https://ethers.org/). The network also supports tools like [MetaMask](../../support-and-community/glossary.md#metamask), [The Graph](https://thegraph.com/), and [Remix](https://remix.ethereum.org/#lang=en\\&optimize=false\\&runs=200\\&evmVersion=null). This goal is to make it easier for developers to build on Hedera, as they can use the same tools they are already familiar with from the Ethereum ecosystem.
 
 #### Community Engagement
 
 Hedera encourages developers to contribute to its EVM development and join the community discussions in the official [Hedera Discord](https://www.hedera.com/discord). This goal aims to foster a vibrant and engaged developer community, which is crucial for the long-term success and sustainability of the Hedera network.
 
 {% hint style="info" %}
-🔔 Detailed [blog post](https://hedera.com/blog/evm-equivalence-unveiling-hederas-strategy-for-enhanced-programmability-and-network-adoption) of Hedera's EVM Equivalence strategy.
+🔔 Detailed [blog post](https://hedera.com/blog/evm-equivalence-unveiling-hederas-strategy-for-enhanced-programmability-and-network-adoption) of Hedera's EVM Equivalence strategy.&#x20;
 {% endhint %}
 
 ## Key Differences and Exceptions between Hedera and Ethereum
@@ -59,7 +59,7 @@ While Hedera strives for EVM equivalence, it's important to recognize certain un
 
 ### RPC Endpoint Differences
 
-<table><thead><tr><th width="267">Function</th><th width="244">Hedera</th><th>Ethereum</th></tr></thead><tbody><tr><td><strong>RPC Block Requests</strong> (e.g., <code>eth_getBlockByHash*</code> &#x26; <code>eth_getBlockByNumber</code> )</td><td>Return zero 32bytes hexadecimal value for the <code>stateRoot</code></td><td>Returns the <code>stateRoot</code> hexadecimal value of the final state trie of the block</td></tr></tbody></table>
+<table><thead><tr><th width="267">Function</th><th width="244">Hedera</th><th>Ethereum</th></tr></thead><tbody><tr><td><strong>RPC Block Requests</strong> (e.g., <code>eth_getBlockByHash*</code> & <code>eth_getBlockByNumber</code> )</td><td>Return zero 32bytes hexadecimal value for the <code>stateRoot</code></td><td>Returns the <code>stateRoot</code> hexadecimal value of the final state trie of the block</td></tr></tbody></table>
 
 {% hint style="info" %}
 **Note**: Hedera Consensus and mirror nodes do not provide Ethereum RPC API endpoints.
@@ -67,7 +67,7 @@ While Hedera strives for EVM equivalence, it's important to recognize certain un
 
 ### Tokens and Fee Differences
 
-<table><thead><tr><th width="230.33333333333331">Function</th><th>Hedera</th><th>Ethereum</th></tr></thead><tbody><tr><td><strong>Native Tokens</strong></td><td>Supports native tokens in addition to <a href="tokens-managed-by-smart-contracts/">ERC-20 and ERC-721 token standards</a></td><td>All ERC token standards but primarily ERC-20 and ERC-721 tokens.</td></tr><tr><td><strong>Fee Structure</strong></td><td><a href="deploying-smart-contracts/#gas-schedule-and-fees">Complex with two different gas prices</a></td><td>Single gas price</td></tr><tr><td><strong>Token Association**</strong></td><td><a href="../../sdks-and-apis/sdks/token-service/associate-tokens-to-an-account.md">Concept of token association</a></td><td>No concept of token association</td></tr></tbody></table>
+<table><thead><tr><th width="230.33333333333331">Function</th><th>Hedera</th><th>Ethereum</th></tr></thead><tbody><tr><td> <strong>Native Tokens</strong></td><td>Supports native tokens in addition to <a href="tokens-managed-by-smart-contracts/">ERC-20 and ERC-721 token standards</a></td><td>All ERC token standards but primarily ERC-20 and ERC-721 tokens.</td></tr><tr><td><strong>Fee Structure</strong></td><td><a href="deploying-smart-contracts/#gas-schedule-and-fees">Complex with two different gas prices</a></td><td>Single gas price</td></tr><tr><td><strong>Token Association**</strong></td><td><a href="../../sdks-and-apis/sdks/token-service/associate-tokens-to-an-account.md">Concept of token association </a></td><td>No concept of token association</td></tr></tbody></table>
 
 {% hint style="info" %}
 **\*\*Note:** Token Association only applies to _native_ HTS tokens and does not affect ERC-20/721 tokens.

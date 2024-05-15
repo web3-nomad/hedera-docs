@@ -1,6 +1,6 @@
 ---
-cover: fr/.gitbook/assets/HH-Eco-Hero-Desktop-R1.webp
-coverY: -16.77342463378693
+cover: .gitbook/assets/HH-Eco-Hero-Desktop-R1.webp
+coverY: 0
 ---
 
 # Welcome to Hedera — let’s build the future

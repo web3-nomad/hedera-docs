@@ -4,8 +4,8 @@ A [smart contract](../../support-and-community/glossary.md#smart-contract) is an
 
 Hedera supports any language that compiles to the Ethereum Mainnet. This includes [Solidity](../../support-and-community/glossary.md#solidity) and [Vyper](../../support-and-community/glossary.md#vyper). These programming languages compile code and produce [bytecode](../../support-and-community/glossary.md#bytecode) that the [Ethereum Virtual Machine (EVM)](../../support-and-community/glossary.md#ethereum-virtual-machine-evm) can interpret and understand.
 
-* To learn more about the Solidity programming language, check out the documentation maintained by the Solidity team [here](https://docs.soliditylang.org/en/v0.8.19/).
-* To learn more about Vyper, check out the documentation maintained by the Vyper team [here](https://docs.vyperlang.org/en/stable/).
+- To learn more about the Solidity programming language, check out the documentation maintained by the Solidity team [here](https://docs.soliditylang.org/en/v0.8.19/).
+- To learn more about Vyper, check out the documentation maintained by the Vyper team [here](https://docs.vyperlang.org/en/stable/).
 
 In addition, many tools are available to write and compile smart contracts, including the popular [Remix IDE](../../support-and-community/glossary.md#remix-ide) and [Hardhat](../../support-and-community/glossary.md#hardhat). The Remix IDE is a user-friendly platform that allows you to easily write and compile your smart contracts and perform other tasks such as debugging and testing. Using these tools, you can create powerful and secure smart contracts that can be used for various purposes, from simple token transfers to complex financial instruments.
 
@@ -56,18 +56,18 @@ This functionality is exclusively accessible when configuring a `ContractCreateT
 
 Contracts have the option to have an [admin key](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_create.proto#L117). This concept is native to Hedera contracts and allows the contract account properties to be updated. Note that this does not impact the contract [bytecode](../../support-and-community/glossary.md#bytecode) and does not relate to upgradability. If the admin key is not set, you will not be able to update the following Hedera native properties (noted in [ContractUpdateTransactionBody](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto) protobuf) for your contract once it is deployed:
 
-* [`autoRenewPeriod`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L78)
-* [`memoField`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L88)
-* [`max_automatic_token_associations`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L105)
-* [`auto_renew_account_id`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L111)
-* [`staked_id`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L116)
-* [`decline_reward`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L134)
+- [`autoRenewPeriod`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L78)
+- [`memoField`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L88)
+- [`max_automatic_token_associations`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L105)
+- [`auto_renew_account_id`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L111)
+- [`staked_id`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L116)
+- [`decline_reward`](https://github.com/hashgraph/hedera-protobufs/blob/main/services/contract\_update.proto#L134)
 
-You cannot set the admin key field if you deploy a contract via tools like Hardhat. This field can be set if desired by deploying a contract using one of the Hedera [SDKs](../../sdks-and-apis/sdks/).\&#x20
+You cannot set the admin key field if you deploy a contract via tools like Hardhat. This field can be set if desired by deploying a contract using one of the Hedera [SDKs](../../sdks-and-apis/sdks/).&#x20
 
 **Max Contract Storage Size**
 
-Contracts on Hedera have a storage size limit of 16,384,000 key value pairs (\~100MB).\&#x20
+Contracts on Hedera have  a storage size limit of 16,384,000 key value pairs (\~100MB).&#x20
 
 **Rent**
 
@@ -99,9 +99,9 @@ Hedera supports Solidity and Vyper.
 
 <details>
 
-<summary>Can I write and compile my smart contracts using Remix IDE or other Ethereum ecosystem tools?</summary>
+<summary>Can I write and compile my smart contracts using Remix IDE or other Ethereum ecosystem tools? </summary>
 
-You can use Remix IDE or other Ethereum ecosystem tools to write, compile, and deploy your smart contract on Hedera. Check out our EVM-compatible tools [here](../../../#evm-compatible-tools).\&#x20
+You can use Remix IDE or other Ethereum ecosystem tools to write, compile, and deploy your smart contract on Hedera. Check out our EVM-compatible tools [here](../../#evm-compatible-tools).&#x20
 
 </details>
 
@@ -109,7 +109,7 @@ You can use Remix IDE or other Ethereum ecosystem tools to write, compile, and d
 
 <summary>Where can I find the smart contracts that are deployed to each Hedera network (previewnet, testnet, mainnet)?</summary>
 
-On your favorite trusted Block Explorer (also called Mirror Node Explorer on Hedera). To view community-hosted explorers check out the network explorer tools page [here](../../networks/community-mirror-nodes.md).\&#x20
+On your favorite trusted Block Explorer (also called Mirror Node Explorer on Hedera). To view community-hosted explorers check out the network explorer tools page [here](../../networks/community-mirror-nodes.md).&#x20
 
 </details>
 

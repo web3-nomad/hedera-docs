@@ -6,8 +6,8 @@ The Hedera Localnet provides developers with a comprehensive framework for local
 
 <figure><img src="../../.gitbook/assets/localnet-dev-testing-path.png" alt="" width="375"><figcaption><p>Hedera Local Node Testing Workflow</p></figcaption></figure>
 
-1. **Local Node (single & multinode mode)**: Begin by testing your initial prototype on a local node. This step allows for quick iterations and debugging in a controlled environment. If your app needs to handle more complex scenarios, run the _Multinode configuration_.\&#x20
-2. **Solo**: Then move to _Solo_ for advanced testing under realistic network conditions.\&#x20
+1. **Local Node (single & multinode mode)**: Begin by testing your initial prototype on a local node. This step allows for quick iterations and debugging in a controlled environment. If your app needs to handle more complex scenarios, run the _Multinode configuration_.&#x20
+2. **Solo**: Then move to _Solo_ for advanced testing under realistic network conditions.&#x20
 3. **Previewnet**: Then test on Hedera Previewnet for latest/bleeding edge/upcoming code verification.
 4. **Testnet**: Lastly, testing on the test network for stable code verification before deploying it on Hedera Mainnet.
 
@@ -19,10 +19,10 @@ The Hedera Localnet provides developers with a comprehensive framework for local
 
 The Local Node replicates a Hedera network comprised of a single node (or few if configured) on a developer's local machine, offering a controlled environment for developing, testing, and experimenting with [decentralized applications (dApps)](../../support-and-community/glossary.md#decentralized-application-dapp). This local setup utilizes [Docker Compose](https://docs.docker.com/compose/) to create multiple containers, each with a specific role within the network, including but not limited to:
 
-* **Consensus Node**: Simulates the behavior of Hedera’s consensus mechanism, processing/ordering transactions and participating in the network’s consensus algorithm.
-* [**Mirror Node**](../../support-and-community/glossary.md#mirror-nodes)**:** Provides access to the historical data, transaction records, and the current state of the network without participating in consensus. This is useful for querying and analytics.
-* [**JSON-RPC Relay**](../../support-and-community/glossary.md#json-rpc-relay): Offers a local JSON-RPC implementation of the [Ethereum](../../support-and-community/glossary.md#ethereum) JSON-RPC APIs for Hedera to enable interactions with smart contracts and accounts. This is particularly useful for developers familiar with Ethereum tooling and ecosystem.
-* [**Mirror Node Explorer**](../../support-and-community/glossary.md#network-explorer): A web-based interface that allows developers to audit transactions, accounts, and other network activities visually.
+- **Consensus Node**: Simulates the behavior of Hedera’s consensus mechanism, processing/ordering transactions and participating in the network’s consensus algorithm.
+- [**Mirror Node**](../../support-and-community/glossary.md#mirror-nodes)**:** Provides access to the historical data, transaction records, and the current state of the network without participating in consensus. This is useful for querying and analytics.
+- [**JSON-RPC Relay**](../../support-and-community/glossary.md#json-rpc-relay): Offers a local JSON-RPC implementation of the [Ethereum](../../support-and-community/glossary.md#ethereum) JSON-RPC APIs for Hedera to enable interactions with smart contracts and accounts. This is particularly useful for developers familiar with Ethereum tooling and ecosystem.
+- [**Mirror Node Explorer**](../../support-and-community/glossary.md#network-explorer): A web-based interface that allows developers to audit transactions, accounts, and other network activities visually.
 
 ### Setup and Configuration
 
@@ -42,10 +42,10 @@ Local Node offers two modes depending on a developer’s needs:
 
 Full mode is activated with the `--full` flag, and the system is designed to capture and store comprehensive data. Here's how it works:
 
-* **Data Upload**: Each node within the network generates record stream files during operation. Record stream files are a sequence of transaction records grouped together over a specific interval. The Hedera network periodically consolidates these transaction records into stream files, which are then made available to the network nodes and mirror nodes. In full mode, these files are systematically uploaded to their own directory within the `minio` bucket. MinIo is an object storage platform that provides dedicated tools for storing, retrieving, and searching blobs. This process is managed by specific uploader containers assigned to each node, namely:
-  * `record-streams-uploader-N`(contains record streams)
-  * `account-balances-uploader-N` (contains account balances files)
-  * `record-sidecar-uploader-N` (contains a list of `TransactionSidecarRecords` that were all created over a specific interval and related to the same `RecordStreamFile`.
+- **Data Upload**: Each node within the network generates record stream files during operation. Record stream files are a sequence of transaction records grouped together over a specific interval. The Hedera network periodically consolidates these transaction records into stream files, which are then made available to the network nodes and mirror nodes. In full mode, these files are systematically uploaded to their own directory within the `minio` bucket. MinIo is an object storage platform that provides dedicated tools for storing, retrieving, and searching blobs. This process is managed by specific uploader containers assigned to each node, namely:
+  - `record-streams-uploader-N`(contains record streams)
+  - `account-balances-uploader-N` (contains account balances files)
+  - `record-sidecar-uploader-N` (contains a list of `TransactionSidecarRecords` that were all created over a specific interval and related to the same `RecordStreamFile`.
 
 </details>
 
@@ -55,7 +55,7 @@ Full mode is activated with the `--full` flag, and the system is designed to cap
 
 Turbo mode is the default setting when running the local node. This mode prioritizes efficiency and speed, with the following key characteristics:
 
-* **Local Data Access**: Instead of uploading data to the cloud, record stream files are read directly from their corresponding local directories on each node. This method significantly reduces latency and resource consumption, making it ideal for scenarios where immediate data access and high performance are prioritized over long-term storage and external accessibility.
+- **Local Data Access**: Instead of uploading data to the cloud, record stream files are read directly from their corresponding local directories on each node. This method significantly reduces latency and resource consumption, making it ideal for scenarios where immediate data access and high performance are prioritized over long-term storage and external accessibility.
 
 </details>
 
@@ -73,7 +73,7 @@ _**More info coming soon...**_
 
 ## Additional Resources
 
-* [**Hedera Local Node Repo**](https://github.com/hashgraph/hedera-local-node)
-* [**Docker Compose Documentation**](https://docs.docker.com/compose/intro/features-uses/)
-* [**Run a Local Node in Gitpod**](../../tutorials/local-node/how-to-run-hedera-local-node-in-a-cloud-development-environment-cde/gitpod.md) **\[tutorial]**
-* [**Run a Local Node in Codespaces**](../../tutorials/local-node/how-to-run-hedera-local-node-in-a-cloud-development-environment-cde/codespaces.md) **\[tutorial]**
+- [**Hedera Local Node Repo**](https://github.com/hashgraph/hedera-local-node)
+- [**Docker Compose Documentation**](https://docs.docker.com/compose/intro/features-uses/)
+- [**Run a Local Node in Gitpod**](../../tutorials/local-node/how-to-run-hedera-local-node-in-a-cloud-development-environment-cde/gitpod.md) **\[tutorial]**
+- [**Run a Local Node in Codespaces**](../../tutorials/local-node/how-to-run-hedera-local-node-in-a-cloud-development-environment-cde/codespaces.md) **\[tutorial]**

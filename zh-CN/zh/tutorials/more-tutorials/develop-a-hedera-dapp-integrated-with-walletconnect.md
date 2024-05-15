@@ -2,7 +2,7 @@
 description: In the dynamic world of decentralized applications (DApps), catering to users with diverse wallet preferences is important.
 ---
 
-# Build a Hedera DApp integrated with walletconnect
+# Create a Hedera DApp Integrated with WalletConnect
 
 Explore DApp development using the Mirror Node API and Hedera Token Service (HTS). Discover how to integrate HTS functionality into your DApp for seamless token management and transactions. This guide uses React, Material UI, Ethers, and TypeScript with the [Create React App (CRA) Hedera DApp template](https://github.com/hedera-dev/cra-hedera-dapp-template) integrated with walletconnect, streamlining your development process.
 
@@ -13,7 +13,7 @@ Explore DApp development using the Mirror Node API and Hedera Token Service (HTS
 - [ ] Associate an HTS token with HashPack, Kabila, Blade, or MetaMask through a UI
 - [ ] Transfer an HTS token through a UI
 
-<figure><img src="../../../.gitbook/assets/completed-react-dapp-walletconnect.png" alt="Completed dapp user interface to transfer and associate a token."><figcaption><p>Completed DAPP User Interface</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/completed-react-dapp-walletconnect.png" alt="Completed dapp user interface to transfer and associate a token."><figcaption><p>Completed DAPP User Interface</p></figcaption></figure>
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ Before you begin, you should be familiar with the following:
 
 <details>
 
-<summary>Also, you should have the following set up on your computer ⬇ </summary>
+<summary>Also, you should have the following set up on your computer ⬇</summary>
 
 - [x] `git` installed
   - Minimum version: 2.37
@@ -43,7 +43,7 @@ Before you begin, you should be familiar with the following:
 
 <details>
 
-<summary>Check your prerequisites set up ⬇ </summary>
+<summary>Check your prerequisites set up ⬇</summary>
 
 Open your terminal, and enter the following commands.
 
@@ -56,7 +56,7 @@ npm --version
 
 Each of these commands should output some text that includes a version number, for example:
 
-```text
+```
 git --version
 git version 2.39.2 (Apple Git-143)
 
@@ -109,13 +109,14 @@ npx create-react-app <my-app-name> --template git+ssh://git@github.com/hedera-de
 <details>
 
 <summary>Scaffolding project expected output</summary>
-<figure><img src="../../../.gitbook/assets/scaffold-project-expected-output.png" alt="A terminal showing the initialization of a new react project."><figcaption><p>Scaffold project expected output</p></figcaption></figure>
+
+<img src="../../.gitbook/assets/scaffold-project-expected-output.png" alt="Scaffold project expected output" data-size="original">
 
 </details>
 
 Open your newly created react app project with visual studio code. You should see the following file structure.
 
-<figure><img src="../../../.gitbook/assets/hedera-react-dApp-file-structure.png" alt="The file structure showing node_modules, public and src folder, along with .env and .gitignore."><figcaption><p>Hedera React DApp File Structure</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/hedera-react-dApp-file-structure.png" alt="The file structure showing node_modules, public and src folder, along with .env and .gitignore."><figcaption><p>Hedera React DApp File Structure</p></figcaption></figure>
 
 ### 2. Fetching Token Data: Writing Mirror Node API Queries
 
@@ -175,7 +176,8 @@ Paste the below HTTP GET request outside of and below the `MirrorNodeClient` cla
 <details>
 
 <summary>File Checkpoint</summary>
-To ensure you're on the right track, your `src/services/wallets/mirrorNodeClient.ts` file should look like below.
+
+To ensure you're on the right track, your \`src/services/wallets/mirrorNodeClient.ts\` file should look like below.
 
 ```Typescript
 import { AccountId } from "@hashgraph/sdk";
@@ -354,7 +356,8 @@ The `getAccountTokenBalancesWithTokenInfo` combines token balances, token info a
 <details>
 
 <summary>Complete `mirrorNodeClient.ts` file Checkpoint</summary>
-To ensure you're on the right track, your `src/services/wallets/mirrorNodeClient.ts` file should look like below.
+
+To ensure you're on the right track, your \`src/services/wallets/mirrorNodeClient.ts\` file should look like below.
 
 ```Typescript
 import { AccountId } from "@hashgraph/sdk";
@@ -795,7 +798,8 @@ Keep this terminal open for the remainder of the tutorial, as you will refer bac
 {% endhint %}
 
 <details>
-<summary>Test Accounts Sample Output </summary>
+
+<summary>Test Accounts Sample Output</summary>
 
 ```JSON
 {
@@ -846,19 +850,20 @@ Navigate back to your application in Visual Studio Code, and in the terminal, ru
 npm run start
 ```
 
-<figure><img src="../../../.gitbook/assets/dapp-homepage.png" alt="homepage of the application with a single button called connect"><figcaption><p>DApp homepage</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dapp-homepage.png" alt="homepage of the application with a single button called connect"><figcaption><p>DApp homepage</p></figcaption></figure>
 
 #### 4.4 Connect to DApp as the Receiver
 
 Click the `Connect Wallet` button in the upper right and select MetaMask and select the Sender account.
 
-<figure><img src="../../../.gitbook/assets/choose-your-wallet-dapp.png" alt="a modal with two choices: walletconnect or metamask"><figcaption><p>Select your wallet</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/choose-your-wallet-dapp.png" alt="a modal with two choices: walletconnect or metamask"><figcaption><p>Select your wallet</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/select-receiver-account-dapp.png" alt="metamask select your account"><figcaption><p>Connect with receiver account</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/select-receiver-account-dapp.png" alt="metamask select your account"><figcaption><p>Connect with receiver account</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/connected-account-view-dapp.png" alt="a dropdown of available tokens with a transfer button and a textbox to associate tokens with connected account."><figcaption><p>Successfully connected to dapp view</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connected-account-view-dapp.png" alt="a dropdown of available tokens with a transfer button and a textbox to associate tokens with connected account."><figcaption><p>Successfully connected to dapp view</p></figcaption></figure>
 
 <details>
+
 <summary>WalletConnect Instructions</summary>
 
 Open HashPack and unlock your wallet
@@ -869,19 +874,19 @@ Choose WalletConnect
 
 Copy the connection string
 
-<figure><img src="../../../.gitbook/assets/copy-walletconnect-string-dapp.png" alt="walletconnect modal"><figcaption><p>Walletconnect modal</p></figcaption></figure>
+<img src="../../.gitbook/assets/copy-walletconnect-string-dapp.png" alt="Walletconnect modal" data-size="original">
 
 Open HashPack and connect to DApp by clicking on the world in the upper right
 
-<figure><img src="../../../.gitbook/assets/connect-to-dapp.png" alt="hashpack connect to dapp modal"><figcaption><p>HashPack connect to dapp modal</p></figcaption></figure>
+<img src="../../.gitbook/assets/connect-to-dapp.png" alt="HashPack connect to dapp modal" data-size="original">
 
 Paste the walletconnect string into HashPack pairing string textbox
 
-<figure><img src="../../../.gitbook/assets/paste-walletconnect-string-dapp.png" alt="hashpack enter pairing string modal"><figcaption><p>HashPack paste pairing string</p></figcaption></figure>
+<img src="../../.gitbook/assets/paste-walletconnect-string-dapp.png" alt="HashPack paste pairing string" data-size="original">
 
 Select the Receiver account to connect with the DApp
 
-<figure><img src="../../../.gitbook/assets/hashpack-select-account-dapp.png" alt="hashpack select account"><figcaption><p>HashPack select account</p></figcaption></figure>
+<img src="../../.gitbook/assets/hashpack-select-account-dapp.png" alt="HashPack select account" data-size="original">
 
 ✅ You're connected!
 
@@ -893,11 +898,11 @@ Open the output of the test accounts you created earlier and copy the `ecdsaWith
 
 Paste the `NftTokenId` in the DApps associate token textbox and click the button `Associate`
 
-<figure><img src="../../../.gitbook/assets/associate-token-dapp.png" alt="a textbox to enter your tokenid to associate with"><figcaption><p>Associate textbox</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/associate-token-dapp.png" alt="a textbox to enter your tokenid to associate with"><figcaption><p>Associate textbox</p></figcaption></figure>
 
 MetaMask will prompt you to sign the transaction. If the extension does not automatically open, you will need to manually click on the MetaMask extension.
 
-<figure><img src="../../../.gitbook/assets/sign-transaction-dapp.png" alt="MetaMask Modal asking to confirm/sign the transaction"><figcaption><p>Sign the Associate transaction</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sign-transaction-dapp.png" alt="MetaMask Modal asking to confirm/sign the transaction"><figcaption><p>Sign the Associate transaction</p></figcaption></figure>
 
 Confirm the transaction
 
@@ -919,7 +924,7 @@ As the Sender,
 - Click the "send" button.
 - Sign the transaction on MetaMask to complete the transfer of the NFT from the Sender to the receiver account.
 
-<figure><img src="../../../.gitbook/assets/transfer-nft-dapp.png" alt="Homepage showing the transfer of NFT serial number 5"><figcaption><p>Transfer NFT to Receiver Account</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/transfer-nft-dapp.png" alt="Homepage showing the transfer of NFT serial number 5"><figcaption><p>Transfer NFT to Receiver Account</p></figcaption></figure>
 
 #### 4.7 Verify Receiver Account Receieved the NFT
 
@@ -927,7 +932,7 @@ Disconnect as the Sender account and reconnect as the Receiver account.
 
 Check the dropdown menu and ensure the Receiver account has NFT serial number 5.
 
-<figure><img src="../../../.gitbook/assets/transfer-successful-dapp.png" alt="Homepage showing the transfer of NFT serial number 5 was received by Receiver account"><figcaption><p>Transfer NFT to Receiver Account Success</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/transfer-successful-dapp.png" alt="Homepage showing the transfer of NFT serial number 5 was received by Receiver account"><figcaption><p>Transfer NFT to Receiver Account Success</p></figcaption></figure>
 
 ### Try with HashPack, Blade or Kabila
 

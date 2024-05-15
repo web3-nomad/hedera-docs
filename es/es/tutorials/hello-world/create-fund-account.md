@@ -1,7 +1,5 @@
 ---
-description: >-
-  Hello World sequence: Create a new account on Hedera Testnet, and fund it. Do
-  this before any of the other Hello World sequences.
+description: "Hello World sequence: Create a new account on Hedera Testnet, and fund it. Do this before any of the other Hello World sequences."
 ---
 
 # Create and fund account
@@ -12,8 +10,8 @@ Hedera is a distributed ledger technology (DLT). To interact with it, you will n
 
 ### What you will accomplish
 
-* [ ] Generate cryptographic keys to be used by a Hedera account
-* [ ] Use the Hedera Faucet to create and fund a new account with Testnet HBAR
+- [ ] Generate cryptographic keys to be used by a Hedera account
+- [ ] Use the Hedera Faucet to create and fund a new account with Testnet HBAR
 
 ***
 
@@ -21,27 +19,27 @@ Hedera is a distributed ledger technology (DLT). To interact with it, you will n
 
 Before you begin, you should be familiar with the following:
 
-* [x] [JavaScript syntax](https://www.w3schools.com/js/js\_syntax.asp)
+- [x] [JavaScript syntax](https://www.w3schools.com/js/js\_syntax.asp)
 
 <details>
 
 <summary>Also, you should have the following set up on your computer <strong>⬇</strong></summary>
 
-* [x] POSIX-compliant shell
-  * For Linux & Mac: The shell that ships with the operating system will work. Either `bash` or `zsh` will work.
-  * For Windows: The shells that ship with the operating system (`cmd.exe`, `powershell.exe`) _will not_ work.
-    * Recommended: `git-bash` which ships with `git-for-windows`. [Install Git for Windows (Git for Windows)](https://gitforwindows.org/)
-    * Recommended (alternative): Windows Subsystem for Linux. [Install WSL (Microsoft)](https://learn.microsoft.com/en-us/windows/wsl/install)
-* [x] `git` installed
-  * Minimum version: 2.37
-  * Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
-* [x] A code editor or IDE
-  * Recommended: VS Code. [Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
-* [x] NodeJs + `npm` installed
-  * Minimum version of NodeJs: 18
-  * Minimum version of `npm`: 9.5
-  * Recommended for Linux & Mac: [`nvm`](https://github.com/nvm-sh/nvm)
-  * Recommended for Windows: [`nvm-windows`](https://github.com/coreybutler/nvm-windows)
+- [x] POSIX-compliant shell
+  - For Linux & Mac: The shell that ships with the operating system will work. Either `bash` or `zsh` will work.
+  - For Windows: The shells that ship with the operating system (`cmd.exe`, `powershell.exe`) _will not_ work.
+    - Recommended: `git-bash` which ships with `git-for-windows`. [Install Git for Windows (Git for Windows)](https://gitforwindows.org/)
+    - Recommended (alternative): Windows Subsystem for Linux. [Install WSL (Microsoft)](https://learn.microsoft.com/en-us/windows/wsl/install)
+- [x] `git` installed
+  - Minimum version: 2.37
+  - Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
+- [x] A code editor or IDE
+  - Recommended: VS Code. [Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
+- [x] NodeJs + `npm` installed
+  - Minimum version of NodeJs: 18
+  - Minimum version of `npm`: 9.5
+  - Recommended for Linux & Mac: [`nvm`](https://github.com/nvm-sh/nvm)
+  - Recommended for Windows: [`nvm-windows`](https://github.com/coreybutler/nvm-windows)
 
 </details>
 
@@ -142,10 +140,10 @@ artefact gasp crop double silk grid visual gather argue glow melody net
 
 <summary>Alternative way to generate a seed phrase</summary>
 
-* Visit [https://iancoleman.io/bip39/](https://iancoleman.io/bip39/)
-* Select `12` from the dropdown next to the _GENERATE_ button
-* Press the _GENERATE_ button
-* Copy the seed phrase from the text field labelled _BIP39 Mnemonic_.
+- Visit [https://iancoleman.io/bip39/](https://iancoleman.io/bip39/)
+- Select `12` from the dropdown next to the _GENERATE_ button
+- Press the _GENERATE_ button
+- Copy the seed phrase from the text field labelled _BIP39 Mnemonic_.
 
 </details>
 
@@ -166,12 +164,14 @@ This seed phrase will be used to generate the cryptographic keys for the account
 Copy the seed phrase. Replace `SEED_PHRASE` in the `.env` file with it. The file contents should now look similar to this:
 
 {% code title=".env" overflow="wrap" %}
+
 ```shell
 SEED_PHRASE="artefact gasp crop double silk grid visual gather argue glow melody net"
 ACCOUNT_PRIVATE_KEY=YOUR_HEX_ENCODED_PRIVATE_KEY
 ACCOUNT_ID=YOUR_ACCOUNT_ID
 RPC_URL=YOUR_JSON_RPC_URL
 ```
+
 {% endcode %}
 
 You do not need to modify the other values in the `.env` file yet.
@@ -194,6 +194,7 @@ For example, the comment for **Step 1** looks like this:
 ```javascript
     // Step (1) in the accompanying tutorial
 ```
+
 {% endhint %}
 
 ### Step 1: Derive private key
@@ -201,9 +202,11 @@ For example, the comment for **Step 1** looks like this:
 The `ethersHdNode` module has been imported from [EthersJs](https://docs.ethers.org/v5/). This takes a seed phrase as input, and outputs a private key. To do so, invoke the `fromMnemonic()` method and pass in `process.env.SEED_PHRASE` as the parameter:
 
 {% code title="script-create-fund-account.js" overflow="wrap" %}
+
 ```javascript
     const hdNodeRoot = ethersHdNode.fromMnemonic(process.env.SEED_PHRASE);
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -213,6 +216,7 @@ You will need to delete the inline comment that looks like this: `/* ... */`. Re
 -    const hdNodeRoot = ethersHdNode.fromMnemonic(/* ... */);
 +    const hdNodeRoot = ethersHdNode.fromMnemonic(process.env.SEED_PHRASE);
 ```
+
 {% endhint %}
 
 The `hdNodeRoot` instance is subsequently used to generate the private keys.
@@ -222,9 +226,11 @@ The `hdNodeRoot` instance is subsequently used to generate the private keys.
 A `privateKey` instance has been initialized. This requires no further input to derive an EVM address - read its `publicKey` property, and then invoke its `toEvmAddress` method:
 
 {% code title="script-create-fund-account.js" overflow="wrap" %}
+
 ```javascript
     const evmAddress = `0x${privateKey.publicKey.toEvmAddress()}`;
 ```
+
 {% endcode %}
 
 ***
@@ -252,24 +258,26 @@ Note that `accountId` and `accountBalanceHbar` are both `undefined`, because gen
 Copy the value of `privateKeyHex`. Replace `YOUR_HEX_ENCODED_PRIVATE_KEY` in the `.env` file with it. The file contents should now look similar to this:
 
 {% code title=".env" overflow="wrap" %}
+
 ```shell
 SEED_PHRASE="artefact gasp crop double silk grid visual gather argue glow melody net"
 ACCOUNT_PRIVATE_KEY=0x0ac20a3c1573ba9a5c6c69349fa51f40bd502cf250e226a7100869338f15aae2
 ACCOUNT_ID=YOUR_ACCOUNT_ID
 RPC_URL=YOUR_JSON_RPC_URL
 ```
+
 {% endcode %}
 
 Copy the value of `accountExplorerUrl` and visit this in your browser.
 
-![Account EVM address in Hashscan, before account is created, with annotated items to check.](../../.gitbook/assets/hello-world--account--faucet-hashscan-before.drawing.svg)
+<img src="../../.gitbook/assets/hello-world--account--faucet-hashscan-before.drawing.svg" alt="Account EVM address in Hashscan, before account is created, with annotated items to check." class="gitbook-drawing">
 
 You should see a page with:
 
-* The title "Inactive EVM Address" **(1)**
-* "Account ID: Assigned upon activation" **(2)**
-* "EVM Address:" matching the value of `evmAddress` output earlier **(3)**
-* A helpful hint saying "Own this account? Activate it by transferring any amount of ℏ or tokens to ..." **(4)**
+- The title "Inactive EVM Address" **(1)**
+- "Account ID: Assigned upon activation" **(2)**
+- "EVM Address:" matching the value of `evmAddress` output earlier **(3)**
+- A helpful hint saying "Own this account? Activate it by transferring any amount of ℏ or tokens to ..." **(4)**
 
 This is precisely the next step!
 
@@ -283,36 +291,38 @@ Visit [`portal.hedera.com/faucet`](https://portal.hedera.com/faucet).
 The faucet dispenses Testnet HBAR to any account on Hedera Testnet. When it is asked to dispense to an EVM address that does not yet have an account, the account gets created as part of the HBAR transfer transaction.
 {% endhint %}
 
-![Input EVM address in Hedera Faucet, with annotated items.](../../.gitbook/assets/hello-world--account--faucet-input-address.drawing.svg)
+<img src="../../.gitbook/assets/hello-world--account--faucet-input-address.drawing.svg" alt="Input EVM address in Hedera Faucet, with annotated items." class="gitbook-drawing">
 
-* Paste the value of `evmAddress` output earlier into the "enter wallet address" field **(1)**
-* Press the "receive testnet HBAR" button **(2)**
+- Paste the value of `evmAddress` output earlier into the "enter wallet address" field **(1)**
+- Press the "receive testnet HBAR" button **(2)**
 
 A confirmation dialog will pop up.
 
-![Confirm transaction in Hedera Faucet, with annotated items.](../../.gitbook/assets/hello-world--account--faucet-confirm.drawing.svg)
+<img src="../../.gitbook/assets/hello-world--account--faucet-confirm.drawing.svg" alt="Confirm transaction in Hedera Faucet, with annotated items." class="gitbook-drawing">
 
-* Complete the ReCaptcha **(1)**
-* Press the "confirm transaction" button. **(2)**
+- Complete the ReCaptcha **(1)**
+- Press the "confirm transaction" button. **(2)**
 
 A success dialog will pop up.
 
-![Success dialog upon create and fund account in Hedera Faucet, with annotated items.](../../.gitbook/assets/hello-world--account--faucet-transfer-complete.drawing.svg)
+<img src="../../.gitbook/assets/hello-world--account--faucet-transfer-complete.drawing.svg" alt="Success dialog upon create and fund account in Hedera Faucet, with annotated items." class="gitbook-drawing">
 
-* The account ID is displayed **(1)**
-  * This indicates that the Testnet HBAR has been transferred, and in the process a new account has been created.
-  * Note that the EVM address is **not the same** as the account ID - instead the EVM address is **an alias** of the account ID.
-* Press the icon to copy the account ID **(2)**
+- The account ID is displayed **(1)**
+  - This indicates that the Testnet HBAR has been transferred, and in the process a new account has been created.
+  - Note that the EVM address is **not the same** as the account ID - instead the EVM address is **an alias** of the account ID.
+- Press the icon to copy the account ID **(2)**
 
 Replace `YOUR_ACCOUNT_ID` in the `.env` file with it. The file contents should now look similar to this:
 
 {% code title=".env" overflow="wrap" %}
+
 ```shell
 SEED_PHRASE="artefact gasp crop double silk grid visual gather argue glow melody net"
 ACCOUNT_PRIVATE_KEY=0x0ac20a3c1573ba9a5c6c69349fa51f40bd502cf250e226a7100869338f15aae2
 ACCOUNT_ID=0.0.2667268
 RPC_URL=YOUR_JSON_RPC_URL
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -321,13 +331,13 @@ You may have noticed that `RPC_URL` is unused throughout. This is intentional - 
 
 Refresh the Hashscan page in your browser. Note that this is the `accountExplorerUrl` that was output from the previous run of the script. This time you should see:
 
-![Account EVM address in Hashscan, after account is created and funded, with annotated items to check.](../../.gitbook/assets/hello-world--account--faucet-hashscan-after.drawing.svg)
+<img src="../../.gitbook/assets/hello-world--account--faucet-hashscan-after.drawing.svg" alt="Account EVM address in Hashscan, after account is created and funded, with annotated items to check." class="gitbook-drawing">
 
-* The title is "Account" **(1)**
-  * instead of "Inactive EVM Address"
-* The "Account ID" field should matching the value of `ACCOUNT_ID` above **(2)**
-  * instead of "Assigned upon activation"
-* The "Create Transaction" field displays a transaction ID **(3)**
+- The title is "Account" **(1)**
+  - instead of "Inactive EVM Address"
+- The "Account ID" field should matching the value of `ACCOUNT_ID` above **(2)**
+  - instead of "Assigned upon activation"
+- The "Create Transaction" field displays a transaction ID **(3)**
 
 ***
 
@@ -363,8 +373,8 @@ Congratulations, you have completed the **create and fund account** Hello World 
 
 You have learned how to:
 
-* [x] Generate cryptographic keys to be used by a Hedera account
-* [x] Use the Hedera Faucet to create and fund a new account with Testnet HBAR
+- [x] Generate cryptographic keys to be used by a Hedera account
+- [x] Use the Hedera Faucet to create and fund a new account with Testnet HBAR
 
 ***
 

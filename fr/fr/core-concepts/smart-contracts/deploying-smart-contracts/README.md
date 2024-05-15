@@ -18,7 +18,7 @@ PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DU
 
 #### References:
 
-* [https://ethervm.io/](https://ethervm.io/)
+- [https://ethervm.io/](https://ethervm.io/)
 
 ***
 
@@ -38,24 +38,25 @@ The list of supported Opcodes for the Shanghai hard fork can be found [here](htt
 
 Modified descriptions for Solidity functions and opcodes to better reflect the Hedera network.
 
-<table><thead><tr><th width="261">Solidity</th><th width="122.33333333333331">Opcode</th><th>Hedera</th></tr></thead><tbody><tr><td><code>address</code></td><td></td><td>The address is a mapping of shard.realm.number (0.0.10) into a 20 byte Solidity address. The address can be a Hedera account ID or contract ID in Solidity format.</td></tr><tr><td><code>block.basefee</code></td><td><code>BASEFEE</code></td><td>The <code>BASEFEE</code> opcode will return zero. Hedera does not use the Fee Market mechanism this is designed to support.</td></tr><tr><td><code>block.chainid</code></td><td><code>CHAINID</code></td><td>The <code>CHAINID</code> opcode will return 295(hex <code>0x0127</code>) for mainnet, 296( hex <code>0x0128</code>) for testnet, 297( hex <code>0x0129</code>) for previewnet, and 298 (<code>0x12A</code>) for development networks.</td></tr><tr><td><code>block.coinbase</code></td><td><code>COINBASE</code></td><td>The <code>COINBASE</code> operation will return the funding account (Hedera transaction fee collecting account <code>0.0.98</code>).</td></tr><tr><td><code>block.number</code></td><td></td><td>The index of the record file (not recommended, use <code>block.timestamp</code>).</td></tr><tr><td><code>block.timestamp</code></td><td></td><td>The transaction consensus timestamp.</td></tr><tr><td><code>block.difficulty</code></td><td></td><td>Always zero.</td></tr><tr><td><code>block.gaslimit</code></td><td><code>GASLIMIT</code></td><td>The <code>GASLIMIT</code> operation will return the <code>gasLimit</code> of the transaction. The transaction <code>gasLimit</code> will be the lowest of the gas limit requested in the transaction or a global upper gas limit configured for all smart contracts.</td></tr><tr><td><code>msg.sender</code></td><td></td><td>The address of the Hedera contract ID or account ID in Solidity format that called this contract. For the root level or for delegate chains that go to root it is the account ID paying for the transaction.</td></tr><tr><td><code>msg.value</code></td><td></td><td>The value associated to the transaction associated in tinybar.</td></tr><tr><td><code>tx.origin</code></td><td></td><td>The account ID paying for the transaction, regardless of depth.</td></tr><tr><td><code>tx.gasprice</code></td><td></td><td>Fixed (varies with the global fee schedule and exchange rate).</td></tr><tr><td><code>selfdestruct(address payable recipient)</code></td><td></td><td>Address will not be reusable due to Hedera’s account numbering policies.</td></tr><tr><td><code>.code</code></td><td></td><td>Precompile contract addresses will report no code, including HTS System contract.</td></tr><tr><td><code>.codehash</code></td><td></td><td>Precompile contract addresses will report the empty code hash.</td></tr><tr><td></td><td><code>PRNGSEED</code></td><td>This opcode returns a random number based on the n-3 record running hash.</td></tr><tr><td><code>delegateCall</code></td><td></td><td>Contracts may no longer use <code>delegateCall()</code> to invoke system contracts. Contracts should instead use the <code>call()</code> method.</td></tr></tbody></table>
+<table><thead><tr><th width="261">Solidity</th><th width="122.33333333333331">Opcode</th><th>Hedera</th></tr></thead><tbody><tr><td><code>address</code></td><td></td><td>The address is a mapping of shard.realm.number (0.0.10) into a 20 byte Solidity address. The address can be a Hedera account ID or contract ID in Solidity format.</td></tr><tr><td><code>block.basefee</code></td><td><code>BASEFEE</code></td><td>The <code>BASEFEE</code> opcode will return zero. Hedera does not use the Fee Market mechanism this is designed to support.</td></tr><tr><td><code>block.chainid</code></td><td><code>CHAINID</code></td><td>The <code>CHAINID</code> opcode will return 295(hex <code>0x0127</code>) for mainnet, 296( hex <code>0x0128</code>) for testnet, 297( hex <code>0x0129</code>) for previewnet, and 298 (<code>0x12A</code>) for development networks.</td></tr><tr><td><code>block.coinbase</code></td><td><code>COINBASE</code></td><td>The <code>COINBASE</code> operation will return the funding account (Hedera transaction fee collecting account <code>0.0.98</code>).</td></tr><tr><td><code>block.number</code></td><td></td><td>The index of the record file (not recommended, use <code>block.timestamp</code>).</td></tr><tr><td><code>block.timestamp</code></td><td></td><td>The transaction consensus timestamp.</td></tr><tr><td><code>block.difficulty</code></td><td></td><td>Always zero.</td></tr><tr><td><code>block.gaslimit</code></td><td><code>GASLIMIT</code></td><td>The <code>GASLIMIT</code> operation will return the <code>gasLimit</code> of the transaction. The transaction <code>gasLimit</code> will be the lowest of the gas limit requested in the transaction or a global upper gas limit configured for all smart contracts.</td></tr><tr><td><code>msg.sender</code></td><td></td><td>The address of the Hedera contract ID or account ID in Solidity format that called this contract. For the root level or for delegate chains that go to root it is the account ID paying for the transaction.</td></tr><tr><td><code>msg.value</code></td><td></td><td>The value associated to the transaction associated in tinybar.</td></tr><tr><td><code>tx.origin</code></td><td></td><td>The account ID paying for the transaction, regardless of depth.</td></tr><tr><td><code>tx.gasprice</code></td><td></td><td>Fixed (varies with the global fee schedule and exchange rate).</td></tr><tr><td><code>selfdestruct(address payable recipient)</code></td><td></td><td>Address will not be reusable due to Hedera’s account numbering policies.</td></tr><tr><td><code><address>.code</code></td><td></td><td>Precompile contract addresses will report no code, including HTS System contract.</td></tr><tr><td><code><address>.codehash</code></td><td></td><td>Precompile contract addresses will report the empty code hash.</td></tr><tr><td></td><td><code>PRNGSEED</code></td><td>This opcode returns a random number based on the n-3 record running hash.</td></tr><tr><td><code>delegateCall</code></td><td></td><td>Contracts may no longer use <code>delegateCall()</code> to invoke system contracts. Contracts should instead use the <code>call()</code> method.</td></tr></tbody></table>
 
 {% hint style="warning" %}
-#### _HBAR decimal places_
 
-_The JSON RPC Relay **`msg.value`** uses 18 decimals when it returns HBAR._ This was to provide an equivalent decimal length for web3 tools used across multiple EVM chains. _As a result, the **`gasPrice`** also uses 18 decimal places since it is only utilized from the JSON RPC Relay. Refer to the_ [_HBAR page_](../../../sdks-and-apis/sdks/hbars.md) _for a table of Hedera APIs and the decimal places they return._
+### _HBAR decimal places_
+
+_The JSON RPC Relay **`msg.value`** uses 18 decimals when it returns HBAR._ This was to provide an equivalent decimal length for web3 tools used across multiple EVM chains. _As a result, the **`gasPrice`** also uses 18 decimal places since it is only utilized from the JSON RPC Relay. Refer to the_ [_HBAR page_](../../../sdks-and-apis/sdks/hbars.md) _for a table of Hedera APIs and the decimal places they return._&#x20;
 {% endhint %}
 
 ***
 
 ## Limitation on `fallback()` / `receive()` Functions in Hedera Smart Contracts
 
-While developing smart contracts on the Hedera network, it's crucial to note some behavioral differences compared to other networks like Ethereum. When a Hedera smart contract receives HBAR through a crypto transfer, the contract's `fallback()` and `receive()` functions **do not get triggered**.\&#x20
+While developing smart contracts on the Hedera network, it's crucial to note some behavioral differences compared to other networks like Ethereum. When a Hedera smart contract receives HBAR through a crypto transfer, the contract's `fallback()` and `receive()` functions **do not get triggered**.&#x20
 
-In a typical smart contract on Ethereum, `fallback()` and `receive()` functions serve as "catch-all" mechanisms that execute when the contract receives the native cryptocurrency (Ether in Ethereum's case). Here are the impacted variables for Hedera smart contracts and their _usual_ expected values:
+In a typical smart contract on Ethereum,  `fallback()` and `receive()` functions serve as "catch-all" mechanisms that execute when the contract receives the native cryptocurrency (Ether in Ethereum's case). Here are the impacted variables for Hedera smart contracts and their _usual_ expected values:
 
-* **`msg.sender`:** The address initiating the contract call.
-* **`msg.value`:** The amount of HBAR sent along with the call.
+- **`msg.sender`:** The address initiating the contract call.
+- **`msg.value`:** The amount of HBAR sent along with the call.
 
 Because the contract's balance may change through native HAPI operations, independent of EVM message calls, it is not possible to preserve balance-related invariants simply by implementing the `receive()` or `fallback()` methods. This is an important design consideration. Users who want the option to entirely disable native operations against their contract are invited to contribute a [Hedera Improvement Proposal (HIP)](https://hips.hedera.com/) for this feature.
 
@@ -75,11 +76,11 @@ The EVM returns gas information in Weibar (introduced in [HIP-410](https://hips.
 
 Gas fees paid for EVM transactions on Hedera can be composed of three different kinds of gas costs:
 
-* Intrinsic Gas
-* EVM opcode Gas
-* Hedera System Contract Gas
+- Intrinsic Gas
+- EVM opcode Gas
+- Hedera System Contract Gas
 
-<table><thead><tr><th width="226">Gas Fee Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>Intrinsic Gas</strong></td><td>The minimum amount of gas required to execute a transaction. It is a fixed gas cost that is independent of the specific operations or computations performed within the transaction.<br><br>Intrinsic gas cost: 21,000 gas</td></tr><tr><td><strong>EVM Operation Code</strong></td><td>The gas required to execute the defined operation code(s) for the smart contract call</td></tr><tr><td><strong>Hedera System Contract Transaction</strong></td><td><p>The required gas that is associated with a Hedera-defined transaction like using the Hedera Token Service system contract that allows you to burn (<code>TokenBurnTransaction</code>) or mint (<code>TokenMintTransaction</code>) a token.</p><p>If you are not using a system contract that maps to one of the native Hedera services, you do not need to apply this fee.</p><p>The Hedera transaction gas calculation is: Cost of the transaction in USD x Gas Conversion gas/USD + 20%</p><p>Example System Contracts:</p><ul><li>Hedera Token Service</li><li>Pseudo Random Number Generator (PRNG)</li><li>Exchange Rate</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="226">Gas Fee Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>Intrinsic Gas</strong></td><td>The minimum amount of gas required to execute a transaction. It is a fixed gas cost that is independent of the specific operations or computations performed within the transaction.<br><br>Intrinsic gas cost: 21,000 gas</td></tr><tr><td><strong>EVM Operation Code</strong></td><td>The gas required to execute the defined operation code(s) for the smart contract call</td></tr><tr><td><strong>Hedera System Contract Transaction</strong></td><td><p>The required gas that is associated with a Hedera-defined transaction like using the Hedera Token Service system contract that allows you to burn (<code>TokenBurnTransaction</code>) or mint (<code>TokenMintTransaction</code>) a token.</p><p></p><p>If you are not using a system contract that maps to one of the native Hedera services, you do not need to apply this fee.</p><p></p><p>The Hedera transaction gas calculation is: Cost of the transaction in USD x Gas Conversion gas/USD + 20%</p><p>Example System Contracts:</p><ul><li>Hedera Token Service</li><li>Pseudo Random Number Generator (PRNG)</li><li>Exchange Rate</li></ul></td></tr></tbody></table>
 
 ### Gas Limit
 
@@ -87,31 +88,31 @@ The gas limit is the maximum amount of gas you are willing to pay for an operati
 
 The current opcode gas fees are reflective of the [0.22 Hedera Service release](https://docs.hedera.com/hedera/networks/release-notes/services#v0.22).
 
-| Operation                                                               | Shanghai Cost (Gas)                    | Current Hedera (Gas)                   |
-| ----------------------------------------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Code deposit                                                            | 200 \* bytes                           | <p>Max of Shanghai<br>or Hedera</p>    |
-| <p><code>BALANCE</code><br>(cold account)</p>                           | 2600                                   | 2600                                   |
-| <p><code>BALANCE</code><br>(warm account)</p>                           | 100                                    | 100                                    |
-| `EXP`                                                                   | 10 + 50/byte                           | 10 + 50/byte                           |
-| <p><code>EXTCODECOPY</code><br>(cold account)</p>                       | 2600 + Mem                             | 2600 + Mem                             |
-| <p><code>EXTCODECOPY</code><br>(warm account)</p>                       | 100 + Mem                              | 100 + Mem                              |
-| <p><code>EXTCODEHASH</code><br>(cold account)</p>                       | 2600                                   | 2600                                   |
-| <p><code>EXTCODEHASH</code><br>(warm account)</p>                       | 100                                    | 100                                    |
-| <p><code>EXTCODESIZE</code><br>(cold account)</p>                       | 2600                                   | 2600                                   |
-| <p><code>EXTCODESIZE</code><br>(warm account)</p>                       | 100                                    | 100                                    |
-| <p><code>LOG0, LOG1, LOG2,</code><br><code>LOG3, LOG4</code></p>        | <p>375 + 375*topics<br>+ data Mem</p>  | <p>Max of Shanghai<br>or Hedera</p>    |
-| <p><code>SLOAD</code><br>(cold slot)</p>                                | 2100                                   | 2100                                   |
-| <p><code>SLOAD</code><br>(warm slot)</p>                                | 100                                    | 100                                    |
-| <p><code>SSTORE</code><br>(new slot)</p>                                | 22,100                                 | <p>Max of Shanghai<br>or Hedera</p>    |
-| <p><code>SSTORE</code><br>(existing slot,<br>cold access)</p>           | 2,900                                  | 2,900                                  |
-| <p><code>SSTORE</code><br>(existing slot,<br>warm access)</p>           | 100                                    | 100                                    |
-| <p><code>SSTORE</code><br>refund</p>                                    | <p>Only transient<br>storage slots</p> | <p>Only transient<br>storage slots</p> |
-| <p><code>CALL</code> <em>et al</em>.<br>(cold recipient)</p>            | 2,600                                  | 2,600                                  |
-| <p><code>CALL</code> <em>et al</em>.<br>(warm recipient)</p>            | 100                                    | 100                                    |
-| <p><code>CALL</code> <em>et al</em>.<br>Hbar/Eth Transfer Surcharge</p> | 9,000                                  | 9,000                                  |
-| <p><code>CALL</code> <em>et al</em>.<br>New Account Surcharge</p>       | 25,000                                 | _revert_                               |
-| <p><code>SELFDESTRUCT</code><br>(cold beneficiary)</p>                  | 2600                                   | 2600                                   |
-| <p><code>SELFDESTRUCT</code><br>(warm beneficiary)</p>                  | 0                                      | 0                                      |
+| Operation                                                               | Shanghai Cost (Gas) | Current Hedera (Gas) |
+| ----------------------------------------------------------------------- | -------------------------------------- | --------------------------------------- |
+| Code deposit                                                            | 200 \* bytes                           | <p>Max of Shanghai<br>or Hedera</p>     |
+| <p><code>BALANCE</code><br>(cold account)</p>                           | 2600                                   | 2600                                    |
+| <p><code>BALANCE</code><br>(warm account)</p>                           | 100                                    | 100                                     |
+| `EXP`                                                                   | 10 + 50/byte                           | 10 + 50/byte                            |
+| <p><code>EXTCODECOPY</code><br>(cold account)</p>                       | 2600 + Mem                             | 2600 + Mem                              |
+| <p><code>EXTCODECOPY</code><br>(warm account)</p>                       | 100 + Mem                              | 100 + Mem                               |
+| <p><code>EXTCODEHASH</code><br>(cold account)</p>                       | 2600                                   | 2600                                    |
+| <p><code>EXTCODEHASH</code><br>(warm account)</p>                       | 100                                    | 100                                     |
+| <p><code>EXTCODESIZE</code><br>(cold account)</p>                       | 2600                                   | 2600                                    |
+| <p><code>EXTCODESIZE</code><br>(warm account)</p>                       | 100                                    | 100                                     |
+| <p><code>LOG0, LOG1, LOG2,</code><br><code>LOG3, LOG4</code></p>        | <p>375 + 375*topics<br>+ data Mem</p>  | <p>Max of Shanghai<br>or Hedera</p>     |
+| <p><code>SLOAD</code><br>(cold slot)</p>                                | 2100                                   | 2100                                    |
+| <p><code>SLOAD</code><br>(warm slot)</p>                                | 100                                    | 100                                     |
+| <p><code>SSTORE</code><br>(new slot)</p>                                | 22,100                                 | <p>Max of Shanghai<br>or Hedera</p>     |
+| <p><code>SSTORE</code><br>(existing slot,<br>cold access)</p>           | 2,900                                  | 2,900                                   |
+| <p><code>SSTORE</code><br>(existing slot,<br>warm access)</p>           | 100                                    | 100                                     |
+| <p><code>SSTORE</code><br>refund</p>                                    | <p>Only transient<br>storage slots</p> | <p>Only transient<br>storage slots</p>  |
+| <p><code>CALL</code> <em>et al</em>.<br>(cold recipient)</p>            | 2,600                                  | 2,600                                   |
+| <p><code>CALL</code> <em>et al</em>.<br>(warm recipient)</p>            | 100                                    | 100                                     |
+| <p><code>CALL</code> <em>et al</em>.<br>Hbar/Eth Transfer Surcharge</p> | 9,000                                  | 9,000                                   |
+| <p><code>CALL</code> <em>et al</em>.<br>New Account Surcharge</p>       | 25,000                                 | _revert_                                |
+| <p><code>SELFDESTRUCT</code><br>(cold beneficiary)</p>                  | 2600                                   | 2600                                    |
+| <p><code>SELFDESTRUCT</code><br>(warm beneficiary)</p>                  | 0                                      | 0                                       |
 
 The terms 'warm' and 'cold' in the above table correspond with whether the account or storage slot has been read or written to within the current smart contract transaction, even if within a child call frame.
 
@@ -125,9 +126,9 @@ Most EVM-compatible networks place a gas limit per block to manage resource allo
 
 For smart contract transactions, gas is a better measure of the complexity of the EVM transaction than counting all transactions the same, so metering the limits on gas provides a more reasonable limit on resource consumption.
 
-To allow for more flexibility in what transactions we accept and to mirror Ethereum Mainnet behavior, the transaction limits will be calculated on a per-gas basis for smart contract calls (`ContractCreate`, `ContractCall`, `ContractCallLocalQuery`) in addition to a per-transaction limit. This dual approach allows for better resource management, providing a nuanced way to regulate smart contract executions.\&#x20
+To allow for more flexibility in what transactions we accept and to mirror Ethereum Mainnet behavior, the transaction limits will be calculated on a per-gas basis for smart contract calls (`ContractCreate`, `ContractCall`, `ContractCallLocalQuery`) in addition to a per-transaction limit. This dual approach allows for better resource management, providing a nuanced way to regulate smart contract executions.&#x20
 
-The Hedera network has implemented a system gas throttle of **15 million gas per second** in the Hedera Service release [0.22](../../../networks/release-notes/services.md#v0.22).\&#x20
+The Hedera network has implemented a system gas throttle of **15 million gas per second** in the Hedera Service release [0.22](../../../networks/release-notes/services.md#v0.22).&#x20
 
 ### Gas Reservation and Unused Gas Refund
 
@@ -169,12 +170,12 @@ You can use a [Hedera SDK](../../../sdks-and-apis/sdks/) to deploy your smart co
 
 Hardhat can be used to deploy your smart contract by pointing to a community-hosted [JSON-RPC Relay](json-rpc-relay.md). However, EVM tools do not support features that are native to Hedera smart contracts like:
 
-* Admin Key
-* Contract Memo
-* Automatic Token Associations
-* Auto Renew Account ID
-* Staking Node ID or Account ID
-* Decline Staking Rewards
+- Admin Key
+- Contract Memo
+- Automatic Token Associations
+- Auto Renew Account ID
+- Staking Node ID or Account ID
+- Decline Staking Rewards
 
 If you need to set any of the above properties for your contract, you will have to call the `ContractCreateTransaction` API using one of the [Hedera SDKs.](../../../sdks-and-apis/sdks/)
 

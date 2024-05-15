@@ -1,7 +1,5 @@
 ---
-description: >-
-  Hedera SDK JS tutorial - HSCS workshop. Learn how to enable custom logic &
-  processing on Hedera through smart contracts.
+description: Hedera SDK JS tutorial - HSCS workshop. Learn how to enable custom logic & processing on Hedera through smart contracts.
 ---
 
 # Hedera SDK JS
@@ -16,10 +14,10 @@ Hedera Smart Contract Service Workshop Part 4/6 | Hedera SDK
 
 The Hedera network offers multiple services:
 
-* Hedera Smart Contract Service (HSCS)
-* Hedera File Service (HFS)
-* Hedera Token Service (HTS)
-* Hedera Consensus Service (HCS)
+- Hedera Smart Contract Service (HSCS)
+- Hedera File Service (HFS)
+- Hedera Token Service (HTS)
+- Hedera Consensus Service (HCS)
 
 Each service defines a number of different ways you can interact with it as a developer, and these comprise the Hedera Application Programming Interfaces (HAPIs). However, HAPIs are very close to the metal, and a developer needs to handle gRPCs and protocol buffers (among other things) to work with them successfully. Thankfully there are Hedera SDKs, which abstract these low-level complexities away. These SDKs allow you to interact with the various Hedera services via APIs exposed in a variety of different programming languages.
 
@@ -29,10 +27,10 @@ Each service defines a number of different ways you can interact with it as a de
 
 At the time of writing, July 2023, these Hedera SDKs are available in the following languages:
 
-* [Hedera SDK JavaScript/ TypeScript](https://github.com/hashgraph/hedera-sdk-js)
-* [Hedera SDK Java](https://github.com/hashgraph/hedera-sdk-java)
-* [Hedera SDK Go](https://github.com/hashgraph/hedera-sdk-go)
-* [Hedera SDK Swift](https://github.com/hashgraph/hedera-sdk-swift)
+- [Hedera SDK JavaScript/ TypeScript](https://github.com/hashgraph/hedera-sdk-js)
+- [Hedera SDK Java](https://github.com/hashgraph/hedera-sdk-java)
+- [Hedera SDK Go](https://github.com/hashgraph/hedera-sdk-go)
+- [Hedera SDK Swift](https://github.com/hashgraph/hedera-sdk-swift)
 
 Please refer to [SDKs](../../../hedera/sdks-and-apis/sdks/) for an up to date list of SDKs, including additional community-maintained SDKs.
 
@@ -42,7 +40,7 @@ In this tutorial, you will be using Hedera SDK JS to interact with HSCS. Specifi
 
 ## Prerequisites
 
-* ✅ Complete the [Introduction](00-intro.md) section of this same tutorial.
+- ✅ Complete the [Introduction](00-intro.md) section of this same tutorial.
 
 ## Set up the project
 
@@ -157,7 +155,7 @@ The Solidity compiler's output bytecode is _creation bytecode_, sometimes also r
 
 The bytecode that is stored on the network is _runtime bytecode_, sometimes also referred to as _deployed bytecode_.
 
-* [Ref: Stackoverflow: What is the difference between bytecode, init code, deployed bytecode, creation bytecode, and runtime bytecode?](https://ethereum.stackexchange.com/a/76335/48984)
+- [Ref: Stackoverflow: What is the difference between bytecode, init code, deployed bytecode, creation bytecode, and runtime bytecode?](https://ethereum.stackexchange.com/a/76335/48984)
 
 </details>
 
@@ -174,8 +172,9 @@ jq < ./trogdor_sol_Trogdor.abi
 The ABI essentially tells any user/ developer who wishes to interact with the EVM bytecode, what the exposed interface is. In fact ABI stands for Application Binary Interface. This interface will include any functions and events, which are needed by any clients (e.g. DApps), or other smart contracts, to be able to interact with it.
 
 {% hint style="info" %}
-* [Ref: Solidity - Contract ABI specification](https://docs.soliditylang.org/en/latest/abi-spec.html)
-{% endhint %}
+
+- [Ref: Solidity - Contract ABI specification](https://docs.soliditylang.org/en/latest/abi-spec.html)
+  {% endhint %}
 
 ```json
 [
@@ -328,9 +327,9 @@ node ./deploy-sc.js
 
 You should see output similar to the following, which contains:
 
-* `HFS FileCreateTransaction TransactionReceipt`
-* `HSCS ContractCreateTransaction TransactionReceipt`
-* `Deployed to`
+- `HFS FileCreateTransaction TransactionReceipt`
+- `HSCS ContractCreateTransaction TransactionReceipt`
+- `Deployed to`
 
 ```
 HFS FileCreateTransaction TransactionReceipt {
@@ -397,12 +396,12 @@ The `Deployed to` outputs the account ID of the smart contract that you have jus
 
 ### Check smart contract deployment using Hashscan
 
-* Copy the output smart contract account ID, e.g. `0.0.15388539`.
-* Visit [Hashscan](https://hashscan.io/testnet/dashboard)
-* Paste the copied account ID into the search box.
-* You should get redirected to a "Contract" page, e.g. `https://hashscan.io/testnet/contract/0.0.15388539`.
-* In it you can see the EVM address, e.g. `0x0000000000000000000000000000000000eacf7b`.
-* Under "Contract Bytecode", you can see "Runtime Bytecode".
+- Copy the output smart contract account ID, e.g. `0.0.15388539`.
+- Visit [Hashscan](https://hashscan.io/testnet/dashboard)
+- Paste the copied account ID into the search box.
+- You should get redirected to a "Contract" page, e.g. `https://hashscan.io/testnet/contract/0.0.15388539`.
+- In it you can see the EVM address, e.g. `0x0000000000000000000000000000000000eacf7b`.
+- Under "Contract Bytecode", you can see "Runtime Bytecode".
 
 ## Interacting with smart contacts
 
@@ -489,9 +488,10 @@ These are typically used as utility functions, intended to be invoked by other f
 The `totalBurnt` is a `view` function, and to invoke that, let's use `ContractCallQuery`.
 
 {% hint style="info" %}
-* `ContractExecuteTransaction`: Use for modifying state
-* `ContractCallQuery`: Use for reading state
-{% endhint %}
+
+- `ContractExecuteTransaction`: Use for modifying state
+- `ContractCallQuery`: Use for reading state
+  {% endhint %}
 
 ```js
   const scRead1 = new ContractCallQuery()
@@ -509,10 +509,10 @@ The `totalBurnt` is a `view` function, and to invoke that, let's use `ContractCa
 Once the `ContractCallQuery` is executed, extract the its return value using the getter function with the appropriate type. Since the `totalBurnt` function specifies `returns(uint256)` in its signature, use `getUint256()` to extract that return value.
 
 {% hint style="info" %}
-The `ContractCallQuery` has `setQueryPayment`, which is to pay for the costs of querying the data. Note that this is different from other EVM-compatible networks, which allow you to query smart contract state without paying any fee.\\
+The `ContractCallQuery` has `setQueryPayment`, which is to pay for the costs of querying the data. Note that this is different from other EVM-compatible networks, which allow you to query smart contract state without paying any fee.\
 
-* [Ref: Hedera - Get the cost of requesting the query](https://docs.hedera.com/hedera/getting-started/query-data#get-the-cost-of-requesting-the-query)
-{% endhint %}
+- [Ref: Hedera - Get the cost of requesting the query](https://docs.hedera.com/hedera/getting-started/query-data#get-the-cost-of-requesting-the-query)
+  {% endhint %}
 
 ### Step F6: Convert account ID to EVM address
 
@@ -529,8 +529,8 @@ To do so, we start with the private key of the operator account, from that we de
 
 In this smart contract `amounts` is a `view` function, and to invoke that, let's use `ContractCallQuery`. There are a couple of key differences though:
 
-* The `amounts` function requires an input parameter, or type `address`
-* The `amounts` function was not written using Solidity code, But instead was auto-generated by the Solidity compiler for the `public` state variable with the same name.
+- The `amounts` function requires an input parameter, or type `address`
+- The `amounts` function was not written using Solidity code, But instead was auto-generated by the Solidity compiler for the `public` state variable with the same name.
 
 <details>
 
@@ -583,10 +583,10 @@ node ./interact-sc.js
 
 You should get output similar to the following:
 
-* `ContractExecuteTransaction #1 ReceiptStatusError`
-* `ContractExecuteTransaction #2 TransactionReceipt`
-* `ContractCallQuery #1 ContractFunctionResult`
-* `return value`
+- `ContractExecuteTransaction #1 ReceiptStatusError`
+- `ContractExecuteTransaction #2 TransactionReceipt`
+- `ContractCallQuery #1 ContractFunctionResult`
+- `return value`
 
 ```
 ContractExecuteTransaction #1 ReceiptStatusError: receipt for transaction 0.0.1186@1691806933.486622108 contained error status CONTRACT_REVERT_EXECUTED
@@ -698,37 +698,37 @@ The `ContractFunctionResult` has queried the data, and `return value` simply ext
 
 ## Check smart contract interactions using Hashscan
 
-* Visit the "Contract" page for your previously deployed smart contract, e.g. `https://hashscan.io/testnet/contract/0.0.15388539`
-* Scroll down to the "Recent Contract Calls" section
-* If you see "REFRESH PAUSED" at the top right of this section, press the "play" button next to it to unpause (otherwise it does not load new transactions)
-* You should see a list of transactions, with most recent at the top
+- Visit the "Contract" page for your previously deployed smart contract, e.g. `https://hashscan.io/testnet/contract/0.0.15388539`
+- Scroll down to the "Recent Contract Calls" section
+- If you see "REFRESH PAUSED" at the top right of this section, press the "play" button next to it to unpause (otherwise it does not load new transactions)
+- You should see a list of transactions, with most recent at the top
 
 <figure><img src="../../../.gitbook/assets/hashscan--smart-contract--recent-contract-calls.png" alt="Screenshot showing Recent Contract Calls - Smart Contract (on hashscan.io)."><figcaption><p>Screenshot showing Recent Contract Calls - Smart Contract (on hashscan.io).</p></figcaption></figure>
 
-* There should be a failed transaction, denoted by an exclamation mark in a red triangle, e.g. `https://hashscan.io/testnet/transaction/1689235951.444001003`
-* Click on the row for that failed transaction to navigate to its "Transaction" page
-* Scroll down to the "Contract Result" section
-* You should see "Result" as `CONTRACT_REVERT_EXECUTED`
-* You should also see "Error Message" as `pay at least minimum fee`
+- There should be a failed transaction, denoted by an exclamation mark in a red triangle, e.g. `https://hashscan.io/testnet/transaction/1689235951.444001003`
+- Click on the row for that failed transaction to navigate to its "Transaction" page
+- Scroll down to the "Contract Result" section
+- You should see "Result" as `CONTRACT_REVERT_EXECUTED`
+- You should also see "Error Message" as `pay at least minimum fee`
 
 <figure><img src="../../../.gitbook/assets/hashscan--transaction--contract-result--contract-revert-executed.png" alt="Screenshot showing Contract Result CONTRACT_REVERT_EXECUTED - Transaction (on hashscan.io)."><figcaption><p>Screenshot showing Contract Result CONTRACT_REVERT_EXECUTED - Transaction (on hashscan.io).</p></figcaption></figure>
 
-* Go back to the "Contract" page
-* Scroll down to the "Recent Contract Calls" section
-* There should be a successful transaction, denoted by the absence of an exclamation mark in a red triangle, e.g. `https://hashscan.io/testnet/transaction/1689235952.436013392`
-* Scroll down to the "Contract Result" section
-* You should see "Result" as `SUCCESS`
-* You should also see "Error Message" as `None`
+- Go back to the "Contract" page
+- Scroll down to the "Recent Contract Calls" section
+- There should be a successful transaction, denoted by the absence of an exclamation mark in a red triangle, e.g. `https://hashscan.io/testnet/transaction/1689235952.436013392`
+- Scroll down to the "Contract Result" section
+- You should see "Result" as `SUCCESS`
+- You should also see "Error Message" as `None`
 
 <figure><img src="../../../.gitbook/assets/hashscan--transaction--contract-result--success.png" alt="Screenshot showing Contract Result SUCCESS - Transaction (on hashscan.io)."><figcaption><p>Screenshot showing Contract Result SUCCESS - Transaction (on hashscan.io).</p></figcaption></figure>
 
-* Scroll down to the "Logs" section
-* You should see a single log entry (address, data, index, and topics)
-  * The "Address" field matches that of the smart contract
-  * The "Index" field should be `0` since there was only a single event that was emitted
-  * The "Topics" field corresponds to the hash of the signature of the event that was emitted, e.g. `Burnination(address,uint256)`
-  * The "Data" field corresponds to the values of the event parameters, e.g. `0x00000000000000000000000000000000000000000000000000000000000004a2000000000000000000000000000000000000000000000000000000000000007b` is:
-  * `0x00000000000000000000000000000000000004a2` (your address) and
-  * `0x007b` is the amount (`123` when converted to decimal)
+- Scroll down to the "Logs" section
+- You should see a single log entry (address, data, index, and topics)
+  - The "Address" field matches that of the smart contract
+  - The "Index" field should be `0` since there was only a single event that was emitted
+  - The "Topics" field corresponds to the hash of the signature of the event that was emitted, e.g. `Burnination(address,uint256)`
+  - The "Data" field corresponds to the values of the event parameters, e.g. `0x00000000000000000000000000000000000000000000000000000000000004a2000000000000000000000000000000000000000000000000000000000000007b` is:
+  - `0x00000000000000000000000000000000000004a2` (your address) and
+  - `0x007b` is the amount (`123` when converted to decimal)
 
 <figure><img src="../../../.gitbook/assets/hashscan--transaction--logs.png" alt="Screenshot showing Logs - Transaction (on hashscan.io)."><figcaption><p>Screenshot showing Logs - Transaction (on hashscan.io).</p></figcaption></figure>

@@ -1,15 +1,13 @@
 ---
-description: >-
-  Hello World sequence: Create a new topic Hedera Consensus Service (HCS), and
-  publish a message to this topic.
+description: "Hello World sequence: Create a new topic Hedera Consensus Service (HCS), and publish a message to this topic."
 ---
 
 # HFS: Files
 
 ## What you will accomplish
 
-* [ ] Create a new Topic on HCS
-* [ ] Publish a new message to this Topic
+- [ ] Create a new Topic on HCS
+- [ ] Publish a new message to this Topic
 
 ***
 
@@ -17,7 +15,7 @@ description: >-
 
 Before you begin, you should have **completed** the following Hello World sequence:
 
-* [x] [create-fund-account.md](create-fund-account.md "mention")
+- [x] [create-fund-account.md](create-fund-account.md "mention")
 
 ***
 
@@ -91,31 +89,38 @@ An almost complete script has already been prepared for you, `script-hcs-topic.j
 
 ### Step 1: Create a topic
 
-To create a new HCS topic, submit a `TopicCreateTransaction`, from the Hedera SDK. This transaction does not need any input parameters.
+To create a new HCS topic, submit a `TopicCreateTransaction`,
+from the Hedera SDK.
+This transaction does not need any input parameters.
 
 {% code title="script-hcs-topic.js" overflow="wrap" %}
+
 ```js
     const topicCreateTx = await
         new TopicCreateTransaction()
         .freezeWith(client);
 ```
+
 {% endcode %}
 
 Note that once this transaction has been completed, it is important to extract the **topicID** from it, as you will need this to submit messages to it. This has already been done, and no modification is necessary.
 
 {% code title="script-hcs-topic.js" overflow="wrap" %}
+
 ```js
     const topicId = topicCreateTxReceipt.topicId;
 ```
+
 {% endcode %}
 
 ### Step 2: Publish message to topic
 
 Once the topic has been registered, you're ready to submit messages to it. Messages may be any data up to 1024 bytes.
 
-To do so, submit a `TopicMessageSubmitTransaction` from the Hedera SDK. This transaction needs 2 input parameters, `topicId` and `message`. Use the `topicId` obtained from the receipt of the `TopicCreateTransaction` submitted earlier. For `message`, use a string `Hello HCS -` followed by your name (or nickname). For example, if you used `bguiz`, the string should be `Hello HCS - bguiz`.
+To do so, submit a `TopicMessageSubmitTransaction` from the Hedera SDK. This transaction needs 2 input parameters, `topicId` and `message`. Use the `topicId` obtained from the receipt of the `TopicCreateTransaction` submitted earlier. For `message`, use a string `Hello HCS - ` followed by your name (or nickname). For example, if you used `bguiz`, the string should be `Hello HCS - bguiz`.
 
 {% code title="script-hcs-topic.js" overflow="wrap" %}
+
 ```js
     const topicMsgSubmitTx = await
         new TopicMessageSubmitTransaction({
@@ -124,6 +129,7 @@ To do so, submit a `TopicMessageSubmitTransaction` from the Hedera SDK. This tra
         })
         .freezeWith(client);
 ```
+
 {% endcode %}
 
 ***
@@ -138,7 +144,7 @@ node script-hcs-topic.js
 
 You should see output similar to the following:
 
-```
+```text
 Topic created. Waiting a few seconds for propagation...
 accountId: 0.0.3643569
 topicId: 0.0.3791978
@@ -150,10 +156,10 @@ topicMessageMirrorUrl: https://testnet.mirrornode.hedera.com/api/v1/topics/0.0.3
 
 To verify that both the `TopicCreateTransaction` and `TopicMessageSubmitTransaction` have worked, check Hashscan (the network explorer). To do so, open `topicExplorerUrl` in your browser and check that:
 
-![HCS topic in Hashscan, with annotated items to check.](../../.gitbook/assets/hello-world--hcs--topic.drawing.svg)
+<img src="../../.gitbook/assets/hello-world--hcs--topic.drawing.svg" alt="HCS topic in Hashscan, with annotated items to check." class="gitbook-drawing">
 
-* The topic exists, and its topic ID matches `topicId` output by the script. **(1)**
-* There is one entry in the topic, and its message is `Hello HCS -` followed by your name/ nickname. **(2)**
+- The topic exists, and its topic ID matches `topicId` output by the script. **(1)**
+- There is one entry in the topic, and its message is `Hello HCS - ` followed by your name/ nickname. **(2)**
 
 ***
 
@@ -163,8 +169,8 @@ Congratulations, you have completed the **Hedera Consensus Service** Hello World
 
 You have learned how to:
 
-* [x] Create a new Topic on HCS
-* [x] Publish a new message to this Topic
+- [x] Create a new Topic on HCS
+- [x] Publish a new message to this Topic
 
 ***
 

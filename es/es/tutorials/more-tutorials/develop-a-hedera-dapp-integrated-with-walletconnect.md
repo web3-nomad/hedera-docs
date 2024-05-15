@@ -1,7 +1,5 @@
 ---
-description: >-
-  In the dynamic world of decentralized applications (DApps), catering to users
-  with diverse wallet preferences is important.
+description: In the dynamic world of decentralized applications (DApps), catering to users with diverse wallet preferences is important.
 ---
 
 # Build a Hedera DApp integrated with walletconnect
@@ -10,10 +8,10 @@ Explore DApp development using the Mirror Node API and Hedera Token Service (HTS
 
 ## What you will accomplish
 
-* [ ] Query the mirror node for account token balance, token information, and Non-fungible information.
-* [ ] Query the mirror node to check if the receiver has associated with a token ID
-* [ ] Associate an HTS token with HashPack, Kabila, Blade, or MetaMask through a UI
-* [ ] Transfer an HTS token through a UI
+- [ ] Query the mirror node for account token balance, token information, and Non-fungible information.
+- [ ] Query the mirror node to check if the receiver has associated with a token ID
+- [ ] Associate an HTS token with HashPack, Kabila, Blade, or MetaMask through a UI
+- [ ] Transfer an HTS token through a UI
 
 <figure><img src="../../../.gitbook/assets/completed-react-dapp-walletconnect.png" alt="Completed dapp user interface to transfer and associate a token."><figcaption><p>Completed DAPP User Interface</p></figcaption></figure>
 
@@ -21,31 +19,31 @@ Explore DApp development using the Mirror Node API and Hedera Token Service (HTS
 
 Before you begin, you should be familiar with the following:
 
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [TypeScript](https://www.typescriptlang.org/)
-* [React](https://react.dev/)
-* [REST API](https://www.geeksforgeeks.org/rest-api-introduction/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
+- [REST API](https://www.geeksforgeeks.org/rest-api-introduction/)
 
 <details>
 
-<summary>Also, you should have the following set up on your computer ⬇</summary>
+<summary>Also, you should have the following set up on your computer ⬇ </summary>
 
-* [x] `git` installed
-  * Minimum version: 2.37
-  * Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
-* [x] A code editor or IDE
-  * Recommended: [VS Code. Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
-* [x] NodeJs + npm installed
-  * Minimum version of NodeJs: 18
-  * Minimum version of npm: 9.5
-  * Recommended for Linux & Mac: [nvm](https://github.com/nvm-sh/nvm)
-  * Recommended for Windows: [nvm-windows](https://github.com/coreybutler/nvm-windows)
+- [x] `git` installed
+  - Minimum version: 2.37
+  - Recommended: [Install Git (Github)](https://github.com/git-guides/install-git)
+- [x] A code editor or IDE
+  - Recommended: [VS Code. Install VS Code (Visual Studio)](https://code.visualstudio.com/docs/setup/setup-overview)
+- [x] NodeJs + npm installed
+  - Minimum version of NodeJs: 18
+  - Minimum version of npm: 9.5
+  - Recommended for Linux & Mac: [nvm](https://github.com/nvm-sh/nvm)
+  - Recommended for Windows: [nvm-windows](https://github.com/coreybutler/nvm-windows)
 
 </details>
 
 <details>
 
-<summary>Check your prerequisites set up ⬇</summary>
+<summary>Check your prerequisites set up ⬇ </summary>
 
 Open your terminal, and enter the following commands.
 
@@ -58,7 +56,7 @@ npm --version
 
 Each of these commands should output some text that includes a version number, for example:
 
-```
+```text
 git --version
 git version 2.39.2 (Apple Git-143)
 
@@ -82,11 +80,11 @@ If the output contains text similar to `command not found`, please install that 
 
 We choose to scaffold our project by using the [CRA Hedera DApp template](https://github.com/hedera-dev/cra-hedera-dapp-template), as it offers:
 
-* [x] Multi-wallet integration via walletconnect supporting MetaMask and Hedera native wallets
-* [x] Mirror Node Client
-* [x] State management via React Context
-* [x] Material UI
-* [x] Choice of TypeScript or JavaScript
+- [x] Multi-wallet integration via walletconnect supporting MetaMask and Hedera native wallets
+- [x] Mirror Node Client
+- [x] State management via React Context
+- [x] Material UI
+- [x] Choice of TypeScript or JavaScript
 
 This custom template eliminates setup overhead and allows you to dive straight into the core features of your project.
 
@@ -111,8 +109,7 @@ npx create-react-app <my-app-name> --template git+ssh://git@github.com/hedera-de
 <details>
 
 <summary>Scaffolding project expected output</summary>
-
-<img src="../../../.gitbook/assets/scaffold-project-expected-output.png" alt="Scaffold project expected output" data-size="original">
+<figure><img src="../../../.gitbook/assets/scaffold-project-expected-output.png" alt="A terminal showing the initialization of a new react project."><figcaption><p>Scaffold project expected output</p></figcaption></figure>
 
 </details>
 
@@ -178,8 +175,7 @@ Paste the below HTTP GET request outside of and below the `MirrorNodeClient` cla
 <details>
 
 <summary>File Checkpoint</summary>
-
-To ensure you're on the right track, your \`src/services/wallets/mirrorNodeClient.ts\` file should look like below.
+To ensure you're on the right track, your `src/services/wallets/mirrorNodeClient.ts` file should look like below.
 
 ```Typescript
 import { AccountId } from "@hashgraph/sdk";
@@ -358,8 +354,7 @@ The `getAccountTokenBalancesWithTokenInfo` combines token balances, token info a
 <details>
 
 <summary>Complete `mirrorNodeClient.ts` file Checkpoint</summary>
-
-To ensure you're on the right track, your \`src/services/wallets/mirrorNodeClient.ts\` file should look like below.
+To ensure you're on the right track, your `src/services/wallets/mirrorNodeClient.ts` file should look like below.
 
 ```Typescript
 import { AccountId } from "@hashgraph/sdk";
@@ -766,9 +761,9 @@ This code fetches and updates the list of tokens a user owns providing the avail
 
 The application is ready to be started and tested. You will be testing:
 
-* [ ] Connect to a DApp with a Hedera native wallet through WalletConnect
-* [ ] Associate a token
-* [ ] Transfer a token to a receiver account
+- [ ] Connect to a DApp with a Hedera native wallet through WalletConnect
+- [ ] Associate a token
+- [ ] Transfer a token to a receiver account
 
 #### 4.1 Test Setup
 
@@ -800,8 +795,7 @@ Keep this terminal open for the remainder of the tutorial, as you will refer bac
 {% endhint %}
 
 <details>
-
-<summary>Test Accounts Sample Output</summary>
+<summary>Test Accounts Sample Output </summary>
 
 ```JSON
 {
@@ -865,7 +859,6 @@ Click the `Connect Wallet` button in the upper right and select MetaMask and sel
 <figure><img src="../../../.gitbook/assets/connected-account-view-dapp.png" alt="a dropdown of available tokens with a transfer button and a textbox to associate tokens with connected account."><figcaption><p>Successfully connected to dapp view</p></figcaption></figure>
 
 <details>
-
 <summary>WalletConnect Instructions</summary>
 
 Open HashPack and unlock your wallet
@@ -876,19 +869,19 @@ Choose WalletConnect
 
 Copy the connection string
 
-<img src="../../../.gitbook/assets/copy-walletconnect-string-dapp.png" alt="Walletconnect modal" data-size="original">
+<figure><img src="../../../.gitbook/assets/copy-walletconnect-string-dapp.png" alt="walletconnect modal"><figcaption><p>Walletconnect modal</p></figcaption></figure>
 
 Open HashPack and connect to DApp by clicking on the world in the upper right
 
-<img src="../../../.gitbook/assets/connect-to-dapp.png" alt="HashPack connect to dapp modal" data-size="original">
+<figure><img src="../../../.gitbook/assets/connect-to-dapp.png" alt="hashpack connect to dapp modal"><figcaption><p>HashPack connect to dapp modal</p></figcaption></figure>
 
 Paste the walletconnect string into HashPack pairing string textbox
 
-<img src="../../../.gitbook/assets/paste-walletconnect-string-dapp.png" alt="HashPack paste pairing string" data-size="original">
+<figure><img src="../../../.gitbook/assets/paste-walletconnect-string-dapp.png" alt="hashpack enter pairing string modal"><figcaption><p>HashPack paste pairing string</p></figcaption></figure>
 
 Select the Receiver account to connect with the DApp
 
-<img src="../../../.gitbook/assets/hashpack-select-account-dapp.png" alt="HashPack select account" data-size="original">
+<figure><img src="../../../.gitbook/assets/hashpack-select-account-dapp.png" alt="hashpack select account"><figcaption><p>HashPack select account</p></figcaption></figure>
 
 ✅ You're connected!
 
@@ -920,11 +913,11 @@ Connect to the DApp as the Sender Account.
 
 As the Sender,
 
-* Select from available tokens the HederaNFT
-* Select the NFT with serial number 5 from the drop-down menu.
-* Enter the account ID or EVM address of the Receiver account.
-* Click the "send" button.
-* Sign the transaction on MetaMask to complete the transfer of the NFT from the Sender to the receiver account.
+- Select from available tokens the HederaNFT
+- Select the NFT with serial number 5 from the drop-down menu.
+- Enter the account ID or EVM address of the Receiver account.
+- Click the "send" button.
+- Sign the transaction on MetaMask to complete the transfer of the NFT from the Sender to the receiver account.
 
 <figure><img src="../../../.gitbook/assets/transfer-nft-dapp.png" alt="Homepage showing the transfer of NFT serial number 5"><figcaption><p>Transfer NFT to Receiver Account</p></figcaption></figure>
 
@@ -946,10 +939,10 @@ Optionally, import your accounts into any of the above Hedera native wallets and
 
 You have learned how to:
 
-* [x] Query the mirror node for account token balance, token information, and Non-fungible information.
-* [x] Query the mirror node to check if the receiver has associated with a token ID
-* [x] Associate an HTS token with HashPack, Kabila, Blade, or MetaMask through a UI
-* [x] Transfer an HTS token through a UI
+- [x] Query the mirror node for account token balance, token information, and Non-fungible information.
+- [x] Query the mirror node to check if the receiver has associated with a token ID
+- [x] Associate an HTS token with HashPack, Kabila, Blade, or MetaMask through a UI
+- [x] Transfer an HTS token through a UI
 
 ***
 

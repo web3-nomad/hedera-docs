@@ -1,14 +1,12 @@
 ---
-description: >-
-  A step-by-step guide on deploying a smart contract to Hedera testnet and
-  Hedera Local Node using Hardhat.
+description: A step-by-step guide on deploying a smart contract to Hedera testnet and Hedera Local Node using Hardhat.
 ---
 
 # Deploy a Smart Contract Using Hardhat and Hedera JSON-RPC Relay
 
-In this tutorial, you will walk through the step-by-step guide on deploying [smart contracts](../../support-and-community/glossary.md#smart-contract) using Hardhat and Hedera JSON-RPC Relay. [**Hardhat**](https://hardhat.org/) is a development environment for Ethereum. It consists of different components for editing, compiling, debugging, and deploying smart contracts and dApps, all working together to create a complete development environment.\&#x20
+In this tutorial, you will walk through the step-by-step guide on deploying [smart contracts](../../support-and-community/glossary.md#smart-contract) using Hardhat and Hedera JSON-RPC Relay. [**Hardhat**](https://hardhat.org/) is a development environment for Ethereum. It consists of different components for editing, compiling, debugging, and deploying smart contracts and dApps, all working together to create a complete development environment.
 
-The [**Hedera JSON-RPC Relay**](https://github.com/hashgraph/hedera-json-rpc-relay) is an implementation of Ethereum JSON-RPC APIs for Hedera and utilizes both Hedera Consensus Nodes and Mirror Nodes to support RPC queries defined in the [JSON-RPC Specification](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/hashgraph/hedera-json-rpc-relay/main/docs/openrpc.json\\\&uiSchema%5BappBar%5D%5Bui:splitView%5D=false\\\&uiSchema%5BappBar%5D%5Bui:input%5D=false\\\&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false). The [**Hedera Local Node**](https://github.com/hashgraph/hedera-local-node) project enables developers to establish their own local network for development and testing. The local network comprises the consensus node, mirror node, JSON-RPC relay, and other Hedera products, and can be set up using the CLI tool and Docker. This setup allows you to seamlessly build and deploy smart contracts from your local environment.
+The [**Hedera JSON-RPC Relay**](https://github.com/hashgraph/hedera-json-rpc-relay) is an implementation of Ethereum JSON-RPC APIs for Hedera and utilizes both Hedera Consensus Nodes and Mirror Nodes to support RPC queries defined in the [JSON-RPC Specification](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/hashgraph/hedera-json-rpc-relay/main/docs/openrpc.json\\&uiSchema%5BappBar%5D%5Bui:splitView%5D=false\\&uiSchema%5BappBar%5D%5Bui:input%5D=false\\&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false). The [**Hedera Local Node**](https://github.com/hashgraph/hedera-local-node) project enables developers to establish their own local network for development and testing. The local network comprises the consensus node, mirror node, JSON-RPC relay, and other Hedera products, and can be set up using the CLI tool and Docker. This setup allows you to seamlessly build and deploy smart contracts from your local environment.
 
 By the end of this tutorial, you'll be equipped to deploy smart contracts on the Hedera Testnet or your local Hedera node, leveraging Hardhat's tools for testing, compiling, and deploying.
 
@@ -16,13 +14,13 @@ By the end of this tutorial, you'll be equipped to deploy smart contracts on the
 
 ## Prerequisites
 
-* Basic understanding of smart contracts.
-* Basic understanding of [Node.js](https://nodejs.org/en/download) and JavaScript.
-* Basic understanding of [Hardhat Ethereum Development Tool](https://hardhat.org/hardhat-runner/docs/guides/project-setup).
+- Basic understanding of smart contracts.
+- Basic understanding of [Node.js](https://nodejs.org/en/download) and JavaScript.
+- Basic understanding of [Hardhat Ethereum Development Tool](https://hardhat.org/hardhat-runner/docs/guides/project-setup).
 
 ***
 
-## Table of Contents\&#x20
+## Table of Contents
 
 1. [Project Setup](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#step-1-set-up-project)
 2. [Project Configuration](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#step-2-configure-project)
@@ -37,7 +35,7 @@ By the end of this tutorial, you'll be equipped to deploy smart contracts on the
 
 ## Step 1: Set Up Project
 
-To simplify the setup process, you can clone a boilerplate Hardhat example project from the `hedera-hardhat-example-project` [repository](https://github.com/hashgraph/hedera-hardhat-example-project). Open a terminal window and navigate to your preferred directory where your Hardhat project will be stored.\&#x20
+To simplify the setup process, you can clone a boilerplate Hardhat example project from the `hedera-hardhat-example-project` [repository](https://github.com/hashgraph/hedera-hardhat-example-project). Open a terminal window and navigate to your preferred directory where your Hardhat project will be stored.
 
 Run the following command to clone the repo, change into the directory, and install dependencies:
 
@@ -74,6 +72,7 @@ The `contracts/` folder contains the source file for the Greeter smart contract.
 Let's review the `Greeter.sol` contract in the `hedera-example-hardhat-project/contracts` folder. At the top of the file, the `SPDX-License-Identifier` defines the license, in this case, the MIT license. The `pragma solidity ^0.8.9;` line specifies the Solidity compiler version to use. These two lines are crucial for proper licensing and compatibility.
 
 {% code title="Greeter.sol" %}
+
 ```solidity
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
@@ -103,6 +102,7 @@ contract Greeter {
     }
 }
 ```
+
 {% endcode %}
 
 _**NOTE**: The pragma solidity line must match the version of Solidity defined in the_ [_module exports_](https://github.com/hashgraph/hedera-hardhat-example-project/blob/main/hardhat.config.js#L34) _of your `hardhat.config.js` file._
@@ -120,6 +120,7 @@ The `scripts/` folder contains test scripts for locally testing a smart contract
 Calls the `setGreeting` function from the Greeter contract and sets the greeter message to "Greeter."
 
 {% code title="contractCall.js" %}
+
 ```javascript
 const { ethers } = require('hardhat');
 
@@ -144,6 +145,7 @@ module.exports = async (address, msg) => {
   return updateTx;
 };
 ```
+
 {% endcode %}
 
 **contractViewCall.js**
@@ -151,6 +153,7 @@ module.exports = async (address, msg) => {
 Returns the current greeter message value stored with the Greeter contract.
 
 {% code title="contractViewCall.js" %}
+
 ```javascript
 const { ethers } = require("hardhat");
 
@@ -171,6 +174,7 @@ module.exports = async (address) => {
   return callRes;
 };
 ```
+
 {% endcode %}
 
 **deployContract.js**
@@ -206,6 +210,7 @@ module.exports = async () => {
 Returns the balance of the specified wallet address (account) in tinybars. Tinybars are the unit in which Hedera accounts hold HBAR balances.
 
 {% code title="showBalance.js" %}
+
 ```javascript
 const { ethers } = require("hardhat");
 
@@ -219,6 +224,7 @@ module.exports = async () => {
   return balance;
 };
 ```
+
 {% endcode %}
 
 </details>
@@ -232,6 +238,7 @@ The `test/` folder contains the test files for the project.\
 The `rpc.js` file is located in this folder in the `hedera-example-hardhat-project` project and references the Hardhat [tasks](https://github.com/hashgraph/hedera-hardhat-example-project/blob/main/hardhat.config.js#L7) that are defined in the `hardhat.config file`. When the command `npx hardhat test` is run, the program executes the `rpc.js` file.
 
 {% code title="rpc.js" %}
+
 ```javascript
 const hre = require("hardhat");
 const { expect } = require("chai");
@@ -267,6 +274,7 @@ describe("RPC", function () {
   });
 });
 ```
+
 {% endcode %}
 
 </details>
@@ -306,23 +314,25 @@ The `.env` file securely stores environment variables, such as your Hedera netwo
 The variables are predefined for the purposes of this tutorial.
 
 {% code title=".env" %}
+
 ```bash
 # Your Hedera Local Node ECDSA account alias private key
 LOCAL_NODE_OPERATOR_PRIVATE_KEY=0x105d050185ccb907fba04dd92d8de9e32c18305e097ab41dadda21489a211524
 # Your Hedera Local Node JSON-RPC endpoint URL
 LOCAL_NODE_ENDPOINT='http://localhost:7546/'
 ```
+
 {% endcode %}
 
 **Variables explained**
 
-* **`LOCAL_NODE_OPERATOR_PRIVATE_KEY`**: This is your Alias ECDSA hex-encoded private key for your Hedera Local Node. Replace the example value with your actual private key. Once you set up your local node and run the command to start, the accounts list for alias ECDSA private keys will be generated and returned to your console (see screenshot below). Replace the example value with your actual private key.
+- **`LOCAL_NODE_OPERATOR_PRIVATE_KEY`**: This is your Alias ECDSA hex-encoded private key for your Hedera Local Node. Replace the example value with your actual private key. Once you set up your local node and run the command to start, the accounts list for alias ECDSA private keys will be generated and returned to your console (see screenshot below). Replace the example value with your actual private key.
 
-<figure><img src="../../.gitbook/assets/ecdsa%20account%20alias%20cli.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ecdsa account alias cli.png" alt="" width="563"><figcaption></figcaption></figure>
 
-* **`LOCAL_NODE_ENDPOINT`**: This is the URL endpoint for your Hedera Local Node's JSON-RPC Relay. Typically, this would be your `localhost` followed by the port number (`http://localhost:7546/`).
+- **`LOCAL_NODE_ENDPOINT`**: This is the URL endpoint for your Hedera Local Node's JSON-RPC Relay. Typically, this would be your `localhost` followed by the port number (`http://localhost:7546/`).
 
-<figure><img src="../../.gitbook/assets/local%20node%20address%207546.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/local node address 7546.png" alt="" width="563"><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="testnet" %}
@@ -331,21 +341,23 @@ LOCAL_NODE_ENDPOINT='http://localhost:7546/'
 **Hedera Testnet environment variables**
 
 {% code title=".env" %}
+
 ```bash
 # Your testnet account ECDSA hex-encoded private key
 TESTNET_OPERATOR_PRIVATE_KEY=0xb46751179bc8aa9e129d34463e46cd924055112eb30b31637b5081b56ad96129
 # Your testnet JSON-RPC Relay endpoint URL
 TESTNET_ENDPOINT='https://testnet.hashio.io/api'
 ```
+
 {% endcode %}
 
 **Variables explained**
 
-* **`TESTNET_OPERATOR_PRIVATE_KEY`**: This is your ECDSA hex-encoded private key for the Hedera Testnet. Replace the example value with your actual private key.
+- **`TESTNET_OPERATOR_PRIVATE_KEY`**: This is your ECDSA hex-encoded private key for the Hedera Testnet. Replace the example value with your actual private key.
 
-<figure><img src="../../.gitbook/assets/portal%20hex%20(1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/portal hex (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
-* **`TESTNET_ENDPOINT`**: This is the URL endpoint for the Hedera Testnet's JSON-RPC Relay. Replace the example URL with the one you're using.\&#x20
+- **`TESTNET_ENDPOINT`**: This is the URL endpoint for the Hedera Testnet's JSON-RPC Relay. Replace the example URL with the one you're using.
 
 For this tutorial, we'll use Hashio, an instance of the [Hedera JSON-RPC relay](../../core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay.md) hosted by [Swirlds Labs](https://swirldslabs.com/). You can use any JSON-RPC instance the community supports.
 
@@ -363,15 +375,17 @@ The Hardhat config (`hardhat.config.js`) file serves as the central configuratio
 
 #### Required Packages and Mocha Settings
 
-These first lines import the required Hardhat plugins and the `dotenv` module that loads environment variables from the `.env` file. This will allow you to keep your private keys secure while using them in your dApp and will keep you from committing these to GitHub.\&#x20
+These first lines import the required Hardhat plugins and the `dotenv` module that loads environment variables from the `.env` file. This will allow you to keep your private keys secure while using them in your dApp and will keep you from committing these to GitHub.
 
 {% code title="hardhat.config.js" %}
+
 ```javascript
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-chai-matchers");
 require("@nomiclabs/hardhat-ethers");
 require("dotenv").config(); // Import dotenv library to access the .env file
 ```
+
 {% endcode %}
 
 #### Hardhat Tasks
@@ -379,6 +393,7 @@ require("dotenv").config(); // Import dotenv library to access the .env file
 These lines define tasks that are accessed and executed from the [`test/`](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#test) or [`scripts/`](deploy-a-smart-contract-using-hardhat-hedera-json-rpc-relay.md#scripts) folders.
 
 {% code title="hardhat.config.js" %}
+
 ```javascript
 //define hardhat task here, which can be accessed in our test file (test/rpc.js) by using hre.run('taskName')
 task("show-balance", async () => {
@@ -401,6 +416,7 @@ task("contract-call", async (taskArgs) => {
   return contractCall(taskArgs.contractAddress, taskArgs.msg);
 });
 ```
+
 {% endcode %}
 
 #### Solidity Compiler Settings
@@ -408,6 +424,7 @@ task("contract-call", async (taskArgs) => {
 Here, the Solidity compiler version is set to "0.8.9". The optimizer is enabled with 500 runs to improve the contract's efficiency.
 
 {% code title="hardhat.config.js" %}
+
 ```javascript
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -424,6 +441,7 @@ module.exports = {
   },
 },
 ```
+
 {% endcode %}
 
 #### Network Configurations
@@ -433,6 +451,7 @@ The `networks` object is essential for defining the Hedera networks your Hardhat
 {% tabs %}
 {% tab title="local node" %}
 {% code title=".env" %}
+
 ```javascript
 // Specifies which network configuration will be used by default when you run Hardhat commands. 
   defaultNetwork: "local",
@@ -446,11 +465,13 @@ The `networks` object is essential for defining the Hedera networks your Hardhat
     },
   },
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="testnet" %}
 {% code title=".env" %}
+
 ```javascript
   // Specifies which network configuration will be used by default when you run Hardhat commands.
   defaultNetwork: "testnet",
@@ -464,16 +485,17 @@ The `networks` object is essential for defining the Hedera networks your Hardhat
     },
   },
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
 **Key/value breakdown:**
 
-* **`defaultNetwork`**: This property specifies which network configuration will be used by default when you run Hardhat commands.\&#x20
-* **`networks`**: This property contains configurations for different networks you might connect to.
-* **`url`**: This specifies the URL endpoint for the network. The value is pulled from the `.env` file where the environment variables are defined.
-* **`accounts`**: This lists the private keys for the accounts you'll use when connecting to the network. The value is pulled from the `.env` file where the environment variables are defined.
+- **`defaultNetwork`**: This property specifies which network configuration will be used by default when you run Hardhat commands.
+- **`networks`**: This property contains configurations for different networks you might connect to.
+- **`url`**: This specifies the URL endpoint for the network. The value is pulled from the `.env` file where the environment variables are defined.
+- **`accounts`**: This lists the private keys for the accounts you'll use when connecting to the network. The value is pulled from the `.env` file where the environment variables are defined.
 
 ***
 
@@ -496,9 +518,9 @@ Compiled 1 contract successfully
 
 </details>
 
-The compiled artifacts will be saved in the `artifacts/` directory by default, or whatever your [configured artifacts path](https://hardhat.org/hardhat-runner/docs/config#path-configuration) is. The metadata file generated in this directory will be used for the [smart contract verification process](../../core-concepts/smart-contracts/verifying-smart-contracts-beta.md) in a later step.\&#x20
+The compiled artifacts will be saved in the `artifacts/` directory by default, or whatever your [configured artifacts path](https://hardhat.org/hardhat-runner/docs/config#path-configuration) is. The metadata file generated in this directory will be used for the [smart contract verification process](../../core-concepts/smart-contracts/verifying-smart-contracts-beta.md) in a later step.
 
-<figure><img src="../../.gitbook/assets/hardhat%20artifacts%20metadata%20file.png" alt="" width="373"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/hardhat artifacts metadata file.png" alt="" width="373"><figcaption></figcaption></figure>
 
 After the initial compilation, if you don't modify any files, nothing will be compiled when you run the `compile` command. To force a compilation you can use the `--force` flag or run `npx hardhat clean` to clear the cache and delete the artifacts to recompile.
 
@@ -512,13 +534,13 @@ Once your contract is compiled successfully, deploy the `Greeter.sol` smart cont
 
 <summary>🛠️ local node additional steps</summary>
 
-Before you deploy your contract, let's ensure you have all the necessary tools open and running to avoid any issues.\&#x20
+Before you deploy your contract, let's ensure you have all the necessary tools open and running to avoid any issues.
 
-* Have two terminals open. One for each of these two project directories:
-  * `hedera-local-node`
-  * `hedera-hardhat-example-project`
-* Have Docker open and start your local node.
-  * In the `hedera-local-node` terminal, start your local node by running `hedera start -d`.
+- Have two terminals open. One for each of these two project directories:
+  - `hedera-local-node`
+  - `hedera-hardhat-example-project`
+- Have Docker open and start your local node.
+  - In the `hedera-local-node` terminal, start your local node by running `hedera start -d`.
 
 _**Note**: If you have not set up your Hedera Local Node, you can do so by following_ [_this_](../local-node/how-to-set-up-a-hedera-local-node.md) _tutorial and returning to this step once you complete the setup._
 
@@ -564,7 +586,7 @@ In the same terminal, run the following command to deploy your contract to the d
 npx hardhat deploy-contract
 ```
 
-Alternatively, you can target any network configured in your Hardhat config file. For testnet:\&#x20
+Alternatively, you can target any network configured in your Hardhat config file. For testnet:
 
 ```bash
 npx hardhat run --network testnet scripts/deployContract.js
@@ -586,7 +608,7 @@ Greeter deployed to: 0x157B93c04a294AbD88cF608672059814b3ea38aE
 {% tab title="local node" %}
 **Stop Local Node**
 
-Stop your local node and remove Docker containers by running `hedera stop` or `docker compose down` in your `hedera-local-node` terminal. Reference the [_Stop Your Local Node_](../local-node/how-to-set-up-a-hedera-local-node.md#stop-your-local-network) section of the local node setup tutorial.\&#x20
+Stop your local node and remove Docker containers by running `hedera stop` or `docker compose down` in your `hedera-local-node` terminal. Reference the [_Stop Your Local Node_](../local-node/how-to-set-up-a-hedera-local-node.md#stop-your-local-network) section of the local node setup tutorial.
 
 **Deploy on Hedera Testnet**
 
@@ -600,7 +622,7 @@ You can view the contract you deployed by searching the smart contract _public_ 
 
 The Network Explorer will return the information about the contract created and deployed to the Hedera Testnet. The "EVM Address" field is the public address of the contract that was returned to you in your terminal. The terminal returned the public address with the "0x" hex encoding appended to the public address. You will also notice a contract ID in `0.0.contractNumber` (`0.0.3478001`) format. This is the _contract ID_ used to reference the contract entity in the Hedera Network.
 
-<img src="../../.gitbook/assets/new%20hashscan%20(2).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/new hashscan (2).png" alt="" data-size="original">
 
 **Verify Contract**
 

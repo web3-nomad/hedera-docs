@@ -1,5 +1,7 @@
 ---
-description: A step-by-step tutorial on how to integrate the Hedera Wallet Snap by MetaMask into a dApp.
+description: >-
+  A step-by-step tutorial on how to integrate the Hedera Wallet Snap by MetaMask
+  into a dApp.
 ---
 
 # MetaMask Snaps – What Are They and How to Use Them
@@ -14,31 +16,31 @@ The [Hedera Wallet Snap](https://snaps.metamask.io/snap/npm/hashgraph/hedera-wal
 
 This tutorial will demonstrate how dApp builders and developers can seamlessly integrate and utilize the Hedera Wallet Snap in their applications. You will learn how to:
 
-- Pair dApp with MetaMask
-- Install the Hedera Wallet Snap
-- Get the Snap Ethereum Virtual Machine (EVM) address
-- Create the Snap account and check its balance
-- Call other methods in the Hedera Wallet Snap, like: `transferCrypto`
+* Pair dApp with MetaMask
+* Install the Hedera Wallet Snap
+* Get the Snap Ethereum Virtual Machine (EVM) address
+* Create the Snap account and check its balance
+* Call other methods in the Hedera Wallet Snap, like: `transferCrypto`
 
 **Tools You Will Use**
 
-- React JS ([Documentation](https://react.dev/))
-- MetaMask ([Documentation](https://docs.metamask.io/wallet/))
-- Hedera Wallet Snap for MetaMask ([Documentation](https://docs.tuum.tech/hedera-wallet-snap/basics/introduction))
-- Hedera JSON-RPC Relay ([Hashio](https://swirldslabs.com/hashio/))
-- Ethers JS ([Documentation](https://docs.ethers.org/v6/))
-- Mirror Node REST API ([Learn More](https://hedera.com/blog/how-to-look-up-transaction-history-on-hedera-using-mirror-nodes-back-to-the-basics))
-- Mirror Node Explorer ([HashScan](https://hashscan.io/))
+* React JS ([Documentation](https://react.dev/))
+* MetaMask ([Documentation](https://docs.metamask.io/wallet/))
+* Hedera Wallet Snap for MetaMask ([Documentation](https://docs.tuum.tech/hedera-wallet-snap/basics/introduction))
+* Hedera JSON-RPC Relay ([Hashio](https://swirldslabs.com/hashio/))
+* Ethers JS ([Documentation](https://docs.ethers.org/v6/))
+* Mirror Node REST API ([Learn More](https://hedera.com/blog/how-to-look-up-transaction-history-on-hedera-using-mirror-nodes-back-to-the-basics))
+* Mirror Node Explorer ([HashScan](https://hashscan.io/))
 
 ***
 
 ## Prerequisites
 
-- NodeJS >= 18.13 ([Download](https://nodejs.org/en))
-- TypeScript >= 4.7 ([Download](https://www.npmjs.com/package/typescript))
-- Git Command Line ([Download](https://git-scm.com/downloads))
-- Hedera Testnet Account ([Create](https://portal.hedera.com/))
-- MetaMask Wallet Extension ([Download](https://metamask.io/download/))
+* NodeJS >= 18.13 ([Download](https://nodejs.org/en))
+* TypeScript >= 4.7 ([Download](https://www.npmjs.com/package/typescript))
+* Git Command Line ([Download](https://git-scm.com/downloads))
+* Hedera Testnet Account ([Create](https://portal.hedera.com/))
+* MetaMask Wallet Extension ([Download](https://metamask.io/download/))
 
 ***
 
@@ -54,11 +56,9 @@ For convenience, two options are provided to run the code used in this example:
 
 This option does not require installing anything on your machine. All you need is a compatible web browser. [Click here to set up the GitPod environment](https://gitpod.io/#https://github.com/ed-marquez/hedera-example-metamask-snap). You will see the following:
 
-<img src="../../.gitbook/assets/mm-snap-tutorial-gitpod-dev-environment.png" alt="" data-size="original">
+<img src="../../.gitbook/assets/mm-snap-tutorial-gitpod-dev-environment.png" alt="" data-size="original"> <img src="../../.gitbook/assets/mm-snap-tutorial-gitpod-workspace.png" alt="" data-size="original">
 
-<img src="../../.gitbook/assets/mm-snap-tutorial-gitpod-workspace.png" alt="" data-size="original">
-
-![](../../.gitbook/assets/mm-snap-tutorial-gitpod-code-editor.png)
+<img src="../../.gitbook/assets/mm-snap-tutorial-gitpod-code-editor.png" alt="" data-size="original">
 
 </details>
 
@@ -68,7 +68,7 @@ This option does not require installing anything on your machine. All you need i
 
 If you prefer to have a copy of the code files on your machine and run the application locally, follow these steps.
 
-#### Clone the Repo
+**Clone the Repo**
 
 To clone the repository, open your terminal and navigate to the directory where you want to place the project. Then, run the following command:
 
@@ -76,7 +76,7 @@ To clone the repository, open your terminal and navigate to the directory where 
 git clone https://github.com/hedera-dev/hedera-example-metamask-snap.git
 ```
 
-#### Navigate to Directory
+**Navigate to Directory**
 
 Once the cloning process is complete, navigate to the project folder using:
 
@@ -114,10 +114,10 @@ The project folder structure should look something like the following.
 
 The example application has four buttons, which complete different tasks when pressed.
 
-- The first button connects the application to MetaMask.
-- The second button installs the Hedera Wallet Snap.
-- The third button obtains information about the Snap account.
-- The fourth button (and respective input boxes) uses the Hedera Wallet Snap to transfer HBAR.
+* The first button connects the application to MetaMask.
+* The second button installs the Hedera Wallet Snap.
+* The third button obtains information about the Snap account.
+* The fourth button (and respective input boxes) uses the Hedera Wallet Snap to transfer HBAR.
 
 <figure><img src="../../.gitbook/assets/mm-snap-tutorial-dapp-start-here.png" alt=""><figcaption></figcaption></figure>
 
@@ -156,10 +156,10 @@ export default MyGroup;
 
 **MyGroup** is a functional component that combines a text element with a button and receives props as an argument. These properties include:
 
-- **`text`**: The text to be displayed by the **MyText** component.
-- **`link`**: An optional link to be associated with the **MyText** component. If provided, the text will become clickable and redirect to the specified link.
-- **`fcn`**: A function to be executed when the button within the **MyButton** component is clicked.
-- **`buttonLabel`**: The label for the button in the **MyButton** component.
+* **`text`**: The text to be displayed by the **MyText** component.
+* **`link`**: An optional link to be associated with the **MyText** component. If provided, the text will become clickable and redirect to the specified link.
+* **`fcn`**: A function to be executed when the button within the **MyButton** component is clicked.
+* **`buttonLabel`**: The label for the button in the **MyButton** component.
 
 Inside the component, we return a **div** element that contains both the **MyText** and **MyButton** components. We pass the corresponding props down to these child components, allowing them to render the text, link, and button label and assign the click event handler. Finally, by exporting **MyGroup**, we make it available for use in other parts of the application, enabling us to quickly create reusable groups of text and button elements throughout the dApp. You can find the JSX files for the functional components mentioned under the folder **src/components**.
 
@@ -185,8 +185,8 @@ export default MyButton;
 
 **MyButton** accepts the following props:
 
-- **`fcn`**: A function to be executed when the button is clicked.
-- **`buttonLabel`**: The label for the button, which will be displayed as the button's text.
+* **`fcn`**: A function to be executed when the button is clicked.
+* **`buttonLabel`**: The label for the button, which will be displayed as the button's text.
 
 Inside the component, we return a div element that wraps a button element. The button element is assigned the **onClick** event handler with the function **props.fcn**. This allows us to execute a specified function when the button is clicked. The **className** attribute is set to "**cta-button**," which is used for styling the button with CSS. Finally, we display the **props.buttonLabel** as the button's text.
 
@@ -222,8 +222,8 @@ export default MyText;
 
 **MyText** displays text and optionally wraps it in a link. It takes props as an argument, including:
 
-- **`text`**: The text to be displayed.
-- **`link`**: An optional link to be associated with the text.
+* **`text`**: The text to be displayed.
+* **`link`**: An optional link to be associated with the text.
 
 Inside the component, we use a conditional statement to check if **props.link** is provided. If it is, we wrap the text within an **\<a>** element, making it clickable and redirecting to the specified link. If no link is provided, we display the text within a **\<p>** element. Both elements have the **className "sub-text"** for consistent styling. Finally, we export the **MyText** component so it can be used in other parts of the application, allowing for easy creation of text elements with optional links.
 
@@ -255,9 +255,9 @@ export default MySendGroup;
 
 **MySendGroup** uses a text display, two input boxes, and a button to facilitate data entry and user interaction. The component takes props as an argument, including:
 
-- **`fcnI1`** and **`fcnI2`**: Functions to store the text provided via input fields in the application state.
-- **`placeholderTxt1_app`** and **`placeholderTxt2_app`**: Placeholder texts for the input fields.
-- The same arguments are mentioned for **MyText** and **MyButton**.
+* **`fcnI1`** and **`fcnI2`**: Functions to store the text provided via input fields in the application state.
+* **`placeholderTxt1_app`** and **`placeholderTxt2_app`**: Placeholder texts for the input fields.
+* The same arguments are mentioned for **MyText** and **MyButton**.
 
 Inside the component, we return a div element that contains the **MyText**, **MyInputBox**, and **MyButton** components. We pass the corresponding props down to these child components. Finally, exporting **MySendGroup** makes it available for use in other parts of the application.
 
@@ -281,8 +281,8 @@ export default MyInputBox;
 
 **MyInputBox** accepts the following props:
 
-- **`fcn`**: A function to store the text provided via input fields in the application state.
-- **`placeholderTxt`**: Placeholder texts for the input fields.
+* **`fcn`**: A function to store the text provided via input fields in the application state.
+* **`placeholderTxt`**: Placeholder texts for the input fields.
 
 Inside the component, we return a **div** that wraps an input element. The input element is assigned the **onChange** event handler with the function **props.fcn**. This triggers the function that stores the inputs (receiver address and HBAR amount) to the state of the application. We display the **props.placeholderTxt** as the box text. The **className** attribute is set to **"text-input,"** which is used for styling the boxes with CSS. Finally, by exporting **MyInputBox**, we make it available for use in other parts of the application.
 
@@ -296,7 +296,6 @@ In **App.jsx**, we use the **connectWallet()** function (code tab 1), which in t
 
 {% tabs %}
 {% tab title="connectWallet()" %}
-
 ```jsx
 async function connectWallet() {
         if (account !== undefined) {
@@ -317,11 +316,9 @@ async function connectWallet() {
         }
 }
 ```
-
 {% endtab %}
 
 {% tab title="walletConnectFcn()" %}
-
 ```jsx
 import { ethers } from "ethers";
 async function walletConnectFcn(network) {
@@ -368,11 +365,10 @@ async function walletConnectFcn(network) {
 }
 export default walletConnectFcn;
 ```
-
 {% endtab %}
 {% endtabs %}
 
-When the  <mark style="background-color:purple;">**Connect Wallet**</mark> button is pressed in the dApp, the **connectWallet()** function is executed. This function checks if an account is already connected. If it is, a message displaying the connected account is shown. If no account is connected, the **walletConnectFcn()** is called to establish a connection.
+When the <mark style="background-color:purple;">**Connect Wallet**</mark> button is pressed in the dApp, the **connectWallet()** function is executed. This function checks if an account is already connected. If it is, a message displaying the connected account is shown. If no account is connected, the **walletConnectFcn()** is called to establish a connection.
 
 The **walletConnectFcn()** function performs the following steps:
 
@@ -382,7 +378,7 @@ The **walletConnectFcn()** function performs the following steps:
 
 Finally, the **connectWallet()** function in **App.jsx** updates the React state with the connected testnet account and provider information, allowing the dApp to display the connected testnet account information.
 
-This is what you see when clicking the  <mark style="background-color:purple;">**Connect Wallet**</mark>  button for the first time.
+This is what you see when clicking the <mark style="background-color:purple;">**Connect Wallet**</mark> button for the first time.
 
 {% hint style="info" %}
 **Note**: The Hedera account selected in MetaMask for this example has ECDSA keys and is created using the [Hedera Portal](https://portal.hedera.com/).
@@ -392,7 +388,7 @@ This is what you see when clicking the  <mark style="background-color:purple;">*
 
 Once the network switches and the account is paired, you should see something like the following in the dApp UI and in HashScan (if you click on the hyperlinked text showing the account address).
 
-<figure><img src="../../.gitbook/assets/mm-snap-tutorial-dapp-landing-page (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/mm-snap-tutorial-dapp-landing-page%20(1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/mm-snap-tutorial-hashscan-account1.png" alt=""><figcaption></figcaption></figure>
 
@@ -404,7 +400,6 @@ The **snapInstall()** function (code tab 1) in **App.jsx** calls the **snapInsta
 
 {% tabs %}
 {% tab title="snapInstall()" %}
-
 ```jsx
 async function snapInstall() {
         if (account === undefined) {
@@ -414,11 +409,9 @@ async function snapInstall() {
             setSnapInstallText(newSnapInstallText);
             setSnapInfoText();
 ```
-
 {% endtab %}
 
 {% tab title="snapInstallFcn()" %}
-
 ```jsx
 async function snapInstallFcn(snapId) {
     console.log(`\n=======================================`);
@@ -459,7 +452,6 @@ async function snapInstallFcn(snapId) {
 }
 export default snapInstallFcn;
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -468,11 +460,11 @@ The **snapInstallFcn()** function performs the following steps:
 1. **Gets Installed Snaps**: The function requests a list of installed Snaps in the user's MetaMask wallet using the **wallet\_getSnaps** method. It logs the currently installed Snaps.
 2. **Installs Snaps**: The function checks if the Hedera Wallet Snap (identified by **snapId**) is already installed. If it's not installed, the function attempts to install it by calling **wallet\_requestSnaps** and passing the **snapId**. It then logs the result of this installation attempt. After attempting installation, it checks again for installed Snaps.
 3. **Handles Installation Outcome**: If the Snap is successfully installed (i.e., **snapId** is found in the list of installed snaps), it logs and alerts the user that the Snap installation was successful. If the installation fails (i.e., **snapId** is not found in the list), it logs and alerts the user that the connection could not be established successfully.
-4. **Returns Result**: Lastly, the function returns a text message indicating whether the Snap was installed successfully.&#x20
+4. **Returns Result**: Lastly, the function returns a text message indicating whether the Snap was installed successfully.\&#x20
 
-The text output from **snapInstallFcn()** is used by **snapInstall()** in the front end of the application to update the message seen by the user.&#x20
+The text output from **snapInstallFcn()** is used by **snapInstall()** in the front end of the application to update the message seen by the user.\&#x20
 
-This is what you see when clicking the  <mark style="background-color:purple;">**Install Snap**</mark>  button for the first time.
+This is what you see when clicking the <mark style="background-color:purple;">**Install Snap**</mark> button for the first time.
 
 <figure><img src="../../.gitbook/assets/mm-snap-tutorial-install-hedera-snap-window.png" alt=""><figcaption></figcaption></figure>
 
@@ -490,7 +482,6 @@ The **snapGetAccountInfo()** function (code tab 1) in **App.jsx** calls the **sn
 
 {% tabs %}
 {% tab title="snapGetAccountInfo()" %}
-
 ```jsx
  async function snapGetAccountInfo() {
         if (account === undefined || snapInstallText === undefined) {
@@ -503,11 +494,9 @@ The **snapGetAccountInfo()** function (code tab 1) in **App.jsx** calls the **sn
         }
     }
 ```
-
 {% endtab %}
 
 {% tab title="snapGetAccountInfoFcn()" %}
-
 ```jsx
 async function snapGetAccountInfoFcn(network, walletData, snapId) {
     console.log(`\n=======================================`);
@@ -542,7 +531,6 @@ async function snapGetAccountInfoFcn(network, walletData, snapId) {
 }
 export default snapGetAccountInfoFcn;
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -553,9 +541,9 @@ The **snapGetAccountInfoFcn()** function performs the following steps:
 3. **Handles Errors**: If there's an error (like the account not being created yet), the function extracts the EVM address from the error message. It then creates a message instructing the user to transfer HBAR to this address to create the Snap account.
 4. **Returns Results**: The function logs the outcome message (either the account details or the activation instruction). It then returns the EVM address of the Snap account and the outcome message.
 
-The outputs from **snapGetAccountInfoFcn()** are used by **snapGetAccountInfo()** in the front end of the application to update the message and link seen by the user.&#x20
+The outputs from **snapGetAccountInfoFcn()** are used by **snapGetAccountInfo()** in the front end of the application to update the message and link seen by the user.\&#x20
 
-This is what you see when clicking the <mark style="background-color:purple;">**Get Snap Account Info**</mark> button for the first time.&#x20
+This is what you see when clicking the <mark style="background-color:purple;">**Get Snap Account Info**</mark> button for the first time.\&#x20
 
 {% hint style="info" %}
 **Note**: When invoking a Snap method for the first time, MetaMask checks for confirmation before connecting the Hedera Wallet Snap to the account.
@@ -599,7 +587,6 @@ The **snapTransferHbar()** function (code tab 1) in **App.jsx** calls the **snap
 
 {% tabs %}
 {% tab title="snapTransferHbar() " %}
-
 ```jsx
  async function snapTransferHbar() {
         if (account === undefined || snapInstallText === undefined || snapInfoText === undefined) {
@@ -611,11 +598,9 @@ The **snapTransferHbar()** function (code tab 1) in **App.jsx** calls the **snap
         }
     }
 ```
-
 {% endtab %}
 
 {% tab title="snapTransferHbarFcn()" %}
-
 ```jsx
 async function snapTransferHbarFcn(network, walletData, snapId, args) {
     console.log(`\n=======================================`);
@@ -660,18 +645,17 @@ async function snapTransferHbarFcn(network, walletData, snapId, args) {
 }
 export default snapTransferHbarFcn;
 ```
-
 {% endtab %}
 {% endtabs %}
 
 The **snapTransferHbarFcn()** function performs the following steps:
 
-- **Sets Transfer Details**: It extracts the recipient's address and the amount of HBAR to be transferred from the arguments (_args_) provided. Note that these inputs are specified in the dApp UI – remember that the receiver address is that of the MetaMask account and the transfer amount is _**0.2 HBAR**_. The function sets a maximum fee for the transaction, which is predefined as _**0.05 HBAR**_ in the code. It also prepares the transfer details, including the asset type (_HBAR_), the receiver's address, and the amount.
-- **Executes Transfer Request**: The function sends a **wallet\_invokeSnap** request. This request includes the **snapId**, the **transferCrypto** method, and parameters such as the network, the transfer details, a memo (may be needed for transferring to exchange accounts), and the maximum fee.
-- **Handles Transfer Outcome**: If the transfer is successful, the function sets a message indicating success and suggests re-checking the Snap account info for an updated balance. In case of an error or failure, it sets a different message indicating that the transaction failed and prompts trying again.
-- **Returns Output**: Finally, the function returns the outcome message, informing whether the transfer was successful or not.
+* **Sets Transfer Details**: It extracts the recipient's address and the amount of HBAR to be transferred from the arguments (_args_) provided. Note that these inputs are specified in the dApp UI – remember that the receiver address is that of the MetaMask account and the transfer amount is _**0.2 HBAR**_. The function sets a maximum fee for the transaction, which is predefined as _**0.05 HBAR**_ in the code. It also prepares the transfer details, including the asset type (_HBAR_), the receiver's address, and the amount.
+* **Executes Transfer Request**: The function sends a **wallet\_invokeSnap** request. This request includes the **snapId**, the **transferCrypto** method, and parameters such as the network, the transfer details, a memo (may be needed for transferring to exchange accounts), and the maximum fee.
+* **Handles Transfer Outcome**: If the transfer is successful, the function sets a message indicating success and suggests re-checking the Snap account info for an updated balance. In case of an error or failure, it sets a different message indicating that the transaction failed and prompts trying again.
+* **Returns Output**: Finally, the function returns the outcome message, informing whether the transfer was successful or not.
 
-The text output from **snapTransferHbarFcn()** is used by **snapTransferHbar()** in the front end of the application to update the message seen by the user.&#x20
+The text output from **snapTransferHbarFcn()** is used by **snapTransferHbar()** in the front end of the application to update the message seen by the user.\&#x20
 
 This is what you see when clicking the <mark style="background-color:purple;">**Transfer HBAR w/ Snap**</mark> button after entering a valid receiver address and HBAR amount in the corresponding input fields.
 
@@ -681,19 +665,19 @@ This is what you see when clicking the <mark style="background-color:purple;">**
 
 Once the transfer of HBAR from the Snap account to the MetaMask account is complete, you can check the Snap account balance by clicking on the <mark style="background-color:purple;">**Get Snap Account Info**</mark> button again. You will see something like this:
 
-<figure><img src="../../.gitbook/assets/mm-snap-tutorial-dapp-transfer-success-landing2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/mm-snap-tutorial-dapp-transfer-success-landing2%20(1).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
 ## Summary
 
-This tutorial provides a comprehensive guide on how to use MetaMask Snaps, focusing on the Hedera Wallet Snap.&#x20
+This tutorial provides a comprehensive guide on how to use MetaMask Snaps, focusing on the Hedera Wallet Snap.\&#x20
 
-- It starts by covering the dApp's structure and user interface, highlighting the functions of various buttons like connecting to MetaMask, installing the _Hedera Wallet Snap_, obtaining Snap account information, and transferring HBAR using the Snap.&#x20
-- The tutorial also dives into the technical aspects, detailing the _App.jsx_ file, which includes state management, functions for button actions, and the layout of the UI components. It explains the use of React components like _MyGroup_, _MyButton_, and _MyInputBox_ to create an interactive and user-friendly interface.&#x20
-- It then elaborates on MetaMask Snaps, its purpose, and how to use them, specifically focusing on the Hedera Wallet Snap for tasks like pairing the dApp with MetaMask, installing the Snap, managing the Snap account, and executing crypto transfers.
+* It starts by covering the dApp's structure and user interface, highlighting the functions of various buttons like connecting to MetaMask, installing the _Hedera Wallet Snap_, obtaining Snap account information, and transferring HBAR using the Snap.\&#x20
+* The tutorial also dives into the technical aspects, detailing the _App.jsx_ file, which includes state management, functions for button actions, and the layout of the UI components. It explains the use of React components like _MyGroup_, _MyButton_, and _MyInputBox_ to create an interactive and user-friendly interface.\&#x20
+* It then elaborates on MetaMask Snaps, its purpose, and how to use them, specifically focusing on the Hedera Wallet Snap for tasks like pairing the dApp with MetaMask, installing the Snap, managing the Snap account, and executing crypto transfers.
 
-&#x20**🎉  Congratulations! You have learned about the new Hedera Wallet Snap by MetaMask and how to integrate it into a dApp. Feel free to reach out in** [**Discord**](https://hedera.com/discord) **if you have any questions!**
+\&#x20**🎉 Congratulations! You have learned about the new Hedera Wallet Snap by MetaMask and how to integrate it into a dApp. Feel free to reach out in** [**Discord**](https://hedera.com/discord) **if you have any questions!**
 
 ***
 

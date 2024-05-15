@@ -16,9 +16,9 @@ The latest state (e.g., the HBAR balances of each account) and the history of th
 
 There are three mostly independent functions that a [distributed ledger technology (DLT)](../support-and-community/glossary.md#distributed-ledger-technology-dlt) node can perform:
 
-* Contribute to [consensus](../support-and-community/glossary.md#consensus)
-* Persist history of transactions
-* Persist state
+- Contribute to [consensus](../support-and-community/glossary.md#consensus)
+- Persist history of transactions
+- Persist state
 
 As nodes have limited resources, it is generally the case that a node cannot optimally perform all roles – and choices must be made as to which functions to prioritize.
 

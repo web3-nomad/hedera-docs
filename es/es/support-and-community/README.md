@@ -4,4 +4,3 @@ coverY: -32
 ---
 
 # Support & Community
-

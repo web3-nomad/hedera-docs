@@ -13,7 +13,7 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 {% endhint %}
 
 {% hint style="info" %}
-**TESTNET UPDATE SCHEDULED: MAY 29, 2024**
+**TESTNET UPDATE SCHEDULED: JUNE 5, 2024**
 {% endhint %}
 
 ## [v0.49](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.0)

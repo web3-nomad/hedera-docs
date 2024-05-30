@@ -98,6 +98,7 @@
     * [Creating Smart Contracts](core-concepts/smart-contracts/creating-smart-contracts.md)
     * [Compiling Smart Contracts](core-concepts/smart-contracts/compiling-smart-contracts.md)
     * [Deploying Smart Contracts](core-concepts/smart-contracts/deploying-smart-contracts/README.md)
+      * [Gas and Fees](core-concepts/smart-contracts/deploying-smart-contracts/gas-and-fees.md)
       * [JSON-RPC Relay](core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay.md)
     * [Smart Contract Addresses](core-concepts/smart-contracts/smart-contract-addresses.md)
     * [Verifying Smart Contracts](core-concepts/smart-contracts/verifying-smart-contracts-beta.md)

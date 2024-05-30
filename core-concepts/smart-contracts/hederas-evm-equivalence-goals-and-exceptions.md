@@ -1,25 +1,8 @@
-# Hedera's EVM Equivalence Goals and Exceptions
+# Understanding Hedera for EVM Developers
 
-Hedera aims to achieve [Ethereum Virtual Machine (EVM)](../../support-and-community/glossary.md#ethereum-virtual-machine-evm) equivalence to enhance the programmability and adoption of the network. This page outlines Hedera's EVM equivalence goals and highlights the key differences and exceptions between Hedera and [Ethereum](../../support-and-community/glossary.md#ethereum).
+## Hedera vs Ethereum
 
-## EVM Equivalence Goals
-
-Hedera's EVM equivalence strategy is designed to empower developers by facilitating rapid and cost-effective execution of EVM smart contracts while seamlessly integrating Hedera’s native services. The key goals include:
-
-* **Robust Application Programmability:** Enable a wide range of applications, from DeFi to supply chain solutions, leveraging Hedera's speed, security, and fairness.
-* **Seamless Integration:** Integrate Hedera’s native services with the EVM, allowing developers to use familiar Ethereum tools and languages.
-* **Leverage Existing Expertise:** Utilize the [HyperLedger Besu EVM](../../support-and-community/glossary.md#hyperledger-besu-evm) client to help developers transition smoothly to Hedera, benefiting from faster transactions, low and fixed fees, fair transaction ordering, immediate finality, and heightened security.
-* **Smooth Transition:** Facilitate easy migration of existing EVM-based applications, smart contracts, and digital assets to the Hedera network, reducing barriers to entry.
-* **Support for EVM Tools:** Provide support for popular [EVM tools](../../#evm-compatible-tools), libraries, and environments like [Truffle](https://trufflesuite.com/), [HardHat](https://hardhat.org/), [Web3js](https://web3js.readthedocs.io/en/v1.10.0/), [EthersJS](https://ethers.org/), [MetaMask](https://docs.hedera.com/hedera/support-and-community/glossary#metamask), [The Graph](https://thegraph.com/), and [Remix](https://remix.ethereum.org/#lang=en\&optimize=false\&runs=200\&evmVersion=null).
-* **Community Engagement:** Encourage developers to contribute to EVM development and participate in community discussions on the official [Hedera Discord](https://www.hedera.com/discord?\_\_cf\_chl\_tk=jErMIgAUhVg0X3tmnUJBYqQ6KCfRUYSI\_TcaX\_WxlEM-1717035657-0.0.1.1-7572), fostering a vibrant and engaged community for the network's long-term success.
-
-{% hint style="info" %}
-🔔 Detailed [blog post](https://hedera.com/blog/evm-equivalence-unveiling-hederas-strategy-for-enhanced-programmability-and-network-adoption) of Hedera's EVM Equivalence strategy.&#x20;
-{% endhint %}
-
-## Key Differences and Exceptions: Hedera vs Ethereum
-
-While Hedera strives for EVM equivalence, it's important to recognize certain unique aspects and fundamental differences in its network architecture and operations, such as the handling of state data structures, hashing algorithms, and the management of accounts and transactions. These distinctions in network behaviors are intentional design choices made to align with EVM standards, thereby achieving EVM compatibility. This approach ensures that while Hedera aligns closely with Ethereum, it also maintains its distinctive features and optimization.
+While Hedera strives for EVM equivalence, it's important to recognize certain unique aspects and fundamental differences in its network architecture and operations, such as handling state data structures, hashing algorithms, and managing accounts and transactions. These distinctions in network behaviors are intentional design choices made to align with EVM standards, thereby achieving EVM compatibility. This approach ensures that while Hedera aligns closely with Ethereum, it also maintains its distinctive features and optimization.
 
 ### Network and Security Differences
 

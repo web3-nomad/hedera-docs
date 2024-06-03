@@ -6,7 +6,7 @@ description: Hedera Services release information
 
 Please visit the [Hedera status page](https://status.hedera.com/) for the latest versions supported on each network.
 
-## [v0.50](https://github.com/hashgraph/hedera-services/releases)
+## [v0.50](https://github.com/hashgraph/hedera-services/releases/tag/v0.50.0)
 
 {% hint style="info" %}
 **MAINNET UPDATE SCHEDULED: JUNE 12, 2024**
@@ -15,6 +15,23 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 {% hint style="info" %}
 **TESTNET UPDATE SCHEDULED: JUNE 5, 2024**
 {% endhint %}
+
+### [0.50.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.50.0)
+
+#### What's Changed
+
+* feat: reorganize ISS wiring by [@alittley](https://github.com/alittley) in [#11685](https://github.com/hashgraph/hedera-services/pull/11685)
+* feat(diff-testing): Script (python) to pull intervals - up to a day - from GCP by [@david-bakin-sl](https://github.com/david-bakin-sl) in [#11409](https://github.com/hashgraph/hedera-services/pull/11409)
+* fix: 11750 Fixed synchronization in `BreakableDataSource.saveRecords` by [@imalygin](https://github.com/imalygin) in [#11756](https://github.com/hashgraph/hedera-services/pull/11756)
+* feat: Differential testing: Enhance account store dumper to handle modular representation by [@vtronkov](https://github.com/vtronkov) in [#11489](https://github.com/hashgraph/hedera-services/pull/11489)
+* test: add security v2 model tests for token associate by [@anastasiya-kovaliova](https://github.com/anastasiya-kovaliova) in [#11327](https://github.com/hashgraph/hedera-services/pull/11327)
+* fix: stop checking for minimum birth round by [@cody-littley](https://github.com/cody-littley) in [#11769](https://github.com/hashgraph/hedera-services/pull/11769)
+* feat: make the state compatible with birth rounds by [@cody-littley](https://github.com/cody-littley) in [#11780](https://github.com/hashgraph/hedera-services/pull/11780)
+* fix: FilteredLoggingMonitor by [@mxtartaglia-sl](https://github.com/mxtartaglia-sl) in [#11754](https://github.com/hashgraph/hedera-services/pull/11754)
+* feat: diagram tweaks by [@cody-littley](https://github.com/cody-littley) in [#11801](https://github.com/hashgraph/hedera-services/pull/11801)
+* fix: wait longer for freeze transaction to be handled by [@JeffreyDallas](https://github.com/JeffreyDallas) in [#11790](https://github.com/hashgraph/hedera-services/pull/11790)
+
+**➡ See the full list of changes** [**here**](https://github.com/hashgraph/hedera-services/releases/tag/v0.50.0)**.**
 
 ## [v0.49](https://github.com/hashgraph/hedera-services/releases/tag/v0.49.0)
 

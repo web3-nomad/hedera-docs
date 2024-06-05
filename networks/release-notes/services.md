@@ -12,11 +12,11 @@ Please visit the [Hedera status page](https://status.hedera.com/) for the latest
 **MAINNET UPDATE SCHEDULED: JUNE 12, 2024**
 {% endhint %}
 
-{% hint style="info" %}
-**TESTNET UPDATE SCHEDULED: JUNE 5, 2024**
-{% endhint %}
-
 ### [0.50.0](https://github.com/hashgraph/hedera-services/releases/tag/v0.50.0)
+
+{% hint style="success" %}
+**TESTNET UPDATE: JUNE 5, 2024**
+{% endhint %}
 
 #### What's Changed
 

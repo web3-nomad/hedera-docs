@@ -62,6 +62,10 @@ A snapshot of the state of all accounts within the Hedera Network at the time of
 
 The first cryptocurrency based on a [Proof of Work (PoW) ](glossary.md#proof-of-work-pow)blockchain. Bitcoin was created in 2009 by Satoshi Nakamoto — a pseudonym for an individual or group whose real identity is unknown — and the concept of cryptocurrency was outlined in a white paper titled “[Bitcoin: A Peer-to-Peer Electronic Cash System.](https://bitcoin.org/bitcoin.pdf)”
 
+### Blob
+
+A large, unstructured data object. In Ethereum, blobs are introduced to enhance data availability for rollups ([EIP-4844](https://eips.ethereum.org/EIPS/eip-4844)), but Hedera currently does not support blobs.
+
 ### Block
 
 A block is a batch of transactions that are linked together using cryptographic hashes. Each block contains a reference to its parent block, preserving the transaction history in a strictly ordered manner. Blocks are created approximately every 12 seconds to allow consensus on the network and contain a wide range of information.
@@ -226,6 +230,10 @@ A cryptographic algorithm used for data integrity and widely used in cryptocurre
 ### Ed25519
 
 In the context of Hedera, Ed25519 is one of the signature schemes supported for the creation and verification of digital signatures. It's often used for signing transactions, as it provides a strong level of security while still being efficient to compute.
+
+### **EIP (Ethereum Improvement Proposal)**
+
+A standard for proposing changes and new features to the Ethereum protocol. Some EIPs are relevant for Hedera's EVM compatibility and can be referenced [here](https://eips.ethereum.org/).&#x20;
 
 ### ERC-20
 
@@ -517,7 +525,7 @@ On-chain refers to transactions that occur _on_ the distributed ledger, and as a
 
 ### **Opcodes**
 
-Short for operation codes, [opcodes](broken-reference) are the low-level human-readable instructions of the program.
+Short for "operation code," an opcode is a single instruction that the Ethereum Virtual Machine (EVM) can execute. Each opcode performs a specific operation, such as arithmetic calculations, data storage, or control flow management. Opcodes are the low-level building blocks of EVM smart contracts written in Solidity or other EVM-compatible languages.
 
 ### Oracles
 
@@ -586,6 +594,10 @@ When the puzzle gets solved and verified, PoW consensus is established, as the s
 In the blockchain industry, the word “protocol” refers to any distributed ledger-based service, including the blockchains themselves and any services or applications that run on them, that can programmatically receive and respond to specially formatted requests.
 
 For example, if a public ledger can programmatically (via software as opposed to a user interface for humans) receive a request (and respond to it accordingly) to transfer cryptocurrency from one ledger account to another (which most chains can do), then it’s a protocol.&#x20;
+
+### **Proto-Danksharding**
+
+A simplified version of danksharding aimed at improving data availability without the full complexity of sharding.
 
 ### Public Key
 
